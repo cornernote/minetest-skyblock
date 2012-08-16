@@ -33,6 +33,50 @@ minetest.register_alias("mapgen_desert_stone", "air")
 
 
 --
+-- CRAFT ENTRIES
+--
+
+-- clay
+minetest.register_craft({
+	output = 'default:clay',
+	recipe = {
+		{'default:dirt', 'default:dirt'},
+		{'default:dirt', 'default:dirt'},
+	}
+})
+
+-- desert_stone
+minetest.register_craft({
+	output = 'default:desert_stone',
+	recipe = {
+		{'default:desert_sand', 'default:desert_sand'},
+		{'default:desert_sand', 'default:desert_sand'},
+	}
+})
+
+-- mossycobble
+minetest.register_craft({
+	type = "cooking",
+	output = "default:mossycobble",
+	recipe = "default:stone",
+})
+
+-- gravel
+minetest.register_craft({
+	type = "cooking",
+	output = "default:gravel",
+	recipe = "default:mossycobble",
+})
+
+-- scorched_stuff
+minetest.register_craft({
+	type = "cooking",
+	output = "default:scorched_stuff",
+	recipe = "default:gravel",
+})
+
+
+--
 -- PLAYER ENTRIES
 --
 
@@ -80,12 +124,13 @@ minetest.register_node(":default:stone", {
 	drop = {
 		max_items = 1,
 		items = {
-			{items = {'default:mese'}, rarity = 500},
-			{items = {'default:iron_lump'}, rarity = 200},
-			{items = {'default:coal_lump'}, rarity = 100},
-			{items = {'default:gravel'}, rarity = 50},
-			{items = {'default:sand'}, rarity = 9},
-			{items = {'default:dirt'}, rarity = 4},
+			{items = {'default:nyancat'}, rarity = 1000},
+			{items = {'default:mese'}, rarity = 250},
+			{items = {'default:iron_lump'}, rarity = 100},
+			{items = {'default:coal_lump'}, rarity = 20},
+			{items = {'default:desert_sand'}, rarity = 25},
+			{items = {'default:sand'}, rarity = 10},
+			{items = {'default:dirt'}, rarity = 5},
 			{items = {'default:cobble'}}
 		}
 	},
@@ -122,6 +167,53 @@ minetest.register_abm({
 	action = function(pos)
 		skyblock.generate_tree(pos)
     end
+})
+
+-- junglegrass/dry_shrub spawns on sand and desert_sand
+minetest.register_abm({
+	nodenames = {"default:sand", "default:desert_sand"},
+	interval = 150,
+	chance = 10,
+	action = function(pos, node)
+		pos.y = pos.y+1
+		if minetest.env:get_node(pos).name == "air" then
+			if math.random(0,1) then
+				minetest.env:set_node(pos, {"default:junglegrass"})
+			else
+				minetest.env:set_node(pos, {"default:dry_shrub"})
+			end
+		end
+	end
+})
+
+-- cactus spawns on sand and desert_sand
+minetest.register_abm({
+	nodenames = {"default:sand", "default:desert_sand"},
+	interval = 300,
+	chance = 50,
+	action = function(pos, node)
+		for 0,math.random(1,4) do
+			pos.y = pos.y+1
+			if minetest.env:get_node(pos).name == "air" then
+				minetest.env:set_node(pos, {"default:cactus"})
+			end
+		end
+	end
+})
+
+-- papyrus spawns on dirt and dirt_with_grass
+minetest.register_abm({
+	nodenames = {"default:dirt", "default:dirt_with_grass"},
+	interval = 300,
+	chance = 50,
+	action = function(pos, node)
+		for 0,math.random(1,4) do
+			pos.y = pos.y+1
+			if minetest.env:get_node(pos).name == "air" then
+				minetest.env:set_node(pos, {"default:papyrus"})
+			end
+		end
+	end
 })
 
 -- dirt turns to dirt_with_grass if below air
