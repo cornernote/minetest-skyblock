@@ -109,23 +109,20 @@ local last_start_id = 0
 local load_last_start_id = function()
 	local input = io.open(skyblock_file..".last_start_id", "r")
 	
-	-- check if the last start position file exists
-    if input then
-        while true do
-            local last_start_id = input:read("*n")
-            if last_start_id == nil then
-				last_start_id = 0
-                break
-            end
-        end
-        io.close(input)
-	
-	-- does not exist, create a new file
-    else
+	-- create last_start_id file if needed
+    if not input then
 		local output = io.open(skyblock_file..".last_start_id", "w")
 		output:write(last_start_id)
 		io.close(output)
+		input = io.open(skyblock_file..".last_start_id", "r")
 	end
+	
+	-- read last start id
+	last_start_id = input:read("*n")
+	if last_start_id == nil then
+		last_start_id = 0
+	end
+	io.close(input)
 	
 end
 load_last_start_id() -- run it now
