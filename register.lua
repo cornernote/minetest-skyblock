@@ -61,6 +61,24 @@ minetest.register_craft({
 	recipe = "default:stone",
 })
 
+-- stone_with_coal
+minetest.register_craft({
+	output = 'default:stone_with_coal',
+	recipe = {
+		{'default:coal_lump'},
+		{'default:stone'},
+	}
+})
+
+-- stone_with_iron
+minetest.register_craft({
+	output = 'default:stone_with_iron',
+	recipe = {
+		{'default:iron_lump'},
+		{'default:stone'},
+	}
+})
+
 -- gravel
 minetest.register_craft({
 	type = "cooking",
