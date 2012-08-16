@@ -123,6 +123,11 @@ minetest.register_globalstep(function(dtime)
 			if pos.y < skyblock.WORLD_BOTTOM then
 				skyblock.respawn_player(player)
 			end
+			-- walking on dirt_with_grass, change to dirt_with_grass_footsteps
+			local np = {x=pos.x,y=pos.y-1,z=pos.z}
+			if (minetest.env:get_node(np).name == "default:dirt_with_grass") then
+				minetest.env:add_node(np, {name="default:dirt_with_grass_footsteps"})
+			end
 		end
 		
 	end
@@ -273,6 +278,32 @@ minetest.register_abm({
 	action = function(pos)
    		if minetest.env:get_node({x = pos.x, y = pos.y + 1, z = pos.z}).name == "air" then
 			minetest.env:add_node(pos, {name="default:dirt_with_grass"})
+   		end
+    end
+})
+
+-- dirt_with_grass turns to dirt if not below air
+minetest.register_abm({
+	nodenames = {"default:dirt_with_grass"},
+	interval = 50,
+	chance = 300,
+	action = function(pos)
+   		if minetest.env:get_node({x = pos.x, y = pos.y + 1, z = pos.z}).name == "air" then
+			minetest.env:add_node(pos, {name="default:dirt"})
+   		end
+    end
+})
+
+-- dirt_with_grass_footsteps turns to dirt_with_grass
+minetest.register_abm({
+	nodenames = {"default:dirt_with_grass_footsteps"},
+	interval = 5,
+	chance = 10,
+	action = function(pos)
+   		if minetest.env:get_node({x = pos.x, y = pos.y + 1, z = pos.z}).name == "air" then
+			minetest.env:add_node(pos, {name="default:dirt_with_grass"})
+		else
+			minetest.env:add_node(pos, {name="default:dirt"})
    		end
     end
 })
