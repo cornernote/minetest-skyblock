@@ -133,6 +133,13 @@ end)
 -- NODE ENTRIES
 --
 
+-- indestructable spawn block
+minetest.register_node("skyblock:spawn", {
+	description = "spawnblock",
+	tiles = {"default_nc_rb.png"},
+	is_ground_content = true,
+})
+
 -- stone should give a random drop
 minetest.register_node(":default:stone", {
 	description = "Stone",
@@ -165,11 +172,33 @@ minetest.register_node(":default:tree", {
 	sounds = default.node_sound_wood_defaults(),
 })
 
--- indestructable spawn block
-minetest.register_node("skyblock:spawn", {
-	description = "spawnblock",
-	tiles = {"default_nc_rb.png"},
-	is_ground_content = true,
+-- leaves should be climbable and drop sticks
+minetest.register_node(":default:leaves", {
+	description = "Leaves",
+	drawtype = "allfaces_optional",
+	visual_scale = 1.3,
+	tiles = {"default_leaves.png"},
+	paramtype = "light",
+	groups = {snappy=3, leafdecay=3, flammable=2},
+	drop = {
+		max_items = 1,
+		items = {
+			{
+				items = {'default:sapling'},
+				rarity = 15,
+			},
+			{
+				items = {'default:stick'},
+				rarity = 10,
+			},
+			{
+				items = {'default:leaves'},
+			}
+		}
+	},
+	climbable = true,
+	sounds = default.node_sound_leaves_defaults(),
+	walkable = false,
 })
 
 

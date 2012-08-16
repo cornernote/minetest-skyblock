@@ -128,6 +128,7 @@ end
 load_last_start_id() -- run it now
 
 
+
 --
 -- PUBLIC OBJECTS
 --
@@ -220,15 +221,21 @@ skyblock.generate_tree = function(pos)
 	local node = {name = ""}
 
 	-- check if we should make an apple tree
-	local is_apple_tree
+	local is_apple_tree, is_jungle_tree = false, false
 	if math.random(0, 8) == 0 then
 		is_apple_tree = true
 	else
-		is_apple_tree = false
+		if math.random(0, 8) == 0 then
+			is_jungle_tree = true
+		end
 	end
 	
 	-- add the tree
-	node.name = "default:tree"
+	if is_jungle_tree then
+		node.name = "default:jungletree"
+	else
+		node.name = "default:tree"
+	end
 	for dy=0,4 do
 		pos.y = pos.y+dy
 		minetest.env:set_node(pos, node)
