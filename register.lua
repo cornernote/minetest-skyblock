@@ -196,9 +196,9 @@ minetest.register_abm({
 		pos.y = pos.y+1
 		if minetest.env:get_node(pos).name == "air" then
 			if math.random(0,1) then
-				minetest.env:set_node(pos, {"default:junglegrass"})
+				minetest.env:set_node(pos, {name="default:junglegrass"})
 			else
-				minetest.env:set_node(pos, {"default:dry_shrub"})
+				minetest.env:set_node(pos, {name="default:dry_shrub"})
 			end
 		end
 	end
@@ -213,7 +213,7 @@ minetest.register_abm({
 		for y=0,math.random(1,4) do
 			pos.y = pos.y+1
 			if minetest.env:get_node(pos).name == "air" then
-				minetest.env:set_node(pos, {"default:cactus"})
+				minetest.env:set_node(pos, {name="default:cactus"})
 			end
 		end
 	end
@@ -228,7 +228,7 @@ minetest.register_abm({
 		for y=0,math.random(1,4) do
 			pos.y = pos.y+1
 			if minetest.env:get_node(pos).name == "air" then
-				minetest.env:set_node(pos, {"default:papyrus"})
+				minetest.env:set_node(pos, {name="default:papyrus"})
 			end
 		end
 	end
@@ -237,7 +237,7 @@ minetest.register_abm({
 -- dirt turns to dirt_with_grass if below air
 minetest.register_abm({
 	nodenames = {"default:dirt"},
-	interval = 3600,
+	interval = 300,
 	chance = 100,
 	action = function(pos)
    		if minetest.env:get_node({x = pos.x, y = pos.y + 1, z = pos.z}).name == "air" then
@@ -249,7 +249,7 @@ minetest.register_abm({
 -- dirt_with_grass turns to dirt if not below air
 minetest.register_abm({
 	nodenames = {"default:dirt_with_grass"},
-	interval = 3600,
+	interval = 300,
 	chance = 100,
 	action = function(pos)
    		if minetest.env:get_node({x = pos.x, y = pos.y + 1, z = pos.z}).name ~= "air" then
