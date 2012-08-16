@@ -36,7 +36,7 @@ complete games, and that other developers may do the same.
 
 -- What else will this change in my game? --
 
-Some thigs have to be different in the minetest default mod because mapgen is disabled:
+Some things have to be different in the minetest default mod because mapgen is disabled:
 - falling below skyblock.WORLD_BOTTOM results in death and loss of items
 - lava and water collide to make stone
 - dig stone to randomly drop some items
@@ -189,7 +189,7 @@ Thank you to the minetest community who has shared their code
 and knowledge with me.
 
 Special thanks in this mod to:
-PlizAdam - code to make a tree came from his farming mod
+PilzAdam - code to make a tree came from his farming mod
 RealBadAngel - help in IRC to make the spiral
 anyone else who i borrowed code from =)
 
