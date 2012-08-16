@@ -117,12 +117,10 @@ minetest.register_node("skyblock:spawn", {
 -- sapling grows to tree
 minetest.register_abm({
 	nodenames = "default:sapling",
-	interval = 60,
-	chance = 15,
+	interval = 30,
+	chance = 5,
 	action = function(pos)
-   		if minetest.env:get_node({x = pos.x, y = pos.y + 1, z = pos.z}).name == "air" then
-   			skyblock.generate_tree(pos)
-   		end
+		skyblock.generate_tree(pos)
     end
 })
 

@@ -208,8 +208,6 @@ end
 
 -- make a tree
 skyblock.generate_tree = function(pos)
-	local node = {name = ""}
-	
 	-- check if we have space to make a tree
 	for dy=1,4 do
 		pos.y = pos.y+dy
@@ -219,6 +217,8 @@ skyblock.generate_tree = function(pos)
 		pos.y = pos.y-dy
 	end
 	
+	local node = {name = ""}
+
 	-- check if we should make an apple tree
 	local is_apple_tree
 	if math.random(0, 8) == 0 then
