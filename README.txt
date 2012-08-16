@@ -4,6 +4,7 @@ MINETEST SKYBLOCK
 
 Copyright (C) 2012 cornernote, Brett O'Donnell <cornernote@gmail.com>
 
+Zip Download: https://github.com/cornernote/minetest-skyblock/zipball/master
 Source Code: https://github.com/cornernote/minetest-skyblock
 
 
