@@ -187,18 +187,18 @@ minetest.register_abm({
     end
 })
 
--- junglegrass/dry_shrub spawns on sand and desert_sand
+-- junglegrass/dry_shrub spawns on sand, desert_sand and dirt_with_grass
 minetest.register_abm({
-	nodenames = {"default:sand", "default:desert_sand"},
+	nodenames = {"default:sand", "default:desert_sand", "default:dirt_with_grass"},
 	interval = 150,
 	chance = 10,
 	action = function(pos, node)
 		pos.y = pos.y+1
-		if minetest.env:get_node(pos).name == "air" then
-			if math.random(0,1) then
-				minetest.env:set_node(pos, {name="default:junglegrass"})
-			else
+		if minetest.env:get_node(pos).name == "air" and minetest.env:find_node_near(pos, 4, {"default:dry_shrub","default:junglegrass"})==nil then
+			if math.random(0,3) then
 				minetest.env:set_node(pos, {name="default:dry_shrub"})
+			else
+				minetest.env:set_node(pos, {name="default:junglegrass"})
 			end
 		end
 	end
@@ -208,20 +208,21 @@ minetest.register_abm({
 minetest.register_abm({
 	nodenames = {"default:sand", "default:desert_sand"},
 	interval = 300,
-	chance = 50,
+	chance = 150,
 	action = function(pos, node)
 		for y=0,math.random(1,4) do
 			pos.y = pos.y+1
-			if minetest.env:get_node(pos).name == "air" then
+			if minetest.env:get_node(pos).name == "air" and minetest.env:find_node_near(pos, 6, {"default:cactus"})==nil then
 				minetest.env:set_node(pos, {name="default:cactus"})
 			end
 		end
 	end
 })
 
--- papyrus spawns on dirt and dirt_with_grass
+-- papyrus spawns on dirt and dirt_with_grass if next to water
 minetest.register_abm({
 	nodenames = {"default:dirt", "default:dirt_with_grass"},
+	neighbors = {"default:water_source", "default:water_flowing"},
 	interval = 300,
 	chance = 50,
 	action = function(pos, node)
@@ -237,23 +238,12 @@ minetest.register_abm({
 -- dirt turns to dirt_with_grass if below air
 minetest.register_abm({
 	nodenames = {"default:dirt"},
-	interval = 300,
+	neighbors = {"default:air"},
+	interval = 50,
 	chance = 100,
 	action = function(pos)
    		if minetest.env:get_node({x = pos.x, y = pos.y + 1, z = pos.z}).name == "air" then
 			minetest.env:add_node(pos, {name="default:dirt_with_grass"})
-   		end
-    end
-})
-
--- dirt_with_grass turns to dirt if not below air
-minetest.register_abm({
-	nodenames = {"default:dirt_with_grass"},
-	interval = 300,
-	chance = 100,
-	action = function(pos)
-   		if minetest.env:get_node({x = pos.x, y = pos.y + 1, z = pos.z}).name ~= "air" then
-			minetest.env:add_node(pos, {name="default:dirt"})
    		end
     end
 })
