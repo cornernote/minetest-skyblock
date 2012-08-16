@@ -210,7 +210,7 @@ minetest.register_abm({
 	interval = 300,
 	chance = 50,
 	action = function(pos, node)
-		for 0,math.random(1,4) do
+		for y=0,math.random(1,4) do
 			pos.y = pos.y+1
 			if minetest.env:get_node(pos).name == "air" then
 				minetest.env:set_node(pos, {"default:cactus"})
@@ -225,7 +225,7 @@ minetest.register_abm({
 	interval = 300,
 	chance = 50,
 	action = function(pos, node)
-		for 0,math.random(1,4) do
+		for y=0,math.random(1,4) do
 			pos.y = pos.y+1
 			if minetest.env:get_node(pos).name == "air" then
 				minetest.env:set_node(pos, {"default:papyrus"})
