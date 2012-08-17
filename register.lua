@@ -158,9 +158,9 @@ minetest.register_node(":default:stone", {
 			{items = {'default:mese'}, rarity = 250},
 			{items = {'default:iron_lump'}, rarity = 100},
 			{items = {'default:coal_lump'}, rarity = 20},
-			{items = {'default:desert_sand'}, rarity = 25},
-			{items = {'default:sand'}, rarity = 10},
-			{items = {'default:dirt'}, rarity = 5},
+			{items = {'default:desert_sand'}, rarity = 16},
+			{items = {'default:sand'}, rarity = 8},
+			{items = {'default:dirt'}, rarity = 3},
 			{items = {'default:cobble'}}
 		}
 	},
@@ -308,10 +308,10 @@ minetest.register_abm({
     end
 })
 
--- lava_flowing next to water_source or water_flowing will turn to stone
+-- lava_flowing next to water_source will turn to stone
 minetest.register_abm({
 	nodenames = {"default:lava_flowing"},
-	neighbors = {"default:water_source", "default:water_flowing"},
+	neighbors = {"default:water_source"},
 	interval = 2,
 	chance = 1,
 	action = function(pos)
