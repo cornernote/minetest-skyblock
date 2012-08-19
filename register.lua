@@ -36,46 +36,54 @@ minetest.register_alias("mapgen_desert_stone", "air")
 -- CRAFT ENTRIES
 --
 
+-- tool repair buff (20% bonus)
+minetest.register_craft({
+	type = "toolrepair",
+	additional_wear = -0.20,
+})
+
 -- clay
 minetest.register_craft({
-	output = 'default:clay',
+	output = "default:clay",
 	recipe = {
-		{'default:dirt', 'default:dirt'},
-		{'default:dirt', 'default:dirt'},
+		{"default:dirt", "default:dirt"},
+		{"default:dirt", "default:dirt"},
 	}
 })
 
 -- desert_stone
 minetest.register_craft({
-	output = 'default:desert_stone',
+	output = "default:desert_stone",
 	recipe = {
-		{'default:desert_sand', 'default:desert_sand'},
-		{'default:desert_sand', 'default:desert_sand'},
+		{"default:desert_sand", "default:desert_sand"},
+		{"default:desert_sand", "default:desert_sand"},
 	}
 })
 
 -- mossycobble
 minetest.register_craft({
-	type = "cooking",
 	output = "default:mossycobble",
-	recipe = "default:stone",
+	recipe = {
+		{"default:junglegrass"},
+		{"default:cobble"},
+	}
 })
 
 -- stone_with_coal
 minetest.register_craft({
-	output = 'default:stone_with_coal',
+	output = "default:stone_with_coal",
 	recipe = {
-		{'default:coal_lump'},
-		{'default:stone'},
+		{"default:coal_lump"},
+		{"default:stone"},
 	}
 })
 
 -- stone_with_iron
 minetest.register_craft({
-	output = 'default:stone_with_iron',
+	output = "default:stone_with_iron",
 	recipe = {
-		{'default:iron_lump'},
-		{'default:stone'},
+		{"default:iron_lump"},
+		{"default:stone"},
 	}
 })
 
@@ -90,7 +98,59 @@ minetest.register_craft({
 minetest.register_craft({
 	type = "cooking",
 	output = "default:scorched_stuff",
-	recipe = "default:gravel",
+	recipe = "default:dry_shrub",
+})
+
+-- dirt_with_grass
+minetest.register_craft({
+	output = "default:dirt_with_grass",
+	recipe = {
+		{"default:junglegrass"},
+		{"default:dirt"},
+	}
+})
+
+-- locked_chest from chest
+minetest.register_craft({
+	output = "default:chest_locked",
+	recipe = {
+		{"default:steel_ingot"},
+		{"default:chest"},
+	}
+})
+
+-- sapling from leaves and sticks
+minetest.register_craft({
+	output = "default:sapling",
+	recipe = {
+		{"default:leaves", "default:leaves", "default:leaves"},
+		{"default:leaves", "default:leaves", "default:leaves"},
+		{"", "default:stick", ""},
+	}
+})
+
+-- recycle ignots from block
+minetest.register_craft({
+	output = "default:steel_ingot 9",
+	recipe = {
+		{"default:steelblock"},
+	}
+})
+
+-- recycle sand from sandstone
+minetest.register_craft({
+	output = "default:sand 4",
+	recipe = {
+		{"default:sandstone"},
+	}
+})
+
+-- recycle desert_sand from desert_stone
+minetest.register_craft({
+	output = "default:desert_sand 4",
+	recipe = {
+		{"default:desert_stone"},
+	}
 })
 
 
@@ -154,14 +214,14 @@ minetest.register_node(":default:stone", {
 	drop = {
 		max_items = 1,
 		items = {
-			{items = {'default:nyancat'}, rarity = 1000},
-			{items = {'default:mese'}, rarity = 250},
-			{items = {'default:iron_lump'}, rarity = 100},
-			{items = {'default:coal_lump'}, rarity = 20},
-			{items = {'default:desert_sand'}, rarity = 16},
-			{items = {'default:sand'}, rarity = 8},
-			{items = {'default:dirt'}, rarity = 3},
-			{items = {'default:cobble'}}
+			{items = {"default:nyancat"}, rarity = 255},
+			{items = {"default:mese"}, rarity = 150},
+			{items = {"default:iron_lump"}, rarity = 80},
+			{items = {"default:coal_lump"}, rarity = 20},
+			{items = {"default:desert_sand"}, rarity = 16},
+			{items = {"default:sand"}, rarity = 8},
+			{items = {"default:dirt"}, rarity = 3},
+			{items = {"default:cobble"}}
 		}
 	},
 	legacy_mineral = true,
@@ -188,17 +248,9 @@ minetest.register_node(":default:leaves", {
 	drop = {
 		max_items = 1,
 		items = {
-			{
-				items = {'default:sapling'},
-				rarity = 15,
-			},
-			{
-				items = {'default:stick'},
-				rarity = 10,
-			},
-			{
-				items = {'default:leaves'},
-			}
+			{items = {"default:sapling"}, rarity = 15},
+			{items = {"default:stick"}, rarity = 10},
+			{items = {"default:leaves"}}
 		}
 	},
 	climbable = true,
