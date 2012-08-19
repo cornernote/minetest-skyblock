@@ -1,12 +1,10 @@
 ----------------------------------
-MINETEST SKYBLOCK
+SKYBLOCK FOR MINETEST
 ----------------------------------
 
-Copyright (C) 2012 cornernote, Brett O'Donnell <cornernote@gmail.com>
-
-Zip Download: https://github.com/cornernote/minetest-skyblock/zipball/master
+Copyright (c) 2012 cornernote, Brett O'Donnell <cornernote@gmail.com>
 Source Code: https://github.com/cornernote/minetest-skyblock
-
+License: GPLv3
 
 
 ----------------------------------
@@ -62,8 +60,8 @@ Your mission is to build the following:
 
 1) stone generator
 2) tree farm
-3) house (hint, learn to craft and cook)
-4) infinite water source (hint, diagonal water)
+3) a house
+4) infinite water source
 5) external house decoration
 6) water feature
 7) internal house decoration
@@ -83,7 +81,7 @@ PLAYING INSTRUCTIONS
 
 -- Death Hurts --
 
-If you fall below skyblock.WORLD_BOTTOM you will lose all your items and die.
+If you fall below skyblock.WORLD_BOTTOM you will have to restart at a new spawn point.
 
 
 -- Crafting --

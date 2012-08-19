@@ -1,7 +1,10 @@
 --[[
 
-SkyBlock Craft
-Copyright (C) 2012 cornernote, Brett O'Donnell <cornernote@gmail.com>
+SkyBlock for MineTest
+
+Copyright (c) 2012 cornernote, Brett O'Donnell <cornernote@gmail.com>
+Source Code: https://github.com/cornernote/minetest-skyblock
+License: GPLv3
 
 REGISTER CRAFT
 
