@@ -60,11 +60,24 @@ skyblock.empty_inventory = function(player)
 end
 
 
+-- check if a player has a spawn position assigned, if so return it
+skyblock.has_spawn = function(player_name)
+	local spawn = spawnpos[player_name]
+	dbg("has_spawn() for "..player_name.." is "..dump(spawn))
+	if spawn then
+		return spawn
+	end
+end
+
+
 -- get players spawn position
 skyblock.get_spawn = function(player_name)
 	local spawn = spawnpos[player_name]
-	dbg("get_spawn() for "..player_name.." is "..dump(spawn))
-	return spawn
+	if spawn and minetest.env:get_node(spawn).name == "skyblock:spawn" then
+		dbg("get_spawn() for "..player_name.." is "..dump(spawn))
+		return spawn
+	end
+	dbg("get_spawn() for "..player_name.." is unknown")
 end
 
 
@@ -101,16 +114,16 @@ end
 -- handle player spawn setup
 skyblock.spawn_player = function(player)
 	dbg("spawn_player() "..player:get_player_name())
+
 	-- find the player spawn point
-	local spawn = skyblock.get_spawn(player:get_player_name())
+	local spawn = skyblock.has_spawn(player:get_player_name())
 	if spawn == nil then
 		spawn = skyblock.get_next_spawn()
 		skyblock.set_spawn(player:get_player_name(),spawn)
 	end
-	local node = minetest.env:get_node(spawn)
 	
 	-- already has a spawn, teleport and return true 
-	if node.name == "skyblock:spawn" then
+	if minetest.env:get_node(spawn).name == "skyblock:spawn" then
 		player:setpos({x=spawn.x,y=spawn.y+skyblock.SPAWN_HEIGHT,z=spawn.z})
 		return true
 	end
