@@ -2,14 +2,18 @@
 SKYBLOCK FOR MINETEST
 ----------------------------------
 
+
 Copyright (c) 2012 cornernote, Brett O'Donnell <cornernote@gmail.com>
+
 Source Code: https://github.com/cornernote/minetest-skyblock
 License: GPLv3
+
 
 
 ----------------------------------
 DESCRIPTION
 ----------------------------------
+
 
 Build a world starting from a small island in the sky.
 
@@ -33,6 +37,7 @@ Because of this, some things have to be different:
 - falling below skyblock.WORLD_BOTTOM results in death
 - flowing lava and water collide to make stone
 - dig stone to randomly drop some items
+- crafts to allow access to all items
 - prevent chopping down trees with bare hands
 - abm and function to grow trees so the shape is different
 - abm to turn dirt to dirt_with_grass and back
@@ -43,12 +48,15 @@ Because of this, some things have to be different:
 INSTALL INSTRUCTIONS
 ----------------------------------
 
-Option 1: as a mod
-copy skyblock to /minetest/mods/minetest/
 
-Option 2: as a game mode
+1) rename cornernote-minetest-skyblock-* to skyblock
+
+2.a) as a mod
+move skyblock into /minetest/mods/minetest/
+OR
+2.b) as a game mode
 copy /minetest/games/minetest_game to /minetest/games/skyblock_game
-copy skyblock to /minetest/games/skyblock_game/mods/
+move skyblock into /minetest/games/skyblock_game/mods/
 
 
 
@@ -149,8 +157,8 @@ The rest is up to you.  Load your favorite minetest mods and start building your
 SINGLEPLAYER MAP
 ----------------------------------
 
-I have included 2 worldedit schems that will allow you to load the L-shaped map that
-you may be familiar with.
+I have included 2 worldedit schems that will allow you to load the L-shaped map similar to 
+the video above.
 
 schems/skyblock.we      <-- just the dirt
 schems/skyblock_plus.we <-- dirt, chest and tree
