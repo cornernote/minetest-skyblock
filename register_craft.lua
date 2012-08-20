@@ -17,15 +17,6 @@ minetest.register_craft({
 	additional_wear = -0.20,
 })
 
--- clay
-minetest.register_craft({
-	output = "default:clay",
-	recipe = {
-		{"default:dirt", "default:dirt"},
-		{"default:dirt", "default:dirt"},
-	}
-})
-
 -- desert_stone
 minetest.register_craft({
 	output = "default:desert_stone",
@@ -64,9 +55,26 @@ minetest.register_craft({
 
 -- gravel
 minetest.register_craft({
-	type = "cooking",
 	output = "default:gravel",
-	recipe = "default:mossycobble",
+	recipe = {
+		{"default:cobble"},
+	}
+})
+
+-- dirt
+minetest.register_craft({
+	output = "default:dirt",
+	recipe = {
+		{"default:gravel"},
+	}
+})
+
+-- clay
+minetest.register_craft({
+	output = "default:clay",
+	recipe = {
+		{"default:dirt"},
+	}
 })
 
 -- scorched_stuff

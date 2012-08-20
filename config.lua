@@ -19,3 +19,12 @@ skyblock.WORLD_WIDTH = 100
 
 -- How far down (in nodes) before a player dies and is respawned
 skyblock.WORLD_BOTTOM = -32
+
+-- Delay between skyblock respawn checks
+skyblock.SPAWN_THROTLE = 2
+
+-- the number of nodes above the spawn node where players are spawned
+skyblock.SPAWN_HEIGHT = 4
+
+-- Debug mode
+skyblock.DEBUG = 1

@@ -111,6 +111,11 @@ CCC  <-- Furnace
 C-C  C=cobblestone
 CCC
 
+To learn all of the crafts you can either peek inside the register_craft.lua file, or 
+install one of these mods:
+Craft Guide - http://minetest.net/forum/viewtopic.php?id=2334
+Game Wiki - http://minetest.net/forum/viewtopic.php?id=2479
+
 
 -- Stone Generator --
 

@@ -29,7 +29,7 @@ minetest.register_abm({
 	action = function(pos, node)
 		pos.y = pos.y+1
 		if minetest.env:get_node(pos).name == "air" and minetest.env:find_node_near(pos, 4, {"default:dry_shrub","default:junglegrass"})==nil then
-			if math.random(0,3) then
+			if math.random(1,10) > 4 then
 				minetest.env:set_node(pos, {name="default:dry_shrub"})
 			else
 				minetest.env:set_node(pos, {name="default:junglegrass"})
