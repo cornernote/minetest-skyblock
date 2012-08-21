@@ -12,11 +12,23 @@ REGISTER NODE
 
 
 -- indestructable spawn block
-minetest.register_node("skyblock:spawn", {
-	description = "spawnblock",
-	tiles = {"default_nc_rb.png"},
-	is_ground_content = true,
-})
+if skyblock.NEW_SPAWN_ON_DEATH == 1 then
+	-- not diggable
+	minetest.register_node("skyblock:spawn", {
+		description = "spawnblock",
+		tiles = {"default_nc_rb.png"},
+		is_ground_content = true,
+	})
+else
+	-- respawn on dig
+	minetest.register_node("skyblock:spawn", {
+		description = "spawnblock",
+		tiles = {"default_nc_rb.png"},
+		is_ground_content = true,
+		groups = {crumbly=2,cracky=2},
+		on_dig = skyblock.on_dig_spawn,
+	})
+end
 
 -- stone should give a random drop
 minetest.register_node(":default:stone", {
@@ -64,4 +76,14 @@ minetest.register_node(":default:leaves", {
 	climbable = true,
 	sounds = default.node_sound_leaves_defaults(),
 	walkable = false,
+})
+
+-- sandstone should drop 4 sand
+minetest.register_node(":default:sandstone", {
+	description = "Sandstone",
+	tiles = {"default_sandstone.png"},
+	is_ground_content = true,
+	groups = {crumbly=2,cracky=2},
+	drop = 'default:sandstone',
+	sounds = default.node_sound_stone_defaults(),
 })

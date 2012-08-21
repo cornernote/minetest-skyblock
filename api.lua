@@ -17,6 +17,7 @@ local last_start_id = 0
 local start_positions = {}
 local spawned_players = {}
 local spawnpos = {}
+local spawn_diggers = {}
 local filename = minetest.get_worldpath()..'/skyblock'
 
 -- debug
@@ -39,9 +40,56 @@ skyblock.give_inventory = function(player)
 	player:get_inventory():add_item('main', 'default:tree')
 	player:get_inventory():add_item('main', 'default:leaves 6')
 	player:get_inventory():add_item('main', 'default:water_source 2')
-	player:get_inventory():add_item('main', 'default:steel_ingot 3')
+	player:get_inventory():add_item('main', 'bucket:bucket_lava')
 	player:get_inventory():add_item('main', 'default:coal_lump')
 	player:get_inventory():add_item('main', 'default:iron_lump')
+end
+
+
+-- check inventory (needs to match the given items above)
+skyblock.check_inventory = function(player)
+	dbg("check_inventory() for "..player:get_player_name())
+	local inv = player:get_inventory()
+	local stack
+	
+	stack = inv:get_stack('main', 1)
+	if stack:get_name() ~= 'default:tree' or stack:get_count() ~= 1 then
+		return false
+	end
+	stack = inv:get_stack('main', 2)
+	if stack:get_name() ~= 'default:leaves' or stack:get_count() ~= 6 then
+		return false
+	end
+	stack = inv:get_stack('main', 3)
+	if stack:get_name() ~= 'default:water_source' or stack:get_count() ~= 2 then
+		return false
+	end
+	stack = inv:get_stack('main', 4)
+	if stack:get_name() ~= 'bucket:bucket_lava' or stack:get_count() ~= 1 then
+		return false
+	end
+	stack = inv:get_stack('main', 5)
+	if stack:get_name() ~= 'default:coal_lump' or stack:get_count() ~= 1 then
+		return false
+	end
+	stack = inv:get_stack('main', 6)
+	if stack:get_name() ~= 'default:iron_lump' or stack:get_count() ~= 1 then
+		return false
+	end
+	for i=7,inv:get_size("main") do
+		stack = inv:get_stack('main', i)
+		if stack:get_name() ~= "" then
+			return false
+		end
+	end
+	for i=1,inv:get_size("craft") do
+		stack = inv:get_stack('craft', i)
+		if stack:get_name() ~= "" then
+			return false
+		end
+	end
+	
+	return true
 end
 
 
@@ -50,12 +98,12 @@ skyblock.empty_inventory = function(player)
 	dbg("empty_inventory() from "..player:get_player_name())
 	local inv = player:get_inventory()
 	if not inv:is_empty("main") then
-		for i=1,32 do
+		for i=1,inv:get_size("main") do
 			inv:set_stack("main", i, nil)
 		end
 	end
 	if not inv:is_empty("craft") then
-		for i=1,9 do
+		for i=1,inv:get_size("craft") do
 			inv:set_stack("craft", i, nil)
 		end
 	end
@@ -98,7 +146,7 @@ skyblock.set_spawn = function(player_name, pos)
 end
 
 
--- get next spawn position using spiral matrix
+-- get next spawn position
 skyblock.get_next_spawn = function()
 	dbg("get_next_spawn()")
 	last_start_id = last_start_id+1
@@ -107,7 +155,7 @@ skyblock.get_next_spawn = function()
 	io.close(output)
 	local spawn = start_positions[last_start_id]
 	if spawn == nil then
-		print("ERROR - no spawn position at id="..last_start_id)
+		print("MAJOR ERROR - no spawn position at id="..last_start_id)
 	end
 	return spawn
 end
@@ -131,14 +179,113 @@ skyblock.spawn_player = function(player)
 	end
 
 	-- add the start block and teleport the player
-	skyblock.build_start_blocks(spawn)
+	skyblock.make_spawn_blocks(spawn)
 	player:setpos({x=spawn.x,y=spawn.y+skyblock.SPAWN_HEIGHT,z=spawn.z})
 end
 
 
+-- handle digging the spawn block
+skyblock.on_dig_spawn = function(pos, node, digger)
+	local player_name = digger:get_player_name()
+	local spawn = skyblock.get_spawn(player_name)
+	dbg("on_dig_spawn() for "..player_name)
+
+	-- setup trigger for new spawn
+	spawn_diggers[player_name] = true
+
+	-- kill them
+	digger:set_hp(0)
+end
+
+
+-- on_respawn
+skyblock.on_respawnplayer = function(player)
+	local player_name = player:get_player_name()
+	local spawn = skyblock.get_spawn(player_name)
+	dbg("on_respawnplayer() for "..player_name)
+
+	-- empty inventory
+	skyblock.empty_inventory(player)
+	
+	-- give them a new position
+	if skyblock.NEW_SPAWN_ON_DEATH == 1 or spawn_diggers[player_name] ~= nil then
+		if spawn_diggers[player_name] ~= nil then spawn_diggers[player_name] = nil end
+		
+		-- give inventory
+		skyblock.give_inventory(player)
+
+		-- unset old spawn position
+		spawned_players[player_name] = nil
+		skyblock.set_spawn(player_name, nil)
+		skyblock.set_spawn(player_name.."_DEAD", spawn)
+		
+	end
+	
+	-- set new spawn point and respawn
+	skyblock.spawn_player(player)
+	return true
+end
+
+
+-- globalstep for positioning
+local spawn_timer = 0
+skyblock.globalstep = function(dtime)
+	spawn_timer = spawn_timer + dtime
+	for k,player in ipairs(minetest.get_connected_players()) do
+		local player_name = player:get_player_name()
+		
+		-- player has not spawned yet
+		if spawned_players[player_name] == nil then
+
+			-- handle new player spawn setup (no more than once per interval)
+			if spawn_timer > skyblock.SPAWN_THROTLE then
+				dbg("globalstep() new spawn for "..player_name.." (not spawned)")
+				if skyblock.get_spawn(player:get_player_name()) or skyblock.spawn_player(player) then
+					spawned_players[player:get_player_name()] = true
+				end
+			end
+
+		-- player is spawned
+		else
+			local pos = player:getpos()
+
+			-- hit the bottom, kill them (no more than once per interval)
+			if spawn_timer > skyblock.SPAWN_THROTLE then
+				if pos.y < skyblock.WORLD_BOTTOM then
+					if skyblock.check_inventory(player) then
+						dbg("globalstep() "..player_name.." has fallen too far, but dont kill them... yet =)")
+						local spawn = skyblock.has_spawn(player:get_player_name())
+						if spawn then
+							skyblock.make_spawn_blocks(spawn)
+							skyblock.spawn_player(player)
+						end
+					else
+						dbg("globalstep() "..player_name.." has fallen too far at "..dump(pos).."... kill them now")
+						player:set_hp(0)
+					end
+				end
+			end
+			
+			-- walking on dirt_with_grass, change to dirt_with_grass_footsteps
+			local np = {x=pos.x,y=pos.y-1,z=pos.z}
+			if (minetest.env:get_node(np).name == "default:dirt_with_grass") then
+				minetest.env:add_node(np, {name="default:dirt_with_grass_footsteps"})
+			end
+			
+		end
+		
+	end
+	
+	-- reset the spawn_timer
+	if spawn_timer > skyblock.SPAWN_THROTLE then	
+		spawn_timer = 0
+	end
+end
+
+
 -- build start block
-skyblock.build_start_blocks = function(pos)
-	dbg("build_start_blocks() at "..dump(pos))
+skyblock.make_spawn_blocks = function(pos)
+	dbg("make_spawn_blocks() at "..dump(pos))
 	
 	-- level 2 - air
 	minetest.env:add_node({x=pos.x-1,y=pos.y+2,z=pos.z-1}, {name="air"})
@@ -195,76 +342,6 @@ skyblock.build_start_blocks = function(pos)
 	minetest.env:add_node({x=pos.x+1,y=pos.y-2,z=pos.z}, {name="default:dirt"})
 	minetest.env:add_node({x=pos.x+1,y=pos.y-2,z=pos.z+1}, {name="default:dirt"})
 
-end
-
-
--- on_respawn
-skyblock.on_respawnplayer = function(player)
-	local player_name = player:get_player_name()
-	local spawn = skyblock.get_spawn(player_name)
-	dbg("on_respawnplayer() for "..player_name)
-
-	-- setup inventory
-	skyblock.empty_inventory(player)
-	skyblock.give_inventory(player)
-
-	-- unset old spawn position
-	if skyblock.NEW_SPAWN_ON_DEATH then
-		spawned_players[player_name] = nil
-		skyblock.set_spawn(player_name, nil)
-		skyblock.set_spawn(player_name.."_DEAD", spawn)
-	end
-	
-	-- set new spawn point and respawn
-	skyblock.spawn_player(player)
-	return true
-end
-
-
--- globalstep for positioning
-local spawn_timer = 0
-skyblock.globalstep = function(dtime)
-	spawn_timer = spawn_timer + dtime
-	for k,player in ipairs(minetest.get_connected_players()) do
-		local player_name = player:get_player_name()
-		
-		-- player has not spawned yet
-		if spawned_players[player_name] == nil then
-
-			-- handle new player spawn setup (no more than once per interval)
-			if spawn_timer > skyblock.SPAWN_THROTLE then
-				dbg("globalstep() new spawn for "..player_name.." (not spawned)")
-				if skyblock.get_spawn(player:get_player_name()) or skyblock.spawn_player(player) then
-					spawned_players[player:get_player_name()] = true
-				end
-			end
-
-		-- player is spawned
-		else
-			local pos = player:getpos()
-
-			-- hit the bottom, kill them (no more than once per interval)
-			if spawn_timer > skyblock.SPAWN_THROTLE then
-				if pos.y < skyblock.WORLD_BOTTOM then
-					dbg("globalstep() "..player_name.." has fallen too far at "..dump(pos))
-					player:set_hp(0)
-				end
-			end
-			
-			-- walking on dirt_with_grass, change to dirt_with_grass_footsteps
-			local np = {x=pos.x,y=pos.y-1,z=pos.z}
-			if (minetest.env:get_node(np).name == "default:dirt_with_grass") then
-				minetest.env:add_node(np, {name="default:dirt_with_grass_footsteps"})
-			end
-			
-		end
-		
-	end
-	
-	-- reset the spawn_timer
-	if spawn_timer > skyblock.SPAWN_THROTLE then	
-		spawn_timer = 0
-	end
 end
 
 
