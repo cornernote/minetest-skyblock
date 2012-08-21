@@ -19,6 +19,9 @@ skyblock.START_GAP = 64
 -- Radius of the starting sphere (0 to disable)
 skyblock.SPHERE_RADIUS = 4
 
+-- Width of the hollow sphere radius (0 for solid sphere)
+skyblock.SPHERE_HOLLOW = 1
+
 -- Which node to use for the sphere
 skyblock.SPHERE_NODE = "default:dirt"
 

@@ -316,7 +316,7 @@ skyblock.make_spawn_blocks = function(pos)
 	
 	-- sphere
 	if skyblock.SPHERE_RADIUS > 0 then
-		skyblock.make_hsphere({x=pos.x,y=pos.y-skyblock.SPHERE_RADIUS,z=pos.z},skyblock.SPHERE_RADIUS,skyblock.SPHERE_NODE,1)
+		skyblock.make_sphere({x=pos.x,y=pos.y-skyblock.SPHERE_RADIUS,z=pos.z},skyblock.SPHERE_RADIUS,skyblock.SPHERE_NODE,skyblock.SPHERE_HOLLOW)
 	end
 	
 	-- level 2 - air
@@ -460,21 +460,42 @@ skyblock.generate_tree = function(pos)
 end
 
 
--- sphere (taken from multinode by mauvebic)
-skyblock.make_hsphere =  function(pos,radius,nodename,hollow)
-     pos.x = math.floor(pos.x+0.5)
-     pos.y = math.floor(pos.y+0.5)
-     pos.z = math.floor(pos.z+0.5)
-     for x=-radius,radius do
-     for y=-radius,radius do
-     for z=-radius,radius do
+-- hollow sphere (taken from multinode by mauvebic)
+skyblock.make_sphere =  function(pos,radius,nodename,hollow)
+	if hollow == 0 then
+		skyblock.make_solid_sphere(pos,radius,nodename)
+		return
+	end
+	pos.x = math.floor(pos.x+0.5)
+	pos.y = math.floor(pos.y+0.5)
+	pos.z = math.floor(pos.z+0.5)
+	for x=-radius,radius do
+	for y=-radius,radius do
+	for z=-radius,radius do
 		if x*x+y*y+z*z >= (radius-hollow) * (radius-hollow) + (radius-hollow) 
 		and x*x+y*y+z*z <= radius * radius + radius then
 			minetest.env:add_node({x=pos.x+x,y=pos.y+y,z=pos.z+z},{name=nodename})
-        end
-     end
-     end
-     end
+		end
+	end
+	end
+	end
+end
+
+
+-- sphere (taken from multinode by mauvebic)
+skyblock.make_solid_sphere =  function(pos,radius,nodename)
+	pos.x = math.floor(pos.x+0.5)
+	pos.y = math.floor(pos.y+0.5)
+	pos.z = math.floor(pos.z+0.5)
+	for x=-SPHERE_SIZE,SPHERE_SIZE do
+	for y=-SPHERE_SIZE,SPHERE_SIZE do
+	for z=-SPHERE_SIZE,SPHERE_SIZE do
+		if x*x+y*y+z*z <= SPHERE_SIZE * SPHERE_SIZE + SPHERE_SIZE then
+			minetest.env:add_node({x=pos.x+x,y=pos.y+y,z=pos.z+z},{name=nodename})
+		end
+	end
+	end
+	end
 end
 
 
