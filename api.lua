@@ -175,12 +175,14 @@ skyblock.spawn_player = function(player)
 	-- already has a spawn, teleport and return true 
 	if minetest.env:get_node(spawn).name == "skyblock:spawn" then
 		player:setpos({x=spawn.x,y=spawn.y+skyblock.SPAWN_HEIGHT,z=spawn.z})
+		player:set_hp(20)
 		return true
 	end
 
 	-- add the start block and teleport the player
 	skyblock.make_spawn_blocks(spawn)
 	player:setpos({x=spawn.x,y=spawn.y+skyblock.SPAWN_HEIGHT,z=spawn.z})
+	player:set_hp(20)
 end
 
 
