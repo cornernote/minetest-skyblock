@@ -63,7 +63,7 @@ minetest.register_craft({
 
 -- dirt
 minetest.register_craft({
-	output = "default:dirt",
+	output = "default:dirt 2",
 	recipe = {
 		{"default:gravel"},
 	}

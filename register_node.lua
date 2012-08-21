@@ -30,8 +30,8 @@ minetest.register_node(":default:stone", {
 			{items = {"default:mese"}, rarity = 150},
 			{items = {"default:iron_lump"}, rarity = 80},
 			{items = {"default:coal_lump"}, rarity = 20},
-			{items = {"default:desert_sand"}, rarity = 16},
-			{items = {"default:sand"}, rarity = 10},
+			{items = {"default:desert_stone"}, rarity = 16},
+			{items = {"default:sandstone"}, rarity = 10},
 			{items = {"default:cobble"}}
 		}
 	},
