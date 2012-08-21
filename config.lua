@@ -30,4 +30,4 @@ skyblock.SPAWN_THROTLE = 2
 skyblock.SPAWN_HEIGHT = 4
 
 -- Debug mode
-skyblock.DEBUG = 1
+skyblock.DEBUG = 0

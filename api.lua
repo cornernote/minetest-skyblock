@@ -40,6 +40,8 @@ skyblock.give_inventory = function(player)
 	player:get_inventory():add_item('main', 'default:leaves 6')
 	player:get_inventory():add_item('main', 'default:water_source 2')
 	player:get_inventory():add_item('main', 'default:steel_ingot 3')
+	player:get_inventory():add_item('main', 'default:coal_lump')
+	player:get_inventory():add_item('main', 'default:iron_lump')
 end
 
 

@@ -28,9 +28,7 @@ minetest.register_node(":default:stone", {
 		max_items = 1,
 		items = {
 			{items = {"default:mese"}, rarity = 150},
-			{items = {"default:iron_lump"}, rarity = 80},
-			{items = {"default:coal_lump"}, rarity = 20},
-			{items = {"default:desert_stone"}, rarity = 16},
+			{items = {"default:desert_stone"}, rarity = 20},
 			{items = {"default:sandstone"}, rarity = 10},
 			{items = {"default:cobble"}}
 		}
@@ -59,9 +57,7 @@ minetest.register_node(":default:leaves", {
 	drop = {
 		max_items = 1,
 		items = {
-			{items = {"default:nyancat"}, rarity = 150},
-			{items = {"default:stick"}, rarity = 20},
-			{items = {"default:sapling"}, rarity = 15},
+			{items = {"default:nyancat"}, rarity = 500},
 			{items = {"default:leaves"}}
 		}
 	},
