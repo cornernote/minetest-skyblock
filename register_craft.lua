@@ -37,7 +37,7 @@ minetest.register_craft({
 
 -- stone_with_coal
 minetest.register_craft({
-	output = "default:stone_with_coal",
+	output = "default:stone_with_coal 2",
 	recipe = {
 		{"default:coal_lump"},
 		{"default:stone"},
@@ -46,7 +46,7 @@ minetest.register_craft({
 
 -- stone_with_iron
 minetest.register_craft({
-	output = "default:stone_with_iron",
+	output = "default:stone_with_iron 2",
 	recipe = {
 		{"default:iron_lump"},
 		{"default:stone"},
@@ -55,7 +55,7 @@ minetest.register_craft({
 
 -- gravel
 minetest.register_craft({
-	output = "default:gravel",
+	output = "default:gravel 4",
 	recipe = {
 		{"default:cobble"},
 	}
@@ -80,7 +80,7 @@ minetest.register_craft({
 -- scorched_stuff
 minetest.register_craft({
 	type = "cooking",
-	output = "default:scorched_stuff",
+	output = "default:scorched_stuff 4",
 	recipe = "default:dry_shrub",
 })
 
