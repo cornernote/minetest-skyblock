@@ -21,6 +21,11 @@ minetest.register_on_respawnplayer(function(player)
 	return skyblock.on_respawnplayer(player)
 end)
 
+-- handle map generation
+minetest.register_on_generated(function(minp, maxp)
+	skyblock.on_generated(minp, maxp)
+end)
+
 -- register the game after the server starts
 minetest.after(10, function()
 

@@ -285,6 +285,31 @@ skyblock.globalstep = function(dtime)
 end
 
 
+-- handle flatland generation (code taken from flatland by kddekadenz)
+skyblock.on_generated = function(minp, maxp)
+	if skyblock.FLATLAND_TOP_NODE == "air" and name=skyblock.FLATLAND_BOTTOM_NODE == "air" then
+		return
+	end
+	for x = minp.x, maxp.x do
+		for z = minp.z, maxp.z do
+			for ly = minp.y, maxp.y do
+			local y = maxp.y + minp.y - ly
+			local p = {x = x, y = y, z = z}
+				if y > 2 then
+					minetest.env:remove_node(p)
+				end
+				if y < 2 then
+					minetest.env:add_node(p, {name=skyblock.FLATLAND_TOP_NODE})
+				end
+				if y == 2 then
+					minetest.env:add_node(p, {name=skyblock.FLATLAND_BOTTOM_NODE})
+				end
+			end
+		end
+	end
+end
+
+
 -- build start block
 skyblock.make_spawn_blocks = function(pos)
 	dbg("make_spawn_blocks() at "..dump(pos))
@@ -316,7 +341,7 @@ skyblock.make_spawn_blocks = function(pos)
 	minetest.env:add_node({x=pos.x-1,y=pos.y,z=pos.z}, {name="default:dirt_with_grass"})
 	minetest.env:add_node({x=pos.x-1,y=pos.y,z=pos.z+1}, {name="default:dirt_with_grass"})
 	minetest.env:add_node({x=pos.x,y=pos.y,z=pos.z-1}, {name="default:dirt_with_grass"})
-	minetest.env:add_node({x=pos.x,y=pos.y,z=pos.z}, {name="skyblock:spawn"})
+	minetest.env:add_node(pos, {name="skyblock:spawn"})
 	minetest.env:add_node({x=pos.x,y=pos.y,z=pos.z+1}, {name="default:dirt_with_grass"})
 	minetest.env:add_node({x=pos.x+1,y=pos.y,z=pos.z-1}, {name="default:dirt_with_grass"})
 	minetest.env:add_node({x=pos.x+1,y=pos.y,z=pos.z}, {name="default:dirt_with_grass"})
@@ -344,6 +369,11 @@ skyblock.make_spawn_blocks = function(pos)
 	minetest.env:add_node({x=pos.x+1,y=pos.y-2,z=pos.z}, {name="default:dirt"})
 	minetest.env:add_node({x=pos.x+1,y=pos.y-2,z=pos.z+1}, {name="default:dirt"})
 
+	-- sphere
+	if skyblock.SPHERE_SIZE > 0 then
+		skyblock.make_hsphere(pos,skyblock.SPHERE_NODE,skyblock.SPHERE_SIZE,1)
+	end
+	
 end
 
 
@@ -430,6 +460,23 @@ skyblock.generate_tree = function(pos)
 end
 
 
+-- sphere (taken from multinode by mauvebic)
+skyblock.make_hsphere =  function(pos,nodename,radius,hollow)
+     pos.x = math.floor(pos.x+0.5)
+     pos.y = math.floor(pos.y+0.5)
+     pos.z = math.floor(pos.z+0.5)
+     for x=-radius,radius do
+     for y=-radius,radius do
+     for z=-radius,radius do
+		if x*x+y*y+z*z >= (radius-hollow) * (radius-hollow) + (radius-hollow) 
+		and x*x+y*y+z*z <= radius * radius + radius then
+			minetest.env:add_node({x=pos.x+x,y=pos.y+y,z=pos.z+z},{name=nodename})
+        end
+     end
+     end
+     end
+end
+
 
 --
 -- LOCAL FUNCTIONS
@@ -505,7 +552,7 @@ local load_start_positions = function()
 		local output = io.open(filename..".start_positions", "w")
 		local pos
 		for i,v in ripairs(spiralt(skyblock.WORLD_WIDTH)) do -- get positions using spiral
-			pos = {x=v.x*skyblock.START_GAP, y=0, z=v.z*skyblock.START_GAP}
+			pos = {x=v.x*skyblock.START_GAP, y=skyblock.START_HEIGHT, z=v.z*skyblock.START_GAP}
 			output:write(pos.x.." "..pos.y.." "..pos.z.."\n")
 		end
 		io.close(output)

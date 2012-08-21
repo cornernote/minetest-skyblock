@@ -16,6 +16,21 @@ skyblock.NEW_SPAWN_ON_DEATH = 0 -- 0 or 1
 -- How far apart to set players start positions
 skyblock.START_GAP = 64
 
+-- Radius of the starting sphere (0 to disable)
+skyblock.SPHERE_SIZE = 0
+
+-- Which node to use for the sphere
+skyblock.SPHERE_NODE = "air"
+
+-- The Y position the spawn nodes will appear
+skyblock.START_HEIGHT = 4
+
+-- Which node to use for the top layer
+skyblock.FLATLAND_TOP_NODE = "air"
+
+-- Which node to use for the bottom layers
+skyblock.FLATLAND_BOTTOM_NODE = "air"
+
 -- How many players will be in 1 row
 -- skyblock.WORLD_WIDTH * skyblock.WORLD_WIDTH = total players
 skyblock.WORLD_WIDTH = 100
@@ -30,4 +45,4 @@ skyblock.SPAWN_THROTLE = 2
 skyblock.SPAWN_HEIGHT = 4
 
 -- Debug mode
-skyblock.DEBUG = 0
+skyblock.DEBUG = 1
