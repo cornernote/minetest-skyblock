@@ -207,9 +207,11 @@ skyblock.on_respawnplayer = function(player)
 	skyblock.give_inventory(player)
 
 	-- unset old spawn position
-	spawned_players[player_name] = nil
-	skyblock.set_spawn(player_name, nil)
-	skyblock.set_spawn(player_name.."_DEAD", spawn)
+	if skyblock.NEW_SPAWN_ON_DEATH then
+		spawned_players[player_name] = nil
+		skyblock.set_spawn(player_name, nil)
+		skyblock.set_spawn(player_name.."_DEAD", spawn)
+	end
 	
 	-- set new spawn point and respawn
 	skyblock.spawn_player(player)

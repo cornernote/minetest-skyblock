@@ -10,6 +10,9 @@ USER CONFIG
 
 ]]--
 
+-- Should death result in a new spawn position
+skyblock.NEW_SPAWN_ON_DEATH = 0 -- 0 or 1
+
 -- How far apart to set players start positions
 skyblock.START_GAP = 64
 
@@ -27,4 +30,4 @@ skyblock.SPAWN_THROTLE = 2
 skyblock.SPAWN_HEIGHT = 4
 
 -- Debug mode
-skyblock.DEBUG = 0
+skyblock.DEBUG = 1
