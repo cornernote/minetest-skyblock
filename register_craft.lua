@@ -69,9 +69,9 @@ minetest.register_craft({
 	}
 })
 
--- clay
+-- clay_lump
 minetest.register_craft({
-	output = "default:clay",
+	output = "default:clay_lump",
 	recipe = {
 		{"default:dirt"},
 	}
