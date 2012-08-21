@@ -202,6 +202,10 @@ skyblock.on_respawnplayer = function(player)
 	local spawn = skyblock.get_spawn(player_name)
 	dbg("on_respawnplayer() for "..player_name)
 
+	-- setup inventory
+	skyblock.empty_inventory(player)
+	skyblock.give_inventory(player)
+
 	-- unset old spawn position
 	spawned_players[player_name] = nil
 	skyblock.set_spawn(player_name, nil)
@@ -239,9 +243,7 @@ skyblock.globalstep = function(dtime)
 			if spawn_timer > skyblock.SPAWN_THROTLE then
 				if pos.y < skyblock.WORLD_BOTTOM then
 					dbg("globalstep() "..player_name.." has fallen too far at "..dump(pos))
-					skyblock.empty_inventory(player)
 					player:set_hp(0)
-					skyblock.give_inventory(player)
 				end
 			end
 			
