@@ -23,8 +23,8 @@ skyblock.WORLD_BOTTOM = -32
 -- Delay between skyblock respawn checks
 skyblock.SPAWN_THROTLE = 2
 
--- the number of nodes above the spawn node where players are spawned
+-- Nodes above the spawn node where players are spawned
 skyblock.SPAWN_HEIGHT = 4
 
 -- Debug mode
-skyblock.DEBUG = 1
+skyblock.DEBUG = 0

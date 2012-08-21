@@ -24,7 +24,7 @@ local dbg = function(message)
 	if not skyblock.DEBUG then
 		return
 	end
-	print("[SkyBlock] "..message)
+	minetest.log("action", "[SkyBlock] "..message)
 end
 
 

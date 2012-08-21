@@ -23,3 +23,6 @@ dofile(minetest.get_modpath("skyblock").."/register_node.lua")
 dofile(minetest.get_modpath("skyblock").."/register_craft.lua")
 dofile(minetest.get_modpath("skyblock").."/register_abm.lua")
 dofile(minetest.get_modpath("skyblock").."/register_misc.lua")
+
+-- log that we started
+minetest.log("action", "[SkyBlock] loaded")

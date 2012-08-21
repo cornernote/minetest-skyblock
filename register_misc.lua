@@ -21,7 +21,12 @@ minetest.register_on_respawnplayer(function(player)
 	return skyblock.on_respawnplayer(player)
 end)
 
--- handle globalstep
-minetest.register_globalstep(function(dtime)
-	return skyblock.globalstep(dtime)
+-- register the game after the server starts
+minetest.after(10, function()
+
+	-- handle globalstep
+	minetest.register_globalstep(function(dtime)
+		return skyblock.globalstep(dtime)
+	end)
+
 end)
