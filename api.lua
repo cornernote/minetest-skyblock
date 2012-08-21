@@ -287,7 +287,7 @@ end
 
 -- handle flatland generation (code taken from flatland by kddekadenz)
 skyblock.on_generated = function(minp, maxp)
-	if skyblock.FLATLAND_TOP_NODE == "air" and name=skyblock.FLATLAND_BOTTOM_NODE == "air" then
+	if skyblock.FLATLAND_TOP_NODE == "air" and skyblock.FLATLAND_BOTTOM_NODE == "air" then
 		return
 	end
 	for x = minp.x, maxp.x do
@@ -313,6 +313,11 @@ end
 -- build start block
 skyblock.make_spawn_blocks = function(pos)
 	dbg("make_spawn_blocks() at "..dump(pos))
+	
+	-- sphere
+	if skyblock.SPHERE_RADIUS > 0 then
+		skyblock.make_hsphere({x=pos.x,y=pos.y-skyblock.SPHERE_RADIUS,z=pos.z},skyblock.SPHERE_RADIUS,skyblock.SPHERE_NODE,1)
+	end
 	
 	-- level 2 - air
 	minetest.env:add_node({x=pos.x-1,y=pos.y+2,z=pos.z-1}, {name="air"})
@@ -369,11 +374,6 @@ skyblock.make_spawn_blocks = function(pos)
 	minetest.env:add_node({x=pos.x+1,y=pos.y-2,z=pos.z}, {name="default:dirt"})
 	minetest.env:add_node({x=pos.x+1,y=pos.y-2,z=pos.z+1}, {name="default:dirt"})
 
-	-- sphere
-	if skyblock.SPHERE_SIZE > 0 then
-		skyblock.make_hsphere(pos,skyblock.SPHERE_NODE,skyblock.SPHERE_SIZE,1)
-	end
-	
 end
 
 
@@ -461,7 +461,7 @@ end
 
 
 -- sphere (taken from multinode by mauvebic)
-skyblock.make_hsphere =  function(pos,nodename,radius,hollow)
+skyblock.make_hsphere =  function(pos,radius,nodename,hollow)
      pos.x = math.floor(pos.x+0.5)
      pos.y = math.floor(pos.y+0.5)
      pos.z = math.floor(pos.z+0.5)

@@ -17,10 +17,10 @@ skyblock.NEW_SPAWN_ON_DEATH = 0 -- 0 or 1
 skyblock.START_GAP = 64
 
 -- Radius of the starting sphere (0 to disable)
-skyblock.SPHERE_SIZE = 0
+skyblock.SPHERE_RADIUS = 4
 
 -- Which node to use for the sphere
-skyblock.SPHERE_NODE = "air"
+skyblock.SPHERE_NODE = "default:dirt"
 
 -- The Y position the spawn nodes will appear
 skyblock.START_HEIGHT = 4
