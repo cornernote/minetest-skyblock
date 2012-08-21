@@ -135,3 +135,12 @@ minetest.register_craft({
 		{"default:desert_stone"},
 	}
 })
+
+-- jungletree turns to wood
+minetest.register_craft({
+	output = "default:wood 4",
+	recipe = {
+		{"default:jungletree"},
+	}
+})
+
