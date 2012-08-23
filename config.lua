@@ -11,7 +11,7 @@ USER CONFIG
 ]]--
 
 -- Should death result in a new spawn position
-skyblock.NEW_SPAWN_ON_DEATH = 0 -- 0 or 1
+skyblock.NEW_SPAWN_ON_DEATH = false
 
 -- How far apart to set players start positions
 skyblock.START_GAP = 64
@@ -29,7 +29,11 @@ skyblock.SPHERE_NODE = "default:dirt"
 skyblock.START_HEIGHT = 4
 
 -- Surround the player with an ocean of water
-skyblock.SEA = 1 -- 0 or 1
+skyblock.SEA = true
+
+-- Surround the player with flat land - (warning - REALLY SLOW!)
+skyblock.FLATLAND_TOP_NODE = nil -- eg: "default:dirt_with_grass"
+skyblock.FLATLAND_BOTTOM_NODE = nil -- eg: "default:dirt"
 
 -- How many players will be in 1 row
 -- skyblock.WORLD_WIDTH * skyblock.WORLD_WIDTH = total players

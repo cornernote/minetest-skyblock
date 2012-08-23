@@ -210,7 +210,7 @@ skyblock.on_respawnplayer = function(player)
 	skyblock.empty_inventory(player)
 	
 	-- give them a new position
-	if skyblock.NEW_SPAWN_ON_DEATH == 1 or spawn_diggers[player_name] ~= nil then
+	if skyblock.NEW_SPAWN_ON_DEATH or spawn_diggers[player_name] ~= nil then
 		if spawn_diggers[player_name] ~= nil then spawn_diggers[player_name] = nil end
 		
 		-- give inventory
@@ -287,7 +287,7 @@ end
 
 -- handle flatland generation (code taken from flatland by kddekadenz)
 skyblock.on_generated = function(minp, maxp)
-	if skyblock.FLATLAND_TOP_NODE == "air" and skyblock.FLATLAND_BOTTOM_NODE == "air" then
+	if (skyblock.FLATLAND_TOP_NODE == "air" or skyblock.FLATLAND_TOP_NODE == nil) and (skyblock.FLATLAND_BOTTOM_NODE == "air" or skyblock.FLATLAND_BOTTOM_NODE == nil) then
 		return
 	end
 	for x = minp.x, maxp.x do
@@ -335,7 +335,7 @@ skyblock.make_spawn_blocks = function(pos)
 
 	-- level -2 - dirt and water_source
 	minetest.env:add_node({x=pos.x,y=pos.y-2,z=pos.z}, {name="default:dirt"})
-	if skyblock.SEA == 1 then
+	if skyblock.SEA then
 		minetest.env:add_node({x=pos.x-5,y=pos.y-2,z=pos.z-5}, {name="default:water_source"})
 		minetest.env:add_node({x=pos.x-5,y=pos.y-2,z=pos.z+5}, {name="default:water_source"})
 		minetest.env:add_node({x=pos.x+5,y=pos.y-2,z=pos.z-5}, {name="default:water_source"})

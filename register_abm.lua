@@ -191,7 +191,7 @@ minetest.register_abm({
 
 
 -- water at sealevel
-if skyblock.SEA == 1 then
+if skyblock.SEA then
 	minetest.register_abm({
 		nodenames = {"default:water_flowing"},
 		neighbors = {"air"},
