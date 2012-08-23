@@ -122,7 +122,7 @@ minetest.register_abm({
 -- dirt turns to dirt_with_grass if below air
 minetest.register_abm({
 	nodenames = {"default:dirt"},
-	neighbors = {"default:air"},
+	neighbors = {"air"},
 	interval = 50,
 	chance = 100,
 	action = function(pos)
@@ -188,3 +188,19 @@ minetest.register_abm({
 		end
 	end,
 })
+
+
+-- water at sealevel
+if skyblock.SEA == 1 then
+	minetest.register_abm({
+		nodenames = {"default:water_flowing"},
+		neighbors = {"air"},
+		interval = 1,
+		chance = 10,
+		action = function(pos, node)
+			if pos.y <= 2 then
+				minetest.env:set_node(pos, {name="default:water_source"})
+			end
+		end
+	})
+end

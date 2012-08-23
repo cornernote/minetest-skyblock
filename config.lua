@@ -19,8 +19,8 @@ skyblock.START_GAP = 64
 -- Radius of the starting sphere (0 to disable)
 skyblock.SPHERE_RADIUS = 4
 
--- Width of the hollow sphere radius (0 for solid sphere)
-skyblock.SPHERE_HOLLOW = 1
+-- Width of the hollow sphere radius (nil for solid sphere, 0 for a cool effect)
+skyblock.SPHERE_HOLLOW = nil
 
 -- Which node to use for the sphere
 skyblock.SPHERE_NODE = "default:dirt"
@@ -28,11 +28,8 @@ skyblock.SPHERE_NODE = "default:dirt"
 -- The Y position the spawn nodes will appear
 skyblock.START_HEIGHT = 4
 
--- Which node to use for the top layer
-skyblock.FLATLAND_TOP_NODE = "air"
-
--- Which node to use for the bottom layers
-skyblock.FLATLAND_BOTTOM_NODE = "air"
+-- Surround the player with an ocean of water
+skyblock.SEA = 1 -- 0 or 1
 
 -- How many players will be in 1 row
 -- skyblock.WORLD_WIDTH * skyblock.WORLD_WIDTH = total players

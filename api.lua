@@ -318,61 +318,29 @@ skyblock.make_spawn_blocks = function(pos)
 	if skyblock.SPHERE_RADIUS > 0 then
 		skyblock.make_sphere({x=pos.x,y=pos.y-skyblock.SPHERE_RADIUS,z=pos.z},skyblock.SPHERE_RADIUS,skyblock.SPHERE_NODE,skyblock.SPHERE_HOLLOW)
 	end
-	
-	-- level 2 - air
-	minetest.env:add_node({x=pos.x-1,y=pos.y+2,z=pos.z-1}, {name="air"})
-	minetest.env:add_node({x=pos.x-1,y=pos.y+2,z=pos.z}, {name="air"})
-	minetest.env:add_node({x=pos.x-1,y=pos.y+2,z=pos.z+1}, {name="air"})
-	minetest.env:add_node({x=pos.x,y=pos.y+2,z=pos.z-1}, {name="air"})
-	minetest.env:add_node({x=pos.x,y=pos.y+2,z=pos.z}, {name="air"})
-	minetest.env:add_node({x=pos.x,y=pos.y+2,z=pos.z+1}, {name="air"})
-	minetest.env:add_node({x=pos.x+1,y=pos.y+2,z=pos.z-1}, {name="air"})
-	minetest.env:add_node({x=pos.x+1,y=pos.y+2,z=pos.z}, {name="air"})
-	minetest.env:add_node({x=pos.x+1,y=pos.y+2,z=pos.z+1}, {name="air"})
 
-	-- level 1 - air
-	minetest.env:add_node({x=pos.x-1,y=pos.y+1,z=pos.z-1}, {name="air"})
-	minetest.env:add_node({x=pos.x-1,y=pos.y+1,z=pos.z}, {name="air"})
-	minetest.env:add_node({x=pos.x-1,y=pos.y+1,z=pos.z+1}, {name="air"})
-	minetest.env:add_node({x=pos.x,y=pos.y+1,z=pos.z-1}, {name="air"})
-	minetest.env:add_node({x=pos.x,y=pos.y+1,z=pos.z}, {name="air"})
-	minetest.env:add_node({x=pos.x,y=pos.y+1,z=pos.z+1}, {name="air"})
-	minetest.env:add_node({x=pos.x+1,y=pos.y+1,z=pos.z-1}, {name="air"})
-	minetest.env:add_node({x=pos.x+1,y=pos.y+1,z=pos.z}, {name="air"})
-	minetest.env:add_node({x=pos.x+1,y=pos.y+1,z=pos.z+1}, {name="air"})
-
-	-- level 0 - spawn and dirt with grass
-	minetest.env:add_node({x=pos.x-1,y=pos.y,z=pos.z-1}, {name="default:dirt_with_grass"})
-	minetest.env:add_node({x=pos.x-1,y=pos.y,z=pos.z}, {name="default:dirt_with_grass"})
-	minetest.env:add_node({x=pos.x-1,y=pos.y,z=pos.z+1}, {name="default:dirt_with_grass"})
-	minetest.env:add_node({x=pos.x,y=pos.y,z=pos.z-1}, {name="default:dirt_with_grass"})
+	-- level 0 - spawn
 	minetest.env:add_node(pos, {name="skyblock:spawn"})
-	minetest.env:add_node({x=pos.x,y=pos.y,z=pos.z+1}, {name="default:dirt_with_grass"})
-	minetest.env:add_node({x=pos.x+1,y=pos.y,z=pos.z-1}, {name="default:dirt_with_grass"})
-	minetest.env:add_node({x=pos.x+1,y=pos.y,z=pos.z}, {name="default:dirt_with_grass"})
-	minetest.env:add_node({x=pos.x+1,y=pos.y,z=pos.z+1}, {name="default:dirt_with_grass"})
 
-	-- level -1 - dirt and lava_source
-	minetest.env:add_node({x=pos.x-1,y=pos.y-1,z=pos.z-1}, {name="default:dirt"})
-	minetest.env:add_node({x=pos.x-1,y=pos.y-1,z=pos.z}, {name="default:dirt"})
-	minetest.env:add_node({x=pos.x-1,y=pos.y-1,z=pos.z+1}, {name="default:dirt"})
-	minetest.env:add_node({x=pos.x,y=pos.y-1,z=pos.z-1}, {name="default:dirt"})
-	minetest.env:add_node({x=pos.x,y=pos.y-1,z=pos.z}, {name="default:lava_source"})
-	minetest.env:add_node({x=pos.x,y=pos.y-1,z=pos.z+1}, {name="default:dirt"})
-	minetest.env:add_node({x=pos.x+1,y=pos.y-1,z=pos.z-1}, {name="default:dirt"})
-	minetest.env:add_node({x=pos.x+1,y=pos.y-1,z=pos.z}, {name="default:dirt"})
-	minetest.env:add_node({x=pos.x+1,y=pos.y-1,z=pos.z+1}, {name="default:dirt"})
+	-- level -1 - lava_source and dirt
+	for x=-1,1 do
+		for z=-1,1 do
+			if x==0 and z==0 then
+				minetest.env:add_node({x=pos.x,y=pos.y-1,z=pos.z}, {name="default:lava_source"})
+			else
+				minetest.env:add_node({x=pos.x+x,y=pos.y-1,z=pos.z+z}, {name="default:dirt"})
+			end
+		end
+	end
 
-	-- level -2 - dirt
-	minetest.env:add_node({x=pos.x-1,y=pos.y-2,z=pos.z-1}, {name="default:dirt"})
-	minetest.env:add_node({x=pos.x-1,y=pos.y-2,z=pos.z}, {name="default:dirt"})
-	minetest.env:add_node({x=pos.x-1,y=pos.y-2,z=pos.z+1}, {name="default:dirt"})
-	minetest.env:add_node({x=pos.x,y=pos.y-2,z=pos.z-1}, {name="default:dirt"})
+	-- level -2 - dirt and water_source
 	minetest.env:add_node({x=pos.x,y=pos.y-2,z=pos.z}, {name="default:dirt"})
-	minetest.env:add_node({x=pos.x,y=pos.y-2,z=pos.z+1}, {name="default:dirt"})
-	minetest.env:add_node({x=pos.x+1,y=pos.y-2,z=pos.z-1}, {name="default:dirt"})
-	minetest.env:add_node({x=pos.x+1,y=pos.y-2,z=pos.z}, {name="default:dirt"})
-	minetest.env:add_node({x=pos.x+1,y=pos.y-2,z=pos.z+1}, {name="default:dirt"})
+	if skyblock.SEA == 1 then
+		minetest.env:add_node({x=pos.x-5,y=pos.y-2,z=pos.z-5}, {name="default:water_source"})
+		minetest.env:add_node({x=pos.x-5,y=pos.y-2,z=pos.z+5}, {name="default:water_source"})
+		minetest.env:add_node({x=pos.x+5,y=pos.y-2,z=pos.z-5}, {name="default:water_source"})
+		minetest.env:add_node({x=pos.x+5,y=pos.y-2,z=pos.z+5}, {name="default:water_source"})
+	end
 
 end
 
@@ -462,36 +430,20 @@ end
 
 -- hollow sphere (taken from multinode by mauvebic)
 skyblock.make_sphere =  function(pos,radius,nodename,hollow)
-	if hollow == 0 then
-		skyblock.make_solid_sphere(pos,radius,nodename)
-		return
-	end
 	pos.x = math.floor(pos.x+0.5)
 	pos.y = math.floor(pos.y+0.5)
 	pos.z = math.floor(pos.z+0.5)
 	for x=-radius,radius do
 	for y=-radius,radius do
 	for z=-radius,radius do
-		if x*x+y*y+z*z >= (radius-hollow) * (radius-hollow) + (radius-hollow) 
-		and x*x+y*y+z*z <= radius * radius + radius then
-			minetest.env:add_node({x=pos.x+x,y=pos.y+y,z=pos.z+z},{name=nodename})
-		end
-	end
-	end
-	end
-end
-
-
--- sphere (taken from multinode by mauvebic)
-skyblock.make_solid_sphere =  function(pos,radius,nodename)
-	pos.x = math.floor(pos.x+0.5)
-	pos.y = math.floor(pos.y+0.5)
-	pos.z = math.floor(pos.z+0.5)
-	for x=-SPHERE_SIZE,SPHERE_SIZE do
-	for y=-SPHERE_SIZE,SPHERE_SIZE do
-	for z=-SPHERE_SIZE,SPHERE_SIZE do
-		if x*x+y*y+z*z <= SPHERE_SIZE * SPHERE_SIZE + SPHERE_SIZE then
-			minetest.env:add_node({x=pos.x+x,y=pos.y+y,z=pos.z+z},{name=nodename})
+		if hollow ~= nil then
+			if x*x+y*y+z*z >= (radius-hollow) * (radius-hollow) + (radius-hollow) and x*x+y*y+z*z <= radius * radius + radius then
+				minetest.env:add_node({x=pos.x+x,y=pos.y+y,z=pos.z+z},{name=nodename})
+			end
+		else
+			if x*x+y*y+z*z <= radius * radius + radius then
+				minetest.env:add_node({x=pos.x+x,y=pos.y+y,z=pos.z+z},{name=nodename})
+			end
 		end
 	end
 	end
