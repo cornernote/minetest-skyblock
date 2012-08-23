@@ -266,6 +266,23 @@ skyblock.globalstep = function(dtime)
 						player:set_hp(0)
 					end
 				end
+				
+				-- check their permissions
+				--[[
+				local privs = minetest.get_player_privs(player:get_player_name())
+				print(dump(privs))
+				if privs["fly"] then privs["fly"] = false end
+				if privs["give"] then privs["give"] = false end
+				if privs["teleport"] then privs["teleport"] = false end
+				if privs["bring"] then privs["bring"] = false end
+				if privs["settime"] then privs["settime"] = false end
+				if privs["rollback"] then privs["rollback"] = false end
+				if privs["server"] then privs["server"] = false end
+				if privs["privs"] then privs["privs"] = false end
+				if privs["ban"] then privs["ban"] = false end
+				print(dump(privs))
+				minetest.set_player_privs(player:get_player_name(), privs) -- does not seem to save
+				]]--
 			end
 			
 			-- walking on dirt_with_grass, change to dirt_with_grass_footsteps
