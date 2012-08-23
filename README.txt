@@ -23,9 +23,7 @@ http://www.youtube.com/watch?v=fsk7uZI4_NI
 
 -- So, this is just minetest without mapgen? --
 
-Well, yes and no. This release is intended to be a MINIMAL skyblock game aimed mostly 
-at other developers.  I am expecting that I will release several variations as more
-complete games, and that other developers may do the same.
+Well, yes and no. This release is intended to be a MINIMAL skyblock game aimed mostly at other developers.  I am expecting that I will release several variations as more complete games, and that other developers may do the same.
 
 
 -- What else will this change in my game? --
@@ -33,14 +31,12 @@ complete games, and that other developers may do the same.
 * WARNING * - this mod will disable all map generation in any world the mod is active!
 
 Because of this, some things have to be different:
-- death results in restarting at a new position (you lose)
+- death results in losing all your items
 - falling below skyblock.WORLD_BOTTOM results in death
 - flowing lava and water collide to make stone
-- dig stone to randomly drop some items
 - crafts to allow access to all items
 - prevent chopping down trees with bare hands
-- abm and function to grow trees so the shape is different
-- abm to turn dirt to dirt_with_grass and back
+- many abms to control spawning and growing nodes
 
 
 
@@ -89,7 +85,7 @@ PLAYING INSTRUCTIONS
 
 -- Death Hurts --
 
-If you fall below skyblock.WORLD_BOTTOM you will have to restart at a new spawn point.
+If you fall below skyblock.WORLD_BOTTOM you will lose all your items.
 
 
 -- Crafting --
@@ -119,22 +115,19 @@ CCC  <-- Furnace
 C-C  C=cobblestone
 CCC
 
-To learn all of the crafts you can either peek inside the register_craft.lua file, or 
-install one of these mods:
+To learn all of the crafts you can either peek inside the register_craft.lua file, or install one of these mods:
 Craft Guide - http://minetest.net/forum/viewtopic.php?id=2334
 Game Wiki - http://minetest.net/forum/viewtopic.php?id=2479
 
 
 -- Stone Generator --
 
-While you wait for your tree to grow, you should probably create a stone generator.  
-This is done by placing lava and water next to each other with air between.
+While you wait for your tree to grow, you should probably create a stone generator.  This is done by placing lava and water next to each other with air between.
 
 
 -- Tree Farm --
 
-Noticed those leaves in your inventory?  Craft them into a sapling then throw it on 
-the ground and it will grow into a tree.  Perhaps even an apple or jungle tree!
+Noticed those leaves in your inventory?  Craft them into a sapling then throw it on the ground and it will grow into a tree.  Perhaps even an apple or jungle tree!
 
 LLL  L=leaves   <-- Sapling
 LLL  S=stick
@@ -143,8 +136,7 @@ LLL  S=stick
 
 -- Infinite Water --
 
-If you want to create more water simply place your 2 water sources so they touch 
-diagonally.  Now when you take one with the bucket, it will be replaced.
+If you want to create more water simply place your 2 water sources so they touch diagonally.  Now when you take one with the bucket, it will be replaced.
 
 
 -- What's Next --
@@ -157,8 +149,7 @@ The rest is up to you.  Load your favorite minetest mods and start building your
 SINGLEPLAYER MAP
 ----------------------------------
 
-I have included 2 worldedit schems that will allow you to load the L-shaped map similar to 
-the video above.
+I have included 2 worldedit schems that will allow you to load the L-shaped map similar to the video above.
 
 schems/skyblock.we      <-- just the dirt
 schems/skyblock_plus.we <-- dirt, chest and tree
@@ -206,6 +197,15 @@ x+1|  17  16  15  14  13      defined by skyblock.START_GAP.
 
 Note:
 Your world will be limited to skyblock.WORLD_WIDTH*skyblock.WORLD_WIDTH players.
+
+
+
+----------------------------------
+OTHER OPTIONS
+----------------------------------
+
+
+Have a peek inside the config.lua to see other things you can change.
 
 
 
