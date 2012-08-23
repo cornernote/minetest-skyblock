@@ -251,8 +251,10 @@ skyblock.globalstep = function(dtime)
 		else
 			local pos = player:getpos()
 
-			-- hit the bottom, kill them (no more than once per interval)
+			-- only check once per throttle time
 			if spawn_timer > skyblock.SPAWN_THROTLE then
+			
+				-- hit the bottom, kill them (no more than once per interval)
 				if pos.y < skyblock.WORLD_BOTTOM then
 					if skyblock.check_inventory(player) then
 						dbg("globalstep() "..player_name.." has fallen too far, but dont kill them... yet =)")
@@ -267,22 +269,25 @@ skyblock.globalstep = function(dtime)
 					end
 				end
 				
-				-- check their permissions
-				--[[
-				local privs = minetest.get_player_privs(player:get_player_name())
-				print(dump(privs))
-				if privs["fly"] then privs["fly"] = false end
-				if privs["give"] then privs["give"] = false end
-				if privs["teleport"] then privs["teleport"] = false end
-				if privs["bring"] then privs["bring"] = false end
-				if privs["settime"] then privs["settime"] = false end
-				if privs["rollback"] then privs["rollback"] = false end
-				if privs["server"] then privs["server"] = false end
-				if privs["privs"] then privs["privs"] = false end
-				if privs["ban"] then privs["ban"] = false end
-				print(dump(privs))
-				minetest.set_player_privs(player:get_player_name(), privs) -- does not seem to save
-				]]--
+				-- check for cheaters
+				local privs = minetest.get_player_privs(player_name)
+				local cheat=false
+				if privs["fly"] then privs["fly"] = false cheat=true end
+				if privs["give"] then privs["give"] = false cheat=true end
+				if privs["teleport"] then privs["teleport"] = false cheat=true end
+				if privs["bring"] then privs["bring"] = false cheat=true end
+				if privs["settime"] then privs["settime"] = false cheat=true end
+				if privs["rollback"] then privs["rollback"] = false cheat=true end
+				if privs["server"] then privs["server"] = false cheat=true end
+				if privs["privs"] then privs["privs"] = false cheat=true end
+				if privs["ban"] then privs["ban"] = false cheat=true end
+				if cheat then
+					minetest.chat_send_player(player_name, "CHEATING IS NOT ALLOWED!")
+					minetest.chat_send_all(player_name.." was CHEATING! (but we stopped that)")
+					minetest.set_player_privs(player_name, privs)
+					minetest.auth_reload()
+				end
+				
 			end
 			
 			-- walking on dirt_with_grass, change to dirt_with_grass_footsteps
