@@ -299,10 +299,10 @@ skyblock.on_generated = function(minp, maxp)
 					minetest.env:remove_node(p)
 				end
 				if y < 2 then
-					minetest.env:add_node(p, {name=skyblock.FLATLAND_TOP_NODE})
+					minetest.env:add_node(p, {name=skyblock.FLATLAND_BOTTOM_NODE})
 				end
 				if y == 2 then
-					minetest.env:add_node(p, {name=skyblock.FLATLAND_BOTTOM_NODE})
+					minetest.env:add_node(p, {name=skyblock.FLATLAND_TOP_NODE})
 				end
 			end
 		end
@@ -333,19 +333,25 @@ skyblock.make_spawn_blocks = function(pos)
 		end
 	end
 
-	-- level -2 - dirt and water_source
+	-- level -2 - dirt
 	minetest.env:add_node({x=pos.x,y=pos.y-2,z=pos.z}, {name="default:dirt"})
-	if skyblock.SEA then
-		minetest.env:add_node({x=pos.x-5,y=pos.y-2,z=pos.z-5}, {name="default:water_source"})
-		minetest.env:add_node({x=pos.x-5,y=pos.y-2,z=pos.z+5}, {name="default:water_source"})
-		minetest.env:add_node({x=pos.x+5,y=pos.y-2,z=pos.z-5}, {name="default:water_source"})
-		minetest.env:add_node({x=pos.x+5,y=pos.y-2,z=pos.z+5}, {name="default:water_source"})
+	
+	-- level -2 -- ocean
+	if skyblock.MODE == "water" or skyblock.MODE == "lava"  then
+		local node_name = "default:water_source"
+		if skyblock.MODE == "lava" then
+			node_name = "default:lava_source"
+		end
+		minetest.env:add_node({x=pos.x-5,y=pos.y-2,z=pos.z-5}, {name=node_name})
+		minetest.env:add_node({x=pos.x-5,y=pos.y-2,z=pos.z+5}, {name=node_name})
+		minetest.env:add_node({x=pos.x+5,y=pos.y-2,z=pos.z-5}, {name=node_name})
+		minetest.env:add_node({x=pos.x+5,y=pos.y-2,z=pos.z+5}, {name=node_name})
 	end
 
 end
 
 
--- make a tree
+-- make a tree (based on rubber tree in farming by PilzAdam)
 skyblock.generate_tree = function(pos)
 	dbg("generate_tree() at "..dump(pos))
 	
@@ -428,7 +434,7 @@ skyblock.generate_tree = function(pos)
 end
 
 
--- hollow sphere (taken from multinode by mauvebic)
+-- hollow sphere (based on sphere in multinode by mauvebic)
 skyblock.make_sphere =  function(pos,radius,nodename,hollow)
 	pos.x = math.floor(pos.x+0.5)
 	pos.y = math.floor(pos.y+0.5)

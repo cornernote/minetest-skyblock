@@ -190,16 +190,22 @@ minetest.register_abm({
 })
 
 
--- water at sealevel
-if skyblock.SEA then
+-- water or lava at sealevel
+if skyblock.MODE == "water" or skyblock.MODE == "lava"  then
+	local node_name = "default:water_flowing"
+	local node_replace = "default:water_source"
+	if skyblock.MODE == "lava" then
+		node_name = "default:lava_flowing"
+		node_replace = "default:lava_source"
+	end
 	minetest.register_abm({
-		nodenames = {"default:water_flowing"},
+		nodenames = {node_name},
 		neighbors = {"air"},
-		interval = 1,
+		interval = 2,
 		chance = 10,
 		action = function(pos, node)
 			if pos.y <= 2 then
-				minetest.env:set_node(pos, {name="default:water_source"})
+				minetest.env:set_node(pos, {name=node_replace})
 			end
 		end
 	})

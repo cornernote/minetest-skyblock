@@ -16,6 +16,12 @@ skyblock.NEW_SPAWN_ON_DEATH = false
 -- How far apart to set players start positions
 skyblock.START_GAP = 64
 
+-- Game mode (which block is the ocean in the void) - air | water | lava
+skyblock.MODE = "air"
+
+-- The Y position the spawn nodes will appear
+skyblock.START_HEIGHT = 4
+
 -- Radius of the starting sphere (0 to disable)
 skyblock.SPHERE_RADIUS = 4
 
@@ -24,12 +30,6 @@ skyblock.SPHERE_HOLLOW = nil
 
 -- Which node to use for the sphere
 skyblock.SPHERE_NODE = "default:dirt"
-
--- The Y position the spawn nodes will appear
-skyblock.START_HEIGHT = 4
-
--- Surround the player with an ocean of water
-skyblock.SEA = true
 
 -- Surround the player with flat land - (warning - REALLY SLOW!)
 skyblock.FLATLAND_TOP_NODE = nil -- eg: "default:dirt_with_grass"
