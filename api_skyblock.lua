@@ -275,6 +275,7 @@ skyblock.globalstep = function(dtime)
 				end
 				
 				-- check for cheaters
+				--[[
 				local privs = minetest.get_player_privs(player_name)
 				local cheat=false
 				if privs["fly"] then privs["fly"] = false cheat=true end
@@ -290,8 +291,9 @@ skyblock.globalstep = function(dtime)
 					minetest.chat_send_player(player_name, "CHEATING IS NOT ALLOWED!")
 					minetest.chat_send_all(player_name.." was CHEATING! (but we stopped that)")
 					minetest.set_player_privs(player_name, privs)
-					minetest.auth_reload()
+					minetest.auth_reload() -- does not seem to save =(
 				end
+				]]--
 				
 			end
 			
