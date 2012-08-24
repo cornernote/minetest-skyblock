@@ -50,3 +50,6 @@ skyblock.SPAWN_HEIGHT = 4
 
 -- Debug mode
 skyblock.DEBUG = 1
+
+-- File path and prefix for data files
+skyblock.FILENAME = minetest.get_worldpath()..'/skyblock'

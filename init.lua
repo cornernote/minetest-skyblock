@@ -15,7 +15,9 @@ skyblock = {}
 
 -- load config and functions
 dofile(minetest.get_modpath("skyblock").."/config.lua")
+dofile(minetest.get_modpath("skyblock").."/table_save.lua")
 dofile(minetest.get_modpath("skyblock").."/api.lua")
+dofile(minetest.get_modpath("skyblock").."/achievements.lua")
 
 -- register entities
 dofile(minetest.get_modpath("skyblock").."/register_alias.lua")

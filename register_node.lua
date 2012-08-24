@@ -18,6 +18,8 @@ if skyblock.NEW_SPAWN_ON_DEATH == 1 then
 		description = "spawnblock",
 		tiles = {"default_nc_rb.png"},
 		is_ground_content = true,
+		on_construct = achievements.init,
+		on_punch = achievements.update,
 	})
 else
 	-- respawn on dig
@@ -25,6 +27,8 @@ else
 		description = "spawnblock",
 		tiles = {"default_nc_rb.png"},
 		is_ground_content = true,
+		on_construct = achievements.init,
+		on_punch = achievements.update,
 		groups = {crumbly=2,cracky=2},
 		on_dig = skyblock.on_dig_spawn,
 	})
@@ -86,4 +90,13 @@ minetest.register_node(":default:sandstone", {
 	groups = {crumbly=2,cracky=2},
 	drop = 'default:sandstone',
 	sounds = default.node_sound_stone_defaults(),
+})
+
+-- track bucket achievements
+minetest.register_craftitem(":bucket:bucket_empty", {
+	description = "Emtpy bucket",
+	inventory_image = "bucket.png",
+	stack_max = 1,
+	liquids_pointable = true,
+	on_use = achievements.bucket_on_use,
 })

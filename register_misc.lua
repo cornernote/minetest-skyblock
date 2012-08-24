@@ -26,6 +26,16 @@ minetest.register_on_generated(function(minp, maxp)
 	skyblock.on_generated(minp, maxp)
 end)
 
+-- track digging achievements
+minetest.register_on_dignode(function(pos, oldnode, digger)
+	achievements.on_dignode(pos, oldnode, digger)
+end)
+
+-- track placing achievements
+minetest.register_on_placenode(function(pos, newnode, placer, oldnode)
+	achievements.on_placenode(pos, oldnode, digger)
+end)
+
 -- register the game after the server starts
 minetest.after(10, function()
 

@@ -18,7 +18,6 @@ local start_positions = {}
 local spawned_players = {}
 local spawnpos = {}
 local spawn_diggers = {}
-local filename = minetest.get_worldpath()..'/skyblock'
 
 -- debug
 local dbg = function(message)
@@ -136,7 +135,7 @@ skyblock.set_spawn = function(player_name, pos)
 	dbg("set_spawn() for "..player_name.." at "..dump(pos))
 	spawnpos[player_name] = pos
 	-- save the spawn data from the table to the file
-	local output = io.open(filename..".spawn", "w")
+	local output = io.open(skyblock.FILENAME..".spawn", "w")
 	for i, v in pairs(spawnpos) do
 		if v ~= nil then
 			output:write(v.x.." "..v.y.." "..v.z.." "..i.."\n")
@@ -150,7 +149,7 @@ end
 skyblock.get_next_spawn = function()
 	dbg("get_next_spawn()")
 	last_start_id = last_start_id+1
-	local output = io.open(filename..".last_start_id", "w")
+	local output = io.open(skyblock.FILENAME..".last_start_id", "w")
 	output:write(last_start_id)
 	io.close(output)
 	local spawn = start_positions[last_start_id]
@@ -163,13 +162,14 @@ end
 
 -- handle player spawn setup
 skyblock.spawn_player = function(player)
-	dbg("spawn_player() "..player:get_player_name())
-
+	local player_name = player:get_player_name()
+	dbg("spawn_player() "..player_name)
+	
 	-- find the player spawn point
-	local spawn = skyblock.has_spawn(player:get_player_name())
+	local spawn = skyblock.has_spawn(player_name)
 	if spawn == nil then
 		spawn = skyblock.get_next_spawn()
-		skyblock.set_spawn(player:get_player_name(),spawn)
+		skyblock.set_spawn(player_name,spawn)
 	end
 	
 	-- already has a spawn, teleport and return true 
@@ -180,7 +180,7 @@ skyblock.spawn_player = function(player)
 	end
 
 	-- add the start block and teleport the player
-	skyblock.make_spawn_blocks(spawn)
+	skyblock.make_spawn_blocks(spawn,player_name)
 	player:setpos({x=spawn.x,y=spawn.y+skyblock.SPAWN_HEIGHT,z=spawn.z})
 	player:set_hp(20)
 end
@@ -208,6 +208,11 @@ skyblock.on_respawnplayer = function(player)
 
 	-- empty inventory
 	skyblock.empty_inventory(player)
+	
+	-- reset achievements
+	if achievements ~= nil then
+		achievements.reset(player_name)
+	end
 	
 	-- give them a new position
 	if skyblock.NEW_SPAWN_ON_DEATH or spawn_diggers[player_name] ~= nil then
@@ -260,7 +265,7 @@ skyblock.globalstep = function(dtime)
 						dbg("globalstep() "..player_name.." has fallen too far, but dont kill them... yet =)")
 						local spawn = skyblock.has_spawn(player:get_player_name())
 						if spawn then
-							skyblock.make_spawn_blocks(spawn)
+							skyblock.make_spawn_blocks(spawn,player:get_player_name())
 							skyblock.spawn_player(player)
 						end
 					else
@@ -333,8 +338,8 @@ end
 
 
 -- build start block
-skyblock.make_spawn_blocks = function(pos)
-	dbg("make_spawn_blocks() at "..dump(pos))
+skyblock.make_spawn_blocks = function(pos, player_name)
+	dbg("make_spawn_blocks() at "..dump(pos).." for "..player_name)
 	
 	-- sphere
 	if skyblock.SPHERE_RADIUS > 0 then
@@ -343,6 +348,8 @@ skyblock.make_spawn_blocks = function(pos)
 
 	-- level 0 - spawn
 	minetest.env:add_node(pos, {name="skyblock:spawn"})
+	minetest.env:get_meta(pos):set_string("spawn_player",player_name)
+	achievements.update(pos)
 
 	-- level -1 - lava_source and dirt
 	for x=-1,1 do
@@ -524,7 +531,7 @@ end
 
 -- load the spawn data from disk
 local load_spawn = function()
-    local input = io.open(filename..".spawn", "r")
+    local input = io.open(skyblock.FILENAME..".spawn", "r")
     if input then
         while true do
             local x = input:read("*n")
@@ -546,18 +553,18 @@ load_spawn() -- run it now
 
 -- load the start positions from disk
 local load_start_positions = function()
-    local input = io.open(filename..".start_positions", "r")
+    local input = io.open(skyblock.FILENAME..".start_positions", "r")
 
 	-- create start_positions file if needed
     if not input then
-		local output = io.open(filename..".start_positions", "w")
+		local output = io.open(skyblock.FILENAME..".start_positions", "w")
 		local pos
 		for i,v in ripairs(spiralt(skyblock.WORLD_WIDTH)) do -- get positions using spiral
 			pos = {x=v.x*skyblock.START_GAP, y=skyblock.START_HEIGHT, z=v.z*skyblock.START_GAP}
 			output:write(pos.x.." "..pos.y.." "..pos.z.."\n")
 		end
 		io.close(output)
-		input = io.open(filename..".start_positions", "r")
+		input = io.open(skyblock.FILENAME..".start_positions", "r")
 	end
 	
 	-- read start positions
@@ -578,14 +585,14 @@ load_start_positions() -- run it now
 
 -- load the last start position from disk
 local load_last_start_id = function()
-	local input = io.open(filename..".last_start_id", "r")
+	local input = io.open(skyblock.FILENAME..".last_start_id", "r")
 	
 	-- create last_start_id file if needed
     if not input then
-		local output = io.open(filename..".last_start_id", "w")
+		local output = io.open(skyblock.FILENAME..".last_start_id", "w")
 		output:write(last_start_id)
 		io.close(output)
-		input = io.open(filename..".last_start_id", "r")
+		input = io.open(skyblock.FILENAME..".last_start_id", "r")
 	end
 	
 	-- read last start id
