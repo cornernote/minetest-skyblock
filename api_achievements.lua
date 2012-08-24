@@ -11,10 +11,6 @@ ACHIEVEMENT FUNCTIONS
 ]]--
 
 
--- expose the mod
-achievements = {}
-
-
 -- local variable to save players achievements
 local players_achievements = table.load(skyblock.FILENAME..".achievements")
 if players_achievements == nil then
