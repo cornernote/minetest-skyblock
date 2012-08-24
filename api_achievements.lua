@@ -63,15 +63,15 @@ achievements.update = function(pos)
 		return
 	end
 	
-	-- dig stone
-	if achievements.get(player_name,"dig_tree") >= 1 then
+	-- place_sapling
+	if achievements.get(player_name,"place_sapling") >= 3 then
 		achievements_label = achievements_label .. "label[0,0.75; {COMPLETE!}]"
 		count = count + 1
 	else
 		achievements_label = achievements_label .. "label[0,0.75; {NOT COMPLETE}]"
 	end
 
-	-- dig tree
+	-- dig stone
 	if achievements.get(player_name,"dig_stone") >= 1 then
 		achievements_label = achievements_label .. "label[0,1.50; {COMPLETE!}]"
 		count = count + 1
@@ -192,6 +192,11 @@ achievements.add = function(player_name,achievement)
 		update = true
 	end
 	
+	-- place_sapling
+	if achievement == "place_sapling" and players_achievements[player_name][achievement] == 3 then
+		update = true
+	end
+	
 	-- dig_tree
 	if achievement == "dig_tree" and players_achievements[player_name][achievement] == 1 then
 		update = true
@@ -291,6 +296,12 @@ end
 achievements.on_placenode = function(pos, newnode, placer)
 	local player_name = placer:get_player_name()
 	local spawn
+
+	-- place_sapling
+	if newnode.name == "default:sapling" then
+		achievements.add(player_name,"place_sapling")
+		return
+	end
 
 	-- place_dirt
 	if newnode.name == "default:dirt" then
