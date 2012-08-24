@@ -100,3 +100,14 @@ minetest.register_craftitem(":bucket:bucket_empty", {
 	liquids_pointable = true,
 	on_use = achievements.bucket_on_use,
 })
+
+-- prevent lava bucket grief
+minetest.register_craftitem(":bucket:bucket_lava", {
+	description = "Emtpy bucket",
+	inventory_image = "bucket_lava.png",
+	stack_max = 1,
+	liquids_pointable = true,
+	on_use = skyblock.bucket_lava_on_use,
+})
+
+

@@ -314,6 +314,37 @@ skyblock.globalstep = function(dtime)
 end
 
 
+-- prevent lava bucket too far from spawn
+skyblock.bucket_lava_on_use = function(itemstack, user, pointed_thing)
+	-- Must be pointing to node
+	if pointed_thing.type ~= "node" then
+		return
+	end
+	-- Check if pointing to a liquid
+	n = minetest.env:get_node(pointed_thing.under)
+	if bucket.liquids[n.name] == nil then
+		-- Not a liquid
+
+		-- begin anti-grief change
+		local player_name = user:get_player_name()
+		local spawn = skyblock.has_spawn(player_name)
+		local range = skyblock.START_GAP/3 -- how far from spawn you can use lava
+		local pos = pointed_thing.under
+		if spawn==nil or (pos.x-spawn.x > range or pos.x-spawn.x < range*-1) or (pos.y-spawn.y > range/2 or pos.y-spawn.y < range*-1/2) or (pos.z-spawn.z > range or pos.z-spawn.z < range*-1) then
+			minetest.chat_send_player(player_name, "Cannot use bucket so far from your home.")
+			return
+		end
+		-- end anti-grief change
+
+		minetest.env:add_node(pointed_thing.above, {name="default:lava_source"})
+	elseif n.name ~= "default:lava_source" then
+		-- It's a liquid
+		minetest.env:add_node(pointed_thing.under, {name="default:lava_source"})
+	end
+	return {name="bucket:bucket_empty"}
+end
+
+
 -- handle flatland generation (code taken from flatland by kddekadenz)
 skyblock.on_generated = function(minp, maxp)
 	if (skyblock.FLATLAND_TOP_NODE == "air" or skyblock.FLATLAND_TOP_NODE == nil) and (skyblock.FLATLAND_BOTTOM_NODE == "air" or skyblock.FLATLAND_BOTTOM_NODE == nil) then
