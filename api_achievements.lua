@@ -63,8 +63,8 @@ achievements.update = function(pos)
 		return
 	end
 	
-	-- place_sapling
-	if achievements.get(player_name,"place_sapling") >= 3 then
+	-- place_sapling and dig_tree
+	if achievements.get(player_name,"place_sapling") >= 3 && achievements.get(player_name,"dig_tree") >= 4 then
 		achievements_label = achievements_label .. "label[0,0.75; {COMPLETE!}]"
 		count = count + 1
 	else
@@ -198,7 +198,7 @@ achievements.add = function(player_name,achievement)
 	end
 	
 	-- dig_tree
-	if achievement == "dig_tree" and players_achievements[player_name][achievement] == 1 then
+	if achievement == "dig_tree" and players_achievements[player_name][achievement] == 4 then
 		update = true
 	end
 	
