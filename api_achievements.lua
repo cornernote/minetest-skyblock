@@ -341,11 +341,6 @@ achievements.on_placenode = function(pos, newnode, placer, oldnode)
 
 	-- place_water_up / place_water_infinite
 	if newnode.name == "default:water_source" then
-		-- place_water_up
-		if pos.y>=7 then
-			achievements.add(player_name,"place_water_up")
-			return
-		end
 		-- place_water_infinite
 		if minetest.env:get_node({x=pos.x-1,y=pos.y,z=pos.z-1}).name=="default:water_source" then
 			achievements.add(player_name,"place_water_infinite")
@@ -361,6 +356,11 @@ achievements.on_placenode = function(pos, newnode, placer, oldnode)
 		end
 		if minetest.env:get_node({x=pos.x+1,y=pos.y,z=pos.z+1}).name=="default:water_source" then
 			achievements.add(player_name,"place_water_infinite")
+			return
+		end
+		-- place_water_up
+		if pos.y>=7 then
+			achievements.add(player_name,"place_water_up")
 			return
 		end
 		return
