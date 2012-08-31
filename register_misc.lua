@@ -33,7 +33,7 @@ end)
 
 -- track placing achievements
 minetest.register_on_placenode(function(pos, newnode, placer, oldnode)
-	achievements.on_placenode(pos, oldnode, digger)
+	achievements.on_placenode(pos, newnode, placer, oldnode)
 end)
 
 -- register the game after the server starts

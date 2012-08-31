@@ -293,7 +293,7 @@ end
 
 
 -- track placing achievements
-achievements.on_placenode = function(pos, newnode, placer)
+achievements.on_placenode = function(pos, newnode, placer, oldnode)
 	local player_name = placer:get_player_name()
 	local spawn
 
