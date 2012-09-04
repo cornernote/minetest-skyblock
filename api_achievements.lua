@@ -342,19 +342,10 @@ achievements.on_placenode = function(pos, newnode, placer, oldnode)
 	-- place_water_up / place_water_infinite
 	if newnode.name == "default:water_source" then
 		-- place_water_infinite
-		if minetest.env:get_node({x=pos.x-1,y=pos.y,z=pos.z-1}).name=="default:water_source" then
-			achievements.add(player_name,"place_water_infinite")
-			return
-		end
-		if minetest.env:get_node({x=pos.x-1,y=pos.y,z=pos.z+1}).name=="default:water_source" then
-			achievements.add(player_name,"place_water_infinite")
-			return
-		end
-		if minetest.env:get_node({x=pos.x+1,y=pos.y,z=pos.z-1}).name=="default:water_source" then
-			achievements.add(player_name,"place_water_infinite")
-			return
-		end
-		if minetest.env:get_node({x=pos.x+1,y=pos.y,z=pos.z+1}).name=="default:water_source" then
+		if minetest.env:get_node({x=pos.x-1,y=pos.y,z=pos.z-1}).name=="default:water_source" 
+		or minetest.env:get_node({x=pos.x-1,y=pos.y,z=pos.z+1}).name=="default:water_source"
+		or minetest.env:get_node({x=pos.x+1,y=pos.y,z=pos.z-1}).name=="default:water_source"
+		or minetest.env:get_node({x=pos.x+1,y=pos.y,z=pos.z+1}).name=="default:water_source" then
 			achievements.add(player_name,"place_water_infinite")
 			return
 		end
@@ -366,31 +357,4 @@ achievements.on_placenode = function(pos, newnode, placer, oldnode)
 		return
 	end
 
-end
-
-
--- track bucket achievements
-achievements.bucket_on_use = function(itemstack, user, pointed_thing)
-	-- Must be pointing to node
-	if pointed_thing.type ~= "node" then
-		return
-	end
-	-- Check if pointing to a liquid source
-	n = minetest.env:get_node(pointed_thing.under)
-	liquiddef = bucket.liquids[n.name]
-	if liquiddef ~= nil and liquiddef.source == n.name and liquiddef.itemname ~= nil then
-		
-		-- begin change for achievements
-		if n.name == "default:lava_source" then
-			local player_name = user:get_player_name()
-			local spawn = skyblock.has_spawn(player_name)
-			if spawn~=nil and pointed_thing.under.x==spawn.x and pointed_thing.under.y==spawn.y-1 and pointed_thing.under.z==spawn.z then
-				achievements.add(player_name,"collect_spawn_lava")
-			end
-		end
-		-- end change for achievements
-	
-		minetest.env:add_node(pointed_thing.under, {name="air"})
-		return {name=liquiddef.itemname}
-	end
 end

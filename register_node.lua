@@ -12,25 +12,25 @@ REGISTER NODE
 
 
 -- indestructable spawn block
-if skyblock.NEW_SPAWN_ON_DEATH == 1 then
+if skyblock.NEW_SPAWN_ON_DEATH == true then
 	-- not diggable
 	minetest.register_node("skyblock:spawn", {
-		description = "spawnblock",
+		description = "spawn",
 		tiles = {"default_nc_rb.png"},
 		is_ground_content = true,
-		on_construct = achievements.init,
-		on_punch = achievements.update,
+		on_construct = skyblock.spawn_on_construct,
+		on_punch = skyblock.spawn_on_punch,
 	})
 else
 	-- respawn on dig
 	minetest.register_node("skyblock:spawn", {
-		description = "spawnblock",
+		description = "spawn",
 		tiles = {"default_nc_rb.png"},
 		is_ground_content = true,
-		on_construct = achievements.init,
-		on_punch = achievements.update,
+		on_construct = skyblock.spawn_on_construct,
+		on_punch = skyblock.spawn_on_punch,
 		groups = {crumbly=2,cracky=2},
-		on_dig = skyblock.on_dig_spawn,
+		on_dig = skyblock.spawn_on_dig,
 	})
 end
 
@@ -92,13 +92,13 @@ minetest.register_node(":default:sandstone", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
--- track bucket achievements
+-- handle bucket usage
 minetest.register_craftitem(":bucket:bucket_empty", {
 	description = "Emtpy bucket",
 	inventory_image = "bucket.png",
 	stack_max = 1,
 	liquids_pointable = true,
-	on_use = achievements.bucket_on_use,
+	on_use = skyblock.bucket_on_use,
 })
 
 -- prevent lava bucket grief

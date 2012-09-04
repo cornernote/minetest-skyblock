@@ -187,7 +187,7 @@ end
 
 
 -- handle digging the spawn block
-skyblock.on_dig_spawn = function(pos, node, digger)
+skyblock.spawn_on_dig = function(pos, node, digger)
 	local player_name = digger:get_player_name()
 	local spawn = skyblock.get_spawn(player_name)
 	dbg("on_dig_spawn() for "..player_name)
@@ -197,6 +197,18 @@ skyblock.on_dig_spawn = function(pos, node, digger)
 
 	-- kill them
 	digger:set_hp(0)
+end
+
+
+-- handle spawn block construction
+skyblock.spawn_on_construct = function(pos)
+	achievements.init(pos)
+end
+
+
+-- handle spawn block punch
+skyblock.spawn_on_punch = function(pos)
+	achievements.update(pos)
 end
 
 
@@ -345,6 +357,33 @@ skyblock.bucket_lava_on_use = function(itemstack, user, pointed_thing)
 end
 
 
+-- handle bucket usage
+skyblock.bucket_on_use = function(itemstack, user, pointed_thing)
+	-- Must be pointing to node
+	if pointed_thing.type ~= "node" then
+		return
+	end
+	-- Check if pointing to a liquid source
+	n = minetest.env:get_node(pointed_thing.under)
+	liquiddef = bucket.liquids[n.name]
+	if liquiddef ~= nil and liquiddef.source == n.name and liquiddef.itemname ~= nil then
+		
+		-- begin track bucket achievements
+		if n.name == "default:lava_source" then
+			local player_name = user:get_player_name()
+			local spawn = skyblock.has_spawn(player_name)
+			if spawn~=nil and pointed_thing.under.x==spawn.x and pointed_thing.under.y==spawn.y-1 and pointed_thing.under.z==spawn.z then
+				achievements.add(player_name,"collect_spawn_lava")
+			end
+		end
+		-- end track bucket achievements
+	
+		minetest.env:add_node(pointed_thing.under, {name="air"})
+		return {name=liquiddef.itemname}
+	end
+end
+
+
 -- handle flatland generation (code taken from flatland by kddekadenz)
 skyblock.on_generated = function(minp, maxp)
 	if (skyblock.FLATLAND_TOP_NODE == "air" or skyblock.FLATLAND_TOP_NODE == nil) and (skyblock.FLATLAND_BOTTOM_NODE == "air" or skyblock.FLATLAND_BOTTOM_NODE == nil) then
@@ -367,6 +406,18 @@ skyblock.on_generated = function(minp, maxp)
 			end
 		end
 	end
+end
+
+
+-- handle global node digging
+skyblock.on_dignode = function(pos, oldnode, digger)
+	achievements.on_dignode(pos, oldnode, digger)
+end
+
+
+-- handle global node placing
+skyblock.on_placenode = function(pos, newnode, placer, oldnode)
+	achievements.on_placenode(pos, newnode, placer, oldnode)
 end
 
 
