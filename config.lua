@@ -10,9 +10,6 @@ USER CONFIG
 
 ]]--
 
--- Should death result in a new spawn position
-skyblock.NEW_SPAWN_ON_DEATH = false
-
 -- How far apart to set players start positions
 skyblock.START_GAP = 64
 
@@ -21,19 +18,6 @@ skyblock.MODE = "air"
 
 -- The Y position the spawn nodes will appear
 skyblock.START_HEIGHT = 4
-
--- Radius of the starting sphere (0 to disable)
-skyblock.SPHERE_RADIUS = 4
-
--- Width of the hollow sphere radius (nil for solid sphere, 0 for a cool effect)
-skyblock.SPHERE_HOLLOW = nil
-
--- Which node to use for the sphere
-skyblock.SPHERE_NODE = "default:dirt"
-
--- Surround the player with flat land - (warning - REALLY SLOW!)
-skyblock.FLATLAND_TOP_NODE = nil -- eg: "default:dirt_with_grass"
-skyblock.FLATLAND_BOTTOM_NODE = nil -- eg: "default:dirt"
 
 -- How many players will be in 1 row
 -- skyblock.WORLD_WIDTH * skyblock.WORLD_WIDTH = total players

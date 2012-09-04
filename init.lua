@@ -12,15 +12,14 @@ MAIN LOADER
 
 -- expose functions to other modules
 skyblock = {}
-achievements = {}
 
 -- load config
 dofile(minetest.get_modpath("skyblock").."/config.lua")
 
 -- load apis
 dofile(minetest.get_modpath("skyblock").."/api_table_save.lua")
-dofile(minetest.get_modpath("skyblock").."/api_skyblock.lua")
 dofile(minetest.get_modpath("skyblock").."/api_achievements.lua")
+dofile(minetest.get_modpath("skyblock").."/api_skyblock.lua")
 
 -- register entities
 dofile(minetest.get_modpath("skyblock").."/register_alias.lua")

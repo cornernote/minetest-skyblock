@@ -18,238 +18,81 @@ if players_achievements == nil then
 end
 
 
--- debug
-local dbg = function(message)
-	if not skyblock.DEBUG then
-		return
-	end
-	minetest.log("action", "[SB.Achievements] "..message)
-end
-
+-- load levels
+levels = {}
+dofile(minetest.get_modpath("skyblock").."/level_1.lua")
+dofile(minetest.get_modpath("skyblock").."/level_2.lua")
+dofile(minetest.get_modpath("skyblock").."/level_3.lua")
+dofile(minetest.get_modpath("skyblock").."/level_4.lua")
 
 
 --
 -- PUBLIC FUNCTIONS
 --
 
+achievements = {}
 
--- update achievements
-achievements.init = function(pos)
-	dbg("achievements.init() at "..dump(pos))
-	local meta = minetest.env:get_meta(pos)
-		meta:set_string("formspec", 
-		"size[9,4;]"..
-		"label[0,0;--== Achievements ==--]"..
-		"label[0,2; -->> INITIAL REFRESH REQUIRED <<-- ]"..
-		"label[0,3.30; * SHORT LEFT CLICK]"..
-		"label[0,3.70; * LONG LEFT CLICK]"..
-		"label[3,3.30; = PUNCH to refresh achievements]"..
-		"label[3,3.70; = DIG to restart in a new spawn location]"..
-		"")
-	meta:set_string("infotext", "Achievements: RIGHT CLICK TO VIEW")
+
+-- reset
+achievements.reset = function(player_name)
+	skyblock.log("achievements.reset() for "..player_name)
+	players_achievements[player_name] = {}
+	table.save(players_achievements, skyblock.FILENAME..".achievements")
 end
 
 
 -- update achievements
-achievements.update = function(pos)
+achievements.update = function(level,player_name)
+	local pos = levels[level].get_pos(player_name)
+	skyblock.log("achievements.update() level "..level.." for "..player_name.." at "..dump(pos))
 	local meta = minetest.env:get_meta(pos)
-	local player_name = meta:get_string("spawn_player")
-	dbg("achievements.update() for "..player_name.." at "..dump(pos))
-	local achievements_label = ""
-	local total = 10
-	local count = 0
-
-	if skyblock.get_spawn(player_name) == nil then
-		return
-	end
-	
-	-- place_sapling and dig_tree
-	if achievements.get(player_name,"place_sapling") >= 3 and achievements.get(player_name,"dig_tree") >= 4 then
-		achievements_label = achievements_label .. "label[0,0.75; {COMPLETE!}]"
-		count = count + 1
-	else
-		achievements_label = achievements_label .. "label[0,0.75; {NOT COMPLETE}]"
-	end
-
-	-- dig stone
-	if achievements.get(player_name,"dig_stone") >= 1 then
-		achievements_label = achievements_label .. "label[0,1.50; {COMPLETE!}]"
-		count = count + 1
-	else
-		achievements_label = achievements_label .. "label[0,1.50; {NOT COMPLETE}]"
-	end
-
-	-- place 50 dirt
-	if achievements.get(player_name,"place_dirt") >= 100 then
-		achievements_label = achievements_label .. "label[0,2.25; {COMPLETE!}]"
-		count = count + 1
-	else
-		achievements_label = achievements_label .. "label[0,2.25; {NOT COMPLETE}]"
-	end
-
-	-- place chest and furnace
-	if achievements.get(player_name,"place_chest") >= 1 and achievements.get(player_name,"place_furnace") >= 1 then
-		achievements_label = achievements_label .. "label[0,3.00; {COMPLETE!}]"
-		count = count + 1
-	else
-		achievements_label = achievements_label .. "label[0,3.00; {NOT COMPLETE}]"
-	end
-
-	-- place 30 brick and 30 wood
-	if achievements.get(player_name,"place_brick") >= 30 and achievements.get(player_name,"place_wood") >= 30 then
-		achievements_label = achievements_label .. "label[0,3.75; {COMPLETE!}]"
-		count = count + 1
-	else
-		achievements_label = achievements_label .. "label[0,3.75; {NOT COMPLETE}]"
-	end
-
-	-- place both water in diagonal
-	if achievements.get(player_name,"place_water_infinite") >= 1 then
-		achievements_label = achievements_label .. "label[0,4.50; {COMPLETE!}]"
-		count = count + 1
-	else
-		achievements_label = achievements_label .. "label[0,4.50; {NOT COMPLETE}]"
-	end
-
-	-- place glass in brick
-	if achievements.get(player_name,"place_glass_in_house") >= 2 then
-		achievements_label = achievements_label .. "label[0,5.25; {COMPLETE!}]"
-		count = count + 1
-	else
-		achievements_label = achievements_label .. "label[0,5.25; {NOT COMPLETE}]"
-	end
-
-	-- place water above y+?
-	if achievements.get(player_name,"place_water_up") >= 1 then
-		achievements_label = achievements_label .. "label[0,6.00; {COMPLETE!}]"
-		count = count + 1
-	else
-		achievements_label = achievements_label .. "label[0,6.00; {NOT COMPLETE}]"
-	end
-
-	-- dig lava under spawn node
-	if achievements.get(player_name,"collect_spawn_lava") >= 1 then
-		achievements_label = achievements_label .. "label[0,6.75; {COMPLETE!}]"
-		count = count + 1
-	else
-		achievements_label = achievements_label .. "label[0,6.75; {NOT COMPLETE}]"
-	end
-
-	-- dig stone with mese pickaxe
-	if achievements.get(player_name,"dig_stone_with_mese_pickaxe") >= 1 then
-		achievements_label = achievements_label .. "label[0,7.50; {COMPLETE!}]"
-		count = count + 1
-	else
-		achievements_label = achievements_label .. "label[0,7.50; {NOT COMPLETE}]"
-	end
-	
-	meta:set_string("formspec", 
-		"size[9,9;]"..
-		"label[0,0;ACHIEVEMENTS FOR: ".. player_name .."]"..
-		achievements_label..
-		"label[2.5,0.75; 1) create a Tree Farm]".. -- dig tree
-		"label[2.5,1.50; 2) build a Stone Generator]".. -- dig stone
-		"label[2.5,2.25; 3) extend your Island]".. -- place 50 dirt
-		"label[2.5,3.00; 4) craft and place a Chest and Furnace]".. -- place chest and furnace
-		"label[2.5,3.75; 5) build a House from Brick and Wood]".. -- place 30 brick + 30 wood
-		"label[2.5,4.50; 6) create an Infinite Water Source]".. -- place both water in diagonal
-		"label[2.5,5.25; 7) put Glass Windows in your House]".. -- place 2 glass between brick
-		"label[2.5,6.00; 8) build a Water Feature]".. -- place water above y+7
-		"label[2.5,6.75; 9) collect the Lava Source under your Spawn]".. -- dig under spawn node
-		"label[2.5,7.50; 10) mine stone with a Mese Pickaxe]".. -- dig stone with tool
-
-		"label[0,8.30; * SHORT LEFT CLICK]"..
-		"label[0,8.70; * LONG LEFT CLICK]"..
-		"label[3,8.30; = PUNCH to refresh achievements]"..
-		"label[3,8.70; = DIG to restart in a new spawn location]"..
-		"")
-	meta:set_string("infotext", "Achievements for ".. player_name ..": ".. count .." of "..total)
+	local formspec,infotext = levels[level].achievements(player_name,pos)
+	meta:set_string("formspec", formspec)
+	meta:set_string("infotext", infotext)
+	meta:get_inventory():set_size("rewards", 2*2)
 end
 
 
 -- get achievement
-achievements.get = function(player_name,achievement)
+achievements.get = function(level,player_name,achievement)
 	if players_achievements[player_name] == nil then
 		players_achievements[player_name] = {}
 	end
-	if players_achievements[player_name][achievement] == nil then
-		players_achievements[player_name][achievement] = 0
+	if players_achievements[player_name][level] == nil then
+		players_achievements[player_name][level] = {}
 	end
-	dbg("achievements.get() for "..player_name.." achievement "..achievement.." is "..players_achievements[player_name][achievement])
-	return players_achievements[player_name][achievement]
+	if players_achievements[player_name][level][achievement] == nil then
+		players_achievements[player_name][level][achievement] = 0
+		if achievement=="level" then
+			players_achievements[player_name][level][achievement] = 1
+		end
+	end
+	skyblock.log("achievements.get() for level "..level.." "..player_name.." achievement "..achievement.." is "..players_achievements[player_name][level][achievement])
+	return players_achievements[player_name][level][achievement]
+end
+
+
+-- give reward
+achievements.give_reward = function(level,player_name,item_name)
+	skyblock.log("achievements.give_reward() for "..player_name.." item "..item_name)
+	minetest.env:get_meta(skyblock.has_spawn(player_name)):get_inventory():add_item("rewards", item_name)
 end
 
 
 -- set achievement
-achievements.add = function(player_name,achievement)
-	dbg("achievements.add() for "..player_name.." achievement "..achievement)
-	local update = false
-	local player_achievement = achievements.get(player_name,achievement)
-	players_achievements[player_name][achievement] = player_achievement + 1
+achievements.add = function(level,player_name,achievement)
+	skyblock.log("achievements.add() for level "..level.." player "..player_name.." achievement "..achievement)
+	local player_achievement = achievements.get(level,player_name,achievement)
+	players_achievements[player_name][level][achievement] = player_achievement + 1
+	if level==0 or achievement=="level" then
+		table.save(players_achievements, skyblock.FILENAME..".achievements")
+		return
+	end
+	local update = levels[level].reward_achievement(player_name,achievement)
 	
-	-- dig_stone
-	if achievement == "dig_stone" and players_achievements[player_name][achievement] == 1 then
-		update = true
-	end
-	
-	-- place_sapling
-	if achievement == "place_sapling" and players_achievements[player_name][achievement] == 3 then
-		update = true
-	end
-	
-	-- dig_tree
-	if achievement == "dig_tree" and players_achievements[player_name][achievement] == 4 then
-		update = true
-	end
-	
-	-- place_chest
-	if achievement == "place_chest" and players_achievements[player_name][achievement] == 1 then
-		update = true
-	end
-
-	-- place_furnace
-	if achievement == "place_furnace" and players_achievements[player_name][achievement] == 1 then
-		update = true
-	end
-
-	-- place_dirt
-	if achievement == "place_dirt" and players_achievements[player_name][achievement] == 100 then
-		update = true
-	end
-
-	-- place_wood
-	if achievement == "place_wood" and players_achievements[player_name][achievement] == 30 then
-		update = true
-	end
-
-	-- place_brick
-	if achievement == "place_brick" and players_achievements[player_name][achievement] == 30 then
-		update = true
-	end
-	
-	-- place_glass_in_house
-	if achievement == "place_glass_in_house" and players_achievements[player_name][achievement] == 2 then
-		update = true
-	end
-	
-	-- dig_stone_with_mese_pickaxe
-	if achievement == "dig_stone_with_mese_pickaxe" and players_achievements[player_name][achievement] == 1 then
-		update = true
-	end
-	
-	-- place_water_up
-	if achievement == "place_water_up" and players_achievements[player_name][achievement] == 1 then
-		update = true
-	end
-	
-	-- collect_spawn_lava
-	if achievement == "collect_spawn_lava" and players_achievements[player_name][achievement] == 1 then
-		update = true
-	end
-
 	-- update
 	if update then
-		achievements.update(skyblock.has_spawn(player_name))
+		achievements.update(level,player_name)
 		minetest.chat_send_player(player_name, "You earned the achievement '"..achievement.."'")
 		minetest.chat_send_all(player_name.." was awarded the achievement '"..achievement.."'")
 	end
@@ -258,103 +101,52 @@ achievements.add = function(player_name,achievement)
 end
 
 
--- reset
-achievements.reset = function(player_name)
-	dbg("achievements.reset() for "..player_name)
-	players_achievements[player_name] = {}
-	table.save(players_achievements, skyblock.FILENAME..".achievements")
-	achievements.update(skyblock.has_spawn(player_name))
-end
-
-
 -- track digging achievements
 achievements.on_dignode = function(pos, oldnode, digger)
 	local player_name = digger:get_player_name()
-	local spawn
-	local tool
-	
-	-- dig_stone
-	if oldnode.name == "default:stone" then
-		-- with mese pickaxe
-		if digger:get_wielded_item():get_name() == "default:pick_mese" then
-			achievements.add(player_name,"dig_stone_with_mese_pickaxe")
-			return
-		end
-		achievements.add(player_name,"dig_stone")
-		return
-	end
-
-	-- dig_tree
-	if oldnode.name == "default:tree" then
-		achievements.add(player_name,"dig_tree")
-		return
-	end
+	local level = achievements.get(0, player_name, "level")
+	skyblock.log("achievements.on_dignode() for "..player_name.." on level "..level.." at "..dump(pos))
+	levels[level].on_dignode(pos, oldnode, digger)
 end
 
 
 -- track placing achievements
 achievements.on_placenode = function(pos, newnode, placer, oldnode)
 	local player_name = placer:get_player_name()
-	local spawn
-
-	-- place_sapling
-	if newnode.name == "default:sapling" then
-		achievements.add(player_name,"place_sapling")
-		return
-	end
-
-	-- place_dirt
-	if newnode.name == "default:dirt" then
-		achievements.add(player_name,"place_dirt")
-		return
-	end
-
-	-- place_chest
-	if newnode.name == "default:chest" then
-		achievements.add(player_name,"place_chest")
-		return
-	end
-
-	-- place_furnace
-	if newnode.name == "default:furnace" then
-		achievements.add(player_name,"place_furnace")
-		return
-	end
-
-	-- place_wood
-	if newnode.name == "default:wood" then
-		achievements.add(player_name,"place_wood")
-		return
-	end
-
-	-- place_brick
-	if newnode.name == "default:brick" then
-		achievements.add(player_name,"place_brick")
-		return
-	end
-
-	-- place glass in house
-	if newnode.name == "default:glass" and (minetest.env:find_node_near(pos,1,"default:brick")~=nil or minetest.env:find_node_near(pos,1,"default:wood")~=nil) then
-		achievements.add(player_name,"place_glass_in_house")
-		return
-	end
-
-	-- place_water_up / place_water_infinite
-	if newnode.name == "default:water_source" then
-		-- place_water_infinite
-		if minetest.env:get_node({x=pos.x-1,y=pos.y,z=pos.z-1}).name=="default:water_source" 
-		or minetest.env:get_node({x=pos.x-1,y=pos.y,z=pos.z+1}).name=="default:water_source"
-		or minetest.env:get_node({x=pos.x+1,y=pos.y,z=pos.z-1}).name=="default:water_source"
-		or minetest.env:get_node({x=pos.x+1,y=pos.y,z=pos.z+1}).name=="default:water_source" then
-			achievements.add(player_name,"place_water_infinite")
-			return
-		end
-		-- place_water_up
-		if pos.y>=7 then
-			achievements.add(player_name,"place_water_up")
-			return
-		end
-		return
-	end
-
+	local level = achievements.get(0, player_name, "level")
+	skyblock.log("achievements.on_placenode() for "..player_name.." on level "..level.." at "..dump(pos))
+	levels[level].on_placenode(pos, newnode, placer, oldnode)
 end
+
+-- bucket achievements
+achievements.bucket_on_use = function(itemstack, user, pointed_thing)
+	local player_name = user:get_player_name()
+	local level = achievements.get(0, player_name, "level")
+	skyblock.log("achievements.bucket_on_use() for "..player_name.." on level "..level)
+	levels[level].bucket_on_use(player_name, pointed_thing)
+end
+
+-- handle digging the level block
+achievements.level_on_dig = function(level, pos, node, digger)
+	if level ~= 1 then
+		return
+	end
+	local player_name = digger:get_player_name()
+	local spawn = skyblock.get_spawn(player_name)
+	skyblock.log("achievements.level_on_dig() for "..player_name)
+
+	-- setup trigger for new spawn
+	skyblock.spawn_diggers[player_name] = true
+
+	-- kill them
+	digger:set_hp(0)
+end
+
+
+-- handle level block punch
+achievements.level_on_punch = function(level, pos, node, puncher)
+	local player_name = puncher:get_player_name()
+	skyblock.log("achievements.level_on_punch() by "..player_name)
+	achievements.update(level, player_name)
+end
+

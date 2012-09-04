@@ -17,10 +17,14 @@ local last_start_id = 0
 local start_positions = {}
 local spawned_players = {}
 local spawnpos = {}
-local spawn_diggers = {}
 
--- debug
-local dbg = function(message)
+--
+-- PUBLIC FUNCTIONS
+--
+
+
+-- log
+skyblock.log = function(message)
 	if not skyblock.DEBUG then
 		return
 	end
@@ -28,54 +32,29 @@ local dbg = function(message)
 end
 
 
---
--- PUBLIC FUNCTIONS
---
-
-
 -- give inventory
 skyblock.give_inventory = function(player)
-	dbg("give_inventory() to "..player:get_player_name())
-	player:get_inventory():add_item('main', 'default:tree')
+	skyblock.log("give_inventory() to "..player:get_player_name())
+	player:get_inventory():add_item('main', 'default:stick')
 	player:get_inventory():add_item('main', 'default:leaves 6')
-	player:get_inventory():add_item('main', 'default:water_source 2')
-	player:get_inventory():add_item('main', 'bucket:bucket_lava')
-	player:get_inventory():add_item('main', 'default:coal_lump')
-	player:get_inventory():add_item('main', 'default:iron_lump')
 end
 
 
 -- check inventory (needs to match the given items above)
 skyblock.check_inventory = function(player)
-	dbg("check_inventory() for "..player:get_player_name())
+	skyblock.log("check_inventory() for "..player:get_player_name())
 	local inv = player:get_inventory()
 	local stack
 	
 	stack = inv:get_stack('main', 1)
-	if stack:get_name() ~= 'default:tree' or stack:get_count() ~= 1 then
+	if stack:get_name() ~= 'default:stick' or stack:get_count() ~= 1 then
 		return false
 	end
 	stack = inv:get_stack('main', 2)
 	if stack:get_name() ~= 'default:leaves' or stack:get_count() ~= 6 then
 		return false
 	end
-	stack = inv:get_stack('main', 3)
-	if stack:get_name() ~= 'default:water_source' or stack:get_count() ~= 2 then
-		return false
-	end
-	stack = inv:get_stack('main', 4)
-	if stack:get_name() ~= 'bucket:bucket_lava' or stack:get_count() ~= 1 then
-		return false
-	end
-	stack = inv:get_stack('main', 5)
-	if stack:get_name() ~= 'default:coal_lump' or stack:get_count() ~= 1 then
-		return false
-	end
-	stack = inv:get_stack('main', 6)
-	if stack:get_name() ~= 'default:iron_lump' or stack:get_count() ~= 1 then
-		return false
-	end
-	for i=7,inv:get_size("main") do
+	for i=3,inv:get_size("main") do
 		stack = inv:get_stack('main', i)
 		if stack:get_name() ~= "" then
 			return false
@@ -94,7 +73,7 @@ end
 
 -- empty inventory
 skyblock.empty_inventory = function(player)
-	dbg("empty_inventory() from "..player:get_player_name())
+	skyblock.log("empty_inventory() from "..player:get_player_name())
 	local inv = player:get_inventory()
 	if not inv:is_empty("main") then
 		for i=1,inv:get_size("main") do
@@ -112,7 +91,7 @@ end
 -- check if a player has a spawn position assigned, if so return it
 skyblock.has_spawn = function(player_name)
 	local spawn = spawnpos[player_name]
-	dbg("has_spawn() for "..player_name.." is "..dump(spawn))
+	skyblock.log("has_spawn() for "..player_name.." is "..dump(spawn))
 	if spawn then
 		return spawn
 	end
@@ -122,17 +101,17 @@ end
 -- get players spawn position
 skyblock.get_spawn = function(player_name)
 	local spawn = spawnpos[player_name]
-	if spawn and minetest.env:get_node(spawn).name == "skyblock:spawn" then
-		dbg("get_spawn() for "..player_name.." is "..dump(spawn))
+	if spawn and minetest.env:get_node(spawn).name == "skyblock:level_1" then
+		skyblock.log("get_spawn() for "..player_name.." is "..dump(spawn))
 		return spawn
 	end
-	dbg("get_spawn() for "..player_name.." is unknown")
+	skyblock.log("get_spawn() for "..player_name.." is unknown")
 end
 
 
 -- set players spawn position
 skyblock.set_spawn = function(player_name, pos)
-	dbg("set_spawn() for "..player_name.." at "..dump(pos))
+	skyblock.log("set_spawn() for "..player_name.." at "..dump(pos))
 	spawnpos[player_name] = pos
 	-- save the spawn data from the table to the file
 	local output = io.open(skyblock.FILENAME..".spawn", "w")
@@ -147,7 +126,7 @@ end
 
 -- get next spawn position
 skyblock.get_next_spawn = function()
-	dbg("get_next_spawn()")
+	skyblock.log("get_next_spawn()")
 	last_start_id = last_start_id+1
 	local output = io.open(skyblock.FILENAME..".last_start_id", "w")
 	output:write(last_start_id)
@@ -163,7 +142,7 @@ end
 -- handle player spawn setup
 skyblock.spawn_player = function(player)
 	local player_name = player:get_player_name()
-	dbg("spawn_player() "..player_name)
+	skyblock.log("spawn_player() "..player_name)
 	
 	-- find the player spawn point
 	local spawn = skyblock.has_spawn(player_name)
@@ -173,7 +152,7 @@ skyblock.spawn_player = function(player)
 	end
 	
 	-- already has a spawn, teleport and return true 
-	if minetest.env:get_node(spawn).name == "skyblock:spawn" then
+	if minetest.env:get_node(spawn).name == "skyblock:level_1" then
 		player:setpos({x=spawn.x,y=spawn.y+skyblock.SPAWN_HEIGHT,z=spawn.z})
 		player:set_hp(20)
 		return true
@@ -186,37 +165,12 @@ skyblock.spawn_player = function(player)
 end
 
 
--- handle digging the spawn block
-skyblock.spawn_on_dig = function(pos, node, digger)
-	local player_name = digger:get_player_name()
-	local spawn = skyblock.get_spawn(player_name)
-	dbg("on_dig_spawn() for "..player_name)
-
-	-- setup trigger for new spawn
-	spawn_diggers[player_name] = true
-
-	-- kill them
-	digger:set_hp(0)
-end
-
-
--- handle spawn block construction
-skyblock.spawn_on_construct = function(pos)
-	achievements.init(pos)
-end
-
-
--- handle spawn block punch
-skyblock.spawn_on_punch = function(pos)
-	achievements.update(pos)
-end
-
-
 -- on_respawn
+skyblock.spawn_diggers = {}
 skyblock.on_respawnplayer = function(player)
 	local player_name = player:get_player_name()
 	local spawn = skyblock.get_spawn(player_name)
-	dbg("on_respawnplayer() for "..player_name)
+	skyblock.log("on_respawnplayer() for "..player_name)
 
 	-- empty inventory
 	skyblock.empty_inventory(player)
@@ -227,8 +181,8 @@ skyblock.on_respawnplayer = function(player)
 	end
 	
 	-- give them a new position
-	if skyblock.NEW_SPAWN_ON_DEATH or spawn_diggers[player_name] ~= nil then
-		if spawn_diggers[player_name] ~= nil then spawn_diggers[player_name] = nil end
+	if skyblock.spawn_diggers[player_name] ~= nil then
+		if skyblock.spawn_diggers[player_name] ~= nil then skyblock.spawn_diggers[player_name] = nil end
 		
 		-- give inventory
 		skyblock.give_inventory(player)
@@ -258,7 +212,7 @@ skyblock.globalstep = function(dtime)
 
 			-- handle new player spawn setup (no more than once per interval)
 			if spawn_timer > skyblock.SPAWN_THROTLE then
-				dbg("globalstep() new spawn for "..player_name.." (not spawned)")
+				skyblock.log("globalstep() new spawn for "..player_name.." (not spawned)")
 				if skyblock.get_spawn(player:get_player_name()) or skyblock.spawn_player(player) then
 					spawned_players[player:get_player_name()] = true
 				end
@@ -274,14 +228,14 @@ skyblock.globalstep = function(dtime)
 				-- hit the bottom, kill them (no more than once per interval)
 				if pos.y < skyblock.WORLD_BOTTOM then
 					if skyblock.check_inventory(player) then
-						dbg("globalstep() "..player_name.." has fallen too far, but dont kill them... yet =)")
+						skyblock.log("globalstep() "..player_name.." has fallen too far, but dont kill them... yet =)")
 						local spawn = skyblock.has_spawn(player:get_player_name())
 						if spawn then
 							skyblock.make_spawn_blocks(spawn,player:get_player_name())
 							skyblock.spawn_player(player)
 						end
 					else
-						dbg("globalstep() "..player_name.." has fallen too far at "..dump(pos).."... kill them now")
+						skyblock.log("globalstep() "..player_name.." has fallen too far at "..dump(pos).."... kill them now")
 						player:set_hp(0)
 					end
 				end
@@ -369,13 +323,7 @@ skyblock.bucket_on_use = function(itemstack, user, pointed_thing)
 	if liquiddef ~= nil and liquiddef.source == n.name and liquiddef.itemname ~= nil then
 		
 		-- begin track bucket achievements
-		if n.name == "default:lava_source" then
-			local player_name = user:get_player_name()
-			local spawn = skyblock.has_spawn(player_name)
-			if spawn~=nil and pointed_thing.under.x==spawn.x and pointed_thing.under.y==spawn.y-1 and pointed_thing.under.z==spawn.z then
-				achievements.add(player_name,"collect_spawn_lava")
-			end
-		end
+		achievements.bucket_on_use(itemstack, user, pointed_thing)
 		-- end track bucket achievements
 	
 		minetest.env:add_node(pointed_thing.under, {name="air"})
@@ -384,89 +332,16 @@ skyblock.bucket_on_use = function(itemstack, user, pointed_thing)
 end
 
 
--- handle flatland generation (code taken from flatland by kddekadenz)
-skyblock.on_generated = function(minp, maxp)
-	if (skyblock.FLATLAND_TOP_NODE == "air" or skyblock.FLATLAND_TOP_NODE == nil) and (skyblock.FLATLAND_BOTTOM_NODE == "air" or skyblock.FLATLAND_BOTTOM_NODE == nil) then
-		return
-	end
-	for x = minp.x, maxp.x do
-		for z = minp.z, maxp.z do
-			for ly = minp.y, maxp.y do
-			local y = maxp.y + minp.y - ly
-			local p = {x = x, y = y, z = z}
-				if y > 2 then
-					minetest.env:remove_node(p)
-				end
-				if y < 2 then
-					minetest.env:add_node(p, {name=skyblock.FLATLAND_BOTTOM_NODE})
-				end
-				if y == 2 then
-					minetest.env:add_node(p, {name=skyblock.FLATLAND_TOP_NODE})
-				end
-			end
-		end
-	end
-end
-
-
--- handle global node digging
-skyblock.on_dignode = function(pos, oldnode, digger)
-	achievements.on_dignode(pos, oldnode, digger)
-end
-
-
--- handle global node placing
-skyblock.on_placenode = function(pos, newnode, placer, oldnode)
-	achievements.on_placenode(pos, newnode, placer, oldnode)
-end
-
-
--- build start block
+-- build spawn block
 skyblock.make_spawn_blocks = function(pos, player_name)
-	dbg("make_spawn_blocks() at "..dump(pos).." for "..player_name)
-	
-	-- sphere
-	if skyblock.SPHERE_RADIUS > 0 then
-		skyblock.make_sphere({x=pos.x,y=pos.y-skyblock.SPHERE_RADIUS,z=pos.z},skyblock.SPHERE_RADIUS,skyblock.SPHERE_NODE,skyblock.SPHERE_HOLLOW)
-	end
-
-	-- level 0 - spawn
-	minetest.env:add_node(pos, {name="skyblock:spawn"})
-	minetest.env:get_meta(pos):set_string("spawn_player",player_name)
-	achievements.update(pos)
-
-	-- level -1 - lava_source and dirt
-	for x=-1,1 do
-		for z=-1,1 do
-			if x==0 and z==0 then
-				minetest.env:add_node({x=pos.x,y=pos.y-1,z=pos.z}, {name="default:lava_source"})
-			else
-				minetest.env:add_node({x=pos.x+x,y=pos.y-1,z=pos.z+z}, {name="default:dirt"})
-			end
-		end
-	end
-
-	-- level -2 - dirt
-	minetest.env:add_node({x=pos.x,y=pos.y-2,z=pos.z}, {name="default:dirt"})
-	
-	-- level -2 -- ocean
-	if skyblock.MODE == "water" or skyblock.MODE == "lava"  then
-		local node_name = "default:water_source"
-		if skyblock.MODE == "lava" then
-			node_name = "default:lava_source"
-		end
-		minetest.env:add_node({x=pos.x-5,y=pos.y-2,z=pos.z-5}, {name=node_name})
-		minetest.env:add_node({x=pos.x-5,y=pos.y-2,z=pos.z+5}, {name=node_name})
-		minetest.env:add_node({x=pos.x+5,y=pos.y-2,z=pos.z-5}, {name=node_name})
-		minetest.env:add_node({x=pos.x+5,y=pos.y-2,z=pos.z+5}, {name=node_name})
-	end
-
+	skyblock.log("make_spawn_blocks() at "..dump(pos).." for "..player_name)
+	levels[1].make_start_blocks(pos, player_name)
 end
 
 
 -- make a tree (based on rubber tree in farming by PilzAdam)
 skyblock.generate_tree = function(pos)
-	dbg("generate_tree() at "..dump(pos))
+	skyblock.log("generate_tree() at "..dump(pos))
 	
 	-- check if we have space to make a tree
 	for dy=1,4 do

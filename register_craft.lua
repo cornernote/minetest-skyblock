@@ -144,3 +144,12 @@ minetest.register_craft({
 	}
 })
 
+-- mese
+minetest.register_craft({
+	output = "default:mese",
+	recipe = {
+		{"default:steelblock", "default:steelblock"},
+		{"default:steelblock", "default:steelblock"},
+	}
+})
+
