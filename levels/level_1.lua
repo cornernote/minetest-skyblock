@@ -171,7 +171,7 @@ levels[level].update = function(player_name,pos)
 	end
 
 	-- dig stone with mese pickaxe
-	formspec = formspec.."label[8,8; 9) dig stone with a Mese Pickaxe]"
+	formspec = formspec.."label[8,8; 9) dig 100 Stone with a Mese Pickaxe]"
 	if achievements.get(level,player_name,"dig_stone_with_mese_pickaxe") >= 100 then
 		formspec = formspec .. "label[8.3,8.4; COMPLETE!]"
 		count = count + 1

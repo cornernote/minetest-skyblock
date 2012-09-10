@@ -17,13 +17,10 @@ DESCRIPTION
 
 Build a world starting from a small island in the sky.
 
-Here is a video by SlamacowCreations made in MineCraft that helps explain the concept:
-http://www.youtube.com/watch?v=fsk7uZI4_NI
-
 
 -- So, this is just minetest without mapgen? --
 
-Well, yes and no. This release is intended to be a MINIMAL skyblock game aimed mostly at other developers.  I am expecting that I will release several variations as more complete games, and that other developers may do the same.
+Well, yes and no. This release is intended to be a minimal game that allows the player to craft and use includes all the default nodes in minetest in a fun and challenging way.
 
 
 -- What else will this change in my game? --
@@ -36,7 +33,7 @@ Because of this, some things have to be different:
 - flowing lava and water collide to make stone
 - crafts to allow access to all items
 - prevent chopping down trees with bare hands
-- many abms to control spawning and growing nodes
+- abms to control spawning and growing nodes
 
 
 
@@ -57,28 +54,6 @@ move skyblock into /minetest/games/skyblock_game/mods/
 
 
 ----------------------------------
-BUILD CHALLENGES
-----------------------------------
-
-Your mission is to build the following:
-
-1) stone generator
-2) tree farm
-3) a house
-4) infinite water source
-5) external house decoration
-6) water feature
-7) internal house decoration
-8) small lake
-9) underground room in your house
-10) something not provided by default (you have to install a mod)
-
-BONUS) post a screenshot to the link below (feel free to post your progress screenshots too!)
-http://minetest.net/forum/viewtopic.php?id=2799
-
-
-
-----------------------------------
 PLAYING INSTRUCTIONS
 ----------------------------------
 
@@ -88,16 +63,19 @@ PLAYING INSTRUCTIONS
 If you fall below skyblock.WORLD_BOTTOM you will lose all your items.
 
 
+-- Tree Farm --
+
+Noticed those leaves in your inventory?  Craft them into a sapling then throw it on the ground and it will grow into a tree.  Perhaps even an apple or jungle tree!
+
+
 -- Crafting --
 
-You may notice you cannot chop down trees or dig the stone with your bare hands.  
-
-Put the tree in your craft grid and you will receive 4 wood.
+Put a tree in your craft grid and you will receive 4 wood.
 Put one of the wood back into the craft grid and you will receive 4 sticks.
 
-S-S  <-- Bucket
--S-  S=steel ignot
----
+LLL  L=leaves   <-- Sapling
+LLL  S=stick
+-S-  - empty
 
 WW-  <-- Wooden Axe
 WS-  W=wood, S=stick
@@ -115,6 +93,38 @@ CCC  <-- Furnace
 C-C  C=cobblestone
 CCC
 
+S-S  <-- Bucket
+-S-  S=steel ignot
+---
+
+-C-  <-- Stone with Coal x2
+-S-  C=coal lump
+---  S=stone
+
+-I-  <-- Stone with Iron x2
+-S-  I=iron lump
+---  S=stone
+
+---  <-- Gravel x4
+-C-  C=cobblestone
+---  
+
+---  <-- Dirt x2
+-G-  G=gravel
+---  
+
+---  <-- Clay Lump x4
+-D-  D=dirt
+---  
+
+-J-  <-- Mossy Cobble x4
+-C-  J=jungle grass
+---  C=cobblestone
+
+SS-  <-- Mese
+SS-  S=steelblock
+---  
+
 To learn all of the crafts you can either peek inside the register_craft.lua file, or install one of these mods:
 Craft Guide - http://minetest.net/forum/viewtopic.php?id=2334
 Game Wiki - http://minetest.net/forum/viewtopic.php?id=2479
@@ -122,16 +132,7 @@ Game Wiki - http://minetest.net/forum/viewtopic.php?id=2479
 
 -- Stone Generator --
 
-While you wait for your tree to grow, you should probably create a stone generator.  This is done by placing lava and water next to each other with air between.
-
-
--- Tree Farm --
-
-Noticed those leaves in your inventory?  Craft them into a sapling then throw it on the ground and it will grow into a tree.  Perhaps even an apple or jungle tree!
-
-LLL  L=leaves   <-- Sapling
-LLL  S=stick
--S-  - empty
+Create stone done by placing lava and water next to each other with air between.  Stone nodes will appear between them.
 
 
 -- Infinite Water --
@@ -139,37 +140,59 @@ LLL  S=stick
 If you want to create more water simply place your 2 water sources so they touch diagonally.  Now when you take one with the bucket, it will be replaced.
 
 
--- What's Next --
 
-The rest is up to you.  Load your favorite minetest mods and start building your world!
+----------------------------------
+LEVELS AND MISSIONS
+----------------------------------
+
+There are 3 levels included.  You can also make your own levels using the achievements api.
+
+-- LEVEL 1 - Welcome Traveller
+Complete the tasks to the right to receive great rewards!  If you wasted the required items you can dig this node to restart.
+1) grow a Tree
+2) dig a Tree
+3) craft and place a Chest
+4) collect the Lave Source under your Spawn
+5) build a Stone Generator and dig 20 Cobble
+6) craft and place a Furnace
+7) dig 4 Coal Lumps
+8) extend your Island with 100 Dirt
+9) dig 100 Stone with a Mese Pickaxe
+10) create an Infinite Water Source
+
+-- LEVEL 2 - A View From Above
+Wow, look at that view... of... nothing. You should get to work extending this island.  Perhaps you could build some structures too?
+1) extend your Island with 200 Dirt
+2) build a structure using 200 Wood
+3) build a structure using 200 Brick
+4) add at least 200 Glass windows
+5) make a desert with 200 Sand
+6) also include 200 Desert Sand
+7) build a tower with 200 Stone
+8) make a path with 200 Cobblestone
+9) also use 200 Mossy Cobblestone
+10) decorate your area with 75 Steel Blocks
+
+-- LEVEL 3 - Does This Keep Going?
+If you like this planet, then stray not from your mission traveller, for the end is near.
+1) dig 20 Papyrus
+2) place 20 Papyrus in a nice garden
+3) dig 15 Cactus
+4) place 15 Cactus in another gargen
+5) place 30 fences around your gardens
+6) add 20 ladders to your structures
+7) decorate your house with 5 Bookshelves
+8) place 10 Signs to help other travellers
+9) place 50 Torches to help you see at night
+10) dig 500 Stone for your next project...
 
 
 
 ----------------------------------
-SINGLEPLAYER MAP
+OCEAN MODE
 ----------------------------------
 
-I have included 2 worldedit schems that will allow you to load the L-shaped map similar to the video above.
-
-schems/skyblock.we      <-- just the dirt
-schems/skyblock_plus.we <-- dirt, chest and tree
-
-To load them into your world, you must have the worldedit mod installed:
-https://github.com/Uberi/MineTest-WorldEdit
-http://minetest.net/forum/viewtopic.php?id=572
-
-Copy the *.we files into: /minetest/worlds/[yourworld]/schems
-Then issue the following chat commands:
-//pos1
-//load skyblock_plus
-
-You should now have an L-shaped island in the middle of your void.
-
-If you still have a spawnblock that you cannot remove, issue the chat command:
-//p set
-Then punch the block twice, then issue the chat command: 
-//set air
-
+Inside config.lua you can set skyblock.MODE to either water or lava to create an endless ocean around your starting island.
 
 
 ----------------------------------

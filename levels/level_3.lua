@@ -61,8 +61,8 @@ levels[level].update = function(player_name,pos)
 
 		.."label[0,1; --== Does This Keep Going? ==--]"
 		.."label[0,1.5; If you like this planet, then stray not]"
-		.."label[0,2.0; from your mission traveller, for you are]"
-		.."label[0,2.5; near the end.]"
+		.."label[0,2.0; from your mission traveller, for the end]"
+		.."label[0,2.5; is near.]"
 		
 		.."label[0,4; --== About The Level "..level.." Block ==--]"
 		.."label[0,4.5; * SHORT LEFT CLICK]"
