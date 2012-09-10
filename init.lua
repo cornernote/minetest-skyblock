@@ -1,6 +1,6 @@
 --[[
 
-SkyBlock for MineTest
+SkyBlock for Minetest
 
 Copyright (c) 2012 cornernote, Brett O'Donnell <cornernote@gmail.com>
 Source Code: https://github.com/cornernote/minetest-skyblock
@@ -20,6 +20,9 @@ dofile(minetest.get_modpath("skyblock").."/config.lua")
 dofile(minetest.get_modpath("skyblock").."/api_table_save.lua")
 dofile(minetest.get_modpath("skyblock").."/api_achievements.lua")
 dofile(minetest.get_modpath("skyblock").."/api_skyblock.lua")
+
+-- load levels
+dofile(minetest.get_modpath("skyblock").."/levels/init.lua")
 
 -- register entities
 dofile(minetest.get_modpath("skyblock").."/register_alias.lua")

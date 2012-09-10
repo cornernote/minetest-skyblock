@@ -1,6 +1,6 @@
 --[[
 
-SkyBlock for MineTest
+SkyBlock for Minetest
 
 Copyright (c) 2012 cornernote, Brett O'Donnell <cornernote@gmail.com>
 Source Code: https://github.com/cornernote/minetest-skyblock
@@ -16,14 +16,6 @@ local players_achievements = table.load(skyblock.FILENAME..".achievements")
 if players_achievements == nil then
 	players_achievements = {}
 end
-
-
--- load levels
-levels = {}
-dofile(minetest.get_modpath("skyblock").."/level_1.lua")
-dofile(minetest.get_modpath("skyblock").."/level_2.lua")
-dofile(minetest.get_modpath("skyblock").."/level_3.lua")
-dofile(minetest.get_modpath("skyblock").."/level_4.lua")
 
 
 --
@@ -45,6 +37,7 @@ end
 achievements.update = function(level,player_name)
 	local pos = levels[level].get_pos(player_name)
 	skyblock.log("achievements.update() level "..level.." for "..player_name.." at "..dump(pos))
+	if pos==nil then return pos end
 	local meta = minetest.env:get_meta(pos)
 	local formspec,infotext = levels[level].achievements(player_name,pos)
 	meta:set_string("formspec", formspec)

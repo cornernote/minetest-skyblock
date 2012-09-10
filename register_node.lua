@@ -1,6 +1,6 @@
 --[[
 
-SkyBlock for MineTest
+SkyBlock for Minetest
 
 Copyright (c) 2012 cornernote, Brett O'Donnell <cornernote@gmail.com>
 Source Code: https://github.com/cornernote/minetest-skyblock
@@ -18,8 +18,12 @@ REGISTER NODE
 for level=1,4 do
 	minetest.register_node("skyblock:level_"..level, {
 		description = "Level "..level,
-		tiles = {"default_nc_rb.png"},
+		tiles = {"skyblock_"..level..".png"},
 		is_ground_content = true,
+		paramtype = "light",
+		light_propagates = true,
+		sunlight_propagates = true,
+		light_source = 15,		
 		groups = {crumbly=2,cracky=2},
 		on_punch = function(pos, node, puncher)
 			achievements.level_on_punch(level, pos, node, puncher)
