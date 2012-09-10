@@ -111,7 +111,7 @@ minetest.register_node(":default:sandstone", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
--- handle bucket usage
+-- handle bucket_empty usage
 minetest.register_craftitem(":bucket:bucket_empty", {
 	description = "Emtpy bucket",
 	inventory_image = "bucket.png",
@@ -120,9 +120,18 @@ minetest.register_craftitem(":bucket:bucket_empty", {
 	on_use = skyblock.bucket_on_use,
 })
 
--- prevent lava bucket grief
+-- handle bucket_water usage
+minetest.register_craftitem(":bucket:bucket_water", {
+	description = "Bucket of Water",
+	inventory_image = "bucket_water.png",
+	stack_max = 1,
+	liquids_pointable = true,
+	on_use = skyblock.bucket_water_on_use,
+})
+
+-- handle bucket_lava usage
 minetest.register_craftitem(":bucket:bucket_lava", {
-	description = "Emtpy bucket",
+	description = "Bucket of Lava",
 	inventory_image = "bucket_lava.png",
 	stack_max = 1,
 	liquids_pointable = true,

@@ -39,7 +39,7 @@ achievements.update = function(level,player_name)
 	skyblock.log("achievements.update() level "..level.." for "..player_name.." at "..dump(pos))
 	if pos==nil then return pos end
 	local meta = minetest.env:get_meta(pos)
-	local formspec,infotext = levels[level].achievements(player_name,pos)
+	local formspec,infotext = levels[level].update(player_name,pos)
 	meta:set_string("formspec", formspec)
 	meta:set_string("infotext", infotext)
 	meta:get_inventory():set_size("rewards", 2*2)
@@ -119,6 +119,22 @@ achievements.bucket_on_use = function(itemstack, user, pointed_thing)
 	levels[level].bucket_on_use(player_name, pointed_thing)
 end
 
+-- bucket achievements
+achievements.bucket_water_on_use = function(itemstack, user, pointed_thing)
+	local player_name = user:get_player_name()
+	local level = achievements.get(0, player_name, "level")
+	skyblock.log("achievements.bucket_water_on_use() for "..player_name.." on level "..level)
+	levels[level].bucket_water_on_use(player_name, pointed_thing)
+end
+
+-- bucket achievements
+achievements.bucket_lava_on_use = function(itemstack, user, pointed_thing)
+	local player_name = user:get_player_name()
+	local level = achievements.get(0, player_name, "level")
+	skyblock.log("achievements.bucket_lava_on_use() for "..player_name.." on level "..level)
+	levels[level].bucket_lava_on_use(player_name, pointed_thing)
+end
+
 -- handle digging the level block
 achievements.level_on_dig = function(level, pos, node, digger)
 	if level ~= 1 then
@@ -135,11 +151,9 @@ achievements.level_on_dig = function(level, pos, node, digger)
 	digger:set_hp(0)
 end
 
-
 -- handle level block punch
 achievements.level_on_punch = function(level, pos, node, puncher)
 	local player_name = puncher:get_player_name()
 	skyblock.log("achievements.level_on_punch() by "..player_name)
 	achievements.update(level, player_name)
 end
-

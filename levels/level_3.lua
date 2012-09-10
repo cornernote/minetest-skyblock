@@ -46,8 +46,8 @@ levels[level].make_start_blocks = function(player_name)
 end
 
 
--- achievements label
-levels[level].achievements = function(player_name,pos)
+-- update achievements
+levels[level].update = function(player_name,pos)
 	local formspec = ""
 	local total = 10
 	local count = 0
@@ -316,3 +316,5 @@ end
 
 -- not used
 levels[level].bucket_on_use = function(player_name, pointed_thing) end
+levels[level].bucket_water_on_use = function(player_name, pointed_thing) end
+levels[level].bucket_lava_on_use = function(player_name, pointed_thing) end

@@ -45,8 +45,8 @@ levels[level].make_start_blocks = function(player_name)
 end
 
 
--- achievements label
-levels[level].achievements = function(player_name,pos)
+-- update achievements
+levels[level].update = function(player_name,pos)
 	local formspec = ""
 	local total = 0
 	local count = 0
@@ -69,3 +69,5 @@ levels[level].reward_achievement = function(player_name,achievement) end
 levels[level].on_placenode = function(pos, newnode, placer, oldnode) end
 levels[level].on_dignode = function(pos, oldnode, digger) end
 levels[level].bucket_on_use = function(player_name, pointed_thing) end
+levels[level].bucket_water_on_use = function(player_name, pointed_thing) end
+levels[level].bucket_lava_on_use = function(player_name, pointed_thing) end
