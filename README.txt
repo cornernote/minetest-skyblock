@@ -58,9 +58,18 @@ PLAYING INSTRUCTIONS
 ----------------------------------
 
 
+-- Level Achievement Block --
+
+Punch (short left click) to refresh your achievements.
+
+Dig (long left click) to respawn at a new location with new items.
+
+Open (right click) to view current achievements.
+
+
 -- Death Hurts --
 
-If you fall below skyblock.WORLD_BOTTOM you will lose all your items.
+If you fall below skyblock.WORLD_BOTTOM you will restart at a new spawn point.
 
 
 -- Tree Farm --
