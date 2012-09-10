@@ -20,7 +20,7 @@ Build a world starting from a small island in the sky.
 
 -- So, this is just minetest without mapgen? --
 
-Well, yes and no. This release is intended to be a minimal game that allows the player to craft and use includes all the default nodes in minetest in a fun and challenging way.
+Well, yes and no. This release is intended to be a minimal game that allows the player to craft and use all the default nodes in minetest in a fun and challenging way.
 
 
 -- What else will this change in my game? --
