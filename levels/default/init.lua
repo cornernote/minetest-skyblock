@@ -16,10 +16,10 @@ LEVEL LOADER
 --
 
 levels = {}
-dofile(minetest.get_modpath("skyblock").."/levels/level_1.lua")
-dofile(minetest.get_modpath("skyblock").."/levels/level_2.lua")
-dofile(minetest.get_modpath("skyblock").."/levels/level_3.lua")
-dofile(minetest.get_modpath("skyblock").."/levels/level_4.lua")
+dofile(minetest.get_modpath("skyblock").."/levels/default/level_1.lua")
+dofile(minetest.get_modpath("skyblock").."/levels/default/level_2.lua")
+dofile(minetest.get_modpath("skyblock").."/levels/default/level_3.lua")
+dofile(minetest.get_modpath("skyblock").."/levels/default/level_4.lua")
 
 --
 -- Level Nodes
