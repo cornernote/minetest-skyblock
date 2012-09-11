@@ -68,7 +68,7 @@ end
 -- give reward
 achievements.give_reward = function(level,player_name,item_name)
 	skyblock.log("achievements.give_reward() for "..player_name.." item "..item_name)
-	minetest.env:get_meta(skyblock.has_spawn(player_name)):get_inventory():add_item("rewards", item_name)
+	minetest.env:get_meta(levels[level].get_pos(player_name)):get_inventory():add_item("rewards", item_name)
 end
 
 
