@@ -16,6 +16,9 @@ skyblock.START_GAP = 64
 -- Game mode (which block is the ocean in the void) - air | water | lava
 skyblock.MODE = "air"
 
+-- Level selection (which level files to use)
+skyblock.LEVEL = "default"
+
 -- The Y position the spawn nodes will appear
 skyblock.START_HEIGHT = 4
 

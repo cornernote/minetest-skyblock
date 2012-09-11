@@ -22,7 +22,7 @@ dofile(minetest.get_modpath("skyblock").."/api_achievements.lua")
 dofile(minetest.get_modpath("skyblock").."/api_skyblock.lua")
 
 -- load levels
-dofile(minetest.get_modpath("skyblock").."/levels/init.lua")
+dofile(minetest.get_modpath("skyblock").."/"..skyblock.LEVEL.."/init.lua")
 
 -- register entities
 dofile(minetest.get_modpath("skyblock").."/register_alias.lua")
