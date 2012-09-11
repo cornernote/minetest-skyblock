@@ -49,7 +49,7 @@ minetest.register_node(":default:leaves", {
 	visual_scale = 1.3,
 	tiles = {"default_leaves.png"},
 	paramtype = "light",
-	groups = {snappy=3, leafdecay=3, flammable=2},
+	groups = {oddly_breakable_by_hand=1, snappy=3, leafdecay=3, flammable=2},
 	drop = {
 		max_items = 1,
 		items = {
