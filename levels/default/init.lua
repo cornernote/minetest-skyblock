@@ -41,6 +41,9 @@ for level=1,4 do
 		on_dig = function(pos, node, digger)
 			achievements.level_on_dig(level, pos, node, digger)
 		end,
+		on_construct = function(pos)
+			minetest.env:get_meta(pos):get_inventory():set_size("rewards", 2*2)
+		end,
 	})
 end
 

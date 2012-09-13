@@ -42,7 +42,6 @@ achievements.update = function(level,player_name)
 	local formspec,infotext = levels[level].update(player_name,pos)
 	meta:set_string("formspec", formspec)
 	meta:set_string("infotext", infotext)
-	meta:get_inventory():set_size("rewards", 2*2)
 end
 
 
