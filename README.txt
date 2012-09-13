@@ -72,73 +72,6 @@ Open (right click) to view current achievements.
 If you fall below skyblock.WORLD_BOTTOM you will restart at a new spawn point.
 
 
--- Tree Farm --
-
-Noticed those leaves in your inventory?  Craft them into a sapling then throw it on the ground and it will grow into a tree.  Perhaps even an apple or jungle tree!
-
-
--- Crafting --
-
-Put a tree in your craft grid and you will receive 4 wood.
-Put one of the wood back into the craft grid and you will receive 4 sticks.
-
-LLL  L=leaves   <-- Sapling
-LLL  S=stick
--S-  - empty
-
-WW-  <-- Wooden Axe
-WS-  W=wood, S=stick
--S-
-
-WWW  <-- Wooden Pickaxe
--S-  W=wood, S=stick
--S-
-
-WWW  <-- Chest
-W-W  W=wood
-WWW
-
-CCC  <-- Furnace
-C-C  C=cobblestone
-CCC
-
-S-S  <-- Bucket
--S-  S=steel ignot
----
-
--C-  <-- Stone with Coal x2
--S-  C=coal lump
----  S=stone
-
--I-  <-- Stone with Iron x2
--S-  I=iron lump
----  S=stone
-
----  <-- Gravel x4
--C-  C=cobblestone
----  
-
----  <-- Dirt x2
--G-  G=gravel
----  
-
----  <-- Clay Lump x4
--D-  D=dirt
----  
-
--J-  <-- Mossy Cobble x4
--C-  J=jungle grass
----  C=cobblestone
-
-SS-  <-- Mese
-SS-  S=steelblock
----  
-
-To learn all of the crafts you can either peek inside the register_craft.lua file, or install one of these mods:
-Craft Guide - http://minetest.net/forum/viewtopic.php?id=2334
-Game Wiki - http://minetest.net/forum/viewtopic.php?id=2479
-
-
 -- Stone Generator --
 
 Create stone done by placing lava and water next to each other with air between.  Stone nodes will appear between them.
@@ -147,6 +80,12 @@ Create stone done by placing lava and water next to each other with air between.
 -- Infinite Water --
 
 If you want to create more water simply place your 2 water sources so they touch diagonally.  Now when you take one with the bucket, it will be replaced.
+
+
+-- Crafting --
+
+To learn all of the crafts you can visit the SkyBlock GameWiki:
+http://cornernote.net/minetest/skyblock/wiki/crafts.php
 
 
 
