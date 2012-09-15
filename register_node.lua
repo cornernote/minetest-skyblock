@@ -15,103 +15,53 @@ REGISTER NODES
 -- Override Default Nodes
 --
 
--- stone should give a random drop
-minetest.register_node(":default:stone", {
-	description = "Stone",
-	tiles = {"default_stone.png"},
-	is_ground_content = true,
-	groups = {cracky=3},
-	drop = {
-		max_items = 1,
-		items = {
-			{items = {"default:desert_stone"}, rarity = 20},
-			{items = {"default:sandstone"}, rarity = 10},
-			{items = {"default:cobble"}}
-		}
-	},
-	legacy_mineral = true,
-	sounds = default.node_sound_stone_defaults(),
-})
+local entity
 
--- trees should not be choppable by hand
-minetest.register_node(":default:tree", {
-	description = "Tree",
-	tiles = {"default_tree_top.png", "default_tree_top.png", "default_tree.png"},
-	is_ground_content = true,
-	groups = {tree=1,snappy=1,choppy=2,flammable=2},
-	sounds = default.node_sound_wood_defaults(),
-})
+-- stone
+entity = skyblock.registered("node","default:stone")
+entity.drop = {
+	max_items = 1,
+	items = {
+		{items = {"default:desert_stone"}, rarity = 20},
+		{items = {"default:sandstone"}, rarity = 10},
+		{items = {"default:cobble"}}
+	}
+}
+minetest.register_node(":default:stone", entity)
 
--- leaves should be climbable
-minetest.register_node(":default:leaves", {
-	description = "Leaves",
-	drawtype = "allfaces_optional",
-	visual_scale = 1.3,
-	tiles = {"default_leaves.png"},
-	paramtype = "light",
-	groups = {oddly_breakable_by_hand=1, snappy=3, leafdecay=3, flammable=2},
-	drop = {
-		max_items = 1,
-		items = {
-			--{items = {"default:nyancat"}, rarity = 1000},
-			{items = {"default:leaves"}}
-		}
-	},
-	climbable = true,
-	sounds = default.node_sound_leaves_defaults(),
-	walkable = false,
-})
+-- trees
+entity = skyblock.registered("node","default:tree")
+entity.groups = {tree=1,snappy=1,choppy=2,flammable=2}
+minetest.register_node(":default:tree", entity)
 
--- sapling generates a tree on place
-minetest.register_node(":default:sapling", {
-	description = "Sapling",
-	drawtype = "plantlike",
-	visual_scale = 1.0,
-	tiles = {"default_sapling.png"},
-	inventory_image = "default_sapling.png",
-	wield_image = "default_sapling.png",
-	paramtype = "light",
-	walkable = false,
-	groups = {snappy=2,dig_immediate=3,flammable=2},
-	sounds = default.node_sound_defaults(),
-	after_place_node = skyblock.generate_tree,
-})
+-- leaves
+entity = skyblock.registered("node","default:leaves")
+entity.drop = "default:leaves"
+entity.groups = {oddly_breakable_by_hand=1, snappy=3, leafdecay=3, flammable=2}
+entity.climbable = true
+minetest.register_node(":default:leaves", entity)
 
--- sandstone should drop 4 sand
-minetest.register_node(":default:sandstone", {
-	description = "Sandstone",
-	tiles = {"default_sandstone.png"},
-	is_ground_content = true,
-	groups = {crumbly=2,cracky=2},
-	drop = 'default:sandstone',
-	sounds = default.node_sound_stone_defaults(),
-})
+-- sapling
+entity = skyblock.registered("node","default:sapling")
+entity.after_place_node = skyblock.generate_tree
+minetest.register_node(":default:sapling", entity)
 
--- handle bucket_empty usage
-minetest.register_craftitem(":bucket:bucket_empty", {
-	description = "Emtpy bucket",
-	inventory_image = "bucket.png",
-	stack_max = 1,
-	liquids_pointable = true,
-	on_use = skyblock.bucket_on_use,
-})
+-- sandstone
+entity = skyblock.registered("node","default:sandstone")
+entity.drop = "default:sandstone"
+minetest.register_node(":default:sandstone", entity)
 
--- handle bucket_water usage
-minetest.register_craftitem(":bucket:bucket_water", {
-	description = "Bucket of Water",
-	inventory_image = "bucket_water.png",
-	stack_max = 1,
-	liquids_pointable = true,
-	on_use = skyblock.bucket_water_on_use,
-})
+-- bucket_empty
+entity = skyblock.registered("craftitem","bucket:bucket_empty")
+entity.on_use = skyblock.bucket_on_use
+minetest.register_craftitem(":bucket:bucket_empty", entity)
 
--- handle bucket_lava usage
-minetest.register_craftitem(":bucket:bucket_lava", {
-	description = "Bucket of Lava",
-	inventory_image = "bucket_lava.png",
-	stack_max = 1,
-	liquids_pointable = true,
-	on_use = skyblock.bucket_lava_on_use,
-})
+-- bucket_water
+entity = skyblock.registered("craftitem","bucket:bucket_water")
+entity.on_use = skyblock.bucket_water_on_use
+minetest.register_craftitem(":bucket:bucket_water", entity)
 
-
+-- bucket_lava
+entity = skyblock.registered("craftitem","bucket:bucket_lava")
+entity.on_use = skyblock.bucket_lava_on_use
+minetest.register_craftitem(":bucket:bucket_lava", entity)

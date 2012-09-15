@@ -604,3 +604,22 @@ local load_last_start_id = function()
 	
 end
 load_last_start_id() -- run it now
+
+
+-- registered
+skyblock.registered = function(case,name)
+	local params = {}
+	local list
+	if case == "item" then list = minetest.registered_items end
+	if case == "node" then list = minetest.registered_nodes end
+	if case == "craftitem" then list = minetest.registered_craftitems end
+	if case == "tool" then list = minetest.registered_tools end
+	if case == "entity" then list = minetest.registered_entities end
+	if list then
+		for k,v in pairs(list[name]) do
+			params[k] = v
+		end
+	end
+	return params
+end
+
