@@ -30,22 +30,6 @@ Because of this, some things have to be different:
 
 
 ----------------------------------
-INSTALL INSTRUCTIONS
-----------------------------------
-
-
-1) rename cornernote-minetest-skyblock-* to skyblock
-
-2.a) as a mod
-move skyblock into /minetest/mods/minetest/
-OR
-2.b) as a game mode
-copy /minetest/games/minetest_game to /minetest/games/skyblock_game
-move skyblock into /minetest/games/skyblock_game/mods/
-
-
-
-----------------------------------
 PLAYING INSTRUCTIONS
 ----------------------------------
 
