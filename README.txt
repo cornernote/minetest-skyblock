@@ -2,18 +2,19 @@
 SKYBLOCK FOR MINETEST
 ----------------------------------
 
-
 Copyright (c) 2012 cornernote, Brett O'Donnell <cornernote@gmail.com>
-
 Source Code: https://github.com/cornernote/minetest-skyblock
-License: GPLv3
 
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
 
 ----------------------------------
 DESCRIPTION
 ----------------------------------
-
 
 Build a world starting from a small island in the sky. This Minetest mod is intended to be used as a minimal game that allows the player to craft and use all the default items in Minetest in a fun and challenging way.
 
@@ -26,7 +27,6 @@ Because of this, some things have to be different:
 - crafts to allow access to all items
 - prevent chopping down trees with bare hands
 - abms to control spawning and growing nodes
-
 
 
 ----------------------------------
@@ -111,7 +111,6 @@ If you like this planet, then stray not from your mission traveller, for the end
 10) dig 500 Stone for your next project...
 
 
-
 ----------------------------------
 OCEAN MODE
 ----------------------------------
@@ -146,44 +145,17 @@ Note:
 Your world will be limited to skyblock.WORLD_WIDTH*skyblock.WORLD_WIDTH players.
 
 
-
 ----------------------------------
 OTHER OPTIONS
 ----------------------------------
 
-
 Have a peek inside the config.lua to see other things you can change.
-
-
-
-----------------------------------
-License
-----------------------------------
-
-This program is free software; you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation; either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License along
-with this program; if not, write to the Free Software Foundation, Inc.,
-51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
-
 
 
 ----------------------------------
 Credits
 ----------------------------------
 
-Thank you to the minetest community who has shared their code 
-and knowledge with me.
-
-Special thanks in this mod to:
 PilzAdam - code to make a tree came from his farming mod
 RealBadAngel - help in IRC to make the spiral
 anyone else who i borrowed code from =)
