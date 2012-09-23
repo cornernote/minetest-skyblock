@@ -39,6 +39,7 @@ entity = skyblock.registered("node","default:leaves")
 entity.drop = "default:leaves"
 entity.groups = {oddly_breakable_by_hand=1, snappy=3, leafdecay=3, flammable=2}
 entity.climbable = true
+entity.walkable = false
 minetest.register_node(":default:leaves", entity)
 
 -- sapling
