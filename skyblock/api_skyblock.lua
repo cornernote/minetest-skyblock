@@ -45,6 +45,7 @@ skyblock.check_inventory = function(player)
 	skyblock.log("check_inventory() for "..player:get_player_name())
 	local inv = player:get_inventory()
 	local stack
+	if inv==nil then return false end
 	
 	stack = inv:get_stack('main', 1)
 	if stack:get_name() ~= 'default:stick' or stack:get_count() ~= 1 then
