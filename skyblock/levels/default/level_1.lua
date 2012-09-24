@@ -294,7 +294,7 @@ levels[level].on_dignode = function(pos, oldnode, digger)
 	end
 	
 	-- dig_tree
-	if oldnode.name == "default:tree" then
+	if oldnode.name == "default:tree" or oldnode.name == "default:jungletree" then
 		achievements.add(level,player_name,"dig_tree")
 		return
 	end
