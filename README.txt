@@ -156,7 +156,7 @@ Have a peek inside the config.lua to see other things you can change.
 Credits
 ----------------------------------
 
-PilzAdam - code to make a tree came from his farming mod
+PilzAdam - code to make a tree came from farming mod
 RealBadAngel - help in IRC to make the spiral
-anyone else who i borrowed code from =)
+mauvebic - code to make a sphere came from multinode mod
 
