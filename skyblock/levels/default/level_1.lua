@@ -30,9 +30,11 @@ end
 levels[level].make_start_blocks = function(pos, player_name)
 	skyblock.log("level["..level.."].make_start_blocks() for "..player_name)
 
-	-- level 0 - spawn and dirt
+	-- level 0 - spawn
 	minetest.env:add_node(pos, {name="skyblock:level_1"})
-	--achievements.update(level,player_name)
+	achievements.update(level,player_name)
+	
+	-- level 0 - dirt
 	for x=-1,1 do
 		for z=-1,1 do
 			if x~=0 or z~=0 then
@@ -41,24 +43,14 @@ levels[level].make_start_blocks = function(pos, player_name)
 		end
 	end
 
-	-- level -1 - lava_source and dirt
+	-- level -1 and -2 dirt
 	for x=-1,1 do
 		for z=-1,1 do
-			if x==0 and z==0 then
-				minetest.env:add_node({x=pos.x,y=pos.y-1,z=pos.z}, {name="default:lava_source"})
-			else
-				minetest.env:add_node({x=pos.x+x,y=pos.y-1,z=pos.z+z}, {name="default:dirt"})
-			end
-		end
-	end
-
-	-- level -2 - dirt
-	for x=-1,1 do
-		for z=-1,1 do
+			minetest.env:add_node({x=pos.x+x,y=pos.y-1,z=pos.z+z}, {name="default:dirt"})
 			minetest.env:add_node({x=pos.x+x,y=pos.y-2,z=pos.z+z}, {name="default:dirt"})
 		end
 	end
-	
+
 	-- level -2 -- ocean
 	if skyblock.MODE == "water" or skyblock.MODE == "lava"  then
 		local node_name = "default:water_source"
@@ -224,6 +216,9 @@ levels[level].reward_achievement = function(player_name,achievement)
 	-- place_chest
 	if achievement == "place_chest" and achievement_count == 1 then
 		achievements.give_reward(level,player_name,"bucket:bucket_empty")
+		-- put lava under spawn
+		local pos = skyblock.get_spawn(player_name)
+		minetest.env:add_node({x=pos.x,y=pos.y-1,z=pos.z}, {name="default:lava_source"})
 		return true
 	end
 

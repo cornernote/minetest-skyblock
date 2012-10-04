@@ -19,6 +19,9 @@ skyblock.MODE = "air"
 -- Level selection (which level files to use)
 skyblock.LEVEL = "default"
 
+-- Should digging the spawn result in a new spawn pos?
+skyblock.DIG_NEW_SPAWN = false
+
 -- The Y position the spawn nodes will appear
 skyblock.START_HEIGHT = 4
 

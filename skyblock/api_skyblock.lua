@@ -183,19 +183,24 @@ skyblock.on_respawnplayer = function(player)
 	
 	-- give them a new position
 	if skyblock.spawn_diggers[player_name] ~= nil then
-		if skyblock.spawn_diggers[player_name] ~= nil then skyblock.spawn_diggers[player_name] = nil end
+		skyblock.spawn_diggers[player_name] = nil
 		
 		-- give inventory
 		skyblock.give_inventory(player)
 
-		-- unset old spawn position
-		spawned_players[player_name] = nil
-		skyblock.set_spawn(player_name, nil)
-		skyblock.set_spawn(player_name.."_DEAD", spawn)
+		if skyblock.DIG_NEW_SPAWN then
+			-- unset old spawn position
+			spawned_players[player_name] = nil
+			skyblock.set_spawn(player_name, nil)
+			skyblock.set_spawn(player_name.."_DEAD", spawn)
+		else
+			-- rebuild spawn blocks
+			skyblock.make_spawn_blocks(spawn,player_name)
+		end
 		
 	end
 	
-	-- set new spawn point and respawn
+	-- respawn player
 	skyblock.spawn_player(player)
 	return true
 end
@@ -226,9 +231,10 @@ skyblock.globalstep = function(dtime)
 			-- only check once per throttle time
 			if spawn_timer > skyblock.SPAWN_THROTLE then
 			
-				-- hit the bottom, kill them (no more than once per interval)
+				-- hit the bottom
 				if pos.y < skyblock.WORLD_BOTTOM then
 					if skyblock.check_inventory(player) then
+						-- respawn them
 						skyblock.log("globalstep() "..player_name.." has fallen too far, but dont kill them... yet =)")
 						local spawn = skyblock.has_spawn(player:get_player_name())
 						if spawn then
@@ -236,31 +242,11 @@ skyblock.globalstep = function(dtime)
 							skyblock.spawn_player(player)
 						end
 					else
+						-- kill them
 						skyblock.log("globalstep() "..player_name.." has fallen too far at "..dump(pos).."... kill them now")
 						player:set_hp(0)
 					end
 				end
-				
-				-- check for cheaters
-				--[[
-				local privs = minetest.get_player_privs(player_name)
-				local cheat=false
-				if privs["fly"] then privs["fly"] = false cheat=true end
-				if privs["give"] then privs["give"] = false cheat=true end
-				if privs["teleport"] then privs["teleport"] = false cheat=true end
-				if privs["bring"] then privs["bring"] = false cheat=true end
-				if privs["settime"] then privs["settime"] = false cheat=true end
-				if privs["rollback"] then privs["rollback"] = false cheat=true end
-				if privs["server"] then privs["server"] = false cheat=true end
-				if privs["privs"] then privs["privs"] = false cheat=true end
-				if privs["ban"] then privs["ban"] = false cheat=true end
-				if cheat then
-					minetest.chat_send_player(player_name, "CHEATING IS NOT ALLOWED!")
-					minetest.chat_send_all(player_name.." was CHEATING! (but we stopped that)")
-					minetest.set_player_privs(player_name, privs)
-					minetest.auth_reload() -- does not seem to save =(
-				end
-				]]--
 				
 			end
 			
