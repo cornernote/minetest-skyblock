@@ -95,6 +95,7 @@ end
 
 -- track digging achievements
 achievements.on_dignode = function(pos, oldnode, digger)
+	if not digger return -- needed to prevent server crash when player leaves
 	local player_name = digger:get_player_name()
 	local level = achievements.get(0, player_name, "level")
 	skyblock.log("achievements.on_dignode() for "..player_name.." on level "..level.." at "..dump(pos))
@@ -104,6 +105,7 @@ end
 
 -- track placing achievements
 achievements.on_placenode = function(pos, newnode, placer, oldnode)
+	if not placer return -- needed to prevent server crash when player leaves
 	local player_name = placer:get_player_name()
 	local level = achievements.get(0, player_name, "level")
 	skyblock.log("achievements.on_placenode() for "..player_name.." on level "..level.." at "..dump(pos))
@@ -112,6 +114,7 @@ end
 
 -- bucket achievements
 achievements.bucket_on_use = function(itemstack, user, pointed_thing)
+	if not user return -- needed to prevent server crash when player leaves
 	local player_name = user:get_player_name()
 	local level = achievements.get(0, player_name, "level")
 	skyblock.log("achievements.bucket_on_use() for "..player_name.." on level "..level)
@@ -120,6 +123,7 @@ end
 
 -- bucket achievements
 achievements.bucket_water_on_use = function(itemstack, user, pointed_thing)
+	if not user return -- needed to prevent server crash when player leaves
 	local player_name = user:get_player_name()
 	local level = achievements.get(0, player_name, "level")
 	skyblock.log("achievements.bucket_water_on_use() for "..player_name.." on level "..level)
@@ -128,6 +132,7 @@ end
 
 -- bucket achievements
 achievements.bucket_lava_on_use = function(itemstack, user, pointed_thing)
+	if not user return -- needed to prevent server crash when player leaves
 	local player_name = user:get_player_name()
 	local level = achievements.get(0, player_name, "level")
 	skyblock.log("achievements.bucket_lava_on_use() for "..player_name.." on level "..level)
@@ -136,6 +141,7 @@ end
 
 -- handle digging the level block
 achievements.level_on_dig = function(level, pos, node, digger)
+	if not digger return -- needed to prevent server crash when player leaves
 	if level ~= 1 then
 		return
 	end
@@ -152,6 +158,7 @@ end
 
 -- handle level block punch
 achievements.level_on_punch = function(level, pos, node, puncher)
+	if not puncher return -- needed to prevent server crash when player leaves
 	local player_name = puncher:get_player_name()
 	skyblock.log("achievements.level_on_punch() by "..player_name)
 	achievements.update(level, player_name)
