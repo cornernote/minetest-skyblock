@@ -10,7 +10,6 @@ REGISTER ALIAS
 
 ]]--
 
-minetest.register_alias("mapgen_singlenode", "air")
 minetest.register_alias("mapgen_air", "air")
 minetest.register_alias("mapgen_stone", "air")
 minetest.register_alias("mapgen_tree", "air")
