@@ -25,7 +25,6 @@ dofile(minetest.get_modpath("skyblock").."/api_skyblock.lua")
 dofile(minetest.get_modpath("skyblock").."/levels/"..skyblock.LEVEL.."/init.lua")
 
 -- register entities
-dofile(minetest.get_modpath("skyblock").."/register_alias.lua")
 dofile(minetest.get_modpath("skyblock").."/register_node.lua")
 dofile(minetest.get_modpath("skyblock").."/register_craft.lua")
 dofile(minetest.get_modpath("skyblock").."/register_abm.lua")

@@ -10,6 +10,10 @@ REGISTER MISC
 
 ]]--
 
+-- set mapgen to singlenode
+minetest.register_on_mapgen_init(function(mgparams)
+	minetest.set_mapgen_params({mgname="singlenode", water_level=-32000})
+end)
 
 -- handle new player
 minetest.register_on_newplayer(function(player)
