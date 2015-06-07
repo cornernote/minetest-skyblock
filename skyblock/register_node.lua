@@ -60,9 +60,11 @@ minetest.register_craftitem(":bucket:bucket_empty", entity)
 -- bucket_water
 entity = skyblock.registered("craftitem","bucket:bucket_water")
 entity.on_use = skyblock.bucket_water_on_use
+entity.on_place = skyblock.bucket_water_on_use
 minetest.register_craftitem(":bucket:bucket_water", entity)
 
 -- bucket_lava
 entity = skyblock.registered("craftitem","bucket:bucket_lava")
 entity.on_use = skyblock.bucket_lava_on_use
+entity.on_place = skyblock.bucket_lava_on_use
 minetest.register_craftitem(":bucket:bucket_lava", entity)
