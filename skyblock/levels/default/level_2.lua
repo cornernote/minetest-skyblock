@@ -225,7 +225,7 @@ levels[level].reward_achievement = function(player_name,achievement)
 	
 	-- place_cobble
 	if achievement == "place_cobble" and achievement_count == 200 then
-		achievements.give_reward(level,player_name,"default:mossycobble "..math.random(50,99))
+		achievements.give_reward(level,player_name,"default:mossycobble "..math.random(90,99))
 		return true
 	end
 	

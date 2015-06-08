@@ -28,7 +28,7 @@ minetest.register_craft({
 
 -- mossycobble
 minetest.register_craft({
-	output = "default:mossycobble",
+	output = "default:mossycobble 2",
 	recipe = {
 		{"default:junglegrass"},
 		{"default:cobble"},
