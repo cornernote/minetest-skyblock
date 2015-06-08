@@ -176,6 +176,17 @@ minetest.register_abm({
     end
 })
 
+
+-- we do not want lava cooling; it would destroy the source
+default.cool_lava_source = function(pos)
+	return;
+end
+
+-- and we do not want the lava cooling function from default
+default.cool_lava_flowing = function(pos)
+	return;
+end
+
 -- lava_flowing next to water_source will turn to stone
 minetest.register_abm({
 	nodenames = {"default:lava_flowing"},
