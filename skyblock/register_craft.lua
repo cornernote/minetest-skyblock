@@ -137,12 +137,12 @@ minetest.register_craft({
 })
 
 -- jungletree turns to wood
-minetest.register_craft({
-	output = "default:wood 4",
-	recipe = {
-		{"default:jungletree"},
-	}
-})
+--minetest.register_craft({
+--	output = "default:wood 4",
+--	recipe = {
+--		{"default:jungletree"},
+--	}
+--})
 
 -- mese
 minetest.register_craft({
