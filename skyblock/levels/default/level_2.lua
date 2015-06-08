@@ -255,7 +255,9 @@ levels[level].on_placenode = function(pos, newnode, placer, oldnode)
 	end
 
 	-- place_wood
-	if newnode.name == "default:wood" then
+	if newnode.name == "default:wood" 
+	  or newnode.name == "default:junglewood" 
+	  or newnode.name == "default:pinewood" then
 		achievements.add(level,player_name,"place_wood")
 		return
 	end

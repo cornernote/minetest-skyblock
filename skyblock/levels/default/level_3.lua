@@ -259,7 +259,7 @@ levels[level].on_placenode = function(pos, newnode, placer, oldnode)
 	end
 
 	-- place_fence
-	if newnode.name == "default:fence" or newnode.name == "xfences:fence" then
+	if newnode.name == "default:fence_wood" or newnode.name == "default:fence" or newnode.name == "xfences:fence" then
 		achievements.add(level,player_name,"place_fence")
 		return
 	end
