@@ -68,3 +68,9 @@ entity = skyblock.registered("craftitem","bucket:bucket_lava")
 entity.on_use = skyblock.bucket_lava_on_use
 entity.on_place = skyblock.bucket_lava_on_use
 minetest.register_craftitem(":bucket:bucket_lava", entity)
+
+
+-- default cacti auto-rotate when placed; on_use is not caught by the achievement-function
+entity = skyblock.registered("item","default:cactus")
+entity.on_place = nil
+minetest.register_item(":default:cactus", entity)
