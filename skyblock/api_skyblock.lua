@@ -385,18 +385,24 @@ skyblock.generate_tree = function(pos)
 	local node = {name = ""}
 
 	-- check if we should make an apple tree
-	local is_apple_tree, is_jungle_tree = false, false
+	local is_apple_tree, is_jungle_tree, is_pine_tree = false, false, false
 	if math.random(0, 8) == 0 then
 		is_apple_tree = true
 	else
-		if math.random(0, 8) == 0 then
-			is_jungle_tree = true
+		if math.random(0, 8) <  7 then
+			if( not( minetest.registered_nodes['default:pinetree']) or math.random(1,2)==1 ) then
+				is_jungle_tree = true
+			else
+				is_pine_tree = true
+			end
 		end
 	end
 	
 	-- add the tree
 	if is_jungle_tree then
 		node.name = "default:jungletree"
+	elseif is_pine_tree then
+		node.name = "default:pinetree"
 	else
 		node.name = "default:tree"
 	end
