@@ -14,10 +14,11 @@ USER CONFIG
 skyblock.START_GAP = 64
 
 -- Game mode (which block is the ocean in the void) - air | water | lava
-skyblock.MODE = "air"
+skyblock.MODE = "water" --"air"
 
 -- Level selection (which level files to use)
-skyblock.LEVEL = "default"
+--skyblock.LEVEL = "default"
+skyblock.LEVEL = "extended"
 
 -- Should digging the spawn result in a new spawn pos?
 skyblock.DIG_NEW_SPAWN = false
@@ -31,6 +32,8 @@ skyblock.WORLD_WIDTH = 100
 
 -- How far down (in nodes) before a player dies and is respawned
 skyblock.WORLD_BOTTOM = -32
+-- be nice to server and clients - make sure liquids and other items do not drop endlessly
+skyblock.WORLD_BOTTOM_MATERIAL = 'default:cloud'
 
 -- Delay between skyblock respawn checks
 skyblock.SPAWN_THROTLE = 2
@@ -39,7 +42,7 @@ skyblock.SPAWN_THROTLE = 2
 skyblock.SPAWN_HEIGHT = 4
 
 -- Debug mode
-skyblock.DEBUG = 1
+--skyblock.DEBUG = 1
 
 -- File path and prefix for data files
 skyblock.FILENAME = minetest.get_worldpath()..'/skyblock'

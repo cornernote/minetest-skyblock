@@ -618,3 +618,14 @@ skyblock.registered = function(case,name)
 	return params
 end
 
+skyblock.get_start_positions_in_mapchunk = function( minp, maxp )
+	local list = {};
+	for i,v in ipairs( start_positions ) do
+		if(    v.x>=minp.x and v.x<=maxp.x
+		   and v.y>=minp.y and v.y<=maxp.y
+		   and v.z>=minp.z and v.z<=maxp.z ) then
+			list[ #list+1 ] = {x=v.x, y=v.y, z=v.z};
+		end
+	end
+	return list;
+end

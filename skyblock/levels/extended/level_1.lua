@@ -66,6 +66,31 @@ levels[level].make_start_blocks = function(pos, player_name)
 end
 
 
+-- make start blocks
+levels[level].make_start_blocks_on_generated = function(pos, data, a)
+
+	data[ a:index( pos.x, pos.y, pos.z )] = minetest.get_content_id( 'skyblock:level_1' );
+	
+	local id_dirt = minetest.get_content_id( 'default:dirt' );
+	-- level 0 - dirt
+	for x=-1,1 do
+		for z=-1,1 do
+			if x~=0 or z~=0 then
+				data[ a:index( pos.x+x,pos.y,pos.z+z )] = id_dirt;
+			end
+		end
+	end
+
+	-- level -1 and -2 dirt
+	for x=-1,1 do
+		for z=-1,1 do
+			data[ a:index( pos.x+x,pos.y-1,pos.z+z )] = id_dirt;
+			data[ a:index( pos.x+x,pos.y-2,pos.z+z )] = id_dirt;
+		end
+	end
+end
+
+
 -- update achievements
 levels[level].update = function(player_name,pos)
 	local formspec = ""
