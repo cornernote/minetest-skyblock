@@ -70,6 +70,8 @@ end
 levels[level].make_start_blocks_on_generated = function(pos, data, a)
 
 	data[ a:index( pos.x, pos.y, pos.z )] = minetest.get_content_id( 'skyblock:level_1' );
+	-- call on_construct so that the node gets initialized
+	minetest.registered_nodes[ 'skyblock:level_1' ].on_construct( pos );
 	
 	local id_dirt = minetest.get_content_id( 'default:dirt' );
 	-- level 0 - dirt
