@@ -53,6 +53,39 @@ minetest.register_craft({
 	}
 })
 
+minetest.register_craft({
+	output = "default:stone_with_copper 2",
+	recipe = {
+		{"default:copper_lump"},
+		{"default:stone"},
+	}
+})
+
+minetest.register_craft({
+	output = "default:stone_with_gold 2",
+	recipe = {
+		{"default:gold_lump"},
+		{"default:stone"},
+	}
+})
+
+minetest.register_craft({
+	output = "default:stone_with_diamond 2",
+	recipe = {
+		{"default:diamond"},
+		{"default:stone"},
+	}
+})
+
+minetest.register_craft({
+	output = "default:obsidian",
+	recipe = {
+		{"default:glass"},
+		{"default:stone"},
+	}
+})
+
+
 -- gravel
 minetest.register_craft({
 	output = "default:gravel 4",

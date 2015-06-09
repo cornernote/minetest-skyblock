@@ -1,2 +1,7 @@
 default
 bucket
+doors?
+farming?
+wool?
+dye?
+beds?
