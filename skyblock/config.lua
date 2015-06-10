@@ -18,6 +18,7 @@ skyblock.MODE = "water" --"air"
 
 -- Level selection (which level files to use)
 --skyblock.LEVEL = "default"
+-- NOTE: "extended" is only available if the optionally required mods are installed
 skyblock.LEVEL = "extended"
 
 -- Should digging the spawn result in a new spawn pos?

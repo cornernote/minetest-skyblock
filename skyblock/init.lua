@@ -16,6 +16,14 @@ skyblock = {}
 -- load config
 dofile(minetest.get_modpath("skyblock").."/config.lua")
 
+if( skyblock.LEVEL=='extended' 
+   and  (not( minetest.get_modpath('doors'))
+      or not( minetest.get_modpath('wool'))
+      or not( minetest.get_modpath('beds')))) then
+	skyblock.LEVEL = 'default';
+	print('[skyblock] switching back to LEVEL default due to missing mods');
+end
+
 -- load apis
 dofile(minetest.get_modpath("skyblock").."/api_table_save.lua")
 dofile(minetest.get_modpath("skyblock").."/api_achievements.lua")
