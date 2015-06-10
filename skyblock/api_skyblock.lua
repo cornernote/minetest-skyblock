@@ -102,9 +102,17 @@ end
 -- get players spawn position
 skyblock.get_spawn = function(player_name)
 	local spawn = spawnpos[player_name]
-	if spawn and minetest.env:get_node(spawn).name == "skyblock:level_1" then
-		skyblock.log("get_spawn() for "..player_name.." is "..dump(spawn))
-		return spawn
+	if spawn then
+		if minetest.env:get_node(spawn).name == "skyblock:level_1" then
+			skyblock.log("get_spawn() for "..player_name.." is "..dump(spawn))
+			return spawn
+		end
+		-- the node with the level_1 block may be too far away and not loaded
+		local level = achievements.get(0, player_name, "level")
+		if( level>1 ) then
+			skyblock.log("get_spawn() for "..player_name.." is "..dump(spawn))
+			return spawn;
+		end
 	end
 	skyblock.log("get_spawn() for "..player_name.." is unknown")
 end
