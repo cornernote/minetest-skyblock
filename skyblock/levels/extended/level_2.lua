@@ -50,14 +50,12 @@ end
 -- update achievements
 levels[level].update = function(player_name,pos)
 	local formspec = ""
-	local total = 10
-	local count = 0
 
 	formspec = formspec
-		.."size[15,10;]"
+		.."size[16,10;]"
 		.."label[0,0;LEVEL "..level.." FOR: ".. player_name .."]"
-		.."label[13.4,0; rewards]"
-		.."list[current_name;rewards;13,0.5;2,2;]"
+		.."label[5.9,3.0; rewards]"
+		.."list[current_name;rewards;5.5,3.5;2,2;]"
 		.."list[current_player;main;0,6;8,4;]"
 
 		.."label[0,1; --== A View From Above ==--]"
@@ -70,110 +68,21 @@ levels[level].update = function(player_name,pos)
 		.."label[0,4.5; * SHORT LEFT CLICK]"
 		.."label[0.4,5; = PUNCH to refresh achievements]"
 
-	-- place 200 dirt
-	formspec = formspec.."label[8,0; 1) extend your Island with 200 Dirt]"
-	if achievements.get(level,player_name,"place_dirt") >= 200 then
-		formspec = formspec .. "label[8.3,0.4; COMPLETE!]"
-		count = count + 1
-	else
-		formspec = formspec .. "label[8.3,0.4; not done]"
-	end
+	-- count has to be passed by reference
+	local data = { level=level, count=0, player_name=player_name, total=10, infotext="" };
+	formspec = formspec..
+		skyblock.list_tasks(data, 1, "place_dirt",                  200, "extend your Island with 200 Dirt",          "default:dirt" )..
+		skyblock.list_tasks(data, 2, "place_wood",                  200, "build a structure using 200 Wood",          "default:wood" )..
+		skyblock.list_tasks(data, 3, "place_brick",                 200, "build a structure using 200 Brick",         "default:brick" )..
+		skyblock.list_tasks(data, 4, "place_glass",                 200, "add at least 200 Glass windows",            "default:glass" )..
+		skyblock.list_tasks(data, 5, "place_sand",                  200, "make a desert with 200 Sand",               "default:sand" )..
+		skyblock.list_tasks(data, 6, "place_desert_sand",           200, "also include 200 Desert Sand",              "default:desert_sand" )..
+		skyblock.list_tasks(data, 7, "place_stone",                 200, "build a tower with 200 Stone",              "default:stone" )..
+		skyblock.list_tasks(data, 8, "place_cobble",                200, "make a path with 200 Cobblestone",          "default:cobble" )..
+		skyblock.list_tasks(data, 9, "place_mossycobble",           200, "also use 200 Mossy Cobblestone",            "default:mossycobble" )..
+		skyblock.list_tasks(data,10, "place_steelblock",             75, "decorate your area with 75 Steel Blocks",   "default:steelblock" );
 
-	-- place 50 wood
-	formspec = formspec.."label[8,1; 2) build a structure using 200 Wood]"
-	if achievements.get(level,player_name,"place_wood") >= 200 then
-		formspec = formspec .. "label[8.3,1.4; COMPLETE!]"
-		count = count + 1
-	else
-		formspec = formspec .. "label[8.3,1.4; not done]"
-	end
-
-	-- place 50 brick
-	formspec = formspec.."label[8,2; 3) build a structure using 200 Brick]"
-	if achievements.get(level,player_name,"place_brick") >= 200 then
-		formspec = formspec .. "label[8.3,2.4; COMPLETE!]"
-		count = count + 1
-	else
-		formspec = formspec .. "label[8.3,2.4; not done]"
-	end
-
-	-- place 12 glass
-	formspec = formspec.."label[8,3; 4) add at least 200 Glass windows]"
-	if achievements.get(level,player_name,"place_glass") >= 200 then
-		formspec = formspec .. "label[8.3,3.4; COMPLETE!]"
-		count = count + 1
-	else
-		formspec = formspec .. "label[8.3,3.4; not done]"
-	end
-
-	-- place 40 sand
-	formspec = formspec.."label[8,4; 5) make a desert with 200 Sand]"
-	if achievements.get(level,player_name,"place_sand") >= 200 then
-		formspec = formspec .. "label[8.3,4.4; COMPLETE!]"
-		count = count + 1
-	else
-		formspec = formspec .. "label[8.3,4.4; not done]"
-	end
-
-	-- place 30 desert_sand
-	formspec = formspec.."label[8,5; 6) also include 200 Desert Sand]"
-	if achievements.get(level,player_name,"place_desert_sand") >= 200 then
-		formspec = formspec .. "label[8.3,5.4; COMPLETE!]"
-		count = count + 1
-	else
-		formspec = formspec .. "label[8.3,5.4; not done]"
-	end
-
-	-- place 50 stone
-	formspec = formspec.."label[8,6; 7) build a tower with 200 Stone]"
-	if achievements.get(level,player_name,"place_stone") >= 200 then
-		formspec = formspec .. "label[8.3,6.4; COMPLETE!]"
-		count = count + 1
-	else
-		formspec = formspec .. "label[8.3,6.4; not done]"
-	end
-
-	-- place 40 cobble
-	formspec = formspec.."label[8,7; 8) make a path with 200 Cobblestone]"
-	if achievements.get(level,player_name,"place_cobble") >= 200 then
-		formspec = formspec .. "label[8.3,7.4; COMPLETE!]"
-		count = count + 1
-	else
-		formspec = formspec .. "label[8.3,7.4; not done]"
-	end
-
-	-- place 30 mossycobble
-	formspec = formspec.."label[8,8; 9) also use 200 Mossy Cobblestone]"
-	if achievements.get(level,player_name,"place_mossycobble") >= 200 then
-		formspec = formspec .. "label[8.3,8.4; COMPLETE!]"
-		count = count + 1
-	else
-		formspec = formspec .. "label[8.3,8.4; not done]"
-	end
-
-	-- place 20 steelblock
-	formspec = formspec.."label[8,9; 10) decorate your area with 75 Steel Blocks]"
-	if achievements.get(level,player_name,"place_steelblock") >= 75 then
-		formspec = formspec .. "label[8.3,9.4; COMPLETE!]"
-		count = count + 1
-	else
-		formspec = formspec .. "label[8.3,9.4; not done]"
-	end
-
-	-- next level
-	if count==total and achievements.get(0,player_name,"level")==level then
-		levels[level+1].make_start_blocks(player_name)
-		achievements.add(0,player_name,"level")
-	end
-	if  achievements.get(0,player_name,"level") > level then
-		local pos = levels[level+1].get_pos(player_name)
-		if pos and minetest.env:get_node(pos).name ~= "skyblock:level_3" then
-			levels[level+1].make_start_blocks(player_name)
-		end
-	end
-
-	local infotext = "LEVEL "..level.." for ".. player_name ..": ".. count .." of "..total
-	return formspec, infotext
+	return formspec, data.infotext
 end
 
 

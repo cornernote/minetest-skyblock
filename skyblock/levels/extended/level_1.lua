@@ -96,14 +96,12 @@ end
 -- update achievements
 levels[level].update = function(player_name,pos)
 	local formspec = ""
-	local total = 10
-	local count = 0
 
 	formspec = formspec
-		.."size[15,10;]"
+		.."size[16,10;]"
 		.."label[0,0;LEVEL "..level.." FOR: ".. player_name .."]"
-		.."label[13.4,0; rewards]"
-		.."list[current_name;rewards;13,0.5;2,2;]"
+		.."label[5.9,3.0; rewards]"
+		.."list[current_name;rewards;5.5,3.5;2,2;]"
 		.."list[current_player;main;0,6;8,4;]"
 
 		.."label[0,1; --== Welcome Traveller ==--]"
@@ -117,110 +115,21 @@ levels[level].update = function(player_name,pos)
 		.."label[0,4.5; * LONG LEFT CLICK]"
 		.."label[0.4,5; = DIG - restart in a new spawn location]"
 
-	-- place_sapling
-	formspec = formspec.."label[8,0; 1) grow a Tree]"
-	if achievements.get(level,player_name,"place_sapling") >= 1 then
-		formspec = formspec .. "label[8.3,0.4; COMPLETE!]"
-		count = count + 1
-	else
-		formspec = formspec .. "label[8.3,0.4; not done]"
-	end
+	-- count has to be passed by reference
+	local data = { level=level, count=0, player_name=player_name, total=10, infotext="" };
+	formspec = formspec..
+		skyblock.list_tasks(data, 1, "place_sapling",                 1, "grow a Tree",                               "default:sapling" )..
+		skyblock.list_tasks(data, 2, "dig_tree",                      5, "dig a Tree",                                "default:axe_wood" )..
+		skyblock.list_tasks(data, 3, "place_chest",                   1, "craft and place a Chest",                   "default:chest" )..
+		skyblock.list_tasks(data, 4, "collect_spawn_lava",            1, "collect the Lava Source under your Spawn",  "default:fence_wood" )..
+		skyblock.list_tasks(data, 5, "dig_stone",                    20, "build a Stone Generator and dig 20 Cobble", "default:pick_wood" )..
+		skyblock.list_tasks(data, 6, "place_furnace",                 1, "craft and place a Furnace",                 "default:furnace" )..
+		skyblock.list_tasks(data, 7, "dig_stone_with_coal",           2, "dig 2 Coal Lumps",                          "default:stone_with_coal" )..
+		skyblock.list_tasks(data, 8, "place_dirt",                  100, "extend your Island with 100 Dirt",          "default:dirt" )..
+		skyblock.list_tasks(data, 9, "dig_stone_with_mese_pickaxe", 100, "dig 100 Stone with a Mese Pickaxe",         "default:pick_mese" )..
+		skyblock.list_tasks(data,10, "place_water_infinite",          1, "create an Infinite Water Source",           "bucket:bucket_empty" );
 
-	-- dig_tree
-	formspec = formspec.."label[8,1; 2) dig a Tree]"
-	if achievements.get(level,player_name,"dig_tree") >= 5 then
-		formspec = formspec .. "label[8.3,1.4; COMPLETE!]"
-		count = count + 1
-	else
-		formspec = formspec .. "label[8.3,1.4; not done]"
-	end
-
-	-- place chest
-	formspec = formspec.."label[8,2; 3) craft and place a Chest]"
-	if achievements.get(level,player_name,"place_chest") >= 1 then
-		formspec = formspec .. "label[8.3,2.4; COMPLETE!]"
-		count = count + 1
-	else
-		formspec = formspec .. "label[8.3,2.4; not done]"
-	end
-
-	-- collect lava under spawn node
-	formspec = formspec.."label[8,3; 4) collect the Lava Source under your Spawn]"
-	if achievements.get(level,player_name,"collect_spawn_lava") >= 1 then
-		formspec = formspec .. "label[8.3,3.4; COMPLETE!]"
-		count = count + 1
-	else
-		formspec = formspec .. "label[8.3,3.4; not done]"
-	end
-
-	-- dig stone
-	formspec = formspec.."label[8,4; 5) build a Stone Generator and dig 20 Cobble]"
-	if achievements.get(level,player_name,"dig_stone") >= 20 then
-		formspec = formspec .. "label[8.3,4.4; COMPLETE!]"
-		count = count + 1
-	else
-		formspec = formspec .. "label[8.3,4.4; not done]"
-	end
-
-	-- place furnace
-	formspec = formspec.."label[8,5; 6) craft and place a Furnace]"
-	if achievements.get(level,player_name,"place_furnace") >= 1 then
-		formspec = formspec .. "label[8.3,5.4; COMPLETE!]"
-		count = count + 1
-	else
-		formspec = formspec .. "label[8.3,5.4; not done]"
-	end
-
-	-- dig 4 coal lumps
-	formspec = formspec.."label[8,6; 7) dig 4 Coal Lumps]"
-	if achievements.get(level,player_name,"dig_stone_with_coal") >= 2 then
-		formspec = formspec .. "label[8.3,6.4; COMPLETE!]"
-		count = count + 1
-	else
-		formspec = formspec .. "label[8.3,6.4; not done]"
-	end
-
-	-- place 100 dirt
-	formspec = formspec.."label[8,7; 8) extend your Island with 100 Dirt]"
-	if achievements.get(level,player_name,"place_dirt") >= 100 then
-		formspec = formspec .. "label[8.3,7.4; COMPLETE!]"
-		count = count + 1
-	else
-		formspec = formspec .. "label[8.3,7.4; not done]"
-	end
-
-	-- dig stone with mese pickaxe
-	formspec = formspec.."label[8,8; 9) dig 100 Stone with a Mese Pickaxe]"
-	if achievements.get(level,player_name,"dig_stone_with_mese_pickaxe") >= 100 then
-		formspec = formspec .. "label[8.3,8.4; COMPLETE!]"
-		count = count + 1
-	else
-		formspec = formspec .. "label[8.3,8.4; not done]"
-	end
-	
-	-- place both water in diagonal
-	formspec = formspec.."label[8,9; 10) create an Infinite Water Source]"
-	if achievements.get(level,player_name,"place_water_infinite") >= 1 then
-		formspec = formspec .. "label[8.3,9.4; COMPLETE!]"
-		count = count + 1
-	else
-		formspec = formspec .. "label[8.3,9.4; not done]"
-	end
-	
-	-- next level
-	if count==total and achievements.get(0,player_name,"level")==level then
-		levels[level+1].make_start_blocks(player_name)
-		achievements.add(0,player_name,"level")
-	end
-	if  achievements.get(0,player_name,"level") > level then
-		local pos = levels[level+1].get_pos(player_name)
-		if pos and minetest.env:get_node(pos).name ~= "skyblock:level_2" then
-			levels[level+1].make_start_blocks(player_name)
-		end
-	end
-	
-	local infotext = "LEVEL "..level.." for ".. player_name ..": ".. count .." of "..total
-	return formspec, infotext
+	return formspec, data.infotext
 end
 
 
@@ -352,6 +261,14 @@ levels[level].on_placenode = function(pos, newnode, placer, oldnode)
 		return
 	end
 
+	if newnode.name == "default:water_source"
+	  and ( minetest.env:get_node({x=pos.x-1,y=pos.y,z=pos.z-1}).name=="default:water_source" 
+		or minetest.env:get_node({x=pos.x-1,y=pos.y,z=pos.z+1}).name=="default:water_source"
+		or minetest.env:get_node({x=pos.x+1,y=pos.y,z=pos.z-1}).name=="default:water_source"
+		or minetest.env:get_node({x=pos.x+1,y=pos.y,z=pos.z+1}).name=="default:water_source") then
+			achievements.add(level,player_name,"place_water_infinite")
+		return
+	end
 end
 
 -- track bucket achievements

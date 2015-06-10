@@ -48,131 +48,37 @@ end
 -- update achievements
 levels[level].update = function(player_name,pos)
 	local formspec = ""
-	local total = 10
-	local count = 0
 
 	formspec = formspec
-		.."size[15,10;]"
+		.."size[16,10;]"
 		.."label[0,0;LEVEL "..level.." FOR: ".. player_name .."]"
-		.."label[13.4,0; rewards]"
-		.."list[current_name;rewards;13,0.5;2,2;]"
+		.."label[5.9,3.0; rewards]"
+		.."list[current_name;rewards;5.5,3.5;2,2;]"
 		.."list[current_player;main;0,6;8,4;]"
 
 		.."label[0,1; --== Strengthen Our World ==--]"
 		.."label[0,1.5; You will find riches here.]"
---		.."label[0,2.0; exte your mission traveller, for the end]"
---		.."label[0,2.5; is near.]"
 		
 		.."label[0,4; --== About The Level "..level.." Block ==--]"
 		.."label[0,4.5; * SHORT LEFT CLICK]"
 		.."label[0.4,5; = PUNCH to refresh achievements]"
 
+	-- count has to be passed by reference
+	local data = { level=level, count=0, player_name=player_name, total=10, infotext="" };
+	formspec = formspec..
+		skyblock.list_tasks(data, 1, "place_stonebrick",        40, "place 40 stone brick as a foundation for your next house",       "default:stonebrick" )..
+		skyblock.list_tasks(data, 2, "place_copperblock",       20, "place 20 copper blocks",                                         "default:copperblock" )..
+		skyblock.list_tasks(data, 3, "place_sandstonebrick",    40, "use 20 sandstone brick for your new building",                   "default:sandstonebrick" )..
+		skyblock.list_tasks(data, 4, "place_bronzeblock",       10, "discover the bronzer age and place 10 bronze blocks",            "default:bronzeblock" )..
+		skyblock.list_tasks(data, 5, "place_desertstonebrick",  40, "add 40 desert stone brick",                                      "default:desert_stonebrick" )..
+		skyblock.list_tasks(data, 6, "place_goldblock",          6, "gold was found! Polish your house with 6 gold blocks",           "default:goldblock" )..
+		skyblock.list_tasks(data, 7, "place_obsidianbrick",     40, "place 40 dark obsidian bricks to compensate for the shiny gold", "default:obsidianbrick" )..
+		skyblock.list_tasks(data, 8, "place_coalblock",          8, "form a coal storage using 8 coalblocks",                         "default:coalblock" )..
+		skyblock.list_tasks(data, 9, "place_diamondblock",       3, "decorate your house with 3 diamond blocks",                      "default:diamondblock" )..
+		skyblock.list_tasks(data,10, "dig_stone",              500, "dig 500 Stone for your next project...",                         "default:cobble" );
 
-	formspec = formspec.."label[8,0; 1) place 40 stone brick as a foundation for your next house]"
-	if achievements.get(level,player_name,"place_stonebrick") >= 40 then
-		formspec = formspec .. "label[8.3,0.4; COMPLETE!]"
-		count = count + 1
-	else
-		formspec = formspec .. "label[8.3,0.4; not done]"
-	end
-
-	-- place 20 papyrus
-	formspec = formspec.."label[8,1; 2) place 20 copper blocks]"
-	if achievements.get(level,player_name,"place_copperblock") >= 20 then
-		formspec = formspec .. "label[8.3,1.4; COMPLETE!]"
-		count = count + 1
-	else
-		formspec = formspec .. "label[8.3,1.4; not done]"
-	end
-
-	-- dig 15 cactus
-	formspec = formspec.."label[8,2; 3) use 40 sandstone brick for your new building]"
-	if achievements.get(level,player_name,"place_sandstonebrick") >= 40 then
-		formspec = formspec .. "label[8.3,2.4; COMPLETE!]"
-		count = count + 1
-	else
-		formspec = formspec .. "label[8.3,2.4; not done]"
-	end
-
-	-- place 15 cactus
-	formspec = formspec.."label[8,3; 4) discover the bronze age and place 10 bronze blocks]"
-	if achievements.get(level,player_name,"place_bronzeblock") >= 10 then
-		formspec = formspec .. "label[8.3,3.4; COMPLETE!]"
-		count = count + 1
-	else
-		formspec = formspec .. "label[8.3,3.4; not done]"
-	end
-
-	-- place 30 fences
-	formspec = formspec.."label[8,4; 5) use 40 desert stone brick]"
-	if achievements.get(level,player_name,"place_desertstonebrick") >= 40 then
-		formspec = formspec .. "label[8.3,4.4; COMPLETE!]"
-		count = count + 1
-	else
-		formspec = formspec .. "label[8.3,4.4; not done]"
-	end
-
-	-- place 20 ladders
-	formspec = formspec.."label[8,5; 6) gold was found! Polish your house with 6 gold blocks.]"
-	if achievements.get(level,player_name,"place_goldblock") >= 6 then
-		formspec = formspec .. "label[8.3,5.4; COMPLETE!]"
-		count = count + 1
-	else
-		formspec = formspec .. "label[8.3,5.4; not done]"
-	end
-
-	-- place 5 bookshelves
-	formspec = formspec.."label[8,6; 7) place 40 dark obsidian bricks to compensate for the shining gold]"
-	if achievements.get(level,player_name,"place_obsidianbrick") >= 40 then
-		formspec = formspec .. "label[8.3,6.4; COMPLETE!]"
-		count = count + 1
-	else
-		formspec = formspec .. "label[8.3,6.4; not done]"
-	end
-
-	-- place 10 signs
-	formspec = formspec.."label[8,7; 8) place 8 coal blocks as a reserve]"
-	if achievements.get(level,player_name,"place_coalblock") >= 8 then
-		formspec = formspec .. "label[8.3,7.4; COMPLETE!]"
-		count = count + 1
-	else
-		formspec = formspec .. "label[8.3,7.4; not done]"
-	end
-
-	-- place 50 torches
-	formspec = formspec.."label[8,8; 9) decorate your house with 3 diamond blocks]"
-	if achievements.get(level,player_name,"place_diamondblock") >= 3 then
-		formspec = formspec .. "label[8.3,8.4; COMPLETE!]"
-		count = count + 1
-	else
-		formspec = formspec .. "label[8.3,8.4; not done]"
-	end
-
-	-- dig 500 stone
-	formspec = formspec.."label[8,9; 10) dig 500 Stone for your next project...]"
-	if achievements.get(level,player_name,"dig_stone") >= 500 then
-		formspec = formspec .. "label[8.3,9.4; COMPLETE!]"
-		count = count + 1
-	else
-		formspec = formspec .. "label[8.3,9.4; not done]"
-	end
-
-	-- next level
-	if count==total and achievements.get(0,player_name,"level")==level then
-		levels[level+1].make_start_blocks(player_name)
-		achievements.add(0,player_name,"level")
-	end
-	if  achievements.get(0,player_name,"level") > level then
-		local pos = levels[level+1].get_pos(player_name)
-		if pos and minetest.env:get_node(pos).name ~= "skyblock:level_5" then
-			levels[level+1].make_start_blocks(player_name)
-		end
-	end
-
-	local infotext = "LEVEL "..level.." for ".. player_name ..": ".. count .." of "..total
-	return formspec, infotext
+	return formspec, data.infotext
 end
-
 
 
 -- reward_achievement

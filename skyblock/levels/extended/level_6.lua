@@ -34,13 +34,20 @@ levels[level].make_start_blocks = function(player_name)
 	if pos==nil then return end
 	
 	-- sphere
-	local radius = 25
+	local radius = 10 
 	local hollow = 1
-	skyblock.make_sphere({x=pos.x,y=pos.y-radius,z=pos.z},radius,"default:dirt",hollow)
+	skyblock.make_sphere({x=pos.x,y=pos.y-radius,z=pos.z},radius,"default:obsidian_glass",hollow)
 
 	-- level 4
 	minetest.env:add_node(pos, {name="skyblock:level_6"})
 
+	minetest.add_node( {x=pos.x,   y=pos.y-1, z=pos.z}, {name='default:lava_source'} );
+
+	minetest.add_node( {x=pos.x+1, y=pos.y+3, z=pos.z}, {name='default:nyancat'} );
+	for i=1,math.random(4,10) do
+		minetest.add_node( {x=pos.x+1+i, y=pos.y+3, z=pos.z}, {name='default:nyancat_rainbow'} );
+	end
+		
 end
 
 
