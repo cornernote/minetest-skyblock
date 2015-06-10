@@ -77,21 +77,32 @@ minetest.register_item(":default:cactus", entity)
 
 
 
-if( minetest.get_modpath( "doors" )) then
-	local doors = {"doors:door_wood","doors:door_glass","doors:door_steel","doors:door_obsidian_glass"};
-	for _,v in ipairs( doors ) do
-		local def = minetest.registered_items[ v ];
-		if( def and def.on_place ) then
-			local old_on_place = def.on_place;
-			def.on_place = function(itemstack, placer, pointed_thing)
-				local old_count = itemstack:get_count();
-				local res = old_on_place( itemstack, placer, pointed_thing );
-				if( itemstack and itemstack:get_count() == old_count-1 ) then
-					achievements.on_placenode(pointed_thing, {name=v,param2=0}, placer, nil);
-				end
-				return res;
+
+local catch_on_place = function( v, is_craftitem )
+	local def = minetest.registered_items[ v ];
+	if( def and def.on_place ) then
+		local old_on_place = def.on_place;
+		def.on_place = function(itemstack, placer, pointed_thing)
+			local old_count = itemstack:get_count();
+			local res = old_on_place( itemstack, placer, pointed_thing );
+			if( itemstack and itemstack:get_count() == old_count-1 ) then
+				achievements.on_placenode(pointed_thing, {name=v,param2=0}, placer, nil);
 			end
+			return res;
+		end
+		if( is_craftitem == 1 ) then
 			minetest.register_craftitem( ":"..v, def );
+		else
+			minetest.register_node( ":"..v, def );
 		end
 	end
+end
+
+local on_place_craftitems = {"doors:door_wood","doors:door_glass","doors:door_steel","doors:door_obsidian_glass"};
+for _,v in ipairs( on_place_craftitems ) do
+	catch_on_place( v, 1 );
+end
+local on_place_nodes = { "default:cactus", "farming:seed_wheat", "farming:seed_cotton"};
+for _,v in ipairs( on_place_nodes ) do
+	catch_on_place( v, 0 );
 end
