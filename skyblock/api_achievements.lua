@@ -67,7 +67,10 @@ end
 -- give reward
 achievements.give_reward = function(level,player_name,item_name)
 	skyblock.log("achievements.give_reward() for "..player_name.." item "..item_name)
-	minetest.env:get_meta(levels[level].get_pos(player_name)):get_inventory():add_item("rewards", item_name)
+	local player = minetest.get_player_by_name( player_name );
+	local pos = levels[level].get_pos(player_name);
+	player:setpos({x=pos.x, y=pos.y+3, z=pos.z});
+	minetest.env:get_meta(pos):get_inventory():add_item("rewards", item_name)
 end
 
 
@@ -110,6 +113,16 @@ achievements.on_placenode = function(pos, newnode, placer, oldnode)
 	local level = achievements.get(0, player_name, "level")
 	skyblock.log("achievements.on_placenode() for "..player_name.." on level "..level.." at "..dump(pos))
 	levels[level].on_placenode(pos, newnode, placer, oldnode)
+end
+
+achievements.on_item_eat = function( hp_change, replace_with_item, itemstack, user, pointed_thing )
+	if not user then return end
+	local player_name = user:get_player_name()
+	local level = achievements.get(0, player_name, "level")
+	skyblock.log("achievements.on_item_eat() for "..player_name.." on level "..level)
+	if( levels[level].on_item_eat ) then
+		levels[level].on_item_eat(player_name, itemstack)
+	end
 end
 
 -- bucket achievements
