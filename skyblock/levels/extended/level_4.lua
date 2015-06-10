@@ -283,13 +283,6 @@ levels[level].on_placenode = function(pos, newnode, placer, oldnode)
 		achievements.add(level,player_name,"place_diamondblock")
 		return
 	end
-
-	if newnode.name == "default:" then
-		achievements.add(level,player_name,"place_")
-		return
-	end
-
-
 end
 
 -- track digging achievements

@@ -15,7 +15,7 @@ LEVEL LOADER
 -- Level Files
 --
 
-local max_level = 5
+local max_level = 6
 
 levels = {}
 for level=1,max_level do
