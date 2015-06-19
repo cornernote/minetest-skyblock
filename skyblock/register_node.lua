@@ -34,6 +34,14 @@ entity = skyblock.registered("node","default:tree")
 entity.groups = {tree=1,snappy=1,choppy=2,flammable=2}
 minetest.register_node(":default:tree", entity)
 
+entity = skyblock.registered("node","default:jungletree")
+entity.groups = {tree=1,snappy=1,choppy=2,flammable=2}
+minetest.register_node(":default:jungletree", entity)
+
+entity = skyblock.registered("node","default:pinetree")
+entity.groups = {tree=1,snappy=1,choppy=2,flammable=2}
+minetest.register_node(":default:pinetree", entity)
+
 -- leaves
 entity = skyblock.registered("node","default:leaves")
 entity.drop = "default:leaves"
