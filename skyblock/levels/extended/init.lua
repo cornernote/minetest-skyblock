@@ -27,9 +27,13 @@ end
 --
 
 for level=1,max_level do
+	local texture = "skyblock_"..level..".png";
+	if( level==max_level ) then
+		texture = "skyblock_finish.png";
+	end
 	minetest.register_node("skyblock:level_"..level, {
 		description = "Level "..level,
-		tiles = {"skyblock_"..level..".png"},
+		tiles = {texture},
 		is_ground_content = true,
 		paramtype = "light",
 		light_propagates = true,

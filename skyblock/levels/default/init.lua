@@ -26,9 +26,13 @@ dofile(minetest.get_modpath("skyblock").."/levels/default/level_4.lua")
 --
 
 for level=1,4 do
+	local texture = "skyblock_"..level..".png";
+	if( level==4 ) then
+		texture = "skyblock_finish.png";
+	end
 	minetest.register_node("skyblock:level_"..level, {
 		description = "Level "..level,
-		tiles = {"skyblock_"..level..".png"},
+		tiles = {texture},
 		is_ground_content = true,
 		paramtype = "light",
 		light_propagates = true,
