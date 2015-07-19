@@ -1,0 +1,33 @@
+<div id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="well">
+                    <h4>Resources</h4>
+                    <a href="https://github.com/cornernote/minetest-skyblock/"><img src="https://img.shields.io/badge/github-project-blue.svg?style=flat-square" alt="Github Project"></a>
+                    <a href="https://gitter.im/cornernote/minetest-skyblock"><img src="https://img.shields.io/badge/gitter-join%20chat-blue.svg?style=flat-square" alt="Join Chat"></a>
+                    <a href="https://github.com/cornernote/minetest-skyblock/tags"><img src="https://img.shields.io/github/tag/cornernote/minetest-skyblock.svg?style=flat-square&amp;label=release" alt="Latest Version"></a>
+                    <a href="https://cornernote.github.io/minetest-skyblock/license/"><img src="https://img.shields.io/badge/license-GPL3-brightgreen.svg?style=flat-square" alt="Software License"></a>
+                    <a href="https://forum.minetest.net/viewtopic.php?id=2799"><img src="https://img.shields.io/badge/minetest-game-green.svg?style=flat-square" alt="Minetest Game"></a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="well">
+                    <h4>Contributing</h4>
+                    <p>Contributions are welcome.  Please refer to the <a href="https://github.com/cornernote/minetest-skyblock/blob/master/CONTRIBUTING.md">contributing guidelines</a>.</p>
+                    <p>Thanks to <a href="https://cornernote.github.io/minetest-skyblock/credits/">everyone who has contributed</a>.</p>
+                </div>
+                <div class="well">
+                    <h4>Support</h4>
+                    <ul class="list-unstyled">
+                        {% assign filename = page.url | append: '@' | replace_first: '/', '' | replace: '/@', '' | replace: '@', '' | replace: '.html', '' %}
+                        Found a problem with this page?
+                        <a href="https://github.com/{{site.project}}/edit/gh-pages/{{filename}}.md" target="_blank" rel="nofollow">Edit on GitHub</a>
+                        or
+                        <a href="https://github.com/{{site.project}}/issues/new" target="_blank" rel="nofollow">Create an Issue</a>.
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,66 @@
+<div id="header">
+    <div id="header-bg">
+        <div class="jumbotron">
+            <div class="container">
+                <h1>{{site.name}}
+                    {% if site.tagline %}
+                    <br>
+                    <small>{{site.tagline}}</small>
+                    {% endif %}
+                </h1>
+
+                {% if site.description %}<p class="lead">{{site.description}}</p>{% endif %}
+
+                <p class="buttons">
+                    <a class="btn btn-primary btn-lg" role="button" href="{{site.baseurl}}/downloads/">Downloads</a>
+                    <a class="btn btn-default btn-lg" role="button" href="{{site.baseurl}}/screenshots/">Screenshots</a>
+                    <a class="btn btn-default btn-lg" role="button" href="{{site.baseurl}}/servers/">Servers</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section section-dirt">
+    <div class="container">
+        <div class="jumbotron">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="thumbnail">
+                        <a href="https://cloud.githubusercontent.com/assets/51875/8764767/6ed34c26-2e2c-11e5-95b0-d1e0f7a36ee5.png" class="fancybox" rel="screenshots"><img src="https://cloud.githubusercontent.com/assets/51875/8764767/6ed34c26-2e2c-11e5-95b0-d1e0f7a36ee5.png" alt="main screenshot"></a>
+                    </div>
+
+                    <div class="embed-responsive embed-responsive-4by3 thumbnail">
+                        <iframe class="embed-responsive-item" src="http://www.youtube.com/embed/5-qpuXP88SU" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <h2>Playing Instructions</h2>
+
+                    <p><strong><em>Level Achievement Block</em></strong></p>
+
+                    <p>Punch <code>short left click</code> to refresh your achievements.</p>
+
+                    <p>Dig <code>long left click</code> to respawn at a new location with new items.</p>
+
+                    <p>Open <code>right click</code> to view current achievements.</p>
+
+                    <p><strong><em>Death Hurts</em></strong></p>
+
+                    <p>If you die then you will have to restart the level and you will lose your items, however you will get to keep the structures you have created including chests.</p>
+
+                    <p><strong><em>Stone Generator</em></strong></p>
+
+                    <p>While you wait for your tree to grow, you should probably create a stone generator. This is done by placing lava and water next to each other with air between.</p>
+
+                    <p><strong><em>Infinite Water</em></strong></p>
+
+                    <p>If you want to create more water simply place your 2 water sources so they touch diagonally. Now when you take one with the bucket, it will be replaced.</p>
+
+                    <p><strong><em>What's Next</em></strong></p>
+
+                    <p>The rest is up to you. Load your favorite minetest mods and start building your world!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

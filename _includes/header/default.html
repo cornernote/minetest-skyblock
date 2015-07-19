@@ -1,0 +1,17 @@
+<div id="header">
+    <div id="header-bg">
+        <div class="jumbotron">
+            <div class="container">
+                <h1>{{page.heading}}
+                    {% if page.tagline }%}
+                    <br>
+                    <small>{{page.tagline}}</small>
+                    {% endif %}
+                </h1>
+                {% if page.description %}<p class="lead">{{page.description}}</p>{% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section section-dirt">
+</div>
