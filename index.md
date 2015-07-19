@@ -170,7 +170,7 @@ There are 3 levels included.  You can also make your own levels using the achiev
             <div>
                 <span><img src="{{site.baseurl}}/assets/img/mods/default/textures/default_wood.png" title="default:wood" height="24px"></span>
                 <span></span>
-                <span><img src="{{site.baseurl}}/assets/img/mods/default/textures/default_stick.png" title="default:stick" height="24px"></span>
+                <span><img src="{{site.baseurl}}/assets/img/mods/default/textures/default_wood.png" title="default:wood" height="24px"></span>
             </div>
             <div>
                 <span><img src="{{site.baseurl}}/assets/img/mods/default/textures/default_wood.png" title="default:wood" height="24px"></span>
