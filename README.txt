@@ -161,3 +161,5 @@ PilzAdam - code to make a tree came from farming mod
 RealBadAngel - help in IRC to make the spiral
 mauvebic - code to make a sphere came from multinode mod
 
+
+Join the chat at https://gitter.im/cornernote/minetest-skyblock
