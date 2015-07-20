@@ -188,7 +188,7 @@ permalink: /items/
 <li><a href="{{site.baseurl}}/items/default-fence-wood/"><img src="{{site.baseurl}}/assets/img/items/textures/default_fence_overlay.png" data-toggle="tooltip" title="Wooden Fence [node][default:fence_wood]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-furnace/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-furnace.png" data-toggle="tooltip" title="Furnace [node][default:furnace]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-furnace-active/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-furnace_active.png" data-toggle="tooltip" title="Furnace [node][default:furnace_active]"></a></li>
-<li><a href="{{site.baseurl}}/items/default-glass/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/[inventorycube{default_glass.png{default_glass.png{default_glass.png.png" data-toggle="tooltip" title="Glass [node][default:glass]"></a></li>
+<li><a href="{{site.baseurl}}/items/default-glass/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-glass.png" data-toggle="tooltip" title="Glass [node][default:glass]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-goldblock/"><img src="{{site.baseurl}}/assets/img/items/textures/default_gold_block.png" data-toggle="tooltip" title="Gold Block [node][default:goldblock]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-gravel/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-gravel.png" data-toggle="tooltip" title="Gravel [node][default:gravel]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-ice/"><img src="{{site.baseurl}}/assets/img/items/textures/default_ice.png" data-toggle="tooltip" title="Ice [node][default:ice]"></a></li>
@@ -198,8 +198,7 @@ permalink: /items/
 <li><a href="{{site.baseurl}}/items/default-jungletree/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-jungletree.png" data-toggle="tooltip" title="Jungle Tree [node][default:jungletree]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-junglewood/"><img src="{{site.baseurl}}/assets/img/items/textures/default_junglewood.png" data-toggle="tooltip" title="Junglewood Planks [node][default:junglewood]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-ladder/"><img src="{{site.baseurl}}/assets/img/items/textures/default_ladder.png" data-toggle="tooltip" title="Ladder [node][default:ladder]"></a></li>
-<li><a href="{{site.baseurl}}/items/default-lava-flowing/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/[inventorycube{default_lava.png{default_lava.png{default_lava.png.png" data-toggle="tooltip" title="Flowing Lava [node][default:lava_flowing]"></a></li>
-<li><a href="{{site.baseurl}}/items/default-lava-source/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/[inventorycube{default_lava.png{default_lava.png{default_lava.png.png" data-toggle="tooltip" title="Lava Source [node][default:lava_source]"></a></li>
+<li><a href="{{site.baseurl}}/items/default-lava-source/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-lava.png" data-toggle="tooltip" title="Lava Source [node][default:lava_source]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-leaves/"><img src="{{site.baseurl}}/assets/img/items/textures/default_leaves.png" data-toggle="tooltip" title="Leaves [node][:default:leaves]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-mese/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-mese.png" data-toggle="tooltip" title="Mese Block [node][default:mese]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-mossycobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-mossycobble.png" data-toggle="tooltip" title="Mossy Cobblestone [node][default:mossycobble]"></a></li>
@@ -230,8 +229,7 @@ permalink: /items/
 <li><a href="{{site.baseurl}}/items/default-stonebrick/"><img src="{{site.baseurl}}/assets/img/items/textures/default_stone_brick.png" data-toggle="tooltip" title="Stone Brick [node][default:stonebrick]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-torch/"><img src="{{site.baseurl}}/assets/img/items/textures/default_torch_on_floor.png" data-toggle="tooltip" title="Torch [node][default:torch]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-tree/"><img src="{{site.baseurl}}/assets/img/items/textures/default_tree_top.png" data-toggle="tooltip" title="Tree [node][:default:tree]"></a></li>
-<li><a href="{{site.baseurl}}/items/default-water-flowing/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/[inventorycube{default_water.png{default_water.png{default_water.png.png" data-toggle="tooltip" title="Flowing Water [node][default:water_flowing]"></a></li>
-<li><a href="{{site.baseurl}}/items/default-water-source/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/[inventorycube{default_water.png{default_water.png{default_water.png.png" data-toggle="tooltip" title="Water Source [node][default:water_source]"></a></li>
+<li><a href="{{site.baseurl}}/items/default-water-source/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-water.png" data-toggle="tooltip" title="Water Source [node][default:water_source]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-wood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-wood.png" data-toggle="tooltip" title="Wooden Planks [node][default:wood]"></a></li>
 <li><a href="{{site.baseurl}}/items/doors-trapdoor/"><img src="{{site.baseurl}}/assets/img/items/textures/doors_trapdoor.png" data-toggle="tooltip" title="Trapdoor [node][doors:trapdoor]"></a></li>
 <li><a href="{{site.baseurl}}/items/farming-desert-sand-soil/"><img src="{{site.baseurl}}/assets/img/items/textures/farming_desert_sand_soil.png" data-toggle="tooltip" title="Desert Sand Soil [node][farming:desert_sand_soil]"></a></li>
@@ -246,11 +244,8 @@ permalink: /items/
 <li><a href="{{site.baseurl}}/items/flowers-rose/"><img src="{{site.baseurl}}/assets/img/items/textures/flowers_rose.png" data-toggle="tooltip" title="Rose [node][flowers:rose]"></a></li>
 <li><a href="{{site.baseurl}}/items/flowers-tulip/"><img src="{{site.baseurl}}/assets/img/items/textures/flowers_tulip.png" data-toggle="tooltip" title="Tulip [node][flowers:tulip]"></a></li>
 <li><a href="{{site.baseurl}}/items/flowers-viola/"><img src="{{site.baseurl}}/assets/img/items/textures/flowers_viola.png" data-toggle="tooltip" title="Viola [node][flowers:viola]"></a></li>
-<li><a href="{{site.baseurl}}/items/tnt-boom/"><img src="{{site.baseurl}}/assets/img/items/textures/tnt_boom.png" data-toggle="tooltip" title=" [node][tnt:boom]"></a></li>
 <li><a href="{{site.baseurl}}/items/tnt-gunpowder/"><img src="{{site.baseurl}}/assets/img/items/textures/tnt_gunpowder_inventory.png" data-toggle="tooltip" title="Gun Powder [node][tnt:gunpowder]"></a></li>
-<li><a href="{{site.baseurl}}/items/tnt-gunpowder-burning/"></a></li>
 <li><a href="{{site.baseurl}}/items/tnt-tnt/"><img src="{{site.baseurl}}/assets/img/items/textures/tnt_top.png" data-toggle="tooltip" title="TNT [node][tnt:tnt]"></a></li>
-<li><a href="{{site.baseurl}}/items/tnt-tnt-burning/"></a></li>
 <li><a href="{{site.baseurl}}/items/vessels-drinking-glass/"><img src="{{site.baseurl}}/assets/img/items/textures/vessels_drinking_glass_inv.png" data-toggle="tooltip" title="Drinking Glass (empty) [node][vessels:drinking_glass]"></a></li>
 <li><a href="{{site.baseurl}}/items/vessels-glass-bottle/"><img src="{{site.baseurl}}/assets/img/items/textures/vessels_glass_bottle_inv.png" data-toggle="tooltip" title="Glass Bottle (empty) [node][vessels:glass_bottle]"></a></li>
 <li><a href="{{site.baseurl}}/items/vessels-steel-bottle/"><img src="{{site.baseurl}}/assets/img/items/textures/vessels_steel_bottle_inv.png" data-toggle="tooltip" title="Heavy Steel Bottle (empty) [node][vessels:steel_bottle]"></a></li>
