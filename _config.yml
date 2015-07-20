@@ -1,6 +1,6 @@
-name: Minetest Skyblock
+name: Skyblock
 project: cornernote/minetest-skyblock
-tagline: A universe from nothing.
+tagline: for Minetest
 description: Build a world starting from a small island in the sky.
 screenshot: https://cloud.githubusercontent.com/assets/51875/8764767/6ed34c26-2e2c-11e5-95b0-d1e0f7a36ee5.png
 

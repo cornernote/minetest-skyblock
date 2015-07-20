@@ -162,7 +162,6 @@ permalink: /items/
 <li><a href="{{site.baseurl}}/items/stairs-stair-woodupside-down/"></a></li>
 <li><a href="{{site.baseurl}}/items/xpanes-bar/"><img src="{{site.baseurl}}/assets/img/items/textures/xpanes_bar.png" data-toggle="tooltip" title="Iron bar [node][:xpanes:bar]"></a></li>
 <li><a href="{{site.baseurl}}/items/xpanes-pane/"><img src="{{site.baseurl}}/assets/img/items/textures/default_glass.png" data-toggle="tooltip" title="Glass Pane [node][:xpanes:pane]"></a></li>
-<li><a href="{{site.baseurl}}/items/bones-bones/"><img src="{{site.baseurl}}/assets/img/items/textures/bones_front.png" data-toggle="tooltip" title="Bones [node][bones:bones]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-apple/"><img src="{{site.baseurl}}/assets/img/items/textures/default_apple.png" data-toggle="tooltip" title="Apple [node][default:apple]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-bookshelf/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-bookshelf.png" data-toggle="tooltip" title="Bookshelf [node][default:bookshelf]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-brick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-brick.png" data-toggle="tooltip" title="Brick Block [node][default:brick]"></a></li>
@@ -214,7 +213,6 @@ permalink: /items/
 <li><a href="{{site.baseurl}}/items/default-sand/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-sand.png" data-toggle="tooltip" title="Sand [node][default:sand]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-sandstone/"><img src="{{site.baseurl}}/assets/img/items/textures/default_sandstone.png" data-toggle="tooltip" title="Sandstone [node][:default:sandstone]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-sandstonebrick/"><img src="{{site.baseurl}}/assets/img/items/textures/default_sandstone_brick.png" data-toggle="tooltip" title="Sandstone Brick [node][default:sandstonebrick]"></a></li>
-<li><a href="{{site.baseurl}}/items/default-sapling/"><img src="{{site.baseurl}}/assets/img/items/textures/default_sapling.png" data-toggle="tooltip" title="Sapling [node][:default:sapling]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-sign-wall/"><img src="{{site.baseurl}}/assets/img/items/textures/default_sign_wall.png" data-toggle="tooltip" title="Sign [node][default:sign_wall]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-snow/"><img src="{{site.baseurl}}/assets/img/items/textures/default_snowball.png" data-toggle="tooltip" title="Snow [node][default:snow]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-snowblock/"><img src="{{site.baseurl}}/assets/img/items/textures/default_snow.png" data-toggle="tooltip" title="Snow Block [node][default:snowblock]"></a></li>
