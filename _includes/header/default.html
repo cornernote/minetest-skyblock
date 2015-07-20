@@ -2,12 +2,7 @@
     <div id="header-bg">
         <div class="jumbotron">
             <div class="container">
-                <h1>{{page.heading}}
-                    {% if page.tagline }%}
-                    <br>
-                    <small>{{page.tagline}}</small>
-                    {% endif %}
-                </h1>
+                <h1>{{page.heading}}{% if page.tagline }%}<br><small>{{page.tagline}}</small>{% endif %}</h1>
                 {% if page.description %}
                 <p class="lead">
                     {% if page.icon %}
