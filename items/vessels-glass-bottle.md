@@ -1,0 +1,36 @@
+---
+layout: default
+title: Glass Bottle (empty)
+heading: Glass Bottle (empty)
+description: "[node][vessels:glass_bottle]"
+permalink: /items/vessels-glass-bottle/
+icon: /items/textures/vessels_glass_bottle_inv.png
+---
+
+
+## Created by Crafts
+
+<div class="craft">
+    <div>
+        <span><a href="{{site.baseurl}}/items/default-glass/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/[inventorycube{default_glass.png{default_glass.png{default_glass.png.png" data-toggle="tooltip" title="Glass [node][default:glass]"></a></span>
+        <span></span>
+        <span><a href="{{site.baseurl}}/items/default-glass/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/[inventorycube{default_glass.png{default_glass.png{default_glass.png.png" data-toggle="tooltip" title="Glass [node][default:glass]"></a></span>
+    </div>
+    <div>
+        <span><a href="{{site.baseurl}}/items/default-glass/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/[inventorycube{default_glass.png{default_glass.png{default_glass.png.png" data-toggle="tooltip" title="Glass [node][default:glass]"></a></span>
+        <span></span>
+        <span><a href="{{site.baseurl}}/items/default-glass/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/[inventorycube{default_glass.png{default_glass.png{default_glass.png.png" data-toggle="tooltip" title="Glass [node][default:glass]"></a></span>
+    </div>
+    <div>
+        <span></span>
+        <span><a href="{{site.baseurl}}/items/default-glass/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/[inventorycube{default_glass.png{default_glass.png{default_glass.png.png" data-toggle="tooltip" title="Glass [node][default:glass]"></a></span>
+        <span></span>
+    </div>
+</div>
+
+
+## Used for Crafts
+
+<ul class="list-items">
+    <li><a href="{{site.baseurl}}/items/vessels-glass-fragments/"><img src="{{site.baseurl}}/assets/img/items/textures/vessels_glass_fragments.png" data-toggle="tooltip" title="Pile of Glass Fragments [craft][vessels:glass_fragments]"></a></li>
+</ul>

@@ -240,9 +240,11 @@ pre.craft {
 }
 
 div.craft {
-    padding: 5px;
+    display: inline-block;
+    padding: 3px;
     line-height: 0;
     letter-spacing: -4px;
+    margin-bottom: 5px;
 }
 
 div.craft span {
@@ -250,11 +252,48 @@ div.craft span {
     border-right-color: #FFF;
     border-bottom-color: #FFF;
     background-color: #8B8B8B;
-    height: 30px;
-    width: 30px;
+    width: 46px;
+    height: 46px;
     margin: 1px;
     display: inline-block;
     vertical-align: middle;
+}
+
+div.craft img {
+    width: 32px;
+    height: 32px;
+    margin: 5px;
+}
+
+.list-items {
+    list-style: none;
+    padding: 0;
+}
+
+.list-items li {
+    display: inline-block;
+    border: 2px solid #373737;
+    background-color: #8B8B8B;
+    padding: 3px;
+    margin: 1px;
+}
+
+.list-items img {
+    margin: 5px;
+    width: 32px;
+    height: 32px;
+}
+
+.item {
+    border: 2px solid #373737;
+    background-color: #8B8B8B;
+    display: inline-block;
+}
+
+.item img {
+    margin: 5px;
+    width: 32px;
+    height: 32px;
 }
 
 /**

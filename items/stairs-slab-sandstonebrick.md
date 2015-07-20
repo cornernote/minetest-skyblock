@@ -1,0 +1,29 @@
+---
+layout: default
+title: Sandstone Brick Slab
+heading: Sandstone Brick Slab
+description: "[node][:stairs:slab_sandstonebrick]"
+permalink: /items/stairs-slab-sandstonebrick/
+icon: /items/textures/default_sandstone_brick.png
+---
+
+
+## Created by Crafts
+
+<div class="craft">
+    <div>
+        <span><a href="{{site.baseurl}}/items/default-sandstonebrick/"><img src="{{site.baseurl}}/assets/img/items/textures/default_sandstone_brick.png" data-toggle="tooltip" title="Sandstone Brick [node][default:sandstonebrick]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-sandstonebrick/"><img src="{{site.baseurl}}/assets/img/items/textures/default_sandstone_brick.png" data-toggle="tooltip" title="Sandstone Brick [node][default:sandstonebrick]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-sandstonebrick/"><img src="{{site.baseurl}}/assets/img/items/textures/default_sandstone_brick.png" data-toggle="tooltip" title="Sandstone Brick [node][default:sandstonebrick]"></a></span>
+    </div>
+    <div>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>

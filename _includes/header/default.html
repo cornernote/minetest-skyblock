@@ -8,7 +8,16 @@
                     <small>{{page.tagline}}</small>
                     {% endif %}
                 </h1>
-                {% if page.description %}<p class="lead">{{page.description}}</p>{% endif %}
+                {% if page.description %}
+                <p class="lead">
+                    {% if page.icon %}
+                    <span class="item">
+                        <img src="{{site.baseurl}}/assets/img{{page.icon}}">
+                    </span>
+                    {% endif %}
+                    {{page.description}}
+                </p>
+                {% endif %}
             </div>
         </div>
     </div>
