@@ -12,7 +12,7 @@ icon: /items/textures/dye_cyan.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/group_flower,color_cyan/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Flower,color_cyan [group][flower,color_cyan]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-flower,color-cyan/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Flower,color_cyan [group][flower,color_cyan]"></a></span>
         <span></span>
         <span></span>
     </div>

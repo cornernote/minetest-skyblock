@@ -12,8 +12,8 @@ icon: /items/itemcubes/wool_cyan.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/group_dye,basecolor_cyan/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Dye,basecolor_cyan [group][dye,basecolor_cyan]"></a></span>
-        <span><a href="{{site.baseurl}}/items/group_wool/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Wool [group][wool]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-dye,basecolor-cyan/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Dye,basecolor_cyan [group][dye,basecolor_cyan]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-wool/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Wool [group][wool]"></a></span>
         <span></span>
     </div>
     <div>

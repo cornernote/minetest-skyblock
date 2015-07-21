@@ -12,7 +12,7 @@ icon: /items/textures/dye_white.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/group_flower,color_white/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Flower,color_white [group][flower,color_white]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-flower,color-white/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Flower,color_white [group][flower,color_white]"></a></span>
         <span></span>
         <span></span>
     </div>

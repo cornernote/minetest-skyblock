@@ -12,9 +12,9 @@ icon: /items/itemcubes/default_bookshelf.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/group_wood/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Wood [group][wood]"></a></span>
-        <span><a href="{{site.baseurl}}/items/group_wood/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Wood [group][wood]"></a></span>
-        <span><a href="{{site.baseurl}}/items/group_wood/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Wood [group][wood]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-wood/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Wood [group][wood]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-wood/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Wood [group][wood]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-wood/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Wood [group][wood]"></a></span>
     </div>
     <div>
         <span><a href="{{site.baseurl}}/items/default-book/"><img src="{{site.baseurl}}/assets/img/items/textures/default_book.png" data-toggle="tooltip" title="Book [craft][default:book]"></a></span>
@@ -22,9 +22,9 @@ icon: /items/itemcubes/default_bookshelf.png
         <span><a href="{{site.baseurl}}/items/default-book/"><img src="{{site.baseurl}}/assets/img/items/textures/default_book.png" data-toggle="tooltip" title="Book [craft][default:book]"></a></span>
     </div>
     <div>
-        <span><a href="{{site.baseurl}}/items/group_wood/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Wood [group][wood]"></a></span>
-        <span><a href="{{site.baseurl}}/items/group_wood/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Wood [group][wood]"></a></span>
-        <span><a href="{{site.baseurl}}/items/group_wood/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Wood [group][wood]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-wood/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Wood [group][wood]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-wood/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Wood [group][wood]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-wood/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Wood [group][wood]"></a></span>
     </div>
 </div>
 

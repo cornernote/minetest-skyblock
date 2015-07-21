@@ -12,14 +12,14 @@ icon: /items/itemcubes/doors_trapdoor.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/group_wood/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Wood [group][wood]"></a></span>
-        <span><a href="{{site.baseurl}}/items/group_wood/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Wood [group][wood]"></a></span>
-        <span><a href="{{site.baseurl}}/items/group_wood/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Wood [group][wood]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-wood/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Wood [group][wood]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-wood/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Wood [group][wood]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-wood/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Wood [group][wood]"></a></span>
     </div>
     <div>
-        <span><a href="{{site.baseurl}}/items/group_wood/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Wood [group][wood]"></a></span>
-        <span><a href="{{site.baseurl}}/items/group_wood/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Wood [group][wood]"></a></span>
-        <span><a href="{{site.baseurl}}/items/group_wood/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Wood [group][wood]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-wood/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Wood [group][wood]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-wood/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Wood [group][wood]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-wood/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Wood [group][wood]"></a></span>
     </div>
     <div>
         <span></span>

@@ -12,7 +12,7 @@ icon: /items/textures/dye_magenta.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/group_flower,color_magenta/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Flower,color_magenta [group][flower,color_magenta]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-flower,color-magenta/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Flower,color_magenta [group][flower,color_magenta]"></a></span>
         <span></span>
         <span></span>
     </div>

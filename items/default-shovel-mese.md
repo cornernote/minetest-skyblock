@@ -17,12 +17,12 @@ icon: /items/textures/default_tool_meseshovel.png
         <span></span>
     </div>
     <div>
-        <span><a href="{{site.baseurl}}/items/group_stick/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Stick [group][stick]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-stick/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Stick [group][stick]"></a></span>
         <span></span>
         <span></span>
     </div>
     <div>
-        <span><a href="{{site.baseurl}}/items/group_stick/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Stick [group][stick]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-stick/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Stick [group][stick]"></a></span>
         <span></span>
         <span></span>
     </div>

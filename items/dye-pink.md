@@ -12,7 +12,7 @@ icon: /items/textures/dye_pink.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/group_flower,color_pink/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Flower,color_pink [group][flower,color_pink]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-flower,color-pink/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Flower,color_pink [group][flower,color_pink]"></a></span>
         <span></span>
         <span></span>
     </div>

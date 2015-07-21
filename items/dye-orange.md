@@ -12,7 +12,7 @@ icon: /items/textures/dye_orange.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/group_flower,color_orange/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Flower,color_orange [group][flower,color_orange]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-flower,color-orange/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Flower,color_orange [group][flower,color_orange]"></a></span>
         <span></span>
         <span></span>
     </div>

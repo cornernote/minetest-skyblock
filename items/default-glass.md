@@ -12,7 +12,7 @@ icon: /items/itemcubes/default_glass.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/group_sand/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Sand [group][sand]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-sand/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Sand [group][sand]"></a></span>
     </div>
     <div>
         <span><a href="{{site.baseurl}}/items/default-furnace/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_furnace.png" data-toggle="tooltip" title="Furnace [node][default:furnace]"></a></span>

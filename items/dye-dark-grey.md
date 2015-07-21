@@ -12,7 +12,7 @@ icon: /items/textures/dye_dark_grey.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/group_flower,color_dark_grey/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Flower,color_dark_grey [group][flower,color_dark_grey]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-flower,color-dark-grey/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Flower,color_dark_grey [group][flower,color_dark_grey]"></a></span>
         <span></span>
         <span></span>
     </div>

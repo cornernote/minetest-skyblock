@@ -12,8 +12,8 @@ icon: /items/itemcubes/wool_brown.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/group_dye,unicolor_dark_orange/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Dye,unicolor_dark_orange [group][dye,unicolor_dark_orange]"></a></span>
-        <span><a href="{{site.baseurl}}/items/group_wool/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Wool [group][wool]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-dye,unicolor-dark-orange/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Dye,unicolor_dark_orange [group][dye,unicolor_dark_orange]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-wool/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Wool [group][wool]"></a></span>
         <span></span>
     </div>
     <div>

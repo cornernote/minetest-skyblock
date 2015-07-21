@@ -12,19 +12,19 @@ icon: /items/itemcubes/default_ladder.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/group_stick/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Stick [group][stick]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-stick/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Stick [group][stick]"></a></span>
         <span></span>
-        <span><a href="{{site.baseurl}}/items/group_stick/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Stick [group][stick]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-stick/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Stick [group][stick]"></a></span>
     </div>
     <div>
-        <span><a href="{{site.baseurl}}/items/group_stick/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Stick [group][stick]"></a></span>
-        <span><a href="{{site.baseurl}}/items/group_stick/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Stick [group][stick]"></a></span>
-        <span><a href="{{site.baseurl}}/items/group_stick/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Stick [group][stick]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-stick/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Stick [group][stick]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-stick/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Stick [group][stick]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-stick/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Stick [group][stick]"></a></span>
     </div>
     <div>
-        <span><a href="{{site.baseurl}}/items/group_stick/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Stick [group][stick]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-stick/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Stick [group][stick]"></a></span>
         <span></span>
-        <span><a href="{{site.baseurl}}/items/group_stick/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Stick [group][stick]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-stick/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Stick [group][stick]"></a></span>
     </div>
 </div>
 

@@ -12,17 +12,17 @@ icon: /items/textures/default_tool_woodshovel.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/group_wood/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Wood [group][wood]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-wood/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Wood [group][wood]"></a></span>
         <span></span>
         <span></span>
     </div>
     <div>
-        <span><a href="{{site.baseurl}}/items/group_stick/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Stick [group][stick]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-stick/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Stick [group][stick]"></a></span>
         <span></span>
         <span></span>
     </div>
     <div>
-        <span><a href="{{site.baseurl}}/items/group_stick/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Stick [group][stick]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-stick/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Stick [group][stick]"></a></span>
         <span></span>
         <span></span>
     </div>

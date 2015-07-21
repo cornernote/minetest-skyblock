@@ -12,7 +12,7 @@ icon: /items/textures/dye_black.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/group_flower,color_black/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Flower,color_black [group][flower,color_black]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-flower,color-black/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Flower,color_black [group][flower,color_black]"></a></span>
         <span></span>
         <span></span>
     </div>
@@ -30,7 +30,7 @@ icon: /items/textures/dye_black.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/group_coal/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Coal [group][coal]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-coal/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Coal [group][coal]"></a></span>
         <span></span>
         <span></span>
     </div>
