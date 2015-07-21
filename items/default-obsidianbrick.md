@@ -32,6 +32,6 @@ icon: /items/itemcubes/default_obsidianbrick.png
 ## Used for Crafts
 
 <ul class="list-items">
-    <li><a href="{{site.baseurl}}/items/stairs-slab-obsidianbrick/"><img src="{{site.baseurl}}/assets/img/items/textures/default_obsidian_brick.png" data-toggle="tooltip" title="Obsidian Brick Slab [node][:stairs:slab_obsidianbrick]"></a></li>
-    <li><a href="{{site.baseurl}}/items/stairs-stair-obsidianbrick/"><img src="{{site.baseurl}}/assets/img/items/textures/default_obsidian_brick.png" data-toggle="tooltip" title="Obsidian Brick Stair [node][:stairs:stair_obsidianbrick]"></a></li>
+    <li><a href="{{site.baseurl}}/items/stairs-slab-obsidianbrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_obsidianbrick.png" data-toggle="tooltip" title="Obsidian Brick Slab [node][:stairs:slab_obsidianbrick]"></a></li>
+    <li><a href="{{site.baseurl}}/items/stairs-stair-obsidianbrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_obsidianbrick.png" data-toggle="tooltip" title="Obsidian Brick Stair [node][:stairs:stair_obsidianbrick]"></a></li>
 </ul>

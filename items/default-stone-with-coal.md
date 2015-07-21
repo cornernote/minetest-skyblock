@@ -17,7 +17,7 @@ icon: /items/itemcubes/default_stone_with_coal.png
         <span></span>
     </div>
     <div>
-        <span><a href="{{site.baseurl}}/items/default-stone/"><img src="{{site.baseurl}}/assets/img/items/textures/default_stone.png" data-toggle="tooltip" title="Stone [node][:default:stone]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-stone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stone.png" data-toggle="tooltip" title="Stone [node][:default:stone]"></a></span>
         <span></span>
         <span></span>
     </div>

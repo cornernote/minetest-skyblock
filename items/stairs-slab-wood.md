@@ -4,7 +4,7 @@ title: Wooden Slab
 heading: Wooden Slab
 description: "[node][:stairs:slab_wood]"
 permalink: /items/stairs-slab-wood/
-icon: /items/textures/default_wood.png
+icon: /items/itemcubes/stairs_slab_wood.png
 ---
 
 

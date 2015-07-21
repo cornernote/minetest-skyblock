@@ -4,7 +4,7 @@ title: Obsidian Stair
 heading: Obsidian Stair
 description: "[node][:stairs:stair_obsidian]"
 permalink: /items/stairs-stair-obsidian/
-icon: /items/textures/default_obsidian.png
+icon: /items/itemcubes/stairs_stair_obsidian.png
 ---
 
 

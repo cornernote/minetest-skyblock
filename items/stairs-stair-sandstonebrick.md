@@ -4,7 +4,7 @@ title: Sandstone Brick Stair
 heading: Sandstone Brick Stair
 description: "[node][:stairs:stair_sandstonebrick]"
 permalink: /items/stairs-stair-sandstonebrick/
-icon: /items/textures/default_sandstone_brick.png
+icon: /items/itemcubes/stairs_stair_sandstonebrick.png
 ---
 
 

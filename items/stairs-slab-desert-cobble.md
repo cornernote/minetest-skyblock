@@ -4,7 +4,7 @@ title: Desert Cobblestone Slab
 heading: Desert Cobblestone Slab
 description: "[node][:stairs:slab_desert_cobble]"
 permalink: /items/stairs-slab-desert-cobble/
-icon: /items/textures/default_desert_cobble.png
+icon: /items/itemcubes/stairs_slab_desert_cobble.png
 ---
 
 

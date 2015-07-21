@@ -4,7 +4,7 @@ title: Desertstone Stair
 heading: Desertstone Stair
 description: "[node][:stairs:stair_desert_stone]"
 permalink: /items/stairs-stair-desert-stone/
-icon: /items/textures/default_desert_stone.png
+icon: /items/itemcubes/stairs_stair_desert_stone.png
 ---
 
 

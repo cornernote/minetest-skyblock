@@ -4,7 +4,7 @@ title: Cobblestone Stair
 heading: Cobblestone Stair
 description: "[node][:stairs:stair_cobble]"
 permalink: /items/stairs-stair-cobble/
-icon: /items/textures/default_cobble.png
+icon: /items/itemcubes/stairs_stair_cobble.png
 ---
 
 

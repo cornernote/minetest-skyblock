@@ -4,7 +4,7 @@ title: Junglewood Stair
 heading: Junglewood Stair
 description: "[node][:stairs:stair_junglewood]"
 permalink: /items/stairs-stair-junglewood/
-icon: /items/textures/default_junglewood.png
+icon: /items/itemcubes/stairs_stair_junglewood.png
 ---
 
 

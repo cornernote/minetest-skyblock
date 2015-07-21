@@ -4,7 +4,7 @@ title: Glass Pane
 heading: Glass Pane
 description: "[node][:xpanes:pane]"
 permalink: /items/xpanes-pane/
-icon: /items/textures/default_glass.png
+icon: /items/itemcubes/xpanes_pane.png
 ---
 
 

@@ -4,7 +4,7 @@ title: Desertstone Slab
 heading: Desertstone Slab
 description: "[node][:stairs:slab_desert_stone]"
 permalink: /items/stairs-slab-desert-stone/
-icon: /items/textures/default_desert_stone.png
+icon: /items/itemcubes/stairs_slab_desert_stone.png
 ---
 
 

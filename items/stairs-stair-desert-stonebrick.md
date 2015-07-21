@@ -4,7 +4,7 @@ title: Desert Stone Brick Stair
 heading: Desert Stone Brick Stair
 description: "[node][:stairs:stair_desert_stonebrick]"
 permalink: /items/stairs-stair-desert-stonebrick/
-icon: /items/textures/default_desert_stone_brick.png
+icon: /items/itemcubes/stairs_stair_desert_stonebrick.png
 ---
 
 

@@ -4,7 +4,7 @@ title: Iron bar
 heading: Iron bar
 description: "[node][:xpanes:bar]"
 permalink: /items/xpanes-bar/
-icon: /items/textures/xpanes_bar.png
+icon: /items/itemcubes/xpanes_bar.png
 ---
 
 

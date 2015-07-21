@@ -4,7 +4,7 @@ title: Obsidian Brick Slab
 heading: Obsidian Brick Slab
 description: "[node][:stairs:slab_obsidianbrick]"
 permalink: /items/stairs-slab-obsidianbrick/
-icon: /items/textures/default_obsidian_brick.png
+icon: /items/itemcubes/stairs_slab_obsidianbrick.png
 ---
 
 

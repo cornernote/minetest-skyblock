@@ -4,7 +4,7 @@ title: Sandstone Brick Slab
 heading: Sandstone Brick Slab
 description: "[node][:stairs:slab_sandstonebrick]"
 permalink: /items/stairs-slab-sandstonebrick/
-icon: /items/textures/default_sandstone_brick.png
+icon: /items/itemcubes/stairs_slab_sandstonebrick.png
 ---
 
 

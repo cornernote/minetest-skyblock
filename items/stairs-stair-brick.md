@@ -4,7 +4,7 @@ title: Brick Stair
 heading: Brick Stair
 description: "[node][:stairs:stair_brick]"
 permalink: /items/stairs-stair-brick/
-icon: /items/textures/default_brick.png
+icon: /items/itemcubes/stairs_stair_brick.png
 ---
 
 

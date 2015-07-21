@@ -4,7 +4,7 @@ title: Stone Brick Slab
 heading: Stone Brick Slab
 description: "[node][:stairs:slab_stonebrick]"
 permalink: /items/stairs-slab-stonebrick/
-icon: /items/textures/default_stone_brick.png
+icon: /items/itemcubes/stairs_slab_stonebrick.png
 ---
 
 

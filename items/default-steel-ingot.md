@@ -69,5 +69,5 @@ icon: /items/textures/default_steel_ingot.png
     <li><a href="{{site.baseurl}}/items/farming-hoe-steel/"><img src="{{site.baseurl}}/assets/img/items/textures/farming_tool_steelhoe.png" data-toggle="tooltip" title="Steel Hoe [tool][:farming:hoe_steel]"></a></li>
     <li><a href="{{site.baseurl}}/items/screwdriver-screwdriver/"><img src="{{site.baseurl}}/assets/img/items/textures/screwdriver.png" data-toggle="tooltip" title="Screwdriver (left-click rotates face, right-click rotates axis) [tool][screwdriver:screwdriver]"></a></li>
     <li><a href="{{site.baseurl}}/items/vessels-steel-bottle/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/vessels_steel_bottle.png" data-toggle="tooltip" title="Heavy Steel Bottle (empty) [node][vessels:steel_bottle]"></a></li>
-    <li><a href="{{site.baseurl}}/items/xpanes-bar/"><img src="{{site.baseurl}}/assets/img/items/textures/xpanes_bar.png" data-toggle="tooltip" title="Iron bar [node][:xpanes:bar]"></a></li>
+    <li><a href="{{site.baseurl}}/items/xpanes-bar/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/xpanes_bar.png" data-toggle="tooltip" title="Iron bar [node][:xpanes:bar]"></a></li>
 </ul>

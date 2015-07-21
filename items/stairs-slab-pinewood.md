@@ -4,7 +4,7 @@ title: Pinewood Slab
 heading: Pinewood Slab
 description: "[node][:stairs:slab_pinewood]"
 permalink: /items/stairs-slab-pinewood/
-icon: /items/textures/default_pinewood.png
+icon: /items/itemcubes/stairs_slab_pinewood.png
 ---
 
 

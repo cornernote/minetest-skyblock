@@ -4,7 +4,7 @@ title: Brick Slab
 heading: Brick Slab
 description: "[node][:stairs:slab_brick]"
 permalink: /items/stairs-slab-brick/
-icon: /items/textures/default_brick.png
+icon: /items/itemcubes/stairs_slab_brick.png
 ---
 
 
