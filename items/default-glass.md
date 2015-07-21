@@ -12,7 +12,7 @@ icon: /items/itemcubes/default_glass.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/group-sand/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Sand [group][sand]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-sand/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_sand.png" data-toggle="tooltip" title="Group Sand [group][sand]"></a></span>
     </div>
     <div>
         <span><a href="{{site.baseurl}}/items/default-furnace/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_furnace.png" data-toggle="tooltip" title="Furnace [node][default:furnace]"></a></span>
@@ -48,6 +48,6 @@ icon: /items/itemcubes/default_glass.png
 ## Belongs to Groups
 
 <ul class="list-items">
-    <li><a href="{{site.baseurl}}/items/group-cracky/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Cracky [group][cracky]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-oddly-breakable-by-hand/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Oddly Breakable By Hand [group][oddly_breakable_by_hand]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-cracky/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sandstone.png" data-toggle="tooltip" title="Group Cracky [group][cracky]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-oddly-breakable-by-hand/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_leaves.png" data-toggle="tooltip" title="Group Oddly Breakable By Hand [group][oddly_breakable_by_hand]"></a></li>
 </ul>

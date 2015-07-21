@@ -136,8 +136,8 @@ icon: /items/textures/dye_violet.png
 ## Belongs to Groups
 
 <ul class="list-items">
-    <li><a href="{{site.baseurl}}/items/group-basecolor-magenta/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Basecolor Magenta [group][basecolor_magenta]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-dye/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Dye [group][dye]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-excolor-violet/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Excolor Violet [group][excolor_violet]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-unicolor-violet/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Unicolor Violet [group][unicolor_violet]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-basecolor-magenta/"><img src="{{site.baseurl}}/assets/img/items/textures/dye_magenta.png" data-toggle="tooltip" title="Group Basecolor Magenta [group][basecolor_magenta]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-dye/"><img src="{{site.baseurl}}/assets/img/items/textures/dye_black.png" data-toggle="tooltip" title="Group Dye [group][dye]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-excolor-violet/"><img src="{{site.baseurl}}/assets/img/items/textures/dye_violet.png" data-toggle="tooltip" title="Group Excolor Violet [group][excolor_violet]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-unicolor-violet/"><img src="{{site.baseurl}}/assets/img/items/textures/dye_violet.png" data-toggle="tooltip" title="Group Unicolor Violet [group][unicolor_violet]"></a></li>
 </ul>

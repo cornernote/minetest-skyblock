@@ -12,14 +12,14 @@ icon: /items/itemcubes/doors_trapdoor.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/group-wood/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Wood [group][wood]"></a></span>
-        <span><a href="{{site.baseurl}}/items/group-wood/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Wood [group][wood]"></a></span>
-        <span><a href="{{site.baseurl}}/items/group-wood/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Wood [group][wood]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-wood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_junglewood.png" data-toggle="tooltip" title="Group Wood [group][wood]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-wood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_junglewood.png" data-toggle="tooltip" title="Group Wood [group][wood]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-wood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_junglewood.png" data-toggle="tooltip" title="Group Wood [group][wood]"></a></span>
     </div>
     <div>
-        <span><a href="{{site.baseurl}}/items/group-wood/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Wood [group][wood]"></a></span>
-        <span><a href="{{site.baseurl}}/items/group-wood/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Wood [group][wood]"></a></span>
-        <span><a href="{{site.baseurl}}/items/group-wood/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Wood [group][wood]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-wood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_junglewood.png" data-toggle="tooltip" title="Group Wood [group][wood]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-wood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_junglewood.png" data-toggle="tooltip" title="Group Wood [group][wood]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-wood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_junglewood.png" data-toggle="tooltip" title="Group Wood [group][wood]"></a></span>
     </div>
     <div>
         <span></span>
@@ -32,9 +32,9 @@ icon: /items/itemcubes/doors_trapdoor.png
 ## Belongs to Groups
 
 <ul class="list-items">
-    <li><a href="{{site.baseurl}}/items/group-choppy/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Choppy [group][choppy]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-door/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Door [group][door]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-flammable/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Flammable [group][flammable]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-oddly-breakable-by-hand/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Oddly Breakable By Hand [group][oddly_breakable_by_hand]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-snappy/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Snappy [group][snappy]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-choppy/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_tree.png" data-toggle="tooltip" title="Group Choppy [group][choppy]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-door/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/doors_trapdoor.png" data-toggle="tooltip" title="Group Door [group][door]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-flammable/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_leaves.png" data-toggle="tooltip" title="Group Flammable [group][flammable]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-oddly-breakable-by-hand/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_leaves.png" data-toggle="tooltip" title="Group Oddly Breakable By Hand [group][oddly_breakable_by_hand]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-snappy/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_leaves.png" data-toggle="tooltip" title="Group Snappy [group][snappy]"></a></li>
 </ul>

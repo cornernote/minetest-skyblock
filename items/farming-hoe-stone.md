@@ -12,18 +12,18 @@ icon: /items/textures/farming_tool_stonehoe.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/group-stone/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Stone [group][stone]"></a></span>
-        <span><a href="{{site.baseurl}}/items/group-stone/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Stone [group][stone]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-stone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stone.png" data-toggle="tooltip" title="Group Stone [group][stone]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-stone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stone.png" data-toggle="tooltip" title="Group Stone [group][stone]"></a></span>
         <span></span>
     </div>
     <div>
         <span></span>
-        <span><a href="{{site.baseurl}}/items/group-stick/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Stick [group][stick]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-stick/"><img src="{{site.baseurl}}/assets/img/items/textures/default_stick.png" data-toggle="tooltip" title="Group Stick [group][stick]"></a></span>
         <span></span>
     </div>
     <div>
         <span></span>
-        <span><a href="{{site.baseurl}}/items/group-stick/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Stick [group][stick]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-stick/"><img src="{{site.baseurl}}/assets/img/items/textures/default_stick.png" data-toggle="tooltip" title="Group Stick [group][stick]"></a></span>
         <span></span>
     </div>
 </div>

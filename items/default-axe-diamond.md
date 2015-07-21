@@ -18,12 +18,12 @@ icon: /items/textures/default_tool_diamondaxe.png
     </div>
     <div>
         <span><a href="{{site.baseurl}}/items/default-diamond/"><img src="{{site.baseurl}}/assets/img/items/textures/default_diamond.png" data-toggle="tooltip" title="Diamond [craft][default:diamond]"></a></span>
-        <span><a href="{{site.baseurl}}/items/group-stick/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Stick [group][stick]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-stick/"><img src="{{site.baseurl}}/assets/img/items/textures/default_stick.png" data-toggle="tooltip" title="Group Stick [group][stick]"></a></span>
         <span></span>
     </div>
     <div>
         <span></span>
-        <span><a href="{{site.baseurl}}/items/group-stick/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Stick [group][stick]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-stick/"><img src="{{site.baseurl}}/assets/img/items/textures/default_stick.png" data-toggle="tooltip" title="Group Stick [group][stick]"></a></span>
         <span></span>
     </div>
 </div>
@@ -35,12 +35,12 @@ icon: /items/textures/default_tool_diamondaxe.png
         <span></span>
     </div>
     <div>
-        <span><a href="{{site.baseurl}}/items/group-stick/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Stick [group][stick]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-stick/"><img src="{{site.baseurl}}/assets/img/items/textures/default_stick.png" data-toggle="tooltip" title="Group Stick [group][stick]"></a></span>
         <span><a href="{{site.baseurl}}/items/default-diamond/"><img src="{{site.baseurl}}/assets/img/items/textures/default_diamond.png" data-toggle="tooltip" title="Diamond [craft][default:diamond]"></a></span>
         <span></span>
     </div>
     <div>
-        <span><a href="{{site.baseurl}}/items/group-stick/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Stick [group][stick]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-stick/"><img src="{{site.baseurl}}/assets/img/items/textures/default_stick.png" data-toggle="tooltip" title="Group Stick [group][stick]"></a></span>
         <span></span>
         <span></span>
     </div>

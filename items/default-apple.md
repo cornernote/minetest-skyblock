@@ -18,9 +18,9 @@ icon: /items/itemcubes/default_apple.png
 ## Belongs to Groups
 
 <ul class="list-items">
-    <li><a href="{{site.baseurl}}/items/group-dig-immediate/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Dig Immediate [group][dig_immediate]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-flammable/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Flammable [group][flammable]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-fleshy/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Fleshy [group][fleshy]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-leafdecay/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Leafdecay [group][leafdecay]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-leafdecay-drop/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Leafdecay Drop [group][leafdecay_drop]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-dig-immediate/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/bones_bones.png" data-toggle="tooltip" title="Group Dig Immediate [group][dig_immediate]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-flammable/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_leaves.png" data-toggle="tooltip" title="Group Flammable [group][flammable]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-fleshy/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_apple.png" data-toggle="tooltip" title="Group Fleshy [group][fleshy]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-leafdecay/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_leaves.png" data-toggle="tooltip" title="Group Leafdecay [group][leafdecay]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-leafdecay-drop/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_apple.png" data-toggle="tooltip" title="Group Leafdecay Drop [group][leafdecay_drop]"></a></li>
 </ul>

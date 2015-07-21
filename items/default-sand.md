@@ -32,7 +32,7 @@ icon: /items/itemcubes/default_sand.png
 ## Belongs to Groups
 
 <ul class="list-items">
-    <li><a href="{{site.baseurl}}/items/group-crumbly/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Crumbly [group][crumbly]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-falling-node/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Falling Node [group][falling_node]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-sand/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Sand [group][sand]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-crumbly/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sandstone.png" data-toggle="tooltip" title="Group Crumbly [group][crumbly]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-falling-node/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_sand.png" data-toggle="tooltip" title="Group Falling Node [group][falling_node]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-sand/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_sand.png" data-toggle="tooltip" title="Group Sand [group][sand]"></a></li>
 </ul>

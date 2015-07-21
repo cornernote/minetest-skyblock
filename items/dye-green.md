@@ -206,8 +206,8 @@ icon: /items/textures/dye_green.png
 ## Belongs to Groups
 
 <ul class="list-items">
-    <li><a href="{{site.baseurl}}/items/group-basecolor-green/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Basecolor Green [group][basecolor_green]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-dye/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Dye [group][dye]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-excolor-green/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Excolor Green [group][excolor_green]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-unicolor-green/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Unicolor Green [group][unicolor_green]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-basecolor-green/"><img src="{{site.baseurl}}/assets/img/items/textures/dye_dark_green.png" data-toggle="tooltip" title="Group Basecolor Green [group][basecolor_green]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-dye/"><img src="{{site.baseurl}}/assets/img/items/textures/dye_black.png" data-toggle="tooltip" title="Group Dye [group][dye]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-excolor-green/"><img src="{{site.baseurl}}/assets/img/items/textures/dye_dark_green.png" data-toggle="tooltip" title="Group Excolor Green [group][excolor_green]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-unicolor-green/"><img src="{{site.baseurl}}/assets/img/items/textures/dye_green.png" data-toggle="tooltip" title="Group Unicolor Green [group][unicolor_green]"></a></li>
 </ul>

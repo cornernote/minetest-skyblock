@@ -17,7 +17,7 @@ icon: /items/itemcubes/default_torch.png
         <span></span>
     </div>
     <div>
-        <span><a href="{{site.baseurl}}/items/group-stick/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Stick [group][stick]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-stick/"><img src="{{site.baseurl}}/assets/img/items/textures/default_stick.png" data-toggle="tooltip" title="Group Stick [group][stick]"></a></span>
         <span></span>
         <span></span>
     </div>
@@ -39,8 +39,8 @@ icon: /items/itemcubes/default_torch.png
 ## Belongs to Groups
 
 <ul class="list-items">
-    <li><a href="{{site.baseurl}}/items/group-attached-node/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Attached Node [group][attached_node]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-choppy/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Choppy [group][choppy]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-dig-immediate/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Dig Immediate [group][dig_immediate]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-flammable/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Flammable [group][flammable]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-attached-node/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/farming_seed_cotton.png" data-toggle="tooltip" title="Group Attached Node [group][attached_node]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-choppy/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_tree.png" data-toggle="tooltip" title="Group Choppy [group][choppy]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-dig-immediate/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/bones_bones.png" data-toggle="tooltip" title="Group Dig Immediate [group][dig_immediate]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-flammable/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_leaves.png" data-toggle="tooltip" title="Group Flammable [group][flammable]"></a></li>
 </ul>
