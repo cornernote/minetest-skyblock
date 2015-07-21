@@ -12,9 +12,9 @@ icon: /items/textures/default_desert_stone.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/default-desert-stone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-desert_stone.png" data-toggle="tooltip" title="Desert Stone [node][default:desert_stone]"></a></span>
-        <span><a href="{{site.baseurl}}/items/default-desert-stone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-desert_stone.png" data-toggle="tooltip" title="Desert Stone [node][default:desert_stone]"></a></span>
-        <span><a href="{{site.baseurl}}/items/default-desert-stone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-desert_stone.png" data-toggle="tooltip" title="Desert Stone [node][default:desert_stone]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-desert-stone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_stone.png" data-toggle="tooltip" title="Desert Stone [node][default:desert_stone]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-desert-stone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_stone.png" data-toggle="tooltip" title="Desert Stone [node][default:desert_stone]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-desert-stone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_stone.png" data-toggle="tooltip" title="Desert Stone [node][default:desert_stone]"></a></span>
     </div>
     <div>
         <span></span>

@@ -4,7 +4,7 @@ title: Cyan Wool
 heading: Cyan Wool
 description: "[node][wool:cyan]"
 permalink: /items/wool-cyan/
-icon: /items/textures/wool_cyan.png
+icon: /items/itemcubes/wool_cyan.png
 ---
 
 

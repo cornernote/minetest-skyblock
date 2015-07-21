@@ -4,7 +4,7 @@ title: Copper Block
 heading: Copper Block
 description: "[node][default:copperblock]"
 permalink: /items/default-copperblock/
-icon: /items/textures/default_copper_block.png
+icon: /items/itemcubes/default_copperblock.png
 ---
 
 

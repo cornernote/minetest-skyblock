@@ -4,7 +4,7 @@ title: Mossy Cobblestone
 heading: Mossy Cobblestone
 description: "[node][default:mossycobble]"
 permalink: /items/default-mossycobble/
-icon: /items/itemcubes/default-mossycobble.png
+icon: /items/itemcubes/default_mossycobble.png
 ---
 
 
@@ -12,12 +12,12 @@ icon: /items/itemcubes/default-mossycobble.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/default-junglegrass/"><img src="{{site.baseurl}}/assets/img/items/textures/default_junglegrass.png" data-toggle="tooltip" title="Jungle Grass [node][default:junglegrass]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-junglegrass/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_junglegrass.png" data-toggle="tooltip" title="Jungle Grass [node][default:junglegrass]"></a></span>
         <span></span>
         <span></span>
     </div>
     <div>
-        <span><a href="{{site.baseurl}}/items/default-cobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-cobble.png" data-toggle="tooltip" title="Cobblestone [node][default:cobble]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-cobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_cobble.png" data-toggle="tooltip" title="Cobblestone [node][default:cobble]"></a></span>
         <span></span>
         <span></span>
     </div>

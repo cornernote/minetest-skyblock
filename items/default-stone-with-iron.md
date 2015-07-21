@@ -4,7 +4,7 @@ title: Iron Ore
 heading: Iron Ore
 description: "[node][default:stone_with_iron]"
 permalink: /items/default-stone-with-iron/
-icon: /items/itemcubes/default-stone_with_iron.png
+icon: /items/itemcubes/default_stone_with_iron.png
 ---
 
 

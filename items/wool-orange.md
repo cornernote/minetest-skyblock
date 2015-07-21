@@ -4,7 +4,7 @@ title: Orange Wool
 heading: Orange Wool
 description: "[node][wool:orange]"
 permalink: /items/wool-orange/
-icon: /items/textures/wool_orange.png
+icon: /items/itemcubes/wool_orange.png
 ---
 
 

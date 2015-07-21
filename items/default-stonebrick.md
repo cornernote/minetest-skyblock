@@ -4,7 +4,7 @@ title: Stone Brick
 heading: Stone Brick
 description: "[node][default:stonebrick]"
 permalink: /items/default-stonebrick/
-icon: /items/textures/default_stone_brick.png
+icon: /items/itemcubes/default_stonebrick.png
 ---
 
 

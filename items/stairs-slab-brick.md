@@ -12,9 +12,9 @@ icon: /items/textures/default_brick.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/default-brick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-brick.png" data-toggle="tooltip" title="Brick Block [node][default:brick]"></a></span>
-        <span><a href="{{site.baseurl}}/items/default-brick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-brick.png" data-toggle="tooltip" title="Brick Block [node][default:brick]"></a></span>
-        <span><a href="{{site.baseurl}}/items/default-brick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-brick.png" data-toggle="tooltip" title="Brick Block [node][default:brick]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-brick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_brick.png" data-toggle="tooltip" title="Brick Block [node][default:brick]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-brick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_brick.png" data-toggle="tooltip" title="Brick Block [node][default:brick]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-brick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_brick.png" data-toggle="tooltip" title="Brick Block [node][default:brick]"></a></span>
     </div>
     <div>
         <span></span>

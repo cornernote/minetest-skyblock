@@ -4,7 +4,7 @@ title: Bronze Block
 heading: Bronze Block
 description: "[node][default:bronzeblock]"
 permalink: /items/default-bronzeblock/
-icon: /items/textures/default_bronze_block.png
+icon: /items/itemcubes/default_bronzeblock.png
 ---
 
 

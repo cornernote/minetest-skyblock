@@ -4,7 +4,7 @@ title: Chest
 heading: Chest
 description: "[node][default:chest]"
 permalink: /items/default-chest/
-icon: /items/itemcubes/default-chest.png
+icon: /items/itemcubes/default_chest.png
 ---
 
 
@@ -32,6 +32,6 @@ icon: /items/itemcubes/default-chest.png
 ## Used for Crafts
 
 <ul class="list-items">
-    <li><a href="{{site.baseurl}}/items/fire-basic-flame/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/fire-basic_flame.png" data-toggle="tooltip" title="Fire [node][fire:basic_flame]"></a></li>
-    <li><a href="{{site.baseurl}}/items/default-chest-locked/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-chest_locked.png" data-toggle="tooltip" title="Locked Chest [node][default:chest_locked]"></a></li>
+    <li><a href="{{site.baseurl}}/items/fire-basic-flame/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/fire_basic_flame.png" data-toggle="tooltip" title="Fire [node][fire:basic_flame]"></a></li>
+    <li><a href="{{site.baseurl}}/items/default-chest-locked/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_chest_locked.png" data-toggle="tooltip" title="Locked Chest [node][default:chest_locked]"></a></li>
 </ul>

@@ -4,7 +4,7 @@ title: Trapdoor
 heading: Trapdoor
 description: "[node][doors:trapdoor]"
 permalink: /items/doors-trapdoor/
-icon: /items/textures/doors_trapdoor.png
+icon: /items/itemcubes/doors_trapdoor.png
 ---
 
 

@@ -4,7 +4,7 @@ title: Sandstone
 heading: Sandstone
 description: "[node][default:sandstone]"
 permalink: /items/default-sandstone/
-icon: /items/itemcubes/default-sandstone.png
+icon: /items/itemcubes/default_sandstone.png
 ---
 
 
@@ -32,8 +32,8 @@ icon: /items/itemcubes/default-sandstone.png
 ## Used for Crafts
 
 <ul class="list-items">
-    <li><a href="{{site.baseurl}}/items/default-sand/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-sand.png" data-toggle="tooltip" title="Sand [node][default:sand]"></a></li>
-    <li><a href="{{site.baseurl}}/items/default-sandstonebrick/"><img src="{{site.baseurl}}/assets/img/items/textures/default_sandstone_brick.png" data-toggle="tooltip" title="Sandstone Brick [node][default:sandstonebrick]"></a></li>
+    <li><a href="{{site.baseurl}}/items/default-sand/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sand.png" data-toggle="tooltip" title="Sand [node][default:sand]"></a></li>
+    <li><a href="{{site.baseurl}}/items/default-sandstonebrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sandstonebrick.png" data-toggle="tooltip" title="Sandstone Brick [node][default:sandstonebrick]"></a></li>
     <li><a href="{{site.baseurl}}/items/stairs-slab-sandstone/"><img src="{{site.baseurl}}/assets/img/items/textures/default_sandstone.png" data-toggle="tooltip" title="Sandstone Slab [node][:stairs:slab_sandstone]"></a></li>
     <li><a href="{{site.baseurl}}/items/stairs-stair-sandstone/"><img src="{{site.baseurl}}/assets/img/items/textures/default_sandstone.png" data-toggle="tooltip" title="Sandstone Stair [node][:stairs:stair_sandstone]"></a></li>
 </ul>

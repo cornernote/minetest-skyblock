@@ -4,7 +4,7 @@ title: Desert Stone
 heading: Desert Stone
 description: "[node][default:desert_stone]"
 permalink: /items/default-desert-stone/
-icon: /items/itemcubes/default-desert_stone.png
+icon: /items/itemcubes/default_desert_stone.png
 ---
 
 
@@ -12,10 +12,10 @@ icon: /items/itemcubes/default-desert_stone.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/default-desert-cobble/"><img src="{{site.baseurl}}/assets/img/items/textures/default_desert_cobble.png" data-toggle="tooltip" title="Desert Cobblestone [node][default:desert_cobble]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-desert-cobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_cobble.png" data-toggle="tooltip" title="Desert Cobblestone [node][default:desert_cobble]"></a></span>
     </div>
     <div>
-        <span><a href="{{site.baseurl}}/items/default-furnace/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-furnace.png" data-toggle="tooltip" title="Furnace [node][default:furnace]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-furnace/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_furnace.png" data-toggle="tooltip" title="Furnace [node][default:furnace]"></a></span>
     </div>
     <div>
         <span></span>
@@ -24,13 +24,13 @@ icon: /items/itemcubes/default-desert_stone.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/default-desert-sand/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-desert_sand.png" data-toggle="tooltip" title="Desert Sand [node][default:desert_sand]"></a></span>
-        <span><a href="{{site.baseurl}}/items/default-desert-sand/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-desert_sand.png" data-toggle="tooltip" title="Desert Sand [node][default:desert_sand]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-desert-sand/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_sand.png" data-toggle="tooltip" title="Desert Sand [node][default:desert_sand]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-desert-sand/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_sand.png" data-toggle="tooltip" title="Desert Sand [node][default:desert_sand]"></a></span>
         <span></span>
     </div>
     <div>
-        <span><a href="{{site.baseurl}}/items/default-desert-sand/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-desert_sand.png" data-toggle="tooltip" title="Desert Sand [node][default:desert_sand]"></a></span>
-        <span><a href="{{site.baseurl}}/items/default-desert-sand/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-desert_sand.png" data-toggle="tooltip" title="Desert Sand [node][default:desert_sand]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-desert-sand/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_sand.png" data-toggle="tooltip" title="Desert Sand [node][default:desert_sand]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-desert-sand/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_sand.png" data-toggle="tooltip" title="Desert Sand [node][default:desert_sand]"></a></span>
         <span></span>
     </div>
     <div>
@@ -44,8 +44,8 @@ icon: /items/itemcubes/default-desert_stone.png
 ## Used for Crafts
 
 <ul class="list-items">
-    <li><a href="{{site.baseurl}}/items/default-desert-sand/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-desert_sand.png" data-toggle="tooltip" title="Desert Sand [node][default:desert_sand]"></a></li>
-    <li><a href="{{site.baseurl}}/items/default-desert-stonebrick/"><img src="{{site.baseurl}}/assets/img/items/textures/default_desert_stone_brick.png" data-toggle="tooltip" title="Desert Stone Brick [node][default:desert_stonebrick]"></a></li>
+    <li><a href="{{site.baseurl}}/items/default-desert-sand/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_sand.png" data-toggle="tooltip" title="Desert Sand [node][default:desert_sand]"></a></li>
+    <li><a href="{{site.baseurl}}/items/default-desert-stonebrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_stonebrick.png" data-toggle="tooltip" title="Desert Stone Brick [node][default:desert_stonebrick]"></a></li>
     <li><a href="{{site.baseurl}}/items/stairs-slab-desert-stone/"><img src="{{site.baseurl}}/assets/img/items/textures/default_desert_stone.png" data-toggle="tooltip" title="Desertstone Slab [node][:stairs:slab_desert_stone]"></a></li>
     <li><a href="{{site.baseurl}}/items/stairs-stair-desert-stone/"><img src="{{site.baseurl}}/assets/img/items/textures/default_desert_stone.png" data-toggle="tooltip" title="Desertstone Stair [node][:stairs:stair_desert_stone]"></a></li>
 </ul>

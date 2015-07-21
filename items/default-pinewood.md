@@ -4,7 +4,7 @@ title: Pinewood Planks
 heading: Pinewood Planks
 description: "[node][default:pinewood]"
 permalink: /items/default-pinewood/
-icon: /items/textures/default_pinewood.png
+icon: /items/itemcubes/default_pinewood.png
 ---
 
 
@@ -12,7 +12,7 @@ icon: /items/textures/default_pinewood.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/default-pinetree/"><img src="{{site.baseurl}}/assets/img/items/textures/default_pinetree_top.png" data-toggle="tooltip" title="Pine Tree [node][default:pinetree]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-pinetree/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_pinetree.png" data-toggle="tooltip" title="Pine Tree [node][default:pinetree]"></a></span>
         <span></span>
         <span></span>
     </div>

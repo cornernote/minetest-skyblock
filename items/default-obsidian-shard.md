@@ -12,7 +12,7 @@ icon: /items/textures/default_obsidian_shard.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/default-obsidian/"><img src="{{site.baseurl}}/assets/img/items/textures/default_obsidian.png" data-toggle="tooltip" title="Obsidian [node][default:obsidian]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-obsidian/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_obsidian.png" data-toggle="tooltip" title="Obsidian [node][default:obsidian]"></a></span>
         <span></span>
         <span></span>
     </div>
@@ -32,6 +32,6 @@ icon: /items/textures/default_obsidian_shard.png
 ## Used for Crafts
 
 <ul class="list-items">
-    <li><a href="{{site.baseurl}}/items/default-obsidian/"><img src="{{site.baseurl}}/assets/img/items/textures/default_obsidian.png" data-toggle="tooltip" title="Obsidian [node][default:obsidian]"></a></li>
-    <li><a href="{{site.baseurl}}/items/default-obsidian-glass/"><img src="{{site.baseurl}}/assets/img/items/textures/default_obsidian_glass.png" data-toggle="tooltip" title="Obsidian Glass [node][default:obsidian_glass]"></a></li>
+    <li><a href="{{site.baseurl}}/items/default-obsidian/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_obsidian.png" data-toggle="tooltip" title="Obsidian [node][default:obsidian]"></a></li>
+    <li><a href="{{site.baseurl}}/items/default-obsidian-glass/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_obsidian_glass.png" data-toggle="tooltip" title="Obsidian Glass [node][default:obsidian_glass]"></a></li>
 </ul>

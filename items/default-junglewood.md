@@ -4,7 +4,7 @@ title: Junglewood Planks
 heading: Junglewood Planks
 description: "[node][default:junglewood]"
 permalink: /items/default-junglewood/
-icon: /items/textures/default_junglewood.png
+icon: /items/itemcubes/default_junglewood.png
 ---
 
 
@@ -12,7 +12,7 @@ icon: /items/textures/default_junglewood.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/default-jungletree/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-jungletree.png" data-toggle="tooltip" title="Jungle Tree [node][default:jungletree]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-jungletree/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_jungletree.png" data-toggle="tooltip" title="Jungle Tree [node][default:jungletree]"></a></span>
         <span></span>
         <span></span>
     </div>

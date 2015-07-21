@@ -4,5 +4,5 @@ title: Cloud
 heading: Cloud
 description: "[node][default:cloud]"
 permalink: /items/default-cloud/
-icon: /items/itemcubes/default-cloud.png
+icon: /items/itemcubes/default_cloud.png
 ---

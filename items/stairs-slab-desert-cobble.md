@@ -12,9 +12,9 @@ icon: /items/textures/default_desert_cobble.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/default-desert-cobble/"><img src="{{site.baseurl}}/assets/img/items/textures/default_desert_cobble.png" data-toggle="tooltip" title="Desert Cobblestone [node][default:desert_cobble]"></a></span>
-        <span><a href="{{site.baseurl}}/items/default-desert-cobble/"><img src="{{site.baseurl}}/assets/img/items/textures/default_desert_cobble.png" data-toggle="tooltip" title="Desert Cobblestone [node][default:desert_cobble]"></a></span>
-        <span><a href="{{site.baseurl}}/items/default-desert-cobble/"><img src="{{site.baseurl}}/assets/img/items/textures/default_desert_cobble.png" data-toggle="tooltip" title="Desert Cobblestone [node][default:desert_cobble]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-desert-cobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_cobble.png" data-toggle="tooltip" title="Desert Cobblestone [node][default:desert_cobble]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-desert-cobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_cobble.png" data-toggle="tooltip" title="Desert Cobblestone [node][default:desert_cobble]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-desert-cobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_cobble.png" data-toggle="tooltip" title="Desert Cobblestone [node][default:desert_cobble]"></a></span>
     </div>
     <div>
         <span></span>

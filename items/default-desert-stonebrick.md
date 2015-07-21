@@ -4,7 +4,7 @@ title: Desert Stone Brick
 heading: Desert Stone Brick
 description: "[node][default:desert_stonebrick]"
 permalink: /items/default-desert-stonebrick/
-icon: /items/textures/default_desert_stone_brick.png
+icon: /items/itemcubes/default_desert_stonebrick.png
 ---
 
 
@@ -12,13 +12,13 @@ icon: /items/textures/default_desert_stone_brick.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/default-desert-stone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-desert_stone.png" data-toggle="tooltip" title="Desert Stone [node][default:desert_stone]"></a></span>
-        <span><a href="{{site.baseurl}}/items/default-desert-stone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-desert_stone.png" data-toggle="tooltip" title="Desert Stone [node][default:desert_stone]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-desert-stone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_stone.png" data-toggle="tooltip" title="Desert Stone [node][default:desert_stone]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-desert-stone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_stone.png" data-toggle="tooltip" title="Desert Stone [node][default:desert_stone]"></a></span>
         <span></span>
     </div>
     <div>
-        <span><a href="{{site.baseurl}}/items/default-desert-stone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-desert_stone.png" data-toggle="tooltip" title="Desert Stone [node][default:desert_stone]"></a></span>
-        <span><a href="{{site.baseurl}}/items/default-desert-stone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-desert_stone.png" data-toggle="tooltip" title="Desert Stone [node][default:desert_stone]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-desert-stone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_stone.png" data-toggle="tooltip" title="Desert Stone [node][default:desert_stone]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-desert-stone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_stone.png" data-toggle="tooltip" title="Desert Stone [node][default:desert_stone]"></a></span>
         <span></span>
     </div>
     <div>

@@ -4,5 +4,5 @@ title:
 heading: 
 description: "[node][tnt:boom]"
 permalink: /items/tnt-boom/
-icon: /items/textures/tnt_boom.png
+icon: /items/itemcubes/tnt_boom.png
 ---

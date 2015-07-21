@@ -4,7 +4,7 @@ title: Magenta Wool
 heading: Magenta Wool
 description: "[node][wool:magenta]"
 permalink: /items/wool-magenta/
-icon: /items/textures/wool_magenta.png
+icon: /items/itemcubes/wool_magenta.png
 ---
 
 

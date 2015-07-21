@@ -4,7 +4,7 @@ title: Obsidian Glass
 heading: Obsidian Glass
 description: "[node][default:obsidian_glass]"
 permalink: /items/default-obsidian-glass/
-icon: /items/textures/default_obsidian_glass.png
+icon: /items/itemcubes/default_obsidian_glass.png
 ---
 
 
@@ -15,7 +15,7 @@ icon: /items/textures/default_obsidian_glass.png
         <span><a href="{{site.baseurl}}/items/default-obsidian-shard/"><img src="{{site.baseurl}}/assets/img/items/textures/default_obsidian_shard.png" data-toggle="tooltip" title="Obsidian Shard [craft][default:obsidian_shard]"></a></span>
     </div>
     <div>
-        <span><a href="{{site.baseurl}}/items/default-furnace/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-furnace.png" data-toggle="tooltip" title="Furnace [node][default:furnace]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-furnace/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_furnace.png" data-toggle="tooltip" title="Furnace [node][default:furnace]"></a></span>
     </div>
     <div>
         <span></span>

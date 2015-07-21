@@ -12,7 +12,7 @@ icon: /items/textures/farming_wheat.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/farming-straw/"><img src="{{site.baseurl}}/assets/img/items/textures/farming_straw.png" data-toggle="tooltip" title="Straw [node][farming:straw]"></a></span>
+        <span><a href="{{site.baseurl}}/items/farming-straw/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/farming_straw.png" data-toggle="tooltip" title="Straw [node][farming:straw]"></a></span>
         <span></span>
         <span></span>
     </div>
@@ -33,5 +33,5 @@ icon: /items/textures/farming_wheat.png
 
 <ul class="list-items">
     <li><a href="{{site.baseurl}}/items/farming-flour/"><img src="{{site.baseurl}}/assets/img/items/textures/farming_flour.png" data-toggle="tooltip" title="Flour [craft][farming:flour]"></a></li>
-    <li><a href="{{site.baseurl}}/items/farming-straw/"><img src="{{site.baseurl}}/assets/img/items/textures/farming_straw.png" data-toggle="tooltip" title="Straw [node][farming:straw]"></a></li>
+    <li><a href="{{site.baseurl}}/items/farming-straw/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/farming_straw.png" data-toggle="tooltip" title="Straw [node][farming:straw]"></a></li>
 </ul>

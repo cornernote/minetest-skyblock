@@ -4,7 +4,7 @@ title: Pink Wool
 heading: Pink Wool
 description: "[node][wool:pink]"
 permalink: /items/wool-pink/
-icon: /items/textures/wool_pink.png
+icon: /items/itemcubes/wool_pink.png
 ---
 
 

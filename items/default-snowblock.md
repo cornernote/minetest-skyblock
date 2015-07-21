@@ -4,7 +4,7 @@ title: Snow Block
 heading: Snow Block
 description: "[node][default:snowblock]"
 permalink: /items/default-snowblock/
-icon: /items/textures/default_snow.png
+icon: /items/itemcubes/default_snowblock.png
 ---
 
 
@@ -12,19 +12,19 @@ icon: /items/textures/default_snow.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/default-snow/"><img src="{{site.baseurl}}/assets/img/items/textures/default_snowball.png" data-toggle="tooltip" title="Snow [node][default:snow]"></a></span>
-        <span><a href="{{site.baseurl}}/items/default-snow/"><img src="{{site.baseurl}}/assets/img/items/textures/default_snowball.png" data-toggle="tooltip" title="Snow [node][default:snow]"></a></span>
-        <span><a href="{{site.baseurl}}/items/default-snow/"><img src="{{site.baseurl}}/assets/img/items/textures/default_snowball.png" data-toggle="tooltip" title="Snow [node][default:snow]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-snow/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_snow.png" data-toggle="tooltip" title="Snow [node][default:snow]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-snow/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_snow.png" data-toggle="tooltip" title="Snow [node][default:snow]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-snow/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_snow.png" data-toggle="tooltip" title="Snow [node][default:snow]"></a></span>
     </div>
     <div>
-        <span><a href="{{site.baseurl}}/items/default-snow/"><img src="{{site.baseurl}}/assets/img/items/textures/default_snowball.png" data-toggle="tooltip" title="Snow [node][default:snow]"></a></span>
-        <span><a href="{{site.baseurl}}/items/default-snow/"><img src="{{site.baseurl}}/assets/img/items/textures/default_snowball.png" data-toggle="tooltip" title="Snow [node][default:snow]"></a></span>
-        <span><a href="{{site.baseurl}}/items/default-snow/"><img src="{{site.baseurl}}/assets/img/items/textures/default_snowball.png" data-toggle="tooltip" title="Snow [node][default:snow]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-snow/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_snow.png" data-toggle="tooltip" title="Snow [node][default:snow]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-snow/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_snow.png" data-toggle="tooltip" title="Snow [node][default:snow]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-snow/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_snow.png" data-toggle="tooltip" title="Snow [node][default:snow]"></a></span>
     </div>
     <div>
-        <span><a href="{{site.baseurl}}/items/default-snow/"><img src="{{site.baseurl}}/assets/img/items/textures/default_snowball.png" data-toggle="tooltip" title="Snow [node][default:snow]"></a></span>
-        <span><a href="{{site.baseurl}}/items/default-snow/"><img src="{{site.baseurl}}/assets/img/items/textures/default_snowball.png" data-toggle="tooltip" title="Snow [node][default:snow]"></a></span>
-        <span><a href="{{site.baseurl}}/items/default-snow/"><img src="{{site.baseurl}}/assets/img/items/textures/default_snowball.png" data-toggle="tooltip" title="Snow [node][default:snow]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-snow/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_snow.png" data-toggle="tooltip" title="Snow [node][default:snow]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-snow/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_snow.png" data-toggle="tooltip" title="Snow [node][default:snow]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-snow/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_snow.png" data-toggle="tooltip" title="Snow [node][default:snow]"></a></span>
     </div>
 </div>
 
@@ -32,5 +32,5 @@ icon: /items/textures/default_snow.png
 ## Used for Crafts
 
 <ul class="list-items">
-    <li><a href="{{site.baseurl}}/items/default-snow/"><img src="{{site.baseurl}}/assets/img/items/textures/default_snowball.png" data-toggle="tooltip" title="Snow [node][default:snow]"></a></li>
+    <li><a href="{{site.baseurl}}/items/default-snow/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_snow.png" data-toggle="tooltip" title="Snow [node][default:snow]"></a></li>
 </ul>

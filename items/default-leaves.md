@@ -4,7 +4,7 @@ title: Leaves
 heading: Leaves
 description: "[node][default:leaves]"
 permalink: /items/default-leaves/
-icon: /items/itemcubes/default-leaves.png
+icon: /items/itemcubes/default_leaves.png
 ---
 
 

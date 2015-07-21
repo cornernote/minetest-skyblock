@@ -4,7 +4,7 @@ title: Red Wool
 heading: Red Wool
 description: "[node][wool:red]"
 permalink: /items/wool-red/
-icon: /items/textures/wool_red.png
+icon: /items/itemcubes/wool_red.png
 ---
 
 

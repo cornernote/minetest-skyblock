@@ -12,9 +12,9 @@ icon: /items/textures/default_pinewood.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/default-pinewood/"><img src="{{site.baseurl}}/assets/img/items/textures/default_pinewood.png" data-toggle="tooltip" title="Pinewood Planks [node][default:pinewood]"></a></span>
-        <span><a href="{{site.baseurl}}/items/default-pinewood/"><img src="{{site.baseurl}}/assets/img/items/textures/default_pinewood.png" data-toggle="tooltip" title="Pinewood Planks [node][default:pinewood]"></a></span>
-        <span><a href="{{site.baseurl}}/items/default-pinewood/"><img src="{{site.baseurl}}/assets/img/items/textures/default_pinewood.png" data-toggle="tooltip" title="Pinewood Planks [node][default:pinewood]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-pinewood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_pinewood.png" data-toggle="tooltip" title="Pinewood Planks [node][default:pinewood]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-pinewood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_pinewood.png" data-toggle="tooltip" title="Pinewood Planks [node][default:pinewood]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-pinewood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_pinewood.png" data-toggle="tooltip" title="Pinewood Planks [node][default:pinewood]"></a></span>
     </div>
     <div>
         <span></span>

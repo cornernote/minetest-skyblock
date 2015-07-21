@@ -12,9 +12,9 @@ icon: /items/textures/default_wood.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/default-wood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-wood.png" data-toggle="tooltip" title="Wooden Planks [node][default:wood]"></a></span>
-        <span><a href="{{site.baseurl}}/items/default-wood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-wood.png" data-toggle="tooltip" title="Wooden Planks [node][default:wood]"></a></span>
-        <span><a href="{{site.baseurl}}/items/default-wood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-wood.png" data-toggle="tooltip" title="Wooden Planks [node][default:wood]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-wood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_wood.png" data-toggle="tooltip" title="Wooden Planks [node][default:wood]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-wood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_wood.png" data-toggle="tooltip" title="Wooden Planks [node][default:wood]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-wood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_wood.png" data-toggle="tooltip" title="Wooden Planks [node][default:wood]"></a></span>
     </div>
     <div>
         <span></span>

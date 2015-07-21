@@ -4,7 +4,7 @@ title: Brick Block
 heading: Brick Block
 description: "[node][default:brick]"
 permalink: /items/default-brick/
-icon: /items/itemcubes/default-brick.png
+icon: /items/itemcubes/default_brick.png
 ---
 
 

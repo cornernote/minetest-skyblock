@@ -4,7 +4,7 @@ title: Coal Ore
 heading: Coal Ore
 description: "[node][default:stone_with_coal]"
 permalink: /items/default-stone-with-coal/
-icon: /items/itemcubes/default-stone_with_coal.png
+icon: /items/itemcubes/default_stone_with_coal.png
 ---
 
 

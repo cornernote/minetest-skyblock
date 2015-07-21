@@ -12,18 +12,18 @@ icon: /items/textures/doors_glass.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/default-glass/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/[inventorycube{default_glass.png{default_glass.png{default_glass.png.png" data-toggle="tooltip" title="Glass [node][default:glass]"></a></span>
-        <span><a href="{{site.baseurl}}/items/default-glass/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/[inventorycube{default_glass.png{default_glass.png{default_glass.png.png" data-toggle="tooltip" title="Glass [node][default:glass]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-glass/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_glass.png" data-toggle="tooltip" title="Glass [node][default:glass]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-glass/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_glass.png" data-toggle="tooltip" title="Glass [node][default:glass]"></a></span>
         <span></span>
     </div>
     <div>
-        <span><a href="{{site.baseurl}}/items/default-glass/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/[inventorycube{default_glass.png{default_glass.png{default_glass.png.png" data-toggle="tooltip" title="Glass [node][default:glass]"></a></span>
-        <span><a href="{{site.baseurl}}/items/default-glass/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/[inventorycube{default_glass.png{default_glass.png{default_glass.png.png" data-toggle="tooltip" title="Glass [node][default:glass]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-glass/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_glass.png" data-toggle="tooltip" title="Glass [node][default:glass]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-glass/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_glass.png" data-toggle="tooltip" title="Glass [node][default:glass]"></a></span>
         <span></span>
     </div>
     <div>
-        <span><a href="{{site.baseurl}}/items/default-glass/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/[inventorycube{default_glass.png{default_glass.png{default_glass.png.png" data-toggle="tooltip" title="Glass [node][default:glass]"></a></span>
-        <span><a href="{{site.baseurl}}/items/default-glass/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/[inventorycube{default_glass.png{default_glass.png{default_glass.png.png" data-toggle="tooltip" title="Glass [node][default:glass]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-glass/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_glass.png" data-toggle="tooltip" title="Glass [node][default:glass]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-glass/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_glass.png" data-toggle="tooltip" title="Glass [node][default:glass]"></a></span>
         <span></span>
     </div>
 </div>

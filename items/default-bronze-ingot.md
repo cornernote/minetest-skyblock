@@ -30,7 +30,7 @@ icon: /items/textures/default_bronze_ingot.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/default-bronzeblock/"><img src="{{site.baseurl}}/assets/img/items/textures/default_bronze_block.png" data-toggle="tooltip" title="Bronze Block [node][default:bronzeblock]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-bronzeblock/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_bronzeblock.png" data-toggle="tooltip" title="Bronze Block [node][default:bronzeblock]"></a></span>
         <span></span>
         <span></span>
     </div>
@@ -51,7 +51,7 @@ icon: /items/textures/default_bronze_ingot.png
 
 <ul class="list-items">
     <li><a href="{{site.baseurl}}/items/default-axe-bronze/"><img src="{{site.baseurl}}/assets/img/items/textures/default_tool_bronzeaxe.png" data-toggle="tooltip" title="Bronze Axe [tool][default:axe_bronze]"></a></li>
-    <li><a href="{{site.baseurl}}/items/default-bronzeblock/"><img src="{{site.baseurl}}/assets/img/items/textures/default_bronze_block.png" data-toggle="tooltip" title="Bronze Block [node][default:bronzeblock]"></a></li>
+    <li><a href="{{site.baseurl}}/items/default-bronzeblock/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_bronzeblock.png" data-toggle="tooltip" title="Bronze Block [node][default:bronzeblock]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-pick-bronze/"><img src="{{site.baseurl}}/assets/img/items/textures/default_tool_bronzepick.png" data-toggle="tooltip" title="Bronze Pickaxe [tool][default:pick_bronze]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-shovel-bronze/"><img src="{{site.baseurl}}/assets/img/items/textures/default_tool_bronzeshovel.png" data-toggle="tooltip" title="Bronze Shovel [tool][default:shovel_bronze]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-sword-bronze/"><img src="{{site.baseurl}}/assets/img/items/textures/default_tool_bronzesword.png" data-toggle="tooltip" title="Bronze Sword [tool][default:sword_bronze]"></a></li>

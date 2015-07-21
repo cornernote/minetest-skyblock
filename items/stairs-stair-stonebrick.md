@@ -12,19 +12,19 @@ icon: /items/textures/default_stone_brick.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/default-stonebrick/"><img src="{{site.baseurl}}/assets/img/items/textures/default_stone_brick.png" data-toggle="tooltip" title="Stone Brick [node][default:stonebrick]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-stonebrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stonebrick.png" data-toggle="tooltip" title="Stone Brick [node][default:stonebrick]"></a></span>
         <span></span>
         <span></span>
     </div>
     <div>
-        <span><a href="{{site.baseurl}}/items/default-stonebrick/"><img src="{{site.baseurl}}/assets/img/items/textures/default_stone_brick.png" data-toggle="tooltip" title="Stone Brick [node][default:stonebrick]"></a></span>
-        <span><a href="{{site.baseurl}}/items/default-stonebrick/"><img src="{{site.baseurl}}/assets/img/items/textures/default_stone_brick.png" data-toggle="tooltip" title="Stone Brick [node][default:stonebrick]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-stonebrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stonebrick.png" data-toggle="tooltip" title="Stone Brick [node][default:stonebrick]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-stonebrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stonebrick.png" data-toggle="tooltip" title="Stone Brick [node][default:stonebrick]"></a></span>
         <span></span>
     </div>
     <div>
-        <span><a href="{{site.baseurl}}/items/default-stonebrick/"><img src="{{site.baseurl}}/assets/img/items/textures/default_stone_brick.png" data-toggle="tooltip" title="Stone Brick [node][default:stonebrick]"></a></span>
-        <span><a href="{{site.baseurl}}/items/default-stonebrick/"><img src="{{site.baseurl}}/assets/img/items/textures/default_stone_brick.png" data-toggle="tooltip" title="Stone Brick [node][default:stonebrick]"></a></span>
-        <span><a href="{{site.baseurl}}/items/default-stonebrick/"><img src="{{site.baseurl}}/assets/img/items/textures/default_stone_brick.png" data-toggle="tooltip" title="Stone Brick [node][default:stonebrick]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-stonebrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stonebrick.png" data-toggle="tooltip" title="Stone Brick [node][default:stonebrick]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-stonebrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stonebrick.png" data-toggle="tooltip" title="Stone Brick [node][default:stonebrick]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-stonebrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stonebrick.png" data-toggle="tooltip" title="Stone Brick [node][default:stonebrick]"></a></span>
     </div>
 </div>
 
@@ -32,16 +32,16 @@ icon: /items/textures/default_stone_brick.png
     <div>
         <span></span>
         <span></span>
-        <span><a href="{{site.baseurl}}/items/default-stonebrick/"><img src="{{site.baseurl}}/assets/img/items/textures/default_stone_brick.png" data-toggle="tooltip" title="Stone Brick [node][default:stonebrick]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-stonebrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stonebrick.png" data-toggle="tooltip" title="Stone Brick [node][default:stonebrick]"></a></span>
     </div>
     <div>
         <span></span>
-        <span><a href="{{site.baseurl}}/items/default-stonebrick/"><img src="{{site.baseurl}}/assets/img/items/textures/default_stone_brick.png" data-toggle="tooltip" title="Stone Brick [node][default:stonebrick]"></a></span>
-        <span><a href="{{site.baseurl}}/items/default-stonebrick/"><img src="{{site.baseurl}}/assets/img/items/textures/default_stone_brick.png" data-toggle="tooltip" title="Stone Brick [node][default:stonebrick]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-stonebrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stonebrick.png" data-toggle="tooltip" title="Stone Brick [node][default:stonebrick]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-stonebrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stonebrick.png" data-toggle="tooltip" title="Stone Brick [node][default:stonebrick]"></a></span>
     </div>
     <div>
-        <span><a href="{{site.baseurl}}/items/default-stonebrick/"><img src="{{site.baseurl}}/assets/img/items/textures/default_stone_brick.png" data-toggle="tooltip" title="Stone Brick [node][default:stonebrick]"></a></span>
-        <span><a href="{{site.baseurl}}/items/default-stonebrick/"><img src="{{site.baseurl}}/assets/img/items/textures/default_stone_brick.png" data-toggle="tooltip" title="Stone Brick [node][default:stonebrick]"></a></span>
-        <span><a href="{{site.baseurl}}/items/default-stonebrick/"><img src="{{site.baseurl}}/assets/img/items/textures/default_stone_brick.png" data-toggle="tooltip" title="Stone Brick [node][default:stonebrick]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-stonebrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stonebrick.png" data-toggle="tooltip" title="Stone Brick [node][default:stonebrick]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-stonebrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stonebrick.png" data-toggle="tooltip" title="Stone Brick [node][default:stonebrick]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-stonebrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stonebrick.png" data-toggle="tooltip" title="Stone Brick [node][default:stonebrick]"></a></span>
     </div>
 </div>

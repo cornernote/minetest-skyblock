@@ -4,7 +4,7 @@ title: Rail
 heading: Rail
 description: "[node][default:rail]"
 permalink: /items/default-rail/
-icon: /items/textures/default_rail.png
+icon: /items/itemcubes/default_rail.png
 ---
 
 

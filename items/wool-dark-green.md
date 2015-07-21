@@ -4,7 +4,7 @@ title: Dark Green Wool
 heading: Dark Green Wool
 description: "[node][wool:dark_green]"
 permalink: /items/wool-dark-green/
-icon: /items/textures/wool_dark_green.png
+icon: /items/itemcubes/wool_dark_green.png
 ---
 
 

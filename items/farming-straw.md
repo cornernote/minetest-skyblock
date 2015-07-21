@@ -4,7 +4,7 @@ title: Straw
 heading: Straw
 description: "[node][farming:straw]"
 permalink: /items/farming-straw/
-icon: /items/textures/farming_straw.png
+icon: /items/itemcubes/farming_straw.png
 ---
 
 

@@ -4,7 +4,7 @@ title: Brown Wool
 heading: Brown Wool
 description: "[node][wool:brown]"
 permalink: /items/wool-brown/
-icon: /items/textures/wool_brown.png
+icon: /items/itemcubes/wool_brown.png
 ---
 
 

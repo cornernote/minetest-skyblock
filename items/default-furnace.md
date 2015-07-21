@@ -4,7 +4,7 @@ title: Furnace
 heading: Furnace
 description: "[node][default:furnace]"
 permalink: /items/default-furnace/
-icon: /items/itemcubes/default-furnace.png
+icon: /items/itemcubes/default_furnace.png
 ---
 
 

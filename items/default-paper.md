@@ -12,9 +12,9 @@ icon: /items/textures/default_paper.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/default-papyrus/"><img src="{{site.baseurl}}/assets/img/items/textures/default_papyrus.png" data-toggle="tooltip" title="Papyrus [node][default:papyrus]"></a></span>
-        <span><a href="{{site.baseurl}}/items/default-papyrus/"><img src="{{site.baseurl}}/assets/img/items/textures/default_papyrus.png" data-toggle="tooltip" title="Papyrus [node][default:papyrus]"></a></span>
-        <span><a href="{{site.baseurl}}/items/default-papyrus/"><img src="{{site.baseurl}}/assets/img/items/textures/default_papyrus.png" data-toggle="tooltip" title="Papyrus [node][default:papyrus]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-papyrus/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_papyrus.png" data-toggle="tooltip" title="Papyrus [node][default:papyrus]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-papyrus/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_papyrus.png" data-toggle="tooltip" title="Papyrus [node][default:papyrus]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-papyrus/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_papyrus.png" data-toggle="tooltip" title="Papyrus [node][default:papyrus]"></a></span>
     </div>
     <div>
         <span></span>

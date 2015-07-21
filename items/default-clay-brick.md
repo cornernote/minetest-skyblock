@@ -12,7 +12,7 @@ icon: /items/textures/default_clay_brick.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/default-brick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-brick.png" data-toggle="tooltip" title="Brick Block [node][default:brick]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-brick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_brick.png" data-toggle="tooltip" title="Brick Block [node][default:brick]"></a></span>
         <span></span>
         <span></span>
     </div>
@@ -33,7 +33,7 @@ icon: /items/textures/default_clay_brick.png
         <span><a href="{{site.baseurl}}/items/default-clay-lump/"><img src="{{site.baseurl}}/assets/img/items/textures/default_clay_lump.png" data-toggle="tooltip" title="Clay Lump [craft][default:clay_lump]"></a></span>
     </div>
     <div>
-        <span><a href="{{site.baseurl}}/items/default-furnace/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-furnace.png" data-toggle="tooltip" title="Furnace [node][default:furnace]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-furnace/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_furnace.png" data-toggle="tooltip" title="Furnace [node][default:furnace]"></a></span>
     </div>
     <div>
         <span></span>
@@ -44,5 +44,5 @@ icon: /items/textures/default_clay_brick.png
 ## Used for Crafts
 
 <ul class="list-items">
-    <li><a href="{{site.baseurl}}/items/default-brick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-brick.png" data-toggle="tooltip" title="Brick Block [node][default:brick]"></a></li>
+    <li><a href="{{site.baseurl}}/items/default-brick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_brick.png" data-toggle="tooltip" title="Brick Block [node][default:brick]"></a></li>
 </ul>

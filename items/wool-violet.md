@@ -4,7 +4,7 @@ title: Violet Wool
 heading: Violet Wool
 description: "[node][wool:violet]"
 permalink: /items/wool-violet/
-icon: /items/textures/wool_violet.png
+icon: /items/itemcubes/wool_violet.png
 ---
 
 

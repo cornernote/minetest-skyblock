@@ -4,7 +4,7 @@ title: TNT
 heading: TNT
 description: "[node][tnt:tnt]"
 permalink: /items/tnt-tnt/
-icon: /items/textures/tnt_top.png
+icon: /items/itemcubes/tnt_tnt.png
 ---
 
 
@@ -18,7 +18,7 @@ icon: /items/textures/tnt_top.png
     </div>
     <div>
         <span><a href="{{site.baseurl}}/items/group_wood/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Wood [group][wood]"></a></span>
-        <span><a href="{{site.baseurl}}/items/tnt-gunpowder/"><img src="{{site.baseurl}}/assets/img/items/textures/tnt_gunpowder_inventory.png" data-toggle="tooltip" title="Gun Powder [node][tnt:gunpowder]"></a></span>
+        <span><a href="{{site.baseurl}}/items/tnt-gunpowder/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/tnt_gunpowder.png" data-toggle="tooltip" title="Gun Powder [node][tnt:gunpowder]"></a></span>
         <span><a href="{{site.baseurl}}/items/group_wood/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Wood [group][wood]"></a></span>
     </div>
     <div>

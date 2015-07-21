@@ -4,5 +4,5 @@ title: Rose
 heading: Rose
 description: "[node][flowers:rose]"
 permalink: /items/flowers-rose/
-icon: /items/textures/flowers_rose.png
+icon: /items/itemcubes/flowers_rose.png
 ---

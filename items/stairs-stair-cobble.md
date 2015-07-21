@@ -12,19 +12,19 @@ icon: /items/textures/default_cobble.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/default-cobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-cobble.png" data-toggle="tooltip" title="Cobblestone [node][default:cobble]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-cobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_cobble.png" data-toggle="tooltip" title="Cobblestone [node][default:cobble]"></a></span>
         <span></span>
         <span></span>
     </div>
     <div>
-        <span><a href="{{site.baseurl}}/items/default-cobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-cobble.png" data-toggle="tooltip" title="Cobblestone [node][default:cobble]"></a></span>
-        <span><a href="{{site.baseurl}}/items/default-cobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-cobble.png" data-toggle="tooltip" title="Cobblestone [node][default:cobble]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-cobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_cobble.png" data-toggle="tooltip" title="Cobblestone [node][default:cobble]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-cobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_cobble.png" data-toggle="tooltip" title="Cobblestone [node][default:cobble]"></a></span>
         <span></span>
     </div>
     <div>
-        <span><a href="{{site.baseurl}}/items/default-cobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-cobble.png" data-toggle="tooltip" title="Cobblestone [node][default:cobble]"></a></span>
-        <span><a href="{{site.baseurl}}/items/default-cobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-cobble.png" data-toggle="tooltip" title="Cobblestone [node][default:cobble]"></a></span>
-        <span><a href="{{site.baseurl}}/items/default-cobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-cobble.png" data-toggle="tooltip" title="Cobblestone [node][default:cobble]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-cobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_cobble.png" data-toggle="tooltip" title="Cobblestone [node][default:cobble]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-cobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_cobble.png" data-toggle="tooltip" title="Cobblestone [node][default:cobble]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-cobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_cobble.png" data-toggle="tooltip" title="Cobblestone [node][default:cobble]"></a></span>
     </div>
 </div>
 
@@ -32,16 +32,16 @@ icon: /items/textures/default_cobble.png
     <div>
         <span></span>
         <span></span>
-        <span><a href="{{site.baseurl}}/items/default-cobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-cobble.png" data-toggle="tooltip" title="Cobblestone [node][default:cobble]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-cobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_cobble.png" data-toggle="tooltip" title="Cobblestone [node][default:cobble]"></a></span>
     </div>
     <div>
         <span></span>
-        <span><a href="{{site.baseurl}}/items/default-cobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-cobble.png" data-toggle="tooltip" title="Cobblestone [node][default:cobble]"></a></span>
-        <span><a href="{{site.baseurl}}/items/default-cobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-cobble.png" data-toggle="tooltip" title="Cobblestone [node][default:cobble]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-cobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_cobble.png" data-toggle="tooltip" title="Cobblestone [node][default:cobble]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-cobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_cobble.png" data-toggle="tooltip" title="Cobblestone [node][default:cobble]"></a></span>
     </div>
     <div>
-        <span><a href="{{site.baseurl}}/items/default-cobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-cobble.png" data-toggle="tooltip" title="Cobblestone [node][default:cobble]"></a></span>
-        <span><a href="{{site.baseurl}}/items/default-cobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-cobble.png" data-toggle="tooltip" title="Cobblestone [node][default:cobble]"></a></span>
-        <span><a href="{{site.baseurl}}/items/default-cobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-cobble.png" data-toggle="tooltip" title="Cobblestone [node][default:cobble]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-cobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_cobble.png" data-toggle="tooltip" title="Cobblestone [node][default:cobble]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-cobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_cobble.png" data-toggle="tooltip" title="Cobblestone [node][default:cobble]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-cobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_cobble.png" data-toggle="tooltip" title="Cobblestone [node][default:cobble]"></a></span>
     </div>
 </div>

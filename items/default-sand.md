@@ -4,7 +4,7 @@ title: Sand
 heading: Sand
 description: "[node][default:sand]"
 permalink: /items/default-sand/
-icon: /items/itemcubes/default-sand.png
+icon: /items/itemcubes/default_sand.png
 ---
 
 

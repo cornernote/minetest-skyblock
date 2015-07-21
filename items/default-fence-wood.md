@@ -4,7 +4,7 @@ title: Wooden Fence
 heading: Wooden Fence
 description: "[node][default:fence_wood]"
 permalink: /items/default-fence-wood/
-icon: /items/textures/default_fence_overlay.png
+icon: /items/itemcubes/default_fence_wood.png
 ---
 
 
@@ -32,5 +32,5 @@ icon: /items/textures/default_fence_overlay.png
 ## Used for Crafts
 
 <ul class="list-items">
-    <li><a href="{{site.baseurl}}/items/fire-basic-flame/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/fire-basic_flame.png" data-toggle="tooltip" title="Fire [node][fire:basic_flame]"></a></li>
+    <li><a href="{{site.baseurl}}/items/fire-basic-flame/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/fire_basic_flame.png" data-toggle="tooltip" title="Fire [node][fire:basic_flame]"></a></li>
 </ul>

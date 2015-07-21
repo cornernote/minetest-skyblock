@@ -12,19 +12,19 @@ icon: /items/textures/default_junglewood.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/default-junglewood/"><img src="{{site.baseurl}}/assets/img/items/textures/default_junglewood.png" data-toggle="tooltip" title="Junglewood Planks [node][default:junglewood]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-junglewood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_junglewood.png" data-toggle="tooltip" title="Junglewood Planks [node][default:junglewood]"></a></span>
         <span></span>
         <span></span>
     </div>
     <div>
-        <span><a href="{{site.baseurl}}/items/default-junglewood/"><img src="{{site.baseurl}}/assets/img/items/textures/default_junglewood.png" data-toggle="tooltip" title="Junglewood Planks [node][default:junglewood]"></a></span>
-        <span><a href="{{site.baseurl}}/items/default-junglewood/"><img src="{{site.baseurl}}/assets/img/items/textures/default_junglewood.png" data-toggle="tooltip" title="Junglewood Planks [node][default:junglewood]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-junglewood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_junglewood.png" data-toggle="tooltip" title="Junglewood Planks [node][default:junglewood]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-junglewood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_junglewood.png" data-toggle="tooltip" title="Junglewood Planks [node][default:junglewood]"></a></span>
         <span></span>
     </div>
     <div>
-        <span><a href="{{site.baseurl}}/items/default-junglewood/"><img src="{{site.baseurl}}/assets/img/items/textures/default_junglewood.png" data-toggle="tooltip" title="Junglewood Planks [node][default:junglewood]"></a></span>
-        <span><a href="{{site.baseurl}}/items/default-junglewood/"><img src="{{site.baseurl}}/assets/img/items/textures/default_junglewood.png" data-toggle="tooltip" title="Junglewood Planks [node][default:junglewood]"></a></span>
-        <span><a href="{{site.baseurl}}/items/default-junglewood/"><img src="{{site.baseurl}}/assets/img/items/textures/default_junglewood.png" data-toggle="tooltip" title="Junglewood Planks [node][default:junglewood]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-junglewood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_junglewood.png" data-toggle="tooltip" title="Junglewood Planks [node][default:junglewood]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-junglewood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_junglewood.png" data-toggle="tooltip" title="Junglewood Planks [node][default:junglewood]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-junglewood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_junglewood.png" data-toggle="tooltip" title="Junglewood Planks [node][default:junglewood]"></a></span>
     </div>
 </div>
 
@@ -32,16 +32,16 @@ icon: /items/textures/default_junglewood.png
     <div>
         <span></span>
         <span></span>
-        <span><a href="{{site.baseurl}}/items/default-junglewood/"><img src="{{site.baseurl}}/assets/img/items/textures/default_junglewood.png" data-toggle="tooltip" title="Junglewood Planks [node][default:junglewood]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-junglewood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_junglewood.png" data-toggle="tooltip" title="Junglewood Planks [node][default:junglewood]"></a></span>
     </div>
     <div>
         <span></span>
-        <span><a href="{{site.baseurl}}/items/default-junglewood/"><img src="{{site.baseurl}}/assets/img/items/textures/default_junglewood.png" data-toggle="tooltip" title="Junglewood Planks [node][default:junglewood]"></a></span>
-        <span><a href="{{site.baseurl}}/items/default-junglewood/"><img src="{{site.baseurl}}/assets/img/items/textures/default_junglewood.png" data-toggle="tooltip" title="Junglewood Planks [node][default:junglewood]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-junglewood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_junglewood.png" data-toggle="tooltip" title="Junglewood Planks [node][default:junglewood]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-junglewood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_junglewood.png" data-toggle="tooltip" title="Junglewood Planks [node][default:junglewood]"></a></span>
     </div>
     <div>
-        <span><a href="{{site.baseurl}}/items/default-junglewood/"><img src="{{site.baseurl}}/assets/img/items/textures/default_junglewood.png" data-toggle="tooltip" title="Junglewood Planks [node][default:junglewood]"></a></span>
-        <span><a href="{{site.baseurl}}/items/default-junglewood/"><img src="{{site.baseurl}}/assets/img/items/textures/default_junglewood.png" data-toggle="tooltip" title="Junglewood Planks [node][default:junglewood]"></a></span>
-        <span><a href="{{site.baseurl}}/items/default-junglewood/"><img src="{{site.baseurl}}/assets/img/items/textures/default_junglewood.png" data-toggle="tooltip" title="Junglewood Planks [node][default:junglewood]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-junglewood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_junglewood.png" data-toggle="tooltip" title="Junglewood Planks [node][default:junglewood]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-junglewood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_junglewood.png" data-toggle="tooltip" title="Junglewood Planks [node][default:junglewood]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-junglewood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_junglewood.png" data-toggle="tooltip" title="Junglewood Planks [node][default:junglewood]"></a></span>
     </div>
 </div>

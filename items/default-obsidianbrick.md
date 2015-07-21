@@ -4,7 +4,7 @@ title: Obsidian Brick
 heading: Obsidian Brick
 description: "[node][default:obsidianbrick]"
 permalink: /items/default-obsidianbrick/
-icon: /items/textures/default_obsidian_brick.png
+icon: /items/itemcubes/default_obsidianbrick.png
 ---
 
 
@@ -12,13 +12,13 @@ icon: /items/textures/default_obsidian_brick.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/default-obsidian/"><img src="{{site.baseurl}}/assets/img/items/textures/default_obsidian.png" data-toggle="tooltip" title="Obsidian [node][default:obsidian]"></a></span>
-        <span><a href="{{site.baseurl}}/items/default-obsidian/"><img src="{{site.baseurl}}/assets/img/items/textures/default_obsidian.png" data-toggle="tooltip" title="Obsidian [node][default:obsidian]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-obsidian/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_obsidian.png" data-toggle="tooltip" title="Obsidian [node][default:obsidian]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-obsidian/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_obsidian.png" data-toggle="tooltip" title="Obsidian [node][default:obsidian]"></a></span>
         <span></span>
     </div>
     <div>
-        <span><a href="{{site.baseurl}}/items/default-obsidian/"><img src="{{site.baseurl}}/assets/img/items/textures/default_obsidian.png" data-toggle="tooltip" title="Obsidian [node][default:obsidian]"></a></span>
-        <span><a href="{{site.baseurl}}/items/default-obsidian/"><img src="{{site.baseurl}}/assets/img/items/textures/default_obsidian.png" data-toggle="tooltip" title="Obsidian [node][default:obsidian]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-obsidian/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_obsidian.png" data-toggle="tooltip" title="Obsidian [node][default:obsidian]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-obsidian/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_obsidian.png" data-toggle="tooltip" title="Obsidian [node][default:obsidian]"></a></span>
         <span></span>
     </div>
     <div>

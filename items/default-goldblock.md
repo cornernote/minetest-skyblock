@@ -4,7 +4,7 @@ title: Gold Block
 heading: Gold Block
 description: "[node][default:goldblock]"
 permalink: /items/default-goldblock/
-icon: /items/textures/default_gold_block.png
+icon: /items/itemcubes/default_goldblock.png
 ---
 
 

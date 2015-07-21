@@ -4,7 +4,7 @@ title: Clay
 heading: Clay
 description: "[node][default:clay]"
 permalink: /items/default-clay/
-icon: /items/itemcubes/default-clay.png
+icon: /items/itemcubes/default_clay.png
 ---
 
 

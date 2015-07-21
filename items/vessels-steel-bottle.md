@@ -4,7 +4,7 @@ title: Heavy Steel Bottle (empty)
 heading: Heavy Steel Bottle (empty)
 description: "[node][vessels:steel_bottle]"
 permalink: /items/vessels-steel-bottle/
-icon: /items/textures/vessels_steel_bottle_inv.png
+icon: /items/itemcubes/vessels_steel_bottle.png
 ---
 
 

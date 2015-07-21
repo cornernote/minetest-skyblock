@@ -4,7 +4,7 @@ title: Sandstone Brick
 heading: Sandstone Brick
 description: "[node][default:sandstonebrick]"
 permalink: /items/default-sandstonebrick/
-icon: /items/textures/default_sandstone_brick.png
+icon: /items/itemcubes/default_sandstonebrick.png
 ---
 
 

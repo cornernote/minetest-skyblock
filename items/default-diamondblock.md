@@ -4,7 +4,7 @@ title: Diamond Block
 heading: Diamond Block
 description: "[node][default:diamondblock]"
 permalink: /items/default-diamondblock/
-icon: /items/textures/default_diamond_block.png
+icon: /items/itemcubes/default_diamondblock.png
 ---
 
 

@@ -4,7 +4,7 @@ title: Mese Block
 heading: Mese Block
 description: "[node][default:mese]"
 permalink: /items/default-mese/
-icon: /items/itemcubes/default-mese.png
+icon: /items/itemcubes/default_mese.png
 ---
 
 
@@ -30,13 +30,13 @@ icon: /items/itemcubes/default-mese.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/default-steelblock/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-steelblock.png" data-toggle="tooltip" title="Steel Block [node][default:steelblock]"></a></span>
-        <span><a href="{{site.baseurl}}/items/default-steelblock/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-steelblock.png" data-toggle="tooltip" title="Steel Block [node][default:steelblock]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-steelblock/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_steelblock.png" data-toggle="tooltip" title="Steel Block [node][default:steelblock]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-steelblock/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_steelblock.png" data-toggle="tooltip" title="Steel Block [node][default:steelblock]"></a></span>
         <span></span>
     </div>
     <div>
-        <span><a href="{{site.baseurl}}/items/default-steelblock/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-steelblock.png" data-toggle="tooltip" title="Steel Block [node][default:steelblock]"></a></span>
-        <span><a href="{{site.baseurl}}/items/default-steelblock/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default-steelblock.png" data-toggle="tooltip" title="Steel Block [node][default:steelblock]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-steelblock/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_steelblock.png" data-toggle="tooltip" title="Steel Block [node][default:steelblock]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-steelblock/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_steelblock.png" data-toggle="tooltip" title="Steel Block [node][default:steelblock]"></a></span>
         <span></span>
     </div>
     <div>

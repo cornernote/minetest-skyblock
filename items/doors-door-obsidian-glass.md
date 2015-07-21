@@ -12,18 +12,18 @@ icon: /items/textures/doors_obsidian_glass.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/default-obsidian-glass/"><img src="{{site.baseurl}}/assets/img/items/textures/default_obsidian_glass.png" data-toggle="tooltip" title="Obsidian Glass [node][default:obsidian_glass]"></a></span>
-        <span><a href="{{site.baseurl}}/items/default-obsidian-glass/"><img src="{{site.baseurl}}/assets/img/items/textures/default_obsidian_glass.png" data-toggle="tooltip" title="Obsidian Glass [node][default:obsidian_glass]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-obsidian-glass/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_obsidian_glass.png" data-toggle="tooltip" title="Obsidian Glass [node][default:obsidian_glass]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-obsidian-glass/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_obsidian_glass.png" data-toggle="tooltip" title="Obsidian Glass [node][default:obsidian_glass]"></a></span>
         <span></span>
     </div>
     <div>
-        <span><a href="{{site.baseurl}}/items/default-obsidian-glass/"><img src="{{site.baseurl}}/assets/img/items/textures/default_obsidian_glass.png" data-toggle="tooltip" title="Obsidian Glass [node][default:obsidian_glass]"></a></span>
-        <span><a href="{{site.baseurl}}/items/default-obsidian-glass/"><img src="{{site.baseurl}}/assets/img/items/textures/default_obsidian_glass.png" data-toggle="tooltip" title="Obsidian Glass [node][default:obsidian_glass]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-obsidian-glass/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_obsidian_glass.png" data-toggle="tooltip" title="Obsidian Glass [node][default:obsidian_glass]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-obsidian-glass/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_obsidian_glass.png" data-toggle="tooltip" title="Obsidian Glass [node][default:obsidian_glass]"></a></span>
         <span></span>
     </div>
     <div>
-        <span><a href="{{site.baseurl}}/items/default-obsidian-glass/"><img src="{{site.baseurl}}/assets/img/items/textures/default_obsidian_glass.png" data-toggle="tooltip" title="Obsidian Glass [node][default:obsidian_glass]"></a></span>
-        <span><a href="{{site.baseurl}}/items/default-obsidian-glass/"><img src="{{site.baseurl}}/assets/img/items/textures/default_obsidian_glass.png" data-toggle="tooltip" title="Obsidian Glass [node][default:obsidian_glass]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-obsidian-glass/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_obsidian_glass.png" data-toggle="tooltip" title="Obsidian Glass [node][default:obsidian_glass]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-obsidian-glass/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_obsidian_glass.png" data-toggle="tooltip" title="Obsidian Glass [node][default:obsidian_glass]"></a></span>
         <span></span>
     </div>
 </div>
