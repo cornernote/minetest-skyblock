@@ -12,7 +12,7 @@ icon: /items/textures/dye_white.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/group-flower,color-white/"><span class="item-group" data-toggle="tooltip" title="Group Flower,color White [group][flower,color_white]"><img src="{{site.baseurl}}/assets/img/transparent.png"><img src="{{site.baseurl}}/assets/img/transparent.png"><img src="{{site.baseurl}}/assets/img/transparent.png"></span></a></span>
+        <span><a href="{{site.baseurl}}/items/group-flower,color-white/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="MultiGroup Flower + Color White [group][flower,color_white]"></a></a></span>
         <span></span>
         <span></span>
     </div>

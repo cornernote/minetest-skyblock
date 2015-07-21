@@ -12,7 +12,7 @@ icon: /items/textures/dye_red.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/group-flower,color-red/"><span class="item-group" data-toggle="tooltip" title="Group Flower,color Red [group][flower,color_red]"><img src="{{site.baseurl}}/assets/img/transparent.png"><img src="{{site.baseurl}}/assets/img/transparent.png"><img src="{{site.baseurl}}/assets/img/transparent.png"></span></a></span>
+        <span><a href="{{site.baseurl}}/items/group-flower,color-red/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="MultiGroup Flower + Color Red [group][flower,color_red]"></a></a></span>
         <span></span>
         <span></span>
     </div>

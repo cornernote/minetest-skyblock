@@ -12,7 +12,7 @@ icon: /items/textures/dye_brown.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/group-flower,color-brown/"><span class="item-group" data-toggle="tooltip" title="Group Flower,color Brown [group][flower,color_brown]"><img src="{{site.baseurl}}/assets/img/transparent.png"><img src="{{site.baseurl}}/assets/img/transparent.png"><img src="{{site.baseurl}}/assets/img/transparent.png"></span></a></span>
+        <span><a href="{{site.baseurl}}/items/group-flower,color-brown/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="MultiGroup Flower + Color Brown [group][flower,color_brown]"></a></a></span>
         <span></span>
         <span></span>
     </div>

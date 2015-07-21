@@ -12,7 +12,7 @@ icon: /items/textures/dye_green.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/group-flower,color-green/"><span class="item-group" data-toggle="tooltip" title="Group Flower,color Green [group][flower,color_green]"><img src="{{site.baseurl}}/assets/img/transparent.png"><img src="{{site.baseurl}}/assets/img/transparent.png"><img src="{{site.baseurl}}/assets/img/transparent.png"></span></a></span>
+        <span><a href="{{site.baseurl}}/items/group-flower,color-green/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="MultiGroup Flower + Color Green [group][flower,color_green]"></a></a></span>
         <span></span>
         <span></span>
     </div>

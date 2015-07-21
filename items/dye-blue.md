@@ -12,7 +12,7 @@ icon: /items/textures/dye_blue.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/group-flower,color-blue/"><span class="item-group" data-toggle="tooltip" title="Group Flower,color Blue [group][flower,color_blue]"><img src="{{site.baseurl}}/assets/img/transparent.png"><img src="{{site.baseurl}}/assets/img/transparent.png"><img src="{{site.baseurl}}/assets/img/transparent.png"></span></a></span>
+        <span><a href="{{site.baseurl}}/items/group-flower,color-blue/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="MultiGroup Flower + Color Blue [group][flower,color_blue]"></a></a></span>
         <span></span>
         <span></span>
     </div>
