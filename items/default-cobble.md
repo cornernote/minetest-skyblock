@@ -10,7 +10,7 @@ icon: /items/itemcubes/default_cobble.png
 
 ## Used for Crafts
 
-<ul class="list-items">
+<ul class="list-items clearfix">
     <li><a href="{{site.baseurl}}/items/default-gravel/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_gravel.png" data-toggle="tooltip" title="Gravel [node][default:gravel]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-mossycobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_mossycobble.png" data-toggle="tooltip" title="Mossy Cobblestone [node][default:mossycobble]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-stone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stone.png" data-toggle="tooltip" title="Stone [node][default:stone]"></a></li>
@@ -21,7 +21,7 @@ icon: /items/itemcubes/default_cobble.png
 
 ## Belongs to Groups
 
-<ul class="list-items">
-    <li><a href="{{site.baseurl}}/items/group-cracky/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sandstone.png" data-toggle="tooltip" title="Group Cracky [group][cracky]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-stone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stone.png" data-toggle="tooltip" title="Group Stone [group][stone]"></a></li>
+<ul class="list-items clearfix">
+    <li><a href="{{site.baseurl}}/items/group-cracky/"><span class="item-group" data-toggle="tooltip" title="Group Cracky [group][cracky]"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sandstone.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stone.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_brick.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_cobble.png"></span></a></li>
+    <li><a href="{{site.baseurl}}/items/group-stone/"><span class="item-group" data-toggle="tooltip" title="Group Stone [group][stone]"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stone.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_cobble.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_cobble.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_stone.png"></span></a></li>
 </ul>

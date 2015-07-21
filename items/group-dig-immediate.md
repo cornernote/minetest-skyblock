@@ -9,7 +9,7 @@ permalink: /items/group-dig-immediate/
 
 ## Items in Group
 
-<ul class="list-items">
+<ul class="list-items clearfix">
     <li><a href="{{site.baseurl}}/items/bones-bones/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/bones_bones.png" data-toggle="tooltip" title="Bones [node][bones:bones]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-apple/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_apple.png" data-toggle="tooltip" title="Apple [node][default:apple]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-junglesapling/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_junglesapling.png" data-toggle="tooltip" title="Jungle Sapling [node][default:junglesapling]"></a></li>

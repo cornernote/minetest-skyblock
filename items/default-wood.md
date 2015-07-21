@@ -49,7 +49,7 @@ icon: /items/itemcubes/default_wood.png
 
 ## Used for Crafts
 
-<ul class="list-items">
+<ul class="list-items clearfix">
     <li><a href="{{site.baseurl}}/items/stairs-slab-wood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_wood.png" data-toggle="tooltip" title="Wooden Slab [node][stairs:slab_wood]"></a></li>
     <li><a href="{{site.baseurl}}/items/stairs-stair-wood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_wood.png" data-toggle="tooltip" title="Wooden Stair [node][stairs:stair_wood]"></a></li>
 </ul>
@@ -57,9 +57,9 @@ icon: /items/itemcubes/default_wood.png
 
 ## Belongs to Groups
 
-<ul class="list-items">
-    <li><a href="{{site.baseurl}}/items/group-choppy/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_tree.png" data-toggle="tooltip" title="Group Choppy [group][choppy]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-flammable/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_leaves.png" data-toggle="tooltip" title="Group Flammable [group][flammable]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-oddly-breakable-by-hand/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_leaves.png" data-toggle="tooltip" title="Group Oddly Breakable By Hand [group][oddly_breakable_by_hand]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-wood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_junglewood.png" data-toggle="tooltip" title="Group Wood [group][wood]"></a></li>
+<ul class="list-items clearfix">
+    <li><a href="{{site.baseurl}}/items/group-choppy/"><span class="item-group" data-toggle="tooltip" title="Group Choppy [group][choppy]"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_tree.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_junglewood.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_pinewood.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_wood.png"></span></a></li>
+    <li><a href="{{site.baseurl}}/items/group-flammable/"><span class="item-group" data-toggle="tooltip" title="Group Flammable [group][flammable]"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_leaves.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_tree.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_junglewood.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_pinewood.png"></span></a></li>
+    <li><a href="{{site.baseurl}}/items/group-oddly-breakable-by-hand/"><span class="item-group" data-toggle="tooltip" title="Group Oddly Breakable By Hand [group][oddly_breakable_by_hand]"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_leaves.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_junglewood.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_pinewood.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_wood.png"></span></a></li>
+    <li><a href="{{site.baseurl}}/items/group-wood/"><span class="item-group" data-toggle="tooltip" title="Group Wood [group][wood]"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_junglewood.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_pinewood.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_wood.png"></span></a></li>
 </ul>

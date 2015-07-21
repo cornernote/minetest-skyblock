@@ -9,7 +9,7 @@ permalink: /items/group-dye/
 
 ## Items in Group
 
-<ul class="list-items">
+<ul class="list-items clearfix">
     <li><a href="{{site.baseurl}}/items/dye-black/"><img src="{{site.baseurl}}/assets/img/items/textures/dye_black.png" data-toggle="tooltip" title="Black dye [craft][dye:black]"></a></li>
     <li><a href="{{site.baseurl}}/items/dye-blue/"><img src="{{site.baseurl}}/assets/img/items/textures/dye_blue.png" data-toggle="tooltip" title="Blue dye [craft][dye:blue]"></a></li>
     <li><a href="{{site.baseurl}}/items/dye-brown/"><img src="{{site.baseurl}}/assets/img/items/textures/dye_brown.png" data-toggle="tooltip" title="Brown dye [craft][dye:brown]"></a></li>

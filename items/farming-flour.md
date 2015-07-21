@@ -31,6 +31,6 @@ icon: /items/textures/farming_flour.png
 
 ## Used for Crafts
 
-<ul class="list-items">
+<ul class="list-items clearfix">
     <li><a href="{{site.baseurl}}/items/farming-bread/"><img src="{{site.baseurl}}/assets/img/items/textures/farming_bread.png" data-toggle="tooltip" title="Bread [craft][farming:bread]"></a></li>
 </ul>

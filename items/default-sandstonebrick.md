@@ -31,7 +31,7 @@ icon: /items/itemcubes/default_sandstonebrick.png
 
 ## Used for Crafts
 
-<ul class="list-items">
+<ul class="list-items clearfix">
     <li><a href="{{site.baseurl}}/items/stairs-slab-sandstonebrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_sandstonebrick.png" data-toggle="tooltip" title="Sandstone Brick Slab [node][stairs:slab_sandstonebrick]"></a></li>
     <li><a href="{{site.baseurl}}/items/stairs-stair-sandstonebrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_sandstonebrick.png" data-toggle="tooltip" title="Sandstone Brick Stair [node][stairs:stair_sandstonebrick]"></a></li>
 </ul>
@@ -39,6 +39,6 @@ icon: /items/itemcubes/default_sandstonebrick.png
 
 ## Belongs to Groups
 
-<ul class="list-items">
-    <li><a href="{{site.baseurl}}/items/group-cracky/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sandstone.png" data-toggle="tooltip" title="Group Cracky [group][cracky]"></a></li>
+<ul class="list-items clearfix">
+    <li><a href="{{site.baseurl}}/items/group-cracky/"><span class="item-group" data-toggle="tooltip" title="Group Cracky [group][cracky]"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sandstone.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stone.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_brick.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_cobble.png"></span></a></li>
 </ul>

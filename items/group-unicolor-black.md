@@ -9,6 +9,6 @@ permalink: /items/group-unicolor-black/
 
 ## Items in Group
 
-<ul class="list-items">
+<ul class="list-items clearfix">
     <li><a href="{{site.baseurl}}/items/dye-black/"><img src="{{site.baseurl}}/assets/img/items/textures/dye_black.png" data-toggle="tooltip" title="Black dye [craft][dye:black]"></a></li>
 </ul>

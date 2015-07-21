@@ -12,7 +12,7 @@ icon: /items/textures/dye_black.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/group-flower,color-black/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Flower,color Black [group][flower,color_black]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-flower,color-black/"><span class="item-group" data-toggle="tooltip" title="Group Flower,color Black [group][flower,color_black]"><img src="{{site.baseurl}}/assets/img/transparent.png"><img src="{{site.baseurl}}/assets/img/transparent.png"><img src="{{site.baseurl}}/assets/img/transparent.png"></span></a></span>
         <span></span>
         <span></span>
     </div>
@@ -30,7 +30,7 @@ icon: /items/textures/dye_black.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/group-coal/"><img src="{{site.baseurl}}/assets/img/items/textures/default_coal_lump.png" data-toggle="tooltip" title="Group Coal [group][coal]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-coal/"><span class="item-group" data-toggle="tooltip" title="Group Coal [group][coal]"><img src="{{site.baseurl}}/assets/img/items/textures/default_coal_lump.png"><img src="{{site.baseurl}}/assets/img/transparent.png"><img src="{{site.baseurl}}/assets/img/transparent.png"></span></a></span>
         <span></span>
         <span></span>
     </div>
@@ -283,7 +283,7 @@ icon: /items/textures/dye_black.png
 
 ## Used for Crafts
 
-<ul class="list-items">
+<ul class="list-items clearfix">
     <li><a href="{{site.baseurl}}/items/dye-black/"><img src="{{site.baseurl}}/assets/img/items/textures/dye_black.png" data-toggle="tooltip" title="Black dye [craft][dye:black]"></a></li>
     <li><a href="{{site.baseurl}}/items/dye-dark-grey/"><img src="{{site.baseurl}}/assets/img/items/textures/dye_dark_grey.png" data-toggle="tooltip" title="Dark grey dye [craft][dye:dark_grey]"></a></li>
     <li><a href="{{site.baseurl}}/items/dye-grey/"><img src="{{site.baseurl}}/assets/img/items/textures/dye_grey.png" data-toggle="tooltip" title="Grey dye [craft][dye:grey]"></a></li>
@@ -292,9 +292,9 @@ icon: /items/textures/dye_black.png
 
 ## Belongs to Groups
 
-<ul class="list-items">
-    <li><a href="{{site.baseurl}}/items/group-basecolor-black/"><img src="{{site.baseurl}}/assets/img/items/textures/dye_black.png" data-toggle="tooltip" title="Group Basecolor Black [group][basecolor_black]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-dye/"><img src="{{site.baseurl}}/assets/img/items/textures/dye_black.png" data-toggle="tooltip" title="Group Dye [group][dye]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-excolor-black/"><img src="{{site.baseurl}}/assets/img/items/textures/dye_black.png" data-toggle="tooltip" title="Group Excolor Black [group][excolor_black]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-unicolor-black/"><img src="{{site.baseurl}}/assets/img/items/textures/dye_black.png" data-toggle="tooltip" title="Group Unicolor Black [group][unicolor_black]"></a></li>
+<ul class="list-items clearfix">
+    <li><a href="{{site.baseurl}}/items/group-basecolor-black/"><span class="item-group" data-toggle="tooltip" title="Group Basecolor Black [group][basecolor_black]"><img src="{{site.baseurl}}/assets/img/items/textures/dye_black.png"><img src="{{site.baseurl}}/assets/img/transparent.png"><img src="{{site.baseurl}}/assets/img/transparent.png"></span></a></li>
+    <li><a href="{{site.baseurl}}/items/group-dye/"><span class="item-group" data-toggle="tooltip" title="Group Dye [group][dye]"><img src="{{site.baseurl}}/assets/img/items/textures/dye_black.png"><img src="{{site.baseurl}}/assets/img/items/textures/dye_blue.png"><img src="{{site.baseurl}}/assets/img/items/textures/dye_brown.png"><img src="{{site.baseurl}}/assets/img/items/textures/dye_cyan.png"></span></a></li>
+    <li><a href="{{site.baseurl}}/items/group-excolor-black/"><span class="item-group" data-toggle="tooltip" title="Group Excolor Black [group][excolor_black]"><img src="{{site.baseurl}}/assets/img/items/textures/dye_black.png"><img src="{{site.baseurl}}/assets/img/transparent.png"><img src="{{site.baseurl}}/assets/img/transparent.png"></span></a></li>
+    <li><a href="{{site.baseurl}}/items/group-unicolor-black/"><span class="item-group" data-toggle="tooltip" title="Group Unicolor Black [group][unicolor_black]"><img src="{{site.baseurl}}/assets/img/items/textures/dye_black.png"><img src="{{site.baseurl}}/assets/img/transparent.png"><img src="{{site.baseurl}}/assets/img/transparent.png"></span></a></li>
 </ul>

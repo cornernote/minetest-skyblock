@@ -271,7 +271,9 @@ div.craft img {
 }
 
 .list-items li {
-    display: inline-block;
+    float: left;
+    height: 52px;
+    width: 52px;
     border: 2px solid #373737;
     background-color: #8B8B8B;
     padding: 3px;
@@ -294,6 +296,25 @@ div.craft img {
     margin: 5px;
     width: 32px;
     height: 32px;
+}
+
+.item-group {
+    margin-top: -5px;
+}
+
+.item-group,
+div.craft .item-group {
+    display: inline-block;
+    border: 0;
+    width: 40px;
+    height: 40px;
+}
+
+.item-group img,
+div.craft .item-group img {
+    width: 16px;
+    height: 16px;
+    margin: 2px;
 }
 
 /**

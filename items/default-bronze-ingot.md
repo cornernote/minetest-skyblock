@@ -49,7 +49,7 @@ icon: /items/textures/default_bronze_ingot.png
 
 ## Used for Crafts
 
-<ul class="list-items">
+<ul class="list-items clearfix">
     <li><a href="{{site.baseurl}}/items/default-axe-bronze/"><img src="{{site.baseurl}}/assets/img/items/textures/default_tool_bronzeaxe.png" data-toggle="tooltip" title="Bronze Axe [tool][default:axe_bronze]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-bronzeblock/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_bronzeblock.png" data-toggle="tooltip" title="Bronze Block [node][default:bronzeblock]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-pick-bronze/"><img src="{{site.baseurl}}/assets/img/items/textures/default_tool_bronzepick.png" data-toggle="tooltip" title="Bronze Pickaxe [tool][default:pick_bronze]"></a></li>

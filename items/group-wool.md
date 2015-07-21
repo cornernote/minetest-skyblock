@@ -9,7 +9,7 @@ permalink: /items/group-wool/
 
 ## Items in Group
 
-<ul class="list-items">
+<ul class="list-items clearfix">
     <li><a href="{{site.baseurl}}/items/wool-black/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/wool_black.png" data-toggle="tooltip" title="Black Wool [node][wool:black]"></a></li>
     <li><a href="{{site.baseurl}}/items/wool-blue/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/wool_blue.png" data-toggle="tooltip" title="Blue Wool [node][wool:blue]"></a></li>
     <li><a href="{{site.baseurl}}/items/wool-brown/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/wool_brown.png" data-toggle="tooltip" title="Brown Wool [node][wool:brown]"></a></li>
@@ -30,7 +30,7 @@ permalink: /items/group-wool/
 
 ## Used for Crafts
 
-<ul class="list-items">
+<ul class="list-items clearfix">
     <li><a href="{{site.baseurl}}/items/wool-black/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/wool_black.png" data-toggle="tooltip" title="Black Wool [node][wool:black]"></a></li>
     <li><a href="{{site.baseurl}}/items/wool-blue/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/wool_blue.png" data-toggle="tooltip" title="Blue Wool [node][wool:blue]"></a></li>
     <li><a href="{{site.baseurl}}/items/wool-brown/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/wool_brown.png" data-toggle="tooltip" title="Brown Wool [node][wool:brown]"></a></li>

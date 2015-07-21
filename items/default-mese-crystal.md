@@ -31,7 +31,7 @@ icon: /items/textures/default_mese_crystal.png
 
 ## Used for Crafts
 
-<ul class="list-items">
+<ul class="list-items clearfix">
     <li><a href="{{site.baseurl}}/items/default-axe-mese/"><img src="{{site.baseurl}}/assets/img/items/textures/default_tool_meseaxe.png" data-toggle="tooltip" title="Mese Axe [tool][default:axe_mese]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-mese/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_mese.png" data-toggle="tooltip" title="Mese Block [node][default:mese]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-mese-crystal-fragment/"><img src="{{site.baseurl}}/assets/img/items/textures/default_mese_crystal_fragment.png" data-toggle="tooltip" title="Mese Crystal Fragment [craft][default:mese_crystal_fragment]"></a></li>

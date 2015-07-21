@@ -12,13 +12,13 @@ icon: /items/itemcubes/default_sandstone.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/group-sand/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_sand.png" data-toggle="tooltip" title="Group Sand [group][sand]"></a></span>
-        <span><a href="{{site.baseurl}}/items/group-sand/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_sand.png" data-toggle="tooltip" title="Group Sand [group][sand]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-sand/"><span class="item-group" data-toggle="tooltip" title="Group Sand [group][sand]"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_sand.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sand.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/farming_desert_sand_soil.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/farming_desert_sand_soil_wet.png"></span></a></span>
+        <span><a href="{{site.baseurl}}/items/group-sand/"><span class="item-group" data-toggle="tooltip" title="Group Sand [group][sand]"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_sand.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sand.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/farming_desert_sand_soil.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/farming_desert_sand_soil_wet.png"></span></a></span>
         <span></span>
     </div>
     <div>
-        <span><a href="{{site.baseurl}}/items/group-sand/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_sand.png" data-toggle="tooltip" title="Group Sand [group][sand]"></a></span>
-        <span><a href="{{site.baseurl}}/items/group-sand/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_sand.png" data-toggle="tooltip" title="Group Sand [group][sand]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-sand/"><span class="item-group" data-toggle="tooltip" title="Group Sand [group][sand]"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_sand.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sand.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/farming_desert_sand_soil.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/farming_desert_sand_soil_wet.png"></span></a></span>
+        <span><a href="{{site.baseurl}}/items/group-sand/"><span class="item-group" data-toggle="tooltip" title="Group Sand [group][sand]"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_sand.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sand.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/farming_desert_sand_soil.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/farming_desert_sand_soil_wet.png"></span></a></span>
         <span></span>
     </div>
     <div>
@@ -31,7 +31,7 @@ icon: /items/itemcubes/default_sandstone.png
 
 ## Used for Crafts
 
-<ul class="list-items">
+<ul class="list-items clearfix">
     <li>ZZZdefault:sand (missing item)</li>
     <li><a href="{{site.baseurl}}/items/default-sand/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sand.png" data-toggle="tooltip" title="Sand [node][default:sand]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-sandstonebrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sandstonebrick.png" data-toggle="tooltip" title="Sandstone Brick [node][default:sandstonebrick]"></a></li>
@@ -42,7 +42,7 @@ icon: /items/itemcubes/default_sandstone.png
 
 ## Belongs to Groups
 
-<ul class="list-items">
-    <li><a href="{{site.baseurl}}/items/group-cracky/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sandstone.png" data-toggle="tooltip" title="Group Cracky [group][cracky]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-crumbly/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sandstone.png" data-toggle="tooltip" title="Group Crumbly [group][crumbly]"></a></li>
+<ul class="list-items clearfix">
+    <li><a href="{{site.baseurl}}/items/group-cracky/"><span class="item-group" data-toggle="tooltip" title="Group Cracky [group][cracky]"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sandstone.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stone.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_brick.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_cobble.png"></span></a></li>
+    <li><a href="{{site.baseurl}}/items/group-crumbly/"><span class="item-group" data-toggle="tooltip" title="Group Crumbly [group][crumbly]"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sandstone.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_sandstone.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_sandstonebrick.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_sandstone.png"></span></a></li>
 </ul>

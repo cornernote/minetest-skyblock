@@ -9,7 +9,7 @@ permalink: /items/group-oddly-breakable-by-hand/
 
 ## Items in Group
 
-<ul class="list-items">
+<ul class="list-items clearfix">
     <li><a href="{{site.baseurl}}/items/default-leaves/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_leaves.png" data-toggle="tooltip" title="Leaves [node][default:leaves]"></a></li>
     <li><a href="{{site.baseurl}}/items/stairs-slab-junglewood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_junglewood.png" data-toggle="tooltip" title="Junglewood Slab [node][stairs:slab_junglewood]"></a></li>
     <li><a href="{{site.baseurl}}/items/stairs-slab-pinewood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_pinewood.png" data-toggle="tooltip" title="Pinewood Slab [node][stairs:slab_pinewood]"></a></li>

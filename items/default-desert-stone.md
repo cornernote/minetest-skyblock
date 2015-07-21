@@ -43,7 +43,7 @@ icon: /items/itemcubes/default_desert_stone.png
 
 ## Used for Crafts
 
-<ul class="list-items">
+<ul class="list-items clearfix">
     <li><a href="{{site.baseurl}}/items/default-desert-sand/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_sand.png" data-toggle="tooltip" title="Desert Sand [node][default:desert_sand]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-desert-stonebrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_stonebrick.png" data-toggle="tooltip" title="Desert Stone Brick [node][default:desert_stonebrick]"></a></li>
     <li><a href="{{site.baseurl}}/items/stairs-slab-desert-stone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_desert_stone.png" data-toggle="tooltip" title="Desertstone Slab [node][stairs:slab_desert_stone]"></a></li>
@@ -53,7 +53,7 @@ icon: /items/itemcubes/default_desert_stone.png
 
 ## Belongs to Groups
 
-<ul class="list-items">
-    <li><a href="{{site.baseurl}}/items/group-cracky/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sandstone.png" data-toggle="tooltip" title="Group Cracky [group][cracky]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-stone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stone.png" data-toggle="tooltip" title="Group Stone [group][stone]"></a></li>
+<ul class="list-items clearfix">
+    <li><a href="{{site.baseurl}}/items/group-cracky/"><span class="item-group" data-toggle="tooltip" title="Group Cracky [group][cracky]"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sandstone.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stone.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_brick.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_cobble.png"></span></a></li>
+    <li><a href="{{site.baseurl}}/items/group-stone/"><span class="item-group" data-toggle="tooltip" title="Group Stone [group][stone]"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stone.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_cobble.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_cobble.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_stone.png"></span></a></li>
 </ul>

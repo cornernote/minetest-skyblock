@@ -31,7 +31,7 @@ icon: /items/itemcubes/default_gravel.png
 
 ## Used for Crafts
 
-<ul class="list-items">
+<ul class="list-items clearfix">
     <li><a href="{{site.baseurl}}/items/default-dirt/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_dirt.png" data-toggle="tooltip" title="Dirt [node][default:dirt]"></a></li>
     <li><a href="{{site.baseurl}}/items/tnt-gunpowder/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/tnt_gunpowder.png" data-toggle="tooltip" title="Gun Powder [node][tnt:gunpowder]"></a></li>
 </ul>
@@ -39,7 +39,7 @@ icon: /items/itemcubes/default_gravel.png
 
 ## Belongs to Groups
 
-<ul class="list-items">
-    <li><a href="{{site.baseurl}}/items/group-crumbly/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sandstone.png" data-toggle="tooltip" title="Group Crumbly [group][crumbly]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-falling-node/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_sand.png" data-toggle="tooltip" title="Group Falling Node [group][falling_node]"></a></li>
+<ul class="list-items clearfix">
+    <li><a href="{{site.baseurl}}/items/group-crumbly/"><span class="item-group" data-toggle="tooltip" title="Group Crumbly [group][crumbly]"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sandstone.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_sandstone.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_sandstonebrick.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_sandstone.png"></span></a></li>
+    <li><a href="{{site.baseurl}}/items/group-falling-node/"><span class="item-group" data-toggle="tooltip" title="Group Falling Node [group][falling_node]"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_sand.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_gravel.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sand.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_snow.png"></span></a></li>
 </ul>

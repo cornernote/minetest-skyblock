@@ -9,6 +9,6 @@ permalink: /items/group-color-white/
 
 ## Items in Group
 
-<ul class="list-items">
+<ul class="list-items clearfix">
     <li><a href="{{site.baseurl}}/items/flowers-dandelion-white/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/flowers_dandelion_white.png" data-toggle="tooltip" title="White Dandelion [node][flowers:dandelion_white]"></a></li>
 </ul>

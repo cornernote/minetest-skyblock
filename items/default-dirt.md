@@ -31,7 +31,7 @@ icon: /items/itemcubes/default_dirt.png
 
 ## Used for Crafts
 
-<ul class="list-items">
+<ul class="list-items clearfix">
     <li><a href="{{site.baseurl}}/items/default-clay-lump/"><img src="{{site.baseurl}}/assets/img/items/textures/default_clay_lump.png" data-toggle="tooltip" title="Clay Lump [craft][default:clay_lump]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-dirt-with-grass/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_dirt_with_grass.png" data-toggle="tooltip" title="Dirt with Grass [node][default:dirt_with_grass]"></a></li>
 </ul>
@@ -39,7 +39,7 @@ icon: /items/itemcubes/default_dirt.png
 
 ## Belongs to Groups
 
-<ul class="list-items">
-    <li><a href="{{site.baseurl}}/items/group-crumbly/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sandstone.png" data-toggle="tooltip" title="Group Crumbly [group][crumbly]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-soil/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_dirt.png" data-toggle="tooltip" title="Group Soil [group][soil]"></a></li>
+<ul class="list-items clearfix">
+    <li><a href="{{site.baseurl}}/items/group-crumbly/"><span class="item-group" data-toggle="tooltip" title="Group Crumbly [group][crumbly]"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sandstone.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_sandstone.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_sandstonebrick.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_sandstone.png"></span></a></li>
+    <li><a href="{{site.baseurl}}/items/group-soil/"><span class="item-group" data-toggle="tooltip" title="Group Soil [group][soil]"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_dirt.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_dirt_with_grass.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_dirt_with_grass_footsteps.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_dirt_with_snow.png"></span></a></li>
 </ul>

@@ -31,7 +31,7 @@ icon: /items/textures/default_obsidian_shard.png
 
 ## Used for Crafts
 
-<ul class="list-items">
+<ul class="list-items clearfix">
     <li><a href="{{site.baseurl}}/items/default-obsidian/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_obsidian.png" data-toggle="tooltip" title="Obsidian [node][default:obsidian]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-obsidian-glass/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_obsidian_glass.png" data-toggle="tooltip" title="Obsidian Glass [node][default:obsidian_glass]"></a></li>
 </ul>

@@ -9,7 +9,7 @@ permalink: /items/group-crumbly/
 
 ## Items in Group
 
-<ul class="list-items">
+<ul class="list-items clearfix">
     <li><a href="{{site.baseurl}}/items/default-sandstone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sandstone.png" data-toggle="tooltip" title="Sandstone [node][default:sandstone]"></a></li>
     <li><a href="{{site.baseurl}}/items/stairs-slab-sandstone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_sandstone.png" data-toggle="tooltip" title="Sandstone Slab [node][stairs:slab_sandstone]"></a></li>
     <li><a href="{{site.baseurl}}/items/stairs-slab-sandstonebrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_sandstonebrick.png" data-toggle="tooltip" title="Sandstone Brick Slab [node][stairs:slab_sandstonebrick]"></a></li>

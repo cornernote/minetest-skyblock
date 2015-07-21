@@ -12,7 +12,7 @@ icon: /items/textures/dye_blue.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/group-flower,color-blue/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Flower,color Blue [group][flower,color_blue]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-flower,color-blue/"><span class="item-group" data-toggle="tooltip" title="Group Flower,color Blue [group][flower,color_blue]"><img src="{{site.baseurl}}/assets/img/transparent.png"><img src="{{site.baseurl}}/assets/img/transparent.png"><img src="{{site.baseurl}}/assets/img/transparent.png"></span></a></span>
         <span></span>
         <span></span>
     </div>
@@ -121,7 +121,7 @@ icon: /items/textures/dye_blue.png
 
 ## Used for Crafts
 
-<ul class="list-items">
+<ul class="list-items clearfix">
     <li><a href="{{site.baseurl}}/items/dye-black/"><img src="{{site.baseurl}}/assets/img/items/textures/dye_black.png" data-toggle="tooltip" title="Black dye [craft][dye:black]"></a></li>
     <li><a href="{{site.baseurl}}/items/dye-blue/"><img src="{{site.baseurl}}/assets/img/items/textures/dye_blue.png" data-toggle="tooltip" title="Blue dye [craft][dye:blue]"></a></li>
     <li><a href="{{site.baseurl}}/items/dye-brown/"><img src="{{site.baseurl}}/assets/img/items/textures/dye_brown.png" data-toggle="tooltip" title="Brown dye [craft][dye:brown]"></a></li>
@@ -134,9 +134,9 @@ icon: /items/textures/dye_blue.png
 
 ## Belongs to Groups
 
-<ul class="list-items">
-    <li><a href="{{site.baseurl}}/items/group-basecolor-blue/"><img src="{{site.baseurl}}/assets/img/items/textures/dye_blue.png" data-toggle="tooltip" title="Group Basecolor Blue [group][basecolor_blue]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-dye/"><img src="{{site.baseurl}}/assets/img/items/textures/dye_black.png" data-toggle="tooltip" title="Group Dye [group][dye]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-excolor-blue/"><img src="{{site.baseurl}}/assets/img/items/textures/dye_blue.png" data-toggle="tooltip" title="Group Excolor Blue [group][excolor_blue]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-unicolor-blue/"><img src="{{site.baseurl}}/assets/img/items/textures/dye_blue.png" data-toggle="tooltip" title="Group Unicolor Blue [group][unicolor_blue]"></a></li>
+<ul class="list-items clearfix">
+    <li><a href="{{site.baseurl}}/items/group-basecolor-blue/"><span class="item-group" data-toggle="tooltip" title="Group Basecolor Blue [group][basecolor_blue]"><img src="{{site.baseurl}}/assets/img/items/textures/dye_blue.png"><img src="{{site.baseurl}}/assets/img/transparent.png"><img src="{{site.baseurl}}/assets/img/transparent.png"></span></a></li>
+    <li><a href="{{site.baseurl}}/items/group-dye/"><span class="item-group" data-toggle="tooltip" title="Group Dye [group][dye]"><img src="{{site.baseurl}}/assets/img/items/textures/dye_black.png"><img src="{{site.baseurl}}/assets/img/items/textures/dye_blue.png"><img src="{{site.baseurl}}/assets/img/items/textures/dye_brown.png"><img src="{{site.baseurl}}/assets/img/items/textures/dye_cyan.png"></span></a></li>
+    <li><a href="{{site.baseurl}}/items/group-excolor-blue/"><span class="item-group" data-toggle="tooltip" title="Group Excolor Blue [group][excolor_blue]"><img src="{{site.baseurl}}/assets/img/items/textures/dye_blue.png"><img src="{{site.baseurl}}/assets/img/transparent.png"><img src="{{site.baseurl}}/assets/img/transparent.png"></span></a></li>
+    <li><a href="{{site.baseurl}}/items/group-unicolor-blue/"><span class="item-group" data-toggle="tooltip" title="Group Unicolor Blue [group][unicolor_blue]"><img src="{{site.baseurl}}/assets/img/items/textures/dye_blue.png"><img src="{{site.baseurl}}/assets/img/transparent.png"><img src="{{site.baseurl}}/assets/img/transparent.png"></span></a></li>
 </ul>

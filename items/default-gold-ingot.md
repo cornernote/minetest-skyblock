@@ -43,6 +43,6 @@ icon: /items/textures/default_gold_ingot.png
 
 ## Used for Crafts
 
-<ul class="list-items">
+<ul class="list-items clearfix">
     <li><a href="{{site.baseurl}}/items/default-goldblock/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_goldblock.png" data-toggle="tooltip" title="Gold Block [node][default:goldblock]"></a></li>
 </ul>

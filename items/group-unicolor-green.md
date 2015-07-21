@@ -9,6 +9,6 @@ permalink: /items/group-unicolor-green/
 
 ## Items in Group
 
-<ul class="list-items">
+<ul class="list-items clearfix">
     <li><a href="{{site.baseurl}}/items/dye-green/"><img src="{{site.baseurl}}/assets/img/items/textures/dye_green.png" data-toggle="tooltip" title="Green dye [craft][dye:green]"></a></li>
 </ul>

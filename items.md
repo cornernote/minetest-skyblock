@@ -8,7 +8,7 @@ permalink: /items/
 
 ## Tools
 
-<ul class="list-items">
+<ul class="list-items clearfix">
 <li><a href="{{site.baseurl}}/items/farming-hoe-bronze/"><img src="{{site.baseurl}}/assets/img/items/textures/farming_tool_bronzehoe.png" data-toggle="tooltip" title="Bronze Hoe [tool][farming:hoe_bronze]"></a></li>
 <li><a href="{{site.baseurl}}/items/farming-hoe-diamond/"><img src="{{site.baseurl}}/assets/img/items/textures/farming_tool_diamondhoe.png" data-toggle="tooltip" title="Diamond Hoe [tool][farming:hoe_diamond]"></a></li>
 <li><a href="{{site.baseurl}}/items/farming-hoe-mese/"><img src="{{site.baseurl}}/assets/img/items/textures/farming_tool_mesehoe.png" data-toggle="tooltip" title="Mese Hoe [tool][farming:hoe_mese]"></a></li>
@@ -45,7 +45,7 @@ permalink: /items/
 
 ## Crafts
 
-<ul class="list-items">
+<ul class="list-items clearfix">
 <li><a href="{{site.baseurl}}/items/farming-cotton/"><img src="{{site.baseurl}}/assets/img/items/textures/farming_cotton.png" data-toggle="tooltip" title="Cotton [craft][farming:cotton]"></a></li>
 <li><a href="{{site.baseurl}}/items/farming-wheat/"><img src="{{site.baseurl}}/assets/img/items/textures/farming_wheat.png" data-toggle="tooltip" title="Wheat [craft][farming:wheat]"></a></li>
 <li><a href="{{site.baseurl}}/items/boats-boat/"><img src="{{site.baseurl}}/assets/img/items/textures/boat_inventory.png" data-toggle="tooltip" title="Boat [craft][boats:boat]"></a></li>
@@ -96,7 +96,7 @@ permalink: /items/
 
 ## Nodes
 
-<ul class="list-items">
+<ul class="list-items clearfix">
 <li><a href="{{site.baseurl}}/items/default-leaves/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_leaves.png" data-toggle="tooltip" title="Leaves [node][default:leaves]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-sandstone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sandstone.png" data-toggle="tooltip" title="Sandstone [node][default:sandstone]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-stone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stone.png" data-toggle="tooltip" title="Stone [node][default:stone]"></a></li>

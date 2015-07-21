@@ -9,7 +9,7 @@ permalink: /items/group-cracky/
 
 ## Items in Group
 
-<ul class="list-items">
+<ul class="list-items clearfix">
     <li><a href="{{site.baseurl}}/items/default-sandstone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sandstone.png" data-toggle="tooltip" title="Sandstone [node][default:sandstone]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-stone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stone.png" data-toggle="tooltip" title="Stone [node][default:stone]"></a></li>
     <li><a href="{{site.baseurl}}/items/stairs-slab-brick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_brick.png" data-toggle="tooltip" title="Brick Slab [node][stairs:slab_brick]"></a></li>

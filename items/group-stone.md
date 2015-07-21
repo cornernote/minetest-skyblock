@@ -9,7 +9,7 @@ permalink: /items/group-stone/
 
 ## Items in Group
 
-<ul class="list-items">
+<ul class="list-items clearfix">
     <li><a href="{{site.baseurl}}/items/default-stone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stone.png" data-toggle="tooltip" title="Stone [node][default:stone]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-cobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_cobble.png" data-toggle="tooltip" title="Cobblestone [node][default:cobble]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-desert-cobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_cobble.png" data-toggle="tooltip" title="Desert Cobblestone [node][default:desert_cobble]"></a></li>
@@ -23,7 +23,7 @@ permalink: /items/group-stone/
 
 ## Used for Crafts
 
-<ul class="list-items">
+<ul class="list-items clearfix">
     <li><a href="{{site.baseurl}}/items/default-axe-stone/"><img src="{{site.baseurl}}/assets/img/items/textures/default_tool_stoneaxe.png" data-toggle="tooltip" title="Stone Axe [tool][default:axe_stone]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-furnace/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_furnace.png" data-toggle="tooltip" title="Furnace [node][default:furnace]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-pick-stone/"><img src="{{site.baseurl}}/assets/img/items/textures/default_tool_stonepick.png" data-toggle="tooltip" title="Stone Pickaxe [tool][default:pick_stone]"></a></li>

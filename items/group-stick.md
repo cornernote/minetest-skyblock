@@ -9,14 +9,14 @@ permalink: /items/group-stick/
 
 ## Items in Group
 
-<ul class="list-items">
+<ul class="list-items clearfix">
     <li><a href="{{site.baseurl}}/items/default-stick/"><img src="{{site.baseurl}}/assets/img/items/textures/default_stick.png" data-toggle="tooltip" title="Stick [craft][default:stick]"></a></li>
 </ul>
 
 
 ## Used for Crafts
 
-<ul class="list-items">
+<ul class="list-items clearfix">
     <li><a href="{{site.baseurl}}/items/default-axe-bronze/"><img src="{{site.baseurl}}/assets/img/items/textures/default_tool_bronzeaxe.png" data-toggle="tooltip" title="Bronze Axe [tool][default:axe_bronze]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-axe-diamond/"><img src="{{site.baseurl}}/assets/img/items/textures/default_tool_diamondaxe.png" data-toggle="tooltip" title="Diamond Axe [tool][default:axe_diamond]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-axe-mese/"><img src="{{site.baseurl}}/assets/img/items/textures/default_tool_meseaxe.png" data-toggle="tooltip" title="Mese Axe [tool][default:axe_mese]"></a></li>

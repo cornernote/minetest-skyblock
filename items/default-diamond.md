@@ -31,7 +31,7 @@ icon: /items/textures/default_diamond.png
 
 ## Used for Crafts
 
-<ul class="list-items">
+<ul class="list-items clearfix">
     <li><a href="{{site.baseurl}}/items/default-axe-diamond/"><img src="{{site.baseurl}}/assets/img/items/textures/default_tool_diamondaxe.png" data-toggle="tooltip" title="Diamond Axe [tool][default:axe_diamond]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-diamondblock/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_diamondblock.png" data-toggle="tooltip" title="Diamond Block [node][default:diamondblock]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-pick-diamond/"><img src="{{site.baseurl}}/assets/img/items/textures/default_tool_diamondpick.png" data-toggle="tooltip" title="Diamond Pickaxe [tool][default:pick_diamond]"></a></li>

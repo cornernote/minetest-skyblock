@@ -55,7 +55,7 @@ icon: /items/textures/default_steel_ingot.png
 
 ## Used for Crafts
 
-<ul class="list-items">
+<ul class="list-items clearfix">
     <li><a href="{{site.baseurl}}/items/bucket-bucket-empty/"><img src="{{site.baseurl}}/assets/img/items/textures/bucket.png" data-toggle="tooltip" title="Empty Bucket [craft][bucket:bucket_empty]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-axe-steel/"><img src="{{site.baseurl}}/assets/img/items/textures/default_tool_steelaxe.png" data-toggle="tooltip" title="Steel Axe [tool][default:axe_steel]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-bronze-ingot/"><img src="{{site.baseurl}}/assets/img/items/textures/default_bronze_ingot.png" data-toggle="tooltip" title="Bronze Ingot [craft][default:bronze_ingot]"></a></li>

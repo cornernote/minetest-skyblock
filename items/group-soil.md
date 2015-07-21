@@ -9,7 +9,7 @@ permalink: /items/group-soil/
 
 ## Items in Group
 
-<ul class="list-items">
+<ul class="list-items clearfix">
     <li><a href="{{site.baseurl}}/items/default-dirt/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_dirt.png" data-toggle="tooltip" title="Dirt [node][default:dirt]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-dirt-with-grass/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_dirt_with_grass.png" data-toggle="tooltip" title="Dirt with Grass [node][default:dirt_with_grass]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-dirt-with-grass-footsteps/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_dirt_with_grass_footsteps.png" data-toggle="tooltip" title="Dirt with Grass and Footsteps [node][default:dirt_with_grass_footsteps]"></a></li>

@@ -31,7 +31,7 @@ icon: /items/itemcubes/default_obsidianbrick.png
 
 ## Used for Crafts
 
-<ul class="list-items">
+<ul class="list-items clearfix">
     <li><a href="{{site.baseurl}}/items/stairs-slab-obsidianbrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_obsidianbrick.png" data-toggle="tooltip" title="Obsidian Brick Slab [node][stairs:slab_obsidianbrick]"></a></li>
     <li><a href="{{site.baseurl}}/items/stairs-stair-obsidianbrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_obsidianbrick.png" data-toggle="tooltip" title="Obsidian Brick Stair [node][stairs:stair_obsidianbrick]"></a></li>
 </ul>
@@ -39,7 +39,7 @@ icon: /items/itemcubes/default_obsidianbrick.png
 
 ## Belongs to Groups
 
-<ul class="list-items">
-    <li><a href="{{site.baseurl}}/items/group-cracky/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sandstone.png" data-toggle="tooltip" title="Group Cracky [group][cracky]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-level/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_obsidian.png" data-toggle="tooltip" title="Group Level [group][level]"></a></li>
+<ul class="list-items clearfix">
+    <li><a href="{{site.baseurl}}/items/group-cracky/"><span class="item-group" data-toggle="tooltip" title="Group Cracky [group][cracky]"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sandstone.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stone.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_brick.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_cobble.png"></span></a></li>
+    <li><a href="{{site.baseurl}}/items/group-level/"><span class="item-group" data-toggle="tooltip" title="Group Level [group][level]"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_obsidian.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_obsidianbrick.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_obsidian.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_obsidianbrick.png"></span></a></li>
 </ul>

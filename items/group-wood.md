@@ -9,7 +9,7 @@ permalink: /items/group-wood/
 
 ## Items in Group
 
-<ul class="list-items">
+<ul class="list-items clearfix">
     <li><a href="{{site.baseurl}}/items/default-junglewood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_junglewood.png" data-toggle="tooltip" title="Junglewood Planks [node][default:junglewood]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-pinewood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_pinewood.png" data-toggle="tooltip" title="Pinewood Planks [node][default:pinewood]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-wood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_wood.png" data-toggle="tooltip" title="Wooden Planks [node][default:wood]"></a></li>
@@ -18,7 +18,7 @@ permalink: /items/group-wood/
 
 ## Used for Crafts
 
-<ul class="list-items">
+<ul class="list-items clearfix">
     <li><a href="{{site.baseurl}}/items/fire-basic-flame/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/fire_basic_flame.png" data-toggle="tooltip" title="Fire [node][fire:basic_flame]"></a></li>
     <li><a href="{{site.baseurl}}/items/boats-boat/"><img src="{{site.baseurl}}/assets/img/items/textures/boat_inventory.png" data-toggle="tooltip" title="Boat [craft][boats:boat]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-axe-wood/"><img src="{{site.baseurl}}/assets/img/items/textures/default_tool_woodaxe.png" data-toggle="tooltip" title="Wooden Axe [tool][default:axe_wood]"></a></li>
