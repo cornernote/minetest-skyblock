@@ -18,6 +18,7 @@ contributors: true
         <ul>
             <li>RealBadAngel - lots of help in IRC to make many parts of the game</li>
             <li>PilzAdam - code to make a tree came from his farming mod</li>
+            <li>mauvebic - code to make a sphere came from multinode mod</li>
         </ul>
         <h2>Related Projects</h2>
         <ul>
