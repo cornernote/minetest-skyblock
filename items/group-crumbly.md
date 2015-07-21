@@ -30,8 +30,4 @@ permalink: /items/group-crumbly/
     <li><a href="{{site.baseurl}}/items/farming-desert-sand-soil-wet/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/farming_desert_sand_soil_wet.png" data-toggle="tooltip" title="Wet Desert Sand Soil [node][farming:desert_sand_soil_wet]"></a></li>
     <li><a href="{{site.baseurl}}/items/farming-soil/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/farming_soil.png" data-toggle="tooltip" title="Soil [node][farming:soil]"></a></li>
     <li><a href="{{site.baseurl}}/items/farming-soil-wet/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/farming_soil_wet.png" data-toggle="tooltip" title="Wet Soil [node][farming:soil_wet]"></a></li>
-    <li><a href="{{site.baseurl}}/items/skyblock-level-1/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/skyblock_level_1.png" data-toggle="tooltip" title="Level 1 [node][skyblock:level_1]"></a></li>
-    <li><a href="{{site.baseurl}}/items/skyblock-level-2/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/skyblock_level_2.png" data-toggle="tooltip" title="Level 2 [node][skyblock:level_2]"></a></li>
-    <li><a href="{{site.baseurl}}/items/skyblock-level-3/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/skyblock_level_3.png" data-toggle="tooltip" title="Level 3 [node][skyblock:level_3]"></a></li>
-    <li><a href="{{site.baseurl}}/items/skyblock-level-4/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/skyblock_level_4.png" data-toggle="tooltip" title="Level 4 [node][skyblock:level_4]"></a></li>
 </ul>

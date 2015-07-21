@@ -31,12 +31,7 @@ permalink: /items/group-choppy/
     <li><a href="{{site.baseurl}}/items/default-torch/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_torch.png" data-toggle="tooltip" title="Torch [node][default:torch]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-tree/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_tree.png" data-toggle="tooltip" title="Tree [node][default:tree]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-wood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_wood.png" data-toggle="tooltip" title="Wooden Planks [node][default:wood]"></a></li>
-    <li><a href="{{site.baseurl}}/items/doors-door-wood-b-1/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/doors_door_wood_b_1.png" data-toggle="tooltip" title=" [node][doors:door_wood_b_1]"></a></li>
-    <li><a href="{{site.baseurl}}/items/doors-door-wood-b-2/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/doors_door_wood_b_2.png" data-toggle="tooltip" title=" [node][doors:door_wood_b_2]"></a></li>
-    <li><a href="{{site.baseurl}}/items/doors-door-wood-t-1/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/doors_door_wood_t_1.png" data-toggle="tooltip" title=" [node][doors:door_wood_t_1]"></a></li>
-    <li><a href="{{site.baseurl}}/items/doors-door-wood-t-2/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/doors_door_wood_t_2.png" data-toggle="tooltip" title=" [node][doors:door_wood_t_2]"></a></li>
     <li><a href="{{site.baseurl}}/items/doors-trapdoor/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/doors_trapdoor.png" data-toggle="tooltip" title="Trapdoor [node][doors:trapdoor]"></a></li>
-    <li><a href="{{site.baseurl}}/items/doors-trapdoor-open/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/doors_trapdoor_open.png" data-toggle="tooltip" title="Trapdoor [node][doors:trapdoor_open]"></a></li>
     <li><a href="{{site.baseurl}}/items/wool-black/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/wool_black.png" data-toggle="tooltip" title="Black Wool [node][wool:black]"></a></li>
     <li><a href="{{site.baseurl}}/items/wool-blue/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/wool_blue.png" data-toggle="tooltip" title="Blue Wool [node][wool:blue]"></a></li>
     <li><a href="{{site.baseurl}}/items/wool-brown/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/wool_brown.png" data-toggle="tooltip" title="Brown Wool [node][wool:brown]"></a></li>

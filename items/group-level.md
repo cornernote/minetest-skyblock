@@ -21,8 +21,4 @@ permalink: /items/group-level/
     <li><a href="{{site.baseurl}}/items/default-obsidian/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_obsidian.png" data-toggle="tooltip" title="Obsidian [node][default:obsidian]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-obsidianbrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_obsidianbrick.png" data-toggle="tooltip" title="Obsidian Brick [node][default:obsidianbrick]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-steelblock/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_steelblock.png" data-toggle="tooltip" title="Steel Block [node][default:steelblock]"></a></li>
-    <li><a href="{{site.baseurl}}/items/doors-door-steel-b-1/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/doors_door_steel_b_1.png" data-toggle="tooltip" title=" [node][doors:door_steel_b_1]"></a></li>
-    <li><a href="{{site.baseurl}}/items/doors-door-steel-b-2/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/doors_door_steel_b_2.png" data-toggle="tooltip" title=" [node][doors:door_steel_b_2]"></a></li>
-    <li><a href="{{site.baseurl}}/items/doors-door-steel-t-1/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/doors_door_steel_t_1.png" data-toggle="tooltip" title=" [node][doors:door_steel_t_1]"></a></li>
-    <li><a href="{{site.baseurl}}/items/doors-door-steel-t-2/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/doors_door_steel_t_2.png" data-toggle="tooltip" title=" [node][doors:door_steel_t_2]"></a></li>
 </ul>

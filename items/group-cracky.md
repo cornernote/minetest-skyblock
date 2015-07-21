@@ -35,37 +35,7 @@ permalink: /items/group-cracky/
     <li><a href="{{site.baseurl}}/items/stairs-stair-stone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_stone.png" data-toggle="tooltip" title="Stone Stair [node][stairs:stair_stone]"></a></li>
     <li><a href="{{site.baseurl}}/items/stairs-stair-stonebrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_stonebrick.png" data-toggle="tooltip" title="Stone Brick Stair [node][stairs:stair_stonebrick]"></a></li>
     <li><a href="{{site.baseurl}}/items/xpanes-bar/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/xpanes_bar.png" data-toggle="tooltip" title="Iron bar [node][xpanes:bar]"></a></li>
-    <li><a href="{{site.baseurl}}/items/xpanes-bar-1/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/xpanes_bar_1.png" data-toggle="tooltip" title=" [node][xpanes:bar_1]"></a></li>
-    <li><a href="{{site.baseurl}}/items/xpanes-bar-10/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/xpanes_bar_10.png" data-toggle="tooltip" title=" [node][xpanes:bar_10]"></a></li>
-    <li><a href="{{site.baseurl}}/items/xpanes-bar-11/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/xpanes_bar_11.png" data-toggle="tooltip" title=" [node][xpanes:bar_11]"></a></li>
-    <li><a href="{{site.baseurl}}/items/xpanes-bar-12/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/xpanes_bar_12.png" data-toggle="tooltip" title=" [node][xpanes:bar_12]"></a></li>
-    <li><a href="{{site.baseurl}}/items/xpanes-bar-13/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/xpanes_bar_13.png" data-toggle="tooltip" title=" [node][xpanes:bar_13]"></a></li>
-    <li><a href="{{site.baseurl}}/items/xpanes-bar-14/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/xpanes_bar_14.png" data-toggle="tooltip" title=" [node][xpanes:bar_14]"></a></li>
-    <li><a href="{{site.baseurl}}/items/xpanes-bar-15/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/xpanes_bar_15.png" data-toggle="tooltip" title=" [node][xpanes:bar_15]"></a></li>
-    <li><a href="{{site.baseurl}}/items/xpanes-bar-2/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/xpanes_bar_2.png" data-toggle="tooltip" title=" [node][xpanes:bar_2]"></a></li>
-    <li><a href="{{site.baseurl}}/items/xpanes-bar-3/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/xpanes_bar_3.png" data-toggle="tooltip" title=" [node][xpanes:bar_3]"></a></li>
-    <li><a href="{{site.baseurl}}/items/xpanes-bar-4/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/xpanes_bar_4.png" data-toggle="tooltip" title=" [node][xpanes:bar_4]"></a></li>
-    <li><a href="{{site.baseurl}}/items/xpanes-bar-5/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/xpanes_bar_5.png" data-toggle="tooltip" title=" [node][xpanes:bar_5]"></a></li>
-    <li><a href="{{site.baseurl}}/items/xpanes-bar-6/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/xpanes_bar_6.png" data-toggle="tooltip" title=" [node][xpanes:bar_6]"></a></li>
-    <li><a href="{{site.baseurl}}/items/xpanes-bar-7/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/xpanes_bar_7.png" data-toggle="tooltip" title=" [node][xpanes:bar_7]"></a></li>
-    <li><a href="{{site.baseurl}}/items/xpanes-bar-8/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/xpanes_bar_8.png" data-toggle="tooltip" title=" [node][xpanes:bar_8]"></a></li>
-    <li><a href="{{site.baseurl}}/items/xpanes-bar-9/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/xpanes_bar_9.png" data-toggle="tooltip" title=" [node][xpanes:bar_9]"></a></li>
     <li><a href="{{site.baseurl}}/items/xpanes-pane/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/xpanes_pane.png" data-toggle="tooltip" title="Glass Pane [node][xpanes:pane]"></a></li>
-    <li><a href="{{site.baseurl}}/items/xpanes-pane-1/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/xpanes_pane_1.png" data-toggle="tooltip" title=" [node][xpanes:pane_1]"></a></li>
-    <li><a href="{{site.baseurl}}/items/xpanes-pane-10/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/xpanes_pane_10.png" data-toggle="tooltip" title=" [node][xpanes:pane_10]"></a></li>
-    <li><a href="{{site.baseurl}}/items/xpanes-pane-11/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/xpanes_pane_11.png" data-toggle="tooltip" title=" [node][xpanes:pane_11]"></a></li>
-    <li><a href="{{site.baseurl}}/items/xpanes-pane-12/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/xpanes_pane_12.png" data-toggle="tooltip" title=" [node][xpanes:pane_12]"></a></li>
-    <li><a href="{{site.baseurl}}/items/xpanes-pane-13/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/xpanes_pane_13.png" data-toggle="tooltip" title=" [node][xpanes:pane_13]"></a></li>
-    <li><a href="{{site.baseurl}}/items/xpanes-pane-14/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/xpanes_pane_14.png" data-toggle="tooltip" title=" [node][xpanes:pane_14]"></a></li>
-    <li><a href="{{site.baseurl}}/items/xpanes-pane-15/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/xpanes_pane_15.png" data-toggle="tooltip" title=" [node][xpanes:pane_15]"></a></li>
-    <li><a href="{{site.baseurl}}/items/xpanes-pane-2/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/xpanes_pane_2.png" data-toggle="tooltip" title=" [node][xpanes:pane_2]"></a></li>
-    <li><a href="{{site.baseurl}}/items/xpanes-pane-3/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/xpanes_pane_3.png" data-toggle="tooltip" title=" [node][xpanes:pane_3]"></a></li>
-    <li><a href="{{site.baseurl}}/items/xpanes-pane-4/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/xpanes_pane_4.png" data-toggle="tooltip" title=" [node][xpanes:pane_4]"></a></li>
-    <li><a href="{{site.baseurl}}/items/xpanes-pane-5/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/xpanes_pane_5.png" data-toggle="tooltip" title=" [node][xpanes:pane_5]"></a></li>
-    <li><a href="{{site.baseurl}}/items/xpanes-pane-6/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/xpanes_pane_6.png" data-toggle="tooltip" title=" [node][xpanes:pane_6]"></a></li>
-    <li><a href="{{site.baseurl}}/items/xpanes-pane-7/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/xpanes_pane_7.png" data-toggle="tooltip" title=" [node][xpanes:pane_7]"></a></li>
-    <li><a href="{{site.baseurl}}/items/xpanes-pane-8/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/xpanes_pane_8.png" data-toggle="tooltip" title=" [node][xpanes:pane_8]"></a></li>
-    <li><a href="{{site.baseurl}}/items/xpanes-pane-9/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/xpanes_pane_9.png" data-toggle="tooltip" title=" [node][xpanes:pane_9]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-brick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_brick.png" data-toggle="tooltip" title="Brick Block [node][default:brick]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-bronzeblock/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_bronzeblock.png" data-toggle="tooltip" title="Bronze Block [node][default:bronzeblock]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-coalblock/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_coalblock.png" data-toggle="tooltip" title="Coal Block [node][default:coalblock]"></a></li>
@@ -82,8 +52,6 @@ permalink: /items/group-cracky/
     <li><a href="{{site.baseurl}}/items/default-ice/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_ice.png" data-toggle="tooltip" title="Ice [node][default:ice]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-mese/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_mese.png" data-toggle="tooltip" title="Mese Block [node][default:mese]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-mossycobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_mossycobble.png" data-toggle="tooltip" title="Mossy Cobblestone [node][default:mossycobble]"></a></li>
-    <li><a href="{{site.baseurl}}/items/default-nyancat/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_nyancat.png" data-toggle="tooltip" title="Nyan Cat [node][default:nyancat]"></a></li>
-    <li><a href="{{site.baseurl}}/items/default-nyancat-rainbow/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_nyancat_rainbow.png" data-toggle="tooltip" title="Nyan Cat Rainbow [node][default:nyancat_rainbow]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-obsidian/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_obsidian.png" data-toggle="tooltip" title="Obsidian [node][default:obsidian]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-obsidian-glass/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_obsidian_glass.png" data-toggle="tooltip" title="Obsidian Glass [node][default:obsidian_glass]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-obsidianbrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_obsidianbrick.png" data-toggle="tooltip" title="Obsidian Brick [node][default:obsidianbrick]"></a></li>
@@ -98,20 +66,4 @@ permalink: /items/group-cracky/
     <li><a href="{{site.baseurl}}/items/default-stone-with-iron/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stone_with_iron.png" data-toggle="tooltip" title="Iron Ore [node][default:stone_with_iron]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-stone-with-mese/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stone_with_mese.png" data-toggle="tooltip" title="Mese Ore [node][default:stone_with_mese]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-stonebrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stonebrick.png" data-toggle="tooltip" title="Stone Brick [node][default:stonebrick]"></a></li>
-    <li><a href="{{site.baseurl}}/items/doors-door-glass-b-1/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/doors_door_glass_b_1.png" data-toggle="tooltip" title=" [node][doors:door_glass_b_1]"></a></li>
-    <li><a href="{{site.baseurl}}/items/doors-door-glass-b-2/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/doors_door_glass_b_2.png" data-toggle="tooltip" title=" [node][doors:door_glass_b_2]"></a></li>
-    <li><a href="{{site.baseurl}}/items/doors-door-glass-t-1/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/doors_door_glass_t_1.png" data-toggle="tooltip" title=" [node][doors:door_glass_t_1]"></a></li>
-    <li><a href="{{site.baseurl}}/items/doors-door-glass-t-2/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/doors_door_glass_t_2.png" data-toggle="tooltip" title=" [node][doors:door_glass_t_2]"></a></li>
-    <li><a href="{{site.baseurl}}/items/doors-door-obsidian-glass-b-1/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/doors_door_obsidian_glass_b_1.png" data-toggle="tooltip" title=" [node][doors:door_obsidian_glass_b_1]"></a></li>
-    <li><a href="{{site.baseurl}}/items/doors-door-obsidian-glass-b-2/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/doors_door_obsidian_glass_b_2.png" data-toggle="tooltip" title=" [node][doors:door_obsidian_glass_b_2]"></a></li>
-    <li><a href="{{site.baseurl}}/items/doors-door-obsidian-glass-t-1/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/doors_door_obsidian_glass_t_1.png" data-toggle="tooltip" title=" [node][doors:door_obsidian_glass_t_1]"></a></li>
-    <li><a href="{{site.baseurl}}/items/doors-door-obsidian-glass-t-2/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/doors_door_obsidian_glass_t_2.png" data-toggle="tooltip" title=" [node][doors:door_obsidian_glass_t_2]"></a></li>
-    <li><a href="{{site.baseurl}}/items/doors-door-steel-b-1/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/doors_door_steel_b_1.png" data-toggle="tooltip" title=" [node][doors:door_steel_b_1]"></a></li>
-    <li><a href="{{site.baseurl}}/items/doors-door-steel-b-2/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/doors_door_steel_b_2.png" data-toggle="tooltip" title=" [node][doors:door_steel_b_2]"></a></li>
-    <li><a href="{{site.baseurl}}/items/doors-door-steel-t-1/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/doors_door_steel_t_1.png" data-toggle="tooltip" title=" [node][doors:door_steel_t_1]"></a></li>
-    <li><a href="{{site.baseurl}}/items/doors-door-steel-t-2/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/doors_door_steel_t_2.png" data-toggle="tooltip" title=" [node][doors:door_steel_t_2]"></a></li>
-    <li><a href="{{site.baseurl}}/items/skyblock-level-1/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/skyblock_level_1.png" data-toggle="tooltip" title="Level 1 [node][skyblock:level_1]"></a></li>
-    <li><a href="{{site.baseurl}}/items/skyblock-level-2/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/skyblock_level_2.png" data-toggle="tooltip" title="Level 2 [node][skyblock:level_2]"></a></li>
-    <li><a href="{{site.baseurl}}/items/skyblock-level-3/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/skyblock_level_3.png" data-toggle="tooltip" title="Level 3 [node][skyblock:level_3]"></a></li>
-    <li><a href="{{site.baseurl}}/items/skyblock-level-4/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/skyblock_level_4.png" data-toggle="tooltip" title="Level 4 [node][skyblock:level_4]"></a></li>
 </ul>
