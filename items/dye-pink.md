@@ -12,7 +12,7 @@ icon: /items/textures/dye_pink.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/group-flower,color-pink/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Flower,color_pink [group][flower,color_pink]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-flower,color-pink/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Flower,color Pink [group][flower,color_pink]"></a></span>
         <span></span>
         <span></span>
     </div>
@@ -122,8 +122,8 @@ icon: /items/textures/dye_pink.png
 ## Belongs to Groups
 
 <ul class="list-items">
-    <li><a href="{{site.baseurl}}/items/group-basecolor-red/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Basecolor_red [group][basecolor_red]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-basecolor-red/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Basecolor Red [group][basecolor_red]"></a></li>
     <li><a href="{{site.baseurl}}/items/group-dye/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Dye [group][dye]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-excolor-red/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Excolor_red [group][excolor_red]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-unicolor-light-red/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Unicolor_light_red [group][unicolor_light_red]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-excolor-red/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Excolor Red [group][excolor_red]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-unicolor-light-red/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Unicolor Light Red [group][unicolor_light_red]"></a></li>
 </ul>

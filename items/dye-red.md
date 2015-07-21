@@ -12,7 +12,7 @@ icon: /items/textures/dye_red.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/group-flower,color-red/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Flower,color_red [group][flower,color_red]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-flower,color-red/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Flower,color Red [group][flower,color_red]"></a></span>
         <span></span>
         <span></span>
     </div>
@@ -135,8 +135,8 @@ icon: /items/textures/dye_red.png
 ## Belongs to Groups
 
 <ul class="list-items">
-    <li><a href="{{site.baseurl}}/items/group-basecolor-red/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Basecolor_red [group][basecolor_red]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-basecolor-red/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Basecolor Red [group][basecolor_red]"></a></li>
     <li><a href="{{site.baseurl}}/items/group-dye/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Dye [group][dye]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-excolor-red/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Excolor_red [group][excolor_red]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-unicolor-red/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Unicolor_red [group][unicolor_red]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-excolor-red/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Excolor Red [group][excolor_red]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-unicolor-red/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Unicolor Red [group][unicolor_red]"></a></li>
 </ul>

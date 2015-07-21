@@ -12,7 +12,7 @@ icon: /items/textures/dye_magenta.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/group-flower,color-magenta/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Flower,color_magenta [group][flower,color_magenta]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-flower,color-magenta/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Flower,color Magenta [group][flower,color_magenta]"></a></span>
         <span></span>
         <span></span>
     </div>
@@ -135,8 +135,8 @@ icon: /items/textures/dye_magenta.png
 ## Belongs to Groups
 
 <ul class="list-items">
-    <li><a href="{{site.baseurl}}/items/group-basecolor-magenta/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Basecolor_magenta [group][basecolor_magenta]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-basecolor-magenta/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Basecolor Magenta [group][basecolor_magenta]"></a></li>
     <li><a href="{{site.baseurl}}/items/group-dye/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Dye [group][dye]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-excolor-red-violet/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Excolor_red_violet [group][excolor_red_violet]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-unicolor-red-violet/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Unicolor_red_violet [group][unicolor_red_violet]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-excolor-red-violet/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Excolor Red Violet [group][excolor_red_violet]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-unicolor-red-violet/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Unicolor Red Violet [group][unicolor_red_violet]"></a></li>
 </ul>

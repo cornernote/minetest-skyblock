@@ -12,7 +12,7 @@ icon: /items/textures/dye_violet.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/group-flower,color-violet/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Flower,color_violet [group][flower,color_violet]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-flower,color-violet/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Flower,color Violet [group][flower,color_violet]"></a></span>
         <span></span>
         <span></span>
     </div>
@@ -136,8 +136,8 @@ icon: /items/textures/dye_violet.png
 ## Belongs to Groups
 
 <ul class="list-items">
-    <li><a href="{{site.baseurl}}/items/group-basecolor-magenta/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Basecolor_magenta [group][basecolor_magenta]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-basecolor-magenta/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Basecolor Magenta [group][basecolor_magenta]"></a></li>
     <li><a href="{{site.baseurl}}/items/group-dye/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Dye [group][dye]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-excolor-violet/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Excolor_violet [group][excolor_violet]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-unicolor-violet/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Unicolor_violet [group][unicolor_violet]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-excolor-violet/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Excolor Violet [group][excolor_violet]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-unicolor-violet/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Unicolor Violet [group][unicolor_violet]"></a></li>
 </ul>

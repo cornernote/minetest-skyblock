@@ -40,5 +40,5 @@ icon: /items/itemcubes/default_snow.png
 
 <ul class="list-items">
     <li><a href="{{site.baseurl}}/items/group-crumbly/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Crumbly [group][crumbly]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-falling-node/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Falling_node [group][falling_node]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-falling-node/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Falling Node [group][falling_node]"></a></li>
 </ul>

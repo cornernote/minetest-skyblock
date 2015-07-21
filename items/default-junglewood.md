@@ -42,6 +42,6 @@ icon: /items/itemcubes/default_junglewood.png
 <ul class="list-items">
     <li><a href="{{site.baseurl}}/items/group-choppy/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Choppy [group][choppy]"></a></li>
     <li><a href="{{site.baseurl}}/items/group-flammable/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Flammable [group][flammable]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-oddly-breakable-by-hand/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Oddly_breakable_by_hand [group][oddly_breakable_by_hand]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-oddly-breakable-by-hand/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Oddly Breakable By Hand [group][oddly_breakable_by_hand]"></a></li>
     <li><a href="{{site.baseurl}}/items/group-wood/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Wood [group][wood]"></a></li>
 </ul>

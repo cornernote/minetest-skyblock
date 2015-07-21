@@ -12,7 +12,7 @@ icon: /items/textures/dye_orange.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/group-flower,color-orange/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Flower,color_orange [group][flower,color_orange]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-flower,color-orange/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Flower,color Orange [group][flower,color_orange]"></a></span>
         <span></span>
         <span></span>
     </div>
@@ -206,8 +206,8 @@ icon: /items/textures/dye_orange.png
 ## Belongs to Groups
 
 <ul class="list-items">
-    <li><a href="{{site.baseurl}}/items/group-basecolor-orange/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Basecolor_orange [group][basecolor_orange]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-basecolor-orange/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Basecolor Orange [group][basecolor_orange]"></a></li>
     <li><a href="{{site.baseurl}}/items/group-dye/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Dye [group][dye]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-excolor-orange/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Excolor_orange [group][excolor_orange]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-unicolor-orange/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Unicolor_orange [group][unicolor_orange]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-excolor-orange/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Excolor Orange [group][excolor_orange]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-unicolor-orange/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Unicolor Orange [group][unicolor_orange]"></a></li>
 </ul>

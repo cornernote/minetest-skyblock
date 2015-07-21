@@ -12,7 +12,7 @@ icon: /items/textures/dye_brown.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/group-flower,color-brown/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Flower,color_brown [group][flower,color_brown]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-flower,color-brown/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Flower,color Brown [group][flower,color_brown]"></a></span>
         <span></span>
         <span></span>
     </div>
@@ -367,8 +367,8 @@ icon: /items/textures/dye_brown.png
 ## Belongs to Groups
 
 <ul class="list-items">
-    <li><a href="{{site.baseurl}}/items/group-basecolor-brown/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Basecolor_brown [group][basecolor_brown]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-basecolor-brown/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Basecolor Brown [group][basecolor_brown]"></a></li>
     <li><a href="{{site.baseurl}}/items/group-dye/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Dye [group][dye]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-excolor-orange/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Excolor_orange [group][excolor_orange]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-unicolor-dark-orange/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Unicolor_dark_orange [group][unicolor_dark_orange]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-excolor-orange/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Excolor Orange [group][excolor_orange]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-unicolor-dark-orange/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Unicolor Dark Orange [group][unicolor_dark_orange]"></a></li>
 </ul>

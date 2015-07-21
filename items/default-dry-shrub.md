@@ -18,7 +18,7 @@ icon: /items/itemcubes/default_dry_shrub.png
 ## Belongs to Groups
 
 <ul class="list-items">
-    <li><a href="{{site.baseurl}}/items/group-attached-node/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Attached_node [group][attached_node]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-attached-node/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Attached Node [group][attached_node]"></a></li>
     <li><a href="{{site.baseurl}}/items/group-flammable/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Flammable [group][flammable]"></a></li>
     <li><a href="{{site.baseurl}}/items/group-snappy/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Snappy [group][snappy]"></a></li>
 </ul>

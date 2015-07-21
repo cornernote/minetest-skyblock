@@ -12,7 +12,7 @@ icon: /items/textures/dye_dark_grey.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/group-flower,color-dark-grey/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Flower,color_dark_grey [group][flower,color_dark_grey]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-flower,color-dark-grey/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Flower,color Dark Grey [group][flower,color_dark_grey]"></a></span>
         <span></span>
         <span></span>
     </div>
@@ -80,8 +80,8 @@ icon: /items/textures/dye_dark_grey.png
 ## Belongs to Groups
 
 <ul class="list-items">
-    <li><a href="{{site.baseurl}}/items/group-basecolor-grey/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Basecolor_grey [group][basecolor_grey]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-basecolor-grey/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Basecolor Grey [group][basecolor_grey]"></a></li>
     <li><a href="{{site.baseurl}}/items/group-dye/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Dye [group][dye]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-excolor-darkgrey/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Excolor_darkgrey [group][excolor_darkgrey]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-unicolor-darkgrey/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Unicolor_darkgrey [group][unicolor_darkgrey]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-excolor-darkgrey/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Excolor Darkgrey [group][excolor_darkgrey]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-unicolor-darkgrey/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Unicolor Darkgrey [group][unicolor_darkgrey]"></a></li>
 </ul>

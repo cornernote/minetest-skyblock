@@ -12,7 +12,7 @@ icon: /items/textures/dye_black.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/group-flower,color-black/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Flower,color_black [group][flower,color_black]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-flower,color-black/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Flower,color Black [group][flower,color_black]"></a></span>
         <span></span>
         <span></span>
     </div>
@@ -293,8 +293,8 @@ icon: /items/textures/dye_black.png
 ## Belongs to Groups
 
 <ul class="list-items">
-    <li><a href="{{site.baseurl}}/items/group-basecolor-black/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Basecolor_black [group][basecolor_black]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-basecolor-black/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Basecolor Black [group][basecolor_black]"></a></li>
     <li><a href="{{site.baseurl}}/items/group-dye/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Dye [group][dye]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-excolor-black/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Excolor_black [group][excolor_black]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-unicolor-black/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Unicolor_black [group][unicolor_black]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-excolor-black/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Excolor Black [group][excolor_black]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-unicolor-black/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Unicolor Black [group][unicolor_black]"></a></li>
 </ul>

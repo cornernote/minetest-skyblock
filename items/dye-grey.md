@@ -12,7 +12,7 @@ icon: /items/textures/dye_grey.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/group-flower,color-grey/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Flower,color_grey [group][flower,color_grey]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-flower,color-grey/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Flower,color Grey [group][flower,color_grey]"></a></span>
         <span></span>
         <span></span>
     </div>
@@ -154,8 +154,8 @@ icon: /items/textures/dye_grey.png
 ## Belongs to Groups
 
 <ul class="list-items">
-    <li><a href="{{site.baseurl}}/items/group-basecolor-grey/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Basecolor_grey [group][basecolor_grey]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-basecolor-grey/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Basecolor Grey [group][basecolor_grey]"></a></li>
     <li><a href="{{site.baseurl}}/items/group-dye/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Dye [group][dye]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-excolor-grey/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Excolor_grey [group][excolor_grey]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-unicolor-grey/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Unicolor_grey [group][unicolor_grey]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-excolor-grey/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Excolor Grey [group][excolor_grey]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-unicolor-grey/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Unicolor Grey [group][unicolor_grey]"></a></li>
 </ul>
