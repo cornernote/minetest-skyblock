@@ -35,3 +35,11 @@ icon: /items/itemcubes/default_dirt.png
     <li><a href="{{site.baseurl}}/items/default-clay-lump/"><img src="{{site.baseurl}}/assets/img/items/textures/default_clay_lump.png" data-toggle="tooltip" title="Clay Lump [craft][default:clay_lump]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-dirt-with-grass/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_dirt_with_grass.png" data-toggle="tooltip" title="Dirt with Grass [node][default:dirt_with_grass]"></a></li>
 </ul>
+
+
+## Belongs to Groups
+
+<ul class="list-items">
+    <li><a href="{{site.baseurl}}/items/group-crumbly/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Crumbly [group][crumbly]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-soil/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Soil [group][soil]"></a></li>
+</ul>

@@ -185,3 +185,13 @@ icon: /items/textures/dye_cyan.png
     <li><a href="{{site.baseurl}}/items/dye-green/"><img src="{{site.baseurl}}/assets/img/items/textures/dye_green.png" data-toggle="tooltip" title="Green dye [craft][dye:green]"></a></li>
     <li><a href="{{site.baseurl}}/items/dye-grey/"><img src="{{site.baseurl}}/assets/img/items/textures/dye_grey.png" data-toggle="tooltip" title="Grey dye [craft][dye:grey]"></a></li>
 </ul>
+
+
+## Belongs to Groups
+
+<ul class="list-items">
+    <li><a href="{{site.baseurl}}/items/group-basecolor-cyan/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Basecolor_cyan [group][basecolor_cyan]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-dye/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Dye [group][dye]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-excolor-cyan/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Excolor_cyan [group][excolor_cyan]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-unicolor-cyan/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Unicolor_cyan [group][unicolor_cyan]"></a></li>
+</ul>

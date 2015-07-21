@@ -52,3 +52,11 @@ icon: /items/itemcubes/default_mese.png
 <ul class="list-items">
     <li><a href="{{site.baseurl}}/items/default-mese-crystal/"><img src="{{site.baseurl}}/assets/img/items/textures/default_mese_crystal.png" data-toggle="tooltip" title="Mese Crystal [craft][default:mese_crystal]"></a></li>
 </ul>
+
+
+## Belongs to Groups
+
+<ul class="list-items">
+    <li><a href="{{site.baseurl}}/items/group-cracky/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Cracky [group][cracky]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-level/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Level [group][level]"></a></li>
+</ul>

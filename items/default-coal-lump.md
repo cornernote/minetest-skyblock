@@ -38,3 +38,10 @@ icon: /items/textures/default_coal_lump.png
     <li><a href="{{site.baseurl}}/items/default-torch/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_torch.png" data-toggle="tooltip" title="Torch [node][default:torch]"></a></li>
     <li><a href="{{site.baseurl}}/items/tnt-gunpowder/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/tnt_gunpowder.png" data-toggle="tooltip" title="Gun Powder [node][tnt:gunpowder]"></a></li>
 </ul>
+
+
+## Belongs to Groups
+
+<ul class="list-items">
+    <li><a href="{{site.baseurl}}/items/group-coal/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Coal [group][coal]"></a></li>
+</ul>

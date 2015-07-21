@@ -45,3 +45,10 @@ icon: /items/itemcubes/stairs_stair_desert_stone.png
         <span><a href="{{site.baseurl}}/items/default-desert-stone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_stone.png" data-toggle="tooltip" title="Desert Stone [node][default:desert_stone]"></a></span>
     </div>
 </div>
+
+
+## Belongs to Groups
+
+<ul class="list-items">
+    <li><a href="{{site.baseurl}}/items/group-cracky/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Cracky [group][cracky]"></a></li>
+</ul>

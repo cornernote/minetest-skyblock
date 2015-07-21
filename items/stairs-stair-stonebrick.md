@@ -45,3 +45,10 @@ icon: /items/itemcubes/stairs_stair_stonebrick.png
         <span><a href="{{site.baseurl}}/items/default-stonebrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stonebrick.png" data-toggle="tooltip" title="Stone Brick [node][default:stonebrick]"></a></span>
     </div>
 </div>
+
+
+## Belongs to Groups
+
+<ul class="list-items">
+    <li><a href="{{site.baseurl}}/items/group-cracky/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Cracky [group][cracky]"></a></li>
+</ul>

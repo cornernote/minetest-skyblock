@@ -17,3 +17,11 @@ icon: /items/itemcubes/default_cobble.png
     <li><a href="{{site.baseurl}}/items/stairs-slab-cobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_cobble.png" data-toggle="tooltip" title="Cobblestone Slab [node][stairs:slab_cobble]"></a></li>
     <li><a href="{{site.baseurl}}/items/stairs-stair-cobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_cobble.png" data-toggle="tooltip" title="Cobblestone Stair [node][stairs:stair_cobble]"></a></li>
 </ul>
+
+
+## Belongs to Groups
+
+<ul class="list-items">
+    <li><a href="{{site.baseurl}}/items/group-cracky/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Cracky [group][cracky]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-stone/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Stone [group][stone]"></a></li>
+</ul>

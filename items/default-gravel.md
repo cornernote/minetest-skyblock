@@ -35,3 +35,11 @@ icon: /items/itemcubes/default_gravel.png
     <li><a href="{{site.baseurl}}/items/default-dirt/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_dirt.png" data-toggle="tooltip" title="Dirt [node][default:dirt]"></a></li>
     <li><a href="{{site.baseurl}}/items/tnt-gunpowder/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/tnt_gunpowder.png" data-toggle="tooltip" title="Gun Powder [node][tnt:gunpowder]"></a></li>
 </ul>
+
+
+## Belongs to Groups
+
+<ul class="list-items">
+    <li><a href="{{site.baseurl}}/items/group-crumbly/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Crumbly [group][crumbly]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-falling-node/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Falling_node [group][falling_node]"></a></li>
+</ul>

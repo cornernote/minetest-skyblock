@@ -14,3 +14,11 @@ icon: /items/itemcubes/default_papyrus.png
     <li><a href="{{site.baseurl}}/items/fire-basic-flame/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/fire_basic_flame.png" data-toggle="tooltip" title="Fire [node][fire:basic_flame]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-paper/"><img src="{{site.baseurl}}/assets/img/items/textures/default_paper.png" data-toggle="tooltip" title="Paper [craft][default:paper]"></a></li>
 </ul>
+
+
+## Belongs to Groups
+
+<ul class="list-items">
+    <li><a href="{{site.baseurl}}/items/group-flammable/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Flammable [group][flammable]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-snappy/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Snappy [group][snappy]"></a></li>
+</ul>

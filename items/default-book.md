@@ -34,3 +34,10 @@ icon: /items/textures/default_book.png
 <ul class="list-items">
     <li><a href="{{site.baseurl}}/items/default-bookshelf/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_bookshelf.png" data-toggle="tooltip" title="Bookshelf [node][default:bookshelf]"></a></li>
 </ul>
+
+
+## Belongs to Groups
+
+<ul class="list-items">
+    <li><a href="{{site.baseurl}}/items/group-book/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Book [group][book]"></a></li>
+</ul>

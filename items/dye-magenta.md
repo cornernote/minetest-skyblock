@@ -130,3 +130,13 @@ icon: /items/textures/dye_magenta.png
     <li><a href="{{site.baseurl}}/items/dye-red/"><img src="{{site.baseurl}}/assets/img/items/textures/dye_red.png" data-toggle="tooltip" title="Red dye [craft][dye:red]"></a></li>
     <li><a href="{{site.baseurl}}/items/dye-violet/"><img src="{{site.baseurl}}/assets/img/items/textures/dye_violet.png" data-toggle="tooltip" title="Violet dye [craft][dye:violet]"></a></li>
 </ul>
+
+
+## Belongs to Groups
+
+<ul class="list-items">
+    <li><a href="{{site.baseurl}}/items/group-basecolor-magenta/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Basecolor_magenta [group][basecolor_magenta]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-dye/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Dye [group][dye]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-excolor-red-violet/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Excolor_red_violet [group][excolor_red_violet]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-unicolor-red-violet/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Unicolor_red_violet [group][unicolor_red_violet]"></a></li>
+</ul>

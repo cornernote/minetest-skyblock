@@ -45,3 +45,11 @@ icon: /items/itemcubes/stairs_stair_sandstonebrick.png
         <span><a href="{{site.baseurl}}/items/default-sandstonebrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sandstonebrick.png" data-toggle="tooltip" title="Sandstone Brick [node][default:sandstonebrick]"></a></span>
     </div>
 </div>
+
+
+## Belongs to Groups
+
+<ul class="list-items">
+    <li><a href="{{site.baseurl}}/items/group-cracky/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Cracky [group][cracky]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-crumbly/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Crumbly [group][crumbly]"></a></li>
+</ul>

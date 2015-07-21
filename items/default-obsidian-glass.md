@@ -28,3 +28,11 @@ icon: /items/itemcubes/default_obsidian_glass.png
 <ul class="list-items">
     <li><a href="{{site.baseurl}}/items/doors-door-obsidian-glass/"><img src="{{site.baseurl}}/assets/img/items/textures/doors_obsidian_glass.png" data-toggle="tooltip" title="Obsidian Glass Door [craft][doors:door_obsidian_glass]"></a></li>
 </ul>
+
+
+## Belongs to Groups
+
+<ul class="list-items">
+    <li><a href="{{site.baseurl}}/items/group-cracky/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Cracky [group][cracky]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-oddly-breakable-by-hand/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Oddly_breakable_by_hand [group][oddly_breakable_by_hand]"></a></li>
+</ul>

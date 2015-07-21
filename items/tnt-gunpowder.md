@@ -34,3 +34,11 @@ icon: /items/itemcubes/tnt_gunpowder.png
 <ul class="list-items">
     <li><a href="{{site.baseurl}}/items/tnt-tnt/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/tnt_tnt.png" data-toggle="tooltip" title="TNT [node][tnt:tnt]"></a></li>
 </ul>
+
+
+## Belongs to Groups
+
+<ul class="list-items">
+    <li><a href="{{site.baseurl}}/items/group-attached-node/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Attached_node [group][attached_node]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-dig-immediate/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Dig_immediate [group][dig_immediate]"></a></li>
+</ul>

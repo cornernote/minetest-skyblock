@@ -34,3 +34,10 @@ icon: /items/textures/default_stick.png
 <ul class="list-items">
     <li><a href="{{site.baseurl}}/items/default-sapling/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sapling.png" data-toggle="tooltip" title="Sapling [node][default:sapling]"></a></li>
 </ul>
+
+
+## Belongs to Groups
+
+<ul class="list-items">
+    <li><a href="{{site.baseurl}}/items/group-stick/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Stick [group][stick]"></a></li>
+</ul>

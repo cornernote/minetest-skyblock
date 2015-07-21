@@ -34,3 +34,10 @@ icon: /items/itemcubes/default_snowblock.png
 <ul class="list-items">
     <li><a href="{{site.baseurl}}/items/default-snow/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_snow.png" data-toggle="tooltip" title="Snow [node][default:snow]"></a></li>
 </ul>
+
+
+## Belongs to Groups
+
+<ul class="list-items">
+    <li><a href="{{site.baseurl}}/items/group-crumbly/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Crumbly [group][crumbly]"></a></li>
+</ul>

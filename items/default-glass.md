@@ -43,3 +43,11 @@ icon: /items/itemcubes/default_glass.png
     <li><a href="{{site.baseurl}}/items/vessels-glass-bottle/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/vessels_glass_bottle.png" data-toggle="tooltip" title="Glass Bottle (empty) [node][vessels:glass_bottle]"></a></li>
     <li><a href="{{site.baseurl}}/items/xpanes-pane/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/xpanes_pane.png" data-toggle="tooltip" title="Glass Pane [node][xpanes:pane]"></a></li>
 </ul>
+
+
+## Belongs to Groups
+
+<ul class="list-items">
+    <li><a href="{{site.baseurl}}/items/group-cracky/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Cracky [group][cracky]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-oddly-breakable-by-hand/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Oddly_breakable_by_hand [group][oddly_breakable_by_hand]"></a></li>
+</ul>

@@ -34,3 +34,12 @@ icon: /items/itemcubes/default_desert_sand.png
 <ul class="list-items">
     <li><a href="{{site.baseurl}}/items/default-desert-stone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_stone.png" data-toggle="tooltip" title="Desert Stone [node][default:desert_stone]"></a></li>
 </ul>
+
+
+## Belongs to Groups
+
+<ul class="list-items">
+    <li><a href="{{site.baseurl}}/items/group-crumbly/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Crumbly [group][crumbly]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-falling-node/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Falling_node [group][falling_node]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-sand/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Sand [group][sand]"></a></li>
+</ul>

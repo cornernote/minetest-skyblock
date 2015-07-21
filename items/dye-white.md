@@ -77,3 +77,13 @@ icon: /items/textures/dye_white.png
     <li><a href="{{site.baseurl}}/items/dye-white/"><img src="{{site.baseurl}}/assets/img/items/textures/dye_white.png" data-toggle="tooltip" title="White dye [craft][dye:white]"></a></li>
     <li><a href="{{site.baseurl}}/items/dye-yellow/"><img src="{{site.baseurl}}/assets/img/items/textures/dye_yellow.png" data-toggle="tooltip" title="Yellow dye [craft][dye:yellow]"></a></li>
 </ul>
+
+
+## Belongs to Groups
+
+<ul class="list-items">
+    <li><a href="{{site.baseurl}}/items/group-basecolor-white/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Basecolor_white [group][basecolor_white]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-dye/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Dye [group][dye]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-excolor-white/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Excolor_white [group][excolor_white]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-unicolor-white/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Unicolor_white [group][unicolor_white]"></a></li>
+</ul>

@@ -44,3 +44,13 @@ icon: /items/itemcubes/default_stone.png
     <li><a href="{{site.baseurl}}/items/stairs-slab-stone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_stone.png" data-toggle="tooltip" title="Stone Slab [node][stairs:slab_stone]"></a></li>
     <li><a href="{{site.baseurl}}/items/stairs-stair-stone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_stone.png" data-toggle="tooltip" title="Stone Stair [node][stairs:stair_stone]"></a></li>
 </ul>
+
+
+## Belongs to Groups
+
+<ul class="list-items">
+    <li><a href="{{site.baseurl}}/items/group-cracky/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Cracky [group][cracky]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-cracky/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Cracky [group][cracky]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-stone/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Stone [group][stone]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-stone/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Stone [group][stone]"></a></li>
+</ul>

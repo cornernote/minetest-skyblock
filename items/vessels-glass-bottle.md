@@ -34,3 +34,12 @@ icon: /items/itemcubes/vessels_glass_bottle.png
 <ul class="list-items">
     <li><a href="{{site.baseurl}}/items/vessels-glass-fragments/"><img src="{{site.baseurl}}/assets/img/items/textures/vessels_glass_fragments.png" data-toggle="tooltip" title="Pile of Glass Fragments [craft][vessels:glass_fragments]"></a></li>
 </ul>
+
+
+## Belongs to Groups
+
+<ul class="list-items">
+    <li><a href="{{site.baseurl}}/items/group-attached-node/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Attached_node [group][attached_node]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-dig-immediate/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Dig_immediate [group][dig_immediate]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-vessel/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Vessel [group][vessel]"></a></li>
+</ul>

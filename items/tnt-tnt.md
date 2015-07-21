@@ -27,3 +27,11 @@ icon: /items/itemcubes/tnt_tnt.png
         <span></span>
     </div>
 </div>
+
+
+## Belongs to Groups
+
+<ul class="list-items">
+    <li><a href="{{site.baseurl}}/items/group-dig-immediate/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Dig_immediate [group][dig_immediate]"></a></li>
+    <li><a href="{{site.baseurl}}/items/group-mesecon/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Mesecon [group][mesecon]"></a></li>
+</ul>
