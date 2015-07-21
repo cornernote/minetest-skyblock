@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Group Unicolor Black
-heading: Group Unicolor Black
+title: Group: Unicolor Black
+heading: Group: Unicolor Black
 description: "[group][unicolor_black]"
 permalink: /items/group-unicolor-black/
 ---

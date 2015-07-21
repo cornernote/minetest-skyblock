@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Group Flower
-heading: Group Flower
+title: Group: Flower
+heading: Group: Flower
 description: "[group][flower]"
 permalink: /items/group-flower/
 ---

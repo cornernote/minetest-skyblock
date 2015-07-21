@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Group Not In Creative Inventory
-heading: Group Not In Creative Inventory
+title: Group: Not In Creative Inventory
+heading: Group: Not In Creative Inventory
 description: "[group][not_in_creative_inventory]"
 permalink: /items/group-not-in-creative-inventory/
 ---

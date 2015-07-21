@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Group Soil
-heading: Group Soil
+title: Group: Soil
+heading: Group: Soil
 description: "[group][soil]"
 permalink: /items/group-soil/
 ---

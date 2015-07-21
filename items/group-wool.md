@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Group Wool
-heading: Group Wool
+title: Group: Wool
+heading: Group: Wool
 description: "[group][wool]"
 permalink: /items/group-wool/
 ---

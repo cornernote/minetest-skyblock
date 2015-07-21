@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Group Sapling
-heading: Group Sapling
+title: Group: Sapling
+heading: Group: Sapling
 description: "[group][sapling]"
 permalink: /items/group-sapling/
 ---

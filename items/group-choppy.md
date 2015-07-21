@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Group Choppy
-heading: Group Choppy
+title: Group: Choppy
+heading: Group: Choppy
 description: "[group][choppy]"
 permalink: /items/group-choppy/
 ---

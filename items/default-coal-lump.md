@@ -43,5 +43,5 @@ icon: /items/textures/default_coal_lump.png
 ## Belongs to Groups
 
 <ul class="list-items clearfix">
-    <li><a href="{{site.baseurl}}/items/group-coal/"><span class="item-group" data-toggle="tooltip" title="Group Coal [group][coal]"><img src="{{site.baseurl}}/assets/img/items/textures/default_coal_lump.png"><img src="{{site.baseurl}}/assets/img/transparent.png"><img src="{{site.baseurl}}/assets/img/transparent.png"></span></a></li>
+    <li><a href="{{site.baseurl}}/items/group-coal/"><span class="item-group" data-toggle="tooltip" title="Group: Coal [group][coal]"><img src="{{site.baseurl}}/assets/img/items/textures/default_coal_lump.png"><img src="{{site.baseurl}}/assets/img/transparent.png"><img src="{{site.baseurl}}/assets/img/transparent.png"></span></a></li>
 </ul>

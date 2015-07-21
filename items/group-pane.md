@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Group Pane
-heading: Group Pane
+title: Group: Pane
+heading: Group: Pane
 description: "[group][pane]"
 permalink: /items/group-pane/
 ---

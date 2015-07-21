@@ -12,7 +12,7 @@ icon: /items/textures/dye_violet.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/group-flower,color-violet/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="MultiGroup Flower + Color Violet [group][flower,color_violet]"></a></a></span>
+        <span><a href="{{site.baseurl}}/items/group-flower,color-violet/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="MultiGroup: Flower + Color Violet [group][flower,color_violet]"></a></a></span>
         <span></span>
         <span></span>
     </div>
@@ -136,8 +136,8 @@ icon: /items/textures/dye_violet.png
 ## Belongs to Groups
 
 <ul class="list-items clearfix">
-    <li><a href="{{site.baseurl}}/items/group-basecolor-magenta/"><span class="item-group" data-toggle="tooltip" title="Group Basecolor Magenta [group][basecolor_magenta]"><img src="{{site.baseurl}}/assets/img/items/textures/dye_magenta.png"><img src="{{site.baseurl}}/assets/img/items/textures/dye_violet.png"><img src="{{site.baseurl}}/assets/img/transparent.png"></span></a></li>
-    <li><a href="{{site.baseurl}}/items/group-dye/"><span class="item-group" data-toggle="tooltip" title="Group Dye [group][dye]"><img src="{{site.baseurl}}/assets/img/items/textures/dye_black.png"><img src="{{site.baseurl}}/assets/img/items/textures/dye_blue.png"><img src="{{site.baseurl}}/assets/img/items/textures/dye_brown.png"><img src="{{site.baseurl}}/assets/img/items/textures/dye_cyan.png"></span></a></li>
-    <li><a href="{{site.baseurl}}/items/group-excolor-violet/"><span class="item-group" data-toggle="tooltip" title="Group Excolor Violet [group][excolor_violet]"><img src="{{site.baseurl}}/assets/img/items/textures/dye_violet.png"><img src="{{site.baseurl}}/assets/img/transparent.png"><img src="{{site.baseurl}}/assets/img/transparent.png"></span></a></li>
-    <li><a href="{{site.baseurl}}/items/group-unicolor-violet/"><span class="item-group" data-toggle="tooltip" title="Group Unicolor Violet [group][unicolor_violet]"><img src="{{site.baseurl}}/assets/img/items/textures/dye_violet.png"><img src="{{site.baseurl}}/assets/img/transparent.png"><img src="{{site.baseurl}}/assets/img/transparent.png"></span></a></li>
+    <li><a href="{{site.baseurl}}/items/group-basecolor-magenta/"><span class="item-group" data-toggle="tooltip" title="Group: Basecolor Magenta [group][basecolor_magenta]"><img src="{{site.baseurl}}/assets/img/items/textures/dye_magenta.png"><img src="{{site.baseurl}}/assets/img/items/textures/dye_violet.png"><img src="{{site.baseurl}}/assets/img/transparent.png"></span></a></li>
+    <li><a href="{{site.baseurl}}/items/group-dye/"><span class="item-group" data-toggle="tooltip" title="Group: Dye [group][dye]"><img src="{{site.baseurl}}/assets/img/items/textures/dye_black.png"><img src="{{site.baseurl}}/assets/img/items/textures/dye_blue.png"><img src="{{site.baseurl}}/assets/img/items/textures/dye_brown.png"><img src="{{site.baseurl}}/assets/img/items/textures/dye_cyan.png"></span></a></li>
+    <li><a href="{{site.baseurl}}/items/group-excolor-violet/"><span class="item-group" data-toggle="tooltip" title="Group: Excolor Violet [group][excolor_violet]"><img src="{{site.baseurl}}/assets/img/items/textures/dye_violet.png"><img src="{{site.baseurl}}/assets/img/transparent.png"><img src="{{site.baseurl}}/assets/img/transparent.png"></span></a></li>
+    <li><a href="{{site.baseurl}}/items/group-unicolor-violet/"><span class="item-group" data-toggle="tooltip" title="Group: Unicolor Violet [group][unicolor_violet]"><img src="{{site.baseurl}}/assets/img/items/textures/dye_violet.png"><img src="{{site.baseurl}}/assets/img/transparent.png"><img src="{{site.baseurl}}/assets/img/transparent.png"></span></a></li>
 </ul>

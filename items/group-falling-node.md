@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Group Falling Node
-heading: Group Falling Node
+title: Group: Falling Node
+heading: Group: Falling Node
 description: "[group][falling_node]"
 permalink: /items/group-falling-node/
 ---

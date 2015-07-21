@@ -12,7 +12,7 @@ icon: /items/textures/dye_orange.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/group-flower,color-orange/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="MultiGroup Flower + Color Orange [group][flower,color_orange]"></a></a></span>
+        <span><a href="{{site.baseurl}}/items/group-flower,color-orange/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="MultiGroup: Flower + Color Orange [group][flower,color_orange]"></a></a></span>
         <span></span>
         <span></span>
     </div>
@@ -206,8 +206,8 @@ icon: /items/textures/dye_orange.png
 ## Belongs to Groups
 
 <ul class="list-items clearfix">
-    <li><a href="{{site.baseurl}}/items/group-basecolor-orange/"><span class="item-group" data-toggle="tooltip" title="Group Basecolor Orange [group][basecolor_orange]"><img src="{{site.baseurl}}/assets/img/items/textures/dye_orange.png"><img src="{{site.baseurl}}/assets/img/transparent.png"><img src="{{site.baseurl}}/assets/img/transparent.png"></span></a></li>
-    <li><a href="{{site.baseurl}}/items/group-dye/"><span class="item-group" data-toggle="tooltip" title="Group Dye [group][dye]"><img src="{{site.baseurl}}/assets/img/items/textures/dye_black.png"><img src="{{site.baseurl}}/assets/img/items/textures/dye_blue.png"><img src="{{site.baseurl}}/assets/img/items/textures/dye_brown.png"><img src="{{site.baseurl}}/assets/img/items/textures/dye_cyan.png"></span></a></li>
-    <li><a href="{{site.baseurl}}/items/group-excolor-orange/"><span class="item-group" data-toggle="tooltip" title="Group Excolor Orange [group][excolor_orange]"><img src="{{site.baseurl}}/assets/img/items/textures/dye_brown.png"><img src="{{site.baseurl}}/assets/img/items/textures/dye_orange.png"><img src="{{site.baseurl}}/assets/img/transparent.png"></span></a></li>
-    <li><a href="{{site.baseurl}}/items/group-unicolor-orange/"><span class="item-group" data-toggle="tooltip" title="Group Unicolor Orange [group][unicolor_orange]"><img src="{{site.baseurl}}/assets/img/items/textures/dye_orange.png"><img src="{{site.baseurl}}/assets/img/transparent.png"><img src="{{site.baseurl}}/assets/img/transparent.png"></span></a></li>
+    <li><a href="{{site.baseurl}}/items/group-basecolor-orange/"><span class="item-group" data-toggle="tooltip" title="Group: Basecolor Orange [group][basecolor_orange]"><img src="{{site.baseurl}}/assets/img/items/textures/dye_orange.png"><img src="{{site.baseurl}}/assets/img/transparent.png"><img src="{{site.baseurl}}/assets/img/transparent.png"></span></a></li>
+    <li><a href="{{site.baseurl}}/items/group-dye/"><span class="item-group" data-toggle="tooltip" title="Group: Dye [group][dye]"><img src="{{site.baseurl}}/assets/img/items/textures/dye_black.png"><img src="{{site.baseurl}}/assets/img/items/textures/dye_blue.png"><img src="{{site.baseurl}}/assets/img/items/textures/dye_brown.png"><img src="{{site.baseurl}}/assets/img/items/textures/dye_cyan.png"></span></a></li>
+    <li><a href="{{site.baseurl}}/items/group-excolor-orange/"><span class="item-group" data-toggle="tooltip" title="Group: Excolor Orange [group][excolor_orange]"><img src="{{site.baseurl}}/assets/img/items/textures/dye_brown.png"><img src="{{site.baseurl}}/assets/img/items/textures/dye_orange.png"><img src="{{site.baseurl}}/assets/img/transparent.png"></span></a></li>
+    <li><a href="{{site.baseurl}}/items/group-unicolor-orange/"><span class="item-group" data-toggle="tooltip" title="Group: Unicolor Orange [group][unicolor_orange]"><img src="{{site.baseurl}}/assets/img/items/textures/dye_orange.png"><img src="{{site.baseurl}}/assets/img/transparent.png"><img src="{{site.baseurl}}/assets/img/transparent.png"></span></a></li>
 </ul>

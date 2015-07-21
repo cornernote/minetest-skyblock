@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Group Leafdecay
-heading: Group Leafdecay
+title: Group: Leafdecay
+heading: Group: Leafdecay
 description: "[group][leafdecay]"
 permalink: /items/group-leafdecay/
 ---

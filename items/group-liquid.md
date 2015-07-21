@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Group Liquid
-heading: Group Liquid
+title: Group: Liquid
+heading: Group: Liquid
 description: "[group][liquid]"
 permalink: /items/group-liquid/
 ---

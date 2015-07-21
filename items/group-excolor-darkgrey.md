@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Group Excolor Darkgrey
-heading: Group Excolor Darkgrey
+title: Group: Excolor Darkgrey
+heading: Group: Excolor Darkgrey
 description: "[group][excolor_darkgrey]"
 permalink: /items/group-excolor-darkgrey/
 ---

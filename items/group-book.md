@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Group Book
-heading: Group Book
+title: Group: Book
+heading: Group: Book
 description: "[group][book]"
 permalink: /items/group-book/
 ---

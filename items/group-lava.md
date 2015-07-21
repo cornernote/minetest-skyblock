@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Group Lava
-heading: Group Lava
+title: Group: Lava
+heading: Group: Lava
 description: "[group][lava]"
 permalink: /items/group-lava/
 ---

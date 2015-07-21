@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Group Stone
-heading: Group Stone
+title: Group: Stone
+heading: Group: Stone
 description: "[group][stone]"
 permalink: /items/group-stone/
 ---

@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Group Dig Immediate
-heading: Group Dig Immediate
+title: Group: Dig Immediate
+heading: Group: Dig Immediate
 description: "[group][dig_immediate]"
 permalink: /items/group-dig-immediate/
 ---

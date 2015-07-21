@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Group Unicolor White
-heading: Group Unicolor White
+title: Group: Unicolor White
+heading: Group: Unicolor White
 description: "[group][unicolor_white]"
 permalink: /items/group-unicolor-white/
 ---

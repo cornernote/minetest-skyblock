@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Group Mesecon
-heading: Group Mesecon
+title: Group: Mesecon
+heading: Group: Mesecon
 description: "[group][mesecon]"
 permalink: /items/group-mesecon/
 ---

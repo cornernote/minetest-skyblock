@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Group Field
-heading: Group Field
+title: Group: Field
+heading: Group: Field
 description: "[group][field]"
 permalink: /items/group-field/
 ---

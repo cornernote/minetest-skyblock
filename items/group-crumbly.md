@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Group Crumbly
-heading: Group Crumbly
+title: Group: Crumbly
+heading: Group: Crumbly
 description: "[group][crumbly]"
 permalink: /items/group-crumbly/
 ---

@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Group Puts Out Fire
-heading: Group Puts Out Fire
+title: Group: Puts Out Fire
+heading: Group: Puts Out Fire
 description: "[group][puts_out_fire]"
 permalink: /items/group-puts-out-fire/
 ---

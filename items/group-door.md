@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Group Door
-heading: Group Door
+title: Group: Door
+heading: Group: Door
 description: "[group][door]"
 permalink: /items/group-door/
 ---

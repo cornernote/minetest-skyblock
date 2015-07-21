@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Group Excolor Violet
-heading: Group Excolor Violet
+title: Group: Excolor Violet
+heading: Group: Excolor Violet
 description: "[group][excolor_violet]"
 permalink: /items/group-excolor-violet/
 ---

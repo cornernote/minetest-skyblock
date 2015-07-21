@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Group Flammable
-heading: Group Flammable
+title: Group: Flammable
+heading: Group: Flammable
 description: "[group][flammable]"
 permalink: /items/group-flammable/
 ---

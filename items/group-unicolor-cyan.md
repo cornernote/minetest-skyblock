@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Group Unicolor Cyan
-heading: Group Unicolor Cyan
+title: Group: Unicolor Cyan
+heading: Group: Unicolor Cyan
 description: "[group][unicolor_cyan]"
 permalink: /items/group-unicolor-cyan/
 ---

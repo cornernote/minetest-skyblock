@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Group Basecolor Cyan
-heading: Group Basecolor Cyan
+title: Group: Basecolor Cyan
+heading: Group: Basecolor Cyan
 description: "[group][basecolor_cyan]"
 permalink: /items/group-basecolor-cyan/
 ---

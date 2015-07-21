@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Group Sand
-heading: Group Sand
+title: Group: Sand
+heading: Group: Sand
 description: "[group][sand]"
 permalink: /items/group-sand/
 ---

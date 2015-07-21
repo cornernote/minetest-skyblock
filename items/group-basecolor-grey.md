@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Group Basecolor Grey
-heading: Group Basecolor Grey
+title: Group: Basecolor Grey
+heading: Group: Basecolor Grey
 description: "[group][basecolor_grey]"
 permalink: /items/group-basecolor-grey/
 ---

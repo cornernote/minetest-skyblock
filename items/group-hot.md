@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Group Hot
-heading: Group Hot
+title: Group: Hot
+heading: Group: Hot
 description: "[group][hot]"
 permalink: /items/group-hot/
 ---

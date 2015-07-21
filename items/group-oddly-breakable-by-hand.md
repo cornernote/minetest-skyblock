@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Group Oddly Breakable By Hand
-heading: Group Oddly Breakable By Hand
+title: Group: Oddly Breakable By Hand
+heading: Group: Oddly Breakable By Hand
 description: "[group][oddly_breakable_by_hand]"
 permalink: /items/group-oddly-breakable-by-hand/
 ---
