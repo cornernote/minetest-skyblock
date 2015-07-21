@@ -1,7 +1,7 @@
 ---
 layout: default
-title: MultiGroup: Dye + Basecolor Magenta
-heading: MultiGroup: Dye + Basecolor Magenta
+title: "MultiGroup: Dye + Basecolor Magenta"
+heading: "MultiGroup: Dye + Basecolor Magenta"
 description: "[group][dye,basecolor_magenta]"
 permalink: /items/group-dye,basecolor-magenta/
 ---

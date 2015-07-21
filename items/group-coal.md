@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Group: Coal
-heading: Group: Coal
+title: "Group: Coal"
+heading: "Group: Coal"
 description: "[group][coal]"
 permalink: /items/group-coal/
 ---

@@ -1,7 +1,7 @@
 ---
 layout: default
-title: MultiGroup: Dye + Unicolor Dark Orange
-heading: MultiGroup: Dye + Unicolor Dark Orange
+title: "MultiGroup: Dye + Unicolor Dark Orange"
+heading: "MultiGroup: Dye + Unicolor Dark Orange"
 description: "[group][dye,unicolor_dark_orange]"
 permalink: /items/group-dye,unicolor-dark-orange/
 ---

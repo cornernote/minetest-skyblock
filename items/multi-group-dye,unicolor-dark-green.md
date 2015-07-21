@@ -1,7 +1,7 @@
 ---
 layout: default
-title: MultiGroup: Dye + Unicolor Dark Green
-heading: MultiGroup: Dye + Unicolor Dark Green
+title: "MultiGroup: Dye + Unicolor Dark Green"
+heading: "MultiGroup: Dye + Unicolor Dark Green"
 description: "[group][dye,unicolor_dark_green]"
 permalink: /items/group-dye,unicolor-dark-green/
 ---

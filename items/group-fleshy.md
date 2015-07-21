@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Group: Fleshy
-heading: Group: Fleshy
+title: "Group: Fleshy"
+heading: "Group: Fleshy"
 description: "[group][fleshy]"
 permalink: /items/group-fleshy/
 ---

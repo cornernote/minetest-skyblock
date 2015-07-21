@@ -1,7 +1,7 @@
 ---
 layout: default
-title: MultiGroup: Dye + Unicolor Light Red
-heading: MultiGroup: Dye + Unicolor Light Red
+title: "MultiGroup: Dye + Unicolor Light Red"
+heading: "MultiGroup: Dye + Unicolor Light Red"
 description: "[group][dye,unicolor_light_red]"
 permalink: /items/group-dye,unicolor-light-red/
 ---

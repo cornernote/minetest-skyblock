@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Group: Dye
-heading: Group: Dye
+title: "Group: Dye"
+heading: "Group: Dye"
 description: "[group][dye]"
 permalink: /items/group-dye/
 ---

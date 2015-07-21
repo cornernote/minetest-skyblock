@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Group: Cracky
-heading: Group: Cracky
+title: "Group: Cracky"
+heading: "Group: Cracky"
 description: "[group][cracky]"
 permalink: /items/group-cracky/
 ---

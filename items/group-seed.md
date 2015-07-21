@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Group: Seed
-heading: Group: Seed
+title: "Group: Seed"
+heading: "Group: Seed"
 description: "[group][seed]"
 permalink: /items/group-seed/
 ---

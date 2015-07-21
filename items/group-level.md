@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Group: Level
-heading: Group: Level
+title: "Group: Level"
+heading: "Group: Level"
 description: "[group][level]"
 permalink: /items/group-level/
 ---

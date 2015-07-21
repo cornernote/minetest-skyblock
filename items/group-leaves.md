@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Group: Leaves
-heading: Group: Leaves
+title: "Group: Leaves"
+heading: "Group: Leaves"
 description: "[group][leaves]"
 permalink: /items/group-leaves/
 ---

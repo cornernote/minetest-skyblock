@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Group: Bendy
-heading: Group: Bendy
+title: "Group: Bendy"
+heading: "Group: Bendy"
 description: "[group][bendy]"
 permalink: /items/group-bendy/
 ---

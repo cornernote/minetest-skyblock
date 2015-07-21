@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Group: Vessel
-heading: Group: Vessel
+title: "Group: Vessel"
+heading: "Group: Vessel"
 description: "[group][vessel]"
 permalink: /items/group-vessel/
 ---

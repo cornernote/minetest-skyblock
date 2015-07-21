@@ -1,7 +1,7 @@
 ---
 layout: default
-title: MultiGroup: Dye + Excolor Violet
-heading: MultiGroup: Dye + Excolor Violet
+title: "MultiGroup: Dye + Excolor Violet"
+heading: "MultiGroup: Dye + Excolor Violet"
 description: "[group][dye,excolor_violet]"
 permalink: /items/group-dye,excolor-violet/
 ---

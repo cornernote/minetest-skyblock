@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Group: Unicolor Violet
-heading: Group: Unicolor Violet
+title: "Group: Unicolor Violet"
+heading: "Group: Unicolor Violet"
 description: "[group][unicolor_violet]"
 permalink: /items/group-unicolor-violet/
 ---

@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Group: Grassland
-heading: Group: Grassland
+title: "Group: Grassland"
+heading: "Group: Grassland"
 description: "[group][grassland]"
 permalink: /items/group-grassland/
 ---

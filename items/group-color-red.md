@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Group: Color Red
-heading: Group: Color Red
+title: "Group: Color Red"
+heading: "Group: Color Red"
 description: "[group][color_red]"
 permalink: /items/group-color-red/
 ---

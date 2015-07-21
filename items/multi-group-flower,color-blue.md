@@ -1,7 +1,7 @@
 ---
 layout: default
-title: MultiGroup: Flower + Color Blue
-heading: MultiGroup: Flower + Color Blue
+title: "MultiGroup: Flower + Color Blue"
+heading: "MultiGroup: Flower + Color Blue"
 description: "[group][flower,color_blue]"
 permalink: /items/group-flower,color-blue/
 ---

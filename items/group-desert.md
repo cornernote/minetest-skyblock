@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Group: Desert
-heading: Group: Desert
+title: "Group: Desert"
+heading: "Group: Desert"
 description: "[group][desert]"
 permalink: /items/group-desert/
 ---

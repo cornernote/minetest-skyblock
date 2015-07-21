@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Group: Attached Node
-heading: Group: Attached Node
+title: "Group: Attached Node"
+heading: "Group: Attached Node"
 description: "[group][attached_node]"
 permalink: /items/group-attached-node/
 ---

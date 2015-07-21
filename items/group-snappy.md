@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Group: Snappy
-heading: Group: Snappy
+title: "Group: Snappy"
+heading: "Group: Snappy"
 description: "[group][snappy]"
 permalink: /items/group-snappy/
 ---

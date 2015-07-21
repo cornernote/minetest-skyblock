@@ -1,7 +1,7 @@
 ---
 layout: default
-title: MultiGroup: Dye + Excolor Orange
-heading: MultiGroup: Dye + Excolor Orange
+title: "MultiGroup: Dye + Excolor Orange"
+heading: "MultiGroup: Dye + Excolor Orange"
 description: "[group][dye,excolor_orange]"
 permalink: /items/group-dye,excolor-orange/
 ---

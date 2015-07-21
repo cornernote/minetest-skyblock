@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Group: Igniter
-heading: Group: Igniter
+title: "Group: Igniter"
+heading: "Group: Igniter"
 description: "[group][igniter]"
 permalink: /items/group-igniter/
 ---

@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Group: Stick
-heading: Group: Stick
+title: "Group: Stick"
+heading: "Group: Stick"
 description: "[group][stick]"
 permalink: /items/group-stick/
 ---

@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Group: Water
-heading: Group: Water
+title: "Group: Water"
+heading: "Group: Water"
 description: "[group][water]"
 permalink: /items/group-water/
 ---
