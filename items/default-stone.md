@@ -50,7 +50,5 @@ icon: /items/itemcubes/default_stone.png
 
 <ul class="list-items">
     <li><a href="{{site.baseurl}}/items/group-cracky/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Cracky [group][cracky]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-cracky/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Cracky [group][cracky]"></a></li>
-    <li><a href="{{site.baseurl}}/items/group-stone/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Stone [group][stone]"></a></li>
     <li><a href="{{site.baseurl}}/items/group-stone/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Stone [group][stone]"></a></li>
 </ul>

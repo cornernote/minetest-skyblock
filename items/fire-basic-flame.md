@@ -8,7 +8,7 @@ icon: /items/itemcubes/fire_basic_flame.png
 ---
 
 
-## Created by Crafts
+## Created by Fuels
 
 <ul class="list-items">
 <li><a href="{{site.baseurl}}/items/group-tree/"><img src="{{site.baseurl}}/assets/img/items/group.png" data-toggle="tooltip" title="Group Tree [group][tree]"></a></li>
