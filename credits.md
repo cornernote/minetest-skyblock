@@ -16,12 +16,12 @@ contributors: true
     <div class="col-md-6">
         <h2>Other Contributions</h2>
         <ul>
-        <li>PilzAdam - code to make a tree came from his farming mod</li>
-        <li>RealBadAngel - help in IRC to make the spiral</li>
+            <li>RealBadAngel - lots of help in IRC to make many parts of the game</li>
+            <li>PilzAdam - code to make a tree came from his farming mod</li>
         </ul>
         <h2>Related Projects</h2>
         <ul>
-        <li><a href="https://github.com/minetest/minetest">Minetest</a></li>
+            <li><a href="https://github.com/minetest/minetest">Minetest</a></li>
         </ul>
     </div>
 </div>

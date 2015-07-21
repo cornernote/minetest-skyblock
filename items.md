@@ -204,9 +204,7 @@ permalink: /items/
 <li><a href="{{site.baseurl}}/items/default-wood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_wood.png" data-toggle="tooltip" title="Wooden Planks [node][default:wood]"></a></li>
 <li><a href="{{site.baseurl}}/items/doors-trapdoor/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/doors_trapdoor.png" data-toggle="tooltip" title="Trapdoor [node][doors:trapdoor]"></a></li>
 <li><a href="{{site.baseurl}}/items/farming-desert-sand-soil/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/farming_desert_sand_soil.png" data-toggle="tooltip" title="Desert Sand Soil [node][farming:desert_sand_soil]"></a></li>
-<li><a href="{{site.baseurl}}/items/farming-desert-sand-soil-wet/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/farming_desert_sand_soil_wet.png" data-toggle="tooltip" title="Wet Desert Sand Soil [node][farming:desert_sand_soil_wet]"></a></li>
 <li><a href="{{site.baseurl}}/items/farming-soil/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/farming_soil.png" data-toggle="tooltip" title="Soil [node][farming:soil]"></a></li>
-<li><a href="{{site.baseurl}}/items/farming-soil-wet/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/farming_soil_wet.png" data-toggle="tooltip" title="Wet Soil [node][farming:soil_wet]"></a></li>
 <li><a href="{{site.baseurl}}/items/farming-straw/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/farming_straw.png" data-toggle="tooltip" title="Straw [node][farming:straw]"></a></li>
 <li><a href="{{site.baseurl}}/items/fire-basic-flame/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/fire_basic_flame.png" data-toggle="tooltip" title="Fire [node][fire:basic_flame]"></a></li>
 <li><a href="{{site.baseurl}}/items/flowers-dandelion-white/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/flowers_dandelion_white.png" data-toggle="tooltip" title="White Dandelion [node][flowers:dandelion_white]"></a></li>
