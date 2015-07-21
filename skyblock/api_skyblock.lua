@@ -28,7 +28,7 @@ skyblock.log = function(message)
 	if not skyblock.DEBUG then
 		return
 	end
-	minetest.log("action", "[SkyBlock] "..message)
+	minetest.log("action", "[skyblock] "..message)
 end
 
 
