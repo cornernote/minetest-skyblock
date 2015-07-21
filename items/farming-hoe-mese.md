@@ -2,7 +2,7 @@
 layout: default
 title: Mese Hoe
 heading: Mese Hoe
-description: "[tool][:farming:hoe_mese]"
+description: "[tool][farming:hoe_mese]"
 permalink: /items/farming-hoe-mese/
 icon: /items/textures/farming_tool_mesehoe.png
 ---

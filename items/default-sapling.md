@@ -12,14 +12,14 @@ icon: /items/itemcubes/default_sapling.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/default-leaves/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_leaves.png" data-toggle="tooltip" title="Leaves [node][:default:leaves]"></a></span>
-        <span><a href="{{site.baseurl}}/items/default-leaves/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_leaves.png" data-toggle="tooltip" title="Leaves [node][:default:leaves]"></a></span>
-        <span><a href="{{site.baseurl}}/items/default-leaves/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_leaves.png" data-toggle="tooltip" title="Leaves [node][:default:leaves]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-leaves/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_leaves.png" data-toggle="tooltip" title="Leaves [node][default:leaves]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-leaves/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_leaves.png" data-toggle="tooltip" title="Leaves [node][default:leaves]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-leaves/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_leaves.png" data-toggle="tooltip" title="Leaves [node][default:leaves]"></a></span>
     </div>
     <div>
-        <span><a href="{{site.baseurl}}/items/default-leaves/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_leaves.png" data-toggle="tooltip" title="Leaves [node][:default:leaves]"></a></span>
-        <span><a href="{{site.baseurl}}/items/default-leaves/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_leaves.png" data-toggle="tooltip" title="Leaves [node][:default:leaves]"></a></span>
-        <span><a href="{{site.baseurl}}/items/default-leaves/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_leaves.png" data-toggle="tooltip" title="Leaves [node][:default:leaves]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-leaves/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_leaves.png" data-toggle="tooltip" title="Leaves [node][default:leaves]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-leaves/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_leaves.png" data-toggle="tooltip" title="Leaves [node][default:leaves]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-leaves/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_leaves.png" data-toggle="tooltip" title="Leaves [node][default:leaves]"></a></span>
     </div>
     <div>
         <span></span>

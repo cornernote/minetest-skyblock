@@ -32,6 +32,6 @@ icon: /items/itemcubes/default_junglewood.png
 ## Used for Crafts
 
 <ul class="list-items">
-    <li><a href="{{site.baseurl}}/items/stairs-slab-junglewood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_junglewood.png" data-toggle="tooltip" title="Junglewood Slab [node][:stairs:slab_junglewood]"></a></li>
-    <li><a href="{{site.baseurl}}/items/stairs-stair-junglewood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_junglewood.png" data-toggle="tooltip" title="Junglewood Stair [node][:stairs:stair_junglewood]"></a></li>
+    <li><a href="{{site.baseurl}}/items/stairs-slab-junglewood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_junglewood.png" data-toggle="tooltip" title="Junglewood Slab [node][stairs:slab_junglewood]"></a></li>
+    <li><a href="{{site.baseurl}}/items/stairs-stair-junglewood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_junglewood.png" data-toggle="tooltip" title="Junglewood Stair [node][stairs:stair_junglewood]"></a></li>
 </ul>

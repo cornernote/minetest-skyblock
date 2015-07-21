@@ -32,6 +32,6 @@ icon: /items/itemcubes/default_pinewood.png
 ## Used for Crafts
 
 <ul class="list-items">
-    <li><a href="{{site.baseurl}}/items/stairs-slab-pinewood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_pinewood.png" data-toggle="tooltip" title="Pinewood Slab [node][:stairs:slab_pinewood]"></a></li>
-    <li><a href="{{site.baseurl}}/items/stairs-stair-pinewood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_pinewood.png" data-toggle="tooltip" title="Pinewood Stair [node][:stairs:stair_pinewood]"></a></li>
+    <li><a href="{{site.baseurl}}/items/stairs-slab-pinewood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_pinewood.png" data-toggle="tooltip" title="Pinewood Slab [node][stairs:slab_pinewood]"></a></li>
+    <li><a href="{{site.baseurl}}/items/stairs-stair-pinewood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_pinewood.png" data-toggle="tooltip" title="Pinewood Stair [node][stairs:stair_pinewood]"></a></li>
 </ul>

@@ -2,7 +2,7 @@
 layout: default
 title: Bronze Hoe
 heading: Bronze Hoe
-description: "[tool][:farming:hoe_bronze]"
+description: "[tool][farming:hoe_bronze]"
 permalink: /items/farming-hoe-bronze/
 icon: /items/textures/farming_tool_bronzehoe.png
 ---

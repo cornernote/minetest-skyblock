@@ -2,7 +2,7 @@
 layout: default
 title: Steel Hoe
 heading: Steel Hoe
-description: "[tool][:farming:hoe_steel]"
+description: "[tool][farming:hoe_steel]"
 permalink: /items/farming-hoe-steel/
 icon: /items/textures/farming_tool_steelhoe.png
 ---

@@ -2,7 +2,7 @@
 layout: default
 title: Cotton
 heading: Cotton
-description: "[craft][:farming:cotton]"
+description: "[craft][farming:cotton]"
 permalink: /items/farming-cotton/
 icon: /items/textures/farming_cotton.png
 ---

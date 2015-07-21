@@ -2,7 +2,7 @@
 layout: default
 title: Cobblestone Stair
 heading: Cobblestone Stair
-description: "[node][:stairs:stair_cobble]"
+description: "[node][stairs:stair_cobble]"
 permalink: /items/stairs-stair-cobble/
 icon: /items/itemcubes/stairs_stair_cobble.png
 ---

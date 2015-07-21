@@ -2,7 +2,7 @@
 layout: default
 title: Sandstone Brick Slab
 heading: Sandstone Brick Slab
-description: "[node][:stairs:slab_sandstonebrick]"
+description: "[node][stairs:slab_sandstonebrick]"
 permalink: /items/stairs-slab-sandstonebrick/
 icon: /items/itemcubes/stairs_slab_sandstonebrick.png
 ---

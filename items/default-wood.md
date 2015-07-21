@@ -12,7 +12,7 @@ icon: /items/itemcubes/default_wood.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/default-tree/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_tree.png" data-toggle="tooltip" title="Tree [node][:default:tree]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-tree/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_tree.png" data-toggle="tooltip" title="Tree [node][default:tree]"></a></span>
         <span></span>
         <span></span>
     </div>
@@ -50,6 +50,6 @@ icon: /items/itemcubes/default_wood.png
 ## Used for Crafts
 
 <ul class="list-items">
-    <li><a href="{{site.baseurl}}/items/stairs-slab-wood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_wood.png" data-toggle="tooltip" title="Wooden Slab [node][:stairs:slab_wood]"></a></li>
-    <li><a href="{{site.baseurl}}/items/stairs-stair-wood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_wood.png" data-toggle="tooltip" title="Wooden Stair [node][:stairs:stair_wood]"></a></li>
+    <li><a href="{{site.baseurl}}/items/stairs-slab-wood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_wood.png" data-toggle="tooltip" title="Wooden Slab [node][stairs:slab_wood]"></a></li>
+    <li><a href="{{site.baseurl}}/items/stairs-stair-wood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_wood.png" data-toggle="tooltip" title="Wooden Stair [node][stairs:stair_wood]"></a></li>
 </ul>

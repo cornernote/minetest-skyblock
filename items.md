@@ -9,12 +9,12 @@ permalink: /items/
 ## Tools
 
 <ul class="list-items">
-<li><a href="{{site.baseurl}}/items/farming-hoe-bronze/"><img src="{{site.baseurl}}/assets/img/items/textures/farming_tool_bronzehoe.png" data-toggle="tooltip" title="Bronze Hoe [tool][:farming:hoe_bronze]"></a></li>
-<li><a href="{{site.baseurl}}/items/farming-hoe-diamond/"><img src="{{site.baseurl}}/assets/img/items/textures/farming_tool_diamondhoe.png" data-toggle="tooltip" title="Diamond Hoe [tool][:farming:hoe_diamond]"></a></li>
-<li><a href="{{site.baseurl}}/items/farming-hoe-mese/"><img src="{{site.baseurl}}/assets/img/items/textures/farming_tool_mesehoe.png" data-toggle="tooltip" title="Mese Hoe [tool][:farming:hoe_mese]"></a></li>
-<li><a href="{{site.baseurl}}/items/farming-hoe-steel/"><img src="{{site.baseurl}}/assets/img/items/textures/farming_tool_steelhoe.png" data-toggle="tooltip" title="Steel Hoe [tool][:farming:hoe_steel]"></a></li>
-<li><a href="{{site.baseurl}}/items/farming-hoe-stone/"><img src="{{site.baseurl}}/assets/img/items/textures/farming_tool_stonehoe.png" data-toggle="tooltip" title="Stone Hoe [tool][:farming:hoe_stone]"></a></li>
-<li><a href="{{site.baseurl}}/items/farming-hoe-wood/"><img src="{{site.baseurl}}/assets/img/items/textures/farming_tool_woodhoe.png" data-toggle="tooltip" title="Wooden Hoe [tool][:farming:hoe_wood]"></a></li>
+<li><a href="{{site.baseurl}}/items/farming-hoe-bronze/"><img src="{{site.baseurl}}/assets/img/items/textures/farming_tool_bronzehoe.png" data-toggle="tooltip" title="Bronze Hoe [tool][farming:hoe_bronze]"></a></li>
+<li><a href="{{site.baseurl}}/items/farming-hoe-diamond/"><img src="{{site.baseurl}}/assets/img/items/textures/farming_tool_diamondhoe.png" data-toggle="tooltip" title="Diamond Hoe [tool][farming:hoe_diamond]"></a></li>
+<li><a href="{{site.baseurl}}/items/farming-hoe-mese/"><img src="{{site.baseurl}}/assets/img/items/textures/farming_tool_mesehoe.png" data-toggle="tooltip" title="Mese Hoe [tool][farming:hoe_mese]"></a></li>
+<li><a href="{{site.baseurl}}/items/farming-hoe-steel/"><img src="{{site.baseurl}}/assets/img/items/textures/farming_tool_steelhoe.png" data-toggle="tooltip" title="Steel Hoe [tool][farming:hoe_steel]"></a></li>
+<li><a href="{{site.baseurl}}/items/farming-hoe-stone/"><img src="{{site.baseurl}}/assets/img/items/textures/farming_tool_stonehoe.png" data-toggle="tooltip" title="Stone Hoe [tool][farming:hoe_stone]"></a></li>
+<li><a href="{{site.baseurl}}/items/farming-hoe-wood/"><img src="{{site.baseurl}}/assets/img/items/textures/farming_tool_woodhoe.png" data-toggle="tooltip" title="Wooden Hoe [tool][farming:hoe_wood]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-axe-bronze/"><img src="{{site.baseurl}}/assets/img/items/textures/default_tool_bronzeaxe.png" data-toggle="tooltip" title="Bronze Axe [tool][default:axe_bronze]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-axe-diamond/"><img src="{{site.baseurl}}/assets/img/items/textures/default_tool_diamondaxe.png" data-toggle="tooltip" title="Diamond Axe [tool][default:axe_diamond]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-axe-mese/"><img src="{{site.baseurl}}/assets/img/items/textures/default_tool_meseaxe.png" data-toggle="tooltip" title="Mese Axe [tool][default:axe_mese]"></a></li>
@@ -46,12 +46,12 @@ permalink: /items/
 ## Crafts
 
 <ul class="list-items">
-<li><a href="{{site.baseurl}}/items/farming-cotton/"><img src="{{site.baseurl}}/assets/img/items/textures/farming_cotton.png" data-toggle="tooltip" title="Cotton [craft][:farming:cotton]"></a></li>
-<li><a href="{{site.baseurl}}/items/farming-wheat/"><img src="{{site.baseurl}}/assets/img/items/textures/farming_wheat.png" data-toggle="tooltip" title="Wheat [craft][:farming:wheat]"></a></li>
+<li><a href="{{site.baseurl}}/items/farming-cotton/"><img src="{{site.baseurl}}/assets/img/items/textures/farming_cotton.png" data-toggle="tooltip" title="Cotton [craft][farming:cotton]"></a></li>
+<li><a href="{{site.baseurl}}/items/farming-wheat/"><img src="{{site.baseurl}}/assets/img/items/textures/farming_wheat.png" data-toggle="tooltip" title="Wheat [craft][farming:wheat]"></a></li>
 <li><a href="{{site.baseurl}}/items/boats-boat/"><img src="{{site.baseurl}}/assets/img/items/textures/boat_inventory.png" data-toggle="tooltip" title="Boat [craft][boats:boat]"></a></li>
-<li><a href="{{site.baseurl}}/items/bucket-bucket-empty/"><img src="{{site.baseurl}}/assets/img/items/textures/bucket.png" data-toggle="tooltip" title="Empty Bucket [craft][:bucket:bucket_empty]"></a></li>
-<li><a href="{{site.baseurl}}/items/bucket-bucket-lava/"><img src="{{site.baseurl}}/assets/img/items/textures/bucket_lava.png" data-toggle="tooltip" title="Lava Bucket [craft][:bucket:bucket_lava]"></a></li>
-<li><a href="{{site.baseurl}}/items/bucket-bucket-water/"><img src="{{site.baseurl}}/assets/img/items/textures/bucket_water.png" data-toggle="tooltip" title="Water Bucket [craft][:bucket:bucket_water]"></a></li>
+<li><a href="{{site.baseurl}}/items/bucket-bucket-empty/"><img src="{{site.baseurl}}/assets/img/items/textures/bucket.png" data-toggle="tooltip" title="Empty Bucket [craft][bucket:bucket_empty]"></a></li>
+<li><a href="{{site.baseurl}}/items/bucket-bucket-lava/"><img src="{{site.baseurl}}/assets/img/items/textures/bucket_lava.png" data-toggle="tooltip" title="Lava Bucket [craft][bucket:bucket_lava]"></a></li>
+<li><a href="{{site.baseurl}}/items/bucket-bucket-water/"><img src="{{site.baseurl}}/assets/img/items/textures/bucket_water.png" data-toggle="tooltip" title="Water Bucket [craft][bucket:bucket_water]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-book/"><img src="{{site.baseurl}}/assets/img/items/textures/default_book.png" data-toggle="tooltip" title="Book [craft][default:book]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-bronze-ingot/"><img src="{{site.baseurl}}/assets/img/items/textures/default_bronze_ingot.png" data-toggle="tooltip" title="Bronze Ingot [craft][default:bronze_ingot]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-clay-brick/"><img src="{{site.baseurl}}/assets/img/items/textures/default_clay_brick.png" data-toggle="tooltip" title="Clay Brick [craft][default:clay_brick]"></a></li>
@@ -97,42 +97,42 @@ permalink: /items/
 ## Nodes
 
 <ul class="list-items">
-<li><a href="{{site.baseurl}}/items/default-leaves/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_leaves.png" data-toggle="tooltip" title="Leaves [node][:default:leaves]"></a></li>
-<li><a href="{{site.baseurl}}/items/default-sandstone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sandstone.png" data-toggle="tooltip" title="Sandstone [node][:default:sandstone]"></a></li>
-<li><a href="{{site.baseurl}}/items/default-stone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stone.png" data-toggle="tooltip" title="Stone [node][:default:stone]"></a></li>
-<li><a href="{{site.baseurl}}/items/default-tree/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_tree.png" data-toggle="tooltip" title="Tree [node][:default:tree]"></a></li>
-<li><a href="{{site.baseurl}}/items/farming-seed-cotton/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/farming_seed_cotton.png" data-toggle="tooltip" title="Cotton seed [node][:farming:seed_cotton]"></a></li>
-<li><a href="{{site.baseurl}}/items/farming-seed-wheat/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/farming_seed_wheat.png" data-toggle="tooltip" title="Wheat seed [node][:farming:seed_wheat]"></a></li>
-<li><a href="{{site.baseurl}}/items/stairs-slab-brick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_brick.png" data-toggle="tooltip" title="Brick Slab [node][:stairs:slab_brick]"></a></li>
-<li><a href="{{site.baseurl}}/items/stairs-slab-cobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_cobble.png" data-toggle="tooltip" title="Cobblestone Slab [node][:stairs:slab_cobble]"></a></li>
-<li><a href="{{site.baseurl}}/items/stairs-slab-desert-cobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_desert_cobble.png" data-toggle="tooltip" title="Desert Cobblestone Slab [node][:stairs:slab_desert_cobble]"></a></li>
-<li><a href="{{site.baseurl}}/items/stairs-slab-desert-stone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_desert_stone.png" data-toggle="tooltip" title="Desertstone Slab [node][:stairs:slab_desert_stone]"></a></li>
-<li><a href="{{site.baseurl}}/items/stairs-slab-desert-stonebrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_desert_stonebrick.png" data-toggle="tooltip" title="Desert Stone Brick Slab [node][:stairs:slab_desert_stonebrick]"></a></li>
-<li><a href="{{site.baseurl}}/items/stairs-slab-junglewood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_junglewood.png" data-toggle="tooltip" title="Junglewood Slab [node][:stairs:slab_junglewood]"></a></li>
-<li><a href="{{site.baseurl}}/items/stairs-slab-obsidian/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_obsidian.png" data-toggle="tooltip" title="Obsidian Slab [node][:stairs:slab_obsidian]"></a></li>
-<li><a href="{{site.baseurl}}/items/stairs-slab-obsidianbrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_obsidianbrick.png" data-toggle="tooltip" title="Obsidian Brick Slab [node][:stairs:slab_obsidianbrick]"></a></li>
-<li><a href="{{site.baseurl}}/items/stairs-slab-pinewood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_pinewood.png" data-toggle="tooltip" title="Pinewood Slab [node][:stairs:slab_pinewood]"></a></li>
-<li><a href="{{site.baseurl}}/items/stairs-slab-sandstone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_sandstone.png" data-toggle="tooltip" title="Sandstone Slab [node][:stairs:slab_sandstone]"></a></li>
-<li><a href="{{site.baseurl}}/items/stairs-slab-sandstonebrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_sandstonebrick.png" data-toggle="tooltip" title="Sandstone Brick Slab [node][:stairs:slab_sandstonebrick]"></a></li>
-<li><a href="{{site.baseurl}}/items/stairs-slab-stone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_stone.png" data-toggle="tooltip" title="Stone Slab [node][:stairs:slab_stone]"></a></li>
-<li><a href="{{site.baseurl}}/items/stairs-slab-stonebrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_stonebrick.png" data-toggle="tooltip" title="Stone Brick Slab [node][:stairs:slab_stonebrick]"></a></li>
-<li><a href="{{site.baseurl}}/items/stairs-slab-wood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_wood.png" data-toggle="tooltip" title="Wooden Slab [node][:stairs:slab_wood]"></a></li>
-<li><a href="{{site.baseurl}}/items/stairs-stair-brick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_brick.png" data-toggle="tooltip" title="Brick Stair [node][:stairs:stair_brick]"></a></li>
-<li><a href="{{site.baseurl}}/items/stairs-stair-cobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_cobble.png" data-toggle="tooltip" title="Cobblestone Stair [node][:stairs:stair_cobble]"></a></li>
-<li><a href="{{site.baseurl}}/items/stairs-stair-desert-cobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_desert_cobble.png" data-toggle="tooltip" title="Desert Cobblestone Stair [node][:stairs:stair_desert_cobble]"></a></li>
-<li><a href="{{site.baseurl}}/items/stairs-stair-desert-stone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_desert_stone.png" data-toggle="tooltip" title="Desertstone Stair [node][:stairs:stair_desert_stone]"></a></li>
-<li><a href="{{site.baseurl}}/items/stairs-stair-desert-stonebrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_desert_stonebrick.png" data-toggle="tooltip" title="Desert Stone Brick Stair [node][:stairs:stair_desert_stonebrick]"></a></li>
-<li><a href="{{site.baseurl}}/items/stairs-stair-junglewood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_junglewood.png" data-toggle="tooltip" title="Junglewood Stair [node][:stairs:stair_junglewood]"></a></li>
-<li><a href="{{site.baseurl}}/items/stairs-stair-obsidian/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_obsidian.png" data-toggle="tooltip" title="Obsidian Stair [node][:stairs:stair_obsidian]"></a></li>
-<li><a href="{{site.baseurl}}/items/stairs-stair-obsidianbrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_obsidianbrick.png" data-toggle="tooltip" title="Obsidian Brick Stair [node][:stairs:stair_obsidianbrick]"></a></li>
-<li><a href="{{site.baseurl}}/items/stairs-stair-pinewood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_pinewood.png" data-toggle="tooltip" title="Pinewood Stair [node][:stairs:stair_pinewood]"></a></li>
-<li><a href="{{site.baseurl}}/items/stairs-stair-sandstone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_sandstone.png" data-toggle="tooltip" title="Sandstone Stair [node][:stairs:stair_sandstone]"></a></li>
-<li><a href="{{site.baseurl}}/items/stairs-stair-sandstonebrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_sandstonebrick.png" data-toggle="tooltip" title="Sandstone Brick Stair [node][:stairs:stair_sandstonebrick]"></a></li>
-<li><a href="{{site.baseurl}}/items/stairs-stair-stone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_stone.png" data-toggle="tooltip" title="Stone Stair [node][:stairs:stair_stone]"></a></li>
-<li><a href="{{site.baseurl}}/items/stairs-stair-stonebrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_stonebrick.png" data-toggle="tooltip" title="Stone Brick Stair [node][:stairs:stair_stonebrick]"></a></li>
-<li><a href="{{site.baseurl}}/items/stairs-stair-wood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_wood.png" data-toggle="tooltip" title="Wooden Stair [node][:stairs:stair_wood]"></a></li>
-<li><a href="{{site.baseurl}}/items/xpanes-bar/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/xpanes_bar.png" data-toggle="tooltip" title="Iron bar [node][:xpanes:bar]"></a></li>
-<li><a href="{{site.baseurl}}/items/xpanes-pane/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/xpanes_pane.png" data-toggle="tooltip" title="Glass Pane [node][:xpanes:pane]"></a></li>
+<li><a href="{{site.baseurl}}/items/default-leaves/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_leaves.png" data-toggle="tooltip" title="Leaves [node][default:leaves]"></a></li>
+<li><a href="{{site.baseurl}}/items/default-sandstone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sandstone.png" data-toggle="tooltip" title="Sandstone [node][default:sandstone]"></a></li>
+<li><a href="{{site.baseurl}}/items/default-stone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stone.png" data-toggle="tooltip" title="Stone [node][default:stone]"></a></li>
+<li><a href="{{site.baseurl}}/items/default-tree/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_tree.png" data-toggle="tooltip" title="Tree [node][default:tree]"></a></li>
+<li><a href="{{site.baseurl}}/items/farming-seed-cotton/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/farming_seed_cotton.png" data-toggle="tooltip" title="Cotton seed [node][farming:seed_cotton]"></a></li>
+<li><a href="{{site.baseurl}}/items/farming-seed-wheat/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/farming_seed_wheat.png" data-toggle="tooltip" title="Wheat seed [node][farming:seed_wheat]"></a></li>
+<li><a href="{{site.baseurl}}/items/stairs-slab-brick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_brick.png" data-toggle="tooltip" title="Brick Slab [node][stairs:slab_brick]"></a></li>
+<li><a href="{{site.baseurl}}/items/stairs-slab-cobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_cobble.png" data-toggle="tooltip" title="Cobblestone Slab [node][stairs:slab_cobble]"></a></li>
+<li><a href="{{site.baseurl}}/items/stairs-slab-desert-cobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_desert_cobble.png" data-toggle="tooltip" title="Desert Cobblestone Slab [node][stairs:slab_desert_cobble]"></a></li>
+<li><a href="{{site.baseurl}}/items/stairs-slab-desert-stone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_desert_stone.png" data-toggle="tooltip" title="Desertstone Slab [node][stairs:slab_desert_stone]"></a></li>
+<li><a href="{{site.baseurl}}/items/stairs-slab-desert-stonebrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_desert_stonebrick.png" data-toggle="tooltip" title="Desert Stone Brick Slab [node][stairs:slab_desert_stonebrick]"></a></li>
+<li><a href="{{site.baseurl}}/items/stairs-slab-junglewood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_junglewood.png" data-toggle="tooltip" title="Junglewood Slab [node][stairs:slab_junglewood]"></a></li>
+<li><a href="{{site.baseurl}}/items/stairs-slab-obsidian/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_obsidian.png" data-toggle="tooltip" title="Obsidian Slab [node][stairs:slab_obsidian]"></a></li>
+<li><a href="{{site.baseurl}}/items/stairs-slab-obsidianbrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_obsidianbrick.png" data-toggle="tooltip" title="Obsidian Brick Slab [node][stairs:slab_obsidianbrick]"></a></li>
+<li><a href="{{site.baseurl}}/items/stairs-slab-pinewood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_pinewood.png" data-toggle="tooltip" title="Pinewood Slab [node][stairs:slab_pinewood]"></a></li>
+<li><a href="{{site.baseurl}}/items/stairs-slab-sandstone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_sandstone.png" data-toggle="tooltip" title="Sandstone Slab [node][stairs:slab_sandstone]"></a></li>
+<li><a href="{{site.baseurl}}/items/stairs-slab-sandstonebrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_sandstonebrick.png" data-toggle="tooltip" title="Sandstone Brick Slab [node][stairs:slab_sandstonebrick]"></a></li>
+<li><a href="{{site.baseurl}}/items/stairs-slab-stone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_stone.png" data-toggle="tooltip" title="Stone Slab [node][stairs:slab_stone]"></a></li>
+<li><a href="{{site.baseurl}}/items/stairs-slab-stonebrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_stonebrick.png" data-toggle="tooltip" title="Stone Brick Slab [node][stairs:slab_stonebrick]"></a></li>
+<li><a href="{{site.baseurl}}/items/stairs-slab-wood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_wood.png" data-toggle="tooltip" title="Wooden Slab [node][stairs:slab_wood]"></a></li>
+<li><a href="{{site.baseurl}}/items/stairs-stair-brick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_brick.png" data-toggle="tooltip" title="Brick Stair [node][stairs:stair_brick]"></a></li>
+<li><a href="{{site.baseurl}}/items/stairs-stair-cobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_cobble.png" data-toggle="tooltip" title="Cobblestone Stair [node][stairs:stair_cobble]"></a></li>
+<li><a href="{{site.baseurl}}/items/stairs-stair-desert-cobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_desert_cobble.png" data-toggle="tooltip" title="Desert Cobblestone Stair [node][stairs:stair_desert_cobble]"></a></li>
+<li><a href="{{site.baseurl}}/items/stairs-stair-desert-stone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_desert_stone.png" data-toggle="tooltip" title="Desertstone Stair [node][stairs:stair_desert_stone]"></a></li>
+<li><a href="{{site.baseurl}}/items/stairs-stair-desert-stonebrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_desert_stonebrick.png" data-toggle="tooltip" title="Desert Stone Brick Stair [node][stairs:stair_desert_stonebrick]"></a></li>
+<li><a href="{{site.baseurl}}/items/stairs-stair-junglewood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_junglewood.png" data-toggle="tooltip" title="Junglewood Stair [node][stairs:stair_junglewood]"></a></li>
+<li><a href="{{site.baseurl}}/items/stairs-stair-obsidian/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_obsidian.png" data-toggle="tooltip" title="Obsidian Stair [node][stairs:stair_obsidian]"></a></li>
+<li><a href="{{site.baseurl}}/items/stairs-stair-obsidianbrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_obsidianbrick.png" data-toggle="tooltip" title="Obsidian Brick Stair [node][stairs:stair_obsidianbrick]"></a></li>
+<li><a href="{{site.baseurl}}/items/stairs-stair-pinewood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_pinewood.png" data-toggle="tooltip" title="Pinewood Stair [node][stairs:stair_pinewood]"></a></li>
+<li><a href="{{site.baseurl}}/items/stairs-stair-sandstone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_sandstone.png" data-toggle="tooltip" title="Sandstone Stair [node][stairs:stair_sandstone]"></a></li>
+<li><a href="{{site.baseurl}}/items/stairs-stair-sandstonebrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_sandstonebrick.png" data-toggle="tooltip" title="Sandstone Brick Stair [node][stairs:stair_sandstonebrick]"></a></li>
+<li><a href="{{site.baseurl}}/items/stairs-stair-stone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_stone.png" data-toggle="tooltip" title="Stone Stair [node][stairs:stair_stone]"></a></li>
+<li><a href="{{site.baseurl}}/items/stairs-stair-stonebrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_stonebrick.png" data-toggle="tooltip" title="Stone Brick Stair [node][stairs:stair_stonebrick]"></a></li>
+<li><a href="{{site.baseurl}}/items/stairs-stair-wood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_wood.png" data-toggle="tooltip" title="Wooden Stair [node][stairs:stair_wood]"></a></li>
+<li><a href="{{site.baseurl}}/items/xpanes-bar/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/xpanes_bar.png" data-toggle="tooltip" title="Iron bar [node][xpanes:bar]"></a></li>
+<li><a href="{{site.baseurl}}/items/xpanes-pane/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/xpanes_pane.png" data-toggle="tooltip" title="Glass Pane [node][xpanes:pane]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-apple/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_apple.png" data-toggle="tooltip" title="Apple [node][default:apple]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-bookshelf/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_bookshelf.png" data-toggle="tooltip" title="Bookshelf [node][default:bookshelf]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-brick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_brick.png" data-toggle="tooltip" title="Brick Block [node][default:brick]"></a></li>
@@ -169,7 +169,7 @@ permalink: /items/
 <li><a href="{{site.baseurl}}/items/default-junglewood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_junglewood.png" data-toggle="tooltip" title="Junglewood Planks [node][default:junglewood]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-ladder/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_ladder.png" data-toggle="tooltip" title="Ladder [node][default:ladder]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-lava-source/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_lava_source.png" data-toggle="tooltip" title="Lava Source [node][default:lava_source]"></a></li>
-<li><a href="{{site.baseurl}}/items/default-leaves/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_leaves.png" data-toggle="tooltip" title="Leaves [node][:default:leaves]"></a></li>
+<li><a href="{{site.baseurl}}/items/default-leaves/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_leaves.png" data-toggle="tooltip" title="Leaves [node][default:leaves]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-mese/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_mese.png" data-toggle="tooltip" title="Mese Block [node][default:mese]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-mossycobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_mossycobble.png" data-toggle="tooltip" title="Mossy Cobblestone [node][default:mossycobble]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-obsidian/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_obsidian.png" data-toggle="tooltip" title="Obsidian [node][default:obsidian]"></a></li>
@@ -182,14 +182,14 @@ permalink: /items/
 <li><a href="{{site.baseurl}}/items/default-pinewood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_pinewood.png" data-toggle="tooltip" title="Pinewood Planks [node][default:pinewood]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-rail/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_rail.png" data-toggle="tooltip" title="Rail [node][default:rail]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-sand/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sand.png" data-toggle="tooltip" title="Sand [node][default:sand]"></a></li>
-<li><a href="{{site.baseurl}}/items/default-sandstone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sandstone.png" data-toggle="tooltip" title="Sandstone [node][:default:sandstone]"></a></li>
+<li><a href="{{site.baseurl}}/items/default-sandstone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sandstone.png" data-toggle="tooltip" title="Sandstone [node][default:sandstone]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-sandstonebrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sandstonebrick.png" data-toggle="tooltip" title="Sandstone Brick [node][default:sandstonebrick]"></a></li>
-<li><a href="{{site.baseurl}}/items/default-sapling/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sapling.png" data-toggle="tooltip" title="Sapling [node][:default:sapling]"></a></li>
+<li><a href="{{site.baseurl}}/items/default-sapling/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sapling.png" data-toggle="tooltip" title="Sapling [node][default:sapling]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-sign-wall/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sign_wall.png" data-toggle="tooltip" title="Sign [node][default:sign_wall]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-snow/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_snow.png" data-toggle="tooltip" title="Snow [node][default:snow]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-snowblock/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_snowblock.png" data-toggle="tooltip" title="Snow Block [node][default:snowblock]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-steelblock/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_steelblock.png" data-toggle="tooltip" title="Steel Block [node][default:steelblock]"></a></li>
-<li><a href="{{site.baseurl}}/items/default-stone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stone.png" data-toggle="tooltip" title="Stone [node][:default:stone]"></a></li>
+<li><a href="{{site.baseurl}}/items/default-stone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stone.png" data-toggle="tooltip" title="Stone [node][default:stone]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-stone-with-coal/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stone_with_coal.png" data-toggle="tooltip" title="Coal Ore [node][default:stone_with_coal]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-stone-with-copper/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stone_with_copper.png" data-toggle="tooltip" title="Copper Ore [node][default:stone_with_copper]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-stone-with-diamond/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stone_with_diamond.png" data-toggle="tooltip" title="Diamond Ore [node][default:stone_with_diamond]"></a></li>
@@ -198,7 +198,7 @@ permalink: /items/
 <li><a href="{{site.baseurl}}/items/default-stone-with-mese/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stone_with_mese.png" data-toggle="tooltip" title="Mese Ore [node][default:stone_with_mese]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-stonebrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stonebrick.png" data-toggle="tooltip" title="Stone Brick [node][default:stonebrick]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-torch/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_torch.png" data-toggle="tooltip" title="Torch [node][default:torch]"></a></li>
-<li><a href="{{site.baseurl}}/items/default-tree/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_tree.png" data-toggle="tooltip" title="Tree [node][:default:tree]"></a></li>
+<li><a href="{{site.baseurl}}/items/default-tree/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_tree.png" data-toggle="tooltip" title="Tree [node][default:tree]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-water-source/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_water_source.png" data-toggle="tooltip" title="Water Source [node][default:water_source]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-wood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_wood.png" data-toggle="tooltip" title="Wooden Planks [node][default:wood]"></a></li>
 <li><a href="{{site.baseurl}}/items/doors-trapdoor/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/doors_trapdoor.png" data-toggle="tooltip" title="Trapdoor [node][doors:trapdoor]"></a></li>

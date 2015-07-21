@@ -2,7 +2,7 @@
 layout: default
 title: Wooden Stair
 heading: Wooden Stair
-description: "[node][:stairs:stair_wood]"
+description: "[node][stairs:stair_wood]"
 permalink: /items/stairs-stair-wood/
 icon: /items/itemcubes/stairs_stair_wood.png
 ---

@@ -2,7 +2,7 @@
 layout: default
 title: Junglewood Slab
 heading: Junglewood Slab
-description: "[node][:stairs:slab_junglewood]"
+description: "[node][stairs:slab_junglewood]"
 permalink: /items/stairs-slab-junglewood/
 icon: /items/itemcubes/stairs_slab_junglewood.png
 ---

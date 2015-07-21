@@ -38,5 +38,5 @@ icon: /items/textures/default_mese_crystal.png
     <li><a href="{{site.baseurl}}/items/default-pick-mese/"><img src="{{site.baseurl}}/assets/img/items/textures/default_tool_mesepick.png" data-toggle="tooltip" title="Mese Pickaxe [tool][default:pick_mese]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-shovel-mese/"><img src="{{site.baseurl}}/assets/img/items/textures/default_tool_meseshovel.png" data-toggle="tooltip" title="Mese Shovel [tool][default:shovel_mese]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-sword-mese/"><img src="{{site.baseurl}}/assets/img/items/textures/default_tool_mesesword.png" data-toggle="tooltip" title="Mese Sword [tool][default:sword_mese]"></a></li>
-    <li><a href="{{site.baseurl}}/items/farming-hoe-mese/"><img src="{{site.baseurl}}/assets/img/items/textures/farming_tool_mesehoe.png" data-toggle="tooltip" title="Mese Hoe [tool][:farming:hoe_mese]"></a></li>
+    <li><a href="{{site.baseurl}}/items/farming-hoe-mese/"><img src="{{site.baseurl}}/assets/img/items/textures/farming_tool_mesehoe.png" data-toggle="tooltip" title="Mese Hoe [tool][farming:hoe_mese]"></a></li>
 </ul>

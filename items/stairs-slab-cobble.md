@@ -2,7 +2,7 @@
 layout: default
 title: Cobblestone Slab
 heading: Cobblestone Slab
-description: "[node][:stairs:slab_cobble]"
+description: "[node][stairs:slab_cobble]"
 permalink: /items/stairs-slab-cobble/
 icon: /items/itemcubes/stairs_slab_cobble.png
 ---

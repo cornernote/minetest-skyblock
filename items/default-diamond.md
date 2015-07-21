@@ -37,5 +37,5 @@ icon: /items/textures/default_diamond.png
     <li><a href="{{site.baseurl}}/items/default-pick-diamond/"><img src="{{site.baseurl}}/assets/img/items/textures/default_tool_diamondpick.png" data-toggle="tooltip" title="Diamond Pickaxe [tool][default:pick_diamond]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-shovel-diamond/"><img src="{{site.baseurl}}/assets/img/items/textures/default_tool_diamondshovel.png" data-toggle="tooltip" title="Diamond Shovel [tool][default:shovel_diamond]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-sword-diamond/"><img src="{{site.baseurl}}/assets/img/items/textures/default_tool_diamondsword.png" data-toggle="tooltip" title="Diamond Sword [tool][default:sword_diamond]"></a></li>
-    <li><a href="{{site.baseurl}}/items/farming-hoe-diamond/"><img src="{{site.baseurl}}/assets/img/items/textures/farming_tool_diamondhoe.png" data-toggle="tooltip" title="Diamond Hoe [tool][:farming:hoe_diamond]"></a></li>
+    <li><a href="{{site.baseurl}}/items/farming-hoe-diamond/"><img src="{{site.baseurl}}/assets/img/items/textures/farming_tool_diamondhoe.png" data-toggle="tooltip" title="Diamond Hoe [tool][farming:hoe_diamond]"></a></li>
 </ul>

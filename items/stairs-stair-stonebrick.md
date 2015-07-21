@@ -2,7 +2,7 @@
 layout: default
 title: Stone Brick Stair
 heading: Stone Brick Stair
-description: "[node][:stairs:stair_stonebrick]"
+description: "[node][stairs:stair_stonebrick]"
 permalink: /items/stairs-stair-stonebrick/
 icon: /items/itemcubes/stairs_stair_stonebrick.png
 ---

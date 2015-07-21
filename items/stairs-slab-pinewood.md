@@ -2,7 +2,7 @@
 layout: default
 title: Pinewood Slab
 heading: Pinewood Slab
-description: "[node][:stairs:slab_pinewood]"
+description: "[node][stairs:slab_pinewood]"
 permalink: /items/stairs-slab-pinewood/
 icon: /items/itemcubes/stairs_slab_pinewood.png
 ---

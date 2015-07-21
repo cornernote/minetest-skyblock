@@ -2,7 +2,7 @@
 layout: default
 title: Stone Hoe
 heading: Stone Hoe
-description: "[tool][:farming:hoe_stone]"
+description: "[tool][farming:hoe_stone]"
 permalink: /items/farming-hoe-stone/
 icon: /items/textures/farming_tool_stonehoe.png
 ---

@@ -2,7 +2,7 @@
 layout: default
 title: Wooden Hoe
 heading: Wooden Hoe
-description: "[tool][:farming:hoe_wood]"
+description: "[tool][farming:hoe_wood]"
 permalink: /items/farming-hoe-wood/
 icon: /items/textures/farming_tool_woodhoe.png
 ---

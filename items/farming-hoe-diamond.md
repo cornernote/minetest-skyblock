@@ -2,7 +2,7 @@
 layout: default
 title: Diamond Hoe
 heading: Diamond Hoe
-description: "[tool][:farming:hoe_diamond]"
+description: "[tool][farming:hoe_diamond]"
 permalink: /items/farming-hoe-diamond/
 icon: /items/textures/farming_tool_diamondhoe.png
 ---

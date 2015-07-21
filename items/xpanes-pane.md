@@ -2,7 +2,7 @@
 layout: default
 title: Glass Pane
 heading: Glass Pane
-description: "[node][:xpanes:pane]"
+description: "[node][xpanes:pane]"
 permalink: /items/xpanes-pane/
 icon: /items/itemcubes/xpanes_pane.png
 ---

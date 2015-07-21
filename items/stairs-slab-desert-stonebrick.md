@@ -2,7 +2,7 @@
 layout: default
 title: Desert Stone Brick Slab
 heading: Desert Stone Brick Slab
-description: "[node][:stairs:slab_desert_stonebrick]"
+description: "[node][stairs:slab_desert_stonebrick]"
 permalink: /items/stairs-slab-desert-stonebrick/
 icon: /items/itemcubes/stairs_slab_desert_stonebrick.png
 ---

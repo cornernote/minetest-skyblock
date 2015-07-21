@@ -2,7 +2,7 @@
 layout: default
 title: Obsidian Stair
 heading: Obsidian Stair
-description: "[node][:stairs:stair_obsidian]"
+description: "[node][stairs:stair_obsidian]"
 permalink: /items/stairs-stair-obsidian/
 icon: /items/itemcubes/stairs_stair_obsidian.png
 ---

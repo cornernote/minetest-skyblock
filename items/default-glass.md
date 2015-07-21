@@ -41,5 +41,5 @@ icon: /items/itemcubes/default_glass.png
     <li><a href="{{site.baseurl}}/items/doors-door-glass/"><img src="{{site.baseurl}}/assets/img/items/textures/doors_glass.png" data-toggle="tooltip" title="Glass Door [craft][doors:door_glass]"></a></li>
     <li><a href="{{site.baseurl}}/items/vessels-drinking-glass/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/vessels_drinking_glass.png" data-toggle="tooltip" title="Drinking Glass (empty) [node][vessels:drinking_glass]"></a></li>
     <li><a href="{{site.baseurl}}/items/vessels-glass-bottle/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/vessels_glass_bottle.png" data-toggle="tooltip" title="Glass Bottle (empty) [node][vessels:glass_bottle]"></a></li>
-    <li><a href="{{site.baseurl}}/items/xpanes-pane/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/xpanes_pane.png" data-toggle="tooltip" title="Glass Pane [node][:xpanes:pane]"></a></li>
+    <li><a href="{{site.baseurl}}/items/xpanes-pane/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/xpanes_pane.png" data-toggle="tooltip" title="Glass Pane [node][xpanes:pane]"></a></li>
 </ul>

@@ -32,5 +32,5 @@ icon: /items/itemcubes/default_mossycobble.png
 ## Used for Crafts
 
 <ul class="list-items">
-    <li><a href="{{site.baseurl}}/items/default-stone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stone.png" data-toggle="tooltip" title="Stone [node][:default:stone]"></a></li>
+    <li><a href="{{site.baseurl}}/items/default-stone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stone.png" data-toggle="tooltip" title="Stone [node][default:stone]"></a></li>
 </ul>

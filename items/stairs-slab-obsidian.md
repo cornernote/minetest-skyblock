@@ -2,7 +2,7 @@
 layout: default
 title: Obsidian Slab
 heading: Obsidian Slab
-description: "[node][:stairs:slab_obsidian]"
+description: "[node][stairs:slab_obsidian]"
 permalink: /items/stairs-slab-obsidian/
 icon: /items/itemcubes/stairs_slab_obsidian.png
 ---

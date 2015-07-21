@@ -2,7 +2,7 @@
 layout: default
 title: Brick Slab
 heading: Brick Slab
-description: "[node][:stairs:slab_brick]"
+description: "[node][stairs:slab_brick]"
 permalink: /items/stairs-slab-brick/
 icon: /items/itemcubes/stairs_slab_brick.png
 ---

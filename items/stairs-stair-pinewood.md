@@ -2,7 +2,7 @@
 layout: default
 title: Pinewood Stair
 heading: Pinewood Stair
-description: "[node][:stairs:stair_pinewood]"
+description: "[node][stairs:stair_pinewood]"
 permalink: /items/stairs-stair-pinewood/
 icon: /items/itemcubes/stairs_stair_pinewood.png
 ---

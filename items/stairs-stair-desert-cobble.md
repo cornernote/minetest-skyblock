@@ -2,7 +2,7 @@
 layout: default
 title: Desert Cobblestone Stair
 heading: Desert Cobblestone Stair
-description: "[node][:stairs:stair_desert_cobble]"
+description: "[node][stairs:stair_desert_cobble]"
 permalink: /items/stairs-stair-desert-cobble/
 icon: /items/itemcubes/stairs_stair_desert_cobble.png
 ---

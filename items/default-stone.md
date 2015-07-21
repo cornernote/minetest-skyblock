@@ -41,6 +41,6 @@ icon: /items/itemcubes/default_stone.png
     <li><a href="{{site.baseurl}}/items/default-stone-with-coal/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stone_with_coal.png" data-toggle="tooltip" title="Coal Ore [node][default:stone_with_coal]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-stone-with-iron/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stone_with_iron.png" data-toggle="tooltip" title="Iron Ore [node][default:stone_with_iron]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-stonebrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stonebrick.png" data-toggle="tooltip" title="Stone Brick [node][default:stonebrick]"></a></li>
-    <li><a href="{{site.baseurl}}/items/stairs-slab-stone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_stone.png" data-toggle="tooltip" title="Stone Slab [node][:stairs:slab_stone]"></a></li>
-    <li><a href="{{site.baseurl}}/items/stairs-stair-stone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_stone.png" data-toggle="tooltip" title="Stone Stair [node][:stairs:stair_stone]"></a></li>
+    <li><a href="{{site.baseurl}}/items/stairs-slab-stone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_stone.png" data-toggle="tooltip" title="Stone Slab [node][stairs:slab_stone]"></a></li>
+    <li><a href="{{site.baseurl}}/items/stairs-stair-stone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_stone.png" data-toggle="tooltip" title="Stone Stair [node][stairs:stair_stone]"></a></li>
 </ul>

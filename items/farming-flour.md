@@ -12,12 +12,12 @@ icon: /items/textures/farming_flour.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/farming-wheat/"><img src="{{site.baseurl}}/assets/img/items/textures/farming_wheat.png" data-toggle="tooltip" title="Wheat [craft][:farming:wheat]"></a></span>
-        <span><a href="{{site.baseurl}}/items/farming-wheat/"><img src="{{site.baseurl}}/assets/img/items/textures/farming_wheat.png" data-toggle="tooltip" title="Wheat [craft][:farming:wheat]"></a></span>
-        <span><a href="{{site.baseurl}}/items/farming-wheat/"><img src="{{site.baseurl}}/assets/img/items/textures/farming_wheat.png" data-toggle="tooltip" title="Wheat [craft][:farming:wheat]"></a></span>
+        <span><a href="{{site.baseurl}}/items/farming-wheat/"><img src="{{site.baseurl}}/assets/img/items/textures/farming_wheat.png" data-toggle="tooltip" title="Wheat [craft][farming:wheat]"></a></span>
+        <span><a href="{{site.baseurl}}/items/farming-wheat/"><img src="{{site.baseurl}}/assets/img/items/textures/farming_wheat.png" data-toggle="tooltip" title="Wheat [craft][farming:wheat]"></a></span>
+        <span><a href="{{site.baseurl}}/items/farming-wheat/"><img src="{{site.baseurl}}/assets/img/items/textures/farming_wheat.png" data-toggle="tooltip" title="Wheat [craft][farming:wheat]"></a></span>
     </div>
     <div>
-        <span><a href="{{site.baseurl}}/items/farming-wheat/"><img src="{{site.baseurl}}/assets/img/items/textures/farming_wheat.png" data-toggle="tooltip" title="Wheat [craft][:farming:wheat]"></a></span>
+        <span><a href="{{site.baseurl}}/items/farming-wheat/"><img src="{{site.baseurl}}/assets/img/items/textures/farming_wheat.png" data-toggle="tooltip" title="Wheat [craft][farming:wheat]"></a></span>
         <span></span>
         <span></span>
     </div>

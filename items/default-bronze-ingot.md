@@ -55,5 +55,5 @@ icon: /items/textures/default_bronze_ingot.png
     <li><a href="{{site.baseurl}}/items/default-pick-bronze/"><img src="{{site.baseurl}}/assets/img/items/textures/default_tool_bronzepick.png" data-toggle="tooltip" title="Bronze Pickaxe [tool][default:pick_bronze]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-shovel-bronze/"><img src="{{site.baseurl}}/assets/img/items/textures/default_tool_bronzeshovel.png" data-toggle="tooltip" title="Bronze Shovel [tool][default:shovel_bronze]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-sword-bronze/"><img src="{{site.baseurl}}/assets/img/items/textures/default_tool_bronzesword.png" data-toggle="tooltip" title="Bronze Sword [tool][default:sword_bronze]"></a></li>
-    <li><a href="{{site.baseurl}}/items/farming-hoe-bronze/"><img src="{{site.baseurl}}/assets/img/items/textures/farming_tool_bronzehoe.png" data-toggle="tooltip" title="Bronze Hoe [tool][:farming:hoe_bronze]"></a></li>
+    <li><a href="{{site.baseurl}}/items/farming-hoe-bronze/"><img src="{{site.baseurl}}/assets/img/items/textures/farming_tool_bronzehoe.png" data-toggle="tooltip" title="Bronze Hoe [tool][farming:hoe_bronze]"></a></li>
 </ul>

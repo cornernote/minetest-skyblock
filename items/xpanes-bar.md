@@ -2,7 +2,7 @@
 layout: default
 title: Iron bar
 heading: Iron bar
-description: "[node][:xpanes:bar]"
+description: "[node][xpanes:bar]"
 permalink: /items/xpanes-bar/
 icon: /items/itemcubes/xpanes_bar.png
 ---

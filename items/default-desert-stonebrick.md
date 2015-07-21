@@ -32,6 +32,6 @@ icon: /items/itemcubes/default_desert_stonebrick.png
 ## Used for Crafts
 
 <ul class="list-items">
-    <li><a href="{{site.baseurl}}/items/stairs-slab-desert-stonebrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_desert_stonebrick.png" data-toggle="tooltip" title="Desert Stone Brick Slab [node][:stairs:slab_desert_stonebrick]"></a></li>
-    <li><a href="{{site.baseurl}}/items/stairs-stair-desert-stonebrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_desert_stonebrick.png" data-toggle="tooltip" title="Desert Stone Brick Stair [node][:stairs:stair_desert_stonebrick]"></a></li>
+    <li><a href="{{site.baseurl}}/items/stairs-slab-desert-stonebrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_desert_stonebrick.png" data-toggle="tooltip" title="Desert Stone Brick Slab [node][stairs:slab_desert_stonebrick]"></a></li>
+    <li><a href="{{site.baseurl}}/items/stairs-stair-desert-stonebrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_desert_stonebrick.png" data-toggle="tooltip" title="Desert Stone Brick Stair [node][stairs:stair_desert_stonebrick]"></a></li>
 </ul>

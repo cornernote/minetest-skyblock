@@ -2,7 +2,7 @@
 layout: default
 title: Wheat
 heading: Wheat
-description: "[craft][:farming:wheat]"
+description: "[craft][farming:wheat]"
 permalink: /items/farming-wheat/
 icon: /items/textures/farming_wheat.png
 ---
