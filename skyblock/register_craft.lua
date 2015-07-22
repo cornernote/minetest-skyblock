@@ -77,13 +77,6 @@ minetest.register_craft({
 	}
 })
 
--- scorched_stuff
-minetest.register_craft({
-	type = "cooking",
-	output = "default:scorched_stuff 4",
-	recipe = "default:dry_shrub",
-})
-
 -- dirt_with_grass
 minetest.register_craft({
 	output = "default:dirt_with_grass",
@@ -109,22 +102,6 @@ minetest.register_craft({
 		{"default:leaves", "default:leaves", "default:leaves"},
 		{"default:leaves", "default:leaves", "default:leaves"},
 		{"", "default:stick", ""},
-	}
-})
-
--- recycle ignots from block
-minetest.register_craft({
-	output = "default:steel_ingot 9",
-	recipe = {
-		{"default:steelblock"},
-	}
-})
-
--- recycle sand from sandstone
-minetest.register_craft({
-	output = "default:sand 4",
-	recipe = {
-		{"default:sandstone"},
 	}
 })
 
