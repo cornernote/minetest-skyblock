@@ -30,7 +30,7 @@ minetest.register_craft({
 minetest.register_craft({
 	output = "default:mossycobble",
 	recipe = {
-		{"default:junglegrass"},
+		{"group:flora"},
 		{"default:cobble"},
 	}
 })
