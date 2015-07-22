@@ -25,9 +25,8 @@ minetest.register_abm({
 			return
 		end
 
-		local pos0 = {x=pos.x-4,y=pos.y-4,z=pos.z-4}
-		local pos1 = {x=pos.x+4,y=pos.y+4,z=pos.z+4}
-		if #minetest.find_nodes_in_area(pos0, pos1, "group:flora") > 0 then
+		-- check for nearby
+		if minetest.env:find_node_near(pos, 2, {"group:flora"}) ~= nil then
 			return
 		end
 
