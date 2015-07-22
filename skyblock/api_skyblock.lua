@@ -34,6 +34,7 @@ end
 
 -- dump_pos
 skyblock.dump_pos = function(pos)
+	if pos==nil then return 'nil' end
 	return '{x='..pos.x..',y='..pos.x..',z='..pos.z..'}'
 end
 
