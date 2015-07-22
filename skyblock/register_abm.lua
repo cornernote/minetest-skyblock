@@ -11,32 +11,48 @@ REGISTER ABM
 ]]--
 
 
--- sapling grows to tree
-minetest.register_abm({
-	nodenames = "default:sapling",
-	interval = 30,
-	chance = 10,
-	action = function(pos)
-		skyblock.generate_tree(pos)
-    end
-})
-
--- junglegrass and dry_shrub spawns on sand, desert_sand and dirt_with_grass
+-- flora and dry_shrub spawns on sand, desert_sand and dirt_with_grass
 minetest.register_abm({
 	nodenames = {"default:sand", "default:desert_sand", "default:dirt_with_grass"},
 	interval = 300,
 	chance = 100,
 	action = function(pos, node)
-		skyblock.log("consider spawn junglegrass or dry_shrub at "..skyblock.dump_pos(pos).." on "..minetest.env:get_node(pos).name)
+		skyblock.log("consider spawn flora or dry_shrub at "..skyblock.dump_pos(pos).." on "..minetest.env:get_node(pos).name)
 		pos.y = pos.y+1
-		if minetest.env:get_node(pos).name == "air" and minetest.env:find_node_near(pos, 4, {"default:dry_shrub","default:junglegrass"})==nil then
-			if math.random(1,5) > 2 then
-				skyblock.log("spawn dry_shrub at "..skyblock.dump_pos(pos).." on "..minetest.env:get_node(pos).name)
-				minetest.env:set_node(pos, {name="default:dry_shrub"})
-			else
-				skyblock.log("spawn junglegrass at "..skyblock.dump_pos(pos).." on "..minetest.env:get_node(pos).name)
-				minetest.env:set_node(pos, {name="default:junglegrass"})
+
+		local light = minetest.get_node_light(pos)
+		if not light or light < 13 then
+			return
+		end
+
+		local pos0 = {x=pos.x-4,y=pos.y-4,z=pos.z-4}
+		local pos1 = {x=pos.x+4,y=pos.y+4,z=pos.z+4}
+		if #minetest.find_nodes_in_area(pos0, pos1, "group:flora_block") > 0 then
+			return
+		end
+
+		if minetest.env:get_node(pos).name == "air" then
+			local rand = math.random(1,8);
+			local node
+			if rand==1 then
+				node = "default:dry_shrub"
+			elseif rand==2 then
+				node = "default:junglegrass"
+			elseif rand==3 then
+				node = "flowers:dandelion_white"
+			elseif rand==4 then
+				node = "flowers:dandelion_yellow"
+			elseif rand==5 then
+				node = "flowers:geranium"
+			elseif rand==6 then
+				node = "flowers:rose"
+			elseif rand==7 then
+				node = "flowers:tulip"
+			elseif rand==8 then
+				node = "flowers:viola"
 			end
+			skyblock.log("spawn "..node.." at "..skyblock.dump_pos(pos).." on "..minetest.env:get_node(pos).name)
+			minetest.env:set_node(pos, {name=node})
 		end
 	end
 })
@@ -175,42 +191,6 @@ minetest.register_abm({
    		end
     end
 })
-
--- lava_flowing next to water_source will turn to stone
-minetest.register_abm({
-	nodenames = {"default:lava_flowing"},
-	neighbors = {"default:water_source"},
-	interval = 2,
-	chance = 1,
-	action = function(pos)
-		skyblock.log("create stone at "..skyblock.dump_pos(pos).." on "..minetest.env:get_node(pos).name)
-		minetest.env:add_node(pos, {name="default:stone"})
-	end,
-})
-
--- lava_source next to water_flowing will turn the water_flowing to stone
--- lava_source next to water_source will turn the lava_source to stone
-minetest.register_abm({
-	nodenames = {"default:lava_source"},
-	neighbors = {"default:water_source", "default:water_flowing"},
-	interval = 2,
-	chance = 1,
-	action = function(pos)
-		skyblock.log("consider create stone at "..skyblock.dump_pos(pos).." on "..minetest.env:get_node(pos).name)
-		local waterpos = minetest.env:find_node_near(pos,1,{"default:water_flowing"})
-		if waterpos==nil then
-			skyblock.log("create stone at "..skyblock.dump_pos(pos).." on "..minetest.env:get_node(pos).name)
-			minetest.env:add_node(pos, {name="default:stone"})
-		else
-			while waterpos ~=nil do
-				skyblock.log("create stone at "..skyblock.dump_pos(pos).." on "..minetest.env:get_node(pos).name)
-				minetest.env:add_node(waterpos, {name="default:stone"})
-				waterpos = minetest.env:find_node_near(pos,1,{"default:water_flowing"})
-			end
-		end
-	end,
-})
-
 
 -- water or lava at sealevel
 if skyblock.MODE == "water" or skyblock.MODE == "lava"  then
