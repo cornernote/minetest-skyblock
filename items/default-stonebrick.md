@@ -40,6 +40,5 @@ icon: /items/itemcubes/default_stonebrick.png
 ## Belongs to Groups
 
 <ul class="list-items clearfix">
-    <li><a href="{{site.baseurl}}/items/group-cracky/"><span class="item-group" data-toggle="tooltip" title="Group: Cracky [group][cracky]"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_brick.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_bronzeblock.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_coalblock.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_cobble.png"></span></a></li>
     <li><a href="{{site.baseurl}}/items/group-stone/"><span class="item-group" data-toggle="tooltip" title="Group: Stone [group][stone]"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_cobble.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_cobble.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_stone.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_stonebrick.png"></span></a></li>
 </ul>

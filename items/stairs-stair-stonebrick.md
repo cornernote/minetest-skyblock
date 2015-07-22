@@ -45,10 +45,3 @@ icon: /items/itemcubes/stairs_stair_stonebrick.png
         <span><a href="{{site.baseurl}}/items/default-stonebrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stonebrick.png" data-toggle="tooltip" title="Stone Brick [node][default:stonebrick]"></a></span>
     </div>
 </div>
-
-
-## Belongs to Groups
-
-<ul class="list-items clearfix">
-    <li><a href="{{site.baseurl}}/items/group-cracky/"><span class="item-group" data-toggle="tooltip" title="Group: Cracky [group][cracky]"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_brick.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_bronzeblock.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_coalblock.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_cobble.png"></span></a></li>
-</ul>

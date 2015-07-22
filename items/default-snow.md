@@ -34,11 +34,3 @@ icon: /items/itemcubes/default_snow.png
 <ul class="list-items clearfix">
     <li><a href="{{site.baseurl}}/items/default-snowblock/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_snowblock.png" data-toggle="tooltip" title="Snow Block [node][default:snowblock]"></a></li>
 </ul>
-
-
-## Belongs to Groups
-
-<ul class="list-items clearfix">
-    <li><a href="{{site.baseurl}}/items/group-crumbly/"><span class="item-group" data-toggle="tooltip" title="Group: Crumbly [group][crumbly]"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_clay.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_sand.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_dirt.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_dirt_with_grass.png"></span></a></li>
-    <li><a href="{{site.baseurl}}/items/group-falling-node/"><span class="item-group" data-toggle="tooltip" title="Group: Falling Node [group][falling_node]"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_sand.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_gravel.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sand.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_snow.png"></span></a></li>
-</ul>

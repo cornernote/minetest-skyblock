@@ -35,11 +35,3 @@ icon: /items/itemcubes/default_obsidianbrick.png
     <li><a href="{{site.baseurl}}/items/stairs-slab-obsidianbrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_obsidianbrick.png" data-toggle="tooltip" title="Obsidian Brick Slab [node][stairs:slab_obsidianbrick]"></a></li>
     <li><a href="{{site.baseurl}}/items/stairs-stair-obsidianbrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_obsidianbrick.png" data-toggle="tooltip" title="Obsidian Brick Stair [node][stairs:stair_obsidianbrick]"></a></li>
 </ul>
-
-
-## Belongs to Groups
-
-<ul class="list-items clearfix">
-    <li><a href="{{site.baseurl}}/items/group-cracky/"><span class="item-group" data-toggle="tooltip" title="Group: Cracky [group][cracky]"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_brick.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_bronzeblock.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_coalblock.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_cobble.png"></span></a></li>
-    <li><a href="{{site.baseurl}}/items/group-level/"><span class="item-group" data-toggle="tooltip" title="Group: Level [group][level]"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_bronzeblock.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_copperblock.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_diamondblock.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_mese.png"></span></a></li>
-</ul>

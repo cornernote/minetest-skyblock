@@ -35,11 +35,3 @@ icon: /items/itemcubes/default_chest.png
     <li><a href="{{site.baseurl}}/items/fire-basic-flame/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/fire_basic_flame.png" data-toggle="tooltip" title="Fire [node][fire:basic_flame]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-chest-locked/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_chest_locked.png" data-toggle="tooltip" title="Locked Chest [node][default:chest_locked]"></a></li>
 </ul>
-
-
-## Belongs to Groups
-
-<ul class="list-items clearfix">
-    <li><a href="{{site.baseurl}}/items/group-choppy/"><span class="item-group" data-toggle="tooltip" title="Group: Choppy [group][choppy]"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_bookshelf.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_cactus.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_chest.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_chest_locked.png"></span></a></li>
-    <li><a href="{{site.baseurl}}/items/group-oddly-breakable-by-hand/"><span class="item-group" data-toggle="tooltip" title="Group: Oddly Breakable By Hand [group][oddly_breakable_by_hand]"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_bookshelf.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_chest.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_chest_locked.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_fence_wood.png"></span></a></li>
-</ul>
