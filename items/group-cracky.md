@@ -20,7 +20,6 @@ permalink: /items/group-cracky/
     <li><a href="{{site.baseurl}}/items/default-desert-stonebrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_stonebrick.png" data-toggle="tooltip" title="Desert Stone Brick [node][default:desert_stonebrick]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-diamondblock/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_diamondblock.png" data-toggle="tooltip" title="Diamond Block [node][default:diamondblock]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-furnace/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_furnace.png" data-toggle="tooltip" title="Furnace [node][default:furnace]"></a></li>
-    <li><a href="{{site.baseurl}}/items/default-furnace-active/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_furnace_active.png" data-toggle="tooltip" title="Furnace [node][default:furnace_active]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-glass/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_glass.png" data-toggle="tooltip" title="Glass [node][default:glass]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-goldblock/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_goldblock.png" data-toggle="tooltip" title="Gold Block [node][default:goldblock]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-ice/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_ice.png" data-toggle="tooltip" title="Ice [node][default:ice]"></a></li>

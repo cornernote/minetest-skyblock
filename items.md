@@ -105,7 +105,6 @@ permalink: /items/
 <li><a href="{{site.baseurl}}/items/default-chest/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_chest.png" data-toggle="tooltip" title="Chest [node][default:chest]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-chest-locked/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_chest_locked.png" data-toggle="tooltip" title="Locked Chest [node][default:chest_locked]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-clay/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_clay.png" data-toggle="tooltip" title="Clay [node][default:clay]"></a></li>
-<li><a href="{{site.baseurl}}/items/default-cloud/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_cloud.png" data-toggle="tooltip" title="Cloud [node][default:cloud]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-coalblock/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_coalblock.png" data-toggle="tooltip" title="Coal Block [node][default:coalblock]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-cobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_cobble.png" data-toggle="tooltip" title="Cobblestone [node][default:cobble]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-copperblock/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_copperblock.png" data-toggle="tooltip" title="Copper Block [node][default:copperblock]"></a></li>
@@ -121,7 +120,6 @@ permalink: /items/
 <li><a href="{{site.baseurl}}/items/default-dry-shrub/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_dry_shrub.png" data-toggle="tooltip" title="Dry Shrub [node][default:dry_shrub]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-fence-wood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_fence_wood.png" data-toggle="tooltip" title="Wooden Fence [node][default:fence_wood]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-furnace/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_furnace.png" data-toggle="tooltip" title="Furnace [node][default:furnace]"></a></li>
-<li><a href="{{site.baseurl}}/items/default-furnace-active/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_furnace_active.png" data-toggle="tooltip" title="Furnace [node][default:furnace_active]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-glass/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_glass.png" data-toggle="tooltip" title="Glass [node][default:glass]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-goldblock/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_goldblock.png" data-toggle="tooltip" title="Gold Block [node][default:goldblock]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-grass-1/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_grass_1.png" data-toggle="tooltip" title="Grass [node][default:grass_1]"></a></li>
