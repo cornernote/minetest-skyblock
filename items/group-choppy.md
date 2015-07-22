@@ -10,13 +10,6 @@ permalink: /items/group-choppy/
 ## Items in Group
 
 <ul class="list-items clearfix">
-    <li><a href="{{site.baseurl}}/items/default-tree/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_tree.png" data-toggle="tooltip" title="Tree [node][default:tree]"></a></li>
-    <li><a href="{{site.baseurl}}/items/stairs-slab-junglewood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_junglewood.png" data-toggle="tooltip" title="Junglewood Slab [node][stairs:slab_junglewood]"></a></li>
-    <li><a href="{{site.baseurl}}/items/stairs-slab-pinewood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_pinewood.png" data-toggle="tooltip" title="Pinewood Slab [node][stairs:slab_pinewood]"></a></li>
-    <li><a href="{{site.baseurl}}/items/stairs-slab-wood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_wood.png" data-toggle="tooltip" title="Wooden Slab [node][stairs:slab_wood]"></a></li>
-    <li><a href="{{site.baseurl}}/items/stairs-stair-junglewood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_junglewood.png" data-toggle="tooltip" title="Junglewood Stair [node][stairs:stair_junglewood]"></a></li>
-    <li><a href="{{site.baseurl}}/items/stairs-stair-pinewood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_pinewood.png" data-toggle="tooltip" title="Pinewood Stair [node][stairs:stair_pinewood]"></a></li>
-    <li><a href="{{site.baseurl}}/items/stairs-stair-wood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_wood.png" data-toggle="tooltip" title="Wooden Stair [node][stairs:stair_wood]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-bookshelf/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_bookshelf.png" data-toggle="tooltip" title="Bookshelf [node][default:bookshelf]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-cactus/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_cactus.png" data-toggle="tooltip" title="Cactus [node][default:cactus]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-chest/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_chest.png" data-toggle="tooltip" title="Chest [node][default:chest]"></a></li>
@@ -32,6 +25,12 @@ permalink: /items/group-choppy/
     <li><a href="{{site.baseurl}}/items/default-tree/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_tree.png" data-toggle="tooltip" title="Tree [node][default:tree]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-wood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_wood.png" data-toggle="tooltip" title="Wooden Planks [node][default:wood]"></a></li>
     <li><a href="{{site.baseurl}}/items/doors-trapdoor/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/doors_trapdoor.png" data-toggle="tooltip" title="Trapdoor [node][doors:trapdoor]"></a></li>
+    <li><a href="{{site.baseurl}}/items/stairs-slab-junglewood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_junglewood.png" data-toggle="tooltip" title="Junglewood Slab [node][stairs:slab_junglewood]"></a></li>
+    <li><a href="{{site.baseurl}}/items/stairs-slab-pinewood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_pinewood.png" data-toggle="tooltip" title="Pinewood Slab [node][stairs:slab_pinewood]"></a></li>
+    <li><a href="{{site.baseurl}}/items/stairs-slab-wood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_wood.png" data-toggle="tooltip" title="Wooden Slab [node][stairs:slab_wood]"></a></li>
+    <li><a href="{{site.baseurl}}/items/stairs-stair-junglewood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_junglewood.png" data-toggle="tooltip" title="Junglewood Stair [node][stairs:stair_junglewood]"></a></li>
+    <li><a href="{{site.baseurl}}/items/stairs-stair-pinewood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_pinewood.png" data-toggle="tooltip" title="Pinewood Stair [node][stairs:stair_pinewood]"></a></li>
+    <li><a href="{{site.baseurl}}/items/stairs-stair-wood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_wood.png" data-toggle="tooltip" title="Wooden Stair [node][stairs:stair_wood]"></a></li>
     <li><a href="{{site.baseurl}}/items/wool-black/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/wool_black.png" data-toggle="tooltip" title="Black Wool [node][wool:black]"></a></li>
     <li><a href="{{site.baseurl}}/items/wool-blue/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/wool_blue.png" data-toggle="tooltip" title="Blue Wool [node][wool:blue]"></a></li>
     <li><a href="{{site.baseurl}}/items/wool-brown/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/wool_brown.png" data-toggle="tooltip" title="Brown Wool [node][wool:brown]"></a></li>

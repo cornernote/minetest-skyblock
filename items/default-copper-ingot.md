@@ -46,4 +46,5 @@ icon: /items/textures/default_copper_ingot.png
 <ul class="list-items clearfix">
     <li><a href="{{site.baseurl}}/items/default-bronze-ingot/"><img src="{{site.baseurl}}/assets/img/items/textures/default_bronze_ingot.png" data-toggle="tooltip" title="Bronze Ingot [craft][default:bronze_ingot]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-copperblock/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_copperblock.png" data-toggle="tooltip" title="Copper Block [node][default:copperblock]"></a></li>
+    <li><a href="{{site.baseurl}}/items/default-stone-with-copper/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stone_with_copper.png" data-toggle="tooltip" title="Copper Ore [node][default:stone_with_copper]"></a></li>
 </ul>

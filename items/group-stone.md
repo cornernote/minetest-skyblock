@@ -10,7 +10,6 @@ permalink: /items/group-stone/
 ## Items in Group
 
 <ul class="list-items clearfix">
-    <li><a href="{{site.baseurl}}/items/default-stone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stone.png" data-toggle="tooltip" title="Stone [node][default:stone]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-cobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_cobble.png" data-toggle="tooltip" title="Cobblestone [node][default:cobble]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-desert-cobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_cobble.png" data-toggle="tooltip" title="Desert Cobblestone [node][default:desert_cobble]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-desert-stone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_stone.png" data-toggle="tooltip" title="Desert Stone [node][default:desert_stone]"></a></li>

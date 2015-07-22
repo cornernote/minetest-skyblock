@@ -10,8 +10,6 @@ permalink: /items/group-attached-node/
 ## Items in Group
 
 <ul class="list-items clearfix">
-    <li><a href="{{site.baseurl}}/items/farming-seed-cotton/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/farming_seed_cotton.png" data-toggle="tooltip" title="Cotton seed [node][farming:seed_cotton]"></a></li>
-    <li><a href="{{site.baseurl}}/items/farming-seed-wheat/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/farming_seed_wheat.png" data-toggle="tooltip" title="Wheat seed [node][farming:seed_wheat]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-dry-shrub/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_dry_shrub.png" data-toggle="tooltip" title="Dry Shrub [node][default:dry_shrub]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-grass-1/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_grass_1.png" data-toggle="tooltip" title="Grass [node][default:grass_1]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-junglegrass/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_junglegrass.png" data-toggle="tooltip" title="Jungle Grass [node][default:junglegrass]"></a></li>
@@ -21,6 +19,8 @@ permalink: /items/group-attached-node/
     <li><a href="{{site.baseurl}}/items/default-sapling/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sapling.png" data-toggle="tooltip" title="Sapling [node][default:sapling]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-sign-wall/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sign_wall.png" data-toggle="tooltip" title="Sign [node][default:sign_wall]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-torch/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_torch.png" data-toggle="tooltip" title="Torch [node][default:torch]"></a></li>
+    <li><a href="{{site.baseurl}}/items/farming-seed-cotton/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/farming_seed_cotton.png" data-toggle="tooltip" title="Cotton seed [node][farming:seed_cotton]"></a></li>
+    <li><a href="{{site.baseurl}}/items/farming-seed-wheat/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/farming_seed_wheat.png" data-toggle="tooltip" title="Wheat seed [node][farming:seed_wheat]"></a></li>
     <li><a href="{{site.baseurl}}/items/flowers-dandelion-white/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/flowers_dandelion_white.png" data-toggle="tooltip" title="White Dandelion [node][flowers:dandelion_white]"></a></li>
     <li><a href="{{site.baseurl}}/items/flowers-dandelion-yellow/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/flowers_dandelion_yellow.png" data-toggle="tooltip" title="Yellow Dandelion [node][flowers:dandelion_yellow]"></a></li>
     <li><a href="{{site.baseurl}}/items/flowers-geranium/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/flowers_geranium.png" data-toggle="tooltip" title="Blue Geranium [node][flowers:geranium]"></a></li>

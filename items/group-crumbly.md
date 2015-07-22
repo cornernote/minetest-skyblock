@@ -10,11 +10,6 @@ permalink: /items/group-crumbly/
 ## Items in Group
 
 <ul class="list-items clearfix">
-    <li><a href="{{site.baseurl}}/items/default-sandstone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sandstone.png" data-toggle="tooltip" title="Sandstone [node][default:sandstone]"></a></li>
-    <li><a href="{{site.baseurl}}/items/stairs-slab-sandstone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_sandstone.png" data-toggle="tooltip" title="Sandstone Slab [node][stairs:slab_sandstone]"></a></li>
-    <li><a href="{{site.baseurl}}/items/stairs-slab-sandstonebrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_sandstonebrick.png" data-toggle="tooltip" title="Sandstone Brick Slab [node][stairs:slab_sandstonebrick]"></a></li>
-    <li><a href="{{site.baseurl}}/items/stairs-stair-sandstone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_sandstone.png" data-toggle="tooltip" title="Sandstone Stair [node][stairs:stair_sandstone]"></a></li>
-    <li><a href="{{site.baseurl}}/items/stairs-stair-sandstonebrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_sandstonebrick.png" data-toggle="tooltip" title="Sandstone Brick Stair [node][stairs:stair_sandstonebrick]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-clay/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_clay.png" data-toggle="tooltip" title="Clay [node][default:clay]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-desert-sand/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_sand.png" data-toggle="tooltip" title="Desert Sand [node][default:desert_sand]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-dirt/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_dirt.png" data-toggle="tooltip" title="Dirt [node][default:dirt]"></a></li>
@@ -28,4 +23,8 @@ permalink: /items/group-crumbly/
     <li><a href="{{site.baseurl}}/items/default-snowblock/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_snowblock.png" data-toggle="tooltip" title="Snow Block [node][default:snowblock]"></a></li>
     <li><a href="{{site.baseurl}}/items/farming-desert-sand-soil/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/farming_desert_sand_soil.png" data-toggle="tooltip" title="Desert Sand Soil [node][farming:desert_sand_soil]"></a></li>
     <li><a href="{{site.baseurl}}/items/farming-soil/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/farming_soil.png" data-toggle="tooltip" title="Soil [node][farming:soil]"></a></li>
+    <li><a href="{{site.baseurl}}/items/stairs-slab-sandstone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_sandstone.png" data-toggle="tooltip" title="Sandstone Slab [node][stairs:slab_sandstone]"></a></li>
+    <li><a href="{{site.baseurl}}/items/stairs-slab-sandstonebrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_sandstonebrick.png" data-toggle="tooltip" title="Sandstone Brick Slab [node][stairs:slab_sandstonebrick]"></a></li>
+    <li><a href="{{site.baseurl}}/items/stairs-stair-sandstone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_sandstone.png" data-toggle="tooltip" title="Sandstone Stair [node][stairs:stair_sandstone]"></a></li>
+    <li><a href="{{site.baseurl}}/items/stairs-stair-sandstonebrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_sandstonebrick.png" data-toggle="tooltip" title="Sandstone Brick Stair [node][stairs:stair_sandstonebrick]"></a></li>
 </ul>
