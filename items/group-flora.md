@@ -19,3 +19,10 @@ permalink: /items/group-flora/
     <li><a href="{{site.baseurl}}/items/flowers-tulip/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/flowers_tulip.png" data-toggle="tooltip" title="Tulip [node][flowers:tulip]"></a></li>
     <li><a href="{{site.baseurl}}/items/flowers-viola/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/flowers_viola.png" data-toggle="tooltip" title="Viola [node][flowers:viola]"></a></li>
 </ul>
+
+
+## Used for Crafts
+
+<ul class="list-items clearfix">
+    <li><a href="{{site.baseurl}}/items/default-mossycobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_mossycobble.png" data-toggle="tooltip" title="Mossy Cobblestone [node][default:mossycobble]"></a></li>
+</ul>

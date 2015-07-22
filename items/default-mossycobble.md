@@ -12,7 +12,7 @@ icon: /items/itemcubes/default_mossycobble.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/default-junglegrass/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_junglegrass.png" data-toggle="tooltip" title="Jungle Grass [node][default:junglegrass]"></a></span>
+        <span><a href="{{site.baseurl}}/items/group-flora/"><span class="item-group" data-toggle="tooltip" title="Group: Flora [group][flora]"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_grass_1.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_junglegrass.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/flowers_dandelion_white.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/flowers_dandelion_yellow.png"></span></a></span>
         <span></span>
         <span></span>
     </div>
