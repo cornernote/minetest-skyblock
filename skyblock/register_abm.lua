@@ -11,13 +11,13 @@ REGISTER ABM
 ]]--
 
 
--- flora and dry_shrub spawns on sand, desert_sand and dirt_with_grass
+-- flora spawns on dirt_with_grass
 minetest.register_abm({
-	nodenames = {"default:sand", "default:desert_sand", "default:dirt_with_grass"},
+	nodenames = {"default:dirt_with_grass"},
 	interval = 300,
 	chance = 100,
 	action = function(pos, node)
-		skyblock.log("consider spawn flora or dry_shrub at "..skyblock.dump_pos(pos).." on "..minetest.env:get_node(pos).name)
+		skyblock.log("consider spawn flora at "..skyblock.dump_pos(pos).." on "..minetest.env:get_node(pos).name)
 		pos.y = pos.y+1
 
 		local light = minetest.get_node_light(pos)
@@ -31,25 +31,23 @@ minetest.register_abm({
 		end
 
 		if minetest.env:get_node(pos).name == "air" then
-			local rand = math.random(1,9);
+			local rand = math.random(1,8);
 			local node
 			if rand==1 then
-				node = "default:dry_shrub"
-			elseif rand==2 then
 				node = "default:junglegrass"
-			elseif rand==3 then
+			elseif rand==2 then
 				node = "default:grass_1"
-			elseif rand==4 then
+			elseif rand==3 then
 				node = "flowers:dandelion_white"
-			elseif rand==5 then
+			elseif rand==4 then
 				node = "flowers:dandelion_yellow"
-			elseif rand==6 then
+			elseif rand==5 then
 				node = "flowers:geranium"
-			elseif rand==7 then
+			elseif rand==6 then
 				node = "flowers:rose"
-			elseif rand==8 then
+			elseif rand==7 then
 				node = "flowers:tulip"
-			elseif rand==9 then
+			elseif rand==8 then
 				node = "flowers:viola"
 			end
 			skyblock.log("spawn "..node.." at "..skyblock.dump_pos(pos).." on "..minetest.env:get_node(pos).name)
