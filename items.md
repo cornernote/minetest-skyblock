@@ -161,6 +161,7 @@ permalink: /items/
 <li><a href="{{site.baseurl}}/items/default-furnace-active/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_furnace_active.png" data-toggle="tooltip" title="Furnace [node][default:furnace_active]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-glass/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_glass.png" data-toggle="tooltip" title="Glass [node][default:glass]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-goldblock/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_goldblock.png" data-toggle="tooltip" title="Gold Block [node][default:goldblock]"></a></li>
+<li><a href="{{site.baseurl}}/items/default-grass-1/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_grass_1.png" data-toggle="tooltip" title="Grass [node][default:grass_1]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-gravel/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_gravel.png" data-toggle="tooltip" title="Gravel [node][default:gravel]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-ice/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_ice.png" data-toggle="tooltip" title="Ice [node][default:ice]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-junglegrass/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_junglegrass.png" data-toggle="tooltip" title="Jungle Grass [node][default:junglegrass]"></a></li>

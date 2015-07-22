@@ -24,6 +24,7 @@ permalink: /items/group-snappy/
     <li><a href="{{site.baseurl}}/items/xpanes-pane/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/xpanes_pane.png" data-toggle="tooltip" title="Glass Pane [node][xpanes:pane]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-cactus/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_cactus.png" data-toggle="tooltip" title="Cactus [node][default:cactus]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-dry-shrub/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_dry_shrub.png" data-toggle="tooltip" title="Dry Shrub [node][default:dry_shrub]"></a></li>
+    <li><a href="{{site.baseurl}}/items/default-grass-1/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_grass_1.png" data-toggle="tooltip" title="Grass [node][default:grass_1]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-junglegrass/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_junglegrass.png" data-toggle="tooltip" title="Jungle Grass [node][default:junglegrass]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-jungleleaves/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_jungleleaves.png" data-toggle="tooltip" title="Jungle Leaves [node][default:jungleleaves]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-junglesapling/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_junglesapling.png" data-toggle="tooltip" title="Jungle Sapling [node][default:junglesapling]"></a></li>

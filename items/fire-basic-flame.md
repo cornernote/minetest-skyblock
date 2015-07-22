@@ -30,6 +30,7 @@ icon: /items/itemcubes/fire_basic_flame.png
 <li><a href="{{site.baseurl}}/items/default-coal-lump/"><img src="{{site.baseurl}}/assets/img/items/textures/default_coal_lump.png" data-toggle="tooltip" title="Coal Lump [craft][default:coal_lump]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-coalblock/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_coalblock.png" data-toggle="tooltip" title="Coal Block [node][default:coalblock]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-junglesapling/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_junglesapling.png" data-toggle="tooltip" title="Jungle Sapling [node][default:junglesapling]"></a></li>
+<li><a href="{{site.baseurl}}/items/default-grass-1/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_grass_1.png" data-toggle="tooltip" title="Grass [node][default:grass_1]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-pine-sapling/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_pine_sapling.png" data-toggle="tooltip" title="Pine Sapling [node][default:pine_sapling]"></a></li>
 <li><a href="{{site.baseurl}}/items/bucket-bucket-lava/"><img src="{{site.baseurl}}/assets/img/items/textures/bucket_lava.png" data-toggle="tooltip" title="Lava Bucket [craft][bucket:bucket_lava]"></a></li>
 </ul>
