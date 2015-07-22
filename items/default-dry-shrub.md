@@ -8,13 +8,6 @@ icon: /items/itemcubes/default_dry_shrub.png
 ---
 
 
-## Used for Crafts
-
-<ul class="list-items clearfix">
-    <li>default:scorched_stuff (missing item)</li>
-</ul>
-
-
 ## Belongs to Groups
 
 <ul class="list-items clearfix">
