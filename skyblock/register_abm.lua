@@ -27,7 +27,7 @@ minetest.register_abm({
 
 		local pos0 = {x=pos.x-4,y=pos.y-4,z=pos.z-4}
 		local pos1 = {x=pos.x+4,y=pos.y+4,z=pos.z+4}
-		if #minetest.find_nodes_in_area(pos0, pos1, "group:flora_block") > 0 then
+		if #minetest.find_nodes_in_area(pos0, pos1, "group:flora") > 0 then
 			return
 		end
 
@@ -79,29 +79,6 @@ minetest.register_abm({
 	end
 })
 
--- papyrus grows upto 3 in height
-minetest.register_abm({
-	nodenames = {"default:papyrus"},
-	interval = 100,
-	chance = 50,
-	action = function(pos, node)
-		skyblock.log("consider grow papyrus at "..skyblock.dump_pos(pos).." on "..minetest.env:get_node(pos).name)
-		-- check for space
-		for i=1,2 do
-			if minetest.env:get_node({x = pos.x, y = pos.y + i, z = pos.z}).name ~= "air" then
-				return
-			end
-		end
-		-- check height
-		if minetest.env:get_node({x = pos.x, y = pos.y - 3, z = pos.z}).name == "default:papyrus" then
-			return
-		end
-		-- grow
-		skyblock.log("grow papyrus at "..skyblock.dump_pos(pos).." on "..minetest.env:get_node(pos).name)
-		minetest.env:set_node({x = pos.x, y = pos.y + 1, z = pos.z}, {name="default:papyrus"})
-	end
-})
-
 -- cactus spawns on sand and desert_sand
 minetest.register_abm({
 	nodenames = {"default:sand", "default:desert_sand"},
@@ -125,30 +102,7 @@ minetest.register_abm({
 	end
 })
 
--- cactus grows upto 4 in height
-minetest.register_abm({
-	nodenames = {"default:cactus"},
-	interval = 200,
-	chance = 50,
-	action = function(pos, node)
-		skyblock.log("consider grow cactus at "..skyblock.dump_pos(pos).." on "..minetest.env:get_node(pos).name)
-		-- check for space
-		for i=1,2 do
-			if minetest.env:get_node({x = pos.x, y = pos.y + i, z = pos.z}).name ~= "air" then
-				return
-			end
-		end
-		-- check height
-		if minetest.env:get_node({x = pos.x, y = pos.y - 4, z = pos.z}).name == "default:cactus" then
-			return
-		end
-		-- grow
-		skyblock.log("grow cactus at "..skyblock.dump_pos(pos).." on "..minetest.env:get_node(pos).name)
-		minetest.env:set_node({x = pos.x, y = pos.y + 1, z = pos.z}, {name="default:cactus"})
-	end
-})
-
--- dirt turns to dirt_with_grass if below air
+-- dirt turns to dirt_with_grass if light
 minetest.register_abm({
 	nodenames = {"default:dirt"},
 	neighbors = {"air"},
@@ -156,25 +110,29 @@ minetest.register_abm({
 	chance = 100,
 	action = function(pos)
 		skyblock.log("consider grow dirt_with_grass at "..skyblock.dump_pos(pos).." on "..minetest.env:get_node(pos).name)
-   		if minetest.env:get_node({x = pos.x, y = pos.y + 1, z = pos.z}).name == "air" then
-			skyblock.log("grow dirt_with_grass at "..skyblock.dump_pos(pos).." on "..minetest.env:get_node(pos).name)
-			minetest.env:add_node(pos, {name="default:dirt_with_grass"})
-   		end
-    end
+		local light = minetest.get_node_light(pos)
+		if light >= 13 then
+			return
+		end
+		skyblock.log("grow dirt_with_grass at "..skyblock.dump_pos(pos).." on "..minetest.env:get_node(pos).name)
+		minetest.env:add_node(pos, {name="default:dirt_with_grass"})
+	end
 })
 
--- dirt_with_grass turns to dirt if not below air
+-- dirt_with_grass turns to dirt if no light
 minetest.register_abm({
 	nodenames = {"default:dirt_with_grass"},
 	interval = 50,
 	chance = 300,
 	action = function(pos)
-		skyblock.log("consider grow dirt at "..skyblock.dump_pos(pos).." on "..minetest.env:get_node(pos).name)
-   		if minetest.env:get_node({x = pos.x, y = pos.y + 1, z = pos.z}).name == "air" then
-			skyblock.log("grow dirt at "..skyblock.dump_pos(pos).." on "..minetest.env:get_node(pos).name)
-			minetest.env:add_node(pos, {name="default:dirt"})
-   		end
-    end
+		skyblock.log("consider kill dirt_with_grass at "..skyblock.dump_pos(pos).." on "..minetest.env:get_node(pos).name)
+		local light = minetest.get_node_light(pos)
+		if not light or light < 13 then
+			return
+		end
+		skyblock.log("kill dirt_with_grass at "..skyblock.dump_pos(pos).." on "..minetest.env:get_node(pos).name)
+		minetest.env:add_node(pos, {name="default:dirt"})
+	end
 })
 
 -- dirt_with_grass_footsteps turns to dirt_with_grass
@@ -191,7 +149,7 @@ minetest.register_abm({
 			skyblock.log("grow dirt at "..skyblock.dump_pos(pos).." on "..minetest.env:get_node(pos).name)
 			minetest.env:add_node(pos, {name="default:dirt"})
    		end
-    end
+	end
 })
 
 -- water or lava at sealevel
@@ -219,10 +177,10 @@ end
 
 -- remove bones
 minetest.register_abm({
-    nodenames = {"bones:bones"},
-    interval = 1,
-    chance = 1,
-    action = function(pos, node)
-        minetest.env:remove_node(pos)
-    end,
+	nodenames = {"bones:bones"},
+	interval = 1,
+	chance = 1,
+	action = function(pos, node)
+		minetest.env:remove_node(pos)
+	end,
 })
