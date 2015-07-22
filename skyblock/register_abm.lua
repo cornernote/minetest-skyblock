@@ -32,23 +32,25 @@ minetest.register_abm({
 		end
 
 		if minetest.env:get_node(pos).name == "air" then
-			local rand = math.random(1,8);
+			local rand = math.random(1,9);
 			local node
 			if rand==1 then
 				node = "default:dry_shrub"
 			elseif rand==2 then
 				node = "default:junglegrass"
 			elseif rand==3 then
-				node = "flowers:dandelion_white"
+				node = "default:grass_1"
 			elseif rand==4 then
-				node = "flowers:dandelion_yellow"
+				node = "flowers:dandelion_white"
 			elseif rand==5 then
-				node = "flowers:geranium"
+				node = "flowers:dandelion_yellow"
 			elseif rand==6 then
-				node = "flowers:rose"
+				node = "flowers:geranium"
 			elseif rand==7 then
-				node = "flowers:tulip"
+				node = "flowers:rose"
 			elseif rand==8 then
+				node = "flowers:tulip"
+			elseif rand==9 then
 				node = "flowers:viola"
 			end
 			skyblock.log("spawn "..node.." at "..skyblock.dump_pos(pos).." on "..minetest.env:get_node(pos).name)
