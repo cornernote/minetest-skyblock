@@ -36,7 +36,7 @@ end
 -- update achievements
 achievements.update = function(level,player_name)
 	local pos = levels[level].get_pos(player_name)
-	skyblock.log("achievements.update() level "..level.." for "..player_name.." at "..dump(pos))
+	skyblock.log("achievements.update() level "..level.." for "..player_name.." at "..skyblock.dump_pos(pos))
 	if pos==nil then return pos end
 	local meta = minetest.env:get_meta(pos)
 	local formspec,infotext = levels[level].update(player_name,pos)
@@ -98,7 +98,7 @@ achievements.on_dignode = function(pos, oldnode, digger)
 	if not digger then return end -- needed to prevent server crash when player leaves
 	local player_name = digger:get_player_name()
 	local level = achievements.get(0, player_name, "level")
-	skyblock.log("achievements.on_dignode() for "..player_name.." on level "..level.." at "..dump(pos))
+	skyblock.log("achievements.on_dignode() for "..player_name.." on level "..level.." at "..skyblock.dump_pos(pos))
 	levels[level].on_dignode(pos, oldnode, digger)
 end
 
@@ -108,7 +108,7 @@ achievements.on_placenode = function(pos, newnode, placer, oldnode)
 	if not placer then return end -- needed to prevent server crash when player leaves
 	local player_name = placer:get_player_name()
 	local level = achievements.get(0, player_name, "level")
-	skyblock.log("achievements.on_placenode() for "..player_name.." on level "..level.." at "..dump(pos))
+	skyblock.log("achievements.on_placenode() for "..player_name.." on level "..level.." at "..skyblock.dump_pos(pos))
 	levels[level].on_placenode(pos, newnode, placer, oldnode)
 end
 

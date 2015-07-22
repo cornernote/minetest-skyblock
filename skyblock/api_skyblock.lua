@@ -32,6 +32,12 @@ skyblock.log = function(message)
 end
 
 
+-- dump_pos
+skyblock.dump_pos = function(pos)
+	return '{x='..pos.x..',y='..pos.x..',z='..pos.z..'}'
+end
+
+
 -- give inventory
 skyblock.give_inventory = function(player)
 	skyblock.log("give_inventory() to "..player:get_player_name())
@@ -92,7 +98,7 @@ end
 -- check if a player has a spawn position assigned, if so return it
 skyblock.has_spawn = function(player_name)
 	local spawn = spawnpos[player_name]
-	skyblock.log("has_spawn() for "..player_name.." is "..dump(spawn))
+	skyblock.log("has_spawn() for "..player_name.." is "..skyblock.dump_pos(spawn))
 	if spawn then
 		return spawn
 	end
@@ -103,7 +109,7 @@ end
 skyblock.get_spawn = function(player_name)
 	local spawn = spawnpos[player_name]
 	if spawn and minetest.env:get_node(spawn).name == "skyblock:level_1" then
-		skyblock.log("get_spawn() for "..player_name.." is "..dump(spawn))
+		skyblock.log("get_spawn() for "..player_name.." is "..skyblock.dump_pos(spawn))
 		return spawn
 	end
 	skyblock.log("get_spawn() for "..player_name.." is unknown")
@@ -112,7 +118,7 @@ end
 
 -- set players spawn position
 skyblock.set_spawn = function(player_name, pos)
-	skyblock.log("set_spawn() for "..player_name.." at "..dump(pos))
+	skyblock.log("set_spawn() for "..player_name.." at "..skyblock.dump_pos(pos))
 	spawnpos[player_name] = pos
 	-- save the spawn data from the table to the file
 	local output = io.open(skyblock.FILENAME..".spawn", "w")
@@ -243,7 +249,7 @@ skyblock.globalstep = function(dtime)
 						end
 					else
 						-- kill them
-						skyblock.log("globalstep() "..player_name.." has fallen too far at "..dump(pos).."... kill them now")
+						skyblock.log("globalstep() "..player_name.." has fallen too far at "..skyblock.dump_pos(pos).."... kill them now")
 						player:set_hp(0)
 					end
 				end
@@ -364,14 +370,14 @@ end
 
 -- build spawn block
 skyblock.make_spawn_blocks = function(pos, player_name)
-	skyblock.log("make_spawn_blocks() at "..dump(pos).." for "..player_name)
+	skyblock.log("make_spawn_blocks() at "..skyblock.dump_pos(pos).." for "..player_name)
 	levels[1].make_start_blocks(pos, player_name)
 end
 
 
 -- make a tree (based on rubber tree in farming by PilzAdam)
 skyblock.generate_tree = function(pos)
-	skyblock.log("generate_tree() at "..dump(pos))
+	skyblock.log("generate_tree() at "..skyblock.dump_pos(pos))
 	
 	-- check if we have space to make a tree
 	for dy=1,4 do

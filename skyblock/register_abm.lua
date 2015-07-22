@@ -27,14 +27,14 @@ minetest.register_abm({
 	interval = 300,
 	chance = 100,
 	action = function(pos, node)
-		skyblock.log("consider spawn junglegrass or dry_shrub at "..dump(pos).." on "..minetest.env:get_node(pos).name)
+		skyblock.log("consider spawn junglegrass or dry_shrub at "..skyblock.dump_pos(pos).." on "..minetest.env:get_node(pos).name)
 		pos.y = pos.y+1
 		if minetest.env:get_node(pos).name == "air" and minetest.env:find_node_near(pos, 4, {"default:dry_shrub","default:junglegrass"})==nil then
 			if math.random(1,5) > 2 then
-				skyblock.log("spawn dry_shrub at "..dump(pos).." on "..minetest.env:get_node(pos).name)
+				skyblock.log("spawn dry_shrub at "..skyblock.dump_pos(pos).." on "..minetest.env:get_node(pos).name)
 				minetest.env:set_node(pos, {name="default:dry_shrub"})
 			else
-				skyblock.log("spawn junglegrass at "..dump(pos).." on "..minetest.env:get_node(pos).name)
+				skyblock.log("spawn junglegrass at "..skyblock.dump_pos(pos).." on "..minetest.env:get_node(pos).name)
 				minetest.env:set_node(pos, {name="default:junglegrass"})
 			end
 		end
@@ -48,7 +48,7 @@ minetest.register_abm({
 	interval = 300,
 	chance = 100,
 	action = function(pos, node)
-		skyblock.log("consider spawn papyrus at "..dump(pos).." on "..minetest.env:get_node(pos).name)
+		skyblock.log("consider spawn papyrus at "..skyblock.dump_pos(pos).." on "..minetest.env:get_node(pos).name)
 		-- check for space
 		for i=1,2 do
 			if minetest.env:get_node({x = pos.x, y = pos.y + i, z = pos.z}).name ~= "air" then
@@ -56,7 +56,7 @@ minetest.register_abm({
 			end
 		end
 		-- spawn
-		skyblock.log("spawn papyrus at "..dump(pos).." on "..minetest.env:get_node(pos).name)
+		skyblock.log("spawn papyrus at "..skyblock.dump_pos(pos).." on "..minetest.env:get_node(pos).name)
 		minetest.env:set_node({x = pos.x, y = pos.y + 1, z = pos.z}, {name="default:papyrus"})
 	end
 })
@@ -67,7 +67,7 @@ minetest.register_abm({
 	interval = 100,
 	chance = 50,
 	action = function(pos, node)
-		skyblock.log("consider grow papyrus at "..dump(pos).." on "..minetest.env:get_node(pos).name)
+		skyblock.log("consider grow papyrus at "..skyblock.dump_pos(pos).." on "..minetest.env:get_node(pos).name)
 		-- check for space
 		for i=1,2 do
 			if minetest.env:get_node({x = pos.x, y = pos.y + i, z = pos.z}).name ~= "air" then
@@ -79,7 +79,7 @@ minetest.register_abm({
 			return
 		end
 		-- grow
-		skyblock.log("grow papyrus at "..dump(pos).." on "..minetest.env:get_node(pos).name)
+		skyblock.log("grow papyrus at "..skyblock.dump_pos(pos).." on "..minetest.env:get_node(pos).name)
 		minetest.env:set_node({x = pos.x, y = pos.y + 1, z = pos.z}, {name="default:papyrus"})
 	end
 })
@@ -90,7 +90,7 @@ minetest.register_abm({
 	interval = 300,
 	chance = 150,
 	action = function(pos, node)
-		skyblock.log("consider spawn cactus at "..dump(pos).." on "..minetest.env:get_node(pos).name)
+		skyblock.log("consider spawn cactus at "..skyblock.dump_pos(pos).." on "..minetest.env:get_node(pos).name)
 		-- check for space
 		for i=1,2 do
 			if minetest.env:get_node({x = pos.x, y = pos.y + i, z = pos.z}).name ~= "air" then
@@ -102,7 +102,7 @@ minetest.register_abm({
 			return
 		end
 		-- spawn
-		skyblock.log("spawn cactus at "..dump(pos).." on "..minetest.env:get_node(pos).name)
+		skyblock.log("spawn cactus at "..skyblock.dump_pos(pos).." on "..minetest.env:get_node(pos).name)
 		minetest.env:set_node({x = pos.x, y = pos.y + 1, z = pos.z}, {name="default:cactus"})
 	end
 })
@@ -113,7 +113,7 @@ minetest.register_abm({
 	interval = 200,
 	chance = 50,
 	action = function(pos, node)
-		skyblock.log("consider grow cactus at "..dump(pos).." on "..minetest.env:get_node(pos).name)
+		skyblock.log("consider grow cactus at "..skyblock.dump_pos(pos).." on "..minetest.env:get_node(pos).name)
 		-- check for space
 		for i=1,2 do
 			if minetest.env:get_node({x = pos.x, y = pos.y + i, z = pos.z}).name ~= "air" then
@@ -125,7 +125,7 @@ minetest.register_abm({
 			return
 		end
 		-- grow
-		skyblock.log("grow cactus at "..dump(pos).." on "..minetest.env:get_node(pos).name)
+		skyblock.log("grow cactus at "..skyblock.dump_pos(pos).." on "..minetest.env:get_node(pos).name)
 		minetest.env:set_node({x = pos.x, y = pos.y + 1, z = pos.z}, {name="default:cactus"})
 	end
 })
@@ -137,9 +137,9 @@ minetest.register_abm({
 	interval = 50,
 	chance = 100,
 	action = function(pos)
-		skyblock.log("consider grow dirt_with_grass at "..dump(pos).." on "..minetest.env:get_node(pos).name)
+		skyblock.log("consider grow dirt_with_grass at "..skyblock.dump_pos(pos).." on "..minetest.env:get_node(pos).name)
    		if minetest.env:get_node({x = pos.x, y = pos.y + 1, z = pos.z}).name == "air" then
-			skyblock.log("grow dirt_with_grass at "..dump(pos).." on "..minetest.env:get_node(pos).name)
+			skyblock.log("grow dirt_with_grass at "..skyblock.dump_pos(pos).." on "..minetest.env:get_node(pos).name)
 			minetest.env:add_node(pos, {name="default:dirt_with_grass"})
    		end
     end
@@ -151,9 +151,9 @@ minetest.register_abm({
 	interval = 50,
 	chance = 300,
 	action = function(pos)
-		skyblock.log("consider grow dirt at "..dump(pos).." on "..minetest.env:get_node(pos).name)
+		skyblock.log("consider grow dirt at "..skyblock.dump_pos(pos).." on "..minetest.env:get_node(pos).name)
    		if minetest.env:get_node({x = pos.x, y = pos.y + 1, z = pos.z}).name == "air" then
-			skyblock.log("grow dirt at "..dump(pos).." on "..minetest.env:get_node(pos).name)
+			skyblock.log("grow dirt at "..skyblock.dump_pos(pos).." on "..minetest.env:get_node(pos).name)
 			minetest.env:add_node(pos, {name="default:dirt"})
    		end
     end
@@ -165,12 +165,12 @@ minetest.register_abm({
 	interval = 5,
 	chance = 10,
 	action = function(pos)
-		skyblock.log("consider grow dirt or dirt_with_grass at "..dump(pos).." on "..minetest.env:get_node(pos).name)
+		skyblock.log("consider grow dirt or dirt_with_grass at "..skyblock.dump_pos(pos).." on "..minetest.env:get_node(pos).name)
    		if minetest.env:get_node({x = pos.x, y = pos.y + 1, z = pos.z}).name == "air" then
-			skyblock.log("grow dirt_with_grass at "..dump(pos).." on "..minetest.env:get_node(pos).name)
+			skyblock.log("grow dirt_with_grass at "..skyblock.dump_pos(pos).." on "..minetest.env:get_node(pos).name)
 			minetest.env:add_node(pos, {name="default:dirt_with_grass"})
 		else
-			skyblock.log("grow dirt at "..dump(pos).." on "..minetest.env:get_node(pos).name)
+			skyblock.log("grow dirt at "..skyblock.dump_pos(pos).." on "..minetest.env:get_node(pos).name)
 			minetest.env:add_node(pos, {name="default:dirt"})
    		end
     end
@@ -183,7 +183,7 @@ minetest.register_abm({
 	interval = 2,
 	chance = 1,
 	action = function(pos)
-		skyblock.log("create stone at "..dump(pos).." on "..minetest.env:get_node(pos).name)
+		skyblock.log("create stone at "..skyblock.dump_pos(pos).." on "..minetest.env:get_node(pos).name)
 		minetest.env:add_node(pos, {name="default:stone"})
 	end,
 })
@@ -196,14 +196,14 @@ minetest.register_abm({
 	interval = 2,
 	chance = 1,
 	action = function(pos)
-		skyblock.log("consider create stone at "..dump(pos).." on "..minetest.env:get_node(pos).name)
+		skyblock.log("consider create stone at "..skyblock.dump_pos(pos).." on "..minetest.env:get_node(pos).name)
 		local waterpos = minetest.env:find_node_near(pos,1,{"default:water_flowing"})
 		if waterpos==nil then
-			skyblock.log("create stone at "..dump(pos).." on "..minetest.env:get_node(pos).name)
+			skyblock.log("create stone at "..skyblock.dump_pos(pos).." on "..minetest.env:get_node(pos).name)
 			minetest.env:add_node(pos, {name="default:stone"})
 		else
 			while waterpos ~=nil do
-				skyblock.log("create stone at "..dump(pos).." on "..minetest.env:get_node(pos).name)
+				skyblock.log("create stone at "..skyblock.dump_pos(pos).." on "..minetest.env:get_node(pos).name)
 				minetest.env:add_node(waterpos, {name="default:stone"})
 				waterpos = minetest.env:find_node_near(pos,1,{"default:water_flowing"})
 			end
@@ -226,9 +226,9 @@ if skyblock.MODE == "water" or skyblock.MODE == "lava"  then
 		interval = 2,
 		chance = 10,
 		action = function(pos, node)
-			skyblock.log("consider create "..node_replace.." at "..dump(pos).." on "..minetest.env:get_node(pos).name)
+			skyblock.log("consider create "..node_replace.." at "..skyblock.dump_pos(pos).." on "..minetest.env:get_node(pos).name)
 			if pos.y <= 2 then
-				skyblock.log("create "..node_replace.." at "..dump(pos).." on "..minetest.env:get_node(pos).name)
+				skyblock.log("create "..node_replace.." at "..skyblock.dump_pos(pos).." on "..minetest.env:get_node(pos).name)
 				minetest.env:set_node(pos, {name=node_replace})
 			end
 		end
