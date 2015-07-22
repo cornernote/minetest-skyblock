@@ -149,6 +149,16 @@ minetest.register_abm({
 	end
 })
 
+-- remove bones
+minetest.register_abm({
+	nodenames = {"bones:bones"},
+	interval = 1,
+	chance = 1,
+	action = function(pos, node)
+		minetest.env:remove_node(pos)
+	end,
+})
+
 -- water or lava at sealevel
 if skyblock.MODE == "water" or skyblock.MODE == "lava"  then
 	local node_name = "default:water_flowing"
@@ -171,13 +181,3 @@ if skyblock.MODE == "water" or skyblock.MODE == "lava"  then
 		end
 	})
 end
-
--- remove bones
-minetest.register_abm({
-	nodenames = {"bones:bones"},
-	interval = 1,
-	chance = 1,
-	action = function(pos, node)
-		minetest.env:remove_node(pos)
-	end,
-})

@@ -53,6 +53,42 @@ minetest.register_craft({
 	}
 })
 
+-- stone_with_copper
+minetest.register_craft({
+	output = "default:stone_with_copper 2",
+	recipe = {
+		{"default:copper_ingot"},
+		{"default:stone"},
+	}
+})
+
+-- stone_with_diamond
+minetest.register_craft({
+	output = "default:stone_with_diamond 2",
+	recipe = {
+		{"default:diamond"},
+		{"default:stone"},
+	}
+})
+
+-- stone_with_gold
+minetest.register_craft({
+	output = "default:stone_with_gold 2",
+	recipe = {
+		{"default:gold_ingot"},
+		{"default:stone"},
+	}
+})
+
+-- stone_with_mese
+minetest.register_craft({
+	output = "default:stone_with_mese 2",
+	recipe = {
+		{"default:mese_crystal"},
+		{"default:stone"},
+	}
+})
+
 -- gravel
 minetest.register_craft({
 	output = "default:gravel 4",
@@ -121,12 +157,4 @@ minetest.register_craft({
 	}
 })
 
--- mese
-minetest.register_craft({
-	output = "default:mese 3",
-	recipe = {
-		{"default:steelblock", "default:steelblock"},
-		{"default:steelblock", "default:steelblock"},
-	}
-})
 
