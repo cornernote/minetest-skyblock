@@ -133,7 +133,6 @@ permalink: /items/
 <li><a href="{{site.baseurl}}/items/stairs-stair-wood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_wood.png" data-toggle="tooltip" title="Wooden Stair [node][stairs:stair_wood]"></a></li>
 <li><a href="{{site.baseurl}}/items/xpanes-bar/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/xpanes_bar.png" data-toggle="tooltip" title="Iron bar [node][xpanes:bar]"></a></li>
 <li><a href="{{site.baseurl}}/items/xpanes-pane/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/xpanes_pane.png" data-toggle="tooltip" title="Glass Pane [node][xpanes:pane]"></a></li>
-<li><a href="{{site.baseurl}}/items/bones-bones/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/bones_bones.png" data-toggle="tooltip" title="Bones [node][bones:bones]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-apple/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_apple.png" data-toggle="tooltip" title="Apple [node][default:apple]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-bookshelf/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_bookshelf.png" data-toggle="tooltip" title="Bookshelf [node][default:bookshelf]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-brick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_brick.png" data-toggle="tooltip" title="Brick Block [node][default:brick]"></a></li>
