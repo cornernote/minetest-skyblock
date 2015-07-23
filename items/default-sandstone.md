@@ -12,13 +12,13 @@ icon: /items/itemcubes/default_sandstone.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/group-sand/"><span class="item-group" data-toggle="tooltip" title="Group: Sand [group][sand]"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_sand.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sand.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/farming_desert_sand_soil.png"></span></a></span>
-        <span><a href="{{site.baseurl}}/items/group-sand/"><span class="item-group" data-toggle="tooltip" title="Group: Sand [group][sand]"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_sand.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sand.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/farming_desert_sand_soil.png"></span></a></span>
+        <span><a href="{{site.baseurl}}/items/group-sand/"><span class="item-group" data-toggle="tooltip" title="Group: Sand [group][sand]"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_sand.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sand.png"><img src="{{site.baseurl}}/assets/img/transparent.png"></span></a></span>
+        <span><a href="{{site.baseurl}}/items/group-sand/"><span class="item-group" data-toggle="tooltip" title="Group: Sand [group][sand]"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_sand.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sand.png"><img src="{{site.baseurl}}/assets/img/transparent.png"></span></a></span>
         <span></span>
     </div>
     <div>
-        <span><a href="{{site.baseurl}}/items/group-sand/"><span class="item-group" data-toggle="tooltip" title="Group: Sand [group][sand]"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_sand.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sand.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/farming_desert_sand_soil.png"></span></a></span>
-        <span><a href="{{site.baseurl}}/items/group-sand/"><span class="item-group" data-toggle="tooltip" title="Group: Sand [group][sand]"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_sand.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sand.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/farming_desert_sand_soil.png"></span></a></span>
+        <span><a href="{{site.baseurl}}/items/group-sand/"><span class="item-group" data-toggle="tooltip" title="Group: Sand [group][sand]"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_sand.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sand.png"><img src="{{site.baseurl}}/assets/img/transparent.png"></span></a></span>
+        <span><a href="{{site.baseurl}}/items/group-sand/"><span class="item-group" data-toggle="tooltip" title="Group: Sand [group][sand]"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_sand.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sand.png"><img src="{{site.baseurl}}/assets/img/transparent.png"></span></a></span>
         <span></span>
     </div>
     <div>

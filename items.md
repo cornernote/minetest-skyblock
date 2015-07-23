@@ -114,9 +114,6 @@ permalink: /items/
 <li><a href="{{site.baseurl}}/items/default-desert-stonebrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_stonebrick.png" data-toggle="tooltip" title="Desert Stone Brick [node][default:desert_stonebrick]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-diamondblock/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_diamondblock.png" data-toggle="tooltip" title="Diamond Block [node][default:diamondblock]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-dirt/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_dirt.png" data-toggle="tooltip" title="Dirt [node][default:dirt]"></a></li>
-<li><a href="{{site.baseurl}}/items/default-dirt-with-grass/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_dirt_with_grass.png" data-toggle="tooltip" title="Dirt with Grass [node][default:dirt_with_grass]"></a></li>
-<li><a href="{{site.baseurl}}/items/default-dirt-with-snow/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_dirt_with_snow.png" data-toggle="tooltip" title="Dirt with Snow [node][default:dirt_with_snow]"></a></li>
-<li><a href="{{site.baseurl}}/items/default-dry-shrub/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_dry_shrub.png" data-toggle="tooltip" title="Dry Shrub [node][default:dry_shrub]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-fence-wood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_fence_wood.png" data-toggle="tooltip" title="Wooden Fence [node][default:fence_wood]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-furnace/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_furnace.png" data-toggle="tooltip" title="Furnace [node][default:furnace]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-glass/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_glass.png" data-toggle="tooltip" title="Glass [node][default:glass]"></a></li>
@@ -164,10 +161,8 @@ permalink: /items/
 <li><a href="{{site.baseurl}}/items/default-water-source/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_water_source.png" data-toggle="tooltip" title="Water Source [node][default:water_source]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-wood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_wood.png" data-toggle="tooltip" title="Wooden Planks [node][default:wood]"></a></li>
 <li><a href="{{site.baseurl}}/items/doors-trapdoor/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/doors_trapdoor.png" data-toggle="tooltip" title="Trapdoor [node][doors:trapdoor]"></a></li>
-<li><a href="{{site.baseurl}}/items/farming-desert-sand-soil/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/farming_desert_sand_soil.png" data-toggle="tooltip" title="Desert Sand Soil [node][farming:desert_sand_soil]"></a></li>
 <li><a href="{{site.baseurl}}/items/farming-seed-cotton/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/farming_seed_cotton.png" data-toggle="tooltip" title="Cotton seed [node][farming:seed_cotton]"></a></li>
 <li><a href="{{site.baseurl}}/items/farming-seed-wheat/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/farming_seed_wheat.png" data-toggle="tooltip" title="Wheat seed [node][farming:seed_wheat]"></a></li>
-<li><a href="{{site.baseurl}}/items/farming-soil/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/farming_soil.png" data-toggle="tooltip" title="Soil [node][farming:soil]"></a></li>
 <li><a href="{{site.baseurl}}/items/farming-straw/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/farming_straw.png" data-toggle="tooltip" title="Straw [node][farming:straw]"></a></li>
 <li><a href="{{site.baseurl}}/items/fire-basic-flame/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/fire_basic_flame.png" data-toggle="tooltip" title="Fire [node][fire:basic_flame]"></a></li>
 <li><a href="{{site.baseurl}}/items/flowers-dandelion-white/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/flowers_dandelion_white.png" data-toggle="tooltip" title="White Dandelion [node][flowers:dandelion_white]"></a></li>

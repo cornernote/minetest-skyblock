@@ -12,7 +12,6 @@ permalink: /items/group-sand/
 <ul class="list-items clearfix">
     <li><a href="{{site.baseurl}}/items/default-desert-sand/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_sand.png" data-toggle="tooltip" title="Desert Sand [node][default:desert_sand]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-sand/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sand.png" data-toggle="tooltip" title="Sand [node][default:sand]"></a></li>
-    <li><a href="{{site.baseurl}}/items/farming-desert-sand-soil/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/farming_desert_sand_soil.png" data-toggle="tooltip" title="Desert Sand Soil [node][farming:desert_sand_soil]"></a></li>
 </ul>
 
 

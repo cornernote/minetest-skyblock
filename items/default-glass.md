@@ -12,7 +12,7 @@ icon: /items/itemcubes/default_glass.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/group-sand/"><span class="item-group" data-toggle="tooltip" title="Group: Sand [group][sand]"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_sand.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sand.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/farming_desert_sand_soil.png"></span></a></span>
+        <span><a href="{{site.baseurl}}/items/group-sand/"><span class="item-group" data-toggle="tooltip" title="Group: Sand [group][sand]"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_sand.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sand.png"><img src="{{site.baseurl}}/assets/img/transparent.png"></span></a></span>
     </div>
     <div>
         <span><a href="{{site.baseurl}}/items/default-furnace/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_furnace.png" data-toggle="tooltip" title="Furnace [node][default:furnace]"></a></span>
