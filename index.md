@@ -79,7 +79,7 @@ There are 3 levels included.  You can also make your own levels using the achiev
         </ol>
     </div>
     <div class="col-md-6">
-    <a href="https://cloud.githubusercontent.com/assets/51875/8765581/fa202e26-2e12-11e5-8935-2632e97ec2a3.png" class="fancybox" rel="levels"><img src="https://cloud.githubusercontent.com/assets/51875/8765581/fa202e26-2e12-11e5-8935-2632e97ec2a3.png" alt="Level 3" class="thumbnail"></a>
+    <a href="https://cloud.githubusercontent.com/assets/51875/8765583/014410c8-2e13-11e5-8423-b44a778d16d2.png" class="fancybox" rel="levels"><img src="https://cloud.githubusercontent.com/assets/51875/8765583/014410c8-2e13-11e5-8423-b44a778d16d2.png" alt="Level 3" class="thumbnail"></a>
     </div>
 </div>
 
