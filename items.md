@@ -127,7 +127,6 @@ permalink: /items/
 <li><a href="{{site.baseurl}}/items/default-jungletree/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_jungletree.png" data-toggle="tooltip" title="Jungle Tree [node][default:jungletree]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-junglewood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_junglewood.png" data-toggle="tooltip" title="Junglewood Planks [node][default:junglewood]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-ladder/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_ladder.png" data-toggle="tooltip" title="Ladder [node][default:ladder]"></a></li>
-<li><a href="{{site.baseurl}}/items/default-lava-source/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_lava_source.png" data-toggle="tooltip" title="Lava Source [node][default:lava_source]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-leaves/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_leaves.png" data-toggle="tooltip" title="Leaves [node][default:leaves]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-mese/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_mese.png" data-toggle="tooltip" title="Mese Block [node][default:mese]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-mossycobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_mossycobble.png" data-toggle="tooltip" title="Mossy Cobblestone [node][default:mossycobble]"></a></li>
@@ -158,7 +157,6 @@ permalink: /items/
 <li><a href="{{site.baseurl}}/items/default-stonebrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stonebrick.png" data-toggle="tooltip" title="Stone Brick [node][default:stonebrick]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-torch/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_torch.png" data-toggle="tooltip" title="Torch [node][default:torch]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-tree/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_tree.png" data-toggle="tooltip" title="Tree [node][default:tree]"></a></li>
-<li><a href="{{site.baseurl}}/items/default-water-source/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_water_source.png" data-toggle="tooltip" title="Water Source [node][default:water_source]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-wood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_wood.png" data-toggle="tooltip" title="Wooden Planks [node][default:wood]"></a></li>
 <li><a href="{{site.baseurl}}/items/doors-trapdoor/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/doors_trapdoor.png" data-toggle="tooltip" title="Trapdoor [node][doors:trapdoor]"></a></li>
 <li><a href="{{site.baseurl}}/items/farming-seed-cotton/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/farming_seed_cotton.png" data-toggle="tooltip" title="Cotton seed [node][farming:seed_cotton]"></a></li>
