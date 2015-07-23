@@ -141,6 +141,26 @@ minetest.register_craft({
 	}
 })
 
+-- junglesapling from jungleleaves and sticks
+minetest.register_craft({
+	output = "default:junglesapling",
+	recipe = {
+		{"default:jungleleaves", "default:jungleleaves", "default:jungleleaves"},
+		{"default:jungleleaves", "default:jungleleaves", "default:jungleleaves"},
+		{"", "default:stick", ""},
+	}
+})
+
+-- pine_sapling from pine_leaves and sticks
+minetest.register_craft({
+	output = "default:pine_sapling",
+	recipe = {
+		{"default:pine_leaves", "default:pine_leaves", "default:pine_leaves"},
+		{"default:pine_leaves", "default:pine_leaves", "default:pine_leaves"},
+		{"", "default:stick", ""},
+	}
+})
+
 -- recycle desert_sand from desert_stone
 minetest.register_craft({
 	output = "default:desert_sand 4",
