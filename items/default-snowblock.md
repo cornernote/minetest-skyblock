@@ -46,9 +46,28 @@ icon: /items/itemcubes/default_snowblock.png
     </div>
 </div>
 
+<div class="craft">
+    <div>
+        <span><a href="{{site.baseurl}}/items/default-ice/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_ice.png" data-toggle="tooltip" title="Ice [node][default:ice]"></a></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>
+
 
 ## Used for Crafts
 
 <ul class="list-items clearfix">
+    <li><a href="{{site.baseurl}}/items/default-ice/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_ice.png" data-toggle="tooltip" title="Ice [node][default:ice]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-snow/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_snow.png" data-toggle="tooltip" title="Snow [node][default:snow]"></a></li>
 </ul>

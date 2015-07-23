@@ -33,5 +33,4 @@ icon: /items/itemcubes/default_dirt.png
 
 <ul class="list-items clearfix">
     <li><a href="{{site.baseurl}}/items/default-clay-lump/"><img src="{{site.baseurl}}/assets/img/items/textures/default_clay_lump.png" data-toggle="tooltip" title="Clay Lump [craft][default:clay_lump]"></a></li>
-    <li><a href="{{site.baseurl}}/items/default-dirt-with-grass/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_dirt_with_grass.png" data-toggle="tooltip" title="Dirt with Grass [node][default:dirt_with_grass]"></a></li>
 </ul>
