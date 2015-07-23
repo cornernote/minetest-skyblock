@@ -88,72 +88,109 @@ levels[level].update = function(player_name,pos)
 		formspec = formspec .. 'label[8.3,1.4; not done]'
 	end
 
+	-- place trapdoor
+	
+	-- place 20 ladders
+
+	-- place 20 wood fences
+	
+	-- dig 4 iron lumps
+	formspec = formspec..'label[8,8; 9) dig 4 Iron Lumps]'
+	if achievements.get(level,player_name,'dig_stone_with_iron') >= 2 then
+		formspec = formspec .. 'label[8.3,8.4; COMPLETE!]'
+		count = count + 1
+	else
+		formspec = formspec .. 'label[8.3,8.4; not done]'
+	end
+	
+	-- place locked chest
+
+	-- dig 4 copper lumps
+	formspec = formspec..'label[8,9; 10) dig 4 Copper Lumps]'
+	if achievements.get(level,player_name,'dig_stone_with_copper') >= 2 then
+		formspec = formspec .. 'label[8.3,9.4; COMPLETE!]'
+		count = count + 1
+	else
+		formspec = formspec .. 'label[8.3,9.4; not done]'
+	end
+
+	-- TODO (below)
+	
 	-- place 50 wood
-	formspec = formspec..'label[8,2; 3) build a structure using 50 Wood]'
-	if achievements.get(level,player_name,'place_wood') >= 50 then
+	formspec = formspec..'label[8,1; 2) build a structure using 200 Wood]'
+	if achievements.get(level,player_name,'place_wood') >= 200 then
+		formspec = formspec .. 'label[8.3,1.4; COMPLETE!]'
+		count = count + 1
+	else
+		formspec = formspec .. 'label[8.3,1.4; not done]'
+	end
+
+	-- place 50 brick
+	formspec = formspec..'label[8,2; 3) build a structure using 200 Brick]'
+	if achievements.get(level,player_name,'place_brick') >= 200 then
 		formspec = formspec .. 'label[8.3,2.4; COMPLETE!]'
 		count = count + 1
 	else
 		formspec = formspec .. 'label[8.3,2.4; not done]'
 	end
 
-	-- place 50 brick
-	formspec = formspec..'label[8,3; 4) build a structure using 50 Brick]'
-	if achievements.get(level,player_name,'place_brick') >= 50 then
+	-- place 12 glass
+	formspec = formspec..'label[8,3; 4) add at least 200 Glass windows]'
+	if achievements.get(level,player_name,'place_glass') >= 200 then
 		formspec = formspec .. 'label[8.3,3.4; COMPLETE!]'
 		count = count + 1
 	else
 		formspec = formspec .. 'label[8.3,3.4; not done]'
 	end
 
-	-- place trapdoor
-	formspec = formspec..'label[8,4; 5) place a Trapdoor]'
-	if achievements.get(level,player_name,'place_trapdoor') >= 1 then
+	-- place 40 sand
+	formspec = formspec..'label[8,4; 5) make a desert with 200 Sand]'
+	if achievements.get(level,player_name,'place_sand') >= 200 then
 		formspec = formspec .. 'label[8.3,4.4; COMPLETE!]'
 		count = count + 1
 	else
 		formspec = formspec .. 'label[8.3,4.4; not done]'
 	end
-	
-	-- place 10 ladders
-	formspec = formspec..'label[8,5; 6) place 10 Ladders]'
-	if achievements.get(level,player_name,'place_ladder') >= 10 then
+
+	-- place 30 desert_sand
+	formspec = formspec..'label[8,5; 6) also include 200 Desert Sand]'
+	if achievements.get(level,player_name,'place_desert_sand') >= 200 then
 		formspec = formspec .. 'label[8.3,5.4; COMPLETE!]'
 		count = count + 1
 	else
 		formspec = formspec .. 'label[8.3,5.4; not done]'
 	end
 
-	-- place 20 wood fences
-	formspec = formspec..'label[8,6; 7) place 20 Wood Fences]'
-	if achievements.get(level,player_name,'place_fence_wood') >= 20 then
+	-- place 50 stone
+	formspec = formspec..'label[8,6; 7) build a tower with 200 Stone]'
+	if achievements.get(level,player_name,'place_stone') >= 200 then
 		formspec = formspec .. 'label[8.3,6.4; COMPLETE!]'
 		count = count + 1
 	else
 		formspec = formspec .. 'label[8.3,6.4; not done]'
 	end
-	
-	-- dig 4 iron lumps
-	formspec = formspec..'label[8,7; 8) dig 4 Iron Lumps]'
-	if achievements.get(level,player_name,'dig_stone_with_iron') >= 2 then
+
+	-- place 40 cobble
+	formspec = formspec..'label[8,7; 8) make a path with 200 Cobblestone]'
+	if achievements.get(level,player_name,'place_cobble') >= 200 then
 		formspec = formspec .. 'label[8.3,7.4; COMPLETE!]'
 		count = count + 1
 	else
 		formspec = formspec .. 'label[8.3,7.4; not done]'
 	end
-	
-	-- place locked chest
-	formspec = formspec..'label[8,8; 9) craft and place a Locked Chest]'
-	if achievements.get(level,player_name,'place_chest_locked') >= 1 then
+
+	-- place 30 mossycobble
+	formspec = formspec..'label[8,8; 9) also use 200 Mossy Cobblestone]'
+	if achievements.get(level,player_name,'place_mossycobble') >= 200 then
 		formspec = formspec .. 'label[8.3,8.4; COMPLETE!]'
 		count = count + 1
 	else
 		formspec = formspec .. 'label[8.3,8.4; not done]'
 	end
 
-	-- dig 4 copper lumps
-	formspec = formspec..'label[8,9; 10) dig 4 Copper Lumps]'
-	if achievements.get(level,player_name,'dig_stone_with_copper') >= 2 then
+	-- place 20 steelblock
+	formspec = formspec..'label[8,9; 10) decorate your area with 75 Steel Blocks]'
+	if achievements.get(level,player_name,'place_steelblock') >= 75 then
 		formspec = formspec .. 'label[8.3,9.4; COMPLETE!]'
 		count = count + 1
 	else
@@ -183,54 +220,12 @@ levels[level].reward_achievement = function(player_name,achievement)
 	
 	-- place_water_infinite
 	if achievement == 'place_water_infinite' and achievement_count == 1 then
-		achievements.give_reward(level,player_name,'stairs:stair_wood 5')
+		achievements.give_reward(level,player_name,'default:lava_source')
 		return true
 	end
 
-	-- place_dirt
-	if achievement == 'place_dirt' and achievement_count == 200 then
-		achievements.give_reward(level,player_name,'stairs:stair_brick 5')
-		return true
-	end
-	
-	-- place_wood
-	if achievement == 'place_wood' and achievement_count == 50 then
-		achievements.give_reward(level,player_name,'default:brick 40')
-		return true
-	end
-
-	-- place_brick
-	if achievement == 'place_brick' and achievement_count == 50 then
-		achievements.give_reward(level,player_name,'default:sandstonebrick 50')
-		return true
-	end
-	
-	-- place_trapdoor
-	if achievement == 'place_trapdoor' and achievement_count == 1 then
-		achievements.give_reward(level,player_name,'default:desert_stonebrick 50')
-		return true
-	end
-
-	-- place_ladder
-	if achievement == 'place_ladder' and achievement_count == 10 then
-		achievements.give_reward(level,player_name,'wool:white 50')
-		return true
-	end
-
-	-- place_fence
-	if achievement == 'place_fence' and achievement_count == 20 then
-		achievements.give_reward(level,player_name,'default:iron_lump')
-		return true
-	end
-	
 	-- dig_stone_with_iron x2
 	if achievement == 'dig_stone_with_iron' and achievement_count == 2 then
-		achievements.give_reward(level,player_name,'default:desert_cobble 50')
-		return true
-	end
-
-	-- place_chest_locked
-	if achievement == 'place_chest_locked' and achievement_count == 1 then
 		achievements.give_reward(level,player_name,'default:copper_lump')
 		return true
 	end
@@ -240,13 +235,75 @@ levels[level].reward_achievement = function(player_name,achievement)
 		achievements.give_reward(level,player_name,'default:gold_lump')
 		return true
 	end
+
 	
+	-- TODO (below)
+	
+	-- place_dirt
+	if achievement == 'place_dirt' and achievement_count == 200 then
+		achievements.give_reward(level,player_name,'default:wood '..math.random(50,99))
+		return true
+	end
+	
+	-- place_wood
+	if achievement == 'place_wood' and achievement_count == 200 then
+		achievements.give_reward(level,player_name,'default:brick '..math.random(50,99))
+		return true
+	end
+	
+	-- place_brick
+	if achievement == 'place_brick' and achievement_count == 200 then
+		achievements.give_reward(level,player_name,'default:glass '..math.random(50,99))
+		return true
+	end
+	
+	-- place_glass
+	if achievement == 'place_glass' and achievement_count == 200 then
+	achievements.give_reward(level,player_name,'default:sand '..math.random(50,99))
+		return true
+	end
+	
+	-- place_sand
+	if achievement == 'place_sand' and achievement_count == 200 then
+		achievements.give_reward(level,player_name,'default:desert_sand '..math.random(50,99))
+		return true
+	end
+	
+	-- place_desert_sand
+	if achievement == 'place_desert_sand' and achievement_count == 200 then
+		achievements.give_reward(level,player_name,'default:stone '..math.random(50,99))
+		return true
+	end
+	
+	-- place_stone
+	if achievement == 'place_stone' and achievement_count == 200 then
+		achievements.give_reward(level,player_name,'default:cobble '..math.random(50,99))
+		return true
+	end
+	
+	-- place_cobble
+	if achievement == 'place_cobble' and achievement_count == 200 then
+		achievements.give_reward(level,player_name,'default:mossycobble '..math.random(50,99))
+		return true
+	end
+	
+	-- place_mossycobble
+	if achievement == 'place_mossycobble' and achievement_count == 200 then
+		achievements.give_reward(level,player_name,'default:steelblock '..math.random(50,69))
+		return true
+	end
+	
+	-- place_steelblock
+	if achievement == 'place_steelblock' and achievement_count == 75 then
+		achievements.give_reward(level,player_name,'default:mese '..math.random(5,15))
+		return true
+	end
+
 end
 
 
 -- track digging achievements
 levels[level].on_dignode = function(pos, oldnode, digger)
-	local player_name = digger:get_player_name()
 
 	-- dig_stone_with_iron
 	if oldnode.name == 'default:stone_with_iron' then
@@ -273,39 +330,57 @@ levels[level].on_placenode = function(pos, newnode, placer, oldnode)
 		return
 	end
 
-	-- place_brick
-	if newnode.name == 'default:brick' then
-		achievements.add(level,player_name,'place_brick')
-		return
-	end
-
 	-- place_wood
 	if newnode.name == 'default:wood' then
 		achievements.add(level,player_name,'place_wood')
 		return
 	end
 
-	-- place_trapdoor
-	if newnode.name == 'doors:trapdoor' then
-		achievements.add(level,player_name,'place_trapdoor')
+	-- place_brick
+	if newnode.name == 'default:brick' then
+		achievements.add(level,player_name,'place_brick')
 		return
 	end
 
-	-- place_ladder
-	if newnode.name == 'default:ladder' then
-		achievements.add(level,player_name,'place_ladder')
+	-- place_glass
+	if newnode.name == 'default:glass' then
+		achievements.add(level,player_name,'place_glass')
 		return
 	end
 
-	-- place_fence_wood
-	if newnode.name == 'default:fence_wood' then
-		achievements.add(level,player_name,'place_fence_wood')
+	-- place_sand
+	if newnode.name == 'default:sand' then
+		achievements.add(level,player_name,'place_sand')
 		return
 	end
 
-	-- place_chest_locked
-	if newnode.name == 'default:chest_locked' then
-		achievements.add(level,player_name,'place_chest_locked')
+	-- place_desert_sand
+	if newnode.name == 'default:desert_sand' then
+		achievements.add(level,player_name,'place_desert_sand')
+		return
+	end
+
+	-- place_stone
+	if newnode.name == 'default:stone' then
+		achievements.add(level,player_name,'place_stone')
+		return
+	end
+
+	-- place_cobble
+	if newnode.name == 'default:cobble' then
+		achievements.add(level,player_name,'place_cobble')
+		return
+	end
+
+	-- place_mossycobble
+	if newnode.name == 'default:mossycobble' then
+		achievements.add(level,player_name,'place_mossycobble')
+		return
+	end
+
+	-- place_steelblock
+	if newnode.name == 'default:steelblock' then
+		achievements.add(level,player_name,'place_steelblock')
 		return
 	end
 

@@ -27,7 +27,7 @@ skyblock.START_HEIGHT = 4
 skyblock.WORLD_WIDTH = 100
 
 -- How far down (in nodes) before a player dies and is respawned
-skyblock.WORLD_BOTTOM = -32
+skyblock.WORLD_BOTTOM = -16
 
 -- Delay between skyblock respawn checks
 skyblock.SPAWN_THROTLE = 2
