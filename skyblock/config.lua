@@ -27,7 +27,7 @@ skyblock.START_HEIGHT = 4
 
 -- How many players will be in 1 row
 -- skyblock.WORLD_WIDTH * skyblock.WORLD_WIDTH = total players
-skyblock.WORLD_WIDTH = 100
+skyblock.WORLD_WIDTH = 1000
 
 -- How far down (in nodes) before a player dies and is respawned
 skyblock.WORLD_BOTTOM = -32
