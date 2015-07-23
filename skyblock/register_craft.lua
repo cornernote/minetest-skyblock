@@ -113,15 +113,6 @@ minetest.register_craft({
 	}
 })
 
--- dirt_with_grass
-minetest.register_craft({
-	output = 'default:dirt_with_grass',
-	recipe = {
-		{'default:junglegrass'},
-		{'default:dirt'},
-	}
-})
-
 -- locked_chest from chest
 minetest.register_craft({
 	output = 'default:chest_locked',
