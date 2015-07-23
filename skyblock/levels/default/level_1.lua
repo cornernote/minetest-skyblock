@@ -209,7 +209,7 @@ levels[level].reward_achievement = function(player_name,achievement)
 	
 	-- dig_tree
 	if achievement == 'dig_tree' and achievement_count == 5 then
-		achievements.give_reward(level,player_name,'default:mese')
+		achievements.give_reward(level,player_name,'default:mese_crystal')
 		return true
 	end
 	
@@ -230,7 +230,7 @@ levels[level].reward_achievement = function(player_name,achievement)
 
 	-- dig_stone
 	if achievement == 'dig_stone' and achievement_count == 20 then
-		achievements.give_reward(level,player_name,'default:mese')
+		achievements.give_reward(level,player_name,'default:mese_crystal')
 		return true
 	end
 	
@@ -248,7 +248,7 @@ levels[level].reward_achievement = function(player_name,achievement)
 
 	-- place_dirt
 	if achievement == 'place_dirt' and achievement_count == 100 then
-		achievements.give_reward(level,player_name,'default:mese')
+		achievements.give_reward(level,player_name,'default:mese_crystal')
 		return true
 	end
 
@@ -276,7 +276,7 @@ levels[level].on_dignode = function(pos, oldnode, digger)
 		-- with mese pickaxe
 		if digger:get_wielded_item():get_name() == 'default:pick_mese' then
 			achievements.add(level,player_name,'dig_stone_with_mese_pickaxe')
-			return
+			--return
 		end
 		achievements.add(level,player_name,'dig_stone')
 		return
