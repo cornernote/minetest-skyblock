@@ -87,7 +87,7 @@ entity.drop = {
 }
 entity.climbable = true
 entity.walkable = false
-minetest.register_node(':default:jungleleaves', entity)
+minetest.register_node(':default:pine_needles', entity)
 
 -- sapling
 entity = skyblock.registered('node','default:sapling')
