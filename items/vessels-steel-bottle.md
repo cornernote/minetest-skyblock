@@ -34,10 +34,3 @@ icon: /items/itemcubes/vessels_steel_bottle.png
 <ul class="list-items clearfix">
     <li><a href="{{site.baseurl}}/items/default-steel-ingot/"><img src="{{site.baseurl}}/assets/img/items/textures/default_steel_ingot.png" data-toggle="tooltip" title="Steel Ingot [craft][default:steel_ingot]"></a></li>
 </ul>
-
-
-## Belongs to Groups
-
-<ul class="list-items clearfix">
-    <li><a href="{{site.baseurl}}/items/group-vessel/"><span class="item-group" data-toggle="tooltip" title="Group: Vessel [group][vessel]"><img src="{{site.baseurl}}/assets/img/items/itemcubes/vessels_drinking_glass.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/vessels_glass_bottle.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/vessels_steel_bottle.png"></span></a></li>
-</ul>
