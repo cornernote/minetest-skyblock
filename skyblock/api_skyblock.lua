@@ -491,10 +491,12 @@ load_spawn() -- run it now
 
 -- load the start positions from disk
 local load_start_positions = function()
+	skyblock.log('BEGIN load_start_positions()')
     local input = io.open(skyblock.FILENAME..'.start_positions', 'r')
 
 	-- create start_positions file if needed
     if not input then
+		skyblock.log('generate start positions')
 		local output = io.open(skyblock.FILENAME..'.start_positions', 'w')
 		local pos
 		for i,v in ripairs(spiralt(skyblock.WORLD_WIDTH)) do -- get positions using spiral
@@ -506,6 +508,7 @@ local load_start_positions = function()
 	end
 	
 	-- read start positions
+	skyblock.log('read start positions')
 	while true do
 		local x = input:read('*n')
 		if x == nil then
@@ -517,6 +520,7 @@ local load_start_positions = function()
 	end
 	io.close(input)
 	
+	skyblock.log('END load_start_positions()')
 end
 load_start_positions() -- run it now
 

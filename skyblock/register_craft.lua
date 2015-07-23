@@ -57,7 +57,7 @@ minetest.register_craft({
 minetest.register_craft({
 	output = 'default:stone_with_copper 2',
 	recipe = {
-		{'default:copper_ingot'},
+		{'default:copper_lump'},
 		{'default:stone'},
 	}
 })
@@ -75,7 +75,7 @@ minetest.register_craft({
 minetest.register_craft({
 	output = 'default:stone_with_gold 2',
 	recipe = {
-		{'default:gold_ingot'},
+		{'default:gold_lump'},
 		{'default:stone'},
 	}
 })

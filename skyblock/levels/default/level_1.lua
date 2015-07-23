@@ -51,18 +51,6 @@ levels[level].make_start_blocks = function(pos, player_name)
 		end
 	end
 
-	-- level -2 -- ocean
-	if skyblock.MODE == 'water' or skyblock.MODE == 'lava'  then
-		local node_name = 'default:water_source'
-		if skyblock.MODE == 'lava' then
-			node_name = 'default:lava_source'
-		end
-		minetest.env:add_node({x=pos.x-5,y=pos.y-2,z=pos.z-5}, {name=node_name})
-		minetest.env:add_node({x=pos.x-5,y=pos.y-2,z=pos.z+5}, {name=node_name})
-		minetest.env:add_node({x=pos.x+5,y=pos.y-2,z=pos.z-5}, {name=node_name})
-		minetest.env:add_node({x=pos.x+5,y=pos.y-2,z=pos.z+5}, {name=node_name})
-	end
-
 end
 
 
@@ -101,84 +89,102 @@ levels[level].update = function(player_name,pos)
 
 	-- dig_tree
 	formspec = formspec..'label[8,1; 2) dig a Tree]'
-	if achievements.get(level,player_name,'dig_tree') >= 5 then
+	if achievements.get(level,player_name,'dig_tree') >= 4 then
 		formspec = formspec .. 'label[8.3,1.4; COMPLETE!]'
 		count = count + 1
 	else
 		formspec = formspec .. 'label[8.3,1.4; not done]'
 	end
 
-	-- place chest
-	formspec = formspec..'label[8,2; 3) craft and place a Chest]'
-	if achievements.get(level,player_name,'place_chest') >= 1 then
+	-- collect water under spawn node
+	formspec = formspec..'label[8,2; 3) collect the Water Source under your Spawn]'
+	if achievements.get(level,player_name,'collect_spawn_water') >= 1 then
 		formspec = formspec .. 'label[8.3,2.4; COMPLETE!]'
 		count = count + 1
 	else
 		formspec = formspec .. 'label[8.3,2.4; not done]'
 	end
 
-	-- collect lava under spawn node
-	formspec = formspec..'label[8,3; 4) collect the Lava Source under your Spawn]'
-	if achievements.get(level,player_name,'collect_spawn_lava') >= 1 then
+	-- place chest
+	formspec = formspec..'label[8,3; 4) craft and place a Chest]'
+	if achievements.get(level,player_name,'place_chest') >= 1 then
 		formspec = formspec .. 'label[8.3,3.4; COMPLETE!]'
 		count = count + 1
 	else
 		formspec = formspec .. 'label[8.3,3.4; not done]'
 	end
 
-	-- dig stone
-	formspec = formspec..'label[8,4; 5) build a Stone Generator and dig 20 Cobble]'
-	if achievements.get(level,player_name,'dig_stone') >= 20 then
+	-- collect lava under spawn node
+	formspec = formspec..'label[8,4; 5) collect the Lava Source under your Spawn]'
+	if achievements.get(level,player_name,'collect_spawn_lava') >= 1 then
 		formspec = formspec .. 'label[8.3,4.4; COMPLETE!]'
 		count = count + 1
 	else
 		formspec = formspec .. 'label[8.3,4.4; not done]'
 	end
 
-	-- place furnace
-	formspec = formspec..'label[8,5; 6) craft and place a Furnace]'
-	if achievements.get(level,player_name,'place_furnace') >= 1 then
+	-- dig stone
+	formspec = formspec..'label[8,5; 6) build a Stone Generator and dig 10 Cobble]'
+	if achievements.get(level,player_name,'dig_stone') >= 10 then
 		formspec = formspec .. 'label[8.3,5.4; COMPLETE!]'
 		count = count + 1
 	else
 		formspec = formspec .. 'label[8.3,5.4; not done]'
 	end
 
-	-- dig 4 coal lumps
-	formspec = formspec..'label[8,6; 7) dig 4 Coal Lumps]'
-	if achievements.get(level,player_name,'dig_stone_with_coal') >= 2 then
+	-- place furnace
+	formspec = formspec..'label[8,6; 7) craft and place a Furnace]'
+	if achievements.get(level,player_name,'place_furnace') >= 1 then
 		formspec = formspec .. 'label[8.3,6.4; COMPLETE!]'
 		count = count + 1
 	else
 		formspec = formspec .. 'label[8.3,6.4; not done]'
 	end
 
-	-- place 100 dirt
-	formspec = formspec..'label[8,7; 8) extend your Island with 100 Dirt]'
-	if achievements.get(level,player_name,'place_dirt') >= 100 then
+	-- dig 4 coal lumps
+	formspec = formspec..'label[8,7; 8) dig 4 Coal Lumps]'
+	if achievements.get(level,player_name,'dig_stone_with_coal') >= 2 then
 		formspec = formspec .. 'label[8.3,7.4; COMPLETE!]'
 		count = count + 1
 	else
 		formspec = formspec .. 'label[8.3,7.4; not done]'
 	end
 
-	-- dig stone with mese pickaxe
-	formspec = formspec..'label[8,8; 9) dig 100 Stone with a Mese Pickaxe]'
-	if achievements.get(level,player_name,'dig_stone_with_mese_pickaxe') >= 100 then
+	-- dig 4 iron lumps
+	formspec = formspec..'label[8,8; 9) dig 4 Iron Lumps]'
+	if achievements.get(level,player_name,'dig_stone_with_iron') >= 2 then
 		formspec = formspec .. 'label[8.3,8.4; COMPLETE!]'
 		count = count + 1
 	else
 		formspec = formspec .. 'label[8.3,8.4; not done]'
 	end
-	
-	-- place both water in diagonal
-	formspec = formspec..'label[8,9; 10) create an Infinite Water Source]'
-	if achievements.get(level,player_name,'place_water_infinite') >= 1 then
+
+	-- dig 4 copper lumps
+	formspec = formspec..'label[8,9; 10) dig 4 Copper Lumps]'
+	if achievements.get(level,player_name,'dig_stone_with_copper') >= 2 then
 		formspec = formspec .. 'label[8.3,9.4; COMPLETE!]'
 		count = count + 1
 	else
 		formspec = formspec .. 'label[8.3,9.4; not done]'
 	end
+
+	-- place 100 dirt
+	--formspec = formspec..'label[8,9; 10) extend your Island with 100 Dirt]'
+	--if achievements.get(level,player_name,'place_dirt') >= 100 then
+	--	formspec = formspec .. 'label[8.3,9.4; COMPLETE!]'
+	--	count = count + 1
+	--else
+	--	formspec = formspec .. 'label[8.3,9.4; not done]'
+	--end
+	
+	-- place both water in diagonal
+	--formspec = formspec..'label[8,9; 10) create an Infinite Water Source]'
+	--if achievements.get(level,player_name,'place_water_infinite') >= 1 then
+	--	formspec = formspec .. 'label[8.3,9.4; COMPLETE!]'
+	--	count = count + 1
+	--else
+	--	formspec = formspec .. 'label[8.3,9.4; not done]'
+	--end
 	
 	-- next level
 	if count==total and achievements.get(0,player_name,'level')==level then
@@ -201,68 +207,83 @@ end
 levels[level].reward_achievement = function(player_name,achievement)
 	local achievement_count = achievements.get(level,player_name,achievement)
 	
-	-- place_sapling
+	-- place_sapling x1
 	if achievement == 'place_sapling' and achievement_count == 1 then
 		achievements.give_reward(level,player_name,'default:tree')
 		return true
 	end
 	
-	-- dig_tree
-	if achievement == 'dig_tree' and achievement_count == 5 then
-		achievements.give_reward(level,player_name,'default:mese_crystal')
+	-- dig_tree x4
+	if achievement == 'dig_tree' and achievement_count == 4 then
+		achievements.give_reward(level,player_name,'bucket:bucket_empty')
+		-- put water under spawn
+		local pos = skyblock.get_spawn(player_name)
+		minetest.env:add_node({x=pos.x,y=pos.y-1,z=pos.z}, {name='default:water_source'})
 		return true
 	end
 	
-	-- place_chest
+	-- collect_spawn_water x1
+	if achievement == 'collect_spawn_water' and achievement_count == 1 then
+		achievements.give_reward(level,player_name,'default:jungleleaves 6')
+		return true
+	end
+
+	-- place_chest x1
 	if achievement == 'place_chest' and achievement_count == 1 then
-		achievements.give_reward(level,player_name,'bucket:bucket_empty')
+		achievements.give_reward(level,player_name,'default:cactus')
 		-- put lava under spawn
 		local pos = skyblock.get_spawn(player_name)
 		minetest.env:add_node({x=pos.x,y=pos.y-1,z=pos.z}, {name='default:lava_source'})
 		return true
 	end
 
-	-- collect_spawn_lava
+	-- collect_spawn_lava x1
 	if achievement == 'collect_spawn_lava' and achievement_count == 1 then
-		achievements.give_reward(level,player_name,'default:water_source')
+		achievements.give_reward(level,player_name,'default:papyrus')
 		return true
 	end
 
-	-- dig_stone
-	if achievement == 'dig_stone' and achievement_count == 20 then
-		achievements.give_reward(level,player_name,'default:mese_crystal')
+	-- dig_stone x20
+	if achievement == 'dig_stone' and achievement_count == 10 then
+		achievements.give_reward(level,player_name,'default:pine_needles 6')
 		return true
 	end
 	
-	-- place_furnace
+	-- place_furnace x1
 	if achievement == 'place_furnace' and achievement_count == 1 then
 		achievements.give_reward(level,player_name,'default:coal_lump')
 		return true
 	end
 
-	-- dig_stone_with_coal
+	-- dig_stone_with_coal x2
 	if achievement == 'dig_stone_with_coal' and achievement_count == 2 then
 		achievements.give_reward(level,player_name,'default:iron_lump')
 		return true
 	end
 
-	-- place_dirt
-	if achievement == 'place_dirt' and achievement_count == 100 then
-		achievements.give_reward(level,player_name,'default:mese_crystal')
+	-- dig_stone_with_iron x2
+	if achievement == 'dig_stone_with_iron' and achievement_count == 2 then
+		achievements.give_reward(level,player_name,'default:copper_lump')
 		return true
 	end
 
-	-- dig_stone_with_mese_pickaxe
-	if achievement == 'dig_stone_with_mese_pickaxe' and achievement_count == 100 then
-		achievements.give_reward(level,player_name,'default:water_source')
+	-- dig_stone_with_copper x2
+	if achievement == 'dig_stone_with_copper' and achievement_count == 2 then
+		achievements.give_reward(level,player_name,'default:gold_lump')
 		return true
 	end
+
+	-- place_dirt x100
+	--if achievement == 'place_dirt' and achievement_count == 100 then
+	--	achievements.give_reward(level,player_name,'bucket:bucket_water')
+	--	return true
+	--end
 
 	-- place_water_infinite
-	if achievement == 'place_water_infinite' and achievement_count == 1 then
+	--if achievement == 'place_water_infinite' and achievement_count == 1 then
 		--achievements.give_reward(level,player_name,'default:lava_source')
-		return true
-	end
+		--return true
+	--end
 	
 end
 
@@ -271,13 +292,14 @@ end
 levels[level].on_dignode = function(pos, oldnode, digger)
 	local player_name = digger:get_player_name()
 	
+	-- dig_tree
+	if oldnode.name == 'default:tree' then
+		achievements.add(level,player_name,'dig_tree')
+		return
+	end
+	
 	-- dig_stone
 	if oldnode.name == 'default:stone' then
-		-- with mese pickaxe
-		if digger:get_wielded_item():get_name() == 'default:pick_mese' then
-			achievements.add(level,player_name,'dig_stone_with_mese_pickaxe')
-			--return
-		end
 		achievements.add(level,player_name,'dig_stone')
 		return
 	end
@@ -288,9 +310,15 @@ levels[level].on_dignode = function(pos, oldnode, digger)
 		return
 	end
 	
-	-- dig_tree
-	if oldnode.name == 'default:tree' or oldnode.name == 'default:jungletree' then
-		achievements.add(level,player_name,'dig_tree')
+	-- dig_stone_with_iron
+	if oldnode.name == 'default:stone_with_iron' then
+		achievements.add(level,player_name,'dig_stone_with_iron')
+		return
+	end
+	
+	-- dig_stone_with_copper
+	if oldnode.name == 'default:stone_with_copper' then
+		achievements.add(level,player_name,'dig_stone_with_copper')
 		return
 	end
 	
@@ -304,12 +332,6 @@ levels[level].on_placenode = function(pos, newnode, placer, oldnode)
 	-- place_sapling
 	if newnode.name == 'default:sapling' then
 		achievements.add(level,player_name,'place_sapling')
-		return
-	end
-
-	-- place_dirt
-	if newnode.name == 'default:dirt' then
-		achievements.add(level,player_name,'place_dirt')
 		return
 	end
 
@@ -330,6 +352,15 @@ end
 -- track bucket achievements
 levels[level].bucket_on_use = function(player_name, pointed_thing)
 
+	-- collect_spawn_water
+	n = minetest.env:get_node(pointed_thing.under)
+	if n.name == 'default:water_source' then
+		local spawn = skyblock.has_spawn(player_name)
+		if spawn~=nil and pointed_thing.under.x==spawn.x and pointed_thing.under.y==spawn.y-1 and pointed_thing.under.z==spawn.z then
+			achievements.add(level,player_name,'collect_spawn_water')
+		end
+	end
+
 	-- collect_spawn_lava
 	n = minetest.env:get_node(pointed_thing.under)
 	if n.name == 'default:lava_source' then
@@ -345,14 +376,14 @@ end
 levels[level].bucket_water_on_use = function(player_name, pointed_thing)
 
 	-- place_water_infinite
-	local pos = pointed_thing.under
-	if minetest.env:get_node({x=pos.x-1,y=pos.y,z=pos.z-1}).name=='default:water_source' 
-	or minetest.env:get_node({x=pos.x-1,y=pos.y,z=pos.z+1}).name=='default:water_source'
-	or minetest.env:get_node({x=pos.x+1,y=pos.y,z=pos.z-1}).name=='default:water_source'
-	or minetest.env:get_node({x=pos.x+1,y=pos.y,z=pos.z+1}).name=='default:water_source' then
-		achievements.add(level,player_name,'place_water_infinite')
-		return
-	end
+--	local pos = pointed_thing.under
+--	if minetest.env:get_node({x=pos.x-1,y=pos.y,z=pos.z-1}).name=='default:water_source' 
+--	or minetest.env:get_node({x=pos.x-1,y=pos.y,z=pos.z+1}).name=='default:water_source'
+--	or minetest.env:get_node({x=pos.x+1,y=pos.y,z=pos.z-1}).name=='default:water_source'
+--	or minetest.env:get_node({x=pos.x+1,y=pos.y,z=pos.z+1}).name=='default:water_source' then
+--		achievements.add(level,player_name,'place_water_infinite')
+--		return
+--	end
 	
 end
 

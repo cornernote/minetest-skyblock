@@ -46,45 +46,18 @@ minetest.register_node(':default:pinetree', entity)
 
 -- leaves
 entity = skyblock.registered('node','default:leaves')
-entity.drop = {
-	max_items = 1,
-	items = {
-		{items = {'default:pine_sapling'},rarity = 40},
-		{items = {'default:junglesapling'},rarity = 30},
-		{items = {'default:sapling'},rarity = 20},
-		{items = {'default:leaves'}}
-	}
-}
 entity.climbable = true
 entity.walkable = false
 minetest.register_node(':default:leaves', entity)
 
 -- jungleleaves
 entity = skyblock.registered('node','default:jungleleaves')
-entity.drop = {
-	max_items = 1,
-	items = {
-		{items = {'default:sapling'},rarity = 40},
-		{items = {'default:pine_sapling'},rarity = 30},
-		{items = {'default:junglesapling'},rarity = 20},
-		{items = {'default:jungleleaves'}}
-	}
-}
 entity.climbable = true
 entity.walkable = false
 minetest.register_node(':default:jungleleaves', entity)
 
 -- pine_needles
 entity = skyblock.registered('node','default:pine_needles')
-entity.drop = {
-	max_items = 1,
-	items = {
-		{items = {'default:junglesapling'},rarity = 40},
-		{items = {'default:sapling'},rarity = 30},
-		{items = {'default:pine_sapling'},rarity = 20},
-		{items = {'default:pine_needles'}}
-	}
-}
 entity.climbable = true
 entity.walkable = false
 minetest.register_node(':default:pine_needles', entity)

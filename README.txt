@@ -113,13 +113,6 @@ If you like this planet, then stray not from your mission traveller, for the end
 
 
 ----------------------------------
-OCEAN MODE
-----------------------------------
-
-Inside config.lua you can set skyblock.MODE to either water or lava to create an endless ocean around your starting island.
-
-
-----------------------------------
 MULTIPLAYER SUPPORT
 ----------------------------------
 

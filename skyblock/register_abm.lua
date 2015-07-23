@@ -56,49 +56,6 @@ minetest.register_abm({
 	end
 })
 
--- papyrus spawns on dirt_with_grass next to water_source
-minetest.register_abm({
-	nodenames = {'default:dirt_with_grass'},
-	neighbors = {'default:water_source'},
-	interval = 300,
-	chance = 100,
-	action = function(pos, node)
-		skyblock.log('consider spawn papyrus at '..skyblock.dump_pos(pos)..' on '..minetest.env:get_node(pos).name)
-		-- check for space
-		for i=1,2 do
-			if minetest.env:get_node({x = pos.x, y = pos.y + i, z = pos.z}).name ~= 'air' then
-				return
-			end
-		end
-		-- spawn
-		skyblock.log('spawn papyrus at '..skyblock.dump_pos(pos)..' on '..minetest.env:get_node(pos).name)
-		minetest.env:set_node({x = pos.x, y = pos.y + 1, z = pos.z}, {name='default:papyrus'})
-	end
-})
-
--- cactus spawns on sand and desert_sand
-minetest.register_abm({
-	nodenames = {'default:sand', 'default:desert_sand'},
-	interval = 300,
-	chance = 150,
-	action = function(pos, node)
-		skyblock.log('consider spawn cactus at '..skyblock.dump_pos(pos)..' on '..minetest.env:get_node(pos).name)
-		-- check for space
-		for i=1,2 do
-			if minetest.env:get_node({x = pos.x, y = pos.y + i, z = pos.z}).name ~= 'air' then
-				return
-			end
-		end
-		-- check for nearby
-		if minetest.env:find_node_near(pos, 6, {'default:cactus'}) ~= nil then
-			return
-		end
-		-- spawn
-		skyblock.log('spawn cactus at '..skyblock.dump_pos(pos)..' on '..minetest.env:get_node(pos).name)
-		minetest.env:set_node({x = pos.x, y = pos.y + 1, z = pos.z}, {name='default:cactus'})
-	end
-})
-
 -- dirt turns to dirt_with_grass if light
 minetest.register_abm({
 	nodenames = {'default:dirt'},
@@ -158,26 +115,3 @@ minetest.register_abm({
 		minetest.env:remove_node(pos)
 	end,
 })
-
--- water or lava at sealevel
-if skyblock.MODE == 'water' or skyblock.MODE == 'lava'  then
-	local node_name = 'default:water_flowing'
-	local node_replace = 'default:water_source'
-	if skyblock.MODE == 'lava' then
-		node_name = 'default:lava_flowing'
-		node_replace = 'default:lava_source'
-	end
-	minetest.register_abm({
-		nodenames = {node_name},
-		neighbors = {'air'},
-		interval = 2,
-		chance = 10,
-		action = function(pos, node)
-			skyblock.log('consider create '..node_replace..' at '..skyblock.dump_pos(pos)..' on '..minetest.env:get_node(pos).name)
-			if pos.y <= 2 then
-				skyblock.log('create '..node_replace..' at '..skyblock.dump_pos(pos)..' on '..minetest.env:get_node(pos).name)
-				minetest.env:set_node(pos, {name=node_replace})
-			end
-		end
-	})
-end

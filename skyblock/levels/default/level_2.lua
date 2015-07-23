@@ -38,7 +38,7 @@ levels[level].make_start_blocks = function(player_name)
 	local radius = 3
 	local hollow = 1
 	skyblock.make_sphere({x=pos.x,y=pos.y-radius,z=pos.z},radius,'default:dirt',hollow)
-	minetest.env:add_node({x=pos.x,y=pos.y-1,z=pos.z}, {name='default:lava_source'})
+	minetest.env:add_node({x=pos.x,y=pos.y-1,z=pos.z}, {name='default:water_source'})
 
 	-- level 2
 	minetest.env:add_node(pos, {name='skyblock:level_2'})

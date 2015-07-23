@@ -11,10 +11,7 @@ USER CONFIG
 ]]--
 
 -- How far apart to set players start positions
-skyblock.START_GAP = 64
-
--- Game mode (which block is the ocean in the void) - air | water | lava
-skyblock.MODE = 'air'
+skyblock.START_GAP = 32
 
 -- Level selection (which level files to use)
 skyblock.LEVEL = 'default'
@@ -27,7 +24,7 @@ skyblock.START_HEIGHT = 4
 
 -- How many players will be in 1 row
 -- skyblock.WORLD_WIDTH * skyblock.WORLD_WIDTH = total players
-skyblock.WORLD_WIDTH = 1000
+skyblock.WORLD_WIDTH = 100
 
 -- How far down (in nodes) before a player dies and is respawned
 skyblock.WORLD_BOTTOM = -32
