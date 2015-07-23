@@ -39,10 +39,10 @@ entity = skyblock.registered('node','default:jungletree')
 entity.groups.oddly_breakable_by_hand = 0
 minetest.register_node(':default:jungletree', entity)
 
--- pine_tree
-entity = skyblock.registered('node','default:pine_tree')
+-- pinetree
+entity = skyblock.registered('node','default:pinetree')
 entity.groups.oddly_breakable_by_hand = 0
-minetest.register_node(':default:pine_tree', entity)
+minetest.register_node(':default:pinetree', entity)
 
 -- leaves
 entity = skyblock.registered('node','default:leaves')
@@ -72,8 +72,8 @@ entity.climbable = true
 entity.walkable = false
 minetest.register_node(':default:jungleleaves', entity)
 
--- pine_leaves
-entity = skyblock.registered('node','default:pine_leaves')
+-- pine_needles
+entity = skyblock.registered('node','default:pine_needles')
 entity.drop = {
 	max_items = 1,
 	items = {

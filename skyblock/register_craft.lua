@@ -151,12 +151,12 @@ minetest.register_craft({
 	}
 })
 
--- pine_sapling from pine_leaves and sticks
+-- pine_sapling from pine_needles and sticks
 minetest.register_craft({
 	output = "default:pine_sapling",
 	recipe = {
-		{"default:pine_leaves", "default:pine_leaves", "default:pine_leaves"},
-		{"default:pine_leaves", "default:pine_leaves", "default:pine_leaves"},
+		{"default:pine_needles", "default:pine_needles", "default:pine_needles"},
+		{"default:pine_needles", "default:pine_needles", "default:pine_needles"},
 		{"", "default:stick", ""},
 	}
 })
