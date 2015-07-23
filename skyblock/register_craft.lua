@@ -169,11 +169,11 @@ minetest.register_craft({
 	}
 })
 
--- jungletree turns to wood
+-- bucket_water turns to snowblock
 minetest.register_craft({
-	output = "default:wood 4",
+	output = "default:snowblock 2",
 	recipe = {
-		{"default:jungletree"},
+		{"bucket:bucket_water"},
 	}
 })
 
