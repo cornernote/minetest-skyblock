@@ -160,7 +160,7 @@ minetest.register_craft({
 	}
 })
 
--- bucket_water turns to snowblock
+-- snowblock from bucket_water
 minetest.register_craft({
 	output = 'default:snowblock 2',
 	recipe = {
@@ -168,4 +168,19 @@ minetest.register_craft({
 	}
 })
 
+-- ice from snowblock
+minetest.register_craft({
+	output = 'default:ice',
+	recipe = {
+		{'default:snowblock', 'default:snowblock'},
+		{'default:snowblock', 'default:snowblock'},
+	}
+})
 
+-- snowblock from ice
+minetest.register_craft({
+	output = 'default:snowblock 4',
+	recipe = {
+		{'default:ice'},
+	}
+})
