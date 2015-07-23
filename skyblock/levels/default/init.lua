@@ -1,8 +1,8 @@
 --[[
 
-SkyBlock for MineTest
+Skyblock for MineTest
 
-Copyright (c) 2012 cornernote, Brett O'Donnell <cornernote@gmail.com>
+Copyright (c) 2015 cornernote, Brett O'Donnell <cornernote@gmail.com>
 Source Code: https://github.com/cornernote/minetest-skyblock
 License: GPLv3
 
@@ -16,21 +16,21 @@ LEVEL LOADER
 --
 
 levels = {}
-dofile(minetest.get_modpath("skyblock").."/levels/default/level_1.lua")
-dofile(minetest.get_modpath("skyblock").."/levels/default/level_2.lua")
-dofile(minetest.get_modpath("skyblock").."/levels/default/level_3.lua")
-dofile(minetest.get_modpath("skyblock").."/levels/default/level_4.lua")
+dofile(minetest.get_modpath('skyblock')..'/levels/default/level_1.lua')
+dofile(minetest.get_modpath('skyblock')..'/levels/default/level_2.lua')
+dofile(minetest.get_modpath('skyblock')..'/levels/default/level_3.lua')
+dofile(minetest.get_modpath('skyblock')..'/levels/default/level_4.lua')
 
 --
 -- Level Nodes
 --
 
 for level=1,4 do
-	minetest.register_node("skyblock:level_"..level, {
-		description = "Level "..level,
-		tiles = {"skyblock_"..level..".png"},
+	minetest.register_node('skyblock:level_'..level, {
+		description = 'Level '..level,
+		tiles = {'skyblock_'..level..'.png'},
 		is_ground_content = true,
-		paramtype = "light",
+		paramtype = 'light',
 		light_propagates = true,
 		sunlight_propagates = true,
 		light_source = 15,		
@@ -42,7 +42,7 @@ for level=1,4 do
 			achievements.level_on_dig(level, pos, node, digger)
 		end,
 		on_construct = function(pos)
-			minetest.env:get_meta(pos):get_inventory():set_size("rewards", 2*2)
+			minetest.env:get_meta(pos):get_inventory():set_size('rewards', 2*2)
 		end,
 	})
 end

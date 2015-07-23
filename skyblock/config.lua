@@ -1,8 +1,8 @@
 --[[
 
-SkyBlock for Minetest
+Skyblock for Minetest
 
-Copyright (c) 2012 cornernote, Brett O'Donnell <cornernote@gmail.com>
+Copyright (c) 2015 cornernote, Brett O'Donnell <cornernote@gmail.com>
 Source Code: https://github.com/cornernote/minetest-skyblock
 License: GPLv3
 
@@ -14,10 +14,10 @@ USER CONFIG
 skyblock.START_GAP = 64
 
 -- Game mode (which block is the ocean in the void) - air | water | lava
-skyblock.MODE = "air"
+skyblock.MODE = 'air'
 
 -- Level selection (which level files to use)
-skyblock.LEVEL = "default"
+skyblock.LEVEL = 'default'
 
 -- Should digging the spawn result in a new spawn pos?
 skyblock.DIG_NEW_SPAWN = false

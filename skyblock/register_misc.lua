@@ -1,8 +1,8 @@
 --[[
 
-SkyBlock for Minetest
+Skyblock for Minetest
 
-Copyright (c) 2012 cornernote, Brett O'Donnell <cornernote@gmail.com>
+Copyright (c) 2015 cornernote, Brett O'Donnell <cornernote@gmail.com>
 Source Code: https://github.com/cornernote/minetest-skyblock
 License: GPLv3
 
@@ -12,7 +12,7 @@ REGISTER MISC
 
 -- set mapgen to singlenode
 minetest.register_on_mapgen_init(function(mgparams)
-	minetest.set_mapgen_params({mgname="singlenode", water_level=-32000})
+	minetest.set_mapgen_params({mgname='singlenode', water_level=-32000})
 end)
 
 -- handle new player
