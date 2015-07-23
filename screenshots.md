@@ -15,3 +15,9 @@ permalink: /screenshots/
     </div>
     {% endfor %}
 </div>
+
+## Add your Screenshots
+
+Got some awesome screenshots you want to share?
+
+[submit screenshots on this page](https://github.com/cornernote/minetest-skyblock/issues/2)
