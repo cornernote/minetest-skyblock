@@ -51,6 +51,7 @@ entity.drop = {
 	items = {
 		{items = {'default:pine_sapling'},rarity = 40},
 		{items = {'default:junglesapling'},rarity = 30},
+		{items = {'default:sapling'},rarity = 20},
 		{items = {'default:leaves'}}
 	}
 }
@@ -65,7 +66,8 @@ entity.drop = {
 	items = {
 		{items = {'default:sapling'},rarity = 40},
 		{items = {'default:pine_sapling'},rarity = 30},
-		{items = {'default:leaves'}}
+		{items = {'default:junglesapling'},rarity = 20},
+		{items = {'default:jungleleaves'}}
 	}
 }
 entity.climbable = true
@@ -79,7 +81,8 @@ entity.drop = {
 	items = {
 		{items = {'default:junglesapling'},rarity = 40},
 		{items = {'default:sapling'},rarity = 30},
-		{items = {'default:leaves'}}
+		{items = {'default:pine_sapling'},rarity = 20},
+		{items = {'default:pine_needles'}}
 	}
 }
 entity.climbable = true
