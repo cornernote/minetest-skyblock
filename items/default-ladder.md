@@ -27,10 +27,3 @@ icon: /items/itemcubes/default_ladder.png
         <span><a href="{{site.baseurl}}/items/group-stick/"><span class="item-group" data-toggle="tooltip" title="Group: Stick [group][stick]"><img src="{{site.baseurl}}/assets/img/items/textures/default_stick.png"><img src="{{site.baseurl}}/assets/img/transparent.png"><img src="{{site.baseurl}}/assets/img/transparent.png"></span></a></span>
     </div>
 </div>
-
-
-## Used for Crafts
-
-<ul class="list-items clearfix">
-    <li><a href="{{site.baseurl}}/items/fire-basic-flame/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/fire_basic_flame.png" data-toggle="tooltip" title="Fire [node][fire:basic_flame]"></a></li>
-</ul>

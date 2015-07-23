@@ -164,7 +164,6 @@ permalink: /items/
 <li><a href="{{site.baseurl}}/items/farming-seed-cotton/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/farming_seed_cotton.png" data-toggle="tooltip" title="Cotton seed [node][farming:seed_cotton]"></a></li>
 <li><a href="{{site.baseurl}}/items/farming-seed-wheat/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/farming_seed_wheat.png" data-toggle="tooltip" title="Wheat seed [node][farming:seed_wheat]"></a></li>
 <li><a href="{{site.baseurl}}/items/farming-straw/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/farming_straw.png" data-toggle="tooltip" title="Straw [node][farming:straw]"></a></li>
-<li><a href="{{site.baseurl}}/items/fire-basic-flame/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/fire_basic_flame.png" data-toggle="tooltip" title="Fire [node][fire:basic_flame]"></a></li>
 <li><a href="{{site.baseurl}}/items/flowers-dandelion-white/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/flowers_dandelion_white.png" data-toggle="tooltip" title="White Dandelion [node][flowers:dandelion_white]"></a></li>
 <li><a href="{{site.baseurl}}/items/flowers-dandelion-yellow/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/flowers_dandelion_yellow.png" data-toggle="tooltip" title="Yellow Dandelion [node][flowers:dandelion_yellow]"></a></li>
 <li><a href="{{site.baseurl}}/items/flowers-geranium/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/flowers_geranium.png" data-toggle="tooltip" title="Blue Geranium [node][flowers:geranium]"></a></li>

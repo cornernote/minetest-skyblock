@@ -27,10 +27,3 @@ icon: /items/itemcubes/default_bookshelf.png
         <span><a href="{{site.baseurl}}/items/group-wood/"><span class="item-group" data-toggle="tooltip" title="Group: Wood [group][wood]"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_junglewood.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_pinewood.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_wood.png"></span></a></span>
     </div>
 </div>
-
-
-## Used for Crafts
-
-<ul class="list-items clearfix">
-    <li><a href="{{site.baseurl}}/items/fire-basic-flame/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/fire_basic_flame.png" data-toggle="tooltip" title="Fire [node][fire:basic_flame]"></a></li>
-</ul>
