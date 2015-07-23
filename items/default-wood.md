@@ -28,24 +28,6 @@ icon: /items/itemcubes/default_wood.png
     </div>
 </div>
 
-<div class="craft">
-    <div>
-        <span><a href="{{site.baseurl}}/items/default-jungletree/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_jungletree.png" data-toggle="tooltip" title="Jungle Tree [node][default:jungletree]"></a></span>
-        <span></span>
-        <span></span>
-    </div>
-    <div>
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-    <div>
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-</div>
-
 
 ## Used for Crafts
 

@@ -12,7 +12,6 @@ icon: /items/itemcubes/default_jungletree.png
 
 <ul class="list-items clearfix">
     <li><a href="{{site.baseurl}}/items/default-junglewood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_junglewood.png" data-toggle="tooltip" title="Junglewood Planks [node][default:junglewood]"></a></li>
-    <li><a href="{{site.baseurl}}/items/default-wood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_wood.png" data-toggle="tooltip" title="Wooden Planks [node][default:wood]"></a></li>
 </ul>
 
 

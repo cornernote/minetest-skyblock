@@ -8,6 +8,27 @@ icon: /items/itemcubes/default_pine_sapling.png
 ---
 
 
+## Created by Crafts
+
+<div class="craft">
+    <div>
+        <span><a href="{{site.baseurl}}/items/default-pine-needles/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_pine_needles.png" data-toggle="tooltip" title="Pine Needles [node][default:pine_needles]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-pine-needles/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_pine_needles.png" data-toggle="tooltip" title="Pine Needles [node][default:pine_needles]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-pine-needles/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_pine_needles.png" data-toggle="tooltip" title="Pine Needles [node][default:pine_needles]"></a></span>
+    </div>
+    <div>
+        <span><a href="{{site.baseurl}}/items/default-pine-needles/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_pine_needles.png" data-toggle="tooltip" title="Pine Needles [node][default:pine_needles]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-pine-needles/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_pine_needles.png" data-toggle="tooltip" title="Pine Needles [node][default:pine_needles]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-pine-needles/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_pine_needles.png" data-toggle="tooltip" title="Pine Needles [node][default:pine_needles]"></a></span>
+    </div>
+    <div>
+        <span></span>
+        <span><a href="{{site.baseurl}}/items/default-stick/"><img src="{{site.baseurl}}/assets/img/items/textures/default_stick.png" data-toggle="tooltip" title="Stick [craft][default:stick]"></a></span>
+        <span></span>
+    </div>
+</div>
+
+
 ## Used for Crafts
 
 <ul class="list-items clearfix">
