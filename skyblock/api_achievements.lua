@@ -108,7 +108,8 @@ achievements.add = function(level,player_name,achievement)
 	if update then
 		achievements.update(level,player_name)
 		minetest.chat_send_player(player_name, 'You earned the achievement "'..achievement..'"')
-		minetest.chat_send_all(player_name..' was awarded the achievement "'..achievement..'"')
+		--minetest.chat_send_all(player_name..' was awarded the achievement "'..achievement..'"')
+		minetest.log('action', player_name..' was awarded the achievement "'..achievement..'"')
 	end
 	
 	table.save(players_achievements, skyblock.FILENAME..'.achievements')
