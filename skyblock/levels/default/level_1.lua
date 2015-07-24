@@ -55,123 +55,97 @@ end
 
 
 -- update achievements
-levels[level].update = function(player_name,pos)
+levels[level].update = function(player_name,nav)
 	local formspec = ''
 	local total = 10
 	local count = 0
 
-	formspec = formspec
-		..'size[15,10;]'
-		..'label[0,0;LEVEL '..level..' FOR: '.. player_name ..']'
-		..'label[13.4,0; rewards]'
-		..'list[current_name;rewards;13,0.5;2,2;]'
-		..'list[current_player;main;0,6;8,4;]'
-
-		..'label[0,1; --== Welcome Traveller ==--]'
-		..'label[0,1.5; Complete the tasks to the right to receive]'
-		..'label[0,2.0; great rewards!  If you wasted the required]'
-		..'label[0,2.5; items you can dig this node to restart.]'
-		
-		..'label[0,3; --== About The Level '..level..' Block ==--]'
-		..'label[0,3.5; * SHORT LEFT CLICK]'
-		..'label[0.4,4; = PUNCH - refresh achievements]'
-		..'label[0,4.5; * LONG LEFT CLICK]'
-		..'label[0.4,5; = DIG - restart in a new spawn location]'
-
-	-- place_sapling
-	formspec = formspec..'label[8,0; 1) grow a Tree]'
-	if achievements.get(level,player_name,'place_sapling') >= 1 then
-		formspec = formspec .. 'label[8.3,0.4; COMPLETE!]'
-		count = count + 1
-	else
-		formspec = formspec .. 'label[8.3,0.4; not done]'
+	formspec = formspec..'size[17,13;]'
+	if nav then
+		formspec = formspec..'button[15,12;2,0.5;main;Back]'
+		formspec = formspec..'button[13,12;2,0.5;craft;Craft]'
 	end
+	formspec = formspec
+		..'label[0,0;LEVEL '..level..' FOR: '.. player_name ..']'
+		..'label[6,6; Rewards]'
+		..'list[current_player;rewards;6,6.5;2,2;]'
+		..'label[0,8.5; Inventory]'
+		..'list[current_player;main;0,9;8,4;]'
+
+		..'label[0,1.5; --== Welcome Traveller ==--]'
+		..'label[0,2; Complete the tasks to the right to receive great rewards!]'
+		
+		-- todo, move to about button
+		..'label[0,3.5; --== About This Game ==--]'
+		..'label[0,4; For information and tutorials, please visit the website at:]'
+		..'label[0,4.5; https://cornernote.github.io/minetest-skyblock/]'
+
+		..'label[9,0.5; --== Goals ==--]'
+	
+	-- todo, add restart and refresh buttons
+	--..'label[0,3; --== About The Level '..level..' Block ==--]'
+	--..'label[0,3.5; * SHORT LEFT CLICK]'
+	--..'label[0.4,4; = PUNCH - refresh achievements]'
+	--..'label[0,4.5; * LONG LEFT CLICK]'
+	--..'label[0.4,5; = DIG - restart in a new spawn location]'
+
+	local goal_formspac, success
+		
+	-- place_sapling
+	goal_formspac,success = achievements.get_goal_formspac(player_name,level,1,'craft a Sapling and grow a Tree','place_sapling',1)
+	formspec = formspec..goal_formspac
+	count = count + success
 
 	-- dig_tree
-	formspec = formspec..'label[8,1; 2) dig a Tree]'
-	if achievements.get(level,player_name,'dig_tree') >= 4 then
-		formspec = formspec .. 'label[8.3,1.4; COMPLETE!]'
-		count = count + 1
-	else
-		formspec = formspec .. 'label[8.3,1.4; not done]'
-	end
+	goal_formspac,success = achievements.get_goal_formspac(player_name,level,2,'craft an axe and dig 4 Trees','dig_tree',4)
+	formspec = formspec..goal_formspac
+	count = count + success
 
 	-- collect water under spawn node
-	formspec = formspec..'label[8,2; 3) collect the Water under your Spawn]'
-	if achievements.get(level,player_name,'collect_spawn_water') >= 1 then
-		formspec = formspec .. 'label[8.3,2.4; COMPLETE!]'
-		count = count + 1
-	else
-		formspec = formspec .. 'label[8.3,2.4; not done]'
-	end
+	goal_formspac,success = achievements.get_goal_formspac(player_name,level,3,'collect the Water under your Spawn','collect_spawn_water',1)
+	formspec = formspec..goal_formspac
+	count = count + success
 
 	-- place chest
-	formspec = formspec..'label[8,3; 4) craft and place a Chest]'
-	if achievements.get(level,player_name,'place_chest') >= 1 then
-		formspec = formspec .. 'label[8.3,3.4; COMPLETE!]'
-		count = count + 1
-	else
-		formspec = formspec .. 'label[8.3,3.4; not done]'
-	end
+	goal_formspac,success = achievements.get_goal_formspac(player_name,level,4,'craft and place a Chest','place_chest',1)
+	formspec = formspec..goal_formspac
+	count = count + success
 
 	-- place sign_wall
-	formspec = formspec..'label[8,4; 5) place a Sign]'
-	if achievements.get(level,player_name,'place_sign_wall') >= 1 then
-		formspec = formspec .. 'label[8.3,4.4; COMPLETE!]'
-		count = count + 1
-	else
-		formspec = formspec .. 'label[8.3,4.4; not done]'
-	end
-	
+	goal_formspac,success = achievements.get_goal_formspac(player_name,level,5,'craft and place a Sign','place_sign_wall',1)
+	formspec = formspec..goal_formspac
+	count = count + success
+
 	-- collect lava under spawn node
-	formspec = formspec..'label[8,5; 6) collect the Lava under your Spawn]'
-	if achievements.get(level,player_name,'collect_spawn_lava') >= 1 then
-		formspec = formspec .. 'label[8.3,5.4; COMPLETE!]'
-		count = count + 1
-	else
-		formspec = formspec .. 'label[8.3,5.4; not done]'
-	end
+	goal_formspac,success = achievements.get_goal_formspac(player_name,level,6,'collect the Lava under your Spawn','collect_spawn_lava',1)
+	formspec = formspec..goal_formspac
+	count = count + success
 
 	-- dig stone
-	formspec = formspec..'label[8,6; 7) build a Stone Generator and dig 10 Cobble]'
-	if achievements.get(level,player_name,'dig_stone') >= 10 then
-		formspec = formspec .. 'label[8.3,6.4; COMPLETE!]'
-		count = count + 1
-	else
-		formspec = formspec .. 'label[8.3,6.4; not done]'
-	end
+	goal_formspac,success = achievements.get_goal_formspac(player_name,level,7,'build a Stone Generator and dig 20 Cobble','dig_stone',20)
+	formspec = formspec..goal_formspac
+	count = count + success
 
 	-- place furnace
-	formspec = formspec..'label[8,7; 8) craft and place a Furnace]'
-	if achievements.get(level,player_name,'place_furnace') >= 1 then
-		formspec = formspec .. 'label[8.3,7.4; COMPLETE!]'
-		count = count + 1
-	else
-		formspec = formspec .. 'label[8.3,7.4; not done]'
-	end
+	goal_formspac,success = achievements.get_goal_formspac(player_name,level,8,'craft and place a Furnace','place_furnace',1)
+	formspec = formspec..goal_formspac
+	count = count + success
 
 	-- dig 4 coal lumps
-	formspec = formspec..'label[8,8; 9) dig 4 Coal Lumps]'
-	if achievements.get(level,player_name,'dig_stone_with_coal') >= 2 then
-		formspec = formspec .. 'label[8.3,8.4; COMPLETE!]'
-		count = count + 1
-	else
-		formspec = formspec .. 'label[8.3,8.4; not done]'
-	end
+	goal_formspac,success = achievements.get_goal_formspac(player_name,level,9,'dig 2 Coal Lumps','dig_stone_with_coal',2)
+	formspec = formspec..goal_formspac
+	count = count + success
 
-	-- place 4 torches
-	formspec = formspec..'label[8,9; 10) place 4 Torches]'
-	if achievements.get(level,player_name,'place_torch') >= 4 then
-		formspec = formspec .. 'label[8.3,9.4; COMPLETE! -- ^^^ LOOK UP ^^^]'
-		count = count + 1
-	else
-		formspec = formspec .. 'label[8.3,9.4; not done]'
-	end
-	
+	-- place 8 torches
+	goal_formspac,success = achievements.get_goal_formspac(player_name,level,10,'place 8 Torches','place_torch',8)
+	formspec = formspec..goal_formspac
+	count = count + success
+
 	-- next level
 	if count==total and achievements.get(0,player_name,'level')==level then
 		levels[level+1].make_start_blocks(player_name)
 		achievements.add(0,player_name,'level')
+		formspec = levels[level+1].update(player_name,nav)
 	end
 	if  achievements.get(0,player_name,'level') > level then
 		local pos = levels[level+1].get_pos(player_name)
@@ -199,7 +173,7 @@ levels[level].reward_achievement = function(player_name,achievement)
 	if achievement == 'dig_tree' and achievement_count == 4 then
 		achievements.give_reward(level,player_name,'bucket:bucket_empty')
 		-- put water under spawn
-		local pos = skyblock.get_spawn(player_name)
+		local pos = levels[level].get_pos(player_name)
 		minetest.env:add_node({x=pos.x,y=pos.y-1,z=pos.z}, {name='default:water_source'})
 		return true
 	end
@@ -220,7 +194,7 @@ levels[level].reward_achievement = function(player_name,achievement)
 	if achievement == 'place_sign_wall' and achievement_count == 1 then
 		achievements.give_reward(level,player_name,'default:papyrus')
 		-- put lava under spawn
-		local pos = skyblock.get_spawn(player_name)
+		local pos = levels[level].get_pos(player_name)
 		minetest.env:add_node({x=pos.x,y=pos.y-1,z=pos.z}, {name='default:lava_source'})
 		return true
 	end
@@ -232,7 +206,7 @@ levels[level].reward_achievement = function(player_name,achievement)
 	end
 
 	-- dig_stone x20
-	if achievement == 'dig_stone' and achievement_count == 10 then
+	if achievement == 'dig_stone' and achievement_count == 20 then
 		achievements.give_reward(level,player_name,'default:sandstone 50')
 		return true
 	end
@@ -249,8 +223,8 @@ levels[level].reward_achievement = function(player_name,achievement)
 		return true
 	end
 
-	-- place_torch
-	if achievement == 'place_torch' and achievement_count == 4 then
+	-- place_torch x8
+	if achievement == 'place_torch' and achievement_count == 8 then
 		achievements.give_reward(level,player_name,'default:pine_needles 6')
 		return true
 	end

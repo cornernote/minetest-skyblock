@@ -1,2 +1,8 @@
 default
 bucket
+doors
+dye
+flowers
+stairs
+wool
+inventory_plus

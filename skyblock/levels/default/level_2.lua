@@ -38,7 +38,6 @@ levels[level].make_start_blocks = function(player_name)
 	local radius = 3
 	local hollow = 1
 	skyblock.make_sphere({x=pos.x,y=pos.y-radius,z=pos.z},radius,'default:dirt',hollow)
-	minetest.env:add_node({x=pos.x,y=pos.y-1,z=pos.z}, {name='default:water_source'})
 
 	-- level 2
 	minetest.env:add_node(pos, {name='skyblock:level_2'})
@@ -48,117 +47,80 @@ end
 
 
 -- update achievements
-levels[level].update = function(player_name,pos)
+levels[level].update = function(player_name,nav)
 	local formspec = ''
 	local total = 10
 	local count = 0
 
-	formspec = formspec
-		..'size[15,10;]'
-		..'label[0,0;LEVEL '..level..' FOR: '.. player_name ..']'
-		..'label[13.4,0; rewards]'
-		..'list[current_name;rewards;13,0.5;2,2;]'
-		..'list[current_player;main;0,6;8,4;]'
-
-		..'label[0,1; --== A View From Above ==--]'
-		..'label[0,1.5; Wow, look at that view... of... nothing.]'
-		..'label[0,2.0; You should get to work extending this]'
-		..'label[0,2.5; island.  Perhaps you could build some]'
-		..'label[0,3.0; structures too?]'
-		
-		..'label[0,4; --== About The Level '..level..' Block ==--]'
-		..'label[0,4.5; * SHORT LEFT CLICK]'
-		..'label[0.4,5; = PUNCH to refresh achievements]'
-
-	-- place water infinite
-	formspec = formspec..'label[8,0; 1) create an Infinite Water Source]'
-	if achievements.get(level,player_name,'place_water_infinite') >= 1 then
-		formspec = formspec .. 'label[8.3,0.4; COMPLETE!]'
-		count = count + 1
-	else
-		formspec = formspec .. 'label[8.3,0.4; not done]'
+	formspec = formspec..'size[17,13;]'
+	if nav then
+		formspec = formspec..'button[15,12;2,0.5;main;Back]'
+		formspec = formspec..'button[13,12;2,0.5;craft;Craft]'
 	end
+	formspec = formspec
+		..'label[0,0;LEVEL '..level..' FOR: '.. player_name ..']'
+		..'label[6,6; Rewards]'
+		..'list[current_player;rewards;6,6.5;2,2;]'
+		..'label[0,8.5; Inventory]'
+		..'list[current_player;main;0,9;8,4;]'
+
+		..'label[0,2; --== A View From Above ==--]'
+		..'label[0,2.5; Wow, look at that view... of... nothing...]'
+		..'label[0,3.0; You should get to work extending this island.]'
+		..'label[0,3.5; Perhaps you could build some structures too?]'
+
+		..'label[9,0.5; --== Goals ==--]'
+		
 
 	-- place 200 dirt
-	formspec = formspec..'label[8,1; 2) extend your Island with 200 Dirt]'
-	if achievements.get(level,player_name,'place_dirt') >= 200 then
-		formspec = formspec .. 'label[8.3,1.4; COMPLETE!]'
-		count = count + 1
-	else
-		formspec = formspec .. 'label[8.3,1.4; not done]'
-	end
+	goal_formspac,success = achievements.get_goal_formspac(player_name,level,1,'extend your Island with 200 Dirt','place_dirt',200)
+	formspec = formspec..goal_formspac
+	count = count + success
+
+	-- place water infinite
+	goal_formspac,success = achievements.get_goal_formspac(player_name,level,2,'create an Infinite Water Source','place_water_infinite',1)
+	formspec = formspec..goal_formspac
+	count = count + success
 
 	-- place 50 wood
-	formspec = formspec..'label[8,2; 3) build a structure using 50 Wood]'
-	if achievements.get(level,player_name,'place_wood') >= 50 then
-		formspec = formspec .. 'label[8.3,2.4; COMPLETE!]'
-		count = count + 1
-	else
-		formspec = formspec .. 'label[8.3,2.4; not done]'
-	end
+	goal_formspac,success = achievements.get_goal_formspac(player_name,level,3,'build a structure using 50 Wood','place_wood',50)
+	formspec = formspec..goal_formspac
+	count = count + success
 
 	-- place 50 brick
-	formspec = formspec..'label[8,3; 4) build a structure using 50 Brick]'
-	if achievements.get(level,player_name,'place_brick') >= 50 then
-		formspec = formspec .. 'label[8.3,3.4; COMPLETE!]'
-		count = count + 1
-	else
-		formspec = formspec .. 'label[8.3,3.4; not done]'
-	end
+	goal_formspac,success = achievements.get_goal_formspac(player_name,level,4,'build a structure using 50 Brick','place_brick',50)
+	formspec = formspec..goal_formspac
+	count = count + success
 
 	-- place trapdoor
-	formspec = formspec..'label[8,4; 5) place a Trapdoor]'
-	if achievements.get(level,player_name,'place_trapdoor') >= 1 then
-		formspec = formspec .. 'label[8.3,4.4; COMPLETE!]'
-		count = count + 1
-	else
-		formspec = formspec .. 'label[8.3,4.4; not done]'
-	end
+	goal_formspac,success = achievements.get_goal_formspac(player_name,level,5,'place a Trapdoor','place_trapdoor',1)
+	formspec = formspec..goal_formspac
+	count = count + success
 	
 	-- place 10 ladders
-	formspec = formspec..'label[8,5; 6) place 10 Ladders]'
-	if achievements.get(level,player_name,'place_ladder') >= 10 then
-		formspec = formspec .. 'label[8.3,5.4; COMPLETE!]'
-		count = count + 1
-	else
-		formspec = formspec .. 'label[8.3,5.4; not done]'
-	end
+	goal_formspac,success = achievements.get_goal_formspac(player_name,level,6,'place 10 Ladders','place_ladder',10)
+	formspec = formspec..goal_formspac
+	count = count + success
 
 	-- place 20 wood fences
-	formspec = formspec..'label[8,6; 7) place 20 Wood Fences]'
-	if achievements.get(level,player_name,'place_fence_wood') >= 20 then
-		formspec = formspec .. 'label[8.3,6.4; COMPLETE!]'
-		count = count + 1
-	else
-		formspec = formspec .. 'label[8.3,6.4; not done]'
-	end
+	goal_formspac,success = achievements.get_goal_formspac(player_name,level,7,'place 20 Wood Fences','place_fence_wood',20)
+	formspec = formspec..goal_formspac
+	count = count + success
 	
 	-- dig 4 iron lumps
-	formspec = formspec..'label[8,7; 8) dig 4 Iron Lumps]'
-	if achievements.get(level,player_name,'dig_stone_with_iron') >= 2 then
-		formspec = formspec .. 'label[8.3,7.4; COMPLETE!]'
-		count = count + 1
-	else
-		formspec = formspec .. 'label[8.3,7.4; not done]'
-	end
-	
+	goal_formspac,success = achievements.get_goal_formspac(player_name,level,8,'dig 4 Iron Lumps','dig_stone_with_iron',4)
+	formspec = formspec..goal_formspac
+	count = count + success
+
 	-- place locked chest
-	formspec = formspec..'label[8,8; 9) craft and place a Locked Chest]'
-	if achievements.get(level,player_name,'place_chest_locked') >= 1 then
-		formspec = formspec .. 'label[8.3,8.4; COMPLETE!]'
-		count = count + 1
-	else
-		formspec = formspec .. 'label[8.3,8.4; not done]'
-	end
+	goal_formspac,success = achievements.get_goal_formspac(player_name,level,9,'craft and place a Locked Chest','place_chest_locked',1)
+	formspec = formspec..goal_formspac
+	count = count + success
 
 	-- dig 4 copper lumps
-	formspec = formspec..'label[8,9; 10) dig 4 Copper Lumps]'
-	if achievements.get(level,player_name,'dig_stone_with_copper') >= 2 then
-		formspec = formspec .. 'label[8.3,9.4; COMPLETE!]'
-		count = count + 1
-	else
-		formspec = formspec .. 'label[8.3,9.4; not done]'
-	end
+	goal_formspac,success = achievements.get_goal_formspac(player_name,level,10,'dig 4 Copper Lumps','dig_stone_with_copper',4)
+	formspec = formspec..goal_formspac
+	count = count + success
 
 	-- next level
 	if count==total and achievements.get(0,player_name,'level')==level then
@@ -181,18 +143,21 @@ end
 levels[level].reward_achievement = function(player_name,achievement)
 	local achievement_count = achievements.get(level,player_name,achievement)
 	
+	-- place_dirt
+	if achievement == 'place_dirt' and achievement_count == 200 then
+		-- put water under spawn
+		local pos = levels[level].get_pos(player_name)
+		minetest.env:add_node({x=pos.x,y=pos.y-1,z=pos.z}, {name='default:water_source'})
+		achievements.give_reward(level,player_name,'stairs:stair_brick 5')
+		return true
+	end
+	
 	-- place_water_infinite
 	if achievement == 'place_water_infinite' and achievement_count == 1 then
 		achievements.give_reward(level,player_name,'stairs:stair_wood 5')
 		return true
 	end
 
-	-- place_dirt
-	if achievement == 'place_dirt' and achievement_count == 200 then
-		achievements.give_reward(level,player_name,'stairs:stair_brick 5')
-		return true
-	end
-	
 	-- place_wood
 	if achievement == 'place_wood' and achievement_count == 50 then
 		achievements.give_reward(level,player_name,'default:brick 40')
@@ -223,8 +188,8 @@ levels[level].reward_achievement = function(player_name,achievement)
 		return true
 	end
 	
-	-- dig_stone_with_iron x2
-	if achievement == 'dig_stone_with_iron' and achievement_count == 2 then
+	-- dig_stone_with_iron x4
+	if achievement == 'dig_stone_with_iron' and achievement_count == 4 then
 		achievements.give_reward(level,player_name,'default:desert_cobble 50')
 		return true
 	end
@@ -235,8 +200,8 @@ levels[level].reward_achievement = function(player_name,achievement)
 		return true
 	end
 
-	-- dig_stone_with_copper x2
-	if achievement == 'dig_stone_with_copper' and achievement_count == 2 then
+	-- dig_stone_with_copper x4
+	if achievement == 'dig_stone_with_copper' and achievement_count == 4 then
 		achievements.give_reward(level,player_name,'default:gold_lump')
 		return true
 	end

@@ -52,111 +52,70 @@ levels[level].update = function(player_name,pos)
 	local total = 10
 	local count = 0
 
+	formspec = formspec..'size[17,13;]'
+	if nav then
+		formspec = formspec..'button[15,12;2,0.5;main;Back]'
+		formspec = formspec..'button[13,12;2,0.5;craft;Craft]'
+	end
 	formspec = formspec
-		..'size[15,10;]'
 		..'label[0,0;LEVEL '..level..' FOR: '.. player_name ..']'
 		..'label[13.4,0; rewards]'
 		..'list[current_name;rewards;13,0.5;2,2;]'
 		..'list[current_player;main;0,6;8,4;]'
 
 		..'label[0,1; --== Does This Keep Going? ==--]'
-		..'label[0,1.5; If you like this planet, then stray not]'
-		..'label[0,2.0; from your mission traveller, for the end]'
-		..'label[0,2.5; is near.]'
-		
-		..'label[0,4; --== About The Level '..level..' Block ==--]'
-		..'label[0,4.5; * SHORT LEFT CLICK]'
-		..'label[0.4,5; = PUNCH to refresh achievements]'
+		..'label[0,1.5; If you like this planet, then stray not from your]'
+		..'label[0,2.0; mission traveller, for the end is near.]'
 
 	-- dig 20 papyrus
-	formspec = formspec..'label[8,0; 1) dig 20 Papyrus]'
-	if achievements.get(level,player_name,'dig_papyrus') >= 20 then
-		formspec = formspec .. 'label[8.3,0.4; COMPLETE!]'
-		count = count + 1
-	else
-		formspec = formspec .. 'label[8.3,0.4; not done]'
-	end
+	goal_formspac,success = achievements.get_goal_formspac(player_name,level,1,'dig 20 Papyrus','dig_papyrus',20)
+	formspec = formspec..goal_formspac
+	count = count + success
 
 	-- place 20 papyrus
-	formspec = formspec..'label[8,1; 2) place 20 Papyrus in a nice garden]'
-	if achievements.get(level,player_name,'place_papyrus') >= 20 then
-		formspec = formspec .. 'label[8.3,1.4; COMPLETE!]'
-		count = count + 1
-	else
-		formspec = formspec .. 'label[8.3,1.4; not done]'
-	end
+	goal_formspac,success = achievements.get_goal_formspac(player_name,level,1,'place 20 Papyrus in a nice garden','place_papyrus',20)
+	formspec = formspec..goal_formspac
+	count = count + success
 
 	-- dig 15 cactus
-	formspec = formspec..'label[8,2; 3) dig 15 Cactus]'
-	if achievements.get(level,player_name,'dig_cactus') >= 15 then
-		formspec = formspec .. 'label[8.3,2.4; COMPLETE!]'
-		count = count + 1
-	else
-		formspec = formspec .. 'label[8.3,2.4; not done]'
-	end
+	goal_formspac,success = achievements.get_goal_formspac(player_name,level,1,'dig 15 Cactus','dig_cactus',15)
+	formspec = formspec..goal_formspac
+	count = count + success
 
 	-- place 15 cactus
-	formspec = formspec..'label[8,3; 4) place 15 Cactus in another gargen]'
-	if achievements.get(level,player_name,'place_cactus') >= 15 then
-		formspec = formspec .. 'label[8.3,3.4; COMPLETE!]'
-		count = count + 1
-	else
-		formspec = formspec .. 'label[8.3,3.4; not done]'
-	end
+	goal_formspac,success = achievements.get_goal_formspac(player_name,level,1,'place 15 Cactus in another gargen','place_cactus',15)
+	formspec = formspec..goal_formspac
+	count = count + success
 
 	-- place 30 fences
-	formspec = formspec..'label[8,4; 5) place 30 fences around your gardens]'
-	if achievements.get(level,player_name,'place_fence') >= 30 then
-		formspec = formspec .. 'label[8.3,4.4; COMPLETE!]'
-		count = count + 1
-	else
-		formspec = formspec .. 'label[8.3,4.4; not done]'
-	end
+	goal_formspac,success = achievements.get_goal_formspac(player_name,level,1,'place 30 fences around your gardens','place_fence',30)
+	formspec = formspec..goal_formspac
+	count = count + success
 
 	-- place 20 ladders
-	formspec = formspec..'label[8,5; 6) add 20 ladders to your structures]'
-	if achievements.get(level,player_name,'place_ladder') >= 20 then
-		formspec = formspec .. 'label[8.3,5.4; COMPLETE!]'
-		count = count + 1
-	else
-		formspec = formspec .. 'label[8.3,5.4; not done]'
-	end
+	goal_formspac,success = achievements.get_goal_formspac(player_name,level,1,'add 20 ladders to your structures','place_ladder',20)
+	formspec = formspec..goal_formspac
+	count = count + success
 
 	-- place 5 bookshelves
-	formspec = formspec..'label[8,6; 7) decorate your house with 5 Bookshelves]'
-	if achievements.get(level,player_name,'place_bookshelf') >= 5 then
-		formspec = formspec .. 'label[8.3,6.4; COMPLETE!]'
-		count = count + 1
-	else
-		formspec = formspec .. 'label[8.3,6.4; not done]'
-	end
+	goal_formspac,success = achievements.get_goal_formspac(player_name,level,1,'decorate your house with 5 Bookshelves','place_bookshelf',5)
+	formspec = formspec..goal_formspac
+	count = count + success
 
-	-- place 10 signs
-	formspec = formspec..'label[8,7; 8) place 10 Signs to help other travellers]'
-	if achievements.get(level,player_name,'place_sign_wall') >= 10 then
-		formspec = formspec .. 'label[8.3,7.4; COMPLETE!]'
-		count = count + 1
-	else
-		formspec = formspec .. 'label[8.3,7.4; not done]'
-	end
+	-- place 5 signs
+	goal_formspac,success = achievements.get_goal_formspac(player_name,level,1,'place 5 Signs to help other travellers','place_sign_wall',5)
+	formspec = formspec..goal_formspac
+	count = count + success
 
 	-- place 50 torches
-	formspec = formspec..'label[8,8; 9) place 50 Torches to help you see at night]'
-	if achievements.get(level,player_name,'place_torch') >= 50 then
-		formspec = formspec .. 'label[8.3,8.4; COMPLETE!]'
-		count = count + 1
-	else
-		formspec = formspec .. 'label[8.3,8.4; not done]'
-	end
+	goal_formspac,success = achievements.get_goal_formspac(player_name,level,1,'place 50 Torches to help you see at night','place_torch',50)
+	formspec = formspec..goal_formspac
+	count = count + success
 
 	-- dig 500 stone
-	formspec = formspec..'label[8,9; 10) dig 500 Stone for your next project...]'
-	if achievements.get(level,player_name,'dig_stone') >= 500 then
-		formspec = formspec .. 'label[8.3,9.4; COMPLETE!]'
-		count = count + 1
-	else
-		formspec = formspec .. 'label[8.3,9.4; not done]'
-	end
+	goal_formspac,success = achievements.get_goal_formspac(player_name,level,1,'dig 500 Stone for your next project...','dig_stone',500)
+	formspec = formspec..goal_formspac
+	count = count + success
 
 	-- next level
 	if count==total and achievements.get(0,player_name,'level')==level then

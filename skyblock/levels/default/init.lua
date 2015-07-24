@@ -10,7 +10,6 @@ LEVEL LOADER
 
 ]]--
 
-
 --
 -- Level Files
 --
@@ -20,6 +19,31 @@ dofile(minetest.get_modpath('skyblock')..'/levels/default/level_1.lua')
 dofile(minetest.get_modpath('skyblock')..'/levels/default/level_2.lua')
 dofile(minetest.get_modpath('skyblock')..'/levels/default/level_3.lua')
 dofile(minetest.get_modpath('skyblock')..'/levels/default/level_4.lua')
+
+
+-- add inventory_plus page when a player joins
+minetest.register_on_joinplayer(function(player)
+    inventory_plus.register_button(player,"skyblock","Missions")
+end)
+ 
+-- each time a player clicks an inventory button, this is called
+minetest.register_on_player_receive_fields(function(player, formname, fields)
+	if fields.skyblock then
+		inventory_plus.set_inventory_formspec(player, achievements.get_formspec(player:get_player_name(),"skyblock"))
+		return
+	end
+	if fields.restart then
+		-- todo
+		return
+	end
+end)
+
+-- add rewards to player inventory
+minetest.register_on_joinplayer(function(player)
+	player:get_inventory():set_size('rewards', 4)
+	inventory_plus.set_inventory_formspec(player, achievements.get_formspec(player:get_player_name(),"skyblock"))
+end)
+
 
 --
 -- Level Nodes
