@@ -191,17 +191,25 @@ skyblock.on_respawnplayer = function(player)
 	skyblock.empty_inventory(player)
 	
 	-- reset achievements
-	if achievements ~= nil then
-		achievements.reset(player_name)
+	--if achievements ~= nil then
+	achievements.reset(player_name)
+	for i=2,4 do
+		if levels[i] ~= nil then
+			local pos = levels[i].get_pos(player_name)
+			if pos and minetest.env:get_node(pos).name == 'skyblock:level_'..i then
+				minetest.env:remove_node(pos)
+			end
+		end
 	end
+	--end
 	
+	-- give inventory
+	skyblock.give_inventory(player)
+
 	-- give them a new position
 	if skyblock.spawn_diggers[player_name] ~= nil then
 		skyblock.spawn_diggers[player_name] = nil
 		
-		-- give inventory
-		skyblock.give_inventory(player)
-
 		if skyblock.DIG_NEW_SPAWN then
 			-- unset old spawn position
 			spawned_players[player_name] = nil
