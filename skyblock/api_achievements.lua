@@ -34,10 +34,22 @@ end
 
 -- get_formspec
 achievements.get_formspec = function(player_name,page)
-	skyblock.log(player_name.." clicked "..page)
+	skyblock.log('achievements.get_formspec() for '..player_name)
 	if page=="skyblock" then
 		local level = achievements.get(0, player_name, 'level')
-		return levels[level].update(player_name,level)
+		return levels[level].update(player_name,true)
+	end
+end
+
+-- get_goal_formspac
+achievements.get_goal_formspac = function(player_name,level,i,name,achievement,required)
+	local formspec = 'label[9,'..i..'; '..i..') '..name..']'
+	if achievements.get(level,player_name,achievement) >= required then
+		formspec = formspec .. 'label[9.3,'..i..'.4; COMPLETE!]'
+		return formspec,1
+	else
+		formspec = formspec .. 'label[9.3,'..i..'.4; not done]'
+		return formspec,0
 	end
 end
 
@@ -47,7 +59,7 @@ achievements.update = function(level,player_name)
 	skyblock.log('achievements.update() level '..level..' for '..player_name..' at '..skyblock.dump_pos(pos))
 	if pos==nil then return pos end
 	local meta = minetest.env:get_meta(pos)
-	local formspec,infotext = levels[level].update(player_name,pos)
+	local formspec,infotext = levels[level].update(player_name)
 	meta:set_string('formspec', formspec)
 	meta:set_string('infotext', infotext)
 end
