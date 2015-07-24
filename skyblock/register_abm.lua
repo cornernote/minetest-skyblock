@@ -118,7 +118,7 @@ minetest.register_abm({
 
 -- remove low flowing
 minetest.register_abm({
-	nodenames = {'default:lava_flowing','default:water_flowing'},
+	nodenames = {'default:lava_flowing','default:water_flowing','default:stone'},
 	interval = 5,
 	chance = 1,
 	action = function(pos, node)
