@@ -109,7 +109,7 @@ end
 -- get players spawn position
 skyblock.get_spawn = function(player_name)
 	local spawn = spawnpos[player_name]
-	if spawn and minetest.env:get_node(spawn).name == 'skyblock:level_1' then
+	if spawn then -- and minetest.env:get_node(spawn).name == 'skyblock:level_1' then
 		skyblock.log('get_spawn() for '..player_name..' is '..skyblock.dump_pos(spawn))
 		return spawn
 	end
@@ -178,6 +178,13 @@ skyblock.spawn_diggers = {}
 skyblock.on_respawnplayer = function(player)
 	local player_name = player:get_player_name()
 	local spawn = skyblock.get_spawn(player_name)
+	
+	-- if they didnt get a spawn pos already
+	--if spawn == nil then
+	--	spawn = skyblock.get_next_spawn()
+	--	skyblock.set_spawn(player_name,spawn)
+	--	skyblock.on_respawnplayer(player)
+	--end
 	skyblock.log('on_respawnplayer() for '..player_name)
 
 	-- empty inventory
