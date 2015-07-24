@@ -42,6 +42,7 @@ end
 -- give inventory
 skyblock.give_inventory = function(player)
 	skyblock.log('give_inventory() to '..player:get_player_name())
+	player:get_inventory():add_item('main', 'craft_guide:sign_wall_locked')
 	player:get_inventory():add_item('main', 'default:stick')
 	player:get_inventory():add_item('main', 'default:leaves 6')
 end
@@ -55,14 +56,18 @@ skyblock.check_inventory = function(player)
 	if inv==nil then return false end
 	
 	stack = inv:get_stack('main', 1)
-	if stack:get_name() ~= 'default:stick' or stack:get_count() ~= 1 then
+	if stack:get_name() ~= 'craft_guide:sign_wall_locked' or stack:get_count() ~= 1 then
 		return false
 	end
 	stack = inv:get_stack('main', 2)
+	if stack:get_name() ~= 'default:stick' or stack:get_count() ~= 1 then
+		return false
+	end
+	stack = inv:get_stack('main', 3)
 	if stack:get_name() ~= 'default:leaves' or stack:get_count() ~= 6 then
 		return false
 	end
-	for i=3,inv:get_size('main') do
+	for i=4,inv:get_size('main') do
 		stack = inv:get_stack('main', i)
 		if stack:get_name() ~= '' then
 			return false
@@ -70,6 +75,12 @@ skyblock.check_inventory = function(player)
 	end
 	for i=1,inv:get_size('craft') do
 		stack = inv:get_stack('craft', i)
+		if stack:get_name() ~= '' then
+			return false
+		end
+	end
+	for i=1,inv:get_size('rewards') do
+		stack = inv:get_stack('rewards', i)
 		if stack:get_name() ~= '' then
 			return false
 		end
@@ -91,6 +102,11 @@ skyblock.empty_inventory = function(player)
 	if not inv:is_empty('craft') then
 		for i=1,inv:get_size('craft') do
 			inv:set_stack('craft', i, nil)
+		end
+	end
+	if not inv:is_empty('rewards') then
+		for i=1,inv:get_size('rewards') do
+			inv:set_stack('rewards', i, nil)
 		end
 	end
 end
