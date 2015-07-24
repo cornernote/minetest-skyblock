@@ -27,7 +27,7 @@ skyblock.START_HEIGHT = 4
 skyblock.WORLD_WIDTH = 100
 
 -- How far down (in nodes) before a player dies and is respawned
-skyblock.WORLD_BOTTOM = -16
+skyblock.WORLD_BOTTOM = -8
 
 -- Delay between skyblock respawn checks
 skyblock.SPAWN_THROTLE = 2
@@ -36,7 +36,7 @@ skyblock.SPAWN_THROTLE = 2
 skyblock.SPAWN_HEIGHT = 4
 
 -- Debug mode
-skyblock.DEBUG = 1
+skyblock.DEBUG = false
 
 -- File path and prefix for data files
 skyblock.FILENAME = minetest.get_worldpath()..'/skyblock'
