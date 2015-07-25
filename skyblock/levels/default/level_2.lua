@@ -52,72 +52,58 @@ levels[level].update = function(player_name,nav)
 	local total = 10
 	local count = 0
 
-	formspec = formspec..'size[17,13;]'
-	if nav then
-		formspec = formspec..'button[15,12;2,0.5;main;Back]'
-		formspec = formspec..'button[13,12;2,0.5;craft;Craft]'
-	end
-	formspec = formspec
-		..'label[0,0;LEVEL '..level..' FOR: '.. player_name ..']'
-		..'label[6,6; Rewards]'
-		..'list[current_player;rewards;6,6.5;2,2;]'
-		..'label[0,8.5; Inventory]'
-		..'list[current_player;main;0,9;8,4;]'
+	formspec = achievements.get_items_formspec(level,nav)
+		..'label[0,0.5; Come Up Here!]'
+		..'label[0,1; Wow, look at that view... of... nothing...]'
+		..'label[0,1.5; You should get to work extending this island.]'
+		..'label[0,2; Perhaps you could build some structures too?]'
 
-		..'label[0,2; --== A View From Above ==--]'
-		..'label[0,2.5; Wow, look at that view... of... nothing...]'
-		..'label[0,3.0; You should get to work extending this island.]'
-		..'label[0,3.5; Perhaps you could build some structures too?]'
-
-		..'label[9,0.5; --== Goals ==--]'
-		
-
-	-- place 200 dirt
-	goal_formspac,success = achievements.get_goal_formspac(player_name,level,1,'extend your Island with 200 Dirt','place_dirt',200)
+	-- place_dirt
+	goal_formspac,success = achievements.get_goal_formspac(player_name,level,1,'extend your Island with 100 Dirt','place_dirt',100)
 	formspec = formspec..goal_formspac
 	count = count + success
 
-	-- place water infinite
-	goal_formspac,success = achievements.get_goal_formspac(player_name,level,2,'create an Infinite Water Source','place_water_infinite',1)
+	-- collect_water
+	goal_formspac,success = achievements.get_goal_formspac(player_name,level,2,'collect the Water under Level 2','collect_water',1)
 	formspec = formspec..goal_formspac
 	count = count + success
 
-	-- place 50 wood
+	-- place_wood
 	goal_formspac,success = achievements.get_goal_formspac(player_name,level,3,'build a structure using 50 Wood','place_wood',50)
 	formspec = formspec..goal_formspac
 	count = count + success
 
-	-- place 50 brick
+	-- place_brick
 	goal_formspac,success = achievements.get_goal_formspac(player_name,level,4,'build a structure using 50 Brick','place_brick',50)
 	formspec = formspec..goal_formspac
 	count = count + success
 
-	-- place trapdoor
+	-- place_trapdoor
 	goal_formspac,success = achievements.get_goal_formspac(player_name,level,5,'place a Trapdoor','place_trapdoor',1)
 	formspec = formspec..goal_formspac
 	count = count + success
 	
-	-- place 10 ladders
+	-- place_ladder
 	goal_formspac,success = achievements.get_goal_formspac(player_name,level,6,'place 10 Ladders','place_ladder',10)
 	formspec = formspec..goal_formspac
 	count = count + success
 
-	-- place 20 wood fences
+	-- place_fence_wood
 	goal_formspac,success = achievements.get_goal_formspac(player_name,level,7,'place 20 Wood Fences','place_fence_wood',20)
 	formspec = formspec..goal_formspac
 	count = count + success
 	
-	-- dig 4 iron lumps
-	goal_formspac,success = achievements.get_goal_formspac(player_name,level,8,'dig 4 Iron Lumps','dig_stone_with_iron',4)
+	-- dig_stone_with_iron
+	goal_formspac,success = achievements.get_goal_formspac(player_name,level,8,'dig 8 Iron Lumps','dig_stone_with_iron',4)
 	formspec = formspec..goal_formspac
 	count = count + success
 
-	-- place locked chest
+	-- place_chest_locked
 	goal_formspac,success = achievements.get_goal_formspac(player_name,level,9,'craft and place a Locked Chest','place_chest_locked',1)
 	formspec = formspec..goal_formspac
 	count = count + success
 
-	-- dig 4 copper lumps
+	-- dig_stone_with_copper
 	goal_formspac,success = achievements.get_goal_formspac(player_name,level,10,'dig 4 Copper Lumps','dig_stone_with_copper',4)
 	formspec = formspec..goal_formspac
 	count = count + success
@@ -126,6 +112,7 @@ levels[level].update = function(player_name,nav)
 	if count==total and achievements.get(0,player_name,'level')==level then
 		levels[level+1].make_start_blocks(player_name)
 		achievements.add(0,player_name,'level')
+		formspec = levels[level+1].update(player_name,nav)
 	end
 	if  achievements.get(0,player_name,'level') > level then
 		local pos = levels[level+1].get_pos(player_name)
@@ -144,23 +131,31 @@ levels[level].reward_achievement = function(player_name,achievement)
 	local achievement_count = achievements.get(level,player_name,achievement)
 	
 	-- place_dirt
-	if achievement == 'place_dirt' and achievement_count == 200 then
-		-- put water under spawn
-		local pos = levels[level].get_pos(player_name)
-		minetest.env:add_node({x=pos.x,y=pos.y-1,z=pos.z}, {name='default:water_source'})
-		achievements.give_reward(level,player_name,'stairs:stair_brick 5')
+	if achievement == 'place_dirt' and achievement_count == 100 then
+		achievements.give_reward(level,player_name,'bucket:bucket_empty')
+		-- put water above spawn
+		local pos = levels[1].get_pos(player_name)
+		minetest.env:add_node({x=pos.x,y=pos.y+1,z=pos.z}, {name='default:water_source'})
 		return true
 	end
 	
-	-- place_water_infinite
-	if achievement == 'place_water_infinite' and achievement_count == 1 then
-		achievements.give_reward(level,player_name,'stairs:stair_wood 5')
+	-- collect_water x1
+	if achievement == 'collect_water' and achievement_count == 1 then
+		achievements.give_reward(level,player_name,'default:jungleleaves 6')
 		return true
 	end
 
+	-- place_water_infinite
+	--[[
+	if achievement == 'place_water_infinite' and achievement_count == 1 then
+		achievements.give_reward(level,player_name,'default:cobble 50')
+		return true
+	end
+	]]--
+
 	-- place_wood
 	if achievement == 'place_wood' and achievement_count == 50 then
-		achievements.give_reward(level,player_name,'default:brick 40')
+		achievements.give_reward(level,player_name,'default:brick 50')
 		return true
 	end
 
@@ -178,19 +173,20 @@ levels[level].reward_achievement = function(player_name,achievement)
 
 	-- place_ladder
 	if achievement == 'place_ladder' and achievement_count == 10 then
-		achievements.give_reward(level,player_name,'wool:white 50')
+		achievements.give_reward(level,player_name,'default:desert_cobble 50')
 		return true
 	end
 
-	-- place_fence
-	if achievement == 'place_fence' and achievement_count == 20 then
+	-- place_fence_wood
+	if achievement == 'place_fence_wood' and achievement_count == 20 then
 		achievements.give_reward(level,player_name,'default:iron_lump')
+		achievements.give_reward(level,player_name,'default:cobble 50')
 		return true
 	end
 	
-	-- dig_stone_with_iron x4
+	-- dig_stone_with_iron x8
 	if achievement == 'dig_stone_with_iron' and achievement_count == 4 then
-		achievements.give_reward(level,player_name,'default:desert_cobble 50')
+		achievements.give_reward(level,player_name,'default:pine_needles 6')
 		return true
 	end
 
@@ -200,7 +196,7 @@ levels[level].reward_achievement = function(player_name,achievement)
 		return true
 	end
 
-	-- dig_stone_with_copper x4
+	-- dig_stone_with_copper x8
 	if achievement == 'dig_stone_with_copper' and achievement_count == 4 then
 		achievements.give_reward(level,player_name,'default:gold_lump')
 		return true
@@ -245,7 +241,7 @@ levels[level].on_placenode = function(pos, newnode, placer, oldnode)
 	end
 
 	-- place_wood
-	if newnode.name == 'default:wood' then
+	if newnode.name == 'default:wood' or newnode.name == 'default:junglewood' or newnode.name == 'default:pinewood' then
 		achievements.add(level,player_name,'place_wood')
 		return
 	end
@@ -278,13 +274,23 @@ end
 
 
 -- track bucket achievements
-levels[level].bucket_on_use = function(player_name, pointed_thing) end
+levels[level].bucket_on_use = function(player_name, pointed_thing)
+
+	-- collect_water
+	local n = minetest.env:get_node(pointed_thing.under)
+	skyblock.log('levels[2].bucket_water_on_use() for '..player_name..' pointed at '..n.name)
+	if n.name == 'default:water_source' then
+		achievements.add(level,player_name,'collect_water')
+	end
+
+end
 
 
 -- track bucket water achievements
 levels[level].bucket_water_on_use = function(player_name, pointed_thing) 
 
 	-- place_water_infinite
+	--[[
 	local pos = pointed_thing.under
 	if minetest.env:get_node({x=pos.x-1,y=pos.y,z=pos.z-1}).name=='default:water_source' 
 	or minetest.env:get_node({x=pos.x-1,y=pos.y,z=pos.z+1}).name=='default:water_source'
@@ -293,6 +299,7 @@ levels[level].bucket_water_on_use = function(player_name, pointed_thing)
 		achievements.add(level,player_name,'place_water_infinite')
 		return
 	end
+	]]--
 
 end
 

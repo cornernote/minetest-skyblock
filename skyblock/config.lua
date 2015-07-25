@@ -36,7 +36,7 @@ skyblock.SPAWN_THROTLE = 2
 skyblock.SPAWN_HEIGHT = 4
 
 -- Debug mode
-skyblock.DEBUG = false
+skyblock.DEBUG = true
 
 -- File path and prefix for data files
 skyblock.FILENAME = minetest.get_worldpath()..'/skyblock'

@@ -60,34 +60,18 @@ levels[level].update = function(player_name,nav)
 	local total = 10
 	local count = 0
 
-	formspec = formspec..'size[17,13;]'
-	if nav then
-		formspec = formspec..'button[15,12;2,0.5;main;Back]'
-		formspec = formspec..'button[13,12;2,0.5;craft;Craft]'
-	end
-	formspec = formspec
-		..'label[0,0;LEVEL '..level..' FOR: '.. player_name ..']'
-		..'label[6,6; Rewards]'
-		..'list[current_player;rewards;6,6.5;2,2;]'
-		..'label[0,8.5; Inventory]'
-		..'list[current_player;main;0,9;8,4;]'
-
-		..'label[0,1.5; --== Welcome Traveller ==--]'
-		..'label[0,2; Complete the tasks to the right to receive great rewards!]'
+	formspec = achievements.get_items_formspec(level,nav)
+		..'label[0,0.5;Welcome '..player_name..', of the Sky People]'
+		..'label[0,1.0;We can no longer live on the surface.]'
+		..'label[0,1.5;Can you help us rebuild in the sky?]'
+		..'label[0,2.0;Complete the quests to receive great rewards!]'
 		
-		-- todo, move to about button
-		..'label[0,3.5; --== About This Game ==--]'
-		..'label[0,4; For information and tutorials, please visit the website at:]'
-		..'label[0,4.5; https://cornernote.github.io/minetest-skyblock/]'
+	-- todo, add restart buttons
 
-		..'label[9,0.5; --== Goals ==--]'
-	
-	-- todo, add restart and refresh buttons
-	--..'label[0,3; --== About The Level '..level..' Block ==--]'
-	--..'label[0,3.5; * SHORT LEFT CLICK]'
-	--..'label[0.4,4; = PUNCH - refresh achievements]'
-	--..'label[0,4.5; * LONG LEFT CLICK]'
-	--..'label[0.4,5; = DIG - restart in a new spawn location]'
+	-- todo, move to about button
+	--..'label[0,3.5; --== About This Game ==--]'
+	--..'label[0,4; For information and tutorials, please visit the website at:]'
+	--..'label[0,4.5; https://cornernote.github.io/minetest-skyblock/]'
 
 	local goal_formspac, success
 		
@@ -97,46 +81,46 @@ levels[level].update = function(player_name,nav)
 	count = count + success
 
 	-- dig_tree
-	goal_formspac,success = achievements.get_goal_formspac(player_name,level,2,'craft an axe and dig 4 Trees','dig_tree',4)
+	goal_formspac,success = achievements.get_goal_formspac(player_name,level,2,'craft an axe and dig 16 Trees','dig_tree',16)
 	formspec = formspec..goal_formspac
 	count = count + success
 
-	-- collect water under spawn node
-	goal_formspac,success = achievements.get_goal_formspac(player_name,level,3,'collect the Water under your Spawn','collect_spawn_water',1)
+	-- place_dirt
+	goal_formspac,success = achievements.get_goal_formspac(player_name,level,3,'extend your Island with 50 Dirt','place_dirt',50)
 	formspec = formspec..goal_formspac
 	count = count + success
 
-	-- place chest
+	-- place_chest
 	goal_formspac,success = achievements.get_goal_formspac(player_name,level,4,'craft and place a Chest','place_chest',1)
 	formspec = formspec..goal_formspac
 	count = count + success
 
-	-- place sign_wall
+	-- place_sign_wall
 	goal_formspac,success = achievements.get_goal_formspac(player_name,level,5,'craft and place a Sign','place_sign_wall',1)
 	formspec = formspec..goal_formspac
 	count = count + success
 
-	-- collect lava under spawn node
-	goal_formspac,success = achievements.get_goal_formspac(player_name,level,6,'collect the Lava under your Spawn','collect_spawn_lava',1)
+	-- place_wood
+	goal_formspac,success = achievements.get_goal_formspac(player_name,level,6,'build a house with 50 Wood','place_wood',50)
 	formspec = formspec..goal_formspac
 	count = count + success
 
-	-- dig stone
-	goal_formspac,success = achievements.get_goal_formspac(player_name,level,7,'build a Stone Generator and dig 20 Cobble','dig_stone',20)
+	-- place_cobble
+	goal_formspac,success = achievements.get_goal_formspac(player_name,level,7,'craft and place a 50 Cobblestone','place_cobble',50)
 	formspec = formspec..goal_formspac
 	count = count + success
 
-	-- place furnace
+	-- place_furnace
 	goal_formspac,success = achievements.get_goal_formspac(player_name,level,8,'craft and place a Furnace','place_furnace',1)
 	formspec = formspec..goal_formspac
 	count = count + success
 
-	-- dig 4 coal lumps
-	goal_formspac,success = achievements.get_goal_formspac(player_name,level,9,'dig 2 Coal Lumps','dig_stone_with_coal',2)
+	-- dig_stone_with_coal
+	goal_formspac,success = achievements.get_goal_formspac(player_name,level,9,'dig 4 Coal Lumps','dig_stone_with_coal',2)
 	formspec = formspec..goal_formspac
 	count = count + success
 
-	-- place 8 torches
+	-- place_torch
 	goal_formspac,success = achievements.get_goal_formspac(player_name,level,10,'place 8 Torches','place_torch',8)
 	formspec = formspec..goal_formspac
 	count = count + success
@@ -169,47 +153,61 @@ levels[level].reward_achievement = function(player_name,achievement)
 		return true
 	end
 	
-	-- dig_tree x4
-	if achievement == 'dig_tree' and achievement_count == 4 then
-		achievements.give_reward(level,player_name,'bucket:bucket_empty')
-		-- put water under spawn
-		local pos = levels[level].get_pos(player_name)
-		minetest.env:add_node({x=pos.x,y=pos.y-1,z=pos.z}, {name='default:water_source'})
+	-- dig_tree x16
+	if achievement == 'dig_tree' and achievement_count == 16 then
+		achievements.give_reward(level,player_name,'default:dirt 50')
+		--achievements.give_reward(level,player_name,'bucket:bucket_empty')
 		return true
 	end
-	
-	-- collect_spawn_water x1
-	if achievement == 'collect_spawn_water' and achievement_count == 1 then
+
+	-- place_dirt
+	if achievement == 'place_dirt' and achievement_count == 50 then
 		achievements.give_reward(level,player_name,'default:jungleleaves 6')
+		-- put water under spawn
+		--local pos = levels[level].get_pos(player_name)
+		--minetest.env:add_node({x=pos.x,y=pos.y-1,z=pos.z}, {name='default:water_source'})
 		return true
 	end
 
 	-- place_chest x1
 	if achievement == 'place_chest' and achievement_count == 1 then
-		achievements.give_reward(level,player_name,'default:cactus')
-		return true
-	end
-
-	-- place_sign_wall
-	if achievement == 'place_sign_wall' and achievement_count == 1 then
-		achievements.give_reward(level,player_name,'default:papyrus')
-		-- put lava under spawn
-		local pos = levels[level].get_pos(player_name)
-		minetest.env:add_node({x=pos.x,y=pos.y-1,z=pos.z}, {name='default:lava_source'})
-		return true
-	end
-
-	-- collect_spawn_lava x1
-	if achievement == 'collect_spawn_lava' and achievement_count == 1 then
-		achievements.give_reward(level,player_name,'wool:white 50')
-		return true
-	end
-
-	-- dig_stone x20
-	if achievement == 'dig_stone' and achievement_count == 20 then
 		achievements.give_reward(level,player_name,'default:sandstone 50')
 		return true
 	end
+
+	-- place_sign_wall x1
+	if achievement == 'place_sign_wall' and achievement_count == 1 then
+		achievements.give_reward(level,player_name,'default:cactus')
+		-- put lava under spawn
+		--local pos = levels[level].get_pos(player_name)
+		--minetest.env:add_node({x=pos.x,y=pos.y-1,z=pos.z}, {name='default:lava_source'})
+		return true
+	end
+
+	-- place_wood x50
+	if achievement == 'place_wood' and achievement_count == 50 then
+		achievements.give_reward(level,player_name,'default:cobble 50')
+		return true
+	end
+
+	-- place_cobble x50
+	if achievement == 'place_cobble' and achievement_count == 50 then
+		achievements.give_reward(level,player_name,'default:cobble 50')
+		return true
+	end
+
+
+	-- collect_spawn_lava x1
+	--if achievement == 'collect_spawn_lava' and achievement_count == 1 then
+	--	achievements.give_reward(level,player_name,'wool:white 50')
+	--	return true
+	--end
+
+	-- dig_stone x20
+	--if achievement == 'dig_stone' and achievement_count == 20 then
+	--	achievements.give_reward(level,player_name,'default:sandstone 50')
+	--	return true
+	--end
 	
 	-- place_furnace x1
 	if achievement == 'place_furnace' and achievement_count == 1 then
@@ -225,7 +223,7 @@ levels[level].reward_achievement = function(player_name,achievement)
 
 	-- place_torch x8
 	if achievement == 'place_torch' and achievement_count == 8 then
-		achievements.give_reward(level,player_name,'default:pine_needles 6')
+		achievements.give_reward(level,player_name,'default:dirt 99')
 		return true
 	end
 
@@ -267,9 +265,27 @@ levels[level].on_placenode = function(pos, newnode, placer, oldnode)
 		return
 	end
 
+	-- place_dirt
+	if newnode.name == 'default:dirt' then
+		achievements.add(level,player_name,'place_dirt')
+		return
+	end
+
 	-- place_chest
 	if newnode.name == 'default:chest' then
 		achievements.add(level,player_name,'place_chest')
+		return
+	end
+
+	-- place_wood
+	if newnode.name == 'default:wood' or newnode.name == 'default:junglewood' or newnode.name == 'default:pinewood' then
+		achievements.add(level,player_name,'place_wood')
+		return
+	end
+
+	-- place_cobble
+	if newnode.name == 'default:cobble' then
+		achievements.add(level,player_name,'place_cobble')
 		return
 	end
 
@@ -279,15 +295,15 @@ levels[level].on_placenode = function(pos, newnode, placer, oldnode)
 		return
 	end
 
-	-- place_torch
-	if newnode.name == 'default:torch' then
-		achievements.add(level,player_name,'place_torch')
-		return
-	end
-
 	-- place_sign_wall
 	if newnode.name == 'default:sign_wall' then
 		achievements.add(level,player_name,'place_sign_wall')
+		return
+	end
+
+	-- place_torch
+	if newnode.name == 'default:torch' then
+		achievements.add(level,player_name,'place_torch')
 		return
 	end
 
@@ -297,7 +313,11 @@ end
 -- track bucket achievements
 levels[level].bucket_on_use = function(player_name, pointed_thing)
 
+	local n = minetest.env:get_node(pointed_thing.under)
+	skyblock.log('levels[1].bucket_water_on_use() for '..player_name..' pointed at '..n.name)
+
 	-- collect_spawn_water
+	--[[
 	n = minetest.env:get_node(pointed_thing.under)
 	if n.name == 'default:water_source' then
 		local spawn = skyblock.has_spawn(player_name)
@@ -305,8 +325,10 @@ levels[level].bucket_on_use = function(player_name, pointed_thing)
 			achievements.add(level,player_name,'collect_spawn_water')
 		end
 	end
+	]]--
 
 	-- collect_spawn_lava
+	--[[
 	n = minetest.env:get_node(pointed_thing.under)
 	if n.name == 'default:lava_source' then
 		local spawn = skyblock.has_spawn(player_name)
@@ -314,6 +336,7 @@ levels[level].bucket_on_use = function(player_name, pointed_thing)
 			achievements.add(level,player_name,'collect_spawn_lava')
 		end
 	end
+	]]--
 
 end
 

@@ -52,20 +52,11 @@ levels[level].update = function(player_name,pos)
 	local total = 10
 	local count = 0
 
-	formspec = formspec..'size[17,13;]'
-	if nav then
-		formspec = formspec..'button[15,12;2,0.5;main;Back]'
-		formspec = formspec..'button[13,12;2,0.5;craft;Craft]'
-	end
-	formspec = formspec
-		..'label[0,0;LEVEL '..level..' FOR: '.. player_name ..']'
-		..'label[13.4,0; rewards]'
-		..'list[current_name;rewards;13,0.5;2,2;]'
-		..'list[current_player;main;0,6;8,4;]'
-
-		..'label[0,1; --== Does This Keep Going? ==--]'
-		..'label[0,1.5; If you like this planet, then stray not from your]'
-		..'label[0,2.0; mission traveller, for the end is near.]'
+	formspec = achievements.get_items_formspec(level,nav)
+		..'label[0,0.5; Does This Keep Going?]'
+		..'label[0,1.0; If you are enjoying this world, then stray not]'
+		..'label[0,1.5; from your mission traveller...]'
+		..'label[0,2.0; ... for the end is near.]'
 
 	-- dig 20 papyrus
 	goal_formspac,success = achievements.get_goal_formspac(player_name,level,1,'dig 20 Papyrus','dig_papyrus',20)
@@ -73,47 +64,47 @@ levels[level].update = function(player_name,pos)
 	count = count + success
 
 	-- place 20 papyrus
-	goal_formspac,success = achievements.get_goal_formspac(player_name,level,1,'place 20 Papyrus in a nice garden','place_papyrus',20)
+	goal_formspac,success = achievements.get_goal_formspac(player_name,level,2,'place 20 Papyrus in a nice garden','place_papyrus',20)
 	formspec = formspec..goal_formspac
 	count = count + success
 
 	-- dig 15 cactus
-	goal_formspac,success = achievements.get_goal_formspac(player_name,level,1,'dig 15 Cactus','dig_cactus',15)
+	goal_formspac,success = achievements.get_goal_formspac(player_name,level,3,'dig 15 Cactus','dig_cactus',15)
 	formspec = formspec..goal_formspac
 	count = count + success
 
 	-- place 15 cactus
-	goal_formspac,success = achievements.get_goal_formspac(player_name,level,1,'place 15 Cactus in another gargen','place_cactus',15)
+	goal_formspac,success = achievements.get_goal_formspac(player_name,level,4,'place 15 Cactus in another gargen','place_cactus',15)
 	formspec = formspec..goal_formspac
 	count = count + success
 
 	-- place 30 fences
-	goal_formspac,success = achievements.get_goal_formspac(player_name,level,1,'place 30 fences around your gardens','place_fence',30)
+	goal_formspac,success = achievements.get_goal_formspac(player_name,level,5,'place 30 fences around your gardens','place_fence',30)
 	formspec = formspec..goal_formspac
 	count = count + success
 
 	-- place 20 ladders
-	goal_formspac,success = achievements.get_goal_formspac(player_name,level,1,'add 20 ladders to your structures','place_ladder',20)
+	goal_formspac,success = achievements.get_goal_formspac(player_name,level,6,'add 20 ladders to your structures','place_ladder',20)
 	formspec = formspec..goal_formspac
 	count = count + success
 
 	-- place 5 bookshelves
-	goal_formspac,success = achievements.get_goal_formspac(player_name,level,1,'decorate your house with 5 Bookshelves','place_bookshelf',5)
+	goal_formspac,success = achievements.get_goal_formspac(player_name,level,7,'decorate your house with 5 Bookshelves','place_bookshelf',5)
 	formspec = formspec..goal_formspac
 	count = count + success
 
 	-- place 5 signs
-	goal_formspac,success = achievements.get_goal_formspac(player_name,level,1,'place 5 Signs to help other travellers','place_sign_wall',5)
+	goal_formspac,success = achievements.get_goal_formspac(player_name,level,8,'place 5 Signs to help other travellers','place_sign_wall',5)
 	formspec = formspec..goal_formspac
 	count = count + success
 
 	-- place 50 torches
-	goal_formspac,success = achievements.get_goal_formspac(player_name,level,1,'place 50 Torches to help you see at night','place_torch',50)
+	goal_formspac,success = achievements.get_goal_formspac(player_name,level,9,'place 50 Torches to help you see at night','place_torch',50)
 	formspec = formspec..goal_formspac
 	count = count + success
 
 	-- dig 500 stone
-	goal_formspac,success = achievements.get_goal_formspac(player_name,level,1,'dig 500 Stone for your next project...','dig_stone',500)
+	goal_formspac,success = achievements.get_goal_formspac(player_name,level,10,'dig 500 Stone for your next project...','dig_stone',500)
 	formspec = formspec..goal_formspac
 	count = count + success
 
@@ -121,6 +112,7 @@ levels[level].update = function(player_name,pos)
 	if count==total and achievements.get(0,player_name,'level')==level then
 		levels[level+1].make_start_blocks(player_name)
 		achievements.add(0,player_name,'level')
+		formspec = levels[level+1].update(player_name,nav)
 	end
 	if  achievements.get(0,player_name,'level') > level then
 		local pos = levels[level+1].get_pos(player_name)

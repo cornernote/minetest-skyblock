@@ -43,14 +43,47 @@ end
 
 -- get_goal_formspac
 achievements.get_goal_formspac = function(player_name,level,i,name,achievement,required)
-	local formspec = 'label[9,'..i..'; '..i..') '..name..']'
+	local y = 2.9+(i*0.6)
+	local formspec = 'label[0.8,'..y..'; '..i..') '..name..']'
 	if achievements.get(level,player_name,achievement) >= required then
-		formspec = formspec .. 'label[9.3,'..i..'.4; COMPLETE!]'
+		formspec = formspec .. 'image[0,'..(y-0.25)..';1,1;checkbox_checked.png]'
 		return formspec,1
 	else
-		formspec = formspec .. 'label[9.3,'..i..'.4; not done]'
+		formspec = formspec .. 'image[0,'..(y-0.25)..';1,1;checkbox_unchecked.png]'
 		return formspec,0
 	end
+end
+
+-- get_items_formspec
+achievements.get_items_formspec = function(level,nav)
+	local formspec = 'size[15,10;]'
+	if nav then
+		formspec = formspec
+			..'button[7,0;2,0.5;bags;Bags]'
+			..'button_exit[9,0;2,0.5;home_gui_set;Set Home]'
+			..'button_exit[11,0;2,0.5;home_gui_go;Go Home]'
+	end
+	formspec = formspec
+		.."button_exit[13,0;2,0.5;close;Close]"
+		
+		..'label[0,0; --== MISSION '..level..' ==--]'
+		..'label[0,2.7; --== Quests ==--]'
+		..'background[-0.1,-0.1;6.2,10.3;goals.png]'
+
+		..'label[7,1.5; Rewards]'
+		..'background[6.9,1.4;2.2,2.8;rewards.png]'
+		..'list[current_player;rewards;7,2;2,2;]'
+
+		..'label[10,1.5; Craft]'
+		..'label[14,2.5;Output]'
+		..'background[9.9,1.4;5.2,3.8;craft.png]'
+		.."list[current_player;craft;10,2;3,3;]"
+		.."list[current_player;craftpreview;14,3;1,1;]"
+		
+		..'label[7,5.5; Inventory]'
+		..'background[6.9,5.4;8.2,4.8;inventory.png]'
+		..'list[current_player;main;7,6;8,4;]'
+	return formspec
 end
 
 -- update achievements

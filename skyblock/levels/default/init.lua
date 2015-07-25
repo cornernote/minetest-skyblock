@@ -45,6 +45,50 @@ minetest.register_on_joinplayer(function(player)
 end)
 
 
+-- register_on_joinplayer
+minetest.register_on_joinplayer(function(player)
+	minetest.after(3,function()
+		inventory_plus.set_inventory_formspec(player, achievements.get_formspec(player:get_player_name(),"skyblock"))
+	end)
+end)
+
+-- override get_formspec
+inventory_plus.get_formspec = function(player,page)
+	local formspec = "size[8,7.5]"
+	
+	-- player inventory
+	formspec = formspec .. "list[current_player;main;0,3.5;8,4;]"
+
+	-- craft page
+	if page=="craft" then
+		formspec = formspec
+			.."button[0,0;2,0.5;main;Back]"
+			.."list[current_player;craftpreview;7,1;1,1;]"
+		if minetest.setting_getbool("inventory_craft_small") then
+			formspec = formspec.."list[current_player;craft;3,0;2,2;]"
+			player:get_inventory():set_width("craft", 2)
+			player:get_inventory():set_size("craft", 2*2)
+		else
+			formspec = formspec.."list[current_player;craft;3,0;3,3;]"
+			player:get_inventory():set_width("craft", 3)
+			player:get_inventory():set_size("craft", 3*3)
+		end
+	end
+	
+	-- creative page
+	if page=="creative" then
+		return player:get_inventory_formspec()
+			.."button[5,0;2,0.5;main;Back]"
+	end
+	
+	-- main page
+	if page=="main" then
+		formspec = achievements.get_formspec(player:get_player_name(),"skyblock")
+	end
+	
+	return formspec
+end
+
 --
 -- Level Nodes
 --

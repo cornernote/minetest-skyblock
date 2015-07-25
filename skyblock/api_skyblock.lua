@@ -422,11 +422,6 @@ skyblock.generate_tree = function(pos)
 	
 	local node = {name = ''}
 
-	-- check for nearby
-	if minetest.env:find_node_near(pos, 10, {'group:tree'}) ~= nil then
-		return
-	end
-	
 	-- add the tree
 	default.grow_tree(pos, math.random(1, 4) == 1)
 end
