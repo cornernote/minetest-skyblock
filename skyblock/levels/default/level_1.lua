@@ -185,7 +185,7 @@ levels[level].reward_achievement = function(player_name,achievement)
 
 	-- place_cobble x50
 	if achievement == 'place_cobble' and achievement_count == 50 then
-		achievements.give_reward(level,player_name,'stairs:stair_stonebrick 10')
+		achievements.give_reward(level,player_name,'stairs:stair_cobble 10')
 		return true
 	end
 

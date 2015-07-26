@@ -46,7 +46,7 @@ end
 
 
 -- update achievements
-levels[level].update = function(player_name,pos)
+levels[level].update = function(player_name,nav)
 	local formspec = ''
 	local total = 0
 	local count = 0

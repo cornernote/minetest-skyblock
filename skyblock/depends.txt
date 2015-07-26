@@ -7,3 +7,4 @@ flowers
 stairs
 wool
 inventory_plus
+protector
