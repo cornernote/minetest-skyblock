@@ -112,9 +112,7 @@ minetest.register_abm({
 	interval = 1,
 	chance = 1,
 	action = function(pos, node)
-		minetest.after(5,function()
-			minetest.env:remove_node(pos)
-		end)
+		minetest.env:remove_node(pos)
 	end,
 })
 
