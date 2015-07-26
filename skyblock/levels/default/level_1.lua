@@ -155,17 +155,13 @@ levels[level].reward_achievement = function(player_name,achievement)
 	
 	-- dig_tree x16
 	if achievement == 'dig_tree' and achievement_count == 16 then
-		achievements.give_reward(level,player_name,'default:dirt 50')
-		--achievements.give_reward(level,player_name,'bucket:bucket_empty')
+		achievements.give_reward(level,player_name,'protector:protect')
 		return true
 	end
 
 	-- place_dirt
 	if achievement == 'place_dirt' and achievement_count == 50 then
 		achievements.give_reward(level,player_name,'default:jungleleaves 6')
-		-- put water under spawn
-		--local pos = levels[level].get_pos(player_name)
-		--minetest.env:add_node({x=pos.x,y=pos.y-1,z=pos.z}, {name='default:water_source'})
 		return true
 	end
 
@@ -178,37 +174,21 @@ levels[level].reward_achievement = function(player_name,achievement)
 	-- place_sign_wall x1
 	if achievement == 'place_sign_wall' and achievement_count == 1 then
 		achievements.give_reward(level,player_name,'default:cactus')
-		-- put lava under spawn
-		--local pos = levels[level].get_pos(player_name)
-		--minetest.env:add_node({x=pos.x,y=pos.y-1,z=pos.z}, {name='default:lava_source'})
 		return true
 	end
 
 	-- place_wood x50
 	if achievement == 'place_wood' and achievement_count == 50 then
-		achievements.give_reward(level,player_name,'default:cobble 50')
+		achievements.give_reward(level,player_name,'stairs:stair_wood 10')
 		return true
 	end
 
 	-- place_cobble x50
 	if achievement == 'place_cobble' and achievement_count == 50 then
-		achievements.give_reward(level,player_name,'default:cobble 50')
+		achievements.give_reward(level,player_name,'stairs:stair_stonebrick 10')
 		return true
 	end
 
-
-	-- collect_spawn_lava x1
-	--if achievement == 'collect_spawn_lava' and achievement_count == 1 then
-	--	achievements.give_reward(level,player_name,'wool:white 50')
-	--	return true
-	--end
-
-	-- dig_stone x20
-	--if achievement == 'dig_stone' and achievement_count == 20 then
-	--	achievements.give_reward(level,player_name,'default:sandstone 50')
-	--	return true
-	--end
-	
 	-- place_furnace x1
 	if achievement == 'place_furnace' and achievement_count == 1 then
 		achievements.give_reward(level,player_name,'default:coal_lump')
@@ -223,7 +203,7 @@ levels[level].reward_achievement = function(player_name,achievement)
 
 	-- place_torch x8
 	if achievement == 'place_torch' and achievement_count == 8 then
-		achievements.give_reward(level,player_name,'default:dirt 99')
+		achievements.give_reward(level,player_name,'protector:protect 4')
 		return true
 	end
 
@@ -312,9 +292,6 @@ end
 
 -- track bucket achievements
 levels[level].bucket_on_use = function(player_name, pointed_thing)
-
-	local n = minetest.env:get_node(pointed_thing.under)
-	skyblock.log('levels[1].bucket_water_on_use() for '..player_name..' pointed at '..n.name)
 
 	-- collect_spawn_water
 	--[[
