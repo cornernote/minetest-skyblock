@@ -17,7 +17,7 @@ minetest.register_abm({
 	interval = 300,
 	chance = 100,
 	action = function(pos, node)
-		skyblock.log('consider spawn flora at '..skyblock.dump_pos(pos)..' on '..minetest.env:get_node(pos).name)
+		--skyblock.log('consider spawn flora at '..skyblock.dump_pos(pos)..' on '..minetest.env:get_node(pos).name)
 		pos.y = pos.y+1
 
 		local light = minetest.get_node_light(pos)
@@ -50,7 +50,7 @@ minetest.register_abm({
 			elseif rand==8 then
 				node = 'flowers:viola'
 			end
-			skyblock.log('spawn '..node..' at '..skyblock.dump_pos(pos)..' on '..minetest.env:get_node(pos).name)
+			--skyblock.log('spawn '..node..' at '..skyblock.dump_pos(pos)..' on '..minetest.env:get_node(pos).name)
 			minetest.env:set_node(pos, {name=node})
 		end
 	end
@@ -63,12 +63,12 @@ minetest.register_abm({
 	interval = 50,
 	chance = 100,
 	action = function(pos)
-		skyblock.log('consider grow dirt_with_grass at '..skyblock.dump_pos(pos)..' on '..minetest.env:get_node(pos).name)
+		--skyblock.log('consider grow dirt_with_grass at '..skyblock.dump_pos(pos)..' on '..minetest.env:get_node(pos).name)
 		local light = minetest.get_node_light(pos)
 		if light >= 13 then
 			return
 		end
-		skyblock.log('grow dirt_with_grass at '..skyblock.dump_pos(pos)..' on '..minetest.env:get_node(pos).name)
+		--skyblock.log('grow dirt_with_grass at '..skyblock.dump_pos(pos)..' on '..minetest.env:get_node(pos).name)
 		minetest.env:add_node(pos, {name='default:dirt_with_grass'})
 	end
 })
@@ -79,12 +79,12 @@ minetest.register_abm({
 	interval = 50,
 	chance = 300,
 	action = function(pos)
-		skyblock.log('consider kill dirt_with_grass at '..skyblock.dump_pos(pos)..' on '..minetest.env:get_node(pos).name)
+		--skyblock.log('consider kill dirt_with_grass at '..skyblock.dump_pos(pos)..' on '..minetest.env:get_node(pos).name)
 		local light = minetest.get_node_light(pos)
 		if not light or light < 13 then
 			return
 		end
-		skyblock.log('kill dirt_with_grass at '..skyblock.dump_pos(pos)..' on '..minetest.env:get_node(pos).name)
+		--skyblock.log('kill dirt_with_grass at '..skyblock.dump_pos(pos)..' on '..minetest.env:get_node(pos).name)
 		minetest.env:add_node(pos, {name='default:dirt'})
 	end
 })
@@ -95,12 +95,12 @@ minetest.register_abm({
 	interval = 5,
 	chance = 10,
 	action = function(pos)
-		skyblock.log('consider grow dirt or dirt_with_grass at '..skyblock.dump_pos(pos)..' on '..minetest.env:get_node(pos).name)
+		--skyblock.log('consider grow dirt or dirt_with_grass at '..skyblock.dump_pos(pos)..' on '..minetest.env:get_node(pos).name)
    		if minetest.env:get_node({x = pos.x, y = pos.y + 1, z = pos.z}).name == 'air' then
-			skyblock.log('grow dirt_with_grass at '..skyblock.dump_pos(pos)..' on '..minetest.env:get_node(pos).name)
+			--skyblock.log('grow dirt_with_grass at '..skyblock.dump_pos(pos)..' on '..minetest.env:get_node(pos).name)
 			minetest.env:add_node(pos, {name='default:dirt_with_grass'})
 		else
-			skyblock.log('grow dirt at '..skyblock.dump_pos(pos)..' on '..minetest.env:get_node(pos).name)
+			--skyblock.log('grow dirt at '..skyblock.dump_pos(pos)..' on '..minetest.env:get_node(pos).name)
 			minetest.env:add_node(pos, {name='default:dirt'})
    		end
 	end
@@ -112,7 +112,9 @@ minetest.register_abm({
 	interval = 1,
 	chance = 1,
 	action = function(pos, node)
-		minetest.env:remove_node(pos)
+		minetest.after(5,function()
+			minetest.env:remove_node(pos)
+		end)
 	end,
 })
 
