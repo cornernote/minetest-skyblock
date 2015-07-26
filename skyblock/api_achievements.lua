@@ -30,6 +30,9 @@ achievements.reset = function(player_name)
 	skyblock.log('achievements.reset() for '..player_name)
 	players_achievements[player_name] = {}
 	table.save(players_achievements, skyblock.FILENAME..'.achievements')
+	inventory_plus.set_inventory_formspec(minetest.get_player_by_name(player_name), achievements.get_formspec(player_name,"skyblock"))
+	local level = achievements.get(0, player_name, 'level')
+	achievements.update(level,player_name)
 end
 
 -- get_formspec
@@ -121,7 +124,7 @@ end
 achievements.give_reward = function(level,player_name,item_name)
 	local player = minetest.get_player_by_name(player_name)
 	skyblock.log('achievements.give_reward() for '..player_name..' item '..item_name)
-	minetest.get_player_by_name(player_name):get_inventory():add_item('rewards', item_name)
+	player:get_inventory():add_item('rewards', item_name)
 	inventory_plus.set_inventory_formspec(player, achievements.get_formspec(player_name,"skyblock"))
 end
 

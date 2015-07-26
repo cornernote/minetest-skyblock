@@ -85,6 +85,14 @@ skyblock.check_inventory = function(player)
 			return false
 		end
 	end
+	for bag=1,4 do
+		for i=1,inv:get_size('bag'..bag) do
+			stack = inv:get_stack('bag'..bag, i)
+			if stack:get_name() ~= '' then
+				return false
+			end
+		end
+	end
 	
 	return true
 end
@@ -107,6 +115,18 @@ skyblock.empty_inventory = function(player)
 	if not inv:is_empty('rewards') then
 		for i=1,inv:get_size('rewards') do
 			inv:set_stack('rewards', i, nil)
+		end
+	end
+	local bags_inv = minetest.get_inventory({type="detached", name=player:get_player_name()..'_bags'})
+	for bag=1,4 do
+		if not bags_inv:is_empty('bag'..bag) then
+			for i=1,bags_inv:get_size('bag'..bag) do
+				inv:set_stack('bag'..bag, i, nil)
+			end
+			for i=1,bags_inv:get_size('bag'..bag) do
+				bags_inv:set_stack('bag'..bag, i, nil)
+				inv:set_stack('bag'..bag..'contents', i, nil)
+			end
 		end
 	end
 end
