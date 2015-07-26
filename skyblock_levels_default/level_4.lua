@@ -1,6 +1,6 @@
 --[[
 
-Skyblock for MineTest
+Skyblock for Minetest
 
 Copyright (c) 2015 cornernote, Brett O'Donnell <cornernote@gmail.com>
 Source Code: https://github.com/cornernote/minetest-skyblock
@@ -37,7 +37,7 @@ levels[level].make_start_blocks = function(player_name)
 	-- sphere
 	local radius = 10
 	local hollow = 1
-	skyblock.make_sphere({x=pos.x,y=pos.y-radius,z=pos.z},radius,'default:dirt',hollow)
+	skyblock.levels({x=pos.x,y=pos.y-radius,z=pos.z},radius,'default:dirt',hollow)
 
 	-- level 4
 	minetest.env:add_node(pos, {name='skyblock:level_4'})
@@ -45,20 +45,16 @@ levels[level].make_start_blocks = function(player_name)
 end
 
 
--- update achievements
-levels[level].update = function(player_name,nav)
-	local formspec = ''
-	local total = 0
-	local count = 0
-
-	formspec = achievements.get_items_formspec(level,nav)
+-- get level information
+levels[level].get_info = function(player_name)
+	local info = { level=level, total=0, count=0, player_name=player_name, infotext='', formspec = '' };
+	info.formspec = levels.get_inventory_formspec(level)
 		..'label[0,0.5; THE END]'
 		..'label[0,1.0; I hope you enjoyed your journey, and you]'
 		..'label[0,1.5; are welcome to stay and keep building]'
 		..'label[0,2.0; your new sky world.]'
-
-	local infotext = 'THE END! for '.. player_name ..' ... or is it ...'
-	return formspec, infotext
+	info.infotext = 'THE END! for '.. player_name ..' ... or is it ...'
+	return info
 end
 
 

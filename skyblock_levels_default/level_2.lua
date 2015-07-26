@@ -1,6 +1,6 @@
 --[[
 
-Skyblock for MineTest
+Skyblock for Minetest
 
 Copyright (c) 2015 cornernote, Brett O'Donnell <cornernote@gmail.com>
 Source Code: https://github.com/cornernote/minetest-skyblock
@@ -37,92 +37,52 @@ levels[level].make_start_blocks = function(player_name)
 	-- sphere
 	local radius = 3
 	local hollow = 1
-	skyblock.make_sphere({x=pos.x,y=pos.y-radius,z=pos.z},radius,'default:dirt',hollow)
+	skyblock.levels({x=pos.x,y=pos.y-radius,z=pos.z},radius,'default:dirt',hollow)
 
 	-- level 2
 	minetest.env:add_node(pos, {name='skyblock:level_2'})
-	achievements.update(level,player_name)
+	achievements.update(player_name)
 
 end
 
 
--- update achievements
-levels[level].update = function(player_name,nav)
-	local formspec = ''
-	local total = 10
-	local count = 0
+-- get level information
+levels[level].get_info = function(player_name)
+	local info = { level=level, total=10, count=0, player_name=player_name, infotext='', formspec = '' };
 
-	formspec = achievements.get_items_formspec(level,nav)
+	info.formspec = levels.get_inventory_formspec(level)
 		..'label[0,0.5; Come Up Here!]'
 		..'label[0,1; Wow, look at that view... of... nothing...]'
 		..'label[0,1.5; You should get to work extending this island.]'
 		..'label[0,2; Perhaps you could build some structures too?]'
+		..levels.get_goal_formspec(info,1,'place_dirt',100,'extend your Island with 100 Dirt')
+		..levels.get_goal_formspec(info,2,'collect_water',1,'collect the Water under Level 2')
+		..levels.get_goal_formspec(info,3,'place_wood',50,'build a structure using 50 Wood')
+		..levels.get_goal_formspec(info,4,'place_brick',50,'build a structure using 50 Brick')
+		..levels.get_goal_formspec(info,5,'place_trapdoor',1,'place a Trapdoor')
+		..levels.get_goal_formspec(info,6,'place_ladder',10,'place 10 Ladders')
+		..levels.get_goal_formspec(info,7,'place_fence_wood',20,'place 20 Wood Fences')
+		..levels.get_goal_formspec(info,8,'dig_stone_with_iron',4,'dig 8 Iron Lumps')
+		..levels.get_goal_formspec(info,9,'place_chest_locked',1,'craft and place a Locked Chest')
+		..levels.get_goal_formspec(info,10,'dig_stone_with_copper',4,'dig 4 Copper Lumps')
 
-	-- place_dirt
-	goal_formspac,success = achievements.get_goal_formspac(player_name,level,1,'extend your Island with 100 Dirt','place_dirt',100)
-	formspec = formspec..goal_formspac
-	count = count + success
-
-	-- collect_water
-	goal_formspac,success = achievements.get_goal_formspac(player_name,level,2,'collect the Water under Level 2','collect_water',1)
-	formspec = formspec..goal_formspac
-	count = count + success
-
-	-- place_wood
-	goal_formspac,success = achievements.get_goal_formspac(player_name,level,3,'build a structure using 50 Wood','place_wood',50)
-	formspec = formspec..goal_formspac
-	count = count + success
-
-	-- place_brick
-	goal_formspac,success = achievements.get_goal_formspac(player_name,level,4,'build a structure using 50 Brick','place_brick',50)
-	formspec = formspec..goal_formspac
-	count = count + success
-
-	-- place_trapdoor
-	goal_formspac,success = achievements.get_goal_formspac(player_name,level,5,'place a Trapdoor','place_trapdoor',1)
-	formspec = formspec..goal_formspac
-	count = count + success
+	info.infotext = 'LEVEL '..info.level..' for '..info.player_name..': '..info.count..' of '..info.total
 	
-	-- place_ladder
-	goal_formspac,success = achievements.get_goal_formspac(player_name,level,6,'place 10 Ladders','place_ladder',10)
-	formspec = formspec..goal_formspac
-	count = count + success
-
-	-- place_fence_wood
-	goal_formspac,success = achievements.get_goal_formspac(player_name,level,7,'place 20 Wood Fences','place_fence_wood',20)
-	formspec = formspec..goal_formspac
-	count = count + success
-	
-	-- dig_stone_with_iron
-	goal_formspac,success = achievements.get_goal_formspac(player_name,level,8,'dig 8 Iron Lumps','dig_stone_with_iron',4)
-	formspec = formspec..goal_formspac
-	count = count + success
-
-	-- place_chest_locked
-	goal_formspac,success = achievements.get_goal_formspac(player_name,level,9,'craft and place a Locked Chest','place_chest_locked',1)
-	formspec = formspec..goal_formspac
-	count = count + success
-
-	-- dig_stone_with_copper
-	goal_formspac,success = achievements.get_goal_formspac(player_name,level,10,'dig 4 Copper Lumps','dig_stone_with_copper',4)
-	formspec = formspec..goal_formspac
-	count = count + success
-
 	-- next level
-	if count==total and achievements.get(0,player_name,'level')==level then
-		levels[level+1].make_start_blocks(player_name)
-		achievements.add(0,player_name,'level')
-		formspec = levels[level+1].update(player_name,nav)
+	local current_level = achievements.get_level(player_name);
+	if info.count==info.total and current_level==level then
+		levels[level+1].make_start_blocks(info.player_name)
+		achievements.add(0,info.player_name,'level')
+		info.formspec = levels[level+1].get_info(info.player_name)
 	end
-	if  achievements.get(0,player_name,'level') > level then
-		local pos = levels[level+1].get_pos(player_name)
+	if current_level > level then
+		local pos = levels[level+1].get_pos(info.player_name)
 		if pos and minetest.env:get_node(pos).name ~= 'skyblock:level_3' then
-			levels[level+1].make_start_blocks(player_name)
+			levels[level+1].make_start_blocks(info.player_name)
 		end
 	end
 
-	local infotext = 'LEVEL '..level..' for '.. player_name ..': '.. count ..' of '..total
-	return formspec, infotext
+	return info
 end
 
 

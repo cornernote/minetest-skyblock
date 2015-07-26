@@ -6,18 +6,12 @@ Copyright (c) 2015 cornernote, Brett O'Donnell <cornernote@gmail.com>
 Source Code: https://github.com/cornernote/minetest-skyblock
 License: GPLv3
 
-USER CONFIG
+SKYBLOCK CONFIG
 
 ]]--
 
 -- How far apart to set players start positions
 skyblock.START_GAP = 32
-
--- Level selection (which level files to use)
-skyblock.LEVEL = 'default'
-
--- Should digging the spawn result in a new spawn pos?
-skyblock.DIG_NEW_SPAWN = false
 
 -- The Y position the spawn nodes will appear
 skyblock.START_HEIGHT = 4

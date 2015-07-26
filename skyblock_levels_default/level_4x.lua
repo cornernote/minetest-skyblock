@@ -37,7 +37,7 @@ levels[level].make_start_blocks = function(player_name)
 	-- sphere
 	local radius = 3
 	local hollow = 1
-	skyblock.make_sphere({x=pos.x,y=pos.y-radius,z=pos.z},radius,'default:dirt',hollow)
+	skyblock.levels({x=pos.x,y=pos.y-radius,z=pos.z},radius,'default:dirt',hollow)
 	minetest.env:add_node({x=pos.x,y=pos.y-1,z=pos.z}, {name='default:water_source'})
 
 	-- level 2
@@ -48,7 +48,7 @@ end
 
 
 -- update achievements
-levels[level].update = function(player_name,pos)
+levels[level].get_info = function(player_name,pos)
 	local formspec = ''
 	local total = 10
 	local count = 0

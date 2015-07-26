@@ -1,6 +1,6 @@
 --[[
-
-Skyblock for MineTest
+	
+Skyblock for Minetest
 
 Copyright (c) 2015 cornernote, Brett O'Donnell <cornernote@gmail.com>
 Source Code: https://github.com/cornernote/minetest-skyblock
@@ -37,92 +37,52 @@ levels[level].make_start_blocks = function(player_name)
 	-- sphere
 	local radius = 5
 	local hollow = 1
-	skyblock.make_sphere({x=pos.x,y=pos.y-radius,z=pos.z},radius,'default:dirt',hollow)
+	levels.make_sphere({x=pos.x,y=pos.y-radius,z=pos.z},radius,'default:dirt',hollow)
 
 	-- level 3
 	minetest.env:add_node(pos, {name='skyblock:level_3'})
-	achievements.update(level,player_name)
+	achievements.update(player_name)
 
 end
 
 
--- update achievements
-levels[level].update = function(player_name,nav)
-	local formspec = ''
-	local total = 10
-	local count = 0
+-- get level information
+levels[level].get_info = function(player_name)
+	local info = { level=level, total=10, count=0, player_name=player_name, infotext='', formspec = '' };
 
-	formspec = achievements.get_items_formspec(level,nav)
+	info.formspec = levels.get_inventory_formspec(level)
 		..'label[0,0.5; Does This Keep Going?]'
 		..'label[0,1.0; If you are enjoying this world, then stray not]'
 		..'label[0,1.5; from your mission traveller...]'
 		..'label[0,2.0; ... for the end is near.]'
+		..levels.get_goal_formspec(info,1,'dig_papyrus',20,'dig 20 Papyrus')
+		..levels.get_goal_formspec(info,2,'place_papyrus',20,'place 20 Papyrus in a nice garden')
+		..levels.get_goal_formspec(info,3,'dig_cactus',15,'dig 15 Cactus')
+		..levels.get_goal_formspec(info,4,'place_cactus',15,'place 15 Cactus in another gargen')
+		..levels.get_goal_formspec(info,5,'place_fence',30,'place 30 fences around your gardens')
+		..levels.get_goal_formspec(info,6,'place_ladder',20,'add 20 ladders to your structures')
+		..levels.get_goal_formspec(info,7,'place_bookshelf',5,'decorate your house with 5 Bookshelves')
+		..levels.get_goal_formspec(info,8,'place_sign_wall',5,'place 5 Signs to help other travellers')
+		..levels.get_goal_formspec(info,9,'place_torch',50,'place 50 Torches to help you see at night')
+		..levels.get_goal_formspec(info,10,'dig_stone',500,'dig 500 Stone for your next project...')
 
-	-- dig 20 papyrus
-	goal_formspac,success = achievements.get_goal_formspac(player_name,level,1,'dig 20 Papyrus','dig_papyrus',20)
-	formspec = formspec..goal_formspac
-	count = count + success
-
-	-- place 20 papyrus
-	goal_formspac,success = achievements.get_goal_formspac(player_name,level,2,'place 20 Papyrus in a nice garden','place_papyrus',20)
-	formspec = formspec..goal_formspac
-	count = count + success
-
-	-- dig 15 cactus
-	goal_formspac,success = achievements.get_goal_formspac(player_name,level,3,'dig 15 Cactus','dig_cactus',15)
-	formspec = formspec..goal_formspac
-	count = count + success
-
-	-- place 15 cactus
-	goal_formspac,success = achievements.get_goal_formspac(player_name,level,4,'place 15 Cactus in another gargen','place_cactus',15)
-	formspec = formspec..goal_formspac
-	count = count + success
-
-	-- place 30 fences
-	goal_formspac,success = achievements.get_goal_formspac(player_name,level,5,'place 30 fences around your gardens','place_fence',30)
-	formspec = formspec..goal_formspac
-	count = count + success
-
-	-- place 20 ladders
-	goal_formspac,success = achievements.get_goal_formspac(player_name,level,6,'add 20 ladders to your structures','place_ladder',20)
-	formspec = formspec..goal_formspac
-	count = count + success
-
-	-- place 5 bookshelves
-	goal_formspac,success = achievements.get_goal_formspac(player_name,level,7,'decorate your house with 5 Bookshelves','place_bookshelf',5)
-	formspec = formspec..goal_formspac
-	count = count + success
-
-	-- place 5 signs
-	goal_formspac,success = achievements.get_goal_formspac(player_name,level,8,'place 5 Signs to help other travellers','place_sign_wall',5)
-	formspec = formspec..goal_formspac
-	count = count + success
-
-	-- place 50 torches
-	goal_formspac,success = achievements.get_goal_formspac(player_name,level,9,'place 50 Torches to help you see at night','place_torch',50)
-	formspec = formspec..goal_formspac
-	count = count + success
-
-	-- dig 500 stone
-	goal_formspac,success = achievements.get_goal_formspac(player_name,level,10,'dig 500 Stone for your next project...','dig_stone',500)
-	formspec = formspec..goal_formspac
-	count = count + success
-
+	info.infotext = 'LEVEL '..info.level..' for '..info.player_name..': '..info.count..' of '..info.total
+	
 	-- next level
-	if count==total and achievements.get(0,player_name,'level')==level then
-		levels[level+1].make_start_blocks(player_name)
-		achievements.add(0,player_name,'level')
-		formspec = levels[level+1].update(player_name,nav)
+	local current_level = achievements.get_level(player_name);
+	if info.count==info.total and current_level==level then
+		levels[level+1].make_start_blocks(info.player_name)
+		achievements.add(0,info.player_name,'level')
+		info.formspec = levels[level+1].get_info(info.player_name)
 	end
-	if  achievements.get(0,player_name,'level') > level then
-		local pos = levels[level+1].get_pos(player_name)
+	if current_level > level then
+		local pos = levels[level+1].get_pos(info.player_name)
 		if pos and minetest.env:get_node(pos).name ~= 'skyblock:level_4' then
-			levels[level+1].make_start_blocks(player_name)
+			levels[level+1].make_start_blocks(info.player_name)
 		end
 	end
 
-	local infotext = 'LEVEL '..level..' for '.. player_name ..': '.. count ..' of '..total
-	return formspec, infotext
+	return info
 end
 
 

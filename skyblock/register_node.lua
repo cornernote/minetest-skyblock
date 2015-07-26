@@ -17,6 +17,18 @@ REGISTER NODES
 
 local entity
 
+-- skyblock
+minetest.register_node('skyblock:quest', {
+	description = 'Skyblock',
+	tiles = {'skyblock_quest.png'},
+	is_ground_content = true,
+	paramtype = 'light',
+	light_propagates = true,
+	sunlight_propagates = true,
+	light_source = 15,		
+	groups = {crumbly=2,cracky=2}
+})
+
 -- stone
 entity = skyblock.registered('node','default:stone')
 entity.drop = {
@@ -65,27 +77,8 @@ entity.climbable = true
 entity.walkable = false
 minetest.register_node(':default:pine_needles', entity)
 
--- sapling
-entity = skyblock.registered('node','default:sapling')
-entity.after_place_node = skyblock.generate_tree
-minetest.register_node(':default:sapling', entity)
-
 -- sandstone
 entity = skyblock.registered('node','default:sandstone')
 entity.drop = 'default:sandstone'
 minetest.register_node(':default:sandstone', entity)
 
--- bucket_empty
-entity = skyblock.registered('craftitem','bucket:bucket_empty')
-entity.on_use = skyblock.bucket_on_use
-minetest.register_craftitem(':bucket:bucket_empty', entity)
-
--- bucket_water
-entity = skyblock.registered('craftitem','bucket:bucket_water')
-entity.on_use = skyblock.bucket_water_on_use
-minetest.register_craftitem(':bucket:bucket_water', entity)
-
--- bucket_lava
-entity = skyblock.registered('craftitem','bucket:bucket_lava')
-entity.on_use = skyblock.bucket_lava_on_use
-minetest.register_craftitem(':bucket:bucket_lava', entity)

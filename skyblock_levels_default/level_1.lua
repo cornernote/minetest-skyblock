@@ -1,6 +1,6 @@
 --[[
 
-Skyblock for MineTest
+Skyblock for Minetest
 
 Copyright (c) 2015 cornernote, Brett O'Donnell <cornernote@gmail.com>
 Source Code: https://github.com/cornernote/minetest-skyblock
@@ -27,119 +27,49 @@ end
 
 
 -- make start blocks
-levels[level].make_start_blocks = function(pos, player_name)
+levels[level].make_start_blocks = function(player_name)
+	local pos = levels[level].get_pos(player_name)
 	skyblock.log('level['..level..'].make_start_blocks() for '..player_name)
-
-	-- level 0 - spawn
-	minetest.env:add_node(pos, {name='skyblock:level_1'})
-	achievements.update(level,player_name)
-	
-	-- level 0 - dirt
-	for x=-1,1 do
-		for z=-1,1 do
-			if x~=0 or z~=0 then
-				minetest.env:add_node({x=pos.x+x,y=pos.y,z=pos.z+z}, {name='default:dirt'})
-			end
-		end
-	end
-
-	-- level -1 and -2 dirt
-	for x=-1,1 do
-		for z=-1,1 do
-			minetest.env:add_node({x=pos.x+x,y=pos.y-1,z=pos.z+z}, {name='default:dirt'})
-			minetest.env:add_node({x=pos.x+x,y=pos.y-2,z=pos.z+z}, {name='default:dirt'})
-		end
-	end
-
 end
 
 
--- update achievements
-levels[level].update = function(player_name,nav)
-	local formspec = ''
-	local total = 10
-	local count = 0
+-- get level information
+levels[level].get_info = function(player_name)
+	local info = { level=level, total=10, count=0, player_name=player_name, infotext='', formspec = '' };
 
-	formspec = achievements.get_items_formspec(level,nav)
+	info.formspec = levels.get_inventory_formspec(level)
 		..'label[0,0.5;Welcome '..player_name..', of the Sky People]'
 		..'label[0,1.0;We can no longer live on the surface.]'
 		..'label[0,1.5;Can you help us rebuild in the sky?]'
 		..'label[0,2.0;Complete the quests to receive great rewards!]'
+		..levels.get_goal_formspec(info,1,'place_sapling',1,'craft a Sapling and grow a Tree','default:sapling')
+		..levels.get_goal_formspec(info,2,'dig_tree',16,'craft a Wooden Axe and dig 16 Trees','default:axe_wood')
+		..levels.get_goal_formspec(info,3,'place_cobble',20,'craft and place 20 Cobblestone','default:cobble')
+		..levels.get_goal_formspec(info,4,'place_chest',1,'craft and place a Chest','default:chest')
+		..levels.get_goal_formspec(info,5,'place_sign_wall',1,'craft and place a Sign','default:sign_wall')
+		..levels.get_goal_formspec(info,6,'place_stone',40,'build a house with 40 Stone','default:stone')
+		..levels.get_goal_formspec(info,7,'place_dirt',80,'extend your Island with 80 Dirt','default:dirt')
+		..levels.get_goal_formspec(info,8,'place_furnace',1,'craft and place a Furnace','default:furnace')
+		..levels.get_goal_formspec(info,9,'dig_stone_with_coal',2,'dig 4 Coal Lumps','default:stone_with_coal')
+		..levels.get_goal_formspec(info,10,'place_torch',8,'place 8 Torches','default:torch')
+
+	info.infotext = 'LEVEL '..info.level..' for '..info.player_name..': '..info.count..' of '..info.total
 		
-	-- todo, add restart buttons
-
-	-- todo, move to about button
-	--..'label[0,3.5; --== About This Game ==--]'
-	--..'label[0,4; For information and tutorials, please visit the website at:]'
-	--..'label[0,4.5; https://cornernote.github.io/minetest-skyblock/]'
-
-	local goal_formspac, success
-		
-	-- place_sapling
-	goal_formspac,success = achievements.get_goal_formspac(player_name,level,1,'craft a Sapling and grow a Tree','place_sapling',1)
-	formspec = formspec..goal_formspac
-	count = count + success
-
-	-- dig_tree
-	goal_formspac,success = achievements.get_goal_formspac(player_name,level,2,'craft an axe and dig 16 Trees','dig_tree',16)
-	formspec = formspec..goal_formspac
-	count = count + success
-
-	-- place_dirt
-	goal_formspac,success = achievements.get_goal_formspac(player_name,level,3,'extend your Island with 50 Dirt','place_dirt',50)
-	formspec = formspec..goal_formspac
-	count = count + success
-
-	-- place_chest
-	goal_formspac,success = achievements.get_goal_formspac(player_name,level,4,'craft and place a Chest','place_chest',1)
-	formspec = formspec..goal_formspac
-	count = count + success
-
-	-- place_sign_wall
-	goal_formspac,success = achievements.get_goal_formspac(player_name,level,5,'craft and place a Sign','place_sign_wall',1)
-	formspec = formspec..goal_formspac
-	count = count + success
-
-	-- place_wood
-	goal_formspac,success = achievements.get_goal_formspac(player_name,level,6,'build a house with 50 Wood','place_wood',50)
-	formspec = formspec..goal_formspac
-	count = count + success
-
-	-- place_cobble
-	goal_formspac,success = achievements.get_goal_formspac(player_name,level,7,'craft and place a 50 Cobblestone','place_cobble',50)
-	formspec = formspec..goal_formspac
-	count = count + success
-
-	-- place_furnace
-	goal_formspac,success = achievements.get_goal_formspac(player_name,level,8,'craft and place a Furnace','place_furnace',1)
-	formspec = formspec..goal_formspac
-	count = count + success
-
-	-- dig_stone_with_coal
-	goal_formspac,success = achievements.get_goal_formspac(player_name,level,9,'dig 4 Coal Lumps','dig_stone_with_coal',2)
-	formspec = formspec..goal_formspac
-	count = count + success
-
-	-- place_torch
-	goal_formspac,success = achievements.get_goal_formspac(player_name,level,10,'place 8 Torches','place_torch',8)
-	formspec = formspec..goal_formspac
-	count = count + success
-
 	-- next level
-	if count==total and achievements.get(0,player_name,'level')==level then
-		levels[level+1].make_start_blocks(player_name)
-		achievements.add(0,player_name,'level')
-		formspec = levels[level+1].update(player_name,nav)
+	local current_level = achievements.get_level(player_name);
+	if info.count==info.total and current_level==level then
+		levels[level+1].make_start_blocks(info.player_name)
+		achievements.add(0,info.player_name,'level')
+		info.formspec = levels[level+1].get_info(info.player_name)
 	end
-	if  achievements.get(0,player_name,'level') > level then
-		local pos = levels[level+1].get_pos(player_name)
+	if current_level > level then
+		local pos = levels[level+1].get_pos(info.player_name)
 		if pos and minetest.env:get_node(pos).name ~= 'skyblock:level_2' then
-			levels[level+1].make_start_blocks(player_name)
+			levels[level+1].make_start_blocks(info.player_name)
 		end
 	end
 	
-	local infotext = 'LEVEL '..level..' for '.. player_name ..': '.. count ..' of '..total
-	return formspec, infotext
+	return info
 end
 
 
@@ -159,8 +89,14 @@ levels[level].reward_achievement = function(player_name,achievement)
 		return true
 	end
 
-	-- place_dirt
-	if achievement == 'place_dirt' and achievement_count == 50 then
+	-- place_stone x40
+	if achievement == 'place_stone' and achievement_count == 40 then
+		achievements.give_reward(level,player_name,'stairs:stair_wood 10')
+		return true
+	end
+
+	-- place_dirt x80
+	if achievement == 'place_dirt' and achievement_count == 80 then
 		achievements.give_reward(level,player_name,'default:jungleleaves 6')
 		return true
 	end
@@ -177,14 +113,8 @@ levels[level].reward_achievement = function(player_name,achievement)
 		return true
 	end
 
-	-- place_wood x50
-	if achievement == 'place_wood' and achievement_count == 50 then
-		achievements.give_reward(level,player_name,'stairs:stair_wood 10')
-		return true
-	end
-
 	-- place_cobble x50
-	if achievement == 'place_cobble' and achievement_count == 50 then
+	if achievement == 'place_cobble' and achievement_count == 20 then
 		achievements.give_reward(level,player_name,'stairs:stair_cobble 10')
 		return true
 	end
@@ -203,7 +133,7 @@ levels[level].reward_achievement = function(player_name,achievement)
 
 	-- place_torch x8
 	if achievement == 'place_torch' and achievement_count == 8 then
-		achievements.give_reward(level,player_name,'protector:protect 4')
+		achievements.give_reward(level,player_name,'protector:protect 2')
 		return true
 	end
 
@@ -257,9 +187,9 @@ levels[level].on_placenode = function(pos, newnode, placer, oldnode)
 		return
 	end
 
-	-- place_wood
-	if newnode.name == 'default:wood' or newnode.name == 'default:junglewood' or newnode.name == 'default:pinewood' then
-		achievements.add(level,player_name,'place_wood')
+	-- place_stone
+	if newnode.name == 'default:stone' then
+		achievements.add(level,player_name,'place_stone')
 		return
 	end
 
