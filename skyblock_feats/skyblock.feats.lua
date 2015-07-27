@@ -90,7 +90,7 @@ skyblock.feats.add = function(level,player_name,achievement)
 		skyblock.feats.update(level,player_name)
 		--minetest.chat_send_player(player_name, 'You earned the achievement "'..achievement..'"')
 		minetest.chat_send_all(player_name..' completed the quest "'..achievement..'" on level '..level)
-		minetest.log('action', player_name..' completed the quest "'..achievement..'" on level '..level')
+		minetest.log('action', player_name..' completed the quest "'..achievement..'" on level '..level)
 	end
 	
 	skyblock.table.save(players_feat, skyblock.feats.FILENAME)

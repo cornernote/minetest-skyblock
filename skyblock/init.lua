@@ -13,9 +13,9 @@ MAIN LOADER
 
 minetest.log('action', '         __         __    __           __  ')
 minetest.log('action', '   _____/ /____  __/ /_  / /___  _____/ /__')
-minetest.log('action', '  / ___/ //_/ / / / __ \/ / __ \/ ___/ //_/')
+minetest.log('action', '  / ___/ //_/ / / / __ \\/ / __ \\/ ___/ //_/')
 minetest.log('action', ' (__  ) ,< / /_/ / /_/ / / /_/ / /__/ ,<   ')
-minetest.log('action', '/____/_/|_|\__, /_.___/_/\____/\___/_/|_|  ')
+minetest.log('action', '/____/_/|_|\\__, /_.___/_/\\____/\\___/_/|_|  ')
 minetest.log('action', '          /____/                           ')
 
 
