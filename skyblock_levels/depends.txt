@@ -1,5 +1,4 @@
 default
-achievements
 bucket
 doors
 dye
@@ -9,3 +8,4 @@ wool
 protector
 skyblock_bags
 skyblock_craft_guide
+skyblock_feats

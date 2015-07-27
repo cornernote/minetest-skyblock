@@ -14,15 +14,15 @@ LEVEL LOADER
 -- new player
 minetest.register_on_newplayer(function(player)
 	local player_name = player:get_player_name()
-	levels.give_initial_items(player)
+	skyblock.levels.give_initial_items(player)
 
 	skyblock.spawn_player(player)
-	--levels[1].make_start_blocks(player_name)
+	--skyblock.levels[1].make_start_blocks(player_name)
 
 	-- move the player up high enough in order to avoid collusions with the ground
 	local pos = skyblock.get_spawn(player_name)
 	if pos then
-		achievements.update(player_name)
+		skyblock.feats.update(player_name) -- setup the initial level, needed?
 		player:setpos({x=pos.x, y=pos.y+8, z=pos.z});
 	end
 end)
@@ -33,16 +33,16 @@ minetest.register_on_respawnplayer(function(player)
 	local spawn = skyblock.get_spawn(player_name)
 	
 	-- empty inventory
-	levels.empty_inventory(player)
+	skyblock.levels.empty_inventory(player)
 	
-	-- reset achievements
-	achievements.reset(player_name)
+	-- reset feats
+	skyblock.feats.reset(player_name)
 	
 	-- give inventory
-	levels.give_initial_items(player)
+	skyblock.levels.give_initial_items(player)
 
 	-- unset old spawn position
-	if levels.DIG_NEW_SPAWN then
+	if skyblock.levels.DIG_NEW_SPAWN then
 		spawned_players[player_name] = nil
 		skyblock.set_spawn(player_name, nil)
 		skyblock.set_spawn(player_name..'_DEAD', spawn)
@@ -50,7 +50,7 @@ minetest.register_on_respawnplayer(function(player)
 
 	-- rebuild spawn blocks
 	skyblock.make_spawn_blocks(spawn,player_name)
-	--levels[1].make_start_blocks(player_name)
+	--skyblock.levels[1].make_start_blocks(player_name)
 	
 	return true
 end)
@@ -61,7 +61,7 @@ minetest.register_on_joinplayer(function(player)
 	player:get_inventory():set_size('rewards', 4)
 	-- set inventory formspec
 	minetest.after(1,function()
-		player:set_inventory_formspec(levels.get_formspec(player:get_player_name()))
+		player:set_inventory_formspec(skyblock.levels.get_formspec(player:get_player_name()))
 	end)
 end)
 

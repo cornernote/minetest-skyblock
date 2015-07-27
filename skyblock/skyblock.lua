@@ -6,11 +6,40 @@ Copyright (c) 2015 cornernote, Brett O'Donnell <cornernote@gmail.com>
 Source Code: https://github.com/cornernote/minetest-skyblock
 License: GPLv3
 
-API FUNCTIONS
-
 ]]--
 
+-- expose functions to other modules
+skyblock = {}
 
+
+--
+-- CONFIG OPTIONS
+--
+
+-- Debug mode
+skyblock.DEBUG = true
+
+-- How far apart to set players start positions
+skyblock.START_GAP = minetest.setting_get('skyblock_start_gap') or 32
+
+-- The Y position the spawn nodes will appear
+skyblock.START_HEIGHT = minetest.setting_get('skyblock_start_height') or 4
+
+-- How many players will be in 1 row
+-- skyblock.WORLD_WIDTH * skyblock.WORLD_WIDTH = total players
+skyblock.WORLD_WIDTH = minetest.setting_get('skyblock_world_width') or 100
+
+-- How far down (in nodes) before a player dies and is respawned
+skyblock.WORLD_BOTTOM = minetest.setting_get('skyblock_world_bottom') or -8
+
+-- Delay between skyblock respawn checks
+skyblock.SPAWN_THROTLE = minetest.setting_get('skyblock_spawn_throttle') or 2
+
+-- Nodes above the spawn node where players are spawned
+skyblock.SPAWN_HEIGHT = minetest.setting_get('skyblock_spawn_height') or 4
+
+-- File path and prefix for data files
+skyblock.FILENAME = minetest.get_worldpath()..'/'..(minetest.setting_get('skyblock_filename') or 'skyblock')
 
 -- local variables
 local last_start_id = 0
@@ -136,7 +165,7 @@ skyblock.globalstep = function(dtime)
 				-- hit the bottom
 				if pos.y < skyblock.WORLD_BOTTOM then
 					local spawn = skyblock.get_spawn(player_name)
-					if minetest.env:get_node(spawn).name ~= "skyblock:quest" then
+					if minetest.env:get_node(spawn).name ~= "skyblock:quest" and skyblock.levels.check_inventory(player) then
 						-- no spawn block, respawn them
 						skyblock.log("globalstep() "..player_name.." has fallen too far, but dont kill them... yet =)")
 						local spawn = skyblock.has_spawn(player:get_player_name())

@@ -37,11 +37,11 @@ PLAYING INSTRUCTIONS
 
 -- Level Achievement Block --
 
-Punch (short left click) to refresh your achievements.
+Punch (short left click) to refresh your quests.
 
 Dig (long left click) to respawn at a new location with new items.
 
-Open (right click) to view current achievements.
+Open (right click) to view current quests.
 
 
 -- Death Hurts --

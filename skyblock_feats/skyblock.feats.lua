@@ -6,130 +6,123 @@ Copyright (c) 2015 cornernote, Brett O'Donnell <cornernote@gmail.com>
 Source Code: https://github.com/cornernote/minetest-skyblock
 License: GPLv3
 
-ACHIEVEMENT FUNCTIONS
-
 ]]--
 
 -- expose api
-achievements = {}
+skyblock.feats = {}
 
--- log
-achievements.log = function(message)
-	--if not skyblock.DEBUG then
-	--	return
-	--end
-	minetest.log('action', '[skyblock] '..message)
-end
+-- file to save players feat
+skyblock.feats.FILENAME = minetest.get_worldpath()..'/feat'
 
--- file to save players achievements
-achievements.FILENAME = minetest.get_worldpath()..'/achievements'
-
--- local variable to save players achievements
-local players_achievements = table.load(achievements.FILENAME)
-if players_achievements == nil then
-	players_achievements = {}
+-- local variable to save players feats
+local players_feat = skyblock.table.load(skyblock.feats.FILENAME)
+if players_feat == nil then
+	players_feat = {}
 end
 
 -- get players current level
-achievements.get_level = function(player_name)
-	achievements.log('achievements.get_level('..player_name..')')
-	return achievements.get(0, player_name, 'level')
+skyblock.feats.get_level = function(player_name)
+	skyblock.log('skyblock.feats.get_level('..player_name..')')
+	return skyblock.feats.get(0, player_name, 'level')
 end
 
 -- reset
-achievements.reset = function(player_name)
-	achievements.log('achievements.reset('..player_name..')')
-	players_achievements[player_name] = {}
-	table.save(players_achievements, achievements.FILENAME)
-	achievements.update(player_name)
+skyblock.feats.reset = function(player_name)
+	skyblock.log('skyblock.feats.reset('..player_name..')')
+	players_feat[player_name] = {}
+	skyblock.table.save(players_feat, skyblock.feats.FILENAME)
+	skyblock.feats.update(player_name)
 end
 
--- update achievements
-achievements.update = function(player_name)
-	achievements.log('achievements.update('..player_name..')')
-	local level = achievements.get_level(player_name)
-	local pos = levels[level].get_pos(player_name)
+-- update feats
+skyblock.feats.update = function(player_name)
+	skyblock.log('skyblock.feats.update('..player_name..')')
+	local level = skyblock.feats.get_level(player_name)
+	local pos = skyblock.levels[level].get_pos(player_name)
 	if pos==nil then return pos end
 	local meta = minetest.env:get_meta(pos)
-	local level_info = levels[level].get_info(player_name)
+	local level_info = skyblock.levels[level].get_info(player_name)
 	meta:set_string('formspec', level_info.formspec)
 	meta:set_string('infotext', level_info.infotext)
 	minetest.get_player_by_name(player_name):set_inventory_formspec(level_info.formspec)
 end
 
--- get achievement
-achievements.get = function(level,player_name,achievement)
-	achievements.log('achievements.get('..level..','..player_name..','..achievement..')')
-	if players_achievements[player_name] == nil then
-		players_achievements[player_name] = {}
+-- get feat
+skyblock.feats.get = function(level,player_name,achievement)
+	skyblock.log('skyblock.feats.get('..level..','..player_name..','..achievement..')')
+	if players_feat[player_name] == nil then
+		players_feat[player_name] = {}
 	end
-	if players_achievements[player_name][level] == nil then
-		players_achievements[player_name][level] = {}
+	if players_feat[player_name][level] == nil then
+		players_feat[player_name][level] = {}
 	end
-	if players_achievements[player_name][level][achievement] == nil then
-		players_achievements[player_name][level][achievement] = 0
+	if players_feat[player_name][level][achievement] == nil then
+		players_feat[player_name][level][achievement] = 0
 		if achievement=='level' then
-			players_achievements[player_name][level][achievement] = 1
+			players_feat[player_name][level][achievement] = 1
 		end
 	end
-	return players_achievements[player_name][level][achievement]
+	return players_feat[player_name][level][achievement]
 end
 
--- set achievement
-achievements.add = function(level,player_name,achievement)
-	achievements.log('achievements.add('..level..','..player_name..','..achievement..')')
-	local player_achievement = achievements.get(level,player_name,achievement)
-	players_achievements[player_name][level][achievement] = player_achievement + 1
+-- add feat
+skyblock.feats.add = function(level,player_name,achievement)
+	skyblock.log('skyblock.feats.add('..level..','..player_name..','..achievement..')')
+	local player_achievement = skyblock.feats.get(level,player_name,achievement)
+	players_feat[player_name][level][achievement] = player_achievement + 1
 	if level==0 or achievement=='level' then
-		table.save(players_achievements, achievements.FILENAME)
+		skyblock.table.save(players_feat, skyblock.feats.FILENAME)
 		return
 	end
-	local update = levels[level].reward_achievement(player_name,achievement)
+	local update = skyblock.levels[level].reward_achievement(player_name,achievement)
 	
 	-- update
 	if update then
-		achievements.update(player_name)
+		skyblock.feats.update(player_name)
 		--minetest.chat_send_player(player_name, 'You earned the achievement "'..achievement..'"')
 		minetest.chat_send_all(player_name..' was awarded the achievement "'..achievement..'"')
 		minetest.log('action', player_name..' was awarded the achievement "'..achievement..'"')
 	end
 	
-	table.save(players_achievements, achievements.FILENAME)
+	skyblock.table.save(players_feat, skyblock.feats.FILENAME)
 end
 
 -- give reward
-achievements.give_reward = function(level,player_name,item_name)
-	achievements.log('achievements.give_reward('..level..','..player_name..','..item_name..')')
+skyblock.feats.give_reward = function(level,player_name,item_name)
+	skyblock.log('skyblock.feats.give_reward('..level..','..player_name..','..item_name..')')
 	local player = minetest.get_player_by_name(player_name)
 	player:get_inventory():add_item('rewards', item_name)
-	player:set_inventory_formspec(levels.get_formspec(player_name))
+	player:set_inventory_formspec(skyblock.levels.get_formspec(player_name))
 end
 
 -- track eating
-minetest.register_on_item_eat(function( hp_change, replace_with_item, itemstack, user, pointed_thing )
+skyblock.feats.on_item_eat = function(hp_change, replace_with_item, itemstack, user, pointed_thing)
 	if not user then return end
 	local player_name = user:get_player_name()
-	local level = achievements.get_level(player_name)
-	if( levels[level].on_item_eat ) then
-		levels[level].on_item_eat(player_name, itemstack)
+	local level = skyblock.feats.get_level(player_name)
+	if( skyblock.levels[level].on_item_eat ) then
+		skyblock.levels[level].on_item_eat(player_name, itemstack)
 	end
-end)
+end
+minetest.register_on_item_eat(skyblock.feats.on_item_eat)
 
 -- track node digging
-minetest.register_on_dignode(function(pos, oldnode, digger)
+skyblock.feats.on_dignode = function(pos, oldnode, digger)
 	if not digger then return end -- needed to prevent server crash when player leaves
 	local player_name = digger:get_player_name()
-	local level = achievements.get_level(player_name)
-	levels[level].on_dignode(pos, oldnode, digger)
-end)
+	local level = skyblock.feats.get_level(player_name)
+	skyblock.levels[level].on_dignode(pos, oldnode, digger)
+end
+minetest.register_on_dignode(skyblock.feats.on_dignode)
 
 -- track node placing
-minetest.register_on_placenode(function(pos, newnode, placer, oldnode)
+skyblock.feats.on_placenode = function(pos, newnode, placer, oldnode)
 	if not placer then return end -- needed to prevent server crash when player leaves
 	local player_name = placer:get_player_name()
-	local level = achievements.get_level(player_name)
-	levels[level].on_placenode(pos, newnode, placer, oldnode)
-end)
+	local level = skyblock.feats.get_level(player_name)
+	skyblock.levels[level].on_placenode(pos, newnode, placer, oldnode)
+end
+minetest.register_on_placenode(skyblock.feats.on_placenode)
 
 -- track on_place of items with their own on_place
 local on_place = function(v, is_craftitem)
@@ -140,7 +133,7 @@ local on_place = function(v, is_craftitem)
 			local old_count = itemstack:get_count();
 			local res = old_on_place( itemstack, placer, pointed_thing );
 			if( itemstack and itemstack:get_count() == old_count-1 ) then
-				achievements.on_placenode(pointed_thing, {name=v,param2=0}, placer, nil);
+				skyblock.feats.on_placenode(pointed_thing, {name=v,param2=0}, placer, nil);
 			end
 			return res;
 		end
@@ -158,28 +151,28 @@ for _,v in ipairs({"default:cactus", "farming:seed_wheat", "farming:seed_cotton"
 	on_place(v,0);
 end
 
--- track bucket achievements
-achievements.bucket_on_use = function(itemstack, user, pointed_thing)
+-- track bucket feats
+skyblock.feats.bucket_on_use = function(itemstack, user, pointed_thing)
 	if not user then return end -- needed to prevent server crash when player leaves
 	local player_name = user:get_player_name()
-	local level = achievements.get_level(player_name)
-	levels[level].bucket_on_use(player_name, pointed_thing)
+	local level = skyblock.feats.get_level(player_name)
+	skyblock.levels[level].bucket_on_use(player_name, pointed_thing)
 end
 
--- track bucket_water achievements
-achievements.bucket_water_on_use = function(itemstack, user, pointed_thing)
+-- track bucket_water feats
+skyblock.feats.bucket_water_on_use = function(itemstack, user, pointed_thing)
 	if not user then return end -- needed to prevent server crash when player leaves
 	local player_name = user:get_player_name()
-	local level = achievements.get_level(player_name)
-	levels[level].bucket_water_on_use(player_name, pointed_thing)
+	local level = skyblock.feats.get_level(player_name)
+	skyblock.levels[level].bucket_water_on_use(player_name, pointed_thing)
 end
 
--- track bucket_lava achievements
-achievements.bucket_lava_on_use = function(itemstack, user, pointed_thing)
+-- track bucket_lava feats
+skyblock.feats.bucket_lava_on_use = function(itemstack, user, pointed_thing)
 	if not user then return end -- needed to prevent server crash when player leaves
 	local player_name = user:get_player_name()
-	local level = achievements.get_level(player_name)
-	levels[level].bucket_lava_on_use(player_name, pointed_thing)
+	local level = skyblock.feats.get_level(player_name)
+	skyblock.levels[level].bucket_lava_on_use(player_name, pointed_thing)
 end
 
 -- bucket_empty
@@ -194,9 +187,9 @@ entity.on_use = function(itemstack, user, pointed_thing)
 	liquiddef = bucket.liquids[n.name]
 	if liquiddef ~= nil and liquiddef.source == n.name and liquiddef.itemname ~= nil then
 		
-		-- begin track bucket achievements
-		achievements.bucket_on_use(itemstack, user, pointed_thing)
-		-- end track bucket achievements
+		-- begin track bucket feats
+		skyblock.feats.bucket_on_use(itemstack, user, pointed_thing)
+		-- end track bucket feats
 	
 		minetest.env:add_node(pointed_thing.under, {name='air'})
 		return {name=liquiddef.itemname}
@@ -233,9 +226,9 @@ entity.on_use = function(itemstack, user, pointed_thing)
 		minetest.env:add_node(pointed_thing.under, {name='default:water_source'})
 	end
 
-	-- begin track bucket achievements
-	achievements.bucket_water_on_use(itemstack, user, pointed_thing)
-	-- end track bucket achievements
+	-- begin track bucket feats
+	skyblock.feats.bucket_water_on_use(itemstack, user, pointed_thing)
+	-- end track bucket feats
 
 	return {name='bucket:bucket_empty'}
 end
@@ -272,9 +265,9 @@ entity.on_use = function(itemstack, user, pointed_thing)
 		minetest.env:add_node(pointed_thing.under, {name='default:lava_source'})
 	end
 
-	-- begin track bucket achievements
-	achievements.bucket_lava_on_use(itemstack, user, pointed_thing)
-	-- end track bucket achievements
+	-- begin track bucket feats
+	skyblock.feats.bucket_lava_on_use(itemstack, user, pointed_thing)
+	-- end track bucket feats
 
 	return {name='bucket:bucket_empty'}
 end

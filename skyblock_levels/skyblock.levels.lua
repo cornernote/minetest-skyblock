@@ -11,19 +11,69 @@ LEVEL LOADER
 ]]--
 
 
+skyblock.levels = {}
+
+-- Should digging the spawn result in a new spawn pos?
+skyblock.levels.DIG_NEW_SPAWN = minetest.setting_getbool("skyblock_levels_dig_new_spawn")
+
 --
 -- Functions
 --
 
 -- give initial items
-levels.give_initial_items = function(player)
-	skyblock.log('levels.give_initial_items() to '..player:get_player_name())
+skyblock.levels.give_initial_items = function(player)
+	skyblock.log('skyblock.levels.give_initial_items() to '..player:get_player_name())
 	player:get_inventory():add_item('main', 'default:stick')
-	player:get_inventory():add_item('main', 'default:leaves 6')
+end
+
+-- check inventory (needs to match the given items above to prevent death on initial falling)
+skyblock.levels.check_inventory = function(player)
+	skyblock.log('skyblock.levels.check_inventory() for '..player:get_player_name())
+	local inv = player:get_inventory()
+	local stack
+	if inv==nil then return false end
+	
+	stack = inv:get_stack('main', 1)
+	if stack:get_name() ~= 'default:stick' or stack:get_count() ~= 1 then
+		return false
+	end
+	for i=2,inv:get_size('main') do
+		stack = inv:get_stack('main', i)
+		if stack:get_name() ~= '' then
+			return false
+		end
+	end
+	for i=1,inv:get_size('craft') do
+		stack = inv:get_stack('craft', i)
+		if stack:get_name() ~= '' then
+			return false
+		end
+	end
+	for i=1,inv:get_size('rewards') do
+		stack = inv:get_stack('rewards', i)
+		if stack:get_name() ~= '' then
+			return false
+		end
+	end
+	for bag=1,4 do
+		for i=1,inv:get_size('skyblock_bag'..bag) do
+			stack = inv:get_stack('skyblock_bag'..bag, i)
+			if stack:get_name() ~= '' then
+				return false
+			end
+		end
+		for i=1,inv:get_size('skyblock_bag'..bag..'contents') do
+			stack = inv:get_stack('skyblock_bag'..bag..'contents', i)
+			if stack:get_name() ~= '' then
+				return false
+			end
+		end
+end
+	return true
 end
 
 -- empty inventory
-levels.empty_inventory = function(player)
+skyblock.levels.empty_inventory = function(player)
 	local inv = player:get_inventory()
 	if not inv:is_empty('main') then
 		for i=1,inv:get_size('main') do
@@ -60,14 +110,14 @@ end
 --
 
 -- get_formspec
-levels.get_formspec = function(player_name)
-	local level = achievements.get_level(player_name)
-	local level_info = levels[level].get_info(player_name)
+skyblock.levels.get_formspec = function(player_name)
+	local level = skyblock.feats.get_level(player_name)
+	local level_info = skyblock.levels[level].get_info(player_name)
 	return level_info.formspec
 end
 
 -- get_inventory_formspec
-levels.get_inventory_formspec = function(level)
+skyblock.levels.get_inventory_formspec = function(level)
 	local formspec = 'size[15,10;]'
 		..'button[7,0;2,0.5;skyblock_bags;Bags]'
 		..'button_exit[9,0;2,0.5;skyblock_home_set;Set Home]'
@@ -95,13 +145,13 @@ levels.get_inventory_formspec = function(level)
 end
 
 -- get_goal_formspec
-levels.get_goal_formspec = function(data,i,achievement,required,text,hint)
+skyblock.levels.get_goal_formspec = function(data,i,achievement,required,text,hint)
 	local y = 2.9+(i*0.6)
 	local formspec = 'label[0.5,'..y..'; '..i..') '..text..']'
 	if hint then
 		formspec = formspec..'item_image_button[5.8,'..y..';0.6,0.6;'..skyblock.craft_guide.image_button_link(hint)..']'
 	end
-	if achievements.get(data.level,data.player_name,achievement) >= required then
+	if skyblock.feats.get(data.level,data.player_name,achievement) >= required then
 		formspec = formspec .. 'image[-0.2,'..(y-0.25)..';1,1;checkbox_checked.png]'
 		data.count = data.count + 1
 	else
@@ -116,7 +166,7 @@ end
 --
 
 -- hollow sphere (based on sphere in multinode by mauvebic)
-levels.make_sphere =  function(pos,radius,nodename,hollow)
+skyblock.levels.make_sphere =  function(pos,radius,nodename,hollow)
 	pos.x = math.floor(pos.x+0.5)
 	pos.y = math.floor(pos.y+0.5)
 	pos.z = math.floor(pos.z+0.5)

@@ -9,14 +9,14 @@
    Insides Table References are saved
    Does not save Userdata, Metatables, Functions and indices of these
    ----------------------------------------------------
-   table.save( table , filename )
+   skyblock.table.save( table , filename )
    
    on failure: returns an error msg
    
    ----------------------------------------------------
-   table.load( filename or stringtable )
+   skyblock.table.load( filename or stringtable )
    
-   Loads a table that has been saved via the table.save function
+   Loads a table that has been saved via the skyblock.table.save function
    
    on success: returns a previously saved table
    on failure: returns as second argument an error msg
@@ -25,6 +25,8 @@
    Licensed under the same terms as Lua itself.
 ]]--
 do
+	skyblock.table = {}
+	
    -- declare local variables
    --// exportstring( string )
    --// returns a "Lua" portable version of the string
@@ -33,7 +35,7 @@ do
    end
 
    --// The Save Function
-   function table.save(  tbl,filename )
+   function skyblock.table.save(  tbl,filename )
       local charS,charE = "   ","\n"
       local file,err = io.open( filename, "wb" )
       if err then return err end
@@ -107,7 +109,7 @@ do
    end
    
    --// The Load Function
-   function table.load( sfile )
+   function skyblock.table.load( sfile )
       local ftables,err = loadfile( sfile )
       if err then return _,err end
       local tables = ftables()

@@ -10,21 +10,15 @@ MAIN LOADER
 
 ]]--
 
--- required to save table data
-dofile(minetest.get_modpath('skyblock')..'/api_table_save.lua')
-
--- expose functions to other modules
-skyblock = {}
-
--- load config
-dofile(minetest.get_modpath('skyblock')..'/config.lua')
+local modpath = minetest.get_modpath('skyblock')
 
 -- load apis
-dofile(minetest.get_modpath('skyblock')..'/api_skyblock.lua')
+dofile(modpath..'/skyblock.lua')
+dofile(modpath..'/skyblock.table.lua')
 
 -- register entities
-dofile(minetest.get_modpath('skyblock')..'/register_node.lua')
-dofile(minetest.get_modpath('skyblock')..'/register_misc.lua')
+dofile(modpath..'/register_node.lua')
+dofile(modpath..'/register_misc.lua')
 
 -- log that we started
 minetest.log('action', '[MOD]'..minetest.get_current_modname()..' -- loaded from '..minetest.get_modpath(minetest.get_current_modname()))

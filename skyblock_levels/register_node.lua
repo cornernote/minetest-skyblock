@@ -15,13 +15,13 @@ LEVEL LOADER
 local entity = skyblock.registered('node','skyblock:quest')
 entity.on_punch = function(pos, node, puncher)
 	if not puncher then return end -- needed to prevent server crash when player leaves
-	achievements.update(puncher:get_player_name())
+	skyblock.feats.update(puncher:get_player_name())
 end
 --entity.on_dig = function(pos, node, digger)
 	--if not digger then return end -- needed to prevent server crash when player leaves
 	--local player_name = digger:get_player_name()
 	--local spawn = skyblock.get_spawn(player_name)
-	--levels.spawn_diggers[player_name] = true
+	--skyblock.levels.spawn_diggers[player_name] = true
 	--digger:set_hp(0)
 --end
 entity.on_receive_fields = function(pos, formname, fields, sender)
