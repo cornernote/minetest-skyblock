@@ -117,14 +117,14 @@ skyblock.levels.get_formspec = function(player_name)
 end
 
 -- get_inventory_formspec
-skyblock.levels.get_inventory_formspec = function(level)
+skyblock.levels.get_inventory_formspec = function(level,player_name)
 	local formspec = 'size[15,10;]'
 		..'button[7,0;2,0.5;skyblock_bags;Bags]'
 		..'button_exit[9,0;2,0.5;skyblock_home_set;Set Home]'
 		..'button_exit[11,0;2,0.5;skyblock_home_go;Go Home]'
 		..'button_exit[13,0;2,0.5;close;Close]'
 		
-		..'label[0,0; --== MISSION '..level..' ==--]'
+		..'label[0,0; --== LEVEL '..level..' for '..player_name..' ==--]'
 		..'label[0,2.7; --== Quests ==--]'
 		..'background[-0.1,-0.1;6.6,10.3;goals.png]'
 

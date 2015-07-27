@@ -48,7 +48,7 @@ end
 -- get level information
 skyblock.levels[level].get_info = function(player_name)
 	local info = { level=level, total=1, count=0, player_name=player_name, infotext='', formspec = '' };
-	info.formspec = skyblock.levels.get_inventory_formspec(level)
+	info.formspec = skyblock.levels.get_inventory_formspec(level,info.player_name)
 		..'label[0,0.5; THE END]'
 		..'label[0,1.0; I hope you enjoyed your journey, and you]'
 		..'label[0,1.5; are welcome to stay and keep building]'

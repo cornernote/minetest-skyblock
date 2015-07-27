@@ -50,7 +50,7 @@ end
 skyblock.levels[level].get_info = function(player_name)
 	local info = { level=level, total=10, count=0, player_name=player_name, infotext='', formspec = '' };
 
-	info.formspec = skyblock.levels.get_inventory_formspec(level)
+	info.formspec = skyblock.levels.get_inventory_formspec(level,info.player_name)
 		..'label[0,0.5; Does This Keep Going?]'
 		..'label[0,1.0; If you are enjoying this world, then stray not]'
 		..'label[0,1.5; from your mission traveller...]'
