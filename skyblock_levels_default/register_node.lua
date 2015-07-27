@@ -12,33 +12,77 @@ LEVEL LOADER
 
 
 -- quest node
-local spawn_diggers = {}
 local entity = skyblock.registered('node','skyblock:quest')
 entity.on_punch = function(pos, node, puncher)
 	if not puncher then return end -- needed to prevent server crash when player leaves
 	achievements.update(puncher:get_player_name())
 end
-entity.on_dig = function(pos, node, digger)
-	if not digger then return end -- needed to prevent server crash when player leaves
-	local player_name = digger:get_player_name()
-	local spawn = skyblock.get_spawn(player_name)
+--entity.on_dig = function(pos, node, digger)
+	--if not digger then return end -- needed to prevent server crash when player leaves
+	--local player_name = digger:get_player_name()
+	--local spawn = skyblock.get_spawn(player_name)
 	--levels.spawn_diggers[player_name] = true
-	digger:set_hp(0)
-end
+	--digger:set_hp(0)
+--end
 entity.on_receive_fields = function(pos, formname, fields, sender)
-	if fields.quit then
-		return
-	end
-	-- if an item was clicked show skyblock_craft_guide
-	for k,v in pairs( fields ) do
-		if string.match(k, ":") then
-			skyblock_craft_guide.inspect_show_crafting(player:get_player_name(), k, fields)
-			return;
-		end
-	end
+	skyblock.bags.on_receive_fields(sender, formname, fields)
+	skyblock.home.on_receive_fields(sender, formname, fields)
+	skyblock.craft_guide.on_receive_fields(sender, formname, fields)
 end
 minetest.register_node(':skyblock:quest', entity)
 
+-- stone
+local entity = skyblock.registered('node','default:stone')
+entity.drop = {
+	max_items = 1,
+	items = {
+		{items = {'default:desert_stone'}, rarity = 20},
+		{items = {'default:sandstone'}, rarity = 10},
+		{items = {'default:cobble'}}
+	}
+}
+minetest.register_node(':default:stone', entity)
+
+-- tree
+local entity = skyblock.registered('node','default:tree')
+entity.groups.oddly_breakable_by_hand = 0
+minetest.register_node(':default:tree', entity)
+
+-- jungletree
+local entity = skyblock.registered('node','default:jungletree')
+entity.groups.oddly_breakable_by_hand = 0
+minetest.register_node(':default:jungletree', entity)
+
+-- pinetree
+local entity = skyblock.registered('node','default:pinetree')
+entity.groups.oddly_breakable_by_hand = 0
+minetest.register_node(':default:pinetree', entity)
+
+-- leaves
+local entity = skyblock.registered('node','default:leaves')
+entity.drop = 'default:leaves'
+entity.climbable = true
+entity.walkable = false
+minetest.register_node(':default:leaves', entity)
+
+-- jungleleaves
+local entity = skyblock.registered('node','default:jungleleaves')
+entity.drop = 'default:jungleleaves'
+entity.climbable = true
+entity.walkable = false
+minetest.register_node(':default:jungleleaves', entity)
+
+-- pine_needles
+local entity = skyblock.registered('node','default:pine_needles')
+entity.drop = 'default:pine_needles'
+entity.climbable = true
+entity.walkable = false
+minetest.register_node(':default:pine_needles', entity)
+
+-- sandstone
+local entity = skyblock.registered('node','default:sandstone')
+entity.drop = 'default:sandstone'
+minetest.register_node(':default:sandstone', entity)
 
 -- instant grow sapling if there is room
 local entity = skyblock.registered('node','default:sapling')

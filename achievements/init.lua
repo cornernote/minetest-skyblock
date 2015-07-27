@@ -24,20 +24,17 @@ end
 -- file to save players achievements
 achievements.FILENAME = minetest.get_worldpath()..'/achievements'
 
-
 -- local variable to save players achievements
 local players_achievements = table.load(achievements.FILENAME)
 if players_achievements == nil then
 	players_achievements = {}
 end
 
-
 -- get players current level
 achievements.get_level = function(player_name)
 	achievements.log('achievements.get_level('..player_name..')')
 	return achievements.get(0, player_name, 'level')
 end
-
 
 -- reset
 achievements.reset = function(player_name)
@@ -46,7 +43,6 @@ achievements.reset = function(player_name)
 	table.save(players_achievements, achievements.FILENAME)
 	achievements.update(player_name)
 end
-
 
 -- update achievements
 achievements.update = function(player_name)
@@ -60,7 +56,6 @@ achievements.update = function(player_name)
 	meta:set_string('infotext', level_info.infotext)
 	minetest.get_player_by_name(player_name):set_inventory_formspec(level_info.formspec)
 end
-
 
 -- get achievement
 achievements.get = function(level,player_name,achievement)
@@ -79,7 +74,6 @@ achievements.get = function(level,player_name,achievement)
 	end
 	return players_achievements[player_name][level][achievement]
 end
-
 
 -- set achievement
 achievements.add = function(level,player_name,achievement)
@@ -103,7 +97,6 @@ achievements.add = function(level,player_name,achievement)
 	table.save(players_achievements, achievements.FILENAME)
 end
 
-
 -- give reward
 achievements.give_reward = function(level,player_name,item_name)
 	achievements.log('achievements.give_reward('..level..','..player_name..','..item_name..')')
@@ -112,35 +105,31 @@ achievements.give_reward = function(level,player_name,item_name)
 	player:set_inventory_formspec(levels.get_formspec(player_name))
 end
 
-
--- track eating achievements
-achievements.on_item_eat = function( hp_change, replace_with_item, itemstack, user, pointed_thing )
+-- track eating
+minetest.register_on_item_eat(function( hp_change, replace_with_item, itemstack, user, pointed_thing )
 	if not user then return end
 	local player_name = user:get_player_name()
 	local level = achievements.get_level(player_name)
 	if( levels[level].on_item_eat ) then
 		levels[level].on_item_eat(player_name, itemstack)
 	end
-end
+end)
 
-
--- track digging achievements
-achievements.on_dignode = function(pos, oldnode, digger)
+-- track node digging
+minetest.register_on_dignode(function(pos, oldnode, digger)
 	if not digger then return end -- needed to prevent server crash when player leaves
 	local player_name = digger:get_player_name()
 	local level = achievements.get_level(player_name)
 	levels[level].on_dignode(pos, oldnode, digger)
-end
+end)
 
-
--- track placing achievements
-achievements.on_placenode = function(pos, newnode, placer, oldnode)
+-- track node placing
+minetest.register_on_placenode(function(pos, newnode, placer, oldnode)
 	if not placer then return end -- needed to prevent server crash when player leaves
 	local player_name = placer:get_player_name()
 	local level = achievements.get_level(player_name)
 	levels[level].on_placenode(pos, newnode, placer, oldnode)
-end
-
+end)
 
 -- track on_place of items with their own on_place
 local on_place = function(v, is_craftitem)
@@ -169,7 +158,6 @@ for _,v in ipairs({"default:cactus", "farming:seed_wheat", "farming:seed_cotton"
 	on_place(v,0);
 end
 
-
 -- track bucket achievements
 achievements.bucket_on_use = function(itemstack, user, pointed_thing)
 	if not user then return end -- needed to prevent server crash when player leaves
@@ -177,7 +165,6 @@ achievements.bucket_on_use = function(itemstack, user, pointed_thing)
 	local level = achievements.get_level(player_name)
 	levels[level].bucket_on_use(player_name, pointed_thing)
 end
-
 
 -- track bucket_water achievements
 achievements.bucket_water_on_use = function(itemstack, user, pointed_thing)
@@ -187,7 +174,6 @@ achievements.bucket_water_on_use = function(itemstack, user, pointed_thing)
 	levels[level].bucket_water_on_use(player_name, pointed_thing)
 end
 
-
 -- track bucket_lava achievements
 achievements.bucket_lava_on_use = function(itemstack, user, pointed_thing)
 	if not user then return end -- needed to prevent server crash when player leaves
@@ -195,7 +181,6 @@ achievements.bucket_lava_on_use = function(itemstack, user, pointed_thing)
 	local level = achievements.get_level(player_name)
 	levels[level].bucket_lava_on_use(player_name, pointed_thing)
 end
-
 
 -- bucket_empty
 local entity = skyblock.registered('craftitem','bucket:bucket_empty')
@@ -218,7 +203,6 @@ entity.on_use = function(itemstack, user, pointed_thing)
 	end
 end
 minetest.register_craftitem(':bucket:bucket_empty', entity)
-
 
 -- bucket_water
 local entity = skyblock.registered('craftitem','bucket:bucket_water')
@@ -256,7 +240,6 @@ entity.on_use = function(itemstack, user, pointed_thing)
 	return {name='bucket:bucket_empty'}
 end
 minetest.register_craftitem(':bucket:bucket_water', entity)
-
 
 -- bucket_lava
 local entity = skyblock.registered('craftitem','bucket:bucket_lava')

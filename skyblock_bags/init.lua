@@ -10,59 +10,60 @@ BAG MOD
 
 ]]--
 
-
+skyblock.bags = {}
 
 -- get_formspec
 local get_formspec = function(player,page)
-	if page=="bags" then
+	if page=="skyblock_bags" then
 		local player_name = player:get_player_name()
 		return "size[8,7.5]"
 			.."list[current_player;main;0,3.5;8,4;]"
 			.."button[0,0;2,0.5;main;Back]"
-			.."button[0,2;2,0.5;bag1;Bag 1]"
-			.."button[2,2;2,0.5;bag2;Bag 2]"
-			.."button[4,2;2,0.5;bag3;Bag 3]"
-			.."button[6,2;2,0.5;bag4;Bag 4]"
-			.."list[detached:"..player_name.."_bags;bag1;0.5,1;1,1;]"
-			.."list[detached:"..player_name.."_bags;bag2;2.5,1;1,1;]"
-			.."list[detached:"..player_name.."_bags;bag3;4.5,1;1,1;]"
-			.."list[detached:"..player_name.."_bags;bag4;6.5,1;1,1;]"
+			.."button[0,2;2,0.5;skyblock_bag1;Bag 1]"
+			.."button[2,2;2,0.5;skyblock_bag2;Bag 2]"
+			.."button[4,2;2,0.5;skyblock_bag3;Bag 3]"
+			.."button[6,2;2,0.5;skyblock_bag4;Bag 4]"
+			.."list[detached:"..player_name.."_skyblock_bags;skyblock_bag1;0.5,1;1,1;]"
+			.."list[detached:"..player_name.."_skyblock_bags;skyblock_bag2;2.5,1;1,1;]"
+			.."list[detached:"..player_name.."_skyblock_bags;skyblock_bag3;4.5,1;1,1;]"
+			.."list[detached:"..player_name.."_skyblock_bags;skyblock_bag4;6.5,1;1,1;]"
 	end
 	for i=1,4 do
-		if page=="bag"..i then
-			local image = player:get_inventory():get_stack("bag"..i, 1):get_definition().inventory_image
+		if page=="skyblock_bag"..i then
+			local image = player:get_inventory():get_stack("skyblock_bag"..i, 1):get_definition().inventory_image
 			return "size[8,8.5]"
 				.."list[current_player;main;0,4.5;8,4;]"
 				.."button[0,0;2,0.5;main;Main]"
-				.."button[2,0;2,0.5;bags;Bags]"
+				.."button[2,0;2,0.5;skyblock_bags;Bags]"
 				.."image[7,0;1,1;"..image.."]"
-				.."list[current_player;bag"..i.."contents;0,1;8,3;]"
+				.."list[current_player;skyblock_bag"..i.."contents;0,1;8,3;]"
 		end
 	end
 end
 
--- register_on_player_receive_fields
-minetest.register_on_player_receive_fields(function(player, formname, fields)
-	if fields.bags then
-		minetest.show_formspec(player:get_player_name(), "skyblock:bags", get_formspec(player,"bags"));
+-- on_receive_fields
+skyblock.bags.on_receive_fields = function(player, formname, fields)
+	if fields.skyblock_bags then
+		minetest.show_formspec(player:get_player_name(), "skyblock:bags", get_formspec(player,"skyblock_bags"));
 		return
 	end
 	for i=1,4 do
-		local page = "bag"..i
+		local page = "skyblock_bag"..i
 		if fields[page] then
 			if player:get_inventory():get_stack(page, 1):get_definition().groups.bagslots==nil then
-				page = "bags"
+				page = "skyblock_bags"
 			end
 			minetest.show_formspec(player:get_player_name(), "skyblock:bags", get_formspec(player,page));
 			return
 		end
 	end
-end)
+end
+minetest.register_on_player_receive_fields(skyblock.bags.on_receive_fields)
 
 -- register_on_joinplayer
 minetest.register_on_joinplayer(function(player)
 	local player_inv = player:get_inventory()
-	local bags_inv = minetest.create_detached_inventory(player:get_player_name().."_bags",{
+	local bags_inv = minetest.create_detached_inventory(player:get_player_name().."_skyblock_bags",{
 		on_put = function(inv, listname, index, stack, player)
 			player:get_inventory():set_stack(listname, index, stack)
 			player:get_inventory():set_size(listname.."contents", stack:get_definition().groups.bagslots)
@@ -89,7 +90,7 @@ minetest.register_on_joinplayer(function(player)
 		end,
 	})
 	for i=1,4 do
-		local bag = "bag"..i
+		local bag = "skyblock_bag"..i
 		player_inv:set_size(bag, 1)
 		bags_inv:set_size(bag, 1)
 		bags_inv:set_stack(bag,1,player_inv:get_stack(bag,1))
@@ -99,17 +100,17 @@ end)
 -- register bag tools
 minetest.register_tool("skyblock_bags:small", {
 	description = "Small Bag",
-	inventory_image = "bags_small.png",
+	inventory_image = "skyblock_bags_small.png",
 	groups = {bagslots=8},
 })
 minetest.register_tool("skyblock_bags:medium", {
 	description = "Medium Bag",
-	inventory_image = "bags_medium.png",
+	inventory_image = "skyblock_bags_medium.png",
 	groups = {bagslots=16},
 })
 minetest.register_tool("skyblock_bags:large", {
 	description = "Large Bag",
-	inventory_image = "bags_large.png",
+	inventory_image = "skyblock_bags_large.png",
 	groups = {bagslots=24},
 })
 

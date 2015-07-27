@@ -17,7 +17,7 @@ minetest.register_on_newplayer(function(player)
 	levels.give_initial_items(player)
 
 	skyblock.spawn_player(player)
-	levels[1].make_start_blocks(player_name)
+	--levels[1].make_start_blocks(player_name)
 
 	-- move the player up high enough in order to avoid collusions with the ground
 	local pos = skyblock.get_spawn(player_name)
@@ -41,22 +41,16 @@ minetest.register_on_respawnplayer(function(player)
 	-- give inventory
 	levels.give_initial_items(player)
 
-	-- give them a new position
-	if spawn_diggers[player_name] ~= nil then
-		spawn_diggers[player_name] = nil
-		
-		if levels.DIG_NEW_SPAWN then
-			-- unset old spawn position
-			spawned_players[player_name] = nil
-			skyblock.set_spawn(player_name, nil)
-			skyblock.set_spawn(player_name..'_DEAD', spawn)
-		else
-			-- rebuild spawn blocks
-			--skyblock.make_spawn_blocks(spawn,player_name)
-			levels[1].make_start_blocks(player_name)
-		end
-		
+	-- unset old spawn position
+	if levels.DIG_NEW_SPAWN then
+		spawned_players[player_name] = nil
+		skyblock.set_spawn(player_name, nil)
+		skyblock.set_spawn(player_name..'_DEAD', spawn)
 	end
+
+	-- rebuild spawn blocks
+	skyblock.make_spawn_blocks(spawn,player_name)
+	--levels[1].make_start_blocks(player_name)
 	
 	return true
 end)
@@ -71,18 +65,11 @@ minetest.register_on_joinplayer(function(player)
 	end)
 end)
 
--- player clicked an inventory button
-minetest.register_on_player_receive_fields(function(player, formname, fields)
-	if fields.quit then
+-- on_receive_fields
+skyblock.on_receive_fields = function(player, formname, fields)
+	if fields.skyblock or fields.main then
+		minetest.show_formspec(player:get_player_name(), "skyblock:main", player:get_inventory_formspec());
 		return
 	end
-	-- if an item was clicked show skyblock_craft_guide
-	for k,v in pairs( fields ) do
-		if string.match(k, ":") then
-			skyblock_craft_guide.inspect_show_crafting(player:get_player_name(), k, fields)
-			return;
-		end
-	end
-end)
-
-
+end
+minetest.register_on_player_receive_fields(skyblock.on_receive_fields)

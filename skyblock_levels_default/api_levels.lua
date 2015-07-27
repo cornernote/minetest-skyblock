@@ -40,15 +40,15 @@ levels.empty_inventory = function(player)
 			inv:set_stack('rewards', i, nil)
 		end
 	end
-	local bags_inv = minetest.get_inventory({type="detached", name=player:get_player_name()..'_bags'})
+	local bags_inv = minetest.get_inventory({type="detached", name=player:get_player_name()..'_skyblock_bags'})
 	for bag=1,4 do
-		if not bags_inv:is_empty('bag'..bag) then
-			for i=1,bags_inv:get_size('bag'..bag) do
-				inv:set_stack('bag'..bag, i, nil)
+		if not bags_inv:is_empty('skyblock_bag'..bag) then
+			for i=1,bags_inv:get_size('skyblock_bag'..bag) do
+				inv:set_stack('skyblock_bag'..bag, i, nil)
 			end
-			for i=1,bags_inv:get_size('bag'..bag) do
-				bags_inv:set_stack('bag'..bag, i, nil)
-				inv:set_stack('bag'..bag..'contents', i, nil)
+			for i=1,bags_inv:get_size('skyblock_bag'..bag) do
+				bags_inv:set_stack('skyblock_bag'..bag, i, nil)
+				inv:set_stack('skyblock_bag'..bag..'contents', i, nil)
 			end
 		end
 	end
@@ -69,9 +69,9 @@ end
 -- get_inventory_formspec
 levels.get_inventory_formspec = function(level)
 	local formspec = 'size[15,10;]'
-		..'button[7,0;2,0.5;bags;Bags]'
-		..'button_exit[9,0;2,0.5;home_gui_set;Set Home]'
-		..'button_exit[11,0;2,0.5;home_gui_go;Go Home]'
+		..'button[7,0;2,0.5;skyblock_bags;Bags]'
+		..'button_exit[9,0;2,0.5;skyblock_home_set;Set Home]'
+		..'button_exit[11,0;2,0.5;skyblock_home_go;Go Home]'
 		..'button_exit[13,0;2,0.5;close;Close]'
 		
 		..'label[0,0; --== MISSION '..level..' ==--]'
@@ -99,7 +99,7 @@ levels.get_goal_formspec = function(data,i,achievement,required,text,hint)
 	local y = 2.9+(i*0.6)
 	local formspec = 'label[0.5,'..y..'; '..i..') '..text..']'
 	if hint then
-		formspec = formspec..'item_image_button[5.8,'..y..';0.6,0.6;'..skyblock_craft_guide.image_button_link(hint)..']'
+		formspec = formspec..'item_image_button[5.8,'..y..';0.6,0.6;'..skyblock.craft_guide.image_button_link(hint)..']'
 	end
 	if achievements.get(data.level,data.player_name,achievement) >= required then
 		formspec = formspec .. 'image[-0.2,'..(y-0.25)..';1,1;checkbox_checked.png]'

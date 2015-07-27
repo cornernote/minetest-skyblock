@@ -1,31 +1,43 @@
-skyblock_craft_guide = {}
+--[[
+	
+Skyblock for Minetest
+
+Copyright (c) 2015 cornernote, Brett O'Donnell <cornernote@gmail.com>
+Source Code: https://github.com/cornernote/minetest-skyblock
+License: GPLv3
+
+CRAFT GUIDE MOD
+
+]]--
+
+skyblock.craft_guide = {}
 
 -- some common groups
-skyblock_craft_guide.group_placeholder = {};
-skyblock_craft_guide.group_placeholder['group:wood'] = 'default:wood';
-skyblock_craft_guide.group_placeholder['group:tree'] = 'default:tree';
-skyblock_craft_guide.group_placeholder['group:stick'] = 'default:stick';
-skyblock_craft_guide.group_placeholder['group:stone'] = 'default:cobble'; -- 'default:stone';  point people to the cheaper cobble
-skyblock_craft_guide.group_placeholder['group:sand'] = 'default:sand';
-skyblock_craft_guide.group_placeholder['group:leaves'] = 'default:leaves';
-skyblock_craft_guide.group_placeholder['group:wood_slab'] = 'stairs:slab_wood';
-skyblock_craft_guide.group_placeholder['group:wool'] = 'wool:white';
+skyblock.craft_guide.group_placeholder = {};
+skyblock.craft_guide.group_placeholder['group:wood'] = 'default:wood';
+skyblock.craft_guide.group_placeholder['group:tree'] = 'default:tree';
+skyblock.craft_guide.group_placeholder['group:stick'] = 'default:stick';
+skyblock.craft_guide.group_placeholder['group:stone'] = 'default:cobble'; -- 'default:stone';  point people to the cheaper cobble
+skyblock.craft_guide.group_placeholder['group:sand'] = 'default:sand';
+skyblock.craft_guide.group_placeholder['group:leaves'] = 'default:leaves';
+skyblock.craft_guide.group_placeholder['group:wood_slab'] = 'stairs:slab_wood';
+skyblock.craft_guide.group_placeholder['group:wool'] = 'wool:white';
 
 -- handle the standard dye color groups
 if( dyelocal and dyelocal.dyes ) then
 	for i,d in ipairs( dyelocal.dyes ) do
 		for k,v in pairs(d[3]) do
 			if( k ~= 'dye' ) then
-				skyblock_craft_guide.group_placeholder[ 'group:dye,'..k ] = 'dye:'..d[1];
+				skyblock.craft_guide.group_placeholder[ 'group:dye,'..k ] = 'dye:'..d[1];
 			end
 		end
 	end
 end
 
-skyblock_craft_guide.image_button_link = function(stack_string)
+skyblock.craft_guide.image_button_link = function(stack_string)
 	local group = '';
-	if( skyblock_craft_guide.group_placeholder[stack_string] ) then
-		stack_string = skyblock_craft_guide.group_placeholder[stack_string]
+	if( skyblock.craft_guide.group_placeholder[stack_string] ) then
+		stack_string = skyblock.craft_guide.group_placeholder[stack_string]
 		group = 'G';
 	end		
 	-- TODO: show information about other groups not handled above
@@ -38,7 +50,7 @@ skyblock_craft_guide.image_button_link = function(stack_string)
 end
 
 
-skyblock_craft_guide.inspect_show_crafting = function(player_name, node_name, fields)
+skyblock.craft_guide.inspect_show_crafting = function(player_name, node_name, fields)
 	if not player_name then
 		return;
 	end
@@ -78,11 +90,10 @@ skyblock_craft_guide.inspect_show_crafting = function(player_name, node_name, fi
 	end
 
 	local formspec = "size[5,6]"
-		..'label[0,1; Craft recipe for '..tostring( node_name )..']'
 		..'label[4,2;Output]'
 		..'background[-0.1,0.9;5.2,3.8;craft.png]'
 		.."button_exit[3,0;2,0.5;close;Close]"
-		.."button[1,0;2,0.5;main;Back]"
+		.."button[0,0;2,0.5;main;Back]"
 
 		.."field[20,20;0.1,0.1;node_name;node_name;"..node_name.."]" -- invisible field for passing on information
 		.."field[21,21;0.1,0.1;receipe_nr;receipe_nr;"..tostring( receipe_nr ).."]" -- another invisible field
@@ -99,40 +110,40 @@ skyblock_craft_guide.inspect_show_crafting = function(player_name, node_name, fi
 	end
 	if( not( res ) or #res<1) then
 		formspec = formspec..'label[3,1.5;No receipes.]';
-		if(   minetest.registered_nodes[ node_name ]
+		if(minetest.registered_nodes[ node_name ]
 		  and minetest.registered_nodes[ node_name ].drop ) then
 			local drop = minetest.registered_nodes[ node_name ].drop;
 			if( drop and type( drop )=='string' and drop ~= node_name ) then
 				formspec = formspec
 					.."label[1,1.6;Drops on dig:]"
-					.."item_image_button[1,2.5;1.0,1.0;"..skyblock_craft_guide.image_button_link( drop ).."]";
+					.."item_image_button[1,2.5;1.0,1.0;"..skyblock.craft_guide.image_button_link( drop ).."]";
 			end
 		end
 	else
 		formspec = formspec.."label[1,5.5;Alternate "..tostring( receipe_nr ).."/"..tostring( #res ).."]";
 		-- reverse order; default receipes (and thus the most interesting ones) are usually the oldest
 		local receipe = res[ #res+1-receipe_nr ];
-		if(     receipe.type=='normal'  and receipe.items) then
+		if (receipe.type=='normal' and receipe.items) then
 			for i=1,9 do
-				if( receipe.items[i] ) then
+				if (receipe.items[i]) then
 					formspec = formspec
 						.."item_image_button["..((i-1)%receipe.width)..','..(math.floor((i-1)/receipe.width)+1.5)..";1.0,1.0;"
-						..skyblock_craft_guide.image_button_link( receipe.items[i] ).."]";
+						..skyblock.craft_guide.image_button_link( receipe.items[i] ).."]";
 				end
 			end
-		elseif( receipe.type=='cooking' and receipe.items and #receipe.items==1 ) then
+		elseif (receipe.type=='cooking' and receipe.items and #receipe.items==1) then
 			formspec = formspec
-				.."item_image_button[0,1;3.9,3.4;"..skyblock_craft_guide.image_button_link( 'default:furnace' ).."]" --default_furnace_front.png]"
-				.."item_image_button[0.9,3.2;1.0,1.0;"..skyblock_craft_guide.image_button_link( receipe.items[1] ).."]";
-		elseif( receipe.type=='colormachine' and receipe.items and #receipe.items==1 ) then
+				.."item_image_button[1,2;1,1;"..skyblock.craft_guide.image_button_link('default:furnace').."]" --default_furnace_front.png]"
+				.."item_image_button[1,3;1,1;"..skyblock.craft_guide.image_button_link( receipe.items[1] ).."]";
+		elseif (receipe.type=='colormachine' and receipe.items and #receipe.items==1) then
 			formspec = formspec
-				.."item_image_button[0,1;3.9,3.4;"..skyblock_craft_guide.image_button_link( 'colormachine:colormachine' ).."]" --colormachine_front.png]"..
-				.."item_image_button[1,2;1.5,1.0;"..skyblock_craft_guide.image_button_link( receipe.items[1] ).."]";
-		elseif( receipe.type=='saw' and receipe.items and #receipe.items==1 ) then
+				.."item_image_button[1,1;1,1;"..skyblock.craft_guide.image_button_link( 'colormachine:colormachine' ).."]" --colormachine_front.png]"..
+				.."item_image_button[1,2;1,1;"..skyblock.craft_guide.image_button_link( receipe.items[1] ).."]";
+		elseif (receipe.type=='saw' and receipe.items and #receipe.items==1) then
 			--formspec = formspec.."item_image[1,1;3.4,3.4;moreblocks:circular_saw]"..
 			formspec = formspec
-				.."item_image_button[0,1.5;3.4,3.4;"..skyblock_craft_guide.image_button_link( 'moreblocks:circular_saw' ).."]"
-				.."item_image_button[1,1.1;1.0,1.0;"..skyblock_craft_guide.image_button_link( receipe.items[1] ).."]";
+				.."item_image_button[1,1;1,1;"..skyblock.craft_guide.image_button_link( 'moreblocks:circular_saw' ).."]"
+				.."item_image_button[1,2;1,1;"..skyblock.craft_guide.image_button_link( receipe.items[1] ).."]";
 		else
 			formspec = formspec..'label[0,1.5;Error: Unkown receipe.]';
 		end
@@ -141,21 +152,37 @@ skyblock_craft_guide.inspect_show_crafting = function(player_name, node_name, fi
 		if( outstack and outstack:get_count() and outstack:get_count()>1 ) then
 			formspec = formspec..'label[4.5,3;'..tostring( outstack:get_count() )..']';
 		end
+		
+		if receipe.type=='normal' then
+			receipe.type = 'craft'
+		elseif receipe.type=='cooking' then
+			receipe.type = 'furnace'
+		end
+		formspec = formspec..'label[0,1; '..receipe.type..' recipe for '..tostring( node_name )..']'
 	end
-	minetest.show_formspec( player_name, "skyblock_craft_guide:crafting", formspec );
+
+	minetest.show_formspec( player_name, "skyblock.craft_guide:crafting", formspec );
 end
 
+-- on_receive_fields
+skyblock.craft_guide.on_receive_fields = function(player, formname, fields)
+	for k,v in pairs( fields ) do
+		if string.match(k, ":") then
+			skyblock.craft_guide.inspect_show_crafting(player:get_player_name(), k, fields)
+			return;
+		end
+	end
+end
+minetest.register_on_player_receive_fields(skyblock.craft_guide.on_receive_fields)
+
 -- translate general formspec calls back to specific calls
-skyblock_craft_guide.form_input_handler = function( player, formname, fields)
+skyblock.craft_guide.form_input_handler = function( player, formname, fields)
 	if (fields.main) then
 		minetest.show_formspec(player:get_player_name(), "skyblock:inventory", player:get_inventory_formspec());
 		return
 	end
-	if (formname == "skyblock_craft_guide:crafting" and player) then
-		skyblock_craft_guide.inspect_show_crafting( player:get_player_name(), nil, fields )
+	if (formname == "skyblock.craft_guide:crafting" and player) then
+		skyblock.craft_guide.inspect_show_crafting( player:get_player_name(), nil, fields )
 		return
 	end
 end
-
--- establish a callback so that input from the player-specific formspec gets handled
-minetest.register_on_player_receive_fields(skyblock_craft_guide.form_input_handler)

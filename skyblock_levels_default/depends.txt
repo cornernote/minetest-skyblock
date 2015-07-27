@@ -8,3 +8,4 @@ stairs
 wool
 protector
 skyblock_bags
+skyblock_craft_guide

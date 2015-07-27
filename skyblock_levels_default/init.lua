@@ -10,6 +10,8 @@ LEVEL LOADER
 
 ]]--
 
+dofile(minetest.get_modpath('skyblock_levels_default')..'/register_abm.lua')
+dofile(minetest.get_modpath('skyblock_levels_default')..'/register_craft.lua')
 dofile(minetest.get_modpath('skyblock_levels_default')..'/register_node.lua')
 dofile(minetest.get_modpath('skyblock_levels_default')..'/register_misc.lua')
 
