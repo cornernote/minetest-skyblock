@@ -91,11 +91,9 @@ minetest.register_craft({
 
 -- cobble
 minetest.register_craft({
+	type = 'cooking',
 	output = 'default:cobble 2',
-	recipe = {
-		{'group:wood'},
-		{'default:dirt'},
-	}
+	recipe = 'default:dirt',
 })
 
 -- gravel

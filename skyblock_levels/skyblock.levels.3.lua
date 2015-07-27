@@ -40,8 +40,8 @@ skyblock.levels[level].make_start_blocks = function(player_name)
 	skyblock.levels.make_sphere({x=pos.x,y=pos.y-radius,z=pos.z},radius,'default:dirt',hollow)
 
 	-- level 3
-	minetest.env:add_node(pos, {name='skyblock:level_3'})
-	skyblock.feats.update(player_name)
+	--minetest.env:add_node(pos, {name='skyblock:level_3'})
+	--skyblock.feats.update(player_name)
 
 end
 
@@ -68,20 +68,6 @@ skyblock.levels[level].get_info = function(player_name)
 
 	info.infotext = 'LEVEL '..info.level..' for '..info.player_name..': '..info.count..' of '..info.total
 	
-	-- next level
-	local current_level = skyblock.feats.get_level(player_name);
-	if info.count==info.total and current_level==level then
-		skyblock.levels[level+1].make_start_blocks(info.player_name)
-		skyblock.feats.add(0,info.player_name,'level')
-		info.formspec = skyblock.levels[level+1].get_info(info.player_name)
-	end
-	if current_level > level then
-		local pos = skyblock.levels[level+1].get_pos(info.player_name)
-		if pos and minetest.env:get_node(pos).name ~= 'skyblock:level_4' then
-			skyblock.levels[level+1].make_start_blocks(info.player_name)
-		end
-	end
-
 	return info
 end
 

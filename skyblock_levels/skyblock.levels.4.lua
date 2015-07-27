@@ -40,14 +40,14 @@ skyblock.levels[level].make_start_blocks = function(player_name)
 	skyblock.levels({x=pos.x,y=pos.y-radius,z=pos.z},radius,'default:dirt',hollow)
 
 	-- level 4
-	minetest.env:add_node(pos, {name='skyblock:level_4'})
+	--minetest.env:add_node(pos, {name='skyblock:level_4'})
 
 end
 
 
 -- get level information
 skyblock.levels[level].get_info = function(player_name)
-	local info = { level=level, total=0, count=0, player_name=player_name, infotext='', formspec = '' };
+	local info = { level=level, total=1, count=0, player_name=player_name, infotext='', formspec = '' };
 	info.formspec = skyblock.levels.get_inventory_formspec(level)
 		..'label[0,0.5; THE END]'
 		..'label[0,1.0; I hope you enjoyed your journey, and you]'

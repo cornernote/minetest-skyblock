@@ -37,11 +37,11 @@ skyblock.levels[level].make_start_blocks = function(player_name)
 	-- sphere
 	local radius = 3
 	local hollow = 1
-	levels({x=pos.x,y=pos.y-radius,z=pos.z},radius,'default:dirt',hollow)
+	skyblock.levels.make_sphere({x=pos.x,y=pos.y-radius,z=pos.z},radius,'default:dirt',hollow)
 
 	-- level 2
-	minetest.env:add_node(pos, {name='skyblock:level_2'})
-	skyblock.feats.update(player_name)
+	--minetest.env:add_node(pos, {name='skyblock:level_2'})
+	--skyblock.feats.update(player_name)
 
 end
 
@@ -51,37 +51,23 @@ skyblock.levels[level].get_info = function(player_name)
 	local info = { level=level, total=10, count=0, player_name=player_name, infotext='', formspec = '' };
 
 	info.formspec = skyblock.levels.get_inventory_formspec(level)
-		..'label[0,0.5; Come Up Here!]'
+		..'label[0,0.5; Hey '..player_name..', Come Up Here!]'
 		..'label[0,1; Wow, look at that view... of... nothing...]'
 		..'label[0,1.5; You should get to work extending this island.]'
 		..'label[0,2; Perhaps you could build some structures too?]'
-		..skyblock.levels.get_goal_formspec(info,1,'place_dirt',100,'extend your Island with 100 Dirt')
-		..skyblock.levels.get_goal_formspec(info,2,'collect_water',1,'collect the Water under Level 2')
-		..skyblock.levels.get_goal_formspec(info,3,'place_wood',50,'build a structure using 50 Wood')
-		..skyblock.levels.get_goal_formspec(info,4,'place_brick',50,'build a structure using 50 Brick')
-		..skyblock.levels.get_goal_formspec(info,5,'place_trapdoor',1,'place a Trapdoor')
-		..skyblock.levels.get_goal_formspec(info,6,'place_ladder',10,'place 10 Ladders')
-		..skyblock.levels.get_goal_formspec(info,7,'place_fence_wood',20,'place 20 Wood Fences')
-		..skyblock.levels.get_goal_formspec(info,8,'dig_stone_with_iron',4,'dig 8 Iron Lumps')
-		..skyblock.levels.get_goal_formspec(info,9,'place_chest_locked',1,'craft and place a Locked Chest')
-		..skyblock.levels.get_goal_formspec(info,10,'dig_stone_with_copper',4,'dig 4 Copper Lumps')
+		..skyblock.levels.get_goal_formspec(info,1,'place_trapdoor',1,'place a Trapdoor','doors:trapdoor')
+		..skyblock.levels.get_goal_formspec(info,2,'place_ladder',10,'place 10 Ladders','default:ladder')
+		..skyblock.levels.get_goal_formspec(info,3,'place_fence_wood',20,'place 20 Wood Fences','default:fence_wood')
+		..skyblock.levels.get_goal_formspec(info,4,'place_dirt',100,'extend your Island with 100 Dirt','default:dirt')
+		..skyblock.levels.get_goal_formspec(info,5,'place_cobble',100,'craft and place 100 Cobblestone','default:cobble')
+		..skyblock.levels.get_goal_formspec(info,6,'place_wood',100,'build a structure using 100 Wood','default:wood')
+		..skyblock.levels.get_goal_formspec(info,7,'dig_stone_with_coal',2,'dig 4 Coal Lumps','default:stone_with_coal')
+		..skyblock.levels.get_goal_formspec(info,8,'place_torch',8,'place 8 Torches','default:torch')
+		..skyblock.levels.get_goal_formspec(info,9,'dig_stone_with_iron',4,'dig 8 Iron Lumps','default:stone_with_iron')
+		..skyblock.levels.get_goal_formspec(info,10,'place_chest_locked',1,'craft and place a Locked Chest','default:chest_locked')
 
 	info.infotext = 'LEVEL '..info.level..' for '..info.player_name..': '..info.count..' of '..info.total
 	
-	-- next level
-	local current_level = skyblock.feats.get_level(player_name);
-	if info.count==info.total and current_level==level then
-		skyblock.levels[level+1].make_start_blocks(info.player_name)
-		skyblock.feats.add(0,info.player_name,'level')
-		info.formspec = skyblock.levels[level+1].get_info(info.player_name)
-	end
-	if current_level > level then
-		local pos = skyblock.levels[level+1].get_pos(info.player_name)
-		if pos and minetest.env:get_node(pos).name ~= 'skyblock:level_3' then
-			skyblock.levels[level+1].make_start_blocks(info.player_name)
-		end
-	end
-
 	return info
 end
 
@@ -90,60 +76,54 @@ end
 skyblock.levels[level].reward_achievement = function(player_name,achievement)
 	local achievement_count = skyblock.feats.get(level,player_name,achievement)
 	
-	-- place_dirt
-	if achievement == 'place_dirt' and achievement_count == 100 then
-		skyblock.feats.give_reward(level,player_name,'bucket:bucket_empty')
-		-- put water above spawn
-		local pos = skyblock.levels[1].get_pos(player_name)
-		minetest.env:add_node({x=pos.x,y=pos.y+1,z=pos.z}, {name='default:water_source'})
-		return true
-	end
-	
-	-- collect_water x1
-	if achievement == 'collect_water' and achievement_count == 1 then
-		skyblock.feats.give_reward(level,player_name,'default:jungleleaves 6')
-		return true
-	end
-
-	-- place_water_infinite
-	--[[
-	if achievement == 'place_water_infinite' and achievement_count == 1 then
-		skyblock.feats.give_reward(level,player_name,'default:cobble 50')
-		return true
-	end
-	]]--
-
-	-- place_wood
-	if achievement == 'place_wood' and achievement_count == 50 then
-		skyblock.feats.give_reward(level,player_name,'default:brick 50')
-		return true
-	end
-
-	-- place_brick
-	if achievement == 'place_brick' and achievement_count == 50 then
-		skyblock.feats.give_reward(level,player_name,'default:sandstonebrick 50')
-		return true
-	end
-	
-	-- place_trapdoor
+	-- place_trapdoor x1
 	if achievement == 'place_trapdoor' and achievement_count == 1 then
 		skyblock.feats.give_reward(level,player_name,'default:desert_stonebrick 50')
 		return true
 	end
 
-	-- place_ladder
+	-- place_ladder x10
 	if achievement == 'place_ladder' and achievement_count == 10 then
 		skyblock.feats.give_reward(level,player_name,'default:desert_cobble 50')
 		return true
 	end
 
-	-- place_fence_wood
+	-- place_fence_wood x20
 	if achievement == 'place_fence_wood' and achievement_count == 20 then
-		skyblock.feats.give_reward(level,player_name,'default:iron_lump')
-		skyblock.feats.give_reward(level,player_name,'default:cobble 50')
+		skyblock.feats.give_reward(level,player_name,'stairs:stair_brick 3')
 		return true
 	end
 	
+	-- place_dirt x100
+	if achievement == 'place_dirt' and achievement_count == 100 then
+		skyblock.feats.give_reward(level,player_name,'default:jungleleaves 6')
+		return true
+	end
+
+	-- place_cobble x100
+	if achievement == 'place_cobble' and achievement_count == 100 then
+		skyblock.feats.give_reward(level,player_name,'stairs:stair_cobble 3')
+		return true
+	end
+	
+	-- place_wood x100
+	if achievement == 'place_wood' and achievement_count == 100 then
+		skyblock.feats.give_reward(level,player_name,'default:brick 50')
+		return true
+	end
+
+	-- dig_stone_with_coal x4
+	if achievement == 'dig_stone_with_coal' and achievement_count == 2 then
+		skyblock.feats.give_reward(level,player_name,'default:pine_needles 6')
+		return true
+	end
+
+	-- place_torch x8
+	if achievement == 'place_torch' and achievement_count == 8 then
+		skyblock.feats.give_reward(level,player_name,'default:iron_lump')
+		return true
+	end
+
 	-- dig_stone_with_iron x8
 	if achievement == 'dig_stone_with_iron' and achievement_count == 4 then
 		skyblock.feats.give_reward(level,player_name,'default:pine_needles 6')
@@ -155,12 +135,6 @@ skyblock.levels[level].reward_achievement = function(player_name,achievement)
 		skyblock.feats.give_reward(level,player_name,'default:copper_lump')
 		return true
 	end
-
-	-- dig_stone_with_copper x8
-	if achievement == 'dig_stone_with_copper' and achievement_count == 4 then
-		skyblock.feats.give_reward(level,player_name,'default:gold_lump')
-		return true
-	end
 	
 end
 
@@ -169,42 +143,24 @@ end
 skyblock.levels[level].on_dignode = function(pos, oldnode, digger)
 	local player_name = digger:get_player_name()
 
+	-- dig_stone_with_coal
+	if oldnode.name == 'default:stone_with_coal' then
+		skyblock.feats.add(level,player_name,'dig_stone_with_coal')
+		return
+	end
+	
 	-- dig_stone_with_iron
 	if oldnode.name == 'default:stone_with_iron' then
 		skyblock.feats.add(level,player_name,'dig_stone_with_iron')
 		return
 	end
 	
-	-- dig_stone_with_copper
-	if oldnode.name == 'default:stone_with_copper' then
-		skyblock.feats.add(level,player_name,'dig_stone_with_copper')
-		return
-	end
-
 end
 
 
 -- track placing feats
 skyblock.levels[level].on_placenode = function(pos, newnode, placer, oldnode)
 	local player_name = placer:get_player_name()
-
-	-- place_dirt
-	if newnode.name == 'default:dirt' then
-		skyblock.feats.add(level,player_name,'place_dirt')
-		return
-	end
-
-	-- place_brick
-	if newnode.name == 'default:brick' then
-		skyblock.feats.add(level,player_name,'place_brick')
-		return
-	end
-
-	-- place_wood
-	if newnode.name == 'default:wood' or newnode.name == 'default:junglewood' or newnode.name == 'default:pinewood' then
-		skyblock.feats.add(level,player_name,'place_wood')
-		return
-	end
 
 	-- place_trapdoor
 	if newnode.name == 'doors:trapdoor' then
@@ -224,6 +180,30 @@ skyblock.levels[level].on_placenode = function(pos, newnode, placer, oldnode)
 		return
 	end
 
+	-- place_dirt
+	if newnode.name == 'default:dirt' then
+		skyblock.feats.add(level,player_name,'place_dirt')
+		return
+	end
+
+	-- place_cobble
+	if newnode.name == 'default:cobble' then
+		skyblock.feats.add(level,player_name,'place_cobble')
+		return
+	end
+
+	-- place_wood
+	if newnode.name == 'default:wood' or newnode.name == 'default:junglewood' or newnode.name == 'default:pinewood' then
+		skyblock.feats.add(level,player_name,'place_wood')
+		return
+	end
+
+	-- place_torch
+	if newnode.name == 'default:torch' then
+		skyblock.feats.add(level,player_name,'place_torch')
+		return
+	end
+
 	-- place_chest_locked
 	if newnode.name == 'default:chest_locked' then
 		skyblock.feats.add(level,player_name,'place_chest_locked')
@@ -234,34 +214,11 @@ end
 
 
 -- track bucket feats
-skyblock.levels[level].bucket_on_use = function(player_name, pointed_thing)
-
-	-- collect_water
-	local n = minetest.env:get_node(pointed_thing.under)
-	skyblock.log('skyblock.levels[2].bucket_water_on_use() for '..player_name..' pointed at '..n.name)
-	if n.name == 'default:water_source' then
-		skyblock.feats.add(level,player_name,'collect_water')
-	end
-
-end
+skyblock.levels[level].bucket_on_use = function(player_name, pointed_thing) end
 
 
 -- track bucket water feats
-skyblock.levels[level].bucket_water_on_use = function(player_name, pointed_thing) 
-
-	-- place_water_infinite
-	--[[
-	local pos = pointed_thing.under
-	if minetest.env:get_node({x=pos.x-1,y=pos.y,z=pos.z-1}).name=='default:water_source' 
-	or minetest.env:get_node({x=pos.x-1,y=pos.y,z=pos.z+1}).name=='default:water_source'
-	or minetest.env:get_node({x=pos.x+1,y=pos.y,z=pos.z-1}).name=='default:water_source'
-	or minetest.env:get_node({x=pos.x+1,y=pos.y,z=pos.z+1}).name=='default:water_source' then
-		skyblock.feats.add(level,player_name,'place_water_infinite')
-		return
-	end
-	]]--
-
-end
+skyblock.levels[level].bucket_water_on_use = function(player_name, pointed_thing) end
 
 
 -- track bucket lava feats

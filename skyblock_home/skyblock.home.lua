@@ -67,6 +67,3 @@ skyblock.home.on_receive_fields = function(player, formname, fields)
 	end
 end
 minetest.register_on_player_receive_fields(skyblock.home.on_receive_fields)
-
--- log that we started
-minetest.log("action", "[MOD]"..minetest.get_current_modname().." -- loaded from "..minetest.get_modpath(minetest.get_current_modname()))

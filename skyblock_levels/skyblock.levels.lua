@@ -23,7 +23,7 @@ skyblock.levels.DIG_NEW_SPAWN = minetest.setting_getbool("skyblock_levels_dig_ne
 -- give initial items
 skyblock.levels.give_initial_items = function(player)
 	skyblock.log('skyblock.levels.give_initial_items() to '..player:get_player_name())
-	player:get_inventory():add_item('main', 'default:stick')
+	--player:get_inventory():add_item('main', 'default:stick')
 end
 
 -- check inventory (needs to match the given items above to prevent death on initial falling)
@@ -33,11 +33,11 @@ skyblock.levels.check_inventory = function(player)
 	local stack
 	if inv==nil then return false end
 	
-	stack = inv:get_stack('main', 1)
-	if stack:get_name() ~= 'default:stick' or stack:get_count() ~= 1 then
-		return false
-	end
-	for i=2,inv:get_size('main') do
+	--stack = inv:get_stack('main', 1)
+	--if stack:get_name() ~= 'default:stick' or stack:get_count() ~= 1 then
+	--	return false
+	--end
+	for i=1,inv:get_size('main') do
 		stack = inv:get_stack('main', i)
 		if stack:get_name() ~= '' then
 			return false

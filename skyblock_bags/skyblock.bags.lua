@@ -10,25 +10,6 @@ License: GPLv3
 
 skyblock.bags = {}
 
--- on_receive_fields
-skyblock.bags.on_receive_fields = function(player, formname, fields)
-	if fields.skyblock_bags then
-		minetest.show_formspec(player:get_player_name(), "skyblock:bags", get_formspec(player,"skyblock_bags"));
-		return
-	end
-	for i=1,4 do
-		local page = "skyblock_bag"..i
-		if fields[page] then
-			if player:get_inventory():get_stack(page, 1):get_definition().groups.bagslots==nil then
-				page = "skyblock_bags"
-			end
-			minetest.show_formspec(player:get_player_name(), "skyblock:bags", get_formspec(player,page));
-			return
-		end
-	end
-end
-minetest.register_on_player_receive_fields(skyblock.bags.on_receive_fields)
-
 -- get_formspec
 local get_formspec = function(player,page)
 	if page=="skyblock_bags" then
@@ -58,5 +39,21 @@ local get_formspec = function(player,page)
 	end
 end
 
--- log that we started
-minetest.log("action", "[MOD]"..minetest.get_current_modname().." -- loaded from "..minetest.get_modpath(minetest.get_current_modname()))
+-- on_receive_fields
+skyblock.bags.on_receive_fields = function(player, formname, fields)
+	if fields.skyblock_bags then
+		minetest.show_formspec(player:get_player_name(), "skyblock:bags", get_formspec(player,"skyblock_bags"));
+		return
+	end
+	for i=1,4 do
+		local page = "skyblock_bag"..i
+		if fields[page] then
+			if player:get_inventory():get_stack(page, 1):get_definition().groups.bagslots==nil then
+				page = "skyblock_bags"
+			end
+			minetest.show_formspec(player:get_player_name(), "skyblock:bags", get_formspec(player,page));
+			return
+		end
+	end
+end
+minetest.register_on_player_receive_fields(skyblock.bags.on_receive_fields)

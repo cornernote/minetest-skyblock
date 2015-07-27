@@ -11,3 +11,6 @@ License: GPLv3
 local modpath = minetest.get_modpath('skyblock_home')
 
 dofile(modpath..'/skyblock.home.lua')
+
+-- log that we started
+minetest.log('action', '[MOD]'..minetest.get_current_modname()..' -- loaded from '..minetest.get_modpath(minetest.get_current_modname()))

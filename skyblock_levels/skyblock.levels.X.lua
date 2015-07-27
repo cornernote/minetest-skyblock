@@ -15,7 +15,7 @@ LEVEL 2 FUNCTIONS
 -- PUBLIC FUNCTIONS
 --
 
-local level = 2
+local level = X -- not a real level, just ideas and leftover code
 skyblock.levels[level] = {}
 
 
@@ -53,6 +53,17 @@ skyblock.levels[level].get_info = function(player_name,pos)
 	local total = 10
 	local count = 0
 
+	
+		--..skyblock.levels.get_goal_formspec(info,10,'dig_stone_with_copper',4,'dig 4 Copper Lumps','default:copper_lump')
+		--..skyblock.levels.get_goal_formspec(info,2,'collect_water',1,'collect the Water')
+		--..skyblock.levels.get_goal_formspec(info,7,'place_brick',50,'build a structure using 50 Brick','default:brick')
+		--..skyblock.levels.get_goal_formspec(info,10,'place_dirt',80,'extend your Island with 80 Dirt','default:dirt')
+		--..skyblock.levels.get_goal_formspec(info,10,'place_torch',8,'place 8 Torches','default:torch')
+
+		
+		-- rewards = 		skyblock.feats.give_reward(level,player_name,'stairs:stair_brick 3')
+
+		
 	formspec = formspec
 		..'size[15,10;]'
 		..'label[0,0;LEVEL '..level..' FOR: '.. player_name ..']'
@@ -217,7 +228,39 @@ end
 -- reward_achievement
 skyblock.levels[level].reward_achievement = function(player_name,achievement)
 	local achievement_count = skyblock.feats.get(level,player_name,achievement)
+
 	
+	-- place_brick
+	if achievement == 'place_brick' and achievement_count == 50 then
+		skyblock.feats.give_reward(level,player_name,'default:sandstonebrick 50')
+		-- put water above spawn
+		--local pos = skyblock.levels[1].get_pos(player_name)
+		--minetest.env:add_node({x=pos.x,y=pos.y+1,z=pos.z}, {name='default:water_source'})
+		return true
+	end
+	
+	
+	-- dig_stone_with_copper x8
+	if achievement == 'dig_stone_with_copper' and achievement_count == 4 then
+		skyblock.feats.give_reward(level,player_name,'default:gold_lump')
+		return true
+	end
+
+	
+	
+	-- dig_stone
+	if oldnode.name == 'default:stone' then
+		skyblock.feats.add(level,player_name,'dig_stone')
+		return
+	end
+	
+	-- dig_stone_with_coal
+	if oldnode.name == 'default:stone_with_coal' then
+		skyblock.feats.add(level,player_name,'dig_stone_with_coal')
+		return
+	end
+	
+
 	-- place_water_infinite
 	if achievement == 'place_water_infinite' and achievement_count == 1 then
 		skyblock.feats.give_reward(level,player_name,'default:lava_source')
@@ -388,10 +431,44 @@ end
 
 
 -- track bucket feats
-skyblock.levels[level].bucket_on_use = function(player_name, pointed_thing) end
+skyblock.levels[level].bucket_on_use = function(player_name, pointed_thing)
+
+	-- collect_water
+	local n = minetest.env:get_node(pointed_thing.under)
+	skyblock.log('skyblock.levels[2].bucket_water_on_use() for '..player_name..' pointed at '..n.name)
+	if n.name == 'default:water_source' then
+		skyblock.feats.add(level,player_name,'collect_water')
+	end
+
+	-- collect_spawn_water
+	--[[
+	n = minetest.env:get_node(pointed_thing.under)
+	if n.name == 'default:water_source' then
+		local spawn = skyblock.has_spawn(player_name)
+		if spawn~=nil and pointed_thing.under.x==spawn.x and pointed_thing.under.y==spawn.y-1 and pointed_thing.under.z==spawn.z then
+			skyblock.feats.add(level,player_name,'collect_spawn_water')
+			end
+	end
+	]]--
+
+	-- collect_spawn_lava
+	--[[
+	n = minetest.env:get_node(pointed_thing.under)
+	if n.name == 'default:lava_source' then
+		local spawn = skyblock.has_spawn(player_name)
+		if spawn~=nil and pointed_thing.under.x==spawn.x and pointed_thing.under.y==spawn.y-1 and pointed_thing.under.z==spawn.z then
+			skyblock.feats.add(level,player_name,'collect_spawn_lava')
+		end
+	end
+	]]--
+
+end
+
 
 
 -- track bucket water feats
+skyblock.levels[level].bucket_water_on_use = function(player_name, pointed_thing) 
+
 skyblock.levels[level].bucket_water_on_use = function(player_name, pointed_thing) 
 
 	-- place_water_infinite

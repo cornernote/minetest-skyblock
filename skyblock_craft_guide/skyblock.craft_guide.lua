@@ -131,8 +131,8 @@ skyblock.craft_guide.inspect_show_crafting = function(player_name, node_name, fi
 			end
 		elseif (receipe.type=='cooking' and receipe.items and #receipe.items==1) then
 			formspec = formspec
-				.."item_image_button[1,2;1,1;"..skyblock.craft_guide.image_button_link('default:furnace').."]" --default_furnace_front.png]"
-				.."item_image_button[1,3;1,1;"..skyblock.craft_guide.image_button_link( receipe.items[1] ).."]";
+				.."item_image_button[1,3;1,1;"..skyblock.craft_guide.image_button_link('default:furnace').."]" --default_furnace_front.png]"
+				.."item_image_button[1,2;1,1;"..skyblock.craft_guide.image_button_link( receipe.items[1] ).."]";
 		elseif (receipe.type=='colormachine' and receipe.items and #receipe.items==1) then
 			formspec = formspec
 				.."item_image_button[1,1;1,1;"..skyblock.craft_guide.image_button_link( 'colormachine:colormachine' ).."]" --colormachine_front.png]"..

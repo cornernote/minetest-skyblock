@@ -18,7 +18,7 @@ skyblock.feats.FILENAME = minetest.get_worldpath()..'/feat'
 local players_feat = skyblock.table.load(skyblock.feats.FILENAME)
 if players_feat == nil then
 	players_feat = {}
-end
+	end
 
 -- get players current level
 skyblock.feats.get_level = function(player_name)
@@ -31,20 +31,29 @@ skyblock.feats.reset = function(player_name)
 	skyblock.log('skyblock.feats.reset('..player_name..')')
 	players_feat[player_name] = {}
 	skyblock.table.save(players_feat, skyblock.feats.FILENAME)
-	skyblock.feats.update(player_name)
+	skyblock.feats.update(0,player_name)
 end
 
 -- update feats
-skyblock.feats.update = function(player_name)
-	skyblock.log('skyblock.feats.update('..player_name..')')
+skyblock.feats.update = function(level,player_name)
+	skyblock.log('skyblock.feats.update('..level..','..player_name..')')
 	local level = skyblock.feats.get_level(player_name)
-	local pos = skyblock.levels[level].get_pos(player_name)
+	local pos = skyblock.get_spawn(player_name)
 	if pos==nil then return pos end
+	local info = skyblock.levels[level].get_info(player_name)
+
+	-- next level
+	if info.count==info.total then
+		skyblock.levels[level+1].make_start_blocks(info.player_name)
+		skyblock.feats.add(0,info.player_name,'level')
+		info = skyblock.levels[level+1].get_info(info.player_name)
+	end
+	
+	-- update formspecs
+	minetest.get_player_by_name(player_name):set_inventory_formspec(info.formspec)
 	local meta = minetest.env:get_meta(pos)
-	local level_info = skyblock.levels[level].get_info(player_name)
-	meta:set_string('formspec', level_info.formspec)
-	meta:set_string('infotext', level_info.infotext)
-	minetest.get_player_by_name(player_name):set_inventory_formspec(level_info.formspec)
+	meta:set_string('formspec', info.formspec)
+	meta:set_string('infotext', info.infotext)
 end
 
 -- get feat
@@ -78,7 +87,7 @@ skyblock.feats.add = function(level,player_name,achievement)
 	
 	-- update
 	if update then
-		skyblock.feats.update(player_name)
+		skyblock.feats.update(level,player_name)
 		--minetest.chat_send_player(player_name, 'You earned the achievement "'..achievement..'"')
 		minetest.chat_send_all(player_name..' was awarded the achievement "'..achievement..'"')
 		minetest.log('action', player_name..' was awarded the achievement "'..achievement..'"')
