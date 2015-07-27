@@ -61,21 +61,21 @@ minetest.register_node(':default:pinetree', entity)
 
 -- leaves
 local entity = skyblock.registered('node','default:leaves')
-entity.drop = 'default:leaves'
+--entity.drop = 'default:leaves'
 entity.climbable = true
 entity.walkable = false
 minetest.register_node(':default:leaves', entity)
 
 -- jungleleaves
 local entity = skyblock.registered('node','default:jungleleaves')
-entity.drop = 'default:jungleleaves'
+--entity.drop = 'default:jungleleaves'
 entity.climbable = true
 entity.walkable = false
 minetest.register_node(':default:jungleleaves', entity)
 
 -- pine_needles
 local entity = skyblock.registered('node','default:pine_needles')
-entity.drop = 'default:pine_needles'
+--entity.drop = 'default:pine_needles'
 entity.climbable = true
 entity.walkable = false
 minetest.register_node(':default:pine_needles', entity)
