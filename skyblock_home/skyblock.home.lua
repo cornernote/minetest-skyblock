@@ -11,12 +11,12 @@ License: GPLv3
 skyblock.home = {}
 
 -- filename
-skyblock.home.filename = skyblock.FILENAME..'/skyblock.home'
+skyblock.home.filename = skyblock.FILENAME..'.home'
 
 -- load_home
 local homepos = {}
 local load_home = function()
-    local input = io.open(skyblock.home.filename..".home", "r")
+    local input = io.open(skyblock.home.filename, "r")
     if input then
         while true do
             local x = input:read("*n")
@@ -39,7 +39,7 @@ load_home() -- run it now
 skyblock.home.set_home = function(player, pos)
 	homepos[player:get_player_name()] = pos
 	-- save the home data from the table to the file
-	local output = io.open(skyblock.home.filename..".home", "w")
+	local output = io.open(skyblock.home.filename, "w")
 	for k, v in pairs(homepos) do
 		if v ~= nil then
 			output:write(math.floor(v.x).." "..math.floor(v.y).." "..math.floor(v.z).." "..k.."\n")
