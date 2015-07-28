@@ -79,7 +79,7 @@ skyblock.levels.make_sphere(pos,radius,nodename,hollow)
 Gives player a reward when a feat is achieved.
 
 ```
-skyblock.levels.reward_feat(feats,player_name,feat)
+skyblock.levels.reward_feat(level,feats,player_name,feat)
 ```
 
 ### `skyblock.levels.on_dignode()`
@@ -87,7 +87,7 @@ skyblock.levels.reward_feat(feats,player_name,feat)
 Tracks digging feats.
 
 ```
-skyblock.levels.on_dignode(feats,pos,oldnode,digger)
+skyblock.levels.on_dignode(level,feats,pos,oldnode,digger)
 ```
 
 ### `skyblock.levels.on_placenode()`
@@ -95,7 +95,7 @@ skyblock.levels.on_dignode(feats,pos,oldnode,digger)
 Tracks placing feats.
 
 ```
-skyblock.levels.on_placenode(feats,pos,newnode,placer,oldnode)
+skyblock.levels.on_placenode(level,feats,pos,newnode,placer,oldnode)
 ```
 
 ### `skyblock.levels.on_item_eat()`
@@ -103,7 +103,7 @@ skyblock.levels.on_placenode(feats,pos,newnode,placer,oldnode)
 Tracks eating feats.
 
 ```
-skyblock.levels.on_item_eat(feats,player_name,itemstack)
+skyblock.levels.on_item_eat(level,feats,player_name,itemstack)
 ```
 
 ### `skyblock.levels.bucket_on_use()`
@@ -111,7 +111,7 @@ skyblock.levels.on_item_eat(feats,player_name,itemstack)
 Tracks bucket feats.
 
 ```
-skyblock.levels.bucket_on_use(feats,player_name,pointed_thing)
+skyblock.levels.bucket_on_use(level,feats,player_name,pointed_thing)
 ```
 
 ### `skyblock.levels.bucket_water_on_use()`
@@ -119,7 +119,7 @@ skyblock.levels.bucket_on_use(feats,player_name,pointed_thing)
 Tracks bucket_water feats.
 
 ```
-skyblock.levels.bucket_water_on_use(feats,player_name,pointed_thing)
+skyblock.levels.bucket_water_on_use(level,feats,player_name,pointed_thing)
 ```
 
 ### `skyblock.levels.bucket_lava_on_use()`
@@ -127,6 +127,6 @@ skyblock.levels.bucket_water_on_use(feats,player_name,pointed_thing)
 Tracks bucket_lava feats.
 
 ```
-skyblock.levels.bucket_lava_on_use(feats,player_name,pointed_thing)
+skyblock.levels.bucket_lava_on_use(level,feats,player_name,pointed_thing)
 ```
 
