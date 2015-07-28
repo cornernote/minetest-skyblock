@@ -39,7 +39,7 @@ skyblock.feats.update = function(level,player_name)
 	skyblock.log('skyblock.feats.update('..level..','..player_name..')')
 	--local level = skyblock.feats.get_level(player_name)
 	local pos = skyblock.get_spawn(player_name)
-	if pos==nil then return pos end
+	if not pos or not level then return pos end
 	local info = skyblock.levels[level].get_info(player_name)
 
 	-- next level
