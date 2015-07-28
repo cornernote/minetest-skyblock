@@ -188,7 +188,6 @@ skyblock.levels.make_sphere =  function(pos,radius,nodename,hollow)
 end
 
 
-
 --
 -- Feat Checks
 --
@@ -249,7 +248,7 @@ skyblock.levels.on_item_eat = function(feats, player_name, itemstack)
 end
 
 -- track bucket feats
-skyblock.levels[level].bucket_on_use = function(player_name, pointed_thing)
+skyblock.levels.bucket_on_use = function(player_name, pointed_thing)
 	local node = minetest.env:get_node(pointed_thing.under)
 	for _,v in ipairs(feats) do
 		if v.bucket then
@@ -263,7 +262,7 @@ skyblock.levels[level].bucket_on_use = function(player_name, pointed_thing)
 end
 
 -- track bucket water feats
-skyblock.levels[level].bucket_water_on_use = function(player_name, pointed_thing) 
+skyblock.levels.bucket_water_on_use = function(player_name, pointed_thing) 
 	local node = minetest.env:get_node(pointed_thing.under)
 	for _,v in ipairs(feats) do
 		if v.bucket_water then
@@ -277,7 +276,7 @@ skyblock.levels[level].bucket_water_on_use = function(player_name, pointed_thing
 end
 
 -- track bucket lava feats
-skyblock.levels[level].bucket_lava_on_use = function(player_name, pointed_thing)
+skyblock.levels.bucket_lava_on_use = function(player_name, pointed_thing)
 	local node = minetest.env:get_node(pointed_thing.under)
 	for _,v in ipairs(feats) do
 		if v.bucket_lava then
