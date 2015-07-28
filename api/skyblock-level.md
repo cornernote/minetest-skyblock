@@ -1,0 +1,89 @@
+---
+layout: default
+title: Skyblock Level
+heading: Skyblock Level
+permalink: /api/skyblock-level/
+---
+
+
+## Methods
+
+### `skyblock.levels[level].get_pos()`
+
+Get the position of the level.
+
+```
+skyblock.levels[level].get_pos(player_name)
+```
+
+### `skyblock.levels[level].make_start_blocks()`
+
+Make the starting blocks for the level.
+
+```
+skyblock.levels[level].make_start_blocks(player_name)
+```
+
+### `skyblock.levels[level].get_info()`
+
+Gets level formspec and infotext.
+
+```
+skyblock.levels[level].get_info(player_name)
+```
+
+### `skyblock.levels[level].reward_feat()`
+
+Gives player a reward when a feat is achieved.
+
+```
+skyblock.levels[level].reward_feat(player_name)
+```
+
+### `skyblock.levels[level].on_dignode()`
+
+Tracks digging feats.
+
+```
+skyblock.levels[level].on_dignode(pos,oldnode,digger)
+```
+
+### `skyblock.levels[level].on_placenode()`
+
+Tracks placing feats.
+
+```
+skyblock.levels[level].on_placenode(pos,newnode,placer,oldnode)
+```
+
+### `skyblock.levels[level].on_item_eat()`
+
+Tracks eating feats.
+
+```
+skyblock.levels[level].on_item_eat(player_name,itemstack)
+```
+
+### `skyblock.levels[level].bucket_on_use()`
+
+Tracks bucket feats.
+
+```
+skyblock.levels[level].bucket_on_use(player_name,pointed_thing)
+```
+
+### `skyblock.levels[level].bucket_water_on_use()`
+
+Tracks bucket_water feats.
+
+```
+skyblock.levels[level].bucket_water_on_use(player_name,pointed_thing)
+```
+
+### `skyblock.levels[level].bucket_lava_on_use()`
+
+Tracks bucket_lava feats.
+
+```
+skyblock.levels[level].bucket_lava_on_use(player_name,pointed_thing)
+```
