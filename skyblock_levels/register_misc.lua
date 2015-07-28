@@ -20,7 +20,7 @@ minetest.register_on_newplayer(function(player)
 	-- move the player up high enough in order to avoid collusions with the ground
 	local pos = skyblock.get_spawn(player_name)
 	if pos then
-		skyblock.feats.update(0,player_name)
+		skyblock.feats.update(player_name)
 		player:setpos({x=pos.x, y=pos.y+8, z=pos.z});
 	end
 end)

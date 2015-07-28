@@ -13,8 +13,8 @@ License: GPLv3
 local entity = skyblock.registered('node','skyblock:quest')
 entity.on_punch = function(pos, node, puncher)
 	if not puncher then return end -- needed to prevent server crash when player leaves
-	local level = skyblock.feats.get_level(puncher:get_player_name())
-	skyblock.feats.update(level,puncher:get_player_name())
+	--local level = skyblock.feats.get_level(puncher:get_player_name())
+	skyblock.feats.update(puncher:get_player_name())
 end
 --entity.on_dig = function(pos, node, digger)
 	--if not digger then return end -- needed to prevent server crash when player leaves

@@ -39,8 +39,8 @@ skyblock.levels[level].make_start_blocks = function(player_name)
 	minetest.env:add_node({x=pos.x,y=pos.y-1,z=pos.z}, {name='default:water_source'})
 
 	-- level 2
-	minetest.env:add_node(pos, {name='skyblock:level_2'})
-	skyblock.feats.update(level,player_name)
+	--minetest.env:add_node(pos, {name='skyblock:level_2'})
+	--skyblock.feats.update(level,player_name)
 
 end
 

@@ -31,15 +31,15 @@ skyblock.feats.reset = function(player_name)
 	skyblock.log('skyblock.feats.reset('..player_name..')')
 	players_feat[player_name] = {}
 	skyblock.table.save(players_feat, filename)
-	skyblock.feats.update(0,player_name)
+	skyblock.feats.update(player_name)
 end
 
 -- update feats
-skyblock.feats.update = function(level,player_name)
-	skyblock.log('skyblock.feats.update('..level..','..player_name..')')
-	--local level = skyblock.feats.get_level(player_name)
+skyblock.feats.update = function(player_name)
+	skyblock.log('skyblock.feats.update('..player_name..')')
+	local level = skyblock.feats.get_level(player_name)
 	local pos = skyblock.get_spawn(player_name)
-	if not pos or not level then return pos end
+	if not pos or not skyblock.levels[level] then return end
 	local info = skyblock.levels[level].get_info(player_name)
 
 	-- next level
@@ -87,7 +87,7 @@ skyblock.feats.add = function(level,player_name,feat)
 	
 	-- update
 	if update then
-		skyblock.feats.update(level,player_name)
+		skyblock.feats.update(player_name)
 		--minetest.chat_send_player(player_name, 'You earned the feat "'..feat..'"')
 		minetest.chat_send_all(player_name..' completed the quest "'..feat..'" on level '..level)
 		minetest.log('action', player_name..' completed the quest "'..feat..'" on level '..level)
