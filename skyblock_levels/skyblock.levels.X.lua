@@ -225,13 +225,13 @@ skyblock.levels[level].get_info = function(player_name,pos)
 end
 
 
--- reward_achievement
-skyblock.levels[level].reward_achievement = function(player_name,achievement)
-	local achievement_count = skyblock.feats.get(level,player_name,achievement)
+-- reward_feat
+skyblock.levels[level].reward_feat = function(player_name,feat)
+	local feat_count = skyblock.feats.get(level,player_name,feat)
 
 	
 	-- place_brick
-	if achievement == 'place_brick' and achievement_count == 50 then
+	if feat == 'place_brick' and feat_count == 50 then
 		skyblock.feats.give_reward(level,player_name,'default:sandstonebrick 50')
 		-- put water above spawn
 		--local pos = skyblock.levels[1].get_pos(player_name)
@@ -241,7 +241,7 @@ skyblock.levels[level].reward_achievement = function(player_name,achievement)
 	
 	
 	-- dig_stone_with_copper x8
-	if achievement == 'dig_stone_with_copper' and achievement_count == 4 then
+	if feat == 'dig_stone_with_copper' and feat_count == 4 then
 		skyblock.feats.give_reward(level,player_name,'default:gold_lump')
 		return true
 	end
@@ -262,19 +262,19 @@ skyblock.levels[level].reward_achievement = function(player_name,achievement)
 	
 
 	-- place_water_infinite
-	if achievement == 'place_water_infinite' and achievement_count == 1 then
+	if feat == 'place_water_infinite' and feat_count == 1 then
 		skyblock.feats.give_reward(level,player_name,'default:lava_source')
 		return true
 	end
 
 	-- dig_stone_with_iron x2
-	if achievement == 'dig_stone_with_iron' and achievement_count == 2 then
+	if feat == 'dig_stone_with_iron' and feat_count == 2 then
 		skyblock.feats.give_reward(level,player_name,'default:copper_lump')
 		return true
 	end
 
 	-- dig_stone_with_copper x2
-	if achievement == 'dig_stone_with_copper' and achievement_count == 2 then
+	if feat == 'dig_stone_with_copper' and feat_count == 2 then
 		skyblock.feats.give_reward(level,player_name,'default:gold_lump')
 		return true
 	end
@@ -283,61 +283,61 @@ skyblock.levels[level].reward_achievement = function(player_name,achievement)
 	-- TODO (below)
 	
 	-- place_dirt
-	if achievement == 'place_dirt' and achievement_count == 200 then
+	if feat == 'place_dirt' and feat_count == 200 then
 		skyblock.feats.give_reward(level,player_name,'default:wood '..math.random(50,99))
 		return true
 	end
 	
 	-- place_wood
-	if achievement == 'place_wood' and achievement_count == 200 then
+	if feat == 'place_wood' and feat_count == 200 then
 		skyblock.feats.give_reward(level,player_name,'default:brick '..math.random(50,99))
 		return true
 	end
 	
 	-- place_brick
-	if achievement == 'place_brick' and achievement_count == 200 then
+	if feat == 'place_brick' and feat_count == 200 then
 		skyblock.feats.give_reward(level,player_name,'default:glass '..math.random(50,99))
 		return true
 	end
 	
 	-- place_glass
-	if achievement == 'place_glass' and achievement_count == 200 then
+	if feat == 'place_glass' and feat_count == 200 then
 	skyblock.feats.give_reward(level,player_name,'default:sand '..math.random(50,99))
 		return true
 	end
 	
 	-- place_sand
-	if achievement == 'place_sand' and achievement_count == 200 then
+	if feat == 'place_sand' and feat_count == 200 then
 		skyblock.feats.give_reward(level,player_name,'default:desert_sand '..math.random(50,99))
 		return true
 	end
 	
 	-- place_desert_sand
-	if achievement == 'place_desert_sand' and achievement_count == 200 then
+	if feat == 'place_desert_sand' and feat_count == 200 then
 		skyblock.feats.give_reward(level,player_name,'default:stone '..math.random(50,99))
 		return true
 	end
 	
 	-- place_stone
-	if achievement == 'place_stone' and achievement_count == 200 then
+	if feat == 'place_stone' and feat_count == 200 then
 		skyblock.feats.give_reward(level,player_name,'default:cobble '..math.random(50,99))
 		return true
 	end
 	
 	-- place_cobble
-	if achievement == 'place_cobble' and achievement_count == 200 then
+	if feat == 'place_cobble' and feat_count == 200 then
 		skyblock.feats.give_reward(level,player_name,'default:mossycobble '..math.random(50,99))
 		return true
 	end
 	
 	-- place_mossycobble
-	if achievement == 'place_mossycobble' and achievement_count == 200 then
+	if feat == 'place_mossycobble' and feat_count == 200 then
 		skyblock.feats.give_reward(level,player_name,'default:steelblock '..math.random(50,69))
 		return true
 	end
 	
 	-- place_steelblock
-	if achievement == 'place_steelblock' and achievement_count == 75 then
+	if feat == 'place_steelblock' and feat_count == 75 then
 		skyblock.feats.give_reward(level,player_name,'default:mese '..math.random(5,15))
 		return true
 	end
@@ -429,9 +429,27 @@ skyblock.levels[level].on_placenode = function(pos, newnode, placer, oldnode)
 
 end
 
-
+local feats = {
+	{
+		feat = 'collect_water', 
+		count = 1, 
+		reward = 'default:stick',
+		bucket = {'default:water_source'},
+	},
+}
 -- track bucket feats
 skyblock.levels[level].bucket_on_use = function(player_name, pointed_thing)
+	local node = minetest.env:get_node(pointed_thing.under)
+	
+	for _,v in ipairs(feats) do
+		if v.bucket then
+			for _,vv in ipairs(v.bucket) do
+				if node.name == vv then
+					skyblock.feats.add(level,player_name,feat.name)
+				end
+			end
+		end
+	end
 
 	-- collect_water
 	local n = minetest.env:get_node(pointed_thing.under)

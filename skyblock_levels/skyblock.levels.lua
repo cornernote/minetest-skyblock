@@ -145,13 +145,13 @@ skyblock.levels.get_inventory_formspec = function(level,player_name)
 end
 
 -- get_goal_formspec
-skyblock.levels.get_goal_formspec = function(data,i,achievement,required,text,hint)
+skyblock.levels.get_goal_formspec = function(data,i,feat,required,text,hint)
 	local y = 2.9+(i*0.6)
 	local formspec = 'label[0.5,'..y..'; '..i..') '..text..']'
 	if hint then
 		formspec = formspec..'item_image_button[5.8,'..y..';0.6,0.6;'..skyblock.craft_guide.image_button_link(hint)..']'
 	end
-	if skyblock.feats.get(data.level,data.player_name,achievement) >= required then
+	if skyblock.feats.get(data.level,data.player_name,feat) >= required then
 		formspec = formspec .. 'image[-0.2,'..(y-0.25)..';1,1;checkbox_checked.png]'
 		data.count = data.count + 1
 	else

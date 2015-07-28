@@ -57,40 +57,40 @@ skyblock.feats.update = function(level,player_name)
 end
 
 -- get feat
-skyblock.feats.get = function(level,player_name,achievement)
-	skyblock.log('skyblock.feats.get('..level..','..player_name..','..achievement..')')
+skyblock.feats.get = function(level,player_name,feat)
+	skyblock.log('skyblock.feats.get('..level..','..player_name..','..feat..')')
 	if players_feat[player_name] == nil then
 		players_feat[player_name] = {}
 	end
 	if players_feat[player_name][level] == nil then
 		players_feat[player_name][level] = {}
 	end
-	if players_feat[player_name][level][achievement] == nil then
-		players_feat[player_name][level][achievement] = 0
-		if achievement=='level' then
-			players_feat[player_name][level][achievement] = 1
+	if players_feat[player_name][level][feat] == nil then
+		players_feat[player_name][level][feat] = 0
+		if feat=='level' then
+			players_feat[player_name][level][feat] = 1
 		end
 	end
-	return players_feat[player_name][level][achievement]
+	return players_feat[player_name][level][feat]
 end
 
 -- add feat
-skyblock.feats.add = function(level,player_name,achievement)
-	skyblock.log('skyblock.feats.add('..level..','..player_name..','..achievement..')')
-	local player_achievement = skyblock.feats.get(level,player_name,achievement)
-	players_feat[player_name][level][achievement] = player_achievement + 1
-	if level==0 or achievement=='level' then
+skyblock.feats.add = function(level,player_name,feat)
+	skyblock.log('skyblock.feats.add('..level..','..player_name..','..feat..')')
+	local player_feat = skyblock.feats.get(level,player_name,feat)
+	players_feat[player_name][level][feat] = player_feat + 1
+	if level==0 or feat=='level' then
 		skyblock.table.save(players_feat, skyblock.feats.FILENAME)
 		return
 	end
-	local update = skyblock.levels[level].reward_achievement(player_name,achievement)
+	local update = skyblock.levels[level].reward_feat(player_name,feat)
 	
 	-- update
 	if update then
 		skyblock.feats.update(level,player_name)
-		--minetest.chat_send_player(player_name, 'You earned the achievement "'..achievement..'"')
-		minetest.chat_send_all(player_name..' completed the quest "'..achievement..'" on level '..level)
-		minetest.log('action', player_name..' completed the quest "'..achievement..'" on level '..level)
+		--minetest.chat_send_player(player_name, 'You earned the feat "'..feat..'"')
+		minetest.chat_send_all(player_name..' completed the quest "'..feat..'" on level '..level)
+		minetest.log('action', player_name..' completed the quest "'..feat..'" on level '..level)
 	end
 	
 	skyblock.table.save(players_feat, skyblock.feats.FILENAME)

@@ -59,7 +59,7 @@ end
 
 
 -- not used
-skyblock.levels[level].reward_achievement = function(player_name,achievement) end
+skyblock.levels[level].reward_feat = function(player_name,feat) end
 skyblock.levels[level].on_placenode = function(pos, newnode, placer, oldnode) end
 skyblock.levels[level].on_dignode = function(pos, oldnode, digger) end
 skyblock.levels[level].bucket_on_use = function(player_name, pointed_thing) end

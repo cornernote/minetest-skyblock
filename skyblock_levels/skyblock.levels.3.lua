@@ -11,13 +11,96 @@ LEVEL 3 FUNCTIONS
 ]]--
 
 
+local level = 2
+local feats = {
+	{
+		name = 'dig 20 Papyrus',
+		hint = '',
+		feat = 'dig_papyrus', 
+		count = 20, 
+		reward = 'default:mese',
+		dignode = {'default:papyrus'},
+	},
+	{
+		name = 'place 20 Papyrus in a nice garden',
+		hint = '',
+		feat = 'place_papyrus', 
+		count = 20, 
+		reward = 'default:mese',
+		placenode = {'default:papyrus'},
+	},
+	{
+		name = 'dig 15 Cactus',
+		hint = '',
+		feat = 'dig_cactus', 
+		count = 15, 
+		reward = 'default:mese',
+		dignode = {'default:cactus'},
+	},
+	{
+		name = 'place 15 Cactus in another gargen',
+		hint = '',
+		feat = 'place_cactus', 
+		count = 15, 
+		reward = 'default:mese',
+		placenode = {'default:cactus'},
+	},
+	{
+		name = 'place 30 fences around your gardens',
+		hint = '',
+		feat = 'place_fence', 
+		count = 30, 
+		reward = 'default:mese',
+		placenode = {'default:fence_wood'},
+	},
+	{
+		name = 'add 20 ladders to your structures',
+		hint = '',
+		feat = 'place_ladder', 
+		count = 20, 
+		reward = 'default:mese',
+		placenode = {'default:ladder'},
+	},
+	{
+		name = 'decorate your house with 5 Bookshelves',
+		hint = '',
+		feat = 'place_bookshelf', 
+		count = 5, 
+		reward = 'default:mese',
+		placenode = {'default:bookshelf'},
+	},
+	{
+		name = 'place 5 Signs to help other travellers',
+		hint = '',
+		feat = 'place_sign_wall', 
+		count = 5, 
+		reward = 'default:mese',
+		placenode = {'default:sign_wall'},
+	},
+	{
+		name = 'place 50 Torches to help you see at night',
+		hint = '',
+		feat = 'place_torch', 
+		count = 50, 
+		reward = 'default:mese',
+		placenode = {'default:torch'},
+	},
+	{
+		name = 'dig 500 Stone for your next project...',
+		hint = '',
+		feat = 'dig_stone', 
+		count = 500, 
+		reward = 'default:mese',
+		dignode = {'default:stone'},
+	},
+}
+
+
 --
 -- PUBLIC FUNCTIONS
 --
 
-local level = 3
 skyblock.levels[level] = {}
-
 
 -- get pos
 skyblock.levels[level].get_pos = function(player_name)
@@ -26,7 +109,6 @@ skyblock.levels[level].get_pos = function(player_name)
 	if pos==nil then return pos end
 	return {x=pos.x,y=pos.y+40,z=pos.z}
 end
-
 
 -- make start blocks
 skyblock.levels[level].make_start_blocks = function(player_name)
@@ -45,7 +127,6 @@ skyblock.levels[level].make_start_blocks = function(player_name)
 
 end
 
-
 -- get level information
 skyblock.levels[level].get_info = function(player_name)
 	local info = { level=level, total=10, count=0, player_name=player_name, infotext='', formspec = '' };
@@ -55,163 +136,62 @@ skyblock.levels[level].get_info = function(player_name)
 		..'label[0,1.0; If you are enjoying this world, then stray not]'
 		..'label[0,1.5; from your mission traveller...]'
 		..'label[0,2.0; ... for the end is near.]'
-		..skyblock.levels.get_goal_formspec(info,1,'dig_papyrus',20,'dig 20 Papyrus')
-		..skyblock.levels.get_goal_formspec(info,2,'place_papyrus',20,'place 20 Papyrus in a nice garden')
-		..skyblock.levels.get_goal_formspec(info,3,'dig_cactus',15,'dig 15 Cactus')
-		..skyblock.levels.get_goal_formspec(info,4,'place_cactus',15,'place 15 Cactus in another gargen')
-		..skyblock.levels.get_goal_formspec(info,5,'place_fence',30,'place 30 fences around your gardens')
-		..skyblock.levels.get_goal_formspec(info,6,'place_ladder',20,'add 20 ladders to your structures')
-		..skyblock.levels.get_goal_formspec(info,7,'place_bookshelf',5,'decorate your house with 5 Bookshelves')
-		..skyblock.levels.get_goal_formspec(info,8,'place_sign_wall',5,'place 5 Signs to help other travellers')
-		..skyblock.levels.get_goal_formspec(info,9,'place_torch',50,'place 50 Torches to help you see at night')
-		..skyblock.levels.get_goal_formspec(info,10,'dig_stone',500,'dig 500 Stone for your next project...')
+
+	for k,v in ipairs(feats) do
+		info.formspec = info.formspec..skyblock.levels.get_goal_formspec(info,k+1,v.feat,v.count,v.name,v.hint)
+	end
 
 	info.infotext = 'LEVEL '..info.level..' for '..info.player_name..': '..info.count..' of '..info.total
 	
 	return info
 end
 
-
--- reward_achievement
-skyblock.levels[level].reward_achievement = function(player_name,achievement)
-	local achievement_count = skyblock.feats.get(level,player_name,achievement)
-	
-	-- dig_papyrus
-	if achievement == 'dig_papyrus' and achievement_count == 20 then
-		skyblock.feats.give_reward(level,player_name,'default:mese '..math.random(1, 5))
-		return true
+-- reward_feat
+skyblock.levels[level].reward_feat = function(player_name,feat)
+	local feat_count = skyblock.feats.get(level,player_name,feat)
+	for _,v in ipairs(feats) do
+		if v.feat == feat and v.count == count then
+			skyblock.feats.give_reward(level,player_name,v.reward)
+			return true
+		end
 	end
-	
-	-- place_papyrus
-	if achievement == 'place_papyrus' and achievement_count == 20 then
-		skyblock.feats.give_reward(level,player_name,'default:mese '..math.random(1, 5))
-		return true
-	end
-	
-	-- dig_cactus
-	if achievement == 'dig_cactus' and achievement_count == 15 then
-		skyblock.feats.give_reward(level,player_name,'default:mese '..math.random(1, 5))
-		return true
-	end
-	
-	-- place_cactus
-	if achievement == 'place_cactus' and achievement_count == 15 then
-		skyblock.feats.give_reward(level,player_name,'default:mese '..math.random(1, 5))
-		return true
-	end
-	
-	-- place_fence
-	if achievement == 'place_fence' and achievement_count == 30 then
-		skyblock.feats.give_reward(level,player_name,'default:mese '..math.random(1, 5))
-		return true
-	end
-	
-	-- place_ladder
-	if achievement == 'place_ladder' and achievement_count == 20 then
-		skyblock.feats.give_reward(level,player_name,'default:mese '..math.random(1, 5))
-		return true
-	end
-	
-	-- place_bookshelf
-	if achievement == 'place_bookshelf' and achievement_count == 5 then
-		skyblock.feats.give_reward(level,player_name,'default:mese '..math.random(1, 5))
-		return true
-	end
-	
-	-- place_sign_wall
-	if achievement == 'place_sign_wall' and achievement_count == 10 then
-		skyblock.feats.give_reward(level,player_name,'default:mese '..math.random(1, 5))
-		return true
-	end
-	
-	-- place_torch
-	if achievement == 'place_torch' and achievement_count == 50 then
-		skyblock.feats.give_reward(level,player_name,'default:mese '..math.random(1, 5))
-		return true
-	end
-	
-	-- dig_stone
-	if achievement == 'dig_stone' and achievement_count == 500 then
-		skyblock.feats.give_reward(level,player_name,'default:mese '..math.random(1, 5))
-		return true
-	end
-	
-end
-
-
--- track placing feats
-skyblock.levels[level].on_placenode = function(pos, newnode, placer, oldnode)
-	local player_name = placer:get_player_name()
-
-	-- place_papyrus
-	if newnode.name == 'default:papyrus' then
-		skyblock.feats.add(level,player_name,'place_papyrus')
-		return
-	end
-
-	-- place_cactus
-	if newnode.name == 'default:cactus' then
-		skyblock.feats.add(level,player_name,'place_cactus')
-		return
-	end
-
-	-- place_fence
-        if newnode.name == 'default:fence_wood' or newnode.name == 'xfences:fence' then
-		skyblock.feats.add(level,player_name,'place_fence')
-		return
-	end
-
-	-- place_ladder
-	if newnode.name == 'default:ladder' then
-		skyblock.feats.add(level,player_name,'place_ladder')
-		return
-	end
-
-	-- place_bookshelf
-	if newnode.name == 'default:bookshelf' then
-		skyblock.feats.add(level,player_name,'place_bookshelf')
-		return
-	end
-
-	-- place_sign_wall
-	if newnode.name == 'default:sign_wall' then
-		skyblock.feats.add(level,player_name,'place_sign_wall')
-		return
-	end
-
-	-- place_torch
-	if newnode.name == 'default:torch' then
-		skyblock.feats.add(level,player_name,'place_torch')
-		return
-	end
-
 end
 
 -- track digging feats
 skyblock.levels[level].on_dignode = function(pos, oldnode, digger)
 	local player_name = digger:get_player_name()
-	
-	-- dig_papyrus
-	if oldnode.name == 'default:papyrus' then
-		skyblock.feats.add(level,player_name,'dig_papyrus')
-		return
+	for _,v in ipairs(feats) do
+		if v.dignode then
+			for _,vv in ipairs(v.dignode) do
+				if oldnode.name == vv then
+					skyblock.feats.add(level,player_name,v.feat)
+					return
+				end
+			end
+		end
 	end
-	
-	-- dig_cactus
-	if oldnode.name == 'default:cactus' then
-		skyblock.feats.add(level,player_name,'dig_cactus')
-		return
-	end
-	
-	-- dig_stone
-	if oldnode.name == 'default:stone' then
-		skyblock.feats.add(level,player_name,'dig_stone')
-		return
-	end
-	
 end
 
--- not used
+-- track placing feats
+skyblock.levels[level].on_placenode = function(pos, newnode, placer, oldnode)
+	local player_name = placer:get_player_name()
+	for _,v in ipairs(feats) do
+		if v.placenode then
+			for _,vv in ipairs(v.placenode) do
+				if newnode.name == vv then
+					skyblock.feats.add(level,player_name,v.feat)
+					return
+				end
+			end
+		end
+	end
+end
+
+-- track bucket feats
 skyblock.levels[level].bucket_on_use = function(player_name, pointed_thing) end
+
+-- track bucket water feats
 skyblock.levels[level].bucket_water_on_use = function(player_name, pointed_thing) end
+
+-- track bucket lava feats
 skyblock.levels[level].bucket_lava_on_use = function(player_name, pointed_thing) end
