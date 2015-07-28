@@ -23,6 +23,7 @@ end)
 minetest.after(5, function()
 	local spawn_timer = 0
 	local spawn_throttle = 2
+	local spawned_players = {}
 
 	-- handle globalstep
 	minetest.register_globalstep(function(dtime)

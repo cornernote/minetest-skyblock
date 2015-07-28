@@ -41,7 +41,6 @@ skyblock.filename = minetest.get_worldpath()..'/'..(minetest.setting_get('skyblo
 -- local variables
 local last_start_id = 0
 local start_positions = {}
-local spawned_players = {}
 local spawnpos = {}
 
 

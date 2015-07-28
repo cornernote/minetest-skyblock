@@ -41,7 +41,6 @@ minetest.register_on_respawnplayer(function(player)
 
 	-- unset old spawn position
 	if skyblock.levels.dig_new_spawn then
-		spawned_players[player_name] = nil
 		skyblock.set_spawn(player_name, nil)
 		skyblock.set_spawn(player_name..'_DEAD', spawn)
 	end
