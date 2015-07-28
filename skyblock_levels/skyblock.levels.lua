@@ -235,10 +235,11 @@ end
 
 -- track eating feats
 skyblock.levels.on_item_eat = function(feats, player_name, itemstack)
+	local item_name = itemstack:get_name()
 	for _,v in ipairs(feats) do
 		if v.item_eat then
 			for _,vv in ipairs(v.item_eat) do
-				if itemstack and itemstack:get_name() and itemstack:get_name()==vv then
+				if item_name==vv then
 					skyblock.feats.add(level,player_name,v.feat)
 					return
 				end
