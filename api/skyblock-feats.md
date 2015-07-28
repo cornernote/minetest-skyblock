@@ -29,7 +29,7 @@ skyblock.feats.reset(player_name)
 Update formspecs for players inventory and quest nodes.
 
 ```
-skyblock.feats.update(level,player_name)
+skyblock.feats.update(player_name)
 ```
 
 ### `skyblock.feats.get()`
