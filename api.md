@@ -10,7 +10,7 @@ permalink: /api/
 * [skyblock](skyblock/) - core API for generating an empty world with spiral start positions.
 * [skyblock.table](skyblock-table/) - loading and saving tables to files.
 
-## Level and Feat API
+## Feat and Level API
 
 * [skyblock.feats](skyblock-feats/) - tracking and updating feats.
 * [skyblock.levels](skyblock-levels/) - global level manager.
