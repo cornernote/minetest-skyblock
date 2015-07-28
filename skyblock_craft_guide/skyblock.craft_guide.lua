@@ -32,6 +32,7 @@ if( dyelocal and dyelocal.dyes ) then
 	end
 end
 
+-- render an image button for a formspec
 skyblock.craft_guide.image_button_link = function(stack_string)
 	local group = '';
 	if( group_placeholder[stack_string] ) then
@@ -47,8 +48,8 @@ skyblock.craft_guide.image_button_link = function(stack_string)
 	return tostring( stack_string )..';'..tostring( new_node_name )..';'..group;
 end
 
-
-skyblock.craft_guide.inspect_show_crafting = function(player_name, node_name, fields)
+-- get_formspec
+local get_formspec = function(player_name, node_name, fields)
 	if not player_name then
 		return;
 	end
@@ -166,23 +167,9 @@ end
 skyblock.craft_guide.on_receive_fields = function(player, formname, fields)
 	for k,v in pairs( fields ) do
 		if string.match(k, ":") then
-			skyblock.craft_guide.inspect_show_crafting(player:get_player_name(), k, fields)
+			get_formspec(player:get_player_name(), k, fields)
 			return;
 		end
 	end
 end
 minetest.register_on_player_receive_fields(skyblock.craft_guide.on_receive_fields)
-
--- translate general formspec calls back to specific calls
---[[
-skyblock.craft_guide.form_input_handler = function( player, formname, fields)
-	if (fields.main) then
-		minetest.show_formspec(player:get_player_name(), "skyblock:inventory", player:get_inventory_formspec());
-		return
-	end
-	if (formname == "skyblock.craft_guide:crafting" and player) then
-		skyblock.craft_guide.inspect_show_crafting( player:get_player_name(), nil, fields )
-		return
-	end
-end
-]]--

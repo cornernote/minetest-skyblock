@@ -122,7 +122,7 @@ minetest.register_abm({
 	interval = 5,
 	chance = 1,
 	action = function(pos, node)
-		if pos.y < skyblock.WORLD_BOTTOM then
+		if pos.y < skyblock.world_bottom then
 			minetest.env:remove_node(pos)
 		end
 	end,

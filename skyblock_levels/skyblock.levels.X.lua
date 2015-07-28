@@ -54,11 +54,11 @@ skyblock.levels[level].get_info = function(player_name,pos)
 	local count = 0
 
 	
-		--..skyblock.levels.get_goal_formspec(info,10,'dig_stone_with_copper',4,'dig 4 Copper Lumps','default:copper_lump')
-		--..skyblock.levels.get_goal_formspec(info,2,'collect_water',1,'collect the Water')
-		--..skyblock.levels.get_goal_formspec(info,7,'place_brick',50,'build a structure using 50 Brick','default:brick')
-		--..skyblock.levels.get_goal_formspec(info,10,'place_dirt',80,'extend your Island with 80 Dirt','default:dirt')
-		--..skyblock.levels.get_goal_formspec(info,10,'place_torch',8,'place 8 Torches','default:torch')
+		--..skyblock.levels.get_feat_formspec(info,10,'dig_stone_with_copper',4,'dig 4 Copper Lumps','default:copper_lump')
+		--..skyblock.levels.get_feat_formspec(info,2,'collect_water',1,'collect the Water')
+		--..skyblock.levels.get_feat_formspec(info,7,'place_brick',50,'build a structure using 50 Brick','default:brick')
+		--..skyblock.levels.get_feat_formspec(info,10,'place_dirt',80,'extend your Island with 80 Dirt','default:dirt')
+		--..skyblock.levels.get_feat_formspec(info,10,'place_torch',8,'place 8 Torches','default:torch')
 
 		
 		-- rewards = 		skyblock.feats.give_reward(level,player_name,'stairs:stair_brick 3')
@@ -462,7 +462,7 @@ skyblock.levels[level].bucket_on_use = function(player_name, pointed_thing)
 	--[[
 	n = minetest.env:get_node(pointed_thing.under)
 	if n.name == 'default:water_source' then
-		local spawn = skyblock.has_spawn(player_name)
+		local spawn = skyblock.get_spawn(player_name)
 		if spawn~=nil and pointed_thing.under.x==spawn.x and pointed_thing.under.y==spawn.y-1 and pointed_thing.under.z==spawn.z then
 			skyblock.feats.add(level,player_name,'collect_spawn_water')
 			end
@@ -473,7 +473,7 @@ skyblock.levels[level].bucket_on_use = function(player_name, pointed_thing)
 	--[[
 	n = minetest.env:get_node(pointed_thing.under)
 	if n.name == 'default:lava_source' then
-		local spawn = skyblock.has_spawn(player_name)
+		local spawn = skyblock.get_spawn(player_name)
 		if spawn~=nil and pointed_thing.under.x==spawn.x and pointed_thing.under.y==spawn.y-1 and pointed_thing.under.z==spawn.z then
 			skyblock.feats.add(level,player_name,'collect_spawn_lava')
 		end

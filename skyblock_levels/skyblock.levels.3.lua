@@ -138,7 +138,7 @@ skyblock.levels[level].get_info = function(player_name)
 		..'label[0,2.0; ... for the end is near.]'
 
 	for k,v in ipairs(feats) do
-		info.formspec = info.formspec..skyblock.levels.get_goal_formspec(info,k+1,v.feat,v.count,v.name,v.hint)
+		info.formspec = info.formspec..skyblock.levels.get_feat_formspec(info,k+1,v.feat,v.count,v.name,v.hint)
 	end
 
 	info.infotext = 'LEVEL '..info.level..' for '..info.player_name..': '..info.count..' of '..info.total

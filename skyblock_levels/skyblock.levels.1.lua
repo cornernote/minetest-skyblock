@@ -105,7 +105,7 @@ skyblock.levels[level] = {}
 -- get pos
 skyblock.levels[level].get_pos = function(player_name)
 	skyblock.log('level['..level..'].get_pos() for '..player_name)
-	return skyblock.has_spawn(player_name)
+	return skyblock.get_spawn(player_name)
 end
 
 -- make start blocks
@@ -125,7 +125,7 @@ skyblock.levels[level].get_info = function(player_name)
 		..'label[0,2.0;Complete the quests to receive great rewards!]'
 
 	for k,v in ipairs(feats) do
-		info.formspec = info.formspec..skyblock.levels.get_goal_formspec(info,k+1,v.feat,v.count,v.name,v.hint)
+		info.formspec = info.formspec..skyblock.levels.get_feat_formspec(info,k+1,v.feat,v.count,v.name,v.hint)
 	end
 
 	info.infotext = 'LEVEL '..info.level..' for '..info.player_name..': '..info.count..' of '..info.total

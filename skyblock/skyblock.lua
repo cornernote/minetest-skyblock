@@ -17,29 +17,26 @@ skyblock = {}
 --
 
 -- Debug mode
-skyblock.DEBUG = true
+skyblock.debug = true
 
 -- How far apart to set players start positions
-skyblock.START_GAP = minetest.setting_get('skyblock_start_gap') or 32
+skyblock.start_gap = minetest.setting_get('skyblock.start_gap') or 32
 
 -- The Y position the spawn nodes will appear
-skyblock.START_HEIGHT = minetest.setting_get('skyblock_start_height') or 4
+skyblock.start_height = minetest.setting_get('skyblock.start_height') or 4
 
 -- How many players will be in 1 row
--- skyblock.WORLD_WIDTH * skyblock.WORLD_WIDTH = total players
-skyblock.WORLD_WIDTH = minetest.setting_get('skyblock_world_width') or 100
+-- skyblock.world_width * skyblock.world_width = total players
+skyblock.world_width = minetest.setting_get('skyblock.world_width') or 100
 
 -- How far down (in nodes) before a player dies and is respawned
-skyblock.WORLD_BOTTOM = minetest.setting_get('skyblock_world_bottom') or -8
-
--- Delay between skyblock respawn checks
-skyblock.SPAWN_THROTLE = minetest.setting_get('skyblock_spawn_throttle') or 2
+skyblock.world_bottom = minetest.setting_get('skyblock.world_bottom') or -8
 
 -- Nodes above the spawn node where players are spawned
-skyblock.SPAWN_HEIGHT = minetest.setting_get('skyblock_spawn_height') or 4
+skyblock.spawn_height = minetest.setting_get('skyblock.spawn_height') or 4
 
 -- File path and prefix for data files
-skyblock.FILENAME = minetest.get_worldpath()..'/'..(minetest.setting_get('skyblock_filename') or 'skyblock')
+skyblock.filename = minetest.get_worldpath()..'/'..(minetest.setting_get('skyblock.filename') or 'skyblock')
 
 -- local variables
 local last_start_id = 0
@@ -47,13 +44,14 @@ local start_positions = {}
 local spawned_players = {}
 local spawnpos = {}
 
+
 --
 -- PUBLIC FUNCTIONS
 --
 
 -- log
 skyblock.log = function(message)
-	if not skyblock.DEBUG then
+	if not skyblock.debug then
 		return
 	end
 	minetest.log('action', '[skyblock] '..message)
@@ -65,13 +63,21 @@ skyblock.dump_pos = function(pos)
 	return '{x='..pos.x..',y='..pos.x..',z='..pos.z..'}'
 end
 
--- check if a player has a spawn position assigned, if so return it
-skyblock.has_spawn = function(player_name)
-	local spawn = spawnpos[player_name]
-	skyblock.log('has_spawn() for '..player_name..' is '..skyblock.dump_pos(spawn))
-	if spawn then
-		return spawn
+-- registered
+skyblock.registered = function(case,name)
+	local params = {}
+	local list
+	if case == 'item' then list = minetest.registered_items end
+	if case == 'node' then list = minetest.registered_nodes end
+	if case == 'craftitem' then list = minetest.registered_craftitems end
+	if case == 'tool' then list = minetest.registered_tools end
+	if case == 'entity' then list = minetest.registered_entities end
+	if list then
+		for k,v in pairs(list[name]) do
+			params[k] = v
+		end
 	end
+	return params
 end
 
 -- get players spawn position
@@ -89,7 +95,7 @@ skyblock.set_spawn = function(player_name, pos)
 	skyblock.log('set_spawn() for '..player_name..' at '..skyblock.dump_pos(pos))
 	spawnpos[player_name] = pos
 	-- save the spawn data from the table to the file
-	local output = io.open(skyblock.FILENAME..'.spawn', 'w')
+	local output = io.open(skyblock.filename..'.spawn', 'w')
 	for i, v in pairs(spawnpos) do
 		if v ~= nil then
 			output:write(v.x..' '..v.y..' '..v.z..' '..i..'\n')
@@ -102,7 +108,7 @@ end
 skyblock.get_next_spawn = function()
 	skyblock.log('get_next_spawn()')
 	last_start_id = last_start_id+1
-	local output = io.open(skyblock.FILENAME..'.last_start_id', 'w')
+	local output = io.open(skyblock.filename..'.last_start_id', 'w')
 	output:write(last_start_id)
 	io.close(output)
 	local spawn = start_positions[last_start_id]
@@ -118,7 +124,7 @@ skyblock.spawn_player = function(player)
 	skyblock.log('spawn_player() '..player_name)
 	
 	-- find the player spawn point
-	local spawn = skyblock.has_spawn(player_name)
+	local spawn = skyblock.get_spawn(player_name)
 	if spawn == nil then
 		spawn = skyblock.get_next_spawn()
 		skyblock.set_spawn(player_name,spawn)
@@ -126,78 +132,16 @@ skyblock.spawn_player = function(player)
 	
 	-- already has a spawn, teleport and return true 
 	if minetest.env:get_node(spawn).name == 'skyblock:quest' then
-		player:setpos({x=spawn.x,y=spawn.y+skyblock.SPAWN_HEIGHT,z=spawn.z})
+		player:setpos({x=spawn.x,y=spawn.y+skyblock.spawn_height,z=spawn.z})
 		player:set_hp(20)
 		return true
 	end
 
 	-- add the start block and teleport the player
 	skyblock.make_spawn_blocks(spawn,player_name)
-	player:setpos({x=spawn.x,y=spawn.y+skyblock.SPAWN_HEIGHT,z=spawn.z})
+	player:setpos({x=spawn.x,y=spawn.y+skyblock.spawn_height,z=spawn.z})
 	player:set_hp(20)
 end
-
--- globalstep
-local spawn_timer = 0
-skyblock.globalstep = function(dtime)
-	spawn_timer = spawn_timer + dtime
-	for k,player in ipairs(minetest.get_connected_players()) do
-		local player_name = player:get_player_name()
-		
-		-- player has not spawned yet
-		if spawned_players[player_name] == nil then
-
-			-- handle new player spawn setup (no more than once per interval)
-			if spawn_timer > skyblock.SPAWN_THROTLE then
-				skyblock.log('globalstep() new spawn for '..player_name..' (not spawned)')
-				if skyblock.get_spawn(player:get_player_name()) or skyblock.spawn_player(player) then
-					spawned_players[player:get_player_name()] = true
-				end
-			end
-
-		-- player is spawned
-		else
-			local pos = player:getpos()
-
-			-- only check once per throttle time
-			if spawn_timer > skyblock.SPAWN_THROTLE then
-
-				-- hit the bottom
-				if pos.y < skyblock.WORLD_BOTTOM then
-					local spawn = skyblock.get_spawn(player_name)
-					if minetest.env:get_node(spawn).name ~= "skyblock:quest" and skyblock.levels.check_inventory(player) then
-						-- no spawn block, respawn them
-						skyblock.log("globalstep() "..player_name.." has fallen too far, but dont kill them... yet =)")
-						local spawn = skyblock.has_spawn(player:get_player_name())
-						if spawn then
-							skyblock.make_spawn_blocks(spawn,player:get_player_name())
-							skyblock.spawn_player(player)
-						end
-					else
-						-- kill them
-						skyblock.log('globalstep() '..player_name..' has fallen too far at '..skyblock.dump_pos(pos)..'... kill them now')
-						player:set_hp(0)
-					end
-					
-				end
-			end
-			
-			-- walking on dirt_with_grass, change to dirt_with_grass_footsteps
-			local np = {x=pos.x,y=pos.y-1,z=pos.z}
-			if (minetest.env:get_node(np).name == 'default:dirt_with_grass') then
-				minetest.env:add_node(np, {name='default:dirt_with_grass_footsteps'})
-			end
-			
-		end
-		
-	end
-	
-	-- reset the spawn_timer
-	if spawn_timer > skyblock.SPAWN_THROTLE then	
-		spawn_timer = 0
-	end
-end
-
 
 -- build spawn block
 skyblock.make_spawn_blocks = function(pos, player_name)
@@ -215,7 +159,6 @@ end
 --
 -- LOCAL FUNCTIONS
 --
-
 
 -- spiral matrix
 -- http://rosettacode.org/wiki/Spiral_matrix#Lua
@@ -236,7 +179,6 @@ local function spiralt(side)
 	return ret
 end
 
-
 -- reverse ipairs
 local function ripairs(t)
 	local function ripairs_it(t,i)
@@ -248,16 +190,14 @@ local function ripairs(t)
 	return ripairs_it, t, #t+1
 end
 
- 
 
 --
 -- INIT FUNCTIONS
 --
 
-
 -- load the spawn data from disk
 local load_spawn = function()
-    local input = io.open(skyblock.FILENAME..'.spawn', 'r')
+    local input = io.open(skyblock.filename..'.spawn', 'r')
     if input then
         while true do
             local x = input:read('*n')
@@ -276,23 +216,22 @@ local load_spawn = function()
 end
 load_spawn() -- run it now
 
-
 -- load the start positions from disk
 local load_start_positions = function()
 	skyblock.log('BEGIN load_start_positions()')
-    local input = io.open(skyblock.FILENAME..'.start_positions', 'r')
+    local input = io.open(skyblock.filename..'.start_positions', 'r')
 
 	-- create start_positions file if needed
     if not input then
 		skyblock.log('generate start positions')
-		local output = io.open(skyblock.FILENAME..'.start_positions', 'w')
+		local output = io.open(skyblock.filename..'.start_positions', 'w')
 		local pos
-		for i,v in ripairs(spiralt(skyblock.WORLD_WIDTH)) do -- get positions using spiral
-			pos = {x=v.x*skyblock.START_GAP, y=skyblock.START_HEIGHT, z=v.z*skyblock.START_GAP}
+		for i,v in ripairs(spiralt(skyblock.world_width)) do -- get positions using spiral
+			pos = {x=v.x*skyblock.start_gap, y=skyblock.start_height, z=v.z*skyblock.start_gap}
 			output:write(pos.x..' '..pos.y..' '..pos.z..'\n')
 		end
 		io.close(output)
-		input = io.open(skyblock.FILENAME..'.start_positions', 'r')
+		input = io.open(skyblock.filename..'.start_positions', 'r')
 	end
 	
 	-- read start positions
@@ -312,17 +251,16 @@ local load_start_positions = function()
 end
 load_start_positions() -- run it now
 
-
 -- load the last start position from disk
 local load_last_start_id = function()
-	local input = io.open(skyblock.FILENAME..'.last_start_id', 'r')
+	local input = io.open(skyblock.filename..'.last_start_id', 'r')
 	
 	-- create last_start_id file if needed
     if not input then
-		local output = io.open(skyblock.FILENAME..'.last_start_id', 'w')
+		local output = io.open(skyblock.filename..'.last_start_id', 'w')
 		output:write(last_start_id)
 		io.close(output)
-		input = io.open(skyblock.FILENAME..'.last_start_id', 'r')
+		input = io.open(skyblock.filename..'.last_start_id', 'r')
 	end
 	
 	-- read last start id
@@ -334,22 +272,3 @@ local load_last_start_id = function()
 	
 end
 load_last_start_id() -- run it now
-
-
--- registered
-skyblock.registered = function(case,name)
-	local params = {}
-	local list
-	if case == 'item' then list = minetest.registered_items end
-	if case == 'node' then list = minetest.registered_nodes end
-	if case == 'craftitem' then list = minetest.registered_craftitems end
-	if case == 'tool' then list = minetest.registered_tools end
-	if case == 'entity' then list = minetest.registered_entities end
-	if list then
-		for k,v in pairs(list[name]) do
-			params[k] = v
-		end
-	end
-	return params
-end
-

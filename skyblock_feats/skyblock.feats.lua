@@ -12,13 +12,13 @@ License: GPLv3
 skyblock.feats = {}
 
 -- file to save players feat
-skyblock.feats.FILENAME = minetest.get_worldpath()..'/feat'
+local filename = skyblock.filename..'.home'
 
 -- local variable to save players feats
-local players_feat = skyblock.table.load(skyblock.feats.FILENAME)
+local players_feat = skyblock.table.load(filename)
 if players_feat == nil then
 	players_feat = {}
-	end
+end
 
 -- get players current level
 skyblock.feats.get_level = function(player_name)
@@ -30,14 +30,14 @@ end
 skyblock.feats.reset = function(player_name)
 	skyblock.log('skyblock.feats.reset('..player_name..')')
 	players_feat[player_name] = {}
-	skyblock.table.save(players_feat, skyblock.feats.FILENAME)
+	skyblock.table.save(players_feat, filename)
 	skyblock.feats.update(0,player_name)
 end
 
 -- update feats
 skyblock.feats.update = function(level,player_name)
 	skyblock.log('skyblock.feats.update('..level..','..player_name..')')
-	local level = skyblock.feats.get_level(player_name)
+	--local level = skyblock.feats.get_level(player_name)
 	local pos = skyblock.get_spawn(player_name)
 	if pos==nil then return pos end
 	local info = skyblock.levels[level].get_info(player_name)
@@ -80,7 +80,7 @@ skyblock.feats.add = function(level,player_name,feat)
 	local player_feat = skyblock.feats.get(level,player_name,feat)
 	players_feat[player_name][level][feat] = player_feat + 1
 	if level==0 or feat=='level' then
-		skyblock.table.save(players_feat, skyblock.feats.FILENAME)
+		skyblock.table.save(players_feat, filename)
 		return
 	end
 	local update = skyblock.levels[level].reward_feat(player_name,feat)
@@ -93,7 +93,7 @@ skyblock.feats.add = function(level,player_name,feat)
 		minetest.log('action', player_name..' completed the quest "'..feat..'" on level '..level)
 	end
 	
-	skyblock.table.save(players_feat, skyblock.feats.FILENAME)
+	skyblock.table.save(players_feat, filename)
 end
 
 -- give reward
@@ -101,7 +101,7 @@ skyblock.feats.give_reward = function(level,player_name,item_name)
 	skyblock.log('skyblock.feats.give_reward('..level..','..player_name..','..item_name..')')
 	local player = minetest.get_player_by_name(player_name)
 	player:get_inventory():add_item('rewards', item_name)
-	player:set_inventory_formspec(skyblock.levels.get_formspec(player_name))
+	--player:set_inventory_formspec(skyblock.levels.get_formspec(player_name))
 end
 
 -- track eating
@@ -220,8 +220,8 @@ entity.on_use = function(itemstack, user, pointed_thing)
 
 		-- begin anti-grief change
 		local player_name = user:get_player_name()
-		local spawn = skyblock.has_spawn(player_name)
-		local range = skyblock.START_GAP/3 -- how far from spawn you can use water
+		local spawn = skyblock.get_spawn(player_name)
+		local range = skyblock.start_gap/3 -- how far from spawn you can use water
 		local pos = pointed_thing.under
 		if spawn==nil or (pos.x-spawn.x > range or pos.x-spawn.x < range*-1) or (pos.y-spawn.y > range/2 or pos.y-spawn.y < range*-1/2) or (pos.z-spawn.z > range or pos.z-spawn.z < range*-1) then
 			minetest.chat_send_player(player_name, 'Cannot use bucket so far from your home.')
@@ -257,8 +257,8 @@ entity.on_use = function(itemstack, user, pointed_thing)
 
 		-- begin anti-grief change
 		local player_name = user:get_player_name()
-		local spawn = skyblock.has_spawn(player_name)
-		local range = skyblock.START_GAP/3 -- how far from spawn you can use lava
+		local spawn = skyblock.get_spawn(player_name)
+		local range = skyblock.start_gap/3 -- how far from spawn you can use lava
 		local pos = pointed_thing.under
 		if spawn==nil or (pos.x-spawn.x > range or pos.x-spawn.x < range*-1) or (pos.z-spawn.z > range or pos.z-spawn.z < range*-1) then
 			--if (pos.y-spawn.y > range/2 or pos.y-spawn.y < range*-1/2) then
