@@ -1,4 +1,14 @@
 --[[
+
+Skyblock for Minetest
+
+Copyright (c) 2015 cornernote, Brett O'Donnell <cornernote@gmail.com>
+Source Code: https://github.com/cornernote/minetest-skyblock
+License: GPLv3
+
+]]--
+
+--[[
    Save Table to File
    Load Table from File
    v 1.0

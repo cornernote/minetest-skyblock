@@ -1,5 +1,5 @@
 --[[
-	
+
 Skyblock for Minetest
 
 Copyright (c) 2015 cornernote, Brett O'Donnell <cornernote@gmail.com>
