@@ -84,7 +84,7 @@ skyblock.levels.reward_feat(feats,player_name,feat)
 
 ### `skyblock.levels.on_dignode()`
 
-Tracks diffing feats.
+Tracks digging feats.
 
 ```
 skyblock.levels.on_dignode(feats,pos,oldnode,digger)
