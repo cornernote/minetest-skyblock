@@ -77,7 +77,7 @@ set players spawn position
 
 ```
 skyblock.set_spawn(player_name, pos)
-``
+```
 
 get next spawn position
 
