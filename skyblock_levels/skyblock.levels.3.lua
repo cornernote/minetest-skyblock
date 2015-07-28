@@ -148,50 +148,35 @@ end
 
 -- reward_feat
 skyblock.levels[level].reward_feat = function(player_name,feat)
-	local feat_count = skyblock.feats.get(level,player_name,feat)
-	for _,v in ipairs(feats) do
-		if v.feat == feat and v.count == count then
-			skyblock.feats.give_reward(level,player_name,v.reward)
-			return true
-		end
-	end
+	skyblock.levels.reward_feat(feats, player_name, feat)
 end
 
 -- track digging feats
 skyblock.levels[level].on_dignode = function(pos, oldnode, digger)
-	local player_name = digger:get_player_name()
-	for _,v in ipairs(feats) do
-		if v.dignode then
-			for _,vv in ipairs(v.dignode) do
-				if oldnode.name == vv then
-					skyblock.feats.add(level,player_name,v.feat)
-					return
-				end
-			end
-		end
-	end
+	skyblock.levels.on_placenode(feats, pos, oldnode, digger)
 end
 
 -- track placing feats
 skyblock.levels[level].on_placenode = function(pos, newnode, placer, oldnode)
-	local player_name = placer:get_player_name()
-	for _,v in ipairs(feats) do
-		if v.placenode then
-			for _,vv in ipairs(v.placenode) do
-				if newnode.name == vv then
-					skyblock.feats.add(level,player_name,v.feat)
-					return
-				end
-			end
-		end
-	end
+	skyblock.levels.on_placenode(feats, pos, newnode, placer, oldnode)
+end
+
+-- track eating feats
+skyblock.levels[level].on_item_eat = function(player_name, itemstack)
+	skyblock.levels.on_item_eat(feats, player_name, itemstack)
 end
 
 -- track bucket feats
-skyblock.levels[level].bucket_on_use = function(player_name, pointed_thing) end
+skyblock.levels[level].bucket_on_use = function(player_name, pointed_thing)
+	skyblock.levels.bucket_on_use(feats, player_name, pointed_thing)
+end
 
 -- track bucket water feats
-skyblock.levels[level].bucket_water_on_use = function(player_name, pointed_thing) end
+skyblock.levels[level].bucket_water_on_use = function(player_name, pointed_thing) 
+	skyblock.levels.bucket_water_on_use(feats, player_name, pointed_thing)
+end
 
 -- track bucket lava feats
-skyblock.levels[level].bucket_lava_on_use = function(player_name, pointed_thing) end
+skyblock.levels[level].bucket_lava_on_use = function(player_name, pointed_thing)
+	skyblock.levels.bucket_lava_on_use(feats, player_name, pointed_thing)
+end
