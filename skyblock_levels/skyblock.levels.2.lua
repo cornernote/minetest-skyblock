@@ -8,6 +8,22 @@ License: GPLv3
 
 ]]--
 
+--[[
+
+level 2 feats and rewards:
+
+* place_trapdoor x1			default:desert_stonebrick 50
+* place_ladder x10			default:desert_cobble 50
+* place_fence x20			default:cobble 25
+* place_gravel x100			stairs:stair_cobble 4
+* place_dirt x100			default:jungleleaves 6
+* place_cobble x100			default:coal_lump
+* dig_stone_with_coal x2	default:sandstonebrick 50
+* place_torch x8			default:iron_lump
+* dig_stone_with_iron x4	default:brick
+* place_chest_locked x1		default:copper_lump
+
+]]--
 
 local level = 2
 local feats = {
@@ -32,8 +48,16 @@ local feats = {
 		hint = 'default:fence_wood',
 		feat = 'place_fence', 
 		count = 20, 
-		reward = 'stairs:stair_brick 4',
+		reward = 'default:cobble 25',
 		placenode = {'default:fence_wood'},
+	},
+	{
+		name = 'build a structure using 100 Gravel',
+		hint = 'default:gravel',
+		feat = 'place_gravel', 
+		count = 100, 
+		reward = 'stairs:stair_cobble 4',
+		placenode = {'default:gravel'},
 	},
 	{
 		name = 'extend your Island with 100 Dirt',
@@ -48,16 +72,8 @@ local feats = {
 		hint = 'default:cobble',
 		feat = 'place_cobble', 
 		count = 100, 
-		reward = 'stairs:stair_cobble 3',
+		reward = 'default:coal_lump',
 		placenode = {'default:cobble'},
-	},
-	{
-		name = 'build a structure using 100 Wood',
-		hint = 'default:wood',
-		feat = 'place_wood', 
-		count = 100, 
-		reward = 'default:brick 50',
-		placenode = {'default:wood'},
 	},
 	{
 		name = 'dig 4 Coal Lumps',
@@ -146,35 +162,35 @@ end
 
 -- reward_feat
 skyblock.levels[level].reward_feat = function(player_name,feat)
-	skyblock.levels.reward_feat(feats, player_name, feat)
+	skyblock.levels.reward_feat(level, feats, player_name, feat)
 end
 
 -- track digging feats
 skyblock.levels[level].on_dignode = function(pos, oldnode, digger)
-	skyblock.levels.on_placenode(feats, pos, oldnode, digger)
+	skyblock.levels.on_placenode(level, feats, pos, oldnode, digger)
 end
 
 -- track placing feats
 skyblock.levels[level].on_placenode = function(pos, newnode, placer, oldnode)
-	skyblock.levels.on_placenode(feats, pos, newnode, placer, oldnode)
+	skyblock.levels.on_placenode(level, feats, pos, newnode, placer, oldnode)
 end
 
 -- track eating feats
 skyblock.levels[level].on_item_eat = function(player_name, itemstack)
-	skyblock.levels.on_item_eat(feats, player_name, itemstack)
+	skyblock.levels.on_item_eat(level, feats, player_name, itemstack)
 end
 
 -- track bucket feats
 skyblock.levels[level].bucket_on_use = function(player_name, pointed_thing)
-	skyblock.levels.bucket_on_use(feats, player_name, pointed_thing)
+	skyblock.levels.bucket_on_use(level, feats, player_name, pointed_thing)
 end
 
 -- track bucket water feats
 skyblock.levels[level].bucket_water_on_use = function(player_name, pointed_thing) 
-	skyblock.levels.bucket_water_on_use(feats, player_name, pointed_thing)
+	skyblock.levels.bucket_water_on_use(level, feats, player_name, pointed_thing)
 end
 
 -- track bucket lava feats
 skyblock.levels[level].bucket_lava_on_use = function(player_name, pointed_thing)
-	skyblock.levels.bucket_lava_on_use(feats, player_name, pointed_thing)
+	skyblock.levels.bucket_lava_on_use(level, feats, player_name, pointed_thing)
 end

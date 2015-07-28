@@ -8,88 +8,104 @@ License: GPLv3
 
 ]]--
 
+--[[
+
+level 3 feats and rewards:
+
+* dig_papyrus x20			wool:white 50
+* place_brick x50			stairs:stair_brick 4
+* place_mossycobble x50		wool:blue 50
+* place_bookshelf x4		wool:red 50
+* place_steelblock x4		default:obsidian_shard
+* place_sand x50			wool:green 50
+* dig_stone_with_copper x4	wool:orange 50
+* place_bar	x8				default:mese_crystal
+* dig_stone_with_mese x4	default:pine_needles 6
+* place_craft_guide	x1		default:gold_lump
+
+]]--
 
 local level = 2
 local feats = {
 	{
-		name = 'dig 20 Papyrus',
-		hint = '',
+		name = 'grow and collect 20 Papyrus',
+		hint = nil,
 		feat = 'dig_papyrus', 
 		count = 20, 
-		reward = 'default:mese',
+		reward = 'wool:white 50',
 		dignode = {'default:papyrus'},
 	},
 	{
-		name = 'place 20 Papyrus in a nice garden',
-		hint = '',
-		feat = 'place_papyrus', 
-		count = 20, 
-		reward = 'default:mese',
-		placenode = {'default:papyrus'},
+		name = 'place 50 Brick',
+		hint = 'default:brick',
+		feat = 'place_brick', 
+		count = 50, 
+		reward = 'stairs:stair_brick 4',
+		placenode = {'default:brick'},
 	},
 	{
-		name = 'dig 15 Cactus',
-		hint = '',
-		feat = 'dig_cactus', 
-		count = 15, 
-		reward = 'default:mese',
-		dignode = {'default:cactus'},
+		name = 'place 50 Mossy Cobblestone',
+		hint = 'default:mossycobble',
+		feat = 'place_mossycobble', 
+		count = 50, 
+		reward = 'wool:blue 50',
+		placenode = {'default:mossycobble'},
 	},
 	{
-		name = 'place 15 Cactus in another gargen',
-		hint = '',
-		feat = 'place_cactus', 
-		count = 15, 
-		reward = 'default:mese',
-		placenode = {'default:cactus'},
-	},
-	{
-		name = 'place 30 fences around your gardens',
-		hint = '',
-		feat = 'place_fence', 
-		count = 30, 
-		reward = 'default:mese',
-		placenode = {'default:fence_wood'},
-	},
-	{
-		name = 'add 20 ladders to your structures',
-		hint = '',
-		feat = 'place_ladder', 
-		count = 20, 
-		reward = 'default:mese',
-		placenode = {'default:ladder'},
-	},
-	{
-		name = 'decorate your house with 5 Bookshelves',
-		hint = '',
+		name = 'place 4 Bookshelves',
+		hint = 'default:bookshelf',
 		feat = 'place_bookshelf', 
-		count = 5, 
-		reward = 'default:mese',
+		count = 4, 
+		reward = 'wool:red 50',
 		placenode = {'default:bookshelf'},
 	},
 	{
-		name = 'place 5 Signs to help other travellers',
-		hint = '',
-		feat = 'place_sign_wall', 
-		count = 5, 
-		reward = 'default:mese',
-		placenode = {'default:sign_wall'},
+		name = 'place 4 Steel Blocks',
+		hint = 'default:steelblock',
+		feat = 'place_steelblock', 
+		count = 4, 
+		reward = 'default:obsidian_shard',
+		placenode = {'default:steelblock'},
 	},
 	{
-		name = 'place 50 Torches to help you see at night',
-		hint = '',
-		feat = 'place_torch', 
+		name = 'place 50 Sand',
+		hint = 'default:sand',
+		feat = 'place_sand', 
 		count = 50, 
-		reward = 'default:mese',
-		placenode = {'default:torch'},
+		reward = 'wool:green 50',
+		placenode = {'default:sand'},
 	},
 	{
-		name = 'dig 500 Stone for your next project...',
-		hint = '',
-		feat = 'dig_stone', 
-		count = 500, 
-		reward = 'default:mese',
-		dignode = {'default:stone'},
+		name = 'dig 8 Copper lumps',
+		hint = 'default:stone_with_copper',
+		feat = 'dig_stone_with_copper', 
+		count = 4, 
+		reward = 'wool:orange 50',
+		dignode = {'default:stone_with_copper'},
+	},
+	{
+		name = 'place 8 Iron Bars',
+		hint = 'xpanes:bar',
+		feat = 'place_bar', 
+		count = 8, 
+		reward = 'default:mese_crystal',
+		placenode = {'xpanes:bar'},
+	},
+	{
+		name = 'dig 8 Mese Crystals',
+		hint = 'default:dig_stone_with_mese',
+		feat = 'dig_stone_with_mese', 
+		count = 4, 
+		reward = 'default:pine_needles 6',
+		dignode = {'default:dig_stone_with_mese'},
+	},
+	{
+		name = 'place a Craft Guide',
+		hint = 'craft_guide:sign_wall',
+		feat = 'place_craft_guide', 
+		count = 1, 
+		reward = 'default:gold_lump',
+		placenode = {'craft_guide:sign_wall'},
 	},
 }
 
@@ -130,7 +146,7 @@ skyblock.levels[level].get_info = function(player_name)
 	local info = { level=level, total=10, count=0, player_name=player_name, infotext='', formspec = '' };
 
 	info.formspec = skyblock.levels.get_inventory_formspec(level,info.player_name)
-		..'label[0,0.5; Does This Keep Going?]'
+		..'label[0,0.5; Oh '..player_name..', Does This Keep Going?]'
 		..'label[0,1.0; If you are enjoying this world, then stray not]'
 		..'label[0,1.5; from your mission traveller...]'
 		..'label[0,2.0; ... for the end is near.]'
@@ -146,35 +162,35 @@ end
 
 -- reward_feat
 skyblock.levels[level].reward_feat = function(player_name,feat)
-	skyblock.levels.reward_feat(feats, player_name, feat)
+	skyblock.levels.reward_feat(level, feats, player_name, feat)
 end
 
 -- track digging feats
 skyblock.levels[level].on_dignode = function(pos, oldnode, digger)
-	skyblock.levels.on_placenode(feats, pos, oldnode, digger)
+	skyblock.levels.on_placenode(level, feats, pos, oldnode, digger)
 end
 
 -- track placing feats
 skyblock.levels[level].on_placenode = function(pos, newnode, placer, oldnode)
-	skyblock.levels.on_placenode(feats, pos, newnode, placer, oldnode)
+	skyblock.levels.on_placenode(level, feats, pos, newnode, placer, oldnode)
 end
 
 -- track eating feats
 skyblock.levels[level].on_item_eat = function(player_name, itemstack)
-	skyblock.levels.on_item_eat(feats, player_name, itemstack)
+	skyblock.levels.on_item_eat(level, feats, player_name, itemstack)
 end
 
 -- track bucket feats
 skyblock.levels[level].bucket_on_use = function(player_name, pointed_thing)
-	skyblock.levels.bucket_on_use(feats, player_name, pointed_thing)
+	skyblock.levels.bucket_on_use(level, feats, player_name, pointed_thing)
 end
 
 -- track bucket water feats
 skyblock.levels[level].bucket_water_on_use = function(player_name, pointed_thing) 
-	skyblock.levels.bucket_water_on_use(feats, player_name, pointed_thing)
+	skyblock.levels.bucket_water_on_use(level, feats, player_name, pointed_thing)
 end
 
 -- track bucket lava feats
 skyblock.levels[level].bucket_lava_on_use = function(player_name, pointed_thing)
-	skyblock.levels.bucket_lava_on_use(feats, player_name, pointed_thing)
+	skyblock.levels.bucket_lava_on_use(level, feats, player_name, pointed_thing)
 end

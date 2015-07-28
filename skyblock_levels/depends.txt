@@ -5,7 +5,9 @@ dye
 flowers
 stairs
 wool
+xpanes
 protector
+craft_guide
 skyblock_bags
 skyblock_craft_guide
 skyblock_feats

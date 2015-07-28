@@ -60,15 +60,6 @@ minetest.register_craft({
 	}
 })
 
--- stone_with_diamond
-minetest.register_craft({
-	output = 'default:stone_with_diamond 2',
-	recipe = {
-		{'default:diamond'},
-		{'default:stone'},
-	}
-})
-
 -- stone_with_gold
 minetest.register_craft({
 	output = 'default:stone_with_gold 2',
@@ -84,6 +75,32 @@ minetest.register_craft({
 	recipe = {
 		{'default:mese_crystal'},
 		{'default:stone'},
+	}
+})
+
+-- stone_with_diamond
+minetest.register_craft({
+	output = 'default:stone_with_diamond 2',
+	recipe = {
+		{'default:diamond'},
+		{'default:stone'},
+	}
+})
+
+-- obsidian
+minetest.register_craft({
+	output = 'default:obsidian 2',
+	recipe = {
+		{'default:obsidian_shard'},
+		{'default:stone'},
+	}
+})
+
+-- sand
+minetest.register_craft({
+	output = 'default:sand 4',
+	recipe = {
+		{'default:obsidian_shard'},
 	}
 })
 
@@ -157,7 +174,16 @@ minetest.register_craft({
 	}
 })
 
--- recycle desert_sand from desert_stone
+-- desert_cobble from dirt and gravel
+minetest.register_craft({
+	output = 'default:desert_cobble 2',
+	recipe = {
+		{'default:dirt'},
+		{'default:gravel'},
+	}
+})
+
+-- desert_sand from desert_stone
 minetest.register_craft({
 	output = 'default:desert_sand 4',
 	recipe = {
@@ -167,7 +193,7 @@ minetest.register_craft({
 
 -- snowblock from bucket_water
 minetest.register_craft({
-	output = 'default:snowblock 2',
+	output = 'default:ice',
 	recipe = {
 		{'bucket:bucket_water'},
 	}
@@ -189,3 +215,11 @@ minetest.register_craft({
 		{'default:ice'},
 	}
 })
+
+-- glass from desert_sand
+minetest.register_craft({
+	type = 'cooking',
+	output = 'default:glass',
+	recipe = 'default:desert_sand',
+})
+
