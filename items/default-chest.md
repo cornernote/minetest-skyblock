@@ -33,5 +33,5 @@ icon: /items/itemcubes/default_chest.png
 
 <ul class="list-items clearfix">
     <li><a href="{{site.baseurl}}/items/default-chest-locked/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_chest_locked.png" data-toggle="tooltip" title="Locked Chest [node][default:chest_locked]"></a></li>
-    <li><a href="{{site.baseurl}}/items/protector-chest/"><img src="{{site.baseurl}}/assets/img/items/textures/default_chest_front.png" data-toggle="tooltip" title="Protected Chest [node][protector:chest]"></a></li>
+    <li><a href="{{site.baseurl}}/items/protector-chest/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/protector_chest.png" data-toggle="tooltip" title="Protected Chest [node][protector:chest]"></a></li>
 </ul>

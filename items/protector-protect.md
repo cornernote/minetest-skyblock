@@ -4,7 +4,7 @@ title: Protection Block
 heading: Protection Block
 description: "[node][protector:protect]"
 permalink: /items/protector-protect/
-icon: /items/textures/moreblocks_circle_stone_bricks.png
+icon: /items/itemcubes/protector_protect.png
 ---
 
 

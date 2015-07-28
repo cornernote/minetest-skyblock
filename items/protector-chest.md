@@ -4,7 +4,7 @@ title: Protected Chest
 heading: Protected Chest
 description: "[node][protector:chest]"
 permalink: /items/protector-chest/
-icon: /items/textures/default_chest_front.png
+icon: /items/itemcubes/protector_chest.png
 ---
 
 

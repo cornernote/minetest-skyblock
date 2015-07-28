@@ -175,8 +175,8 @@ permalink: /items/
 <li><a href="{{site.baseurl}}/items/flowers-rose/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/flowers_rose.png" data-toggle="tooltip" title="Rose [node][flowers:rose]"></a></li>
 <li><a href="{{site.baseurl}}/items/flowers-tulip/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/flowers_tulip.png" data-toggle="tooltip" title="Tulip [node][flowers:tulip]"></a></li>
 <li><a href="{{site.baseurl}}/items/flowers-viola/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/flowers_viola.png" data-toggle="tooltip" title="Viola [node][flowers:viola]"></a></li>
-<li><a href="{{site.baseurl}}/items/protector-chest/"><img src="{{site.baseurl}}/assets/img/items/textures/default_chest_front.png" data-toggle="tooltip" title="Protected Chest [node][protector:chest]"></a></li>
-<li><a href="{{site.baseurl}}/items/protector-protect/"><img src="{{site.baseurl}}/assets/img/items/textures/moreblocks_circle_stone_bricks.png" data-toggle="tooltip" title="Protection Block [node][protector:protect]"></a></li>
+<li><a href="{{site.baseurl}}/items/protector-chest/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/protector_chest.png" data-toggle="tooltip" title="Protected Chest [node][protector:chest]"></a></li>
+<li><a href="{{site.baseurl}}/items/protector-protect/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/protector_protect.png" data-toggle="tooltip" title="Protection Block [node][protector:protect]"></a></li>
 <li><a href="{{site.baseurl}}/items/stairs-slab-brick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_brick.png" data-toggle="tooltip" title="Brick Slab [node][stairs:slab_brick]"></a></li>
 <li><a href="{{site.baseurl}}/items/stairs-slab-cobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_cobble.png" data-toggle="tooltip" title="Cobblestone Slab [node][stairs:slab_cobble]"></a></li>
 <li><a href="{{site.baseurl}}/items/stairs-slab-desert-cobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_desert_cobble.png" data-toggle="tooltip" title="Desert Cobblestone Slab [node][stairs:slab_desert_cobble]"></a></li>
