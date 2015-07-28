@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Skyblock API
-heading: Skyblock API
-permalink: /docs/skyblock/
+title: Skyblock
+heading: Skyblock
+permalink: /api/skyblock/
 ---
 
 ## Variables
