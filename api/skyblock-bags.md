@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Skyblock Bags API
-heading: Skyblock Bags API
+title: Skyblock Bags
+heading: Skyblock Bags
 permalink: /api/skyblock-bags/
 ---
 
