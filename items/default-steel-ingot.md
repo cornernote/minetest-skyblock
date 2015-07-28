@@ -57,6 +57,7 @@ icon: /items/textures/default_steel_ingot.png
 
 <ul class="list-items clearfix">
     <li><a href="{{site.baseurl}}/items/bucket-bucket-empty/"><img src="{{site.baseurl}}/assets/img/items/textures/bucket.png" data-toggle="tooltip" title="Empty Bucket [craft][bucket:bucket_empty]"></a></li>
+    <li><a href="{{site.baseurl}}/items/craft-guide-sign-wall-locked/"><img src="{{site.baseurl}}/assets/img/items/textures/craft_guide_sign.png" data-toggle="tooltip" title="Craft Sign (locked) [node][craft_guide:sign_wall_locked]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-axe-steel/"><img src="{{site.baseurl}}/assets/img/items/textures/default_tool_steelaxe.png" data-toggle="tooltip" title="Steel Axe [tool][default:axe_steel]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-bronze-ingot/"><img src="{{site.baseurl}}/assets/img/items/textures/default_bronze_ingot.png" data-toggle="tooltip" title="Bronze Ingot [craft][default:bronze_ingot]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-chest-locked/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_chest_locked.png" data-toggle="tooltip" title="Locked Chest [node][default:chest_locked]"></a></li>
@@ -67,6 +68,8 @@ icon: /items/textures/default_steel_ingot.png
     <li><a href="{{site.baseurl}}/items/default-sword-steel/"><img src="{{site.baseurl}}/assets/img/items/textures/default_tool_steelsword.png" data-toggle="tooltip" title="Steel Sword [tool][default:sword_steel]"></a></li>
     <li><a href="{{site.baseurl}}/items/doors-door-steel/"><img src="{{site.baseurl}}/assets/img/items/textures/doors_steel.png" data-toggle="tooltip" title="Steel Door [craft][doors:door_steel]"></a></li>
     <li><a href="{{site.baseurl}}/items/farming-hoe-steel/"><img src="{{site.baseurl}}/assets/img/items/textures/farming_tool_steelhoe.png" data-toggle="tooltip" title="Steel Hoe [tool][farming:hoe_steel]"></a></li>
+    <li><a href="{{site.baseurl}}/items/protector-door-steel/"><img src="{{site.baseurl}}/assets/img/items/textures/doors_steel.png" data-toggle="tooltip" title="Protected Steel Door [craft][protector:door_steel]"></a></li>
+    <li><a href="{{site.baseurl}}/items/protector-protect/"><img src="{{site.baseurl}}/assets/img/items/textures/moreblocks_circle_stone_bricks.png" data-toggle="tooltip" title="Protection Block [node][protector:protect]"></a></li>
     <li><a href="{{site.baseurl}}/items/screwdriver-screwdriver/"><img src="{{site.baseurl}}/assets/img/items/textures/screwdriver.png" data-toggle="tooltip" title="Screwdriver (left-click rotates face, right-click rotates axis) [tool][screwdriver:screwdriver]"></a></li>
     <li><a href="{{site.baseurl}}/items/vessels-steel-bottle/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/vessels_steel_bottle.png" data-toggle="tooltip" title="Heavy Steel Bottle (empty) [node][vessels:steel_bottle]"></a></li>
     <li><a href="{{site.baseurl}}/items/xpanes-bar/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/xpanes_bar.png" data-toggle="tooltip" title="Iron bar [node][xpanes:bar]"></a></li>

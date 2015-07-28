@@ -33,5 +33,7 @@ permalink: /items/group-wood/
     <li><a href="{{site.baseurl}}/items/doors-door-wood/"><img src="{{site.baseurl}}/assets/img/items/textures/doors_wood.png" data-toggle="tooltip" title="Wooden Door [craft][doors:door_wood]"></a></li>
     <li><a href="{{site.baseurl}}/items/doors-trapdoor/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/doors_trapdoor.png" data-toggle="tooltip" title="Trapdoor [node][doors:trapdoor]"></a></li>
     <li><a href="{{site.baseurl}}/items/farming-hoe-wood/"><img src="{{site.baseurl}}/assets/img/items/textures/farming_tool_woodhoe.png" data-toggle="tooltip" title="Wooden Hoe [tool][farming:hoe_wood]"></a></li>
+    <li><a href="{{site.baseurl}}/items/protector-chest/"><img src="{{site.baseurl}}/assets/img/items/textures/default_chest_front.png" data-toggle="tooltip" title="Protected Chest [node][protector:chest]"></a></li>
+    <li><a href="{{site.baseurl}}/items/protector-door-wood/"><img src="{{site.baseurl}}/assets/img/items/textures/doors_wood.png" data-toggle="tooltip" title="Protected Wooden Door [craft][protector:door_wood]"></a></li>
     <li><a href="{{site.baseurl}}/items/tnt-tnt/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/tnt_tnt.png" data-toggle="tooltip" title="TNT [node][tnt:tnt]"></a></li>
 </ul>

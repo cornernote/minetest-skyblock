@@ -39,5 +39,5 @@ icon: /items/textures/default_book.png
 ## Belongs to Groups
 
 <ul class="list-items clearfix">
-    <li><a href="{{site.baseurl}}/items/group-book/"><span class="item-group" data-toggle="tooltip" title="Group: Book [group][book]"><img src="{{site.baseurl}}/assets/img/items/textures/default_book.png"><img src="{{site.baseurl}}/assets/img/transparent.png"><img src="{{site.baseurl}}/assets/img/transparent.png"></span></a></li>
+    <li><a href="{{site.baseurl}}/items/group-book/"><span class="item-group" data-toggle="tooltip" title="Group: Book [group][book]"><img src="{{site.baseurl}}/assets/img/items/textures/craft_guide_sign.png"><img src="{{site.baseurl}}/assets/img/items/textures/craft_guide_sign.png"><img src="{{site.baseurl}}/assets/img/items/textures/default_book.png"></span></a></li>
 </ul>

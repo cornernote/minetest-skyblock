@@ -45,5 +45,4 @@ icon: /items/textures/default_gold_ingot.png
 
 <ul class="list-items clearfix">
     <li><a href="{{site.baseurl}}/items/default-goldblock/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_goldblock.png" data-toggle="tooltip" title="Gold Block [node][default:goldblock]"></a></li>
-    <li><a href="{{site.baseurl}}/items/default-stone-with-gold/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stone_with_gold.png" data-toggle="tooltip" title="Gold Ore [node][default:stone_with_gold]"></a></li>
 </ul>

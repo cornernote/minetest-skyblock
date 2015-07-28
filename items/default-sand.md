@@ -28,6 +28,24 @@ icon: /items/itemcubes/default_sand.png
     </div>
 </div>
 
+<div class="craft">
+    <div>
+        <span><a href="{{site.baseurl}}/items/default-obsidian-shard/"><img src="{{site.baseurl}}/assets/img/items/textures/default_obsidian_shard.png" data-toggle="tooltip" title="Obsidian Shard [craft][default:obsidian_shard]"></a></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>
+
 
 ## Belongs to Groups
 

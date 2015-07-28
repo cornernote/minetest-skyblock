@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Steel Door
-heading: Steel Door
-description: "[craft][doors:door_steel]"
-permalink: /items/doors-door-steel/
+title: Protected Steel Door
+heading: Protected Steel Door
+description: "[craft][protector:door_steel]"
+permalink: /items/protector-door-steel/
 icon: /items/textures/doors_steel.png
 ---
 
@@ -18,7 +18,7 @@ icon: /items/textures/doors_steel.png
     </div>
     <div>
         <span><a href="{{site.baseurl}}/items/default-steel-ingot/"><img src="{{site.baseurl}}/assets/img/items/textures/default_steel_ingot.png" data-toggle="tooltip" title="Steel Ingot [craft][default:steel_ingot]"></a></span>
-        <span><a href="{{site.baseurl}}/items/default-steel-ingot/"><img src="{{site.baseurl}}/assets/img/items/textures/default_steel_ingot.png" data-toggle="tooltip" title="Steel Ingot [craft][default:steel_ingot]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-copper-ingot/"><img src="{{site.baseurl}}/assets/img/items/textures/default_copper_ingot.png" data-toggle="tooltip" title="Copper Ingot [craft][default:copper_ingot]"></a></span>
         <span></span>
     </div>
     <div>
@@ -28,9 +28,20 @@ icon: /items/textures/doors_steel.png
     </div>
 </div>
 
-
-## Used for Crafts
-
-<ul class="list-items clearfix">
-    <li><a href="{{site.baseurl}}/items/protector-door-steel/"><img src="{{site.baseurl}}/assets/img/items/textures/doors_steel.png" data-toggle="tooltip" title="Protected Steel Door [craft][protector:door_steel]"></a></li>
-</ul>
+<div class="craft">
+    <div>
+        <span><a href="{{site.baseurl}}/items/doors-door-steel/"><img src="{{site.baseurl}}/assets/img/items/textures/doors_steel.png" data-toggle="tooltip" title="Steel Door [craft][doors:door_steel]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-copper-ingot/"><img src="{{site.baseurl}}/assets/img/items/textures/default_copper_ingot.png" data-toggle="tooltip" title="Copper Ingot [craft][default:copper_ingot]"></a></span>
+        <span></span>
+    </div>
+    <div>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>

@@ -8,6 +8,21 @@ icon: /items/itemcubes/default_cobble.png
 ---
 
 
+## Created by Crafts
+
+<div class="craft">
+    <div>
+        <span><a href="{{site.baseurl}}/items/default-dirt/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_dirt.png" data-toggle="tooltip" title="Dirt [node][default:dirt]"></a></span>
+    </div>
+    <div>
+        <span><a href="{{site.baseurl}}/items/default-furnace/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_furnace.png" data-toggle="tooltip" title="Furnace [node][default:furnace]"></a></span>
+    </div>
+    <div>
+        <span></span>
+    </div>
+</div>
+
+
 ## Used for Crafts
 
 <ul class="list-items clearfix">

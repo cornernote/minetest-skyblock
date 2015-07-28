@@ -32,6 +32,7 @@ icon: /items/itemcubes/default_gravel.png
 ## Used for Crafts
 
 <ul class="list-items clearfix">
+    <li><a href="{{site.baseurl}}/items/default-desert-cobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_cobble.png" data-toggle="tooltip" title="Desert Cobblestone [node][default:desert_cobble]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-dirt/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_dirt.png" data-toggle="tooltip" title="Dirt [node][default:dirt]"></a></li>
     <li><a href="{{site.baseurl}}/items/tnt-gunpowder/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/tnt_gunpowder.png" data-toggle="tooltip" title="Gun Powder [node][tnt:gunpowder]"></a></li>
 </ul>

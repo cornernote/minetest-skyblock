@@ -12,6 +12,24 @@ icon: /items/itemcubes/default_ice.png
 
 <div class="craft">
     <div>
+        <span><a href="{{site.baseurl}}/items/bucket-bucket-water/"><img src="{{site.baseurl}}/assets/img/items/textures/bucket_water.png" data-toggle="tooltip" title="Water Bucket [craft][bucket:bucket_water]"></a></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>
+
+<div class="craft">
+    <div>
         <span><a href="{{site.baseurl}}/items/default-snowblock/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_snowblock.png" data-toggle="tooltip" title="Snow Block [node][default:snowblock]"></a></span>
         <span><a href="{{site.baseurl}}/items/default-snowblock/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_snowblock.png" data-toggle="tooltip" title="Snow Block [node][default:snowblock]"></a></span>
         <span></span>

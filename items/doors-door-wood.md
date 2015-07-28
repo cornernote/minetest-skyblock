@@ -27,3 +27,10 @@ icon: /items/textures/doors_wood.png
         <span></span>
     </div>
 </div>
+
+
+## Used for Crafts
+
+<ul class="list-items clearfix">
+    <li><a href="{{site.baseurl}}/items/protector-door-wood/"><img src="{{site.baseurl}}/assets/img/items/textures/doors_wood.png" data-toggle="tooltip" title="Protected Wooden Door [craft][protector:door_wood]"></a></li>
+</ul>

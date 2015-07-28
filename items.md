@@ -40,6 +40,9 @@ permalink: /items/
 <li><a href="{{site.baseurl}}/items/farming-hoe-stone/"><img src="{{site.baseurl}}/assets/img/items/textures/farming_tool_stonehoe.png" data-toggle="tooltip" title="Stone Hoe [tool][farming:hoe_stone]"></a></li>
 <li><a href="{{site.baseurl}}/items/farming-hoe-wood/"><img src="{{site.baseurl}}/assets/img/items/textures/farming_tool_woodhoe.png" data-toggle="tooltip" title="Wooden Hoe [tool][farming:hoe_wood]"></a></li>
 <li><a href="{{site.baseurl}}/items/screwdriver-screwdriver/"><img src="{{site.baseurl}}/assets/img/items/textures/screwdriver.png" data-toggle="tooltip" title="Screwdriver (left-click rotates face, right-click rotates axis) [tool][screwdriver:screwdriver]"></a></li>
+<li><a href="{{site.baseurl}}/items/skyblock-bags-large/"><img src="{{site.baseurl}}/assets/img/items/textures/skyblock_bags_large.png" data-toggle="tooltip" title="Large Bag [tool][skyblock_bags:large]"></a></li>
+<li><a href="{{site.baseurl}}/items/skyblock-bags-medium/"><img src="{{site.baseurl}}/assets/img/items/textures/skyblock_bags_medium.png" data-toggle="tooltip" title="Medium Bag [tool][skyblock_bags:medium]"></a></li>
+<li><a href="{{site.baseurl}}/items/skyblock-bags-small/"><img src="{{site.baseurl}}/assets/img/items/textures/skyblock_bags_small.png" data-toggle="tooltip" title="Small Bag [tool][skyblock_bags:small]"></a></li>
 </ul>
 
 
@@ -90,6 +93,8 @@ permalink: /items/
 <li><a href="{{site.baseurl}}/items/farming-cotton/"><img src="{{site.baseurl}}/assets/img/items/textures/farming_cotton.png" data-toggle="tooltip" title="Cotton [craft][farming:cotton]"></a></li>
 <li><a href="{{site.baseurl}}/items/farming-flour/"><img src="{{site.baseurl}}/assets/img/items/textures/farming_flour.png" data-toggle="tooltip" title="Flour [craft][farming:flour]"></a></li>
 <li><a href="{{site.baseurl}}/items/farming-wheat/"><img src="{{site.baseurl}}/assets/img/items/textures/farming_wheat.png" data-toggle="tooltip" title="Wheat [craft][farming:wheat]"></a></li>
+<li><a href="{{site.baseurl}}/items/protector-door-steel/"><img src="{{site.baseurl}}/assets/img/items/textures/doors_steel.png" data-toggle="tooltip" title="Protected Steel Door [craft][protector:door_steel]"></a></li>
+<li><a href="{{site.baseurl}}/items/protector-door-wood/"><img src="{{site.baseurl}}/assets/img/items/textures/doors_wood.png" data-toggle="tooltip" title="Protected Wooden Door [craft][protector:door_wood]"></a></li>
 <li><a href="{{site.baseurl}}/items/vessels-glass-fragments/"><img src="{{site.baseurl}}/assets/img/items/textures/vessels_glass_fragments.png" data-toggle="tooltip" title="Pile of Glass Fragments [craft][vessels:glass_fragments]"></a></li>
 </ul>
 
@@ -97,6 +102,8 @@ permalink: /items/
 ## Nodes
 
 <ul class="list-items clearfix">
+<li><a href="{{site.baseurl}}/items/craft-guide-sign-wall/"><img src="{{site.baseurl}}/assets/img/items/textures/craft_guide_sign.png" data-toggle="tooltip" title="Craft Sign [node][craft_guide:sign_wall]"></a></li>
+<li><a href="{{site.baseurl}}/items/craft-guide-sign-wall-locked/"><img src="{{site.baseurl}}/assets/img/items/textures/craft_guide_sign.png" data-toggle="tooltip" title="Craft Sign (locked) [node][craft_guide:sign_wall_locked]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-apple/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_apple.png" data-toggle="tooltip" title="Apple [node][default:apple]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-bookshelf/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_bookshelf.png" data-toggle="tooltip" title="Bookshelf [node][default:bookshelf]"></a></li>
 <li><a href="{{site.baseurl}}/items/default-brick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_brick.png" data-toggle="tooltip" title="Brick Block [node][default:brick]"></a></li>
@@ -168,6 +175,8 @@ permalink: /items/
 <li><a href="{{site.baseurl}}/items/flowers-rose/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/flowers_rose.png" data-toggle="tooltip" title="Rose [node][flowers:rose]"></a></li>
 <li><a href="{{site.baseurl}}/items/flowers-tulip/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/flowers_tulip.png" data-toggle="tooltip" title="Tulip [node][flowers:tulip]"></a></li>
 <li><a href="{{site.baseurl}}/items/flowers-viola/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/flowers_viola.png" data-toggle="tooltip" title="Viola [node][flowers:viola]"></a></li>
+<li><a href="{{site.baseurl}}/items/protector-chest/"><img src="{{site.baseurl}}/assets/img/items/textures/default_chest_front.png" data-toggle="tooltip" title="Protected Chest [node][protector:chest]"></a></li>
+<li><a href="{{site.baseurl}}/items/protector-protect/"><img src="{{site.baseurl}}/assets/img/items/textures/moreblocks_circle_stone_bricks.png" data-toggle="tooltip" title="Protection Block [node][protector:protect]"></a></li>
 <li><a href="{{site.baseurl}}/items/stairs-slab-brick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_brick.png" data-toggle="tooltip" title="Brick Slab [node][stairs:slab_brick]"></a></li>
 <li><a href="{{site.baseurl}}/items/stairs-slab-cobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_cobble.png" data-toggle="tooltip" title="Cobblestone Slab [node][stairs:slab_cobble]"></a></li>
 <li><a href="{{site.baseurl}}/items/stairs-slab-desert-cobble/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_desert_cobble.png" data-toggle="tooltip" title="Desert Cobblestone Slab [node][stairs:slab_desert_cobble]"></a></li>

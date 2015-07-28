@@ -32,6 +32,7 @@ icon: /items/itemcubes/default_wood.png
 ## Used for Crafts
 
 <ul class="list-items clearfix">
+    <li><a href="{{site.baseurl}}/items/skyblock-bags-small/"><img src="{{site.baseurl}}/assets/img/items/textures/skyblock_bags_small.png" data-toggle="tooltip" title="Small Bag [tool][skyblock_bags:small]"></a></li>
     <li><a href="{{site.baseurl}}/items/stairs-slab-wood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_wood.png" data-toggle="tooltip" title="Wooden Slab [node][stairs:slab_wood]"></a></li>
     <li><a href="{{site.baseurl}}/items/stairs-stair-wood/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_wood.png" data-toggle="tooltip" title="Wooden Stair [node][stairs:stair_wood]"></a></li>
 </ul>

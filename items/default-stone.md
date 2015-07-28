@@ -38,6 +38,7 @@ icon: /items/itemcubes/default_stone.png
 ## Used for Crafts
 
 <ul class="list-items clearfix">
+    <li><a href="{{site.baseurl}}/items/default-obsidian/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_obsidian.png" data-toggle="tooltip" title="Obsidian [node][default:obsidian]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-stone-with-coal/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stone_with_coal.png" data-toggle="tooltip" title="Coal Ore [node][default:stone_with_coal]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-stone-with-copper/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stone_with_copper.png" data-toggle="tooltip" title="Copper Ore [node][default:stone_with_copper]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-stone-with-diamond/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stone_with_diamond.png" data-toggle="tooltip" title="Diamond Ore [node][default:stone_with_diamond]"></a></li>
@@ -45,6 +46,8 @@ icon: /items/itemcubes/default_stone.png
     <li><a href="{{site.baseurl}}/items/default-stone-with-iron/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stone_with_iron.png" data-toggle="tooltip" title="Iron Ore [node][default:stone_with_iron]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-stone-with-mese/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stone_with_mese.png" data-toggle="tooltip" title="Mese Ore [node][default:stone_with_mese]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-stonebrick/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_stonebrick.png" data-toggle="tooltip" title="Stone Brick [node][default:stonebrick]"></a></li>
+    <li><a href="{{site.baseurl}}/items/protector-protect/"><img src="{{site.baseurl}}/assets/img/items/textures/moreblocks_circle_stone_bricks.png" data-toggle="tooltip" title="Protection Block [node][protector:protect]"></a></li>
+    <li><a href="{{site.baseurl}}/items/protector-protect2/"><img src="{{site.baseurl}}/assets/img/items/textures/protector_logo.png" data-toggle="tooltip" title="Protection Logo [node][protector:protect2]"></a></li>
     <li><a href="{{site.baseurl}}/items/stairs-slab-stone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_slab_stone.png" data-toggle="tooltip" title="Stone Slab [node][stairs:slab_stone]"></a></li>
     <li><a href="{{site.baseurl}}/items/stairs-stair-stone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/stairs_stair_stone.png" data-toggle="tooltip" title="Stone Stair [node][stairs:stair_stone]"></a></li>
 </ul>

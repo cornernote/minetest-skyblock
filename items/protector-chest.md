@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Chest
-heading: Chest
-description: "[node][default:chest]"
-permalink: /items/default-chest/
-icon: /items/itemcubes/default_chest.png
+title: Protected Chest
+heading: Protected Chest
+description: "[node][protector:chest]"
+permalink: /items/protector-chest/
+icon: /items/textures/default_chest_front.png
 ---
 
 
@@ -18,7 +18,7 @@ icon: /items/itemcubes/default_chest.png
     </div>
     <div>
         <span><a href="{{site.baseurl}}/items/group-wood/"><span class="item-group" data-toggle="tooltip" title="Group: Wood [group][wood]"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_junglewood.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_pinewood.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_wood.png"></span></a></span>
-        <span></span>
+        <span><a href="{{site.baseurl}}/items/default-copper-ingot/"><img src="{{site.baseurl}}/assets/img/items/textures/default_copper_ingot.png" data-toggle="tooltip" title="Copper Ingot [craft][default:copper_ingot]"></a></span>
         <span><a href="{{site.baseurl}}/items/group-wood/"><span class="item-group" data-toggle="tooltip" title="Group: Wood [group][wood]"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_junglewood.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_pinewood.png"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_wood.png"></span></a></span>
     </div>
     <div>
@@ -28,10 +28,20 @@ icon: /items/itemcubes/default_chest.png
     </div>
 </div>
 
-
-## Used for Crafts
-
-<ul class="list-items clearfix">
-    <li><a href="{{site.baseurl}}/items/default-chest-locked/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_chest_locked.png" data-toggle="tooltip" title="Locked Chest [node][default:chest_locked]"></a></li>
-    <li><a href="{{site.baseurl}}/items/protector-chest/"><img src="{{site.baseurl}}/assets/img/items/textures/default_chest_front.png" data-toggle="tooltip" title="Protected Chest [node][protector:chest]"></a></li>
-</ul>
+<div class="craft">
+    <div>
+        <span><a href="{{site.baseurl}}/items/default-chest/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_chest.png" data-toggle="tooltip" title="Chest [node][default:chest]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-copper-ingot/"><img src="{{site.baseurl}}/assets/img/items/textures/default_copper_ingot.png" data-toggle="tooltip" title="Copper Ingot [craft][default:copper_ingot]"></a></span>
+        <span></span>
+    </div>
+    <div>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>

@@ -34,6 +34,18 @@ icon: /items/itemcubes/default_glass.png
     </div>
 </div>
 
+<div class="craft">
+    <div>
+        <span><a href="{{site.baseurl}}/items/default-desert-sand/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_sand.png" data-toggle="tooltip" title="Desert Sand [node][default:desert_sand]"></a></span>
+    </div>
+    <div>
+        <span><a href="{{site.baseurl}}/items/default-furnace/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_furnace.png" data-toggle="tooltip" title="Furnace [node][default:furnace]"></a></span>
+    </div>
+    <div>
+        <span></span>
+    </div>
+</div>
+
 
 ## Used for Crafts
 

@@ -12,7 +12,7 @@ icon: /items/itemcubes/default_stone_with_copper.png
 
 <div class="craft">
     <div>
-        <span><a href="{{site.baseurl}}/items/default-copper-ingot/"><img src="{{site.baseurl}}/assets/img/items/textures/default_copper_ingot.png" data-toggle="tooltip" title="Copper Ingot [craft][default:copper_ingot]"></a></span>
+        <span><a href="{{site.baseurl}}/items/default-copper-lump/"><img src="{{site.baseurl}}/assets/img/items/textures/default_copper_lump.png" data-toggle="tooltip" title="Copper Lump [craft][default:copper_lump]"></a></span>
         <span></span>
         <span></span>
     </div>

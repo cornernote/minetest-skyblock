@@ -35,6 +35,7 @@ icon: /items/textures/default_stick.png
     <li><a href="{{site.baseurl}}/items/default-junglesapling/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_junglesapling.png" data-toggle="tooltip" title="Jungle Sapling [node][default:junglesapling]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-pine-sapling/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_pine_sapling.png" data-toggle="tooltip" title="Pine Sapling [node][default:pine_sapling]"></a></li>
     <li><a href="{{site.baseurl}}/items/default-sapling/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_sapling.png" data-toggle="tooltip" title="Sapling [node][default:sapling]"></a></li>
+    <li><a href="{{site.baseurl}}/items/skyblock-bags-small/"><img src="{{site.baseurl}}/assets/img/items/textures/skyblock_bags_small.png" data-toggle="tooltip" title="Small Bag [tool][skyblock_bags:small]"></a></li>
 </ul>
 
 

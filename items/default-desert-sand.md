@@ -33,6 +33,7 @@ icon: /items/itemcubes/default_desert_sand.png
 
 <ul class="list-items clearfix">
     <li><a href="{{site.baseurl}}/items/default-desert-stone/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_desert_stone.png" data-toggle="tooltip" title="Desert Stone [node][default:desert_stone]"></a></li>
+    <li><a href="{{site.baseurl}}/items/default-glass/"><img src="{{site.baseurl}}/assets/img/items/itemcubes/default_glass.png" data-toggle="tooltip" title="Glass [node][default:glass]"></a></li>
 </ul>
 
 
