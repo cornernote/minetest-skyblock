@@ -2,7 +2,7 @@
 layout: default
 title: Skyblock Bags API
 heading: Skyblock Bags API
-permalink: /docs/skyblock-bags/
+permalink: /api/skyblock-bags/
 ---
 
 
