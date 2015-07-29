@@ -16,6 +16,15 @@ Should digging the spawn result in a new spawn pos?
 skyblock.levels.dig_new_spawn = false
 ```
 
+### `skyblock.levels.lose_bags_on_death`
+
+Should player lose bags on death?
+
+```
+skyblock.levels.lose_bags_on_death = false
+```
+
+
 ## Methods
 
 ### `skyblock.levels.give_initial_items()`
