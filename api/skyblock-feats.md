@@ -6,6 +6,11 @@ permalink: /api/skyblock-feats/
 ---
 
 
+## Source Code
+
+[skyblock_feats/skyblock.feats.lua](https://github.com/cornernote/minetest-skyblock/blob/master/skyblock_feats/skyblock.feats.lua)
+
+
 ## Methods
 
 ### `skyblock.feats.get_level()`
