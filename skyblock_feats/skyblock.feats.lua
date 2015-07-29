@@ -58,7 +58,7 @@ end
 
 -- get feat
 skyblock.feats.get = function(level,player_name,feat)
-	skyblock.log('skyblock.feats.get('..level..','..player_name..','..feat..')')
+	--skyblock.log('skyblock.feats.get('..level..','..player_name..','..feat..')')
 	if players_feat[player_name] == nil then
 		players_feat[player_name] = {}
 	end

@@ -14,6 +14,9 @@ skyblock.levels = {}
 -- Should digging the spawn result in a new spawn pos?
 skyblock.levels.dig_new_spawn = minetest.setting_getbool("skyblock.levels.dig_new_spawn")
 
+-- Should player lose bags on death?
+skyblock.levels.lose_bags_on_death = minetest.setting_getbool("skyblock.levels.lose_bags_on_death")
+
 --
 -- Functions
 --
@@ -53,17 +56,19 @@ skyblock.levels.check_inventory = function(player)
 			return false
 		end
 	end
-	for bag=1,4 do
-		for i=1,inv:get_size('skyblock_bag'..bag) do
-			stack = inv:get_stack('skyblock_bag'..bag, i)
-			if stack:get_name() ~= '' then
-				return false
+	if skyblock.levels.lose_bags_on_death then
+		for bag=1,4 do
+			for i=1,inv:get_size('skyblock_bag'..bag) do
+				stack = inv:get_stack('skyblock_bag'..bag, i)
+				if stack:get_name() ~= '' then
+					return false
+				end
 			end
-		end
-		for i=1,inv:get_size('skyblock_bag'..bag..'contents') do
-			stack = inv:get_stack('skyblock_bag'..bag..'contents', i)
-			if stack:get_name() ~= '' then
-				return false
+			for i=1,inv:get_size('skyblock_bag'..bag..'contents') do
+				stack = inv:get_stack('skyblock_bag'..bag..'contents', i)
+				if stack:get_name() ~= '' then
+					return false
+				end
 			end
 		end
 	end
@@ -88,15 +93,17 @@ skyblock.levels.empty_inventory = function(player)
 			inv:set_stack('rewards', i, nil)
 		end
 	end
-	local bags_inv = minetest.get_inventory({type="detached", name=player:get_player_name()..'_skyblock_bags'})
-	for bag=1,4 do
-		if not bags_inv:is_empty('skyblock_bag'..bag) then
-			for i=1,bags_inv:get_size('skyblock_bag'..bag) do
-				inv:set_stack('skyblock_bag'..bag, i, nil)
-			end
-			for i=1,bags_inv:get_size('skyblock_bag'..bag) do
-				bags_inv:set_stack('skyblock_bag'..bag, i, nil)
-				inv:set_stack('skyblock_bag'..bag..'contents', i, nil)
+	if skyblock.levels.lose_bags_on_death then
+		local bags_inv = minetest.get_inventory({type="detached", name=player:get_player_name()..'_skyblock_bags'})
+		for bag=1,4 do
+			if not bags_inv:is_empty('skyblock_bag'..bag) then
+				for i=1,bags_inv:get_size('skyblock_bag'..bag) do
+					inv:set_stack('skyblock_bag'..bag, i, nil)
+				end
+				for i=1,bags_inv:get_size('skyblock_bag'..bag) do
+					bags_inv:set_stack('skyblock_bag'..bag, i, nil)
+					inv:set_stack('skyblock_bag'..bag..'contents', i, nil)
+				end
 			end
 		end
 	end
