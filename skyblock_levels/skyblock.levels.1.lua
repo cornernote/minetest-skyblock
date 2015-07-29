@@ -130,16 +130,19 @@ end
 
 -- get level information
 skyblock.levels[level].get_info = function(player_name)
-	local info = { level=level, total=10, count=0, player_name=player_name, infotext='', formspec = '' };
+	local info = { level=level, total=10, count=0, player_name=player_name, infotext='', formspec = '', formspec_quest = '' };
 
-	info.formspec = skyblock.levels.get_inventory_formspec(level,info.player_name)
-		..'label[0,0.5;Welcome '..player_name..', of the Sky People]'
+	local text = 'label[0,0.5;Welcome '..player_name..', of the Sky People]'
 		..'label[0,1.0;We can no longer live on the surface.]'
 		..'label[0,1.5;Can you help us rebuild in the sky?]'
 		..'label[0,2.0;Complete the quests to receive great rewards!]'
+	
+	info.formspec = skyblock.levels.get_inventory_formspec(level,info.player_name,true)..text
+	info.formspec_quest = skyblock.levels.get_inventory_formspec(level,info.player_name)..text
 
 	for k,v in ipairs(feats) do
 		info.formspec = info.formspec..skyblock.levels.get_feat_formspec(info,k,v.feat,v.count,v.name,v.hint)
+		info.formspec_quest = info.formspec_quest..skyblock.levels.get_feat_formspec(info,k,v.feat,v.count,v.name)
 	end
 
 	info.infotext = 'LEVEL '..info.level..' for '..info.player_name..': '..info.count..' of '..info.total

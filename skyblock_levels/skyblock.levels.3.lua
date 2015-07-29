@@ -21,7 +21,7 @@ level 3 feats and rewards:
 * dig_stone_with_copper x4	wool:orange 50
 * place_bar	x8				default:mese_crystal
 * dig_stone_with_mese x4	default:pine_needles 6
-* place_craft_guide	x1		default:gold_lump
+* place_steelblock	x8		default:gold_lump
 
 ]]--
 
@@ -31,7 +31,7 @@ local feats = {
 		name = 'grow and collect 20 Papyrus',
 		hint = nil,
 		feat = 'dig_papyrus', 
-		count = 20, 
+		count = 20,
 		reward = 'wool:white 50',
 		dignode = {'default:papyrus'},
 	},
@@ -39,7 +39,7 @@ local feats = {
 		name = 'place 50 Brick',
 		hint = 'default:brick',
 		feat = 'place_brick', 
-		count = 50, 
+		count = 50,
 		reward = 'stairs:stair_brick 4',
 		placenode = {'default:brick'},
 	},
@@ -47,7 +47,7 @@ local feats = {
 		name = 'place 50 Mossy Cobblestone',
 		hint = 'default:mossycobble',
 		feat = 'place_mossycobble', 
-		count = 50, 
+		count = 50,
 		reward = 'wool:blue 50',
 		placenode = {'default:mossycobble'},
 	},
@@ -55,7 +55,7 @@ local feats = {
 		name = 'place 4 Bookshelves',
 		hint = 'default:bookshelf',
 		feat = 'place_bookshelf', 
-		count = 4, 
+		count = 4,
 		reward = 'wool:red 50',
 		placenode = {'default:bookshelf'},
 	},
@@ -63,7 +63,7 @@ local feats = {
 		name = 'place 4 Steel Blocks',
 		hint = 'default:steelblock',
 		feat = 'place_steelblock', 
-		count = 4, 
+		count = 4,
 		reward = 'default:obsidian_shard',
 		placenode = {'default:steelblock'},
 	},
@@ -71,7 +71,7 @@ local feats = {
 		name = 'place 50 Sand',
 		hint = 'default:sand',
 		feat = 'place_sand', 
-		count = 50, 
+		count = 50,
 		reward = 'wool:green 50',
 		placenode = {'default:sand'},
 	},
@@ -79,7 +79,7 @@ local feats = {
 		name = 'dig 8 Copper lumps',
 		hint = 'default:stone_with_copper',
 		feat = 'dig_stone_with_copper', 
-		count = 4, 
+		count = 4,
 		reward = 'wool:orange 50',
 		dignode = {'default:stone_with_copper'},
 	},
@@ -87,7 +87,7 @@ local feats = {
 		name = 'place 8 Iron Bars',
 		hint = 'xpanes:bar',
 		feat = 'place_bar', 
-		count = 8, 
+		count = 8,
 		reward = 'default:mese_crystal',
 		placenode = {'xpanes:bar'},
 	},
@@ -101,11 +101,11 @@ local feats = {
 	},
 	{
 		name = 'place a Craft Guide',
-		hint = 'craft_guide:sign_wall',
+		hint = 'default:steelblock',
 		feat = 'place_craft_guide', 
-		count = 1, 
+		count = 8, 
 		reward = 'default:gold_lump',
-		placenode = {'craft_guide:sign_wall'},
+		placenode = {'default:steelblock'},
 	},
 }
 
@@ -145,14 +145,17 @@ end
 skyblock.levels[level].get_info = function(player_name)
 	local info = { level=level, total=10, count=0, player_name=player_name, infotext='', formspec = '' };
 
-	info.formspec = skyblock.levels.get_inventory_formspec(level,info.player_name)
-		..'label[0,0.5; Oh '..player_name..', Does This Keep Going?]'
+	local text = 'label[0,0.5; Oh '..player_name..', Does This Keep Going?]'
 		..'label[0,1.0; If you are enjoying this world, then stray not]'
 		..'label[0,1.5; from your mission traveller...]'
 		..'label[0,2.0; ... for the end is near.]'
 
+	info.formspec = skyblock.levels.get_inventory_formspec(level,info.player_name,true)..text
+	info.formspec_quest = skyblock.levels.get_inventory_formspec(level,info.player_name)..text
+
 	for k,v in ipairs(feats) do
 		info.formspec = info.formspec..skyblock.levels.get_feat_formspec(info,k,v.feat,v.count,v.name,v.hint)
+		info.formspec_quest = info.formspec..skyblock.levels.get_feat_formspec(info,k,v.feat,v.count,v.name)
 	end
 
 	info.infotext = 'LEVEL '..info.level..' for '..info.player_name..': '..info.count..' of '..info.total

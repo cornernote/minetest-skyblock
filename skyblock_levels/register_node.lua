@@ -23,11 +23,6 @@ end
 	--skyblock.levels.spawn_diggers[player_name] = true
 	--digger:set_hp(0)
 --end
-entity.on_receive_fields = function(pos, formname, fields, sender)
-	skyblock.bags.on_receive_fields(sender, formname, fields)
-	skyblock.home.on_receive_fields(sender, formname, fields)
-	skyblock.craft_guide.on_receive_fields(sender, formname, fields)
-end
 minetest.register_node(':skyblock:quest', entity)
 
 -- stone

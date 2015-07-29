@@ -64,9 +64,26 @@ end)
 
 -- on_receive_fields
 skyblock.on_receive_fields = function(player, formname, fields)
-	if fields.skyblock or fields.main then
-		minetest.show_formspec(player:get_player_name(), "skyblock:main", player:get_inventory_formspec());
+	skyblock.log(formname..dump(fields))
+	if fields.skyblock ~= nil or fields.main ~= nil then
+		--minetest.show_formspec(player:get_player_name(), "skyblock", skyblock.levels.get_formspec(player:get_player_name()))
+		return
+	end
+	if fields.craft then
+		unified_inventory.set_inventory_formspec(player, "craft")
+		--minetest.show_formspec(player:get_player_name(), "craft", unified_inventory.get_formspec(player, "craft"))
 		return
 	end
 end
 minetest.register_on_player_receive_fields(skyblock.on_receive_fields)
+
+-- unified inventory skyblock button
+unified_inventory.register_button("skyblock", {
+	type = "image",
+	image = "skyblock_quest.png",
+	tooltip = "Skyblock Missions",
+	action = function(player)
+		skyblock.feats.update(player:get_player_name())
+		--minetest.show_formspec(player:get_player_name(), "skyblock", player:get_inventory_formspec())
+	end,	
+})

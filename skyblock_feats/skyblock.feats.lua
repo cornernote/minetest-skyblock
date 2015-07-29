@@ -52,7 +52,7 @@ skyblock.feats.update = function(player_name)
 	-- update formspecs
 	minetest.get_player_by_name(player_name):set_inventory_formspec(info.formspec)
 	local meta = minetest.env:get_meta(pos)
-	meta:set_string('formspec', info.formspec)
+	meta:set_string('formspec', info.formspec_quest)
 	meta:set_string('infotext', info.infotext)
 end
 

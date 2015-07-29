@@ -122,13 +122,16 @@ skyblock.levels.get_formspec = function(player_name)
 end
 
 -- get_inventory_formspec
-skyblock.levels.get_inventory_formspec = function(level,player_name)
+skyblock.levels.get_inventory_formspec = function(level,player_name,nav)
 	local formspec = 'size[15,10;]'
-		..'button[7,0;2,0.5;skyblock_bags;Bags]'
-		..'button_exit[9,0;2,0.5;skyblock_home_set;Set Home]'
-		..'button_exit[11,0;2,0.5;skyblock_home_go;Go Home]'
-		..'button_exit[13,0;2,0.5;close;Close]'
+	if nav then
+		formspec = formspec
+			..'button[7,0;2,0.5;bags;Bags]'
+			..'button[9,0;2,0.5;craft;Crafting]'
+	end
 		
+	formspec = formspec
+		..'button_exit[13,0;2,0.5;close;Close]'
 		..'label[0,0; --== LEVEL '..level..' for '..player_name..' ==--]'
 		..'label[0,2.7; --== Quests ==--]'
 		..'background[-0.1,-0.1;6.6,10.3;goals.png]'
@@ -149,6 +152,16 @@ skyblock.levels.get_inventory_formspec = function(level,player_name)
 	return formspec
 end
 
+-- render an item image button for the formspec
+local image_button_link = function(stack_string)
+	local stack = ItemStack(stack_string);
+	local new_node_name = stack_string;
+	if stack and stack:get_name() then
+		new_node_name = stack:get_name()
+	end
+	return tostring( stack_string )..';item_button_nochange_'..unified_inventory.mangle_for_formspec(new_node_name)..';';
+end
+
 -- get_feat_formspec
 skyblock.levels.get_feat_formspec = function(data,i,feat,required,text,hint)
 	local y = 2.9+(i*0.6)
@@ -156,9 +169,11 @@ skyblock.levels.get_feat_formspec = function(data,i,feat,required,text,hint)
 	if count > required then
 		count = required
 	end
-	local formspec = 'label[0.5,'..y..'; '..i..') '..text..' ('..count..'/'..required..')]'
+	local formspec = 'label[0.5,'..y..'; '..text..' ('..count..'/'..required..')]'
 	if hint then
-		formspec = formspec..'item_image_button[5.8,'..y..';0.6,0.6;'..skyblock.craft_guide.image_button_link(hint)..']'
+		--formspec = formspec..'item_image_button[5.8,'..y..';0.6,0.6;'..unified_inventory.mangle_for_formspec(hint)..']'
+		formspec = formspec..'item_image_button[5.8,'..y..';0.6,0.6;'..image_button_link(hint)..']'
+		--formspec = formspec..stack_image_button(item_pos, unified_inventory.formspec_y, 1.1, 1.1, "item_button_"..other_dir[dir].."_", ItemStack(item_name))
 	end
 	if count >= required then
 		formspec = formspec .. 'image[-0.2,'..(y-0.25)..';1,1;checkbox_checked.png]'

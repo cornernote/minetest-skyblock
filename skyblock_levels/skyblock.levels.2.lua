@@ -145,14 +145,17 @@ end
 skyblock.levels[level].get_info = function(player_name)
 	local info = { level=level, total=10, count=0, player_name=player_name, infotext='', formspec = '' };
 
-	info.formspec = skyblock.levels.get_inventory_formspec(level,info.player_name)
-		..'label[0,0.5; Hey '..player_name..', Come Up Here!]'
+	local text = 'label[0,0.5; Hey '..player_name..', Come Up Here!]'
 		..'label[0,1; Wow, look at that view... of... nothing...]'
 		..'label[0,1.5; You should get to work extending this island.]'
 		..'label[0,2; Perhaps you could build some structures too?]'
 
+	info.formspec = skyblock.levels.get_inventory_formspec(level,info.player_name,true)..text
+	info.formspec_quest = skyblock.levels.get_inventory_formspec(level,info.player_name)..text
+
 	for k,v in ipairs(feats) do
 		info.formspec = info.formspec..skyblock.levels.get_feat_formspec(info,k,v.feat,v.count,v.name,v.hint)
+		info.formspec_quest = info.formspec..skyblock.levels.get_feat_formspec(info,k,v.feat,v.count,v.name)
 	end
 
 	info.infotext = 'LEVEL '..info.level..' for '..info.player_name..': '..info.count..' of '..info.total
