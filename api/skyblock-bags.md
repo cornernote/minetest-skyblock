@@ -6,6 +6,11 @@ permalink: /api/skyblock-bags/
 ---
 
 
+## Source Code
+
+[skyblock_bags/skyblock.bags.lua](https://github.com/cornernote/minetest-skyblock/blob/master/skyblock_bags/skyblock.bags.lua)
+
+
 ## Methods
 
 ### `skyblock.bags.on_receive_fields()`
