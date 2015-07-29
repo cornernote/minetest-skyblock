@@ -66,7 +66,7 @@ skyblock.levels.check_inventory = function(player)
 				return false
 			end
 		end
-end
+	end
 	return true
 end
 

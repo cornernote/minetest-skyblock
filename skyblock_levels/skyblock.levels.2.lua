@@ -152,7 +152,7 @@ skyblock.levels[level].get_info = function(player_name)
 		..'label[0,2; Perhaps you could build some structures too?]'
 
 	for k,v in ipairs(feats) do
-		info.formspec = info.formspec..skyblock.levels.get_feat_formspec(info,k+1,v.feat,v.count,v.name,v.hint)
+		info.formspec = info.formspec..skyblock.levels.get_feat_formspec(info,k,v.feat,v.count,v.name,v.hint)
 	end
 
 	info.infotext = 'LEVEL '..info.level..' for '..info.player_name..': '..info.count..' of '..info.total
@@ -167,7 +167,7 @@ end
 
 -- track digging feats
 skyblock.levels[level].on_dignode = function(pos, oldnode, digger)
-	skyblock.levels.on_placenode(level, feats, pos, oldnode, digger)
+	skyblock.levels.on_dignode(level, feats, pos, oldnode, digger)
 end
 
 -- track placing feats
