@@ -126,6 +126,10 @@ end
 skyblock.levels[level].make_start_blocks = function(player_name)
 	local pos = skyblock.levels[level].get_pos(player_name)
 	skyblock.log('level['..level..'].make_start_blocks() for '..player_name)
+
+	-- pyramid
+	skyblock.worldedit.pyramid(pos, "y", -4, 'default:dirt')
+	minetest.env:add_node(pos, {name='skyblock:quest'})
 end
 
 -- get level information

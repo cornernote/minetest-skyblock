@@ -15,7 +15,7 @@ minetest.register_on_newplayer(function(player)
 	skyblock.levels.give_initial_items(player)
 
 	skyblock.spawn_player(player)
-	--skyblock.levels[1].make_start_blocks(player_name)
+	skyblock.levels[1].make_start_blocks(player_name)
 
 	-- move the player up high enough in order to avoid collusions with the ground
 	local pos = skyblock.get_spawn(player_name)
@@ -24,6 +24,13 @@ minetest.register_on_newplayer(function(player)
 		player:setpos({x=pos.x, y=pos.y+8, z=pos.z});
 	end
 end)
+
+-- override skyblock.bak_make_spawn_blocks
+local make_spawn_blocks = skyblock.make_spawn_blocks
+skyblock.make_spawn_blocks = function(spawn,player_name)
+	skyblock.levels[1].make_start_blocks(player_name)
+	make_spawn_blocks(spawn,player_name)
+end
 
 -- handle respawn player
 minetest.register_on_respawnplayer(function(player)
@@ -64,11 +71,11 @@ end)
 
 -- on_receive_fields
 skyblock.on_receive_fields = function(player, formname, fields)
-	skyblock.log(formname..dump(fields))
-	if fields.skyblock ~= nil or fields.main ~= nil then
+	--skyblock.log(formname..dump(fields))
+	--if fields.skyblock ~= nil or fields.main ~= nil then
 		--minetest.show_formspec(player:get_player_name(), "skyblock", skyblock.levels.get_formspec(player:get_player_name()))
-		return
-	end
+		--return
+	--end
 	if fields.craft then
 		unified_inventory.set_inventory_formspec(player, "craft")
 		--minetest.show_formspec(player:get_player_name(), "craft", unified_inventory.get_formspec(player, "craft"))
@@ -87,3 +94,4 @@ unified_inventory.register_button("skyblock", {
 		--minetest.show_formspec(player:get_player_name(), "skyblock", player:get_inventory_formspec())
 	end,	
 })
+

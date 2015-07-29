@@ -130,10 +130,8 @@ skyblock.levels[level].make_start_blocks = function(player_name)
 	local pos = skyblock.levels[level].get_pos(player_name)
 	if pos==nil then return end
 	
-	-- sphere
-	local radius = 3
-	local hollow = 1
-	skyblock.levels.make_sphere({x=pos.x,y=pos.y-radius,z=pos.z},radius,'default:dirt',hollow)
+	-- pyramid
+	skyblock.worldedit.pyramid(pos, "y", -8, 'default:dirt')
 
 	-- level 2
 	--minetest.env:add_node(pos, {name='skyblock:level_2'})

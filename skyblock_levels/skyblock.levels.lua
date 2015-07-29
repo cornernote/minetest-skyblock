@@ -184,34 +184,6 @@ skyblock.levels.get_feat_formspec = function(data,i,feat,required,text,hint)
 	return formspec
 end
 
-
---
--- Level Shapes
---
-
--- hollow sphere (based on sphere in multinode by mauvebic)
-skyblock.levels.make_sphere =  function(pos,radius,nodename,hollow)
-	pos.x = math.floor(pos.x+0.5)
-	pos.y = math.floor(pos.y+0.5)
-	pos.z = math.floor(pos.z+0.5)
-	for x=-radius,radius do
-	for y=-radius,radius do
-	for z=-radius,radius do
-		if hollow ~= nil then
-			if x*x+y*y+z*z >= (radius-hollow) * (radius-hollow) + (radius-hollow) and x*x+y*y+z*z <= radius * radius + radius then
-				minetest.env:add_node({x=pos.x+x,y=pos.y+y,z=pos.z+z},{name=nodename})
-			end
-		else
-			if x*x+y*y+z*z <= radius * radius + radius then
-				minetest.env:add_node({x=pos.x+x,y=pos.y+y,z=pos.z+z},{name=nodename})
-			end
-		end
-	end
-	end
-	end
-end
-
-
 --
 -- Feat Checks
 --
