@@ -53,7 +53,7 @@ minetest.after(5, function()
 					-- hit the bottom
 					if pos.y < skyblock.world_bottom then
 						local spawn = skyblock.get_spawn(player_name)
-						if minetest.env:get_node(spawn).name ~= "skyblock:quest" and skyblock.levels.check_inventory(player) then
+						if minetest.env:get_node(spawn).name ~= "skyblock:quest" or skyblock.levels.check_inventory(player) then
 							-- no spawn block and empty inventory, respawn them
 							skyblock.log("globalstep() "..player_name.." has fallen too far, but dont kill them... yet =)")
 							skyblock.make_spawn_blocks(spawn,player:get_player_name())
