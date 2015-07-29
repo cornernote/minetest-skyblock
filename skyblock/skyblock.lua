@@ -17,7 +17,7 @@ skyblock = {}
 --
 
 -- Debug mode
-skyblock.debug = true
+skyblock.debug = minetest.setting_getbool('skyblock.debug')
 
 -- How far apart to set players start positions
 skyblock.start_gap = minetest.setting_get('skyblock.start_gap') or 32
@@ -31,9 +31,6 @@ skyblock.world_width = minetest.setting_get('skyblock.world_width') or 100
 
 -- How far down (in nodes) before a player dies and is respawned
 skyblock.world_bottom = minetest.setting_get('skyblock.world_bottom') or -8
-
--- Nodes above the spawn node where players are spawned
-skyblock.spawn_height = minetest.setting_get('skyblock.spawn_height') or 8
 
 -- File path and prefix for data files
 skyblock.filename = minetest.get_worldpath()..'/'..(minetest.setting_get('skyblock.filename') or 'skyblock')
@@ -131,14 +128,14 @@ skyblock.spawn_player = function(player)
 	
 	-- already has a spawn, teleport and return true 
 	if minetest.env:get_node(spawn).name == 'skyblock:quest' then
-		player:setpos({x=spawn.x,y=spawn.y+skyblock.spawn_height,z=spawn.z})
+		player:setpos({x=spawn.x,y=spawn.y+8,z=spawn.z})
 		player:set_hp(20)
 		return true
 	end
 
 	-- add the start block and teleport the player
 	skyblock.make_spawn_blocks(spawn,player_name)
-	player:setpos({x=spawn.x,y=spawn.y+skyblock.spawn_height,z=spawn.z})
+	player:setpos({x=spawn.x,y=spawn.y+8,z=spawn.z})
 	player:set_hp(20)
 end
 

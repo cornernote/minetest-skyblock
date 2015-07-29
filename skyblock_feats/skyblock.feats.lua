@@ -83,17 +83,17 @@ skyblock.feats.add = function(level,player_name,feat)
 		skyblock.table.save(players_feat, filename)
 		return
 	end
-	local update = skyblock.levels[level].reward_feat(player_name,feat)
+	local rewarded = skyblock.levels[level].reward_feat(player_name,feat)
 	
 	-- update
-	if update then
-		skyblock.feats.update(player_name)
+	if rewarded then
 		--minetest.chat_send_player(player_name, 'You earned the feat "'..feat..'"')
 		minetest.chat_send_all(player_name..' completed the quest "'..feat..'" on level '..level)
 		minetest.log('action', player_name..' completed the quest "'..feat..'" on level '..level)
 	end
 	
 	skyblock.table.save(players_feat, filename)
+	skyblock.feats.update(player_name)
 end
 
 -- give reward

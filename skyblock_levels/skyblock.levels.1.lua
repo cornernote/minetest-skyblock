@@ -52,7 +52,7 @@ local feats = {
 		placenode = {'default:sapling'},
 	},
 	{
-		name = 'craft a Wooden Axe and dig 16 Tree',
+		name = 'craft an Axe and dig 16 Tree',
 		hint = 'default:axe_wood',
 		feat = 'dig_tree', 
 		count = 16, 

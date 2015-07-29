@@ -145,11 +145,15 @@ end
 -- get_feat_formspec
 skyblock.levels.get_feat_formspec = function(data,i,feat,required,text,hint)
 	local y = 2.9+(i*0.6)
-	local formspec = 'label[0.5,'..y..'; '..i..') '..text..']'
+	local count = skyblock.feats.get(data.level,data.player_name,feat)
+	if count > required then
+		count = required
+	end
+	local formspec = 'label[0.5,'..y..'; '..i..') '..text..' ('..count..'/'..required..')]'
 	if hint then
 		formspec = formspec..'item_image_button[5.8,'..y..';0.6,0.6;'..skyblock.craft_guide.image_button_link(hint)..']'
 	end
-	if skyblock.feats.get(data.level,data.player_name,feat) >= required then
+	if count >= required then
 		formspec = formspec .. 'image[-0.2,'..(y-0.25)..';1,1;checkbox_checked.png]'
 		data.count = data.count + 1
 	else
