@@ -16,10 +16,10 @@ level 1 feats and rewards:
 * place_dirt x10			default:leaves 6
 * place_sapling x1			default:tree
 * dig_tree x16				default:cobble 8
-* place_furnace x1			default:papyrus
+* place_furnace x1			default:axe_steel
 * place_cobble x50			default:stair_cobble 4
-* place_chest x1			default:desert_stone 50
-* place_sign x1				default:brick 50
+* place_chest x1			default:papyrus 5
+* place_sign x1				default:pick_steel
 * place_door x1				default:sand 2
 * place_glass x2			protector:protect
 
@@ -64,7 +64,7 @@ local feats = {
 		hint = 'default:furnace',
 		feat = 'place_furnace', 
 		count = 1, 
-		reward = 'default:papyrus',
+		reward = 'default:axe_steel',
 		placenode = {'default:furnace'},
 	},
 	{
@@ -80,7 +80,7 @@ local feats = {
 		hint = 'default:chest',
 		feat = 'place_chest',
 		count = 1, 
-		reward = 'default:desert_stone 50',
+		reward = 'default:papyrus 5',
 		placenode = {'default:chest'},
 	},
 	{
@@ -88,7 +88,7 @@ local feats = {
 		hint = 'default:sign_wall',
 		feat = 'place_sign',
 		count = 1,
-		reward = 'default:brick 50',
+		reward = 'default:pick_steel',
 		placenode = {'default:sign_wall'},
 	},
 	{

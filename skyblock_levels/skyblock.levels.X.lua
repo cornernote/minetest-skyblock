@@ -35,6 +35,8 @@ rewards:
 * default:water_source
 * default:lava_source
 
+* default:desert_stone 50
+* default:brick 50
 
 --]]	
 
