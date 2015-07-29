@@ -5,6 +5,12 @@ heading: Skyblock
 permalink: /api/skyblock/
 ---
 
+
+## Source Code
+
+[skyblock/skyblock.lua](https://github.com/cornernote/minetest-skyblock/blob/master/skyblock/skyblock.lua)
+
+
 ## Variables
 
 Variables can be set in the `minetest.conf` file.
