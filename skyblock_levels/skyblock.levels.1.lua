@@ -72,7 +72,7 @@ local feats = {
 		hint = 'default:cobble',
 		feat = 'place_cobble', 
 		count = 50,
-		reward = 'default:stair_cobble 4',
+		reward = 'stairs:stair_cobble 4',
 		placenode = {'default:cobble'},
 	},
 	{
