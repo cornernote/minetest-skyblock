@@ -163,9 +163,9 @@ local image_button_link = function(stack_string)
 end
 
 -- get_feat_formspec
-skyblock.levels.get_feat_formspec = function(data,i,feat,required,text,hint)
+skyblock.levels.get_feat_formspec = function(info,i,feat,required,text,hint)
 	local y = 2.9+(i*0.6)
-	local count = skyblock.feats.get(data.level,data.player_name,feat)
+	local count = skyblock.feats.get(info.level,info.player_name,feat)
 	if count > required then
 		count = required
 	end
@@ -175,9 +175,9 @@ skyblock.levels.get_feat_formspec = function(data,i,feat,required,text,hint)
 		formspec = formspec..'item_image_button[5.8,'..y..';0.6,0.6;'..image_button_link(hint)..']'
 		--formspec = formspec..stack_image_button(item_pos, unified_inventory.formspec_y, 1.1, 1.1, "item_button_"..other_dir[dir].."_", ItemStack(item_name))
 	end
-	if count >= required then
+	if count == required then
 		formspec = formspec .. 'image[-0.2,'..(y-0.25)..';1,1;checkbox_checked.png]'
-		data.count = data.count + 1
+		info.count = info.count + 1
 	else
 		formspec = formspec .. 'image[-0.2,'..(y-0.25)..';1,1;checkbox_unchecked.png]'
 	end

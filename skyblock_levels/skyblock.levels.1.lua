@@ -146,6 +146,9 @@ skyblock.levels[level].get_info = function(player_name)
 
 	for k,v in ipairs(feats) do
 		info.formspec = info.formspec..skyblock.levels.get_feat_formspec(info,k,v.feat,v.count,v.name,v.hint)
+	end
+	info.count = 0 -- only count once
+	for k,v in ipairs(feats) do
 		info.formspec_quest = info.formspec_quest..skyblock.levels.get_feat_formspec(info,k,v.feat,v.count,v.name)
 	end
 
@@ -156,7 +159,7 @@ end
 
 -- reward_feat
 skyblock.levels[level].reward_feat = function(player_name,feat)
-	skyblock.levels.reward_feat(level, feats, player_name, feat)
+	return skyblock.levels.reward_feat(level, feats, player_name, feat)
 end
 
 -- track digging feats
