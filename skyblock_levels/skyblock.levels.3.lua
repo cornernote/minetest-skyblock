@@ -25,7 +25,7 @@ level 3 feats and rewards:
 
 ]]--
 
-local level = 2
+local level = 3
 local feats = {
 	{
 		name = 'grow and collect 20 Papyrus',
