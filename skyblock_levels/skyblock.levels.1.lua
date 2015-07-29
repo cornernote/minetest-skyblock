@@ -73,7 +73,7 @@ local feats = {
 		feat = 'place_cobble', 
 		count = 50,
 		reward = 'default:stair_cobble 4',
-		placenode = {'default:furnace'},
+		placenode = {'default:cobble'},
 	},
 	{
 		name = 'craft and place a Chest',
