@@ -53,12 +53,6 @@ skyblock.world_bottom = -8
 
 Nodes above the spawn node where players are spawned
 
-### `skyblock.spawn_height`
-
-```
-skyblock.spawn_height = 4
-```
-
 ### `skyblock.filename`
 
 File path and prefix for data files
