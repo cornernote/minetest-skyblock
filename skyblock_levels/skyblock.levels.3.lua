@@ -93,19 +93,19 @@ local feats = {
 	},
 	{
 		name = 'dig 8 Mese Crystals',
-		hint = 'default:dig_stone_with_mese',
+		hint = 'default:stone_with_mese',
 		feat = 'dig_stone_with_mese', 
 		count = 4, 
 		reward = 'default:pine_needles 6',
-		dignode = {'default:dig_stone_with_mese'},
+		dignode = {'default:stone_with_mese'},
 	},
 	{
-		name = 'place 8 Steel Blocks',
-		hint = 'default:steelblock',
-		feat = 'place_steelblock', 
-		count = 8, 
+		name = 'place Infinite Water (diagonal)',
+		hint = 'bucket:bucket_empty',
+		feat = 'place_water_infinite', 
+		count = 1, 
 		reward = 'default:gold_lump',
-		placenode = {'default:steelblock'},
+		--bucket_water = {},
 	},
 }
 
@@ -166,7 +166,16 @@ end
 
 -- reward_feat
 skyblock.levels[level].reward_feat = function(player_name,feat)
-	return skyblock.levels.reward_feat(level, feats, player_name, feat)
+	local rewarded = skyblock.levels.reward_feat(level, feats, player_name, feat)
+	
+	-- add water after dig_stone_with_iron
+	if rewarded and feat == 'dig_stone_with_mese' then
+		local pos = skyblock.get_spawn(player_name)
+		minetest.env:add_node({x=pos.x,y=pos.y+1,z=pos.z}, {name='default:water_source'})
+		return true
+	end
+
+	return rewarded
 end
 
 -- track digging feats
@@ -192,6 +201,17 @@ end
 -- track bucket water feats
 skyblock.levels[level].bucket_water_on_use = function(player_name, pointed_thing) 
 	skyblock.levels.bucket_water_on_use(level, feats, player_name, pointed_thing)
+	
+	-- place_water_infinite
+	local pos = pointed_thing.under
+	if minetest.env:get_node({x=pos.x-1,y=pos.y,z=pos.z-1}).name=='default:water_source' 
+	or minetest.env:get_node({x=pos.x-1,y=pos.y,z=pos.z+1}).name=='default:water_source'
+	or minetest.env:get_node({x=pos.x+1,y=pos.y,z=pos.z-1}).name=='default:water_source'
+	or minetest.env:get_node({x=pos.x+1,y=pos.y,z=pos.z+1}).name=='default:water_source' then
+		skyblock.feats.add(level,player_name,'place_water_infinite')
+		return
+	end
+	
 end
 
 -- track bucket lava feats
