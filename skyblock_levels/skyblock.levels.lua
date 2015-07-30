@@ -251,7 +251,7 @@ skyblock.levels.bucket_on_use = function(level,feats,player_name,pointed_thing)
 		if v.bucket then
 			for _,vv in ipairs(v.bucket) do
 				if node.name == vv then
-					skyblock.feats.add(level,player_name,feat.name)
+					skyblock.feats.add(level,player_name,v.feat)
 				end
 			end
 		end
@@ -265,7 +265,7 @@ skyblock.levels.bucket_water_on_use = function(level,feats,player_name,pointed_t
 		if v.bucket_water then
 			for _,vv in ipairs(v.bucket_water) do
 				if node.name == vv then
-					skyblock.feats.add(level,player_name,feat.name)
+					skyblock.feats.add(level,player_name,v.feat)
 				end
 			end
 		end
@@ -279,7 +279,7 @@ skyblock.levels.bucket_lava_on_use = function(level,feats,player_name,pointed_th
 		if v.bucket_lava then
 			for _,vv in ipairs(v.bucket_lava) do
 				if node.name == vv then
-					skyblock.feats.add(level,player_name,feat.name)
+					skyblock.feats.add(level,player_name,v.feat)
 				end
 			end
 		end
