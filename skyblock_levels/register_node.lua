@@ -86,7 +86,7 @@ entity.after_place_node = function(pos)
 	-- check if we have space to make a tree
 	for dy=1,4 do
 		pos.y = pos.y+dy
-		if minetest.env:get_node(pos).name ~= 'air' then
+		if minetest.env:get_node(pos).name ~= 'air' and minetest.env:get_node(pos).name ~= 'default:leaves' then
 			return
 		end
 		pos.y = pos.y-dy
