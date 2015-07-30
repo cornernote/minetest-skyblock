@@ -121,7 +121,7 @@ skyblock.levels[level].get_pos = function(player_name)
 	skyblock.log('level['..level..'].get_pos() for '..player_name)
 	local pos = skyblock.get_spawn(player_name)
 	if pos==nil then return pos end
-	return {x=pos.x,y=pos.y+15,z=pos.z}
+	return {x=pos.x,y=pos.y+20,z=pos.z}
 end
 
 -- make start blocks

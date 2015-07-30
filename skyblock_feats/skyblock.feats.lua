@@ -12,7 +12,7 @@ License: GPLv3
 skyblock.feats = {}
 
 -- file to save players feat
-local filename = skyblock.filename..'.home'
+local filename = skyblock.filename..'.feats'
 
 -- local variable to save players feats
 local players_feat = skyblock.table.load(filename)
