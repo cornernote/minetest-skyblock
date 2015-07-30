@@ -20,8 +20,8 @@ level 2 feats and rewards:
 * place_cobble x100			default:coal_lump
 * dig_stone_with_coal x2	default:sandstonebrick 50
 * place_torch x8			default:iron_lump
-* dig_stone_with_iron x4	default:brick
-* place_chest_locked x1		default:copper_lump
+* dig_stone_with_iron x4	default:pine_needles 6
+* collect_water x1			default:copper_lump
 
 ]]--
 

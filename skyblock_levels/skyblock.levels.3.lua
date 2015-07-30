@@ -20,8 +20,8 @@ level 3 feats and rewards:
 * place_sand x50			wool:green 50
 * dig_stone_with_copper x4	wool:orange 50
 * place_bar	x8				default:mese_crystal
-* dig_stone_with_mese x4	default:pine_needles 6
-* place_steelblock	x8		default:gold_lump
+* dig_stone_with_mese x4	default:gold_lump
+* place_water_infinite x8	default:diamond
 
 ]]--
 
@@ -96,7 +96,7 @@ local feats = {
 		hint = 'default:stone_with_mese',
 		feat = 'dig_stone_with_mese', 
 		count = 4, 
-		reward = 'default:pine_needles 6',
+		reward = 'default:gold_lump',
 		dignode = {'default:stone_with_mese'},
 	},
 	{
@@ -104,7 +104,7 @@ local feats = {
 		hint = 'bucket:bucket_empty',
 		feat = 'place_water_infinite', 
 		count = 1, 
-		reward = 'default:gold_lump',
+		reward = 'default:diamond',
 		--bucket_water = {},
 	},
 }
