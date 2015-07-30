@@ -100,12 +100,12 @@ local feats = {
 		dignode = {'default:stone_with_iron'},
 	},
 	{
-		name = 'craft and place a Locked Chest',
-		hint = 'default:chest_locked',
-		feat = 'place_chest_locked', 
+		name = 'collect the Water Source',
+		hint = 'bucket:bucket_empty',
+		feat = 'collect_water',
 		count = 1, 
 		reward = 'default:copper_lump',
-		placenode = {'default:chest_locked'},
+		bucket = {'default:water_source'},
 	},
 }
 
@@ -166,7 +166,16 @@ end
 
 -- reward_feat
 skyblock.levels[level].reward_feat = function(player_name,feat)
-	return skyblock.levels.reward_feat(level, feats, player_name, feat)
+	local rewarded = skyblock.levels.reward_feat(level, feats, player_name, feat)
+	
+	-- add water after dig_stone_with_iron
+	if rewarded and feat == 'dig_stone_with_iron' then
+		local pos = skyblock.get_spawn(player_name)
+		minetest.env:add_node({x=pos.x,y=pos.y+1,z=pos.z}, {name='default:water_source'})
+		return true
+	end
+
+	return rewarded
 end
 
 -- track digging feats
