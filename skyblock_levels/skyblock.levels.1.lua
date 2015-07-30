@@ -136,7 +136,8 @@ end
 skyblock.levels[level].get_info = function(player_name)
 	local info = { level=level, total=10, count=0, player_name=player_name, infotext='', formspec = '', formspec_quest = '' };
 
-	local text = 'label[0,0.5;Welcome '..player_name..', of the Sky People]'
+	local text = 'label[0,2.7; --== Quests ==--]'
+		..'label[0,0.5;Welcome '..player_name..', of the Sky People]'
 		..'label[0,1.0;We can no longer live on the surface.]'
 		..'label[0,1.5;Can you help us rebuild in the sky?]'
 		..'label[0,2.0;Complete the quests to receive great rewards!]'

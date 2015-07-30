@@ -31,10 +31,7 @@ feats:
 * place_glass
 
 rewards:
-* default:diamond
-* default:water_source
 * default:lava_source
-
 * default:desert_stone 50
 * default:brick 50
 

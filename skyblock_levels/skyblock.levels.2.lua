@@ -121,7 +121,7 @@ skyblock.levels[level].get_pos = function(player_name)
 	skyblock.log('level['..level..'].get_pos() for '..player_name)
 	local pos = skyblock.get_spawn(player_name)
 	if pos==nil then return pos end
-	return {x=pos.x,y=pos.y+20,z=pos.z}
+	return {x=pos.x,y=pos.y+18,z=pos.z}
 end
 
 -- make start blocks
@@ -143,7 +143,8 @@ end
 skyblock.levels[level].get_info = function(player_name)
 	local info = { level=level, total=10, count=0, player_name=player_name, infotext='', formspec = '' };
 
-	local text = 'label[0,0.5; Hey '..player_name..', Come Up Here!]'
+	local text = 'label[0,2.7; --== Quests ==--]'
+		..'label[0,0.5; Hey '..player_name..', Come Up Here!]'
 		..'label[0,1; Wow, look at that view... of... nothing...]'
 		..'label[0,1.5; You should get to work extending this island.]'
 		..'label[0,2; Perhaps you could build some structures too?]'

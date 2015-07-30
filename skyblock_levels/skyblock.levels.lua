@@ -132,9 +132,8 @@ skyblock.levels.get_inventory_formspec = function(level,player_name,nav)
 		
 	formspec = formspec
 		..'button_exit[13,0;2,0.5;close;Close]'
-		..'label[0,0; --== LEVEL '..level..' for '..player_name..' ==--]'
-		..'label[0,2.7; --== Quests ==--]'
 		..'background[-0.1,-0.1;6.6,10.3;goals.png]'
+		..'label[0,0; --== LEVEL '..level..' for '..player_name..' ==--]'
 
 		..'label[7,1.5; Rewards]'
 		..'background[6.9,1.4;2.2,2.8;rewards.png]'
