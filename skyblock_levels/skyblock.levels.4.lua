@@ -35,9 +35,9 @@ skyblock.levels[level].make_start_blocks = function(player_name)
 	-- pyramid
 	--skyblock.worldedit.pyramid(pos, "y", -12, 'default:dirt')
 	-- sphere
-	local radius = 10
-	local hollow = 1
-	skyblock.worldedit.sphere({x=pos.x,y=pos.y-radius,z=pos.z},radius,'default:dirt',hollow)
+	--local radius = 10
+	--local hollow = 1
+	--skyblock.worldedit.sphere({x=pos.x,y=pos.y-radius,z=pos.z},radius,'default:dirt',hollow)
 
 	-- level 4
 	--minetest.env:add_node(pos, {name='skyblock:level_4'})

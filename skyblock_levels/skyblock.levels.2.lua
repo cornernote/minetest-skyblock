@@ -131,7 +131,7 @@ skyblock.levels[level].make_start_blocks = function(player_name)
 	if pos==nil then return end
 	
 	-- pyramid
-	skyblock.worldedit.pyramid(pos, "y", -7, 'default:dirt')
+	--skyblock.worldedit.pyramid(pos, "y", -7, 'default:dirt')
 
 	-- level 2
 	--minetest.env:add_node(pos, {name='skyblock:level_2'})
