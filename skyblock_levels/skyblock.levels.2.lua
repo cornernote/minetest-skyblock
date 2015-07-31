@@ -80,7 +80,7 @@ local feats = {
 		hint = 'default:stone_with_coal',
 		feat = 'dig_stone_with_coal', 
 		count = 2, 
-		reward = 'default:pine_needles 6',
+		reward = 'default:sandstonebrick 50',
 		dignode = {'default:stone_with_coal'},
 	},
 	{
