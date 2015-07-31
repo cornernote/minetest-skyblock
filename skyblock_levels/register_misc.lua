@@ -40,9 +40,6 @@ minetest.register_on_respawnplayer(function(player)
 	-- empty inventory
 	skyblock.levels.empty_inventory(player)
 	
-	-- reset feats
-	skyblock.feats.reset(player_name)
-	
 	-- give inventory
 	skyblock.levels.give_initial_items(player)
 
@@ -55,6 +52,9 @@ minetest.register_on_respawnplayer(function(player)
 	-- rebuild spawn blocks
 	skyblock.make_spawn_blocks(spawn,player_name)
 	--skyblock.levels[1].make_start_blocks(player_name)
+	
+	-- reset feats
+	skyblock.feats.reset(player_name)
 	
 	return true
 end)
