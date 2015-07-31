@@ -192,7 +192,7 @@ entity.on_use = function(itemstack, user, pointed_thing)
 		return
 	end
 	-- Check if pointing to a liquid source
-	n = minetest.env:get_node(pointed_thing.under)
+	local n = minetest.env:get_node(pointed_thing.under)
 	liquiddef = bucket.liquids[n.name]
 	if liquiddef ~= nil and liquiddef.source == n.name and liquiddef.itemname ~= nil then
 		
@@ -214,7 +214,7 @@ entity.on_use = function(itemstack, user, pointed_thing)
 		return
 	end
 	-- Check if pointing to a liquid
-	n = minetest.env:get_node(pointed_thing.under)
+	local n = minetest.env:get_node(pointed_thing.under)
 	if bucket.liquids[n.name] == nil then
 		-- Not a liquid
 
@@ -251,7 +251,7 @@ entity.on_use = function(itemstack, user, pointed_thing)
 		return
 	end
 	-- Check if pointing to a liquid
-	n = minetest.env:get_node(pointed_thing.under)
+	local n = minetest.env:get_node(pointed_thing.under)
 	if bucket.liquids[n.name] == nil then
 		-- Not a liquid
 
