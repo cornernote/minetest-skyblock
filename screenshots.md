@@ -8,7 +8,7 @@ permalink: /screenshots/
 <div class="row thumbnails">
     {% for screenshot in site.data.screenshots %}
     <div class="col-md-3">
-        <h3>{{screenshot.name}}</h3>
+        <h5>{{screenshot.name}}</h5>
         <div class="thumbnail">
             <a href="{{screenshot.url}}" class="fancybox" rel="screenshots"><img src="{{screenshot.url}}" alt="{{screenshot.name}}"></a>
         </div>
