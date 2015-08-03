@@ -5,10 +5,16 @@ heading: Servers
 permalink: /servers/
 ---
 
-## Skyblock Australia
+## Skyblock AU SA
 
 ```
 27.33.254.153:30000
+```
+
+## Skyblock US NJ
+
+```
+stormchaser3000.noip.me:30001
 ```
 
 ## Add a Server
