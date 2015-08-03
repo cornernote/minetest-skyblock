@@ -8,7 +8,7 @@ permalink: /servers/
 ## Skyblock AU SA
 
 ```
-27.33.254.153:30000
+cornernote.noip.me:30000
 ```
 
 ## Skyblock US NJ
