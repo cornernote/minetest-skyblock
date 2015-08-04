@@ -15,27 +15,28 @@ skyblock.feats = {}
 local filename = skyblock.filename..'.feats'
 
 -- local variable to save players feats
-local players_feat = skyblock.table.load(filename)
+--local players_feat = skyblock.table.load(filename)
+local players_feat = {}
 if players_feat == nil then
 	players_feat = {}
 end
 
 -- get players current level
-skyblock.feats.get_level = function(player_name)
+function skyblock.feats.get_level(player_name)
 	skyblock.log('skyblock.feats.get_level('..player_name..')')
 	return skyblock.feats.get(0, player_name, 'level')
 end
 
 -- reset
-skyblock.feats.reset = function(player_name)
+function skyblock.feats.reset(player_name)
 	skyblock.log('skyblock.feats.reset('..player_name..')')
 	players_feat[player_name] = {}
-	skyblock.table.save(players_feat, filename)
+	skyblock.table.save(players_feat[player_name], filename..'.'..player_name)
 	skyblock.feats.update(player_name)
 end
 
 -- update feats
-skyblock.feats.update = function(player_name)
+function skyblock.feats.update(player_name)
 	skyblock.log('skyblock.feats.update('..player_name..')')
 	local level = skyblock.feats.get_level(player_name)
 	local pos = skyblock.get_spawn(player_name)
@@ -57,7 +58,7 @@ skyblock.feats.update = function(player_name)
 end
 
 -- get feat
-skyblock.feats.get = function(level,player_name,feat)
+function skyblock.feats.get(level,player_name,feat)
 	--skyblock.log('skyblock.feats.get('..level..','..player_name..','..feat..')')
 	if players_feat[player_name] == nil then
 		players_feat[player_name] = {}
@@ -75,12 +76,12 @@ skyblock.feats.get = function(level,player_name,feat)
 end
 
 -- add feat
-skyblock.feats.add = function(level,player_name,feat)
+function skyblock.feats.add(level,player_name,feat)
 	skyblock.log('skyblock.feats.add('..level..','..player_name..','..feat..')')
 	local player_feat = skyblock.feats.get(level,player_name,feat)
 	players_feat[player_name][level][feat] = player_feat + 1
 	if level==0 or feat=='level' then
-		skyblock.table.save(players_feat, filename)
+		skyblock.table.save(players_feat[player_name], filename..'.'..player_name)
 		return
 	end
 	local rewarded = skyblock.levels[level].reward_feat(player_name,feat)
@@ -92,12 +93,12 @@ skyblock.feats.add = function(level,player_name,feat)
 		minetest.log('action', player_name..' completed the quest "'..feat..'" on level '..level)
 	end
 	
-	skyblock.table.save(players_feat, filename)
+	skyblock.table.save(players_feat[player_name], filename..'.'..player_name)
 	skyblock.feats.update(player_name)
 end
 
 -- give reward
-skyblock.feats.give_reward = function(level,player_name,item_name)
+function skyblock.feats.give_reward(level,player_name,item_name)
 	skyblock.log('skyblock.feats.give_reward('..level..','..player_name..','..item_name..')')
 	local player = minetest.get_player_by_name(player_name)
 	player:get_inventory():add_item('rewards', item_name)
@@ -105,7 +106,7 @@ skyblock.feats.give_reward = function(level,player_name,item_name)
 end
 
 -- track eating
-skyblock.feats.on_item_eat = function(hp_change, replace_with_item, itemstack, user, pointed_thing)
+function skyblock.feats.on_item_eat(hp_change, replace_with_item, itemstack, user, pointed_thing)
 	if not user then return end
 	local player_name = user:get_player_name()
 	local level = skyblock.feats.get_level(player_name)
@@ -116,7 +117,7 @@ end
 minetest.register_on_item_eat(skyblock.feats.on_item_eat)
 
 -- track node digging
-skyblock.feats.on_dignode = function(pos, oldnode, digger)
+function skyblock.feats.on_dignode(pos, oldnode, digger)
 	if not digger then return end -- needed to prevent server crash when player leaves
 	local player_name = digger:get_player_name()
 	local level = skyblock.feats.get_level(player_name)
@@ -125,7 +126,7 @@ end
 minetest.register_on_dignode(skyblock.feats.on_dignode)
 
 -- track node placing
-skyblock.feats.on_placenode = function(pos, newnode, placer, oldnode)
+function skyblock.feats.on_placenode(pos, newnode, placer, oldnode)
 	if not placer then return end -- needed to prevent server crash when player leaves
 	local player_name = placer:get_player_name()
 	local level = skyblock.feats.get_level(player_name)
@@ -134,11 +135,11 @@ end
 minetest.register_on_placenode(skyblock.feats.on_placenode)
 
 -- track on_place of items with their own on_place
-local on_place = function(v, is_craftitem)
+local function on_place(v, is_craftitem)
 	local entity = minetest.registered_items[ v ];
 	if entity and entity.on_place then
 		local old_on_place = entity.on_place;
-		entity.on_place = function(itemstack, placer, pointed_thing)
+		function entity.on_place(itemstack, placer, pointed_thing)
 			local old_count = itemstack:get_count();
 			local res = old_on_place( itemstack, placer, pointed_thing );
 			if( itemstack and itemstack:get_count() == old_count-1 ) then
@@ -161,7 +162,7 @@ for _,v in ipairs({"default:cactus", "farming:seed_wheat", "farming:seed_cotton"
 end
 
 -- track bucket feats
-skyblock.feats.bucket_on_use = function(itemstack, user, pointed_thing)
+function skyblock.feats.bucket_on_use(itemstack, user, pointed_thing)
 	if not user then return end -- needed to prevent server crash when player leaves
 	local player_name = user:get_player_name()
 	local level = skyblock.feats.get_level(player_name)
@@ -169,7 +170,7 @@ skyblock.feats.bucket_on_use = function(itemstack, user, pointed_thing)
 end
 
 -- track bucket_water feats
-skyblock.feats.bucket_water_on_use = function(itemstack, user, pointed_thing)
+function skyblock.feats.bucket_water_on_use(itemstack, user, pointed_thing)
 	if not user then return end -- needed to prevent server crash when player leaves
 	local player_name = user:get_player_name()
 	local level = skyblock.feats.get_level(player_name)
@@ -177,7 +178,7 @@ skyblock.feats.bucket_water_on_use = function(itemstack, user, pointed_thing)
 end
 
 -- track bucket_lava feats
-skyblock.feats.bucket_lava_on_use = function(itemstack, user, pointed_thing)
+function skyblock.feats.bucket_lava_on_use(itemstack, user, pointed_thing)
 	if not user then return end -- needed to prevent server crash when player leaves
 	local player_name = user:get_player_name()
 	local level = skyblock.feats.get_level(player_name)
@@ -185,8 +186,7 @@ skyblock.feats.bucket_lava_on_use = function(itemstack, user, pointed_thing)
 end
 
 -- bucket_empty
-local entity = skyblock.registered('craftitem','bucket:bucket_empty')
-entity.on_use = function(itemstack, user, pointed_thing)
+local function bucket_on_use(itemstack, user, pointed_thing)
 	-- Must be pointing to node
 	if pointed_thing.type ~= 'node' then
 		return
@@ -204,11 +204,13 @@ entity.on_use = function(itemstack, user, pointed_thing)
 		return {name=liquiddef.itemname}
 	end
 end
+local entity = skyblock.registered('craftitem','bucket:bucket_empty')
+entity.on_place = bucket_on_use
+entity.on_use = bucket_on_use
 minetest.register_craftitem(':bucket:bucket_empty', entity)
 
 -- bucket_water
-local entity = skyblock.registered('craftitem','bucket:bucket_water')
-entity.on_use = function(itemstack, user, pointed_thing)
+local function bucket_water_on_use(itemstack, user, pointed_thing)
 	-- Must be pointing to node
 	if pointed_thing.type ~= 'node' then
 		return
@@ -241,11 +243,13 @@ entity.on_use = function(itemstack, user, pointed_thing)
 
 	return {name='bucket:bucket_empty'}
 end
+local entity = skyblock.registered('craftitem','bucket:bucket_water')
+entity.on_place = bucket_water_on_use
+entity.on_use = bucket_water_on_use
 minetest.register_craftitem(':bucket:bucket_water', entity)
 
 -- bucket_lava
-local entity = skyblock.registered('craftitem','bucket:bucket_lava')
-entity.on_use = function(itemstack, user, pointed_thing)
+local function bucket_lava_on_use(itemstack, user, pointed_thing)
 	-- Must be pointing to node
 	if pointed_thing.type ~= 'node' then
 		return
@@ -280,4 +284,7 @@ entity.on_use = function(itemstack, user, pointed_thing)
 
 	return {name='bucket:bucket_empty'}
 end
+local entity = skyblock.registered('craftitem','bucket:bucket_lava')
+entity.on_place = bucket_lava_on_use
+entity.on_use = bucket_lava_on_use
 minetest.register_craftitem(':bucket:bucket_lava', entity)

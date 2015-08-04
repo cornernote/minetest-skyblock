@@ -21,7 +21,6 @@ local modpath = minetest.get_modpath('skyblock')
 
 -- load apis
 dofile(modpath..'/skyblock.lua')
-dofile(modpath..'/skyblock.table.lua')
 
 -- register entities
 dofile(modpath..'/register_node.lua')

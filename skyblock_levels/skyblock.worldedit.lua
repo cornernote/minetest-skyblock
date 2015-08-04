@@ -6,7 +6,7 @@ skyblock.worldedit = {}
 
 
 -- hollow sphere (based on sphere in multinode by mauvebic)
-skyblock.worldedit.sphere =  function(pos,radius,nodename,hollow)
+function skyblock.worldedit.sphere (pos,radius,nodename,hollow)
 	pos.x = math.floor(pos.x+0.5)
 	pos.y = math.floor(pos.y+0.5)
 	pos.z = math.floor(pos.z+0.5)

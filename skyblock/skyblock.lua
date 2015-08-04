@@ -46,7 +46,7 @@ local spawnpos = {}
 --
 
 -- log
-skyblock.log = function(message)
+function skyblock.log(message)
 	if not skyblock.debug then
 		return
 	end
@@ -54,13 +54,13 @@ skyblock.log = function(message)
 end
 
 -- dump_pos
-skyblock.dump_pos = function(pos)
+function skyblock.dump_pos(pos)
 	if pos==nil then return 'nil' end
 	return '{x='..pos.x..',y='..pos.x..',z='..pos.z..'}'
 end
 
 -- registered
-skyblock.registered = function(case,name)
+function skyblock.registered(case,name)
 	local params = {}
 	local list
 	if case == 'item' then list = minetest.registered_items end
@@ -77,7 +77,7 @@ skyblock.registered = function(case,name)
 end
 
 -- get players spawn position
-skyblock.get_spawn = function(player_name)
+function skyblock.get_spawn(player_name)
 	local spawn = spawnpos[player_name]
 	if spawn then
 		skyblock.log('get_spawn() for '..player_name..' is '..skyblock.dump_pos(spawn))
@@ -87,7 +87,7 @@ skyblock.get_spawn = function(player_name)
 end
 
 -- set players spawn position
-skyblock.set_spawn = function(player_name, pos)
+function skyblock.set_spawn(player_name, pos)
 	skyblock.log('set_spawn() for '..player_name..' at '..skyblock.dump_pos(pos))
 	spawnpos[player_name] = pos
 	-- save the spawn data from the table to the file
@@ -101,7 +101,7 @@ skyblock.set_spawn = function(player_name, pos)
 end
 
 -- get next spawn position
-skyblock.get_next_spawn = function()
+function skyblock.get_next_spawn()
 	skyblock.log('get_next_spawn()')
 	last_start_id = last_start_id+1
 	local output = io.open(skyblock.filename..'.last_start_id', 'w')
@@ -115,7 +115,7 @@ skyblock.get_next_spawn = function()
 end
 
 -- handle player spawn setup
-skyblock.spawn_player = function(player)
+function skyblock.spawn_player(player)
 	local player_name = player:get_player_name()
 	skyblock.log('spawn_player() '..player_name)
 	
@@ -140,7 +140,7 @@ skyblock.spawn_player = function(player)
 end
 
 -- build spawn block
-skyblock.make_spawn_blocks = function(pos, player_name)
+function skyblock.make_spawn_blocks(pos, player_name)
 	for x=-1,1 do
 		for z=-1,1 do
 			minetest.env:add_node({x=pos.x+x,y=pos.y,z=pos.z+z}, {name='default:dirt'})
@@ -192,7 +192,7 @@ end
 --
 
 -- load the spawn data from disk
-local load_spawn = function()
+local function load_spawn()
     local input = io.open(skyblock.filename..'.spawn', 'r')
     if input then
         while true do
@@ -213,7 +213,7 @@ end
 load_spawn() -- run it now
 
 -- load the start positions from disk
-local load_start_positions = function()
+local function load_start_positions()
 	skyblock.log('BEGIN load_start_positions()')
     local input = io.open(skyblock.filename..'.start_positions', 'r')
 
@@ -248,7 +248,7 @@ end
 load_start_positions() -- run it now
 
 -- load the last start position from disk
-local load_last_start_id = function()
+local function load_last_start_id()
 	local input = io.open(skyblock.filename..'.last_start_id', 'r')
 	
 	-- create last_start_id file if needed
