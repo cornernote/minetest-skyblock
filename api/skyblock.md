@@ -57,6 +57,14 @@ How far down (in nodes) before a player dies and is respawned
 skyblock.world_bottom = -8
 ```
 
+### `skyblock.world_bottom_node`
+
+Node to use for the world bottom
+
+```
+skyblock.world_bottom_node = 'default:cloud'
+```
+
 Nodes above the spawn node where players are spawned
 
 ### `skyblock.filename`
