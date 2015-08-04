@@ -62,7 +62,7 @@ skyblock.world_bottom = -8
 Node to use for the world bottom
 
 ```
-skyblock.world_bottom_node = 'default:cloud'
+skyblock.world_bottom_node = 'air'
 ```
 
 Nodes above the spawn node where players are spawned
