@@ -143,7 +143,7 @@ minetest.register_on_generated(function(minp, maxp, seed)
 	-- add starting blocks
 	local start_pos_list = skyblock.get_start_positions_in_mapchunk(minp, maxp)
 	for _,pos in ipairs(start_pos_list) do
-		if skyblock.levels[1].make_start_blocks then
+		if skyblock.levels[1].make_start_blocks_on_generated then
 			skyblock.levels[1].make_start_blocks_on_generated(pos, data, area)
 		else
 			skyblock.make_spawn_blocks_on_generated(pos, data, area)
