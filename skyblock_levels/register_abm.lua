@@ -87,23 +87,6 @@ minetest.register_abm({
 	end
 })
 
--- dirt_with_grass_footsteps turns to dirt_with_grass
-minetest.register_abm({
-	nodenames = {'default:dirt_with_grass_footsteps'},
-	interval = 5,
-	chance = 10,
-	action = function(pos)
-		--skyblock.log('consider grow dirt or dirt_with_grass at '..skyblock.dump_pos(pos)..' on '..minetest.env:get_node(pos).name)
-   		if minetest.env:get_node({x = pos.x, y = pos.y + 1, z = pos.z}).name == 'air' then
-			--skyblock.log('grow dirt_with_grass at '..skyblock.dump_pos(pos)..' on '..minetest.env:get_node(pos).name)
-			minetest.env:add_node(pos, {name='default:dirt_with_grass'})
-		else
-			--skyblock.log('grow dirt at '..skyblock.dump_pos(pos)..' on '..minetest.env:get_node(pos).name)
-			minetest.env:add_node(pos, {name='default:dirt'})
-   		end
-	end
-})
-
 -- remove bones
 minetest.register_abm({
 	nodenames = {'bones:bones'},
