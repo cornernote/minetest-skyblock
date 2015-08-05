@@ -196,7 +196,7 @@ end
 
 -- track bucket water feats
 skyblock.levels[level].bucket_water_on_use = function(player_name, pointed_thing) 
-	skyblock.levels.bucket_water_on_use(level, feats, player_name, pointed_thing)
+	skyblock.levels.bucket_water_on_use(level, player_name, pointed_thing)
 	
 	-- place_water_infinite
 	local pos = pointed_thing.under
