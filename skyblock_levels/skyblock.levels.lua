@@ -55,13 +55,14 @@ end
 function skyblock.levels.get_inventory_formspec(level,player_name,nav)
 	local formspec = 'size[15,10;]'
 	if nav then
-		formspec = formspec
-			..'button[7,0;2,0.5;bags;Bags]'
-			..'button[9,0;2,0.5;craft;Crafting]'
+		formspec = formspec..skyblock.get_unified_inventory_buttons()
+			--..'button[7,0;2,0.5;bags;Bags]'
+			--..'button[9,0;2,0.5;craft;Crafting]'
+	else
+		formspec = formspec..'button_exit[13,0;2,0.5;close;Close]'
 	end
 		
 	formspec = formspec
-		..'button_exit[13,0;2,0.5;close;Close]'
 		..'background[-0.1,-0.1;6.6,10.3;goals.png]'
 		..'label[0,0; --== LEVEL '..level..' for '..player_name..' ==--]'
 
@@ -109,6 +110,32 @@ function skyblock.levels.get_feat_formspec(info,i,feat,required,text,hint)
 		info.count = info.count + 1
 	else
 		formspec = formspec .. 'image[-0.2,'..(y-0.25)..';1,1;checkbox_unchecked.png]'
+	end
+	return formspec
+end
+
+-- get_unified_inventory_buttons
+function skyblock.get_unified_inventory_buttons()
+	local formspec = ''
+	local button_row = 0
+	local button_col = 0
+	local main_button_x = 7
+	local main_button_y = 0
+	for i, def in pairs(unified_inventory.buttons) do
+		if unified_inventory.lite_mode and i > 4 then
+			button_row = 1
+			button_col = 1
+		end
+		local tooltip = def.tooltip or ''
+		if def.type == 'image' then
+			formspec = formspec..'image_button['
+					..( main_button_x + 0.65 * (i - 1) - button_col * 0.65 * 4)
+					..','..(main_button_y + button_row * 0.7)..';0.8,0.8;'
+					..minetest.formspec_escape(def.image)..';'
+					..minetest.formspec_escape(def.name)..';]'
+					..'tooltip['..minetest.formspec_escape(def.name)
+					..';'..tooltip..']'
+		end
 	end
 	return formspec
 end
