@@ -67,12 +67,20 @@ skyblock.world_bottom_node = 'air'
 
 Nodes above the spawn node where players are spawned
 
-### `skyblock.filename`
+### `skyblock.dig_new_spawn`
 
-File path and prefix for data files
+Should digging the spawn result in a new spawn pos?
 
 ```
-skyblock.filename = 'skyblock'
+skyblock.dig_new_spawn = false
+```
+
+### `skyblock.lose_bags_on_death`
+
+Should player lose bags on death?
+
+```
+skyblock.lose_bags_on_death = false
 ```
 
 ## Methods
