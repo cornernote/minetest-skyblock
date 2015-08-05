@@ -165,23 +165,21 @@ minetest.register_on_placenode(skyblock.feats.on_placenode)
 
 -- track on_place of items with their own on_place
 local function on_place(v, is_craftitem)
-	local entity = minetest.registered_items[ v ];
+	local entity = minetest.registered_items[v]
 	if entity and entity.on_place then
 		local old_on_place = entity.on_place;
 		function entity.on_place(itemstack, placer, pointed_thing)
-			local old_count = itemstack:get_count();
-			local res = old_on_place( itemstack, placer, pointed_thing )
+			local old_count = itemstack:get_count()
+			local res = old_on_place(itemstack, placer, pointed_thing)
 			if itemstack and itemstack:get_count() == old_count-1 then
-				if skyblock.levels[level].on_placenode then
-					skyblock.feats.on_placenode(pointed_thing, {name=v,param2=0}, placer, nil)
-				end
+				skyblock.feats.on_placenode(pointed_thing, {name=v,param2=0}, placer, nil)
 			end
 			return res;
 		end
 		if( is_craftitem == 1 ) then
-			minetest.register_craftitem(':'..v, entity);
+			minetest.register_craftitem(':'..v, entity)
 		else
-			minetest.register_node(':'..v, entity);
+			minetest.register_node(':'..v, entity)
 		end
 	end
 end
