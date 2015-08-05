@@ -10,42 +10,7 @@ permalink: /api/skyblock-levels/
 [skyblock_levels/skyblock.levels.lua](https://github.com/cornernote/minetest-skyblock/blob/master/skyblock_levels/skyblock.levels.lua)
 
 
-## Variables
-
-### `skyblock.levels.dig_new_spawn`
-
-Should digging the spawn result in a new spawn pos?
-
-```
-skyblock.levels.dig_new_spawn = false
-```
-
-### `skyblock.levels.lose_bags_on_death`
-
-Should player lose bags on death?
-
-```
-skyblock.levels.lose_bags_on_death = false
-```
-
-
 ## Methods
-
-### `skyblock.levels.give_initial_items()`
-
-Give the player initial items.
-
-```
-skyblock.levels.give_initial_items(player)
-```
-
-### `skyblock.levels.check_inventory()`
-
-Checks if the players inventory matches the items given in `give_initial_items()`.  Used to prevent death when they join the server.
-
-```
-skyblock.levels.check_inventory(player)
-```
 
 ### `skyblock.levels.empty_inventory()`
 
