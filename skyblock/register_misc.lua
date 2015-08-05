@@ -124,11 +124,10 @@ minetest.register_on_generated(function(minp, maxp, seed)
 		end
 	end
 
-	--[[
 	-- add world_bottom_node
 	if skyblock.world_bottom_node ~= 'air' then
 		local id_bottom = minetest.get_content_id(skyblock.world_bottom_node)
-		local y_start = math.max(skyblock.world_bottom,minp.y)
+		local y_start = math.max(cloud_y+1,minp.y)
 		local y_end   = math.min(skyblock.start_height,maxp.y)
 		for x=minp.x,maxp.x do
 			for z=minp.z,maxp.z do
@@ -138,7 +137,6 @@ minetest.register_on_generated(function(minp, maxp, seed)
 			end
 		end
 	end
-	]]--
 	
 	-- add starting blocks
 	local start_pos_list = skyblock.get_start_positions_in_mapchunk(minp, maxp)

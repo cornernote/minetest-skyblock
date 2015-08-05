@@ -33,7 +33,7 @@ skyblock.world_width = minetest.setting_get('skyblock.world_width') or 100
 skyblock.world_bottom = minetest.setting_get('skyblock.world_bottom') or -8
 
 -- Node to use for the world bottom
-skyblock.world_bottom_node = minetest.setting_get('skyblock.world_bottom') or 'air'
+skyblock.world_bottom_node = minetest.setting_get('skyblock.world_bottom') or 'air' -- 'air' || 'default:water_source' || 'default:lava_source'
 
 -- File path and prefix for data files
 skyblock.filename = minetest.get_worldpath()..'/'..(minetest.setting_get('skyblock.filename') or 'skyblock')
