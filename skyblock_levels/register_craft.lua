@@ -9,12 +9,6 @@ License: GPLv3
 ]]--
 
 
--- tool repair buff (20% bonus)
-minetest.register_craft({
-	type = 'toolrepair',
-	additional_wear = -0.20,
-})
-
 -- desert_stone
 minetest.register_craft({
 	output = 'default:desert_stone',
