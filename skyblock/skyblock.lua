@@ -27,7 +27,7 @@ skyblock.start_height = minetest.setting_get('skyblock.start_height') or 4
 
 -- How many players will be in 1 row
 -- skyblock.world_width * skyblock.world_width = total players
-skyblock.world_width = minetest.setting_get('skyblock.world_width') or 100
+skyblock.world_width = minetest.setting_get('skyblock.world_width') or 1000
 
 -- How far down (in nodes) before a player dies and is respawned
 skyblock.world_bottom = minetest.setting_get('skyblock.world_bottom') or -8
