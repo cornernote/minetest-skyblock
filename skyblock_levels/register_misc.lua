@@ -13,9 +13,10 @@ License: GPLv3
 minetest.register_on_newplayer(function(player)
 	-- add rewards to player inventory
 	player:get_inventory():set_size('rewards', 4)
-
 	-- update feats
 	skyblock.feats.update(player:get_player_name())
+	-- init level1
+	skyblock.levels[1].init(player_name)
 end)
 
 -- join player
@@ -26,10 +27,13 @@ end)
 
 -- die player
 minetest.register_on_dieplayer(function(player)
+	local player_name = player:get_player_name()
 	-- empty inventory
 	skyblock.levels.empty_inventory(player)
 	-- reset feats
-	skyblock.feats.reset(player:get_player_name())
+	skyblock.feats.reset(player_name)
+	-- init level1
+	skyblock.levels[1].init(player_name)
 end)
 
 -- unified inventory skyblock button

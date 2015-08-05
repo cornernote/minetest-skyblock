@@ -42,7 +42,7 @@ skyblock.dig_new_spawn = minetest.setting_getbool("skyblock.dig_new_spawn")
 skyblock.lose_bags_on_death = minetest.setting_getbool("skyblock.lose_bags_on_death")
 
 -- Which schem file to use
-skyblock.schem = minetest.get_modpath(minetest.get_current_modname())..'/schems/'..(minetest.setting_get('skyblock.schem') or 'island.schem')
+skyblock.schem = minetest.setting_get('skyblock.schem') or 'island.schem'
 
 -- Schem offset X
 skyblock.schem_offset_x = minetest.setting_get('skyblock.schem_offset_x') or -3
@@ -135,10 +135,32 @@ function skyblock.spawn_player(player)
 	player:set_hp(20)
 end
 
+-- load schem
+local schempath = minetest.get_modpath(minetest.get_current_modname())..'/schems'
+function skyblock.load_schem(origin,filename)
+	local file, err = io.open(schempath..'/'..filename, 'rb')
+	local value = file:read('*a')
+	file:close()
+		
+	local nodes = minetest.deserialize(value)
+	if not nodes then return nil end
+
+	for _,entry in ipairs(nodes) do
+		local pos = {
+			x=entry.x + origin.x + skyblock.schem_offset_x,
+			y=entry.y + origin.y + skyblock.schem_offset_y,
+			z=entry.z + origin.z + skyblock.schem_offset_z,
+		}
+		if minetest.env:get_node(pos).name == 'air' then
+			minetest.add_node(pos, {name=entry.name})
+		end
+	end
+end
+
 -- make spawn blocks
 function skyblock.make_spawn_blocks(pos, player_name)
 	skyblock.log('skyblock.make_spawn_blocks('..skyblock.dump_pos(pos)..', '..player_name..') ')
-	load_schem(pos)
+	skyblock.load_schem(pos,skyblock.schem)
 	minetest.env:add_node(pos, {name='skyblock:quest'})
 	--minetest.registered_nodes['skyblock:quest'].on_construct(pos)
 end
@@ -178,27 +200,6 @@ end
 --
 -- LOCAL FUNCTIONS
 --
-
--- load schem
-local function load_schem(origin)
-	local file, err = io.open(skyblock.schem, 'rb')
-	local value = file:read('*a')
-	file:close()
-		
-	local nodes = minetest.deserialize(value)
-	if not nodes then return nil end
-
-	for _,entry in ipairs(nodes) do
-		local pos = {
-			x=entry.x + origin.x + skyblock.schem_offset_x,
-			y=entry.y + origin.y + skyblock.schem_offset_y,
-			z=entry.z + origin.z + skyblock.schem_offset_z,
-		}
-		if minetest.env:get_node(pos).name == 'air' then
-			minetest.add_node(pos, {name=entry.name})
-		end
-	end
-end
 
 -- spiral matrix - used to generate starting positions
 -- http://rosettacode.org/wiki/Spiral_matrix#Lua

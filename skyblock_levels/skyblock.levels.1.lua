@@ -116,6 +116,18 @@ local feats = {
 
 skyblock.levels[level] = {}
 
+-- init level
+skyblock.levels[level].init = function(player_name)
+	-- revoke perms
+	local privs = core.get_player_privs(player_name)
+	if privs['fly'] or privs['fast'] then
+		privs['fly'] = nil
+		privs['fast'] = nil
+		core.set_player_privs(player_name, privs)
+		minetest.chat_send_player(player_name, 'You have lost FLY and FAST')
+	end
+end
+
 -- get level information
 skyblock.levels[level].get_info = function(player_name)
 	local info = { level=level, total=10, count=0, player_name=player_name, infotext='', formspec = '', formspec_quest = '' };

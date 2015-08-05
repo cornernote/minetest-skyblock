@@ -16,6 +16,15 @@ License: GPLv3
 local level = 4
 skyblock.levels[level] = {}
 
+-- init level
+skyblock.levels[level].init = function(player_name)
+	local privs = core.get_player_privs(player_name)
+	privs['fly'] = true
+	privs['fast'] = true
+	core.set_player_privs(player_name, privs)
+	minetest.chat_send_player(player_name, 'You can now use FLY and FAST !')
+end
+
 -- get level information
 skyblock.levels[level].get_info = function(player_name)
 	local info = { level=level, total=1, count=0, player_name=player_name, infotext='', formspec = '' };

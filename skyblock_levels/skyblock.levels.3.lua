@@ -116,6 +116,10 @@ local feats = {
 
 skyblock.levels[level] = {}
 
+-- init level
+skyblock.levels[level].init = function(player_name)
+end
+
 -- get level information
 skyblock.levels[level].get_info = function(player_name)
 	local info = { level=level, total=10, count=0, player_name=player_name, infotext='', formspec = '' };

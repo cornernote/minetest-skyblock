@@ -47,6 +47,7 @@ function skyblock.feats.update(player_name)
 		minetest.log('action', player_name..' completed level '..level)
 		
 		skyblock.feats.add(0,info.player_name,'level')
+		skyblock.levels[level+1].init(info.player_name)
 		info = skyblock.levels[level+1].get_info(info.player_name)
 	end
 	
@@ -323,7 +324,7 @@ end
 -- save data
 function skyblock.feats.save(data,player_name)
 	mkdir(filepath)
-	local file,err = io.open(filepath..'/'..player_name, 'w')
+	local file,err = io.open(filepath..'/'..player_name, 'wb')
 	if err then return nil end
 	file:write(minetest.serialize(data))
 	file:close()
@@ -331,7 +332,7 @@ end
 
 -- load data
 function skyblock.feats.load(player_name)
-	local file,err = io.open(filepath..'/'..player_name, 'r')
+	local file,err = io.open(filepath..'/'..player_name, 'rb')
 	if err then return nil end
 	local data = file:read('*a')
 	file:close()
