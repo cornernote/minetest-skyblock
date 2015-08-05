@@ -35,10 +35,15 @@ skyblock.world_bottom = minetest.setting_get('skyblock.world_bottom') or -8
 -- Node to use for the world bottom
 skyblock.world_bottom_node = minetest.setting_get('skyblock.world_bottom') or 'air' -- 'air' || 'default:water_source' || 'default:lava_source'
 
--- File path and prefix for data files
-skyblock.filename = minetest.get_worldpath()..'/'..(minetest.setting_get('skyblock.filename') or 'skyblock')
+-- Should digging the spawn result in a new spawn pos?
+skyblock.dig_new_spawn = minetest.setting_getbool("skyblock.dig_new_spawn")
+
+-- Should player lose bags on death?
+skyblock.lose_bags_on_death = minetest.setting_getbool("skyblock.lose_bags_on_death")
+
 
 -- local variables
+local filename = minetest.get_worldpath()..'/skyblock'
 local last_start_id = 0
 local start_positions = {}
 local spawnpos = {}
@@ -77,7 +82,7 @@ function skyblock.set_spawn(player_name, pos)
 	skyblock.log('set_spawn() for '..player_name..' at '..skyblock.dump_pos(pos))
 	spawnpos[player_name] = pos
 	-- save the spawn data from the table to the file
-	local output = io.open(skyblock.filename..'.spawn', 'w')
+	local output = io.open(filename..'.spawn', 'w')
 	for i, v in pairs(spawnpos) do
 		if v ~= nil then
 			output:write(v.x..' '..v.y..' '..v.z..' '..i..'\n')
@@ -90,7 +95,7 @@ end
 function skyblock.get_next_spawn()
 	skyblock.log('get_next_spawn()')
 	last_start_id = last_start_id+1
-	local output = io.open(skyblock.filename..'.last_start_id', 'w')
+	local output = io.open(filename..'.last_start_id', 'w')
 	output:write(last_start_id)
 	io.close(output)
 	local spawn = start_positions[last_start_id]
@@ -207,7 +212,7 @@ end
 
 -- load the spawn data from disk
 local function load_spawn()
-    local input = io.open(skyblock.filename..'.spawn', 'r')
+    local input = io.open(filename..'.spawn', 'r')
     if input then
         while true do
             local x = input:read('*n')
@@ -229,19 +234,19 @@ load_spawn() -- run it now
 -- load the start positions from disk
 local function load_start_positions()
 	skyblock.log('BEGIN load_start_positions()')
-    local input = io.open(skyblock.filename..'.start_positions', 'r')
+    local input = io.open(filename..'.start_positions', 'r')
 
 	-- create start_positions file if needed
     if not input then
 		skyblock.log('generate start positions')
-		local output = io.open(skyblock.filename..'.start_positions', 'w')
+		local output = io.open(filename..'.start_positions', 'w')
 		local pos
 		for i,v in ripairs(spiralt(skyblock.world_width)) do -- get positions using spiral
 			pos = {x=v.x*skyblock.start_gap, y=skyblock.start_height, z=v.z*skyblock.start_gap}
 			output:write(pos.x..' '..pos.y..' '..pos.z..'\n')
 		end
 		io.close(output)
-		input = io.open(skyblock.filename..'.start_positions', 'r')
+		input = io.open(filename..'.start_positions', 'r')
 	end
 	
 	-- read start positions
@@ -263,14 +268,14 @@ load_start_positions() -- run it now
 
 -- load the last start position from disk
 local function load_last_start_id()
-	local input = io.open(skyblock.filename..'.last_start_id', 'r')
+	local input = io.open(filename..'.last_start_id', 'r')
 	
 	-- create last_start_id file if needed
     if not input then
-		local output = io.open(skyblock.filename..'.last_start_id', 'w')
+		local output = io.open(filename..'.last_start_id', 'w')
 		output:write(last_start_id)
 		io.close(output)
-		input = io.open(skyblock.filename..'.last_start_id', 'r')
+		input = io.open(filename..'.last_start_id', 'r')
 	end
 	
 	-- read last start id

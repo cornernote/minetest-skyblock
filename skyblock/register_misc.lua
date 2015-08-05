@@ -13,9 +13,34 @@ minetest.register_on_mapgen_init(function(mgparams)
 	minetest.set_mapgen_params({mgname='singlenode', water_level=-32000})
 end)
 
--- spawn player
+-- new player
+minetest.register_on_newplayer(function(player)
+	local player_name = player:get_player_name()
+	local spawn = skyblock.get_spawn(player_name)
+	if spawn then
+		skyblock.spawn_player(player)
+		skyblock.make_spawn_blocks(spawn,player_name)
+		player:setpos({x=spawn.x, y=spawn.y+8, z=spawn.z});
+	end
+end)
+
+-- respawn player
 minetest.register_on_respawnplayer(function(player)
+	local player_name = player:get_player_name()
+	local spawn = skyblock.get_spawn(player_name)
+	
+	-- unset old spawn position
+	if skyblock.dig_new_spawn then
+		skyblock.set_spawn(player_name, nil)
+		skyblock.set_spawn(player_name..'_DEAD', spawn)
+	end
+
+	-- rebuild spawn blocks
+	skyblock.make_spawn_blocks(spawn,player_name)
+
+	-- spawn player
 	skyblock.spawn_player(player)
+	
 	return true
 end)
 
@@ -67,7 +92,6 @@ minetest.after(5, function()
 	end)
 
 end)
-
 
 -- register map generation
 minetest.register_on_generated(function(minp, maxp, seed)

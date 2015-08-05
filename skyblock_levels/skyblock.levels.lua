@@ -11,12 +11,6 @@ License: GPLv3
 
 skyblock.levels = {}
 
--- Should digging the spawn result in a new spawn pos?
-skyblock.levels.dig_new_spawn = minetest.setting_getbool("skyblock.levels.dig_new_spawn")
-
--- Should player lose bags on death?
-skyblock.levels.lose_bags_on_death = minetest.setting_getbool("skyblock.levels.lose_bags_on_death")
-
 --
 -- Functions
 --
