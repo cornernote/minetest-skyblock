@@ -40,8 +40,8 @@ end)
 -- unified inventory skyblock button
 unified_inventory.register_button('skyblock', {
 	type = 'image',
-	image = 'skyblock_quest.png',
-	tooltip = 'Skyblock Missions',
+	image = 'ui_skyblock_icon.png',
+	tooltip = 'Skyblock Quests',
 	action = function(player)
 		skyblock.feats.update(player:get_player_name())
 	end,	
