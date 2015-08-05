@@ -68,10 +68,10 @@ minetest.after(5, function()
 				end
 				
 				-- walking on dirt_with_grass, change to dirt_with_grass_footsteps
-				local np = {x=pos.x,y=pos.y-1,z=pos.z}
-				if (minetest.env:get_node(np).name == 'default:dirt_with_grass') then
-					minetest.env:add_node(np, {name='default:dirt_with_grass_footsteps'})
-				end
+				--local np = {x=pos.x,y=pos.y-1,z=pos.z}
+				--if (minetest.env:get_node(np).name == 'default:dirt_with_grass') then
+				--	minetest.env:add_node(np, {name='default:dirt_with_grass_footsteps'})
+				--end
 				
 			end
 			
