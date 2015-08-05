@@ -132,11 +132,3 @@ build spawn block
 ```
 skyblock.make_spawn_blocks(pos, player_name)
 ```
-
-### `skyblock.registered()`
-
-gets a registered node
-
-```
-skyblock.registered(case,name)
-```
