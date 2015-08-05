@@ -11,10 +11,11 @@ License: GPLv3
 
 -- new player
 minetest.register_on_newplayer(function(player)
+	local player_name = player:get_player_name()
 	-- add rewards to player inventory
 	player:get_inventory():set_size('rewards', 4)
 	-- update feats
-	skyblock.feats.update(player:get_player_name())
+	skyblock.feats.update(player_name)
 	-- init level1
 	skyblock.levels[1].init(player_name)
 end)
