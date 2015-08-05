@@ -46,33 +46,15 @@ minetest.after(5, function()
 			-- player is spawned
 			else
 				local pos = player:getpos()
-
 				-- only check once per throttle time
 				if spawn_timer > spawn_throttle then
-
 					-- hit the bottom
 					if pos.y < skyblock.world_bottom then
 						local spawn = skyblock.get_spawn(player_name)
-						--if minetest.env:get_node(spawn).name ~= "skyblock:quest" or skyblock.levels.check_inventory(player) then
-							-- no spawn block and empty inventory, respawn them
-						--	skyblock.log("globalstep() "..player_name.." has fallen too far, but dont kill them... yet =)")
-						--	skyblock.make_spawn_blocks(spawn,player:get_player_name())
-						--	skyblock.spawn_player(player)
-						--else
-							-- kill them
-							skyblock.log('globalstep() '..player_name..' has fallen too far at '..skyblock.dump_pos(pos)..'... kill them now')
-							player:set_hp(0)
-						--end
-						
+						skyblock.log('globalstep() '..player_name..' has fallen too far at '..skyblock.dump_pos(pos)..'... kill them now')
+						player:set_hp(0)
 					end
 				end
-				
-				-- walking on dirt_with_grass, change to dirt_with_grass_footsteps
-				--local np = {x=pos.x,y=pos.y-1,z=pos.z}
-				--if (minetest.env:get_node(np).name == 'default:dirt_with_grass') then
-				--	minetest.env:add_node(np, {name='default:dirt_with_grass_footsteps'})
-				--end
-				
 			end
 			
 		end

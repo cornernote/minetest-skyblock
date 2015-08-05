@@ -12,7 +12,6 @@ License: GPLv3
 -- new player
 minetest.register_on_newplayer(function(player)
 	local player_name = player:get_player_name()
-	skyblock.levels.give_initial_items(player)
 
 	skyblock.spawn_player(player)
 	skyblock.levels[1].make_start_blocks(player_name)
@@ -40,9 +39,6 @@ minetest.register_on_respawnplayer(function(player)
 	-- empty inventory
 	skyblock.levels.empty_inventory(player)
 	
-	-- give inventory
-	skyblock.levels.give_initial_items(player)
-
 	-- unset old spawn position
 	if skyblock.levels.dig_new_spawn then
 		skyblock.set_spawn(player_name, nil)
