@@ -132,6 +132,10 @@ skyblock.levels[level].make_start_blocks = function(player_name)
 	minetest.env:add_node(pos, {name='skyblock:quest'})
 end
 
+-- make start blocks on generated
+--skyblock.levels[level].make_start_blocks_on_generated = function(pos, data, area)
+--end
+
 -- get level information
 skyblock.levels[level].get_info = function(player_name)
 	local info = { level=level, total=10, count=0, player_name=player_name, infotext='', formspec = '', formspec_quest = '' };
@@ -144,7 +148,7 @@ skyblock.levels[level].get_info = function(player_name)
 	
 	info.formspec = skyblock.levels.get_inventory_formspec(level,info.player_name,true)..text
 	info.formspec_quest = skyblock.levels.get_inventory_formspec(level,info.player_name)..text
-
+	
 	for k,v in ipairs(feats) do
 		info.formspec = info.formspec..skyblock.levels.get_feat_formspec(info,k,v.feat,v.count,v.name,v.hint)
 	end

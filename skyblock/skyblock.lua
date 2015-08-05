@@ -32,6 +32,9 @@ skyblock.world_width = minetest.setting_get('skyblock.world_width') or 100
 -- How far down (in nodes) before a player dies and is respawned
 skyblock.world_bottom = minetest.setting_get('skyblock.world_bottom') or -8
 
+-- Node to use for the world bottom
+skyblock.world_bottom_node = minetest.setting_get('skyblock.world_bottom') or 'air'
+
 -- File path and prefix for data files
 skyblock.filename = minetest.get_worldpath()..'/'..(minetest.setting_get('skyblock.filename') or 'skyblock')
 
@@ -149,6 +152,34 @@ function skyblock.make_spawn_blocks(pos, player_name)
 		end
 	end
 	minetest.env:add_node(pos, {name='skyblock:quest'})
+	--minetest.registered_nodes['skyblock:quest'].on_construct(pos)
+end
+
+-- make start blocks on generated
+function skyblock.make_spawn_blocks_on_generated(pos, data, area)
+	local id_dirt = minetest.get_content_id('default:dirt')
+	for x=-1,1 do
+		for z=-1,1 do
+			data[area:index(pos.x+x,pos.y,pos.z+z)] = id_dirt
+			data[area:index( pos.x+x,pos.y-1,pos.z+z)] = id_dirt
+			data[area:index( pos.x+x,pos.y-2,pos.z+z)] = id_dirt
+		end
+	end
+	data[area:index(pos.x,pos.y,pos.z)] = minetest.get_content_id('skyblock:quest')
+	--minetest.registered_nodes['skyblock:quest'].on_construct(pos)
+end
+
+-- get start positions in mapchunk
+skyblock.get_start_positions_in_mapchunk = function(minp, maxp)
+	local list = {};
+	for i,v in ipairs(start_positions) do
+		if     v.x>=minp.x and v.x<=maxp.x
+		   and v.y>=minp.y and v.y<=maxp.y
+		   and v.z>=minp.z and v.z<=maxp.z then
+			list[#list+1] = {x=v.x, y=v.y, z=v.z}
+		end
+	end
+	return list
 end
 
 

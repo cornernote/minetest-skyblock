@@ -113,15 +113,3 @@ minetest.register_abm({
 		minetest.env:remove_node(pos)
 	end,
 })
-
--- remove low flowing
-minetest.register_abm({
-	nodenames = {'default:lava_flowing','default:water_flowing','default:stone'},
-	interval = 5,
-	chance = 1,
-	action = function(pos, node)
-		if pos.y < skyblock.world_bottom then
-			minetest.env:remove_node(pos)
-		end
-	end,
-})
