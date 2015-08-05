@@ -26,7 +26,15 @@ level 1 feats and rewards:
 ]]--
 
 local level = 1
-local feats = {
+
+--
+-- PUBLIC FUNCTIONS
+--
+
+skyblock.levels[level] = {}
+
+-- feats
+skyblock.levels[level].feats = {
 	{
 		name = 'dig 10 Dirt',
 		hint = nil,
@@ -109,13 +117,6 @@ local feats = {
 	},
 }
 
-
---
--- PUBLIC FUNCTIONS
---
-
-skyblock.levels[level] = {}
-
 -- init level
 skyblock.levels[level].init = function(player_name)
 	-- revoke perms
@@ -130,7 +131,15 @@ end
 
 -- get level information
 skyblock.levels[level].get_info = function(player_name)
-	local info = { level=level, total=10, count=0, player_name=player_name, infotext='', formspec = '', formspec_quest = '' };
+	local info = { 
+		level=level, 
+		total=10, 
+		count=0, 
+		player_name=player_name, 
+		infotext='', 
+		formspec = '', 
+		formspec_quest = '',
+	}
 
 	local text = 'label[0,2.7; --== Quests ==--]'
 		..'label[0,0.5;Welcome '..player_name..', of the Sky People]'
@@ -141,12 +150,12 @@ skyblock.levels[level].get_info = function(player_name)
 	info.formspec = skyblock.levels.get_inventory_formspec(level,info.player_name,true)..text
 	info.formspec_quest = skyblock.levels.get_inventory_formspec(level,info.player_name)..text
 	
-	for k,v in ipairs(feats) do
+	for k,v in ipairs(skyblock.levels[level].feats) do
 		info.formspec = info.formspec..skyblock.levels.get_feat_formspec(info,k,v.feat,v.count,v.name,v.hint)
-	end
-	info.count = 0 -- only count once
-	for k,v in ipairs(feats) do
 		info.formspec_quest = info.formspec_quest..skyblock.levels.get_feat_formspec(info,k,v.feat,v.count,v.name)
+	end
+	if info.count>0 then
+		info.count = info.count/2 -- only count once
 	end
 
 	info.infotext = 'LEVEL '..info.level..' for '..info.player_name..': '..info.count..' of '..info.total
@@ -156,40 +165,40 @@ end
 
 -- reward_feat
 skyblock.levels[level].reward_feat = function(player_name,feat)
-	return skyblock.levels.reward_feat(level, feats, player_name, feat)
+	return skyblock.levels.reward_feat(level, player_name, feat)
 end
 
 -- track digging feats
 skyblock.levels[level].on_dignode = function(pos, oldnode, digger)
-	skyblock.levels.on_dignode(level, feats, pos, oldnode, digger)
+	skyblock.levels.on_dignode(level, pos, oldnode, digger)
 end
 
 -- track placing feats
 skyblock.levels[level].on_placenode = function(pos, newnode, placer, oldnode)
-	skyblock.levels.on_placenode(level, feats, pos, newnode, placer, oldnode)
+	skyblock.levels.on_placenode(level, pos, newnode, placer, oldnode)
 end
 
 -- track eating feats
 skyblock.levels[level].on_item_eat = function(player_name, itemstack)
-	skyblock.levels.on_item_eat(level, feats, player_name, itemstack)
+	skyblock.levels.on_item_eat(level, player_name, itemstack)
 end
 
 -- track crafting feats
 skyblock.levels[level].on_craft = function(player_name, itemstack)
-	skyblock.levels.on_craft(level, feats, player_name, itemstack)
+	skyblock.levels.on_craft(level, player_name, itemstack)
 end
 
 -- track bucket feats
 skyblock.levels[level].bucket_on_use = function(player_name, pointed_thing)
-	skyblock.levels.bucket_on_use(level, feats, player_name, pointed_thing)
+	skyblock.levels.bucket_on_use(level, player_name, pointed_thing)
 end
 
 -- track bucket water feats
 skyblock.levels[level].bucket_water_on_use = function(player_name, pointed_thing) 
-	skyblock.levels.bucket_water_on_use(level, feats, player_name, pointed_thing)
+	skyblock.levels.bucket_water_on_use(level, player_name, pointed_thing)
 end
 
 -- track bucket lava feats
 skyblock.levels[level].bucket_lava_on_use = function(player_name, pointed_thing)
-	skyblock.levels.bucket_lava_on_use(level, feats, player_name, pointed_thing)
+	skyblock.levels.bucket_lava_on_use(level, player_name, pointed_thing)
 end

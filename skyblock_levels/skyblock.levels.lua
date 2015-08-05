@@ -118,9 +118,9 @@ end
 --
 
 -- reward_feat
-function skyblock.levels.reward_feat(level,feats,player_name,feat)
+function skyblock.levels.reward_feat(level,player_name,feat)
 	local count = skyblock.feats.get(level,player_name,feat)
-	for _,v in ipairs(feats) do
+	for _,v in ipairs(skyblock.levels[level].feats) do
 		if v.feat == feat and v.count == count then
 			skyblock.feats.give_reward(level,player_name,v.reward)
 			return true
@@ -129,9 +129,9 @@ function skyblock.levels.reward_feat(level,feats,player_name,feat)
 end
 
 -- track digging feats
-function skyblock.levels.on_dignode(level,feats,pos,oldnode,digger)
+function skyblock.levels.on_dignode(level,pos,oldnode,digger)
 	local player_name = digger:get_player_name()
-	for _,v in ipairs(feats) do
+	for _,v in ipairs(skyblock.levels[level].feats) do
 		if v.dignode then
 			for _,vv in ipairs(v.dignode) do
 				if oldnode.name == vv then
@@ -144,9 +144,9 @@ function skyblock.levels.on_dignode(level,feats,pos,oldnode,digger)
 end
 
 -- track placing feats
-function skyblock.levels.on_placenode(level,feats,pos,newnode,placer,oldnode)
+function skyblock.levels.on_placenode(level,pos,newnode,placer,oldnode)
 	local player_name = placer:get_player_name()
-	for _,v in ipairs(feats) do
+	for _,v in ipairs(skyblock.levels[level].feats) do
 		if v.placenode then
 			for _,vv in ipairs(v.placenode) do
 				if newnode.name == vv then
@@ -159,9 +159,9 @@ function skyblock.levels.on_placenode(level,feats,pos,newnode,placer,oldnode)
 end
 
 -- track eating feats
-function skyblock.levels.on_item_eat(level,feats,player_name,itemstack)
+function skyblock.levels.on_item_eat(level,player_name,itemstack)
 	local item_name = itemstack:get_name()
-	for _,v in ipairs(feats) do
+	for _,v in ipairs(skyblock.levels[level].feats) do
 		if v.item_eat then
 			for _,vv in ipairs(v.item_eat) do
 				if item_name==vv then
@@ -174,9 +174,9 @@ function skyblock.levels.on_item_eat(level,feats,player_name,itemstack)
 end
 
 -- track crafting feats
-function skyblock.levels.on_craft(level,feats,player_name,itemstack)
+function skyblock.levels.on_craft(level,player_name,itemstack)
 	local item_name = itemstack:get_name()
-	for _,v in ipairs(feats) do
+	for _,v in ipairs(skyblock.levels[level].feats) do
 		if v.craft then
 			for _,vv in ipairs(v.craft) do
 				if item_name==vv then
@@ -189,9 +189,9 @@ function skyblock.levels.on_craft(level,feats,player_name,itemstack)
 end
 
 -- track bucket feats
-function skyblock.levels.bucket_on_use(level,feats,player_name,pointed_thing)
+function skyblock.levels.bucket_on_use(level,player_name,pointed_thing)
 	local node = minetest.env:get_node(pointed_thing.under)
-	for _,v in ipairs(feats) do
+	for _,v in ipairs(skyblock.levels[level].feats) do
 		if v.bucket then
 			for _,vv in ipairs(v.bucket) do
 				if node.name == vv then
@@ -204,9 +204,9 @@ function skyblock.levels.bucket_on_use(level,feats,player_name,pointed_thing)
 end
 
 -- track bucket water feats
-function skyblock.levels.bucket_water_on_use(level,feats,player_name,pointed_thing) 
+function skyblock.levels.bucket_water_on_use(level,player_name,pointed_thing) 
 	local node = minetest.env:get_node(pointed_thing.under)
-	for _,v in ipairs(feats) do
+	for _,v in ipairs(skyblock.levels[level].feats) do
 		if v.bucket_water then
 			for _,vv in ipairs(v.bucket_water) do
 				if node.name == vv then
@@ -219,9 +219,9 @@ function skyblock.levels.bucket_water_on_use(level,feats,player_name,pointed_thi
 end
 
 -- track bucket lava feats
-function skyblock.levels.bucket_lava_on_use(level,feats,player_name,pointed_thing)
+function skyblock.levels.bucket_lava_on_use(level,player_name,pointed_thing)
 	local node = minetest.env:get_node(pointed_thing.under)
-	for _,v in ipairs(feats) do
+	for _,v in ipairs(skyblock.levels[level].feats) do
 		if v.bucket_lava then
 			for _,vv in ipairs(v.bucket_lava) do
 				if node.name == vv then

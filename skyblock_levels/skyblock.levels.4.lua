@@ -8,13 +8,16 @@ License: GPLv3
 
 ]]--
 
+local level = 4
 
 --
 -- PUBLIC FUNCTIONS
 --
 
-local level = 4
 skyblock.levels[level] = {}
+
+-- feats
+skyblock.levels[level].feats = {}
 
 -- init level
 skyblock.levels[level].init = function(player_name)
@@ -27,19 +30,29 @@ end
 
 -- get level information
 skyblock.levels[level].get_info = function(player_name)
-	local info = { level=level, total=1, count=0, player_name=player_name, infotext='', formspec = '' };
+	local info = { 
+		level=level, 
+		total=1, 
+		count=0, 
+		player_name=player_name, 
+		infotext='', 
+		formspec = '', 
+		formspec_quest = '',
+	}
+	
 	local text = skyblock.levels.get_inventory_formspec(level,info.player_name)
 		..'label[0,0.5; THE END]'
 		..'label[0,1.0; I hope you enjoyed your journey, and you]'
 		..'label[0,1.5; are welcome to stay and keep building]'
 		..'label[0,2.0; your new sky world.]'
+		
 	info.formspec = skyblock.levels.get_inventory_formspec(level,info.player_name,true)..text
 	info.formspec_quest = skyblock.levels.get_inventory_formspec(level,info.player_name)..text
 	info.infotext = 'THE END! for '.. player_name ..' ... or is it ...'
 	return info
 end
 
--- not used
+-- no feat tracking
 skyblock.levels[level].reward_feat = function(player_name,feat) end
 skyblock.levels[level].on_placenode = function(pos, newnode, placer, oldnode) end
 skyblock.levels[level].on_dignode = function(pos, oldnode, digger) end
