@@ -16,6 +16,14 @@ permalink: /api/skyblock-level/
 
 ## Methods
 
+### `skyblock.levels[level].init()`
+
+Initializes the level.
+
+```
+skyblock.levels[level].init(player_name)
+```
+
 ### `skyblock.levels[level].get_info()`
 
 Gets level formspec and infotext.
