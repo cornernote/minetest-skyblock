@@ -53,7 +53,7 @@ skyblock.levels[level].get_info = function(player_name)
 end
 
 -- no feat tracking
-skyblock.levels[level].reward_feat = function(player_name,feat) end
+skyblock.levels[level].reward_feat = function(player_name, feat) end
 skyblock.levels[level].on_placenode = function(pos, newnode, placer, oldnode) end
 skyblock.levels[level].on_dignode = function(pos, oldnode, digger) end
 skyblock.levels[level].on_item_eat = function(player_name, itemstack) end

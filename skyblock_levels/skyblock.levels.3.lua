@@ -156,10 +156,10 @@ skyblock.levels[level].get_info = function(player_name)
 end
 
 -- reward_feat
-skyblock.levels[level].reward_feat = function(player_name,feat)
-	local rewarded = skyblock.levels.reward_feat(level, feats, player_name, feat)
+skyblock.levels[level].reward_feat = function(player_name, feat)
+	local rewarded = skyblock.levels.reward_feat(level, player_name, feat)
 	
-	-- add water after dig_stone_with_iron
+	-- add water after dig_stone_with_mese
 	if rewarded and feat == 'dig_stone_with_mese' then
 		local pos = skyblock.get_spawn(player_name)
 		minetest.env:add_node({x=pos.x,y=pos.y+1,z=pos.z}, {name='default:water_source'})
