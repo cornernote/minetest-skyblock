@@ -25,10 +25,10 @@ minetest.register_on_newplayer(function(player)
 end)
 
 -- override skyblock.make_spawn_blocks
-local make_spawn_blocks = skyblock.make_spawn_blocks
+--local make_spawn_blocks = skyblock.make_spawn_blocks
 skyblock.make_spawn_blocks = function(spawn,player_name)
+	--make_spawn_blocks(spawn,player_name)
 	skyblock.levels[1].make_start_blocks(player_name)
-	make_spawn_blocks(spawn,player_name)
 end
 
 -- handle respawn player
@@ -64,21 +64,6 @@ minetest.register_on_joinplayer(function(player)
 		player:set_inventory_formspec(skyblock.levels.get_formspec(player:get_player_name()))
 	end)
 end)
-
--- on_receive_fields
-skyblock.on_receive_fields = function(player, formname, fields)
-	--skyblock.log(formname..dump(fields))
-	--if fields.skyblock ~= nil or fields.main ~= nil then
-		--minetest.show_formspec(player:get_player_name(), "skyblock", skyblock.levels.get_formspec(player:get_player_name()))
-		--return
-	--end
-	if fields.craft then
-		unified_inventory.set_inventory_formspec(player, "craft")
-		--minetest.show_formspec(player:get_player_name(), "craft", unified_inventory.get_formspec(player, "craft"))
-		return
-	end
-end
-minetest.register_on_player_receive_fields(skyblock.on_receive_fields)
 
 -- unified inventory skyblock button
 unified_inventory.register_button("skyblock", {
