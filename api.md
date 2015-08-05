@@ -8,7 +8,6 @@ permalink: /api/
 ## Core API
 
 * [skyblock](skyblock/) - core API for generating an empty world with spiral start positions.
-* [skyblock.table](skyblock-table/) - loading and saving tables to files.
 
 ## Feat and Level API
 
