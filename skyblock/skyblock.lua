@@ -36,10 +36,10 @@ skyblock.world_bottom = minetest.setting_get('skyblock.world_bottom') or -8
 skyblock.world_bottom_node = minetest.setting_get('skyblock.world_bottom') or 'air' -- 'air' || 'default:water_source' || 'default:lava_source'
 
 -- Should digging the spawn result in a new spawn pos?
-skyblock.dig_new_spawn = minetest.setting_getbool("skyblock.dig_new_spawn")
+skyblock.dig_new_spawn = minetest.setting_getbool('skyblock.dig_new_spawn')
 
 -- Should player lose bags on death?
-skyblock.lose_bags_on_death = minetest.setting_getbool("skyblock.lose_bags_on_death")
+skyblock.lose_bags_on_death = minetest.setting_getbool('skyblock.lose_bags_on_death')
 
 -- Which schem file to use
 skyblock.schem = minetest.setting_get('skyblock.schem') or 'island.schem'

@@ -11,8 +11,6 @@ License: GPLv3
 local modpath = minetest.get_modpath('skyblock_levels')
 
 dofile(modpath..'/skyblock.feats.lua')
-dofile(modpath..'/skyblock.worldedit.lua')
-
 dofile(modpath..'/skyblock.levels.lua')
 dofile(modpath..'/skyblock.levels.1.lua')
 dofile(modpath..'/skyblock.levels.2.lua')
