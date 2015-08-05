@@ -201,10 +201,10 @@ local function bucket_on_use(itemstack, user, pointed_thing)
 		return {name=liquiddef.itemname}
 	end
 end
-local entity = skyblock.registered('craftitem','bucket:bucket_empty')
-entity.on_place = bucket_on_use
-entity.on_use = bucket_on_use
-minetest.register_craftitem(':bucket:bucket_empty', entity)
+minetest.override_item('bucket:bucket_empty', {
+	on_place = bucket_on_use,
+	on_use = bucket_on_use,
+})
 
 -- bucket_water
 local function bucket_water_on_use(itemstack, user, pointed_thing)
@@ -240,10 +240,10 @@ local function bucket_water_on_use(itemstack, user, pointed_thing)
 
 	return {name='bucket:bucket_empty'}
 end
-local entity = skyblock.registered('craftitem','bucket:bucket_water')
-entity.on_place = bucket_water_on_use
-entity.on_use = bucket_water_on_use
-minetest.register_craftitem(':bucket:bucket_water', entity)
+minetest.override_item('bucket:bucket_water', {
+	on_place = bucket_water_on_use,
+	on_use = bucket_water_on_use,
+})
 
 -- bucket_lava
 local function bucket_lava_on_use(itemstack, user, pointed_thing)
@@ -281,10 +281,10 @@ local function bucket_lava_on_use(itemstack, user, pointed_thing)
 
 	return {name='bucket:bucket_empty'}
 end
-local entity = skyblock.registered('craftitem','bucket:bucket_lava')
-entity.on_place = bucket_lava_on_use
-entity.on_use = bucket_lava_on_use
-minetest.register_craftitem(':bucket:bucket_lava', entity)
+minetest.override_item('bucket:bucket_lava', {
+	on_place = bucket_lava_on_use,
+	on_use = bucket_lava_on_use,
+})
 
 -- save data
 function skyblock.feats.save(data,player_name)
