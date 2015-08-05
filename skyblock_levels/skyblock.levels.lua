@@ -173,6 +173,21 @@ function skyblock.levels.on_item_eat(level,feats,player_name,itemstack)
 	end
 end
 
+-- track crafting feats
+function skyblock.levels.on_craft(level,feats,player_name,itemstack)
+	local item_name = itemstack:get_name()
+	for _,v in ipairs(feats) do
+		if v.craft then
+			for _,vv in ipairs(v.craft) do
+				if item_name==vv then
+					skyblock.feats.add(level,player_name,v.feat)
+					return
+				end
+			end
+		end
+	end
+end
+
 -- track bucket feats
 function skyblock.levels.bucket_on_use(level,feats,player_name,pointed_thing)
 	local node = minetest.env:get_node(pointed_thing.under)

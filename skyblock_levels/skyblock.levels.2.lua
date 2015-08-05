@@ -194,6 +194,11 @@ skyblock.levels[level].on_item_eat = function(player_name, itemstack)
 	skyblock.levels.on_item_eat(level, feats, player_name, itemstack)
 end
 
+-- track crafting feats
+skyblock.levels[level].on_craft = function(player_name, itemstack)
+	skyblock.levels.on_craft(level, feats, player_name, itemstack)
+end
+
 -- track bucket feats
 skyblock.levels[level].bucket_on_use = function(player_name, pointed_thing)
 	skyblock.levels.bucket_on_use(level, feats, player_name, pointed_thing)

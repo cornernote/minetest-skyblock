@@ -130,7 +130,7 @@ function skyblock.spawn_player(player)
 	player:set_hp(20)
 end
 
--- build spawn block
+-- make spawn blocks
 function skyblock.make_spawn_blocks(pos, player_name)
 	for x=-1,1 do
 		for z=-1,1 do
@@ -140,24 +140,27 @@ function skyblock.make_spawn_blocks(pos, player_name)
 		end
 	end
 	minetest.env:add_node(pos, {name='skyblock:quest'})
-	--minetest.registered_nodes['skyblock:quest'].on_construct(pos)
+	minetest.registered_nodes['skyblock:quest'].on_construct(pos)
 end
 
--- make start blocks on generated
+-- make spawn blocks on generated
+--[[
 function skyblock.make_spawn_blocks_on_generated(pos, data, area)
 	local id_dirt = minetest.get_content_id('default:dirt')
 	for x=-1,1 do
 		for z=-1,1 do
 			data[area:index(pos.x+x,pos.y,pos.z+z)] = id_dirt
-			data[area:index( pos.x+x,pos.y-1,pos.z+z)] = id_dirt
-			data[area:index( pos.x+x,pos.y-2,pos.z+z)] = id_dirt
+			data[area:index(pos.x+x,pos.y-1,pos.z+z)] = id_dirt
+			data[area:index(pos.x+x,pos.y-2,pos.z+z)] = id_dirt
 		end
 	end
 	data[area:index(pos.x,pos.y,pos.z)] = minetest.get_content_id('skyblock:quest')
 	--minetest.registered_nodes['skyblock:quest'].on_construct(pos)
 end
+]]--
 
 -- get start positions in mapchunk
+--[[
 skyblock.get_start_positions_in_mapchunk = function(minp, maxp)
 	local list = {};
 	for i,v in ipairs(start_positions) do
@@ -169,13 +172,14 @@ skyblock.get_start_positions_in_mapchunk = function(minp, maxp)
 	end
 	return list
 end
+]]--
 
 
 --
 -- LOCAL FUNCTIONS
 --
 
--- spiral matrix
+-- spiral matrix - used to generate starting positions
 -- http://rosettacode.org/wiki/Spiral_matrix#Lua
 av, sn = math.abs, function(s) return s~=0 and s/av(s) or 0 end
 local function sindex(y, x) -- returns the value at (x, y) in a spiral that starts at 1 and goes outwards

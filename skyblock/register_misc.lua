@@ -100,11 +100,7 @@ minetest.register_on_generated(function(minp, maxp, seed)
 		return
 	end
 
-	local vm
-	local area
-	local data
-	local emin
-	local emax
+	local vm, area, data, emin, emax
 
 	-- if no voxelmanip data was passed on, read the data here
 	if not(vm) or not(area) or not(data) then
@@ -145,14 +141,12 @@ minetest.register_on_generated(function(minp, maxp, seed)
 	end
 	
 	-- add starting blocks
+	--[[
 	local start_pos_list = skyblock.get_start_positions_in_mapchunk(minp, maxp)
 	for _,pos in ipairs(start_pos_list) do
-		if skyblock.levels[1].make_start_blocks_on_generated then
-			skyblock.levels[1].make_start_blocks_on_generated(pos, data, area)
-		else
-			skyblock.make_spawn_blocks_on_generated(pos, data, area)
-		end
+		skyblock.make_spawn_blocks_on_generated(pos, data, area)
 	end
+	]]--
 
 	-- store the voxelmanip data
 	vm:set_data(data)

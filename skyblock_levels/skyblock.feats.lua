@@ -107,27 +107,41 @@ function skyblock.feats.on_item_eat(hp_change, replace_with_item, itemstack, use
 	if not user then return end
 	local player_name = user:get_player_name()
 	local level = skyblock.feats.get_level(player_name)
-	if( skyblock.levels[level].on_item_eat ) then
+	if skyblock.levels[level].on_item_eat then
 		skyblock.levels[level].on_item_eat(player_name, itemstack)
 	end
 end
 minetest.register_on_item_eat(skyblock.feats.on_item_eat)
 
+-- track crafting
+function skyblock.feats.on_craft(itemstack, player, old_craft_grid, craft_inv)
+	local player_name = player:get_player_name()
+	local level = skyblock.feats.get_level(player_name)
+	if skyblock.levels[level].on_craft then
+		skyblock.levels[level].on_craft(player_name, itemstack)
+	end
+end
+minetest.register_on_craft(skyblock.feats.on_craft)
+
 -- track node digging
 function skyblock.feats.on_dignode(pos, oldnode, digger)
-	if not digger then return end -- needed to prevent server crash when player leaves
+	--if not digger then return end -- needed to prevent server crash when player leaves
 	local player_name = digger:get_player_name()
 	local level = skyblock.feats.get_level(player_name)
-	skyblock.levels[level].on_dignode(pos, oldnode, digger)
+	if skyblock.levels[level].on_dignode then
+		skyblock.levels[level].on_dignode(pos, oldnode, digger)
+	end
 end
 minetest.register_on_dignode(skyblock.feats.on_dignode)
 
 -- track node placing
 function skyblock.feats.on_placenode(pos, newnode, placer, oldnode)
-	if not placer then return end -- needed to prevent server crash when player leaves
+	--if not placer then return end -- needed to prevent server crash when player leaves
 	local player_name = placer:get_player_name()
 	local level = skyblock.feats.get_level(player_name)
-	skyblock.levels[level].on_placenode(pos, newnode, placer, oldnode)
+	if skyblock.levels[level].on_placenode then
+		skyblock.levels[level].on_placenode(pos, newnode, placer, oldnode)
+	end
 end
 minetest.register_on_placenode(skyblock.feats.on_placenode)
 
@@ -138,9 +152,11 @@ local function on_place(v, is_craftitem)
 		local old_on_place = entity.on_place;
 		function entity.on_place(itemstack, placer, pointed_thing)
 			local old_count = itemstack:get_count();
-			local res = old_on_place( itemstack, placer, pointed_thing );
-			if( itemstack and itemstack:get_count() == old_count-1 ) then
-				skyblock.feats.on_placenode(pointed_thing, {name=v,param2=0}, placer, nil);
+			local res = old_on_place( itemstack, placer, pointed_thing )
+			if itemstack and itemstack:get_count() == old_count-1 then
+				if skyblock.levels[level].on_placenode then
+					skyblock.feats.on_placenode(pointed_thing, {name=v,param2=0}, placer, nil)
+				end
 			end
 			return res;
 		end
@@ -160,26 +176,32 @@ end
 
 -- track bucket feats
 function skyblock.feats.bucket_on_use(itemstack, user, pointed_thing)
-	if not user then return end -- needed to prevent server crash when player leaves
+	--if not user then return end -- needed to prevent server crash when player leaves
 	local player_name = user:get_player_name()
 	local level = skyblock.feats.get_level(player_name)
-	skyblock.levels[level].bucket_on_use(player_name, pointed_thing)
+	if skyblock.levels[level].bucket_on_use then
+		skyblock.levels[level].bucket_on_use(player_name, pointed_thing)
+	end
 end
 
 -- track bucket_water feats
 function skyblock.feats.bucket_water_on_use(itemstack, user, pointed_thing)
-	if not user then return end -- needed to prevent server crash when player leaves
+	--if not user then return end -- needed to prevent server crash when player leaves
 	local player_name = user:get_player_name()
 	local level = skyblock.feats.get_level(player_name)
-	skyblock.levels[level].bucket_water_on_use(player_name, pointed_thing)
+	if skyblock.levels[level].bucket_water_on_use then
+		skyblock.levels[level].bucket_water_on_use(player_name, pointed_thing)
+	end
 end
 
 -- track bucket_lava feats
 function skyblock.feats.bucket_lava_on_use(itemstack, user, pointed_thing)
-	if not user then return end -- needed to prevent server crash when player leaves
+	--if not user then return end -- needed to prevent server crash when player leaves
 	local player_name = user:get_player_name()
 	local level = skyblock.feats.get_level(player_name)
-	skyblock.levels[level].bucket_lava_on_use(player_name, pointed_thing)
+	if skyblock.levels[level].bucket_lava_on_use then
+		skyblock.levels[level].bucket_lava_on_use(player_name, pointed_thing)
+	end
 end
 
 -- bucket_empty

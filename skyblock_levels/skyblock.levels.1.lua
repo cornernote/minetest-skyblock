@@ -21,7 +21,7 @@ level 1 feats and rewards:
 * place_chest x1			default:papyrus 5
 * place_sign x1				default:pick_steel
 * place_door x1				default:sand 2
-* place_glass x2			protector:protect
+* craft_bag x1				protector:protect
 
 ]]--
 
@@ -100,12 +100,12 @@ local feats = {
 		placenode = {'doors:door_wood'},
 	},
 	{
-		name = 'craft and place 2 Glass',
-		hint = 'default:glass',
-		feat = 'place_glass',
-		count = 2,
+		name = 'craft a Small Bag',
+		hint = 'unified_inventory:bag_small',
+		feat = 'craft_bag',
+		count = 1,
 		reward = 'protector:protect',
-		placenode = {'default:glass'},
+		craft = {'unified_inventory:bag_small'},
 	},
 }
 
@@ -129,7 +129,10 @@ skyblock.levels[level].make_start_blocks = function(player_name)
 
 	-- pyramid
 	skyblock.worldedit.pyramid(pos, "y", -4, 'default:dirt')
+	
+	-- quest
 	minetest.env:add_node(pos, {name='skyblock:quest'})
+	--minetest.registered_nodes['skyblock:quest'].on_construct(pos)
 end
 
 -- make start blocks on generated
@@ -180,6 +183,11 @@ end
 -- track eating feats
 skyblock.levels[level].on_item_eat = function(player_name, itemstack)
 	skyblock.levels.on_item_eat(level, feats, player_name, itemstack)
+end
+
+-- track crafting feats
+skyblock.levels[level].on_craft = function(player_name, itemstack)
+	skyblock.levels.on_craft(level, feats, player_name, itemstack)
 end
 
 -- track bucket feats

@@ -65,6 +65,7 @@ skyblock.levels[level].reward_feat = function(player_name,feat) end
 skyblock.levels[level].on_placenode = function(pos, newnode, placer, oldnode) end
 skyblock.levels[level].on_dignode = function(pos, oldnode, digger) end
 skyblock.levels[level].on_item_eat = function(player_name, itemstack) end
+skyblock.levels[level].on_craft = function(player_name, itemstack) end
 skyblock.levels[level].bucket_on_use = function(player_name, pointed_thing) end
 skyblock.levels[level].bucket_water_on_use = function(player_name, pointed_thing) end
 skyblock.levels[level].bucket_lava_on_use = function(player_name, pointed_thing) end

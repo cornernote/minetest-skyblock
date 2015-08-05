@@ -107,7 +107,7 @@ minetest.register_craft({
 
 -- gravel
 minetest.register_craft({
-	output = 'default:gravel 4',
+	output = 'default:gravel 2',
 	recipe = {
 		{'default:cobble'},
 	}
