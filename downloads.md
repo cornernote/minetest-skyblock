@@ -11,7 +11,7 @@ permalink: /downloads/
 <div class="well">
 <ol>
 <li><a href="http://www.minetest.net/download">Download Minetest</a></li>
-<li><a href="https://github.com/cornernote/minetest-skyblock/archive/0.2.0.zip">Download Skyblock `0.2.0.zip`</a></li>
+<li><a href="https://github.com/cornernote/minetest-skyblock/archive/0.2.0.zip">Download Skyblock `0.2.0.zip`</a> (only required for singleplayer)</li>
 </ol>
 </div>
 
