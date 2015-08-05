@@ -228,15 +228,15 @@ local function bucket_on_use(itemstack, user, pointed_thing)
 	end
 	-- Check if pointing to a liquid source
 	local n = minetest.env:get_node(pointed_thing.under)
-	liquiddef = bucket.liquids[n.name]
-	if liquiddef ~= nil and liquiddef.source == n.name and liquiddef.itemname ~= nil then
+	local liquid = bucket.liquids[n.name]
+	if liquid ~= nil and liquid.source == n.name and liquid.itemname ~= nil then
 		
 		-- begin track bucket feats
 		skyblock.feats.bucket_on_use(itemstack, user, pointed_thing)
 		-- end track bucket feats
 	
 		minetest.env:add_node(pointed_thing.under, {name='air'})
-		return {name=liquiddef.itemname}
+		return {name=liquid.itemname}
 	end
 end
 minetest.override_item('bucket:bucket_empty', {
