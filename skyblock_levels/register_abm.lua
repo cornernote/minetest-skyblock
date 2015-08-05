@@ -54,6 +54,7 @@ minetest.register_abm({
 	end
 })
 
+--[[
 -- dirt turns to dirt_with_grass if light
 minetest.register_abm({
 	nodenames = {'default:dirt'},
@@ -86,6 +87,7 @@ minetest.register_abm({
 		minetest.env:add_node(pos, {name='default:dirt'})
 	end
 })
+]]--
 
 -- remove bones
 minetest.register_abm({
