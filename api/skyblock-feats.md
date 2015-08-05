@@ -69,6 +69,14 @@ Tracks eating feats.
 skyblock.feats.on_item_eat(hp_change, replace_with_item, itemstack, user, pointed_thing)
 ```
 
+### `skyblock.feats.on_craft()`
+
+Tracks crafting feats.
+
+```
+skyblock.feats.on_craft(itemstack, player, old_craft_grid, craft_inv)
+```
+
 ### `skyblock.feats.on_dignode()`
 
 Tracks digging feats.
