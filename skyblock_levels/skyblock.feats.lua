@@ -165,16 +165,16 @@ local function on_place(v, is_craftitem)
 			return res;
 		end
 		if( is_craftitem == 1 ) then
-			minetest.register_craftitem(":"..v, entity);
+			minetest.register_craftitem(':'..v, entity);
 		else
-			minetest.register_node(":"..v, entity);
+			minetest.register_node(':'..v, entity);
 		end
 	end
 end
-for _,v in ipairs({"doors:door_wood","doors:door_glass","doors:door_steel","doors:door_obsidian_glass"}) do
+for _,v in ipairs({'doors:door_wood','doors:door_glass','doors:door_steel','doors:door_obsidian_glass'}) do
 	on_place(v,1);
 end
-for _,v in ipairs({"default:cactus", "farming:seed_wheat", "farming:seed_cotton"}) do
+for _,v in ipairs({'default:cactus', 'farming:seed_wheat', 'farming:seed_cotton'}) do
 	on_place(v,0);
 end
 

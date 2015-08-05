@@ -24,7 +24,7 @@ function skyblock.levels.empty_inventory(player)
 		end
 	end
 	if skyblock.levels.lose_bags_on_death then
-		local bags_inv = minetest.get_inventory({type="detached", name=player:get_player_name()..'_bags'})
+		local bags_inv = minetest.get_inventory({type='detached', name=player:get_player_name()..'_bags'})
 		for bag=1,4 do
 			if not bags_inv:is_empty('bag'..bag) then
 				for i=1,bags_inv:get_size('bag'..bag) do
@@ -102,7 +102,7 @@ function skyblock.levels.get_feat_formspec(info,i,feat,required,text,hint)
 	if hint then
 		--formspec = formspec..'item_image_button[5.8,'..y..';0.6,0.6;'..unified_inventory.mangle_for_formspec(hint)..']'
 		formspec = formspec..'item_image_button[5.8,'..y..';0.6,0.6;'..image_button_link(hint)..']'
-		--formspec = formspec..stack_image_button(item_pos, unified_inventory.formspec_y, 1.1, 1.1, "item_button_"..other_dir[dir].."_", ItemStack(item_name))
+		--formspec = formspec..stack_image_button(item_pos, unified_inventory.formspec_y, 1.1, 1.1, 'item_button_'..other_dir[dir]..'_', ItemStack(item_name))
 	end
 	if count == required then
 		formspec = formspec .. 'image[-0.2,'..(y-0.25)..';1,1;checkbox_checked.png]'
