@@ -15,11 +15,7 @@ skyblock.feats = {}
 local filename = skyblock.filename..'.feats'
 
 -- local variable to save players feats
---local players_feat = skyblock.table.load(filename)
 local players_feat = {}
-if players_feat == nil then
-	players_feat = {}
-end
 
 -- get players current level
 function skyblock.feats.get_level(player_name)
@@ -61,7 +57,7 @@ end
 function skyblock.feats.get(level,player_name,feat)
 	--skyblock.log('skyblock.feats.get('..level..','..player_name..','..feat..')')
 	if players_feat[player_name] == nil then
-		players_feat[player_name] = {}
+		players_feat[player_name] = skyblock.table.load(filename..'.'..player_name)
 	end
 	if players_feat[player_name][level] == nil then
 		players_feat[player_name][level] = {}
