@@ -233,7 +233,6 @@ load_spawn() -- run it now
 
 -- load the start positions from disk
 local function load_start_positions()
-	skyblock.log('BEGIN load_start_positions()')
     local input = io.open(filename..'.start_positions', 'r')
 
 	-- create start_positions file if needed
@@ -261,8 +260,6 @@ local function load_start_positions()
 		table.insert(start_positions,{x = x, y = y, z = z})
 	end
 	io.close(input)
-	
-	skyblock.log('END load_start_positions()')
 end
 load_start_positions() -- run it now
 

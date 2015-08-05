@@ -26,29 +26,18 @@ minetest.override_item('skyblock:quest', {
 })
 
 -- trees
-minetest.override_item('default:tree', {
-	groups = {oddly_breakable_by_hand = 0},
-})
-minetest.override_item('default:jungletree', {
-	groups = {oddly_breakable_by_hand = 0},
-})
-minetest.override_item('default:pinetree', {
-	groups = {oddly_breakable_by_hand = 0},
-})
+local trees = {'default:tree','default:jungletree','default:pinetree'}
+for k,node in ipairs(trees) do
+	local groups = minetest.registered_nodes[node].groups
+	groups.oddly_breakable_by_hand = 0
+	minetest.override_item(node, {groups = groups})
+end
 
 -- leaves
-minetest.override_item('default:leaves', {
-	climbable = true,
-	walkable = false,
-})
-minetest.override_item('default:jungleleaves', {
-	climbable = true,
-	walkable = false,
-})
-minetest.override_item('default:pine_needles', {
-	climbable = true,
-	walkable = false,
-})
+local leaves = {'default:leaves','default:jungleleaves','default:pine_needles'}
+for k,node in ipairs(leaves) do
+	minetest.override_item(node, {climbable = true,	walkable = false})
+end
 
 -- instant grow sapling if there is room
 minetest.override_item('default:sapling', {
