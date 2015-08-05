@@ -20,17 +20,17 @@ skyblock = {}
 skyblock.debug = minetest.setting_getbool('skyblock.debug')
 
 -- How far apart to set players start positions
-skyblock.start_gap = minetest.setting_get('skyblock.start_gap') or 32
+skyblock.start_gap = tonumber(minetest.setting_get('skyblock.start_gap')) or 32
 
 -- The Y position the spawn nodes will appear
-skyblock.start_height = minetest.setting_get('skyblock.start_height') or 4
+skyblock.start_height = tonumber(minetest.setting_get('skyblock.start_height')) or 4
 
 -- How many players will be in 1 row
 -- skyblock.world_width * skyblock.world_width = total players
-skyblock.world_width = minetest.setting_get('skyblock.world_width') or 1000
+skyblock.world_width = tonumber(minetest.setting_get('skyblock.world_width')) or 1000
 
 -- How far down (in nodes) before a player dies and is respawned
-skyblock.world_bottom = minetest.setting_get('skyblock.world_bottom') or -8
+skyblock.world_bottom = tonumber(minetest.setting_get('skyblock.world_bottom')) or -8
 
 -- Node to use for the world bottom
 skyblock.world_bottom_node = minetest.setting_get('skyblock.world_bottom') or 'air' -- 'air' || 'default:water_source' || 'default:lava_source'
@@ -45,13 +45,13 @@ skyblock.lose_bags_on_death = minetest.setting_getbool('skyblock.lose_bags_on_de
 skyblock.schem = minetest.setting_get('skyblock.schem') or 'island.schem'
 
 -- Schem offset X
-skyblock.schem_offset_x = minetest.setting_get('skyblock.schem_offset_x') or -3
+skyblock.schem_offset_x = tonumber(minetest.setting_get('skyblock.schem_offset_x')) or -3
 
 -- Schem offset Y
-skyblock.schem_offset_y = minetest.setting_get('skyblock.schem_offset_y') or -4
+skyblock.schem_offset_y = tonumber(minetest.setting_get('skyblock.schem_offset_y')) or -4
 
 -- Schem offset Z
-skyblock.schem_offset_z = minetest.setting_get('skyblock.schem_offset_z') or -3
+skyblock.schem_offset_z = tonumber(minetest.setting_get('skyblock.schem_offset_z')) or -3
 
 
 -- local variables
