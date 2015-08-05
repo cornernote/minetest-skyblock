@@ -116,29 +116,6 @@ local feats = {
 
 skyblock.levels[level] = {}
 
--- get pos
-skyblock.levels[level].get_pos = function(player_name)
-	skyblock.log('level['..level..'].get_pos() for '..player_name)
-	local pos = skyblock.get_spawn(player_name)
-	if pos==nil then return pos end
-	return {x=pos.x,y=pos.y+40,z=pos.z}
-end
-
--- make start blocks
-skyblock.levels[level].make_start_blocks = function(player_name)
-	skyblock.log('level['..level..'].make_start_blocks() for '..player_name)
-	local pos = skyblock.levels[level].get_pos(player_name)
-	if pos==nil then return end
-	
-	-- pyramid
-	--skyblock.worldedit.pyramid(pos, "y", -10, 'default:dirt')
-
-	-- level 3
-	--minetest.env:add_node(pos, {name='skyblock:level_3'})
-	--skyblock.feats.update(player_name)
-
-end
-
 -- get level information
 skyblock.levels[level].get_info = function(player_name)
 	local info = { level=level, total=10, count=0, player_name=player_name, infotext='', formspec = '' };

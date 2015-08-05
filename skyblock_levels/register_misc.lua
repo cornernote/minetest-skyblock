@@ -9,11 +9,6 @@ License: GPLv3
 ]]--
 
 
--- override skyblock.make_spawn_blocks
-skyblock.make_spawn_blocks = function(spawn,player_name)
-	skyblock.levels[1].make_start_blocks(player_name)
-end
-
 -- new player
 minetest.register_on_newplayer(function(player)
 	-- add rewards to player inventory

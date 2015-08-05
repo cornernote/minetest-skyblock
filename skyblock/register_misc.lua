@@ -15,73 +15,47 @@ end)
 
 -- new player
 minetest.register_on_newplayer(function(player)
-	local player_name = player:get_player_name()
-	local spawn = skyblock.get_spawn(player_name)
-	if spawn then
-		skyblock.spawn_player(player)
-		skyblock.make_spawn_blocks(spawn,player_name)
-		player:setpos({x=spawn.x, y=spawn.y+8, z=spawn.z});
-	end
+	-- spawn player
+	skyblock.spawn_player(player)
 end)
 
 -- respawn player
 minetest.register_on_respawnplayer(function(player)
-	local player_name = player:get_player_name()
-	local spawn = skyblock.get_spawn(player_name)
-	
 	-- unset old spawn position
 	if skyblock.dig_new_spawn then
+		local player_name = player:get_player_name()
+		local spawn = skyblock.get_spawn(player_name)
 		skyblock.set_spawn(player_name, nil)
 		skyblock.set_spawn(player_name..'_DEAD', spawn)
 	end
-
-	-- rebuild spawn blocks
-	skyblock.make_spawn_blocks(spawn,player_name)
-
 	-- spawn player
 	skyblock.spawn_player(player)
-	
 	return true
 end)
 
 -- register globalstep after the server starts
-minetest.after(5, function()
+minetest.after(0.1, function()
 	local spawn_timer = 0
-	local spawn_throttle = 2
-	local spawned_players = {}
+	local spawn_throttle = 1
 
 	-- handle globalstep
 	minetest.register_globalstep(function(dtime)
-	
 		spawn_timer = spawn_timer + dtime
-		for k,player in ipairs(minetest.get_connected_players()) do
-			local player_name = player:get_player_name()
-			
-			-- player has not spawned yet
-			if spawned_players[player_name] == nil then
 
-				-- handle new player spawn setup (no more than once per interval)
-				if spawn_timer > spawn_throttle then
-					skyblock.log('globalstep() new spawn for '..player_name..' (not spawned)')
-					if skyblock.get_spawn(player:get_player_name()) or skyblock.spawn_player(player) then
-						spawned_players[player:get_player_name()] = true
-					end
-				end
-
-			-- player is spawned
-			else
+		-- only check once per throttle time
+		if spawn_timer > spawn_throttle then
+			for _,player in ipairs(minetest.get_connected_players()) do
 				local pos = player:getpos()
-				-- only check once per throttle time
-				if spawn_timer > spawn_throttle then
-					-- hit the bottom
-					if pos.y < skyblock.world_bottom then
-						local spawn = skyblock.get_spawn(player_name)
-						skyblock.log('globalstep() '..player_name..' has fallen too far at '..skyblock.dump_pos(pos)..'... kill them now')
+				-- hit the bottom
+				if pos.y < skyblock.world_bottom then
+					local spawn = skyblock.get_spawn(player:get_player_name())
+					if minetest.env:get_node(spawn).name == 'skyblock:quest' then
 						player:set_hp(0)
+					else
+						skyblock.spawn_player(player)
 					end
 				end
 			end
-			
 		end
 		
 		-- reset the spawn_timer

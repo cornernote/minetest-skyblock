@@ -41,6 +41,18 @@ skyblock.dig_new_spawn = minetest.setting_getbool("skyblock.dig_new_spawn")
 -- Should player lose bags on death?
 skyblock.lose_bags_on_death = minetest.setting_getbool("skyblock.lose_bags_on_death")
 
+-- Which schem file to use
+skyblock.schem = minetest.get_modpath(minetest.get_current_modname())..'/schems/'..(minetest.setting_get('skyblock.schem') or 'island.schem')
+
+-- Schem offset X
+skyblock.schem_offset_x = minetest.setting_get('skyblock.schem_offset_x') or -3
+
+-- Schem offset Y
+skyblock.schem_offset_y = minetest.setting_get('skyblock.schem_offset_y') or -4
+
+-- Schem offset Z
+skyblock.schem_offset_z = minetest.setting_get('skyblock.schem_offset_z') or -3
+
 
 -- local variables
 local filename = minetest.get_worldpath()..'/skyblock'
@@ -108,7 +120,7 @@ end
 -- handle player spawn setup
 function skyblock.spawn_player(player)
 	local player_name = player:get_player_name()
-	skyblock.log('spawn_player() '..player_name)
+	skyblock.log('skyblock.spawn_player() '..player_name)
 	
 	-- find the player spawn point
 	local spawn = skyblock.get_spawn(player_name)
@@ -117,21 +129,17 @@ function skyblock.spawn_player(player)
 		skyblock.set_spawn(player_name,spawn)
 	end
 	
-	-- already has a spawn, teleport and return true 
-	if minetest.env:get_node(spawn).name == 'skyblock:quest' then
-		player:setpos({x=spawn.x,y=spawn.y+8,z=spawn.z})
-		player:set_hp(20)
-		return true
-	end
-
 	-- add the start block and teleport the player
 	skyblock.make_spawn_blocks(spawn,player_name)
-	player:setpos({x=spawn.x,y=spawn.y+8,z=spawn.z})
+	player:setpos({x=spawn.x,y=spawn.y+6,z=spawn.z})
 	player:set_hp(20)
 end
 
 -- make spawn blocks
 function skyblock.make_spawn_blocks(pos, player_name)
+	skyblock.log('skyblock.make_spawn_blocks('..skyblock.dump_pos(pos)..', '..player_name..') ')
+	skyblock.load_schem(pos)
+	--[[
 	for x=-1,1 do
 		for z=-1,1 do
 			minetest.env:add_node({x=pos.x+x,y=pos.y,z=pos.z+z}, {name='default:dirt'})
@@ -139,8 +147,30 @@ function skyblock.make_spawn_blocks(pos, player_name)
 			minetest.env:add_node({x=pos.x+x,y=pos.y-2,z=pos.z+z}, {name='default:dirt'})
 		end
 	end
+	]]--
 	minetest.env:add_node(pos, {name='skyblock:quest'})
-	minetest.registered_nodes['skyblock:quest'].on_construct(pos)
+	--minetest.registered_nodes['skyblock:quest'].on_construct(pos)
+end
+
+-- load schem
+function skyblock.load_schem(origin)
+	local file, err = io.open(skyblock.schem, 'rb')
+	local value = file:read('*a')
+	file:close()
+		
+	local nodes = minetest.deserialize(value)
+	if not nodes then return nil end
+
+	for _,entry in ipairs(nodes) do
+		local pos = {
+			x=entry.x + origin.x + skyblock.schem_offset_x,
+			y=entry.y + origin.y + skyblock.schem_offset_y,
+			z=entry.z + origin.z + skyblock.schem_offset_z,
+		}
+		if minetest.env:get_node(pos).name == 'air' then
+			minetest.add_node(pos, {name=entry.name})
+		end
+	end
 end
 
 -- make spawn blocks on generated

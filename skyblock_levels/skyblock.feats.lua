@@ -12,7 +12,7 @@ License: GPLv3
 skyblock.feats = {}
 
 -- file to save players feat
-local filepath = minetest.get_worldpath()..'/players/'
+local filepath = minetest.get_worldpath()..'/feats'
 
 
 -- local variable to save players feats
@@ -42,7 +42,10 @@ function skyblock.feats.update(player_name)
 
 	-- next level
 	if info.count==info.total then
-		skyblock.levels[level+1].make_start_blocks(info.player_name)
+		--minetest.chat_send_player(player_name, 'You completed level '..level)
+		minetest.chat_send_all(player_name..' completed level '..level)
+		minetest.log('action', player_name..' completed level '..level)
+		
 		skyblock.feats.add(0,info.player_name,'level')
 		info = skyblock.levels[level+1].get_info(info.player_name)
 	end
@@ -308,9 +311,19 @@ minetest.override_item('bucket:bucket_lava', {
 	on_use = bucket_lava_on_use,
 })
 
+-- make directory
+local function mkdir(path)
+	if minetest.mkdir then
+		minetest.mkdir(path)
+	else
+		os.execute('mkdir "' .. path .. '"')
+	end
+end
+
 -- save data
 function skyblock.feats.save(data,player_name)
-	local file,err = io.open(filepath..player_name..'.feats', 'wb')
+	mkdir(filepath)
+	local file,err = io.open(filepath..'/'..player_name, 'w')
 	if err then return nil end
 	file:write(minetest.serialize(data))
 	file:close()
@@ -318,9 +331,9 @@ end
 
 -- load data
 function skyblock.feats.load(player_name)
-	local file,err = io.open(filepath..player_name..'.feats', 'r')
+	local file,err = io.open(filepath..'/'..player_name, 'r')
 	if err then return nil end
-	local data = file:read('*all')
+	local data = file:read('*a')
 	file:close()
 	return minetest.deserialize(data)
 end

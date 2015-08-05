@@ -16,35 +16,6 @@ License: GPLv3
 local level = 4
 skyblock.levels[level] = {}
 
-
--- get pos
-skyblock.levels[level].get_pos = function(player_name)
-	skyblock.log('level['..level..'].get_pos() for '..player_name)
-	local pos = skyblock.get_spawn(player_name)
-	if pos==nil then return pos end
-	return {x=pos.x,y=pos.y+80,z=pos.z}
-end
-
-
--- make start blocks
-skyblock.levels[level].make_start_blocks = function(player_name)
-	skyblock.log('level['..level..'].make_start_blocks() for '..player_name)
-	local pos = skyblock.levels[level].get_pos(player_name)
-	if pos==nil then return end
-	
-	-- pyramid
-	--skyblock.worldedit.pyramid(pos, "y", -12, 'default:dirt')
-	-- sphere
-	--local radius = 10
-	--local hollow = 1
-	--skyblock.worldedit.sphere({x=pos.x,y=pos.y-radius,z=pos.z},radius,'default:dirt',hollow)
-
-	-- level 4
-	--minetest.env:add_node(pos, {name='skyblock:level_4'})
-
-end
-
-
 -- get level information
 skyblock.levels[level].get_info = function(player_name)
 	local info = { level=level, total=1, count=0, player_name=player_name, infotext='', formspec = '' };
@@ -58,7 +29,6 @@ skyblock.levels[level].get_info = function(player_name)
 	info.infotext = 'THE END! for '.. player_name ..' ... or is it ...'
 	return info
 end
-
 
 -- not used
 skyblock.levels[level].reward_feat = function(player_name,feat) end
