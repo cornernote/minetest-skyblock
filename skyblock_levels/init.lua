@@ -19,6 +19,7 @@ dofile(modpath..'/skyblock.levels.4.lua')
 
 dofile(modpath..'/register_abm.lua')
 dofile(modpath..'/register_craft.lua')
+dofile(modpath..'/register_command.lua')
 dofile(modpath..'/register_node.lua')
 dofile(modpath..'/register_misc.lua')
 

@@ -20,11 +20,16 @@ local players_feat = {}
 
 -- get players current level
 function skyblock.feats.get_level(player_name)
-	skyblock.log('skyblock.feats.get_level('..player_name..')')
 	return skyblock.feats.get(0, player_name, 'level')
 end
 
--- reset
+-- set players current level
+function skyblock.feats.set_level(player_name, level)
+	skyblock.feats.set(0, player_name, 'level', level)
+	skyblock.levels[level].init(player_name)
+end
+
+-- reset feats
 function skyblock.feats.reset(player_name)
 	skyblock.log('skyblock.feats.reset('..player_name..')')
 	players_feat[player_name] = {}
@@ -81,19 +86,28 @@ function skyblock.feats.add(level,player_name,feat)
 	skyblock.log('skyblock.feats.add('..level..','..player_name..','..feat..')')
 	local player_feat = skyblock.feats.get(level,player_name,feat)
 	players_feat[player_name][level][feat] = player_feat + 1
-	if level==0 or feat=='level' then
-		skyblock.feats.save(players_feat[player_name], player_name)
-		return
+	if level~=0 or feat~='level' then
+		local rewarded = skyblock.levels[level].reward_feat(player_name,feat)
+		if rewarded then
+			minetest.chat_send_all(player_name..' completed the quest "'..feat..'" on level '..level)
+			minetest.log('action', player_name..' completed the quest "'..feat..'" on level '..level)
+		end
 	end
-	local rewarded = skyblock.levels[level].reward_feat(player_name,feat)
-	
-	-- update
-	if rewarded then
-		--minetest.chat_send_player(player_name, 'You earned the feat "'..feat..'"')
-		minetest.chat_send_all(player_name..' completed the quest "'..feat..'" on level '..level)
-		minetest.log('action', player_name..' completed the quest "'..feat..'" on level '..level)
+	skyblock.feats.save(players_feat[player_name], player_name)
+	skyblock.feats.update(player_name)
+end
+
+-- set feat
+function skyblock.feats.set(level,player_name,feat,value)
+	skyblock.log('skyblock.feats.set('..level..','..player_name..','..feat..')')
+	players_feat[player_name][level][feat] = value
+	if level~=0 or feat~='level' then
+		local rewarded = skyblock.levels[level].reward_feat(player_name,feat)
+		if rewarded then
+			minetest.chat_send_all(player_name..' completed the quest "'..feat..'" on level '..level)
+			minetest.log('action', player_name..' completed the quest "'..feat..'" on level '..level)
+		end
 	end
-	
 	skyblock.feats.save(players_feat[player_name], player_name)
 	skyblock.feats.update(player_name)
 end
