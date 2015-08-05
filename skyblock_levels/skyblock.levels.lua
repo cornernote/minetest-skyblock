@@ -78,6 +78,7 @@ end
 -- empty inventory
 function skyblock.levels.empty_inventory(player)
 	local inv = player:get_inventory()
+	--[[
 	if not inv:is_empty('main') then
 		for i=1,inv:get_size('main') do
 			inv:set_stack('main', i, nil)
@@ -88,21 +89,22 @@ function skyblock.levels.empty_inventory(player)
 			inv:set_stack('craft', i, nil)
 		end
 	end
+	]]--
 	if not inv:is_empty('rewards') then
 		for i=1,inv:get_size('rewards') do
 			inv:set_stack('rewards', i, nil)
 		end
 	end
 	if skyblock.levels.lose_bags_on_death then
-		local bags_inv = minetest.get_inventory({type="detached", name=player:get_player_name()..'_skyblock_bags'})
+		local bags_inv = minetest.get_inventory({type="detached", name=player:get_player_name()..'_bags'})
 		for bag=1,4 do
-			if not bags_inv:is_empty('skyblock_bag'..bag) then
-				for i=1,bags_inv:get_size('skyblock_bag'..bag) do
-					inv:set_stack('skyblock_bag'..bag, i, nil)
+			if not bags_inv:is_empty('bag'..bag) then
+				for i=1,bags_inv:get_size('bag'..bag) do
+					inv:set_stack('bag'..bag, i, nil)
 				end
-				for i=1,bags_inv:get_size('skyblock_bag'..bag) do
-					bags_inv:set_stack('skyblock_bag'..bag, i, nil)
-					inv:set_stack('skyblock_bag'..bag..'contents', i, nil)
+				for i=1,bags_inv:get_size('bag'..bag) do
+					bags_inv:set_stack('bag'..bag, i, nil)
+					inv:set_stack('bag'..bag..'contents', i, nil)
 				end
 			end
 		end

@@ -25,7 +25,7 @@ minetest.register_on_newplayer(function(player)
 	end
 end)
 
--- override skyblock.bak_make_spawn_blocks
+-- override skyblock.make_spawn_blocks
 local make_spawn_blocks = skyblock.make_spawn_blocks
 skyblock.make_spawn_blocks = function(spawn,player_name)
 	skyblock.levels[1].make_start_blocks(player_name)
