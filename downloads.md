@@ -11,7 +11,7 @@ permalink: /downloads/
 <div class="well">
 <ol>
 <li><a href="http://www.minetest.net/download">Download Minetest</a></li>
-<li><a href="https://github.com/cornernote/minetest-skyblock/archive/0.1.0.zip">Download Skyblock `0.1.0.zip`</a></li>
+<li><a href="https://github.com/cornernote/minetest-skyblock/archive/0.2.0.zip">Download Skyblock `0.2.0.zip`</a></li>
 </ol>
 </div>
 
@@ -43,6 +43,7 @@ permalink: /downloads/
 
 ## Archives
 <ul>
-<li><code>0.1.0</code> - <a href="https://github.com/cornernote/minetest-skyblock/archive/0.1.0.zip">zip</a> | <a href="https://github.com/cornernote/minetest-skyblock/archive/0.1.0.tar.gz">tar.gz</a></li>
 <li><code>dev-master</code> - <a href="https://github.com/cornernote/minetest-skyblock/archive/master.zip">zip</a> | <a href="https://github.com/cornernote/minetest-skyblock/archive/master.tar.gz">tar.gz</a></li>
+<li><code>0.2.0</code> - <a href="https://github.com/cornernote/minetest-skyblock/archive/0.2.0.zip">zip</a> | <a href="https://github.com/cornernote/minetest-skyblock/archive/0.2.0.tar.gz">tar.gz</a></li>
+<li><code>0.1.0</code> - <a href="https://github.com/cornernote/minetest-skyblock/archive/0.1.0.zip">zip</a> | <a href="https://github.com/cornernote/minetest-skyblock/archive/0.1.0.tar.gz">tar.gz</a></li>
 </ul>
