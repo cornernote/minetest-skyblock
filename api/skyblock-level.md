@@ -16,22 +16,6 @@ permalink: /api/skyblock-level/
 
 ## Methods
 
-### `skyblock.levels[level].get_pos()`
-
-Get the position of the level.
-
-```
-skyblock.levels[level].get_pos(player_name)
-```
-
-### `skyblock.levels[level].make_start_blocks()`
-
-Make the starting blocks for the level.
-
-```
-skyblock.levels[level].make_start_blocks(player_name)
-```
-
 ### `skyblock.levels[level].get_info()`
 
 Gets level formspec and infotext.
@@ -70,6 +54,14 @@ Tracks eating feats.
 
 ```
 skyblock.levels[level].on_item_eat(player_name,itemstack)
+```
+
+### `skyblock.levels[level].on_craft()`
+
+Tracks crafting feats.
+
+```
+skyblock.levels[level].on_craft(player_name,itemstack)
 ```
 
 ### `skyblock.levels[level].bucket_on_use()`
