@@ -25,18 +25,6 @@ end
 --end
 minetest.register_node(':skyblock:quest', entity)
 
--- stone
-local entity = skyblock.registered('node','default:stone')
-entity.drop = {
-	max_items = 1,
-	items = {
-		{items = {'default:desert_stone'}, rarity = 20},
-		{items = {'default:sandstone'}, rarity = 10},
-		{items = {'default:cobble'}}
-	}
-}
-minetest.register_node(':default:stone', entity)
-
 -- tree
 local entity = skyblock.registered('node','default:tree')
 entity.groups.oddly_breakable_by_hand = 0
@@ -72,11 +60,6 @@ local entity = skyblock.registered('node','default:pine_needles')
 entity.climbable = true
 entity.walkable = false
 minetest.register_node(':default:pine_needles', entity)
-
--- sandstone
-local entity = skyblock.registered('node','default:sandstone')
-entity.drop = 'default:sandstone'
-minetest.register_node(':default:sandstone', entity)
 
 -- instant grow sapling if there is room
 local entity = skyblock.registered('node','default:sapling')
