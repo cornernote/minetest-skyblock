@@ -138,39 +138,9 @@ end
 -- make spawn blocks
 function skyblock.make_spawn_blocks(pos, player_name)
 	skyblock.log('skyblock.make_spawn_blocks('..skyblock.dump_pos(pos)..', '..player_name..') ')
-	skyblock.load_schem(pos)
-	--[[
-	for x=-1,1 do
-		for z=-1,1 do
-			minetest.env:add_node({x=pos.x+x,y=pos.y,z=pos.z+z}, {name='default:dirt'})
-			minetest.env:add_node({x=pos.x+x,y=pos.y-1,z=pos.z+z}, {name='default:dirt'})
-			minetest.env:add_node({x=pos.x+x,y=pos.y-2,z=pos.z+z}, {name='default:dirt'})
-		end
-	end
-	]]--
+	load_schem(pos)
 	minetest.env:add_node(pos, {name='skyblock:quest'})
 	--minetest.registered_nodes['skyblock:quest'].on_construct(pos)
-end
-
--- load schem
-function skyblock.load_schem(origin)
-	local file, err = io.open(skyblock.schem, 'rb')
-	local value = file:read('*a')
-	file:close()
-		
-	local nodes = minetest.deserialize(value)
-	if not nodes then return nil end
-
-	for _,entry in ipairs(nodes) do
-		local pos = {
-			x=entry.x + origin.x + skyblock.schem_offset_x,
-			y=entry.y + origin.y + skyblock.schem_offset_y,
-			z=entry.z + origin.z + skyblock.schem_offset_z,
-		}
-		if minetest.env:get_node(pos).name == 'air' then
-			minetest.add_node(pos, {name=entry.name})
-		end
-	end
 end
 
 -- make spawn blocks on generated
@@ -208,6 +178,27 @@ end
 --
 -- LOCAL FUNCTIONS
 --
+
+-- load schem
+local function load_schem(origin)
+	local file, err = io.open(skyblock.schem, 'rb')
+	local value = file:read('*a')
+	file:close()
+		
+	local nodes = minetest.deserialize(value)
+	if not nodes then return nil end
+
+	for _,entry in ipairs(nodes) do
+		local pos = {
+			x=entry.x + origin.x + skyblock.schem_offset_x,
+			y=entry.y + origin.y + skyblock.schem_offset_y,
+			z=entry.z + origin.z + skyblock.schem_offset_z,
+		}
+		if minetest.env:get_node(pos).name == 'air' then
+			minetest.add_node(pos, {name=entry.name})
+		end
+	end
+end
 
 -- spiral matrix - used to generate starting positions
 -- http://rosettacode.org/wiki/Spiral_matrix#Lua
