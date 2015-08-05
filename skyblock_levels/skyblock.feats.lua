@@ -12,7 +12,8 @@ License: GPLv3
 skyblock.feats = {}
 
 -- file to save players feat
-local filename = skyblock.filename..'.feats'
+local filepath = minetest.get_worldpath()..'/players/'
+
 
 -- local variable to save players feats
 local players_feat = {}
@@ -27,7 +28,7 @@ end
 function skyblock.feats.reset(player_name)
 	skyblock.log('skyblock.feats.reset('..player_name..')')
 	players_feat[player_name] = {}
-	skyblock.table.save(players_feat[player_name], filename..'.'..player_name)
+	skyblock.feats.save(players_feat[player_name], player_name)
 	skyblock.feats.update(player_name)
 end
 
@@ -57,7 +58,7 @@ end
 function skyblock.feats.get(level,player_name,feat)
 	--skyblock.log('skyblock.feats.get('..level..','..player_name..','..feat..')')
 	if players_feat[player_name] == nil then
-		players_feat[player_name] = skyblock.table.load(filename..'.'..player_name)
+		players_feat[player_name] = skyblock.feats.load(player_name) or {}
 	end
 	if players_feat[player_name][level] == nil then
 		players_feat[player_name][level] = {}
@@ -77,7 +78,7 @@ function skyblock.feats.add(level,player_name,feat)
 	local player_feat = skyblock.feats.get(level,player_name,feat)
 	players_feat[player_name][level][feat] = player_feat + 1
 	if level==0 or feat=='level' then
-		skyblock.table.save(players_feat[player_name], filename..'.'..player_name)
+		skyblock.feats.save(players_feat[player_name], player_name)
 		return
 	end
 	local rewarded = skyblock.levels[level].reward_feat(player_name,feat)
@@ -89,7 +90,7 @@ function skyblock.feats.add(level,player_name,feat)
 		minetest.log('action', player_name..' completed the quest "'..feat..'" on level '..level)
 	end
 	
-	skyblock.table.save(players_feat[player_name], filename..'.'..player_name)
+	skyblock.feats.save(players_feat[player_name], player_name)
 	skyblock.feats.update(player_name)
 end
 
@@ -284,3 +285,20 @@ local entity = skyblock.registered('craftitem','bucket:bucket_lava')
 entity.on_place = bucket_lava_on_use
 entity.on_use = bucket_lava_on_use
 minetest.register_craftitem(':bucket:bucket_lava', entity)
+
+-- save data
+function skyblock.feats.save(data,player_name)
+	local file,err = io.open(filepath..player_name..'.feats', 'wb')
+	if err then return nil end
+	file:write(minetest.serialize(data))
+	file:close()
+end
+
+-- load data
+function skyblock.feats.load(player_name)
+	local file,err = io.open(filepath..player_name..'.feats', 'r')
+	if err then return nil end
+	local data = file:read('*all')
+	file:close()
+	return minetest.deserialize(data)
+end
