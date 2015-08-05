@@ -9,21 +9,13 @@ License: GPLv3
 ]]--
 
 
--- who
-minetest.register_chatcommand('who', {
-	description = 'Display list of online players and their current level.',
-	func = function(name)
-		minetest.chat_send_player(name, 'Current Players:')
-		for _,player in ipairs(minetest.get_connected_players()) do
-			local player_name = player:get_player_name()
-			minetest.chat_send_player(name, ' - '..player_name..' - level '..skyblock.feats.get_level(player_name))
-		end
-	end,
-})
+-- register register_privilege
+minetest.register_privilege('level', 'Can use /level')
 
 -- level
 minetest.register_chatcommand('level', {
 	description = 'Get or change a players current level.',
+	privs = {level = true},
 	params = "<player_name> <level>",
 	func = function(name, param)
 		local found, _, player_name, level = param:find("^([^%s]+)%s+(.+)$")
@@ -37,5 +29,17 @@ minetest.register_chatcommand('level', {
 		end
 		skyblock.feats.set_level(player_name, level)
 		minetest.chat_send_player(name, player_name..' has been set to level '..level)
+	end,
+})
+
+-- who
+minetest.register_chatcommand('who', {
+	description = 'Display list of online players and their current level.',
+	func = function(name)
+		minetest.chat_send_player(name, 'Current Players:')
+		for _,player in ipairs(minetest.get_connected_players()) do
+			local player_name = player:get_player_name()
+			minetest.chat_send_player(name, ' - '..player_name..' - level '..skyblock.feats.get_level(player_name))
+		end
 	end,
 })
