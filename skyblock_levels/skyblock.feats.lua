@@ -260,7 +260,10 @@ local function bucket_water_on_use(itemstack, user, pointed_thing)
 		local spawn = skyblock.get_spawn(player_name)
 		local range = skyblock.start_gap/3 -- how far from spawn you can use water
 		local pos = pointed_thing.under
-		if spawn==nil or (pos.x-spawn.x > range or pos.x-spawn.x < range*-1) or (pos.y-spawn.y > range/2 or pos.y-spawn.y < range*-1/2) or (pos.z-spawn.z > range or pos.z-spawn.z < range*-1) then
+		if spawn==nil 
+			or (pos.x-spawn.x > range or pos.x-spawn.x < range*-1) 
+			or (pos.y-spawn.y > range/2 or pos.y-spawn.y < range*-1/2) 
+			or (pos.z-spawn.z > range or pos.z-spawn.z < range*-1) then
 			minetest.chat_send_player(player_name, 'Cannot use bucket so far from your home.')
 			return
 		end
