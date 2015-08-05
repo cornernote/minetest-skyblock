@@ -83,6 +83,38 @@ Should player lose bags on death?
 skyblock.lose_bags_on_death = false
 ```
 
+### `skyblock.schem`
+
+Which schem file to use for starting island
+
+```
+skyblock.schem = island.schem
+```
+
+### `skyblock.schem_offset_x`
+
+Schem offset X
+
+```
+skyblock.schem_offset_x = -3
+```
+
+### `skyblock.schem_offset_y`
+
+Schem offset Y
+
+```
+skyblock.schem_offset_y = -4
+```
+
+### `skyblock.schem_offset_z`
+
+Schem offset Z
+
+```
+skyblock.schem_offset_z = -3
+```
+
 ## Methods
 
 ### `skyblock.log()`
