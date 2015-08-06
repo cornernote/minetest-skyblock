@@ -51,10 +51,6 @@ local get_formspec = function(player_name, node_name, fields)
 		return
 	end
 
-	skyblock.log(player_name)
-	skyblock.log(node_name)
-	skyblock.log(dump(fields))
-	
 	local receipe_nr = 1
 	if fields.node_name then
 		node_name  = fields.node_name
@@ -76,9 +72,6 @@ local get_formspec = function(player_name, node_name, fields)
 		end
 	end
 
-	skyblock.log(node_name)
-	skyblock.log(receipe_nr)
-	
 	if not node_name then
 		return
 	end
