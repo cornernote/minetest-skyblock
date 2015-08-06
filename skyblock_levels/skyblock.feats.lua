@@ -146,7 +146,7 @@ minetest.register_on_craft(skyblock.feats.on_craft)
 
 -- track node digging
 function skyblock.feats.on_dignode(pos, oldnode, digger)
-	--if not digger then return end -- needed to prevent server crash when player leaves
+	if not digger then return end -- needed to prevent server crash when falling.lua runs callback (L:97)
 	local player_name = digger:get_player_name()
 	local level = skyblock.feats.get_level(player_name)
 	if skyblock.levels[level].on_dignode then
