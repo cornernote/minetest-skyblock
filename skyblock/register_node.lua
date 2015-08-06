@@ -18,9 +18,11 @@ minetest.register_node('skyblock:quest', {
 	light_propagates = true,
 	sunlight_propagates = true,
 	light_source = 15,		
-	--groups = {crumbly=2,cracky=2}
 	can_dig = function(pos, player)
 		return false
-	end
+	end,
+	on_construct = function(pos)
+		-- do not remove, needed to init the node
+	end,
 })
 

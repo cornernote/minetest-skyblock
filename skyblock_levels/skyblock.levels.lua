@@ -61,7 +61,9 @@ function skyblock.levels.get_inventory_formspec(level,player_name,nav)
 			formspec = formspec..'button_exit[13,0;2,0.5;close;Close]'
 		end
 	else
-		formspec = formspec..'button_exit[13,0;2,0.5;close;Close]'
+		formspec = formspec
+			..'button[11,0;2,0.5;restart;Restart]'
+			..'button_exit[13,0;2,0.5;close;Close]'
 	end
 		
 	formspec = formspec
@@ -142,6 +144,17 @@ function skyblock.get_unified_inventory_buttons()
 		end
 	end
 	return formspec
+end
+
+-- get_restart_formspec
+function skyblock.show_restart_formspec(player_name)
+	local formspec = 'size[6,2.5;]'
+		..'label[0,0.0;-= Are you sure you want to restart? =-]'
+		..'label[0,0.5;You will lose all your Items and will have to redo]'
+		..'label[0,1.0;all of your Quests starting from Level 1.]'
+		..'button[0,2;3,0.5;restart;Confirm Restart]'
+		..'button_exit[3,2;3,0.5;close;Cancel]'
+	minetest.show_formspec(player_name, 'skyblock_restart', formspec)
 end
 
 --

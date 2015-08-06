@@ -11,18 +11,30 @@ License: GPLv3
 
 -- quest node
 minetest.override_item('skyblock:quest', {
-    on_punch = function(pos, node, puncher)
-		if not puncher then return end -- needed to prevent server crash when player leaves
-		--local level = skyblock.feats.get_level(puncher:get_player_name())
-		skyblock.feats.update(puncher:get_player_name())
+	groups = {crumbly=2,cracky=2},
+	on_construct = function(pos)
+		local player_name = skyblock.get_spawn_player(pos)
+		if player_name then
+			skyblock.feats.update(player_name)
+		end
 	end,
-    --on_dig = function(pos, node, digger)
-		--if not digger then return end -- needed to prevent server crash when player leaves
-		--local player_name = digger:get_player_name()
-		--local spawn = skyblock.get_spawn(player_name)
-		--skyblock.levels.spawn_diggers[player_name] = true
-		--digger:set_hp(0)
-	--end,
+    on_punch = function(pos, node, puncher)
+		local player_name = skyblock.get_spawn_player(pos)
+		if player_name then
+			skyblock.feats.update(player_name)
+		end
+	end,
+	can_dig = function(pos, player)
+		return true
+	end,
+    on_dig = function(pos, node, digger)
+		skyblock.show_restart_formspec(digger:get_player_name())
+	end,
+	on_receive_fields = function(pos, formname, fields, sender)
+		if fields.restart then
+			skyblock.show_restart_formspec(sender:get_player_name())
+		end
+	end,
 })
 
 -- trees

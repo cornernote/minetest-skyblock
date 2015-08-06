@@ -37,6 +37,14 @@ minetest.register_on_dieplayer(function(player)
 	skyblock.levels[1].init(player_name)
 end)
 
+-- player receive fields
+minetest.register_on_player_receive_fields(function(player, formname, fields)
+	-- restart
+	if formname=='skyblock_restart' and fields.restart then
+		player:set_hp(0)
+	end
+end)
+
 -- unified inventory skyblock button
 if unified_inventory then
 	unified_inventory.register_button('skyblock', {

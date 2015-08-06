@@ -89,6 +89,16 @@ function skyblock.get_spawn(player_name)
 	skyblock.log('get_spawn() for '..player_name..' is unknown')
 end
 
+-- get player_name at spawn position
+function skyblock.get_spawn_player(pos)
+	for player_name,spawn in pairs(spawnpos) do
+		if spawn.x == pos.x and spawn.y == pos.y and spawn.z == pos.z then
+			return player_name
+		end
+	end
+	return nil
+end
+
 -- set players spawn position
 function skyblock.set_spawn(player_name, pos)
 	skyblock.log('set_spawn() for '..player_name..' at '..skyblock.dump_pos(pos))
@@ -162,7 +172,6 @@ function skyblock.make_spawn_blocks(pos, player_name)
 	skyblock.log('skyblock.make_spawn_blocks('..skyblock.dump_pos(pos)..', '..player_name..') ')
 	skyblock.load_schem(pos,skyblock.schem)
 	minetest.env:add_node(pos, {name='skyblock:quest'})
-	--minetest.registered_nodes['skyblock:quest'].on_construct(pos)
 end
 
 -- make spawn blocks on generated
