@@ -9,10 +9,17 @@ permalink: /downloads/
 ## Requirements
 
 <div class="well">
-<ol>
-<li><a href="http://www.minetest.net/download">Download Minetest</a></li>
-<li><a href="https://github.com/cornernote/minetest-skyblock/archive/0.2.1.zip">Download Skyblock `0.2.1.zip`</a> (only required for singleplayer)</li>
-</ol>
+
+    <h3>Playing on a Server</h3>
+    <p>The only requirement is <a href="http://www.minetest.net/download">Minetest</a>.</p>
+    
+    <h3>Singleplayer or Running a Server</h3>
+    <ol>
+    <li><a href="https://github.com/cornernote/minetest-skyblock/archive/0.2.1.zip">Skyblock `0.2.1.zip`</a></li>
+    <li><a href="https://github.com/minetest-technic/unified_inventory">`unified_inventory`</a> (optional)</li>
+    <li><a href="https://github.com/Zeg9/minetest-protect/">`protector`</a> (optional)</li>
+    </ol>
+
 </div>
 
 ## Installation Guide
