@@ -17,4 +17,3 @@ header_include: index
 </div>
 
 More images are available from the [Screenshots](https://cornernote.github.io/minetest-skyblock/screenshots/) page.
-
