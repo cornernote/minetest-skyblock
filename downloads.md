@@ -15,9 +15,9 @@ permalink: /downloads/
     
     <h3>Singleplayer or Running a Server</h3>
     <ol>
-    <li><a href="https://github.com/cornernote/minetest-skyblock/archive/0.2.1.zip">Skyblock `0.2.1.zip`</a></li>
-    <li><a href="https://github.com/minetest-technic/unified_inventory">`unified_inventory`</a> (optional)</li>
-    <li><a href="https://github.com/Zeg9/minetest-protect/">`protector`</a> (optional)</li>
+        <li><a href="https://github.com/cornernote/minetest-skyblock/archive/0.2.1.zip">Skyblock 0.2.1</a></li>
+        <li><a href="https://github.com/minetest-technic/unified_inventory">unified_inventory</a> (optional)</li>
+        <li><a href="https://github.com/Zeg9/minetest-protect/">protector</a> (optional)</li>
     </ol>
 
 </div>
