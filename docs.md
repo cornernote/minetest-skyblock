@@ -16,8 +16,8 @@ If `skyblock.world_width=5` then players will be assigned in the following posit
 (looking down)
 
 ```
-x+5|  21  22  23  24  25
-   |
+x+5|  21  22  23  24  25   <-- The number of islands is defined by
+   |                           skyblock.world_width * skyblock.world_width
 x+4|  20  07  08  09  10
    |
 x+3|  19  06  01  02  11
