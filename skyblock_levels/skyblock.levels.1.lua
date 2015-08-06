@@ -21,7 +21,7 @@ level 1 feats and rewards:
 * place_chest x1			default:papyrus 5
 * place_sign x1				default:pick_steel
 * place_door x1				default:sand 2
-* craft_bag x1				protector:protect
+* place_glass x2			protector:protect
 
 ]]--
 
@@ -108,12 +108,12 @@ skyblock.levels[level].feats = {
 		placenode = {'doors:door_wood'},
 	},
 	{
-		name = 'craft a Small Bag',
-		hint = 'unified_inventory:bag_small',
-		feat = 'craft_bag',
-		count = 1,
+		name = 'craft and place 2 Glass',
+		hint = 'default:glass',
+		feat = 'place_glass',
+		count = 2,
 		reward = 'protector:protect',
-		craft = {'unified_inventory:bag_small'},
+		placenode = {'default:glass'},
 	},
 }
 

@@ -35,4 +35,14 @@ rewards:
 * default:desert_stone 50
 * default:brick 50
 
+
+	{
+		name = 'craft a Small Bag',
+		hint = 'unified_inventory:bag_small',
+		feat = 'craft_bag',
+		count = 1,
+		reward = 'protector:protect',
+		craft = {'unified_inventory:bag_small'},
+	},
+
 --]]	

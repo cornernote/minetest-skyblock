@@ -10,6 +10,8 @@ License: GPLv3
 
 local modpath = minetest.get_modpath('skyblock_levels')
 
+dofile(modpath..'/skyblock.craft_guide.lua')
+
 dofile(modpath..'/skyblock.feats.lua')
 dofile(modpath..'/skyblock.levels.lua')
 dofile(modpath..'/skyblock.levels.1.lua')

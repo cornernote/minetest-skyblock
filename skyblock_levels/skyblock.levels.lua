@@ -55,9 +55,11 @@ end
 function skyblock.levels.get_inventory_formspec(level,player_name,nav)
 	local formspec = 'size[15,10;]'
 	if nav then
-		formspec = formspec..skyblock.get_unified_inventory_buttons()
-			--..'button[7,0;2,0.5;bags;Bags]'
-			--..'button[9,0;2,0.5;craft;Crafting]'
+		if unified_inventory then
+			formspec = formspec..skyblock.get_unified_inventory_buttons()
+		else
+			formspec = formspec..'button_exit[13,0;2,0.5;close;Close]'
+		end
 	else
 		formspec = formspec..'button_exit[13,0;2,0.5;close;Close]'
 	end
@@ -89,7 +91,7 @@ local function image_button_link(stack_string)
 	if stack and stack:get_name() then
 		new_node_name = stack:get_name()
 	end
-	return tostring( stack_string )..';item_button_nochange_'..unified_inventory.mangle_for_formspec(new_node_name)..';';
+	return tostring(stack_string)..';item_button_nochange_'..unified_inventory.mangle_for_formspec(new_node_name)..';'
 end
 
 -- get_feat_formspec
@@ -101,9 +103,11 @@ function skyblock.levels.get_feat_formspec(info,i,feat,required,text,hint)
 	end
 	local formspec = 'label[0.5,'..y..'; '..text..' ('..count..'/'..required..')]'
 	if hint then
-		--formspec = formspec..'item_image_button[5.8,'..y..';0.6,0.6;'..unified_inventory.mangle_for_formspec(hint)..']'
-		formspec = formspec..'item_image_button[5.8,'..y..';0.6,0.6;'..image_button_link(hint)..']'
-		--formspec = formspec..stack_image_button(item_pos, unified_inventory.formspec_y, 1.1, 1.1, 'item_button_'..other_dir[dir]..'_', ItemStack(item_name))
+		if unified_inventory then
+			formspec = formspec..'item_image_button[5.8,'..y..';0.6,0.6;'..image_button_link(hint)..']'
+		else
+			formspec = formspec..'item_image_button[5.8,'..y..';0.6,0.6;'..skyblock.craft_guide.image_button_link(hint)..']'
+		end
 	end
 	if count == required then
 		formspec = formspec .. 'image[-0.2,'..(y-0.25)..';1,1;checkbox_checked.png]'

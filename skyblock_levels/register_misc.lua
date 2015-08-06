@@ -38,12 +38,13 @@ minetest.register_on_dieplayer(function(player)
 end)
 
 -- unified inventory skyblock button
-unified_inventory.register_button('skyblock', {
-	type = 'image',
-	image = 'ui_skyblock_icon.png',
-	tooltip = 'Skyblock Quests',
-	action = function(player)
-		skyblock.feats.update(player:get_player_name())
-	end,	
-})
-
+if unified_inventory then
+	unified_inventory.register_button('skyblock', {
+		type = 'image',
+		image = 'ui_skyblock_icon.png',
+		tooltip = 'Skyblock Quests',
+		action = function(player)
+			skyblock.feats.update(player:get_player_name())
+		end,	
+	})
+end
