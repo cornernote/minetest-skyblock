@@ -17,6 +17,12 @@ cornernote.noip.me:30000
 stormchaser3000.noip.me:30001
 ```
 
+## Skyblock US CA
+
+```
+minetest.org:30005
+```
+
 ## Add a Server
 
 Are you running a Skyblock server?  
