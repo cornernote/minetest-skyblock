@@ -46,7 +46,7 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
 end)
 
 -- unified inventory skyblock button
-if unified_inventory then
+if minetest.get_modpath('unified_inventory') then
 	unified_inventory.register_button('skyblock', {
 		type = 'image',
 		image = 'ui_skyblock_icon.png',

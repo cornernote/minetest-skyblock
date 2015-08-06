@@ -55,7 +55,7 @@ end
 function skyblock.levels.get_inventory_formspec(level,player_name,nav)
 	local formspec = 'size[15,10;]'
 	if nav then
-		if unified_inventory then
+		if minetest.get_modpath('unified_inventory') then
 			formspec = formspec..skyblock.get_unified_inventory_buttons()
 		else
 			formspec = formspec..'button_exit[13,0;2,0.5;close;Close]'
@@ -105,7 +105,7 @@ function skyblock.levels.get_feat_formspec(info,i,feat,required,text,hint)
 	end
 	local formspec = 'label[0.5,'..y..'; '..text..' ('..count..'/'..required..')]'
 	if hint then
-		if unified_inventory then
+		if minetest.get_modpath('unified_inventory') then
 			formspec = formspec..'item_image_button[5.8,'..y..';0.6,0.6;'..image_button_link(hint)..']'
 		else
 			formspec = formspec..'item_image_button[5.8,'..y..';0.6,0.6;'..skyblock.craft_guide.image_button_link(hint)..']'
