@@ -141,6 +141,14 @@ get players spawn position
 skyblock.get_spawn(player_name)
 ```
 
+### `function skyblock.get_spawn_player()`
+
+get player name at spawn position
+
+```
+skyblock.get_spawn_player(pos)
+```
+
 ### `skyblock.set_spawn()`
 
 set players spawn position
