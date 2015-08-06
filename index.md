@@ -22,19 +22,3 @@ header_include: index
     <p>Some Skyblock servers may reset the worlds periodically as this is primarily a puzzle game and not for long-term building. If you want to keep something that you have built, ask the server admin to make a "schem" for you.</p>
     <p>If you are playing in single-player mode, this does not apply. Your Skyblock world will continue indefinitely as it is.</p>
 </div>
-
-
-## Screenshots
-
-<div class="row thumbnails">
-    {% for screenshot in site.data.screenshots limit:4 %}
-    <div class="col-md-3">
-        <h3>{{screenshot.name}}</h3>
-        <div class="thumbnail">
-            <a href="{{screenshot.url}}" class="fancybox" rel="screenshots"><img src="{{screenshot.url}}" alt="{{screenshot.name}}"></a>
-        </div>
-    </div>
-    {% endfor %}
-</div>
-
-More images are available from the [Screenshots](https://cornernote.github.io/minetest-skyblock/screenshots/) page.
