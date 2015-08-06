@@ -39,7 +39,6 @@ h2 code, h3 code, h4 code, h5 code, h6 code {
     text-shadow: none;
 }
 
-
 img {
     max-width: 100%;
 }
@@ -190,6 +189,10 @@ a[id] {
     opacity: .4; 
     z-index: -1;
     background: #eee url(../img/backgrounds/wool_white.png);
+}
+
+.well h2, .well h3, .well h4, .well h5, .well h6 {
+    padding-top: 0;
 }
 
 .well a,
