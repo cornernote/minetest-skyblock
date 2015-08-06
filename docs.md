@@ -5,6 +5,13 @@ heading: Documentation
 permalink: /docs/
 ---
 
+## Commands
+
+`/who` - shows online players and their levels
+
+`/level <player> <level>` - gets or sets a players level
+
+
 ## Multi-Player Support
 
 Although the default settings will work, you may want to consider the starting positions.
