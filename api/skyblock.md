@@ -133,6 +133,14 @@ dump_pos convert a pos to a string
 skyblock.dump_pos(pos)
 ```
 
+### `skyblock.set_spawn()`
+
+set players spawn position
+
+```
+skyblock.set_spawn(player_name, pos)
+```
+
 ### `skyblock.get_spawn()`
 
 get players spawn position
@@ -141,20 +149,12 @@ get players spawn position
 skyblock.get_spawn(player_name)
 ```
 
-### `function skyblock.get_spawn_player()`
+### `skyblock.get_spawn_player()`
 
 get player name at spawn position
 
 ```
 skyblock.get_spawn_player(pos)
-```
-
-### `skyblock.set_spawn()`
-
-set players spawn position
-
-```
-skyblock.set_spawn(player_name, pos)
 ```
 
 ### `skyblock.get_next_spawn()`
