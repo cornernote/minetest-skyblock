@@ -345,7 +345,7 @@ function skyblock.feats.save(data,player_name)
 	local file = io.open(filepath..'/'..player_name, 'wb')
 	if not file then
 		mkdir(filepath)
-		local file = io.open(filepath..'/'..player_name, 'wb')
+		file = io.open(filepath..'/'..player_name, 'wb')
 		if not file then return end
 	end
 	file:write(minetest.serialize(data))
