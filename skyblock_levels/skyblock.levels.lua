@@ -57,9 +57,8 @@ function skyblock.levels.get_inventory_formspec(level,player_name,inventory)
 	if inventory then
 		if minetest.get_modpath('unified_inventory') then
 			formspec = formspec..skyblock.get_unified_inventory_buttons()
-		else
-			formspec = formspec..'button_exit[13,0;2,0.5;close;Close]'
 		end
+		formspec = formspec..'button_exit[13,0;2,0.5;close;Close]'
 	else
 		formspec = formspec
 			..'button[11,0;2,0.5;restart;Restart]'
