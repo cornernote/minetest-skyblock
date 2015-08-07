@@ -342,8 +342,12 @@ end
 -- save data
 function skyblock.feats.save(data,player_name)
 	mkdir(filepath)
-	local file,err = io.open(filepath..'/'..player_name, 'wb')
-	if err then return nil end
+	local file = io.open(filepath..'/'..player_name, 'wb')
+	if not file then
+		mkdir(filepath)
+		local file = io.open(filepath..'/'..player_name, 'wb')
+		if not file then return end
+	end
 	file:write(minetest.serialize(data))
 	file:close()
 end
