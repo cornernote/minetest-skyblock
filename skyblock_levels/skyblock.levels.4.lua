@@ -40,8 +40,7 @@ skyblock.levels[level].get_info = function(player_name)
 		formspec_quest = '',
 	}
 	
-	local text = skyblock.levels.get_inventory_formspec(level,info.player_name)
-		..'label[0,0.5; THE END]'
+	local text = 'label[0,0.5; THE END]'
 		..'label[0,1.0; I hope you enjoyed your journey, and you]'
 		..'label[0,1.5; are welcome to stay and keep building]'
 		..'label[0,2.0; your new sky world.]'
