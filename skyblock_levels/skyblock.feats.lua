@@ -341,12 +341,13 @@ end
 
 -- save data
 function skyblock.feats.save(data,player_name)
-	mkdir(filepath)
 	local file = io.open(filepath..'/'..player_name, 'wb')
 	if not file then
 		mkdir(filepath)
 		file = io.open(filepath..'/'..player_name, 'wb')
-		if not file then return end
+		if not file then 
+			skyblock.log('cannot open feat file for writing "'..filepath..'/'..player_name..'"')
+		end
 	end
 	file:write(minetest.serialize(data))
 	file:close()
