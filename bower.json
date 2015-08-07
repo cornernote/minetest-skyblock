@@ -1,0 +1,20 @@
+{
+  "name": "skyblock",
+  "version": "0.2.1",
+  "homepage": "https://cornernote.github.io/minetest-skyblock/",
+  "description": "Build a world starting from a small island in the sky.",
+  "main": "init.lua",
+  "keywords": [
+    "skyblock"
+  ],
+  "authors": [
+    "cornernote"
+  ],
+  "license": "GPL",
+  "dependencies": {
+    "bags": "~1.0.0"
+  },
+  "ignore": [
+    "**/.*"
+  ]
+}
