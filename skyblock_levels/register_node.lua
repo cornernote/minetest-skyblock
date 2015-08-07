@@ -33,6 +33,13 @@ minetest.override_item('skyblock:quest', {
 	on_receive_fields = function(pos, formname, fields, sender)
 		if fields.restart then
 			skyblock.show_restart_formspec(sender:get_player_name())
+			return
+		end
+		for k,v in pairs(fields) do
+			if string.match(k, 'skyblock_craft_guide_') then
+				minetest.show_formspec(sender:get_player_name(),'skyblock_craft_guide',skyblock.craft_guide.get_formspec(k, fields))
+				return
+			end
 		end
 	end,
 })

@@ -151,8 +151,8 @@ skyblock.levels[level].get_info = function(player_name)
 	info.formspec_quest = skyblock.levels.get_inventory_formspec(level,info.player_name)..text
 	
 	for k,v in ipairs(skyblock.levels[level].feats) do
-		info.formspec = info.formspec..skyblock.levels.get_feat_formspec(info,k,v.feat,v.count,v.name,v.hint)
-		info.formspec_quest = info.formspec_quest..skyblock.levels.get_feat_formspec(info,k,v.feat,v.count,v.name)
+		info.formspec = info.formspec..skyblock.levels.get_feat_formspec(info,k,v.feat,v.count,v.name,v.hint,true)
+		info.formspec_quest = info.formspec_quest..skyblock.levels.get_feat_formspec(info,k,v.feat,v.count,v.name,v.hint)
 	end
 	if info.count>0 then
 		info.count = info.count/2 -- only count once
