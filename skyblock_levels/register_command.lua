@@ -27,8 +27,11 @@ minetest.register_chatcommand('level', {
 			minetest.chat_send_player(name, player_name..' is on level '..skyblock.feats.get_level(player_name))
 			return
 		end
-		skyblock.feats.set_level(player_name, level)
-		minetest.chat_send_player(name, player_name..' has been set to level '..level)
+		if skyblock.feats.set_level(player_name, level) then
+			minetest.chat_send_player(name, player_name..' has been set to level '..level)
+		else
+			minetest.chat_send_player(name, 'cannot change '..player_name..' to level '..level)
+		end
 	end,
 })
 

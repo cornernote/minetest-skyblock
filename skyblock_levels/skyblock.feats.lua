@@ -25,8 +25,11 @@ end
 
 -- set players current level
 function skyblock.feats.set_level(player_name, level)
-	skyblock.feats.set(0, player_name, 'level', level)
-	skyblock.levels[level].init(player_name)
+	if skyblock.levels[level] then
+		skyblock.feats.set(0, player_name, 'level', level)
+		skyblock.levels[level].init(player_name)
+		return true
+	end
 end
 
 -- reset feats
