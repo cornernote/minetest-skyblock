@@ -8,6 +8,9 @@
 [![license](https://img.shields.io/badge/license-GPL3-brightgreen.svg?style=flat-square)](https://github.com/cornernote/minetest-skyblock/blob/master/LICENSE.md)
 
 
+![SkyBlock](https://cloud.githubusercontent.com/assets/51875/9219481/4c7248b6-411a-11e5-81f1-5e4726a1fa99.png)
+
+
 ## Description
 
 Build a world starting from a small island in the sky. This Minetest mod is intended to be used as a minimal game that allows the player to craft and use all the default items in Minetest in a fun and challenging way.
