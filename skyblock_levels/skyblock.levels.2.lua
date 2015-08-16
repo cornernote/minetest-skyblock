@@ -84,7 +84,7 @@ skyblock.levels[level].feats = {
 		placenode = {'default:cobble'},
 	},
 	{
-		name = 'dig 4 Coal Lumps',
+		name = 'dig 2 Coal Lumps',
 		hint = 'default:stone_with_coal',
 		feat = 'dig_stone_with_coal', 
 		count = 2, 
@@ -100,7 +100,7 @@ skyblock.levels[level].feats = {
 		placenode = {'default:torch'},
 	},
 	{
-		name = 'dig 8 Iron Lumps',
+		name = 'dig 4 Iron Lumps',
 		hint = 'default:stone_with_iron',
 		feat = 'dig_stone_with_iron', 
 		count = 4, 

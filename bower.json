@@ -1,0 +1,25 @@
+{
+  "name": "skyblock",
+  "homepage": "https://cornernote.github.io/minetest-skyblock/",
+  "description": "Build a world starting from a small island in the sky.",
+  "keywords": [
+    "skyblock",
+    "quest",
+    "fun",
+    "feat",
+    "island"
+  ],
+  "screenshots": [
+    "https://cloud.githubusercontent.com/assets/51875/9104936/32308738-3c51-11e5-987e-ae805a724a01.png",
+    "https://cloud.githubusercontent.com/assets/51875/9005792/697893a6-37c0-11e5-9a23-f20f93c2325b.png",
+    "https://cloud.githubusercontent.com/assets/51875/9005796/6d8d6b24-37c0-11e5-9c14-b7bb8d66e6e3.png",
+    "https://cloud.githubusercontent.com/assets/51875/9005798/71a68088-37c0-11e5-8f1a-02d1cdd983dc.png"
+  ],
+  "authors": [
+    "cornernote"
+  ],
+  "license": "GPL",
+  "ignore": [
+    "**/.*"
+  ]
+}

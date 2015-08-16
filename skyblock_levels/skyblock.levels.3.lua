@@ -84,7 +84,7 @@ skyblock.levels[level].feats = {
 		placenode = {'default:sand'},
 	},
 	{
-		name = 'dig 8 Copper lumps',
+		name = 'dig 4 Copper lumps',
 		hint = 'default:stone_with_copper',
 		feat = 'dig_stone_with_copper', 
 		count = 4,
@@ -100,7 +100,7 @@ skyblock.levels[level].feats = {
 		placenode = {'xpanes:bar'},
 	},
 	{
-		name = 'dig 8 Mese Crystals',
+		name = 'dig 4 Mese Crystals',
 		hint = 'default:stone_with_mese',
 		feat = 'dig_stone_with_mese', 
 		count = 4, 
