@@ -31,10 +31,16 @@ minetest.register_on_dieplayer(function(player)
 	local player_name = player:get_player_name()
 	-- empty inventory
 	skyblock.levels.empty_inventory(player)
-	-- reset feats
-	skyblock.feats.reset(player_name)
-	-- init level1
-	skyblock.levels[1].init(player_name)
+
+	-- back to beginning
+	if skyblock.levels.restart_on_die then
+		skyblock.feats.reset(player_name)
+	else
+		skyblock.feats.reset_level(player_name)
+	end
+	
+	-- back to start of this level
+	
 end)
 
 -- player receive fields

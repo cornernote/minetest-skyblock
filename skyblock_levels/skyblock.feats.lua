@@ -27,7 +27,9 @@ end
 function skyblock.feats.set_level(player_name, level)
 	if skyblock.levels[level] then
 		skyblock.feats.set(0, player_name, 'level', level)
+		players_feat[player_name][level] = {}
 		skyblock.levels[level].init(player_name)
+		skyblock.feats.update(player_name)
 		return true
 	end
 end
@@ -38,6 +40,17 @@ function skyblock.feats.reset(player_name)
 	players_feat[player_name] = {}
 	skyblock.feats.save(players_feat[player_name], player_name)
 	skyblock.feats.update(player_name)
+	skyblock.levels[1].init(player_name)
+end
+
+-- reset level
+function skyblock.feats.reset_level(player_name)
+	skyblock.log('skyblock.feats.reset_level('..player_name..')')
+	local level = skyblock.feats.get_level(player_name)
+	players_feat[player_name][level] = {}
+	skyblock.feats.save(players_feat[player_name], player_name)
+	skyblock.feats.update(player_name)
+	skyblock.levels[level].init(player_name)
 end
 
 -- update feats

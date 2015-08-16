@@ -12,6 +12,14 @@ License: GPLv3
 skyblock.levels = {}
 
 --
+-- CONFIG OPTIONS
+--
+
+-- true to restart from level1, false to restart from current level
+skyblock.levels.restart_on_die = minetest.setting_getbool('skyblock.levels.restart_on_die')
+
+
+--
 -- Functions
 --
 
