@@ -61,6 +61,14 @@ end
 -- instant grow sapling if there is room
 minetest.override_item('default:sapling', {
 	after_place_node = function(pos)
+		-- check if node under belongs to the soil group
+		pos.y = pos.y - 1
+		local node_under = minetest.get_node(pos)
+		pos.y = pos.y + 1
+		if minetest.get_item_group(node_under.name, "soil") == 0 then
+			return
+		end
+
 		-- check if we have space to make a tree
 		for dy=1,4 do
 			pos.y = pos.y+dy
