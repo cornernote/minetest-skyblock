@@ -275,8 +275,9 @@ local function load_start_positions()
 		skyblock.log('generate start positions')
 		local output = io.open(filename..'.start_positions', 'w')
 		local pos
+		local maxdiffh = minetest.setting_get("maximum_height_difference") or 8
 		for i,v in ripairs(spiralt(skyblock.world_width)) do -- get positions using spiral
-			pos = {x=v.x*skyblock.start_gap, y=skyblock.start_height, z=v.z*skyblock.start_gap}
+			pos = {x=v.x*skyblock.start_gap, y=math.random(skyblock.start_height-maxdiffh, skyblock.start_height+maxdiffh), z=v.z*skyblock.start_gap}
 			output:write(pos.x..' '..pos.y..' '..pos.z..'\n')
 		end
 		io.close(output)
