@@ -32,6 +32,9 @@ skyblock.world_width = tonumber(minetest.setting_get('skyblock.world_width')) or
 -- How far down (in nodes) before a player dies and is respawned
 skyblock.world_bottom = tonumber(minetest.setting_get('skyblock.world_bottom')) or -8
 
+-- Difference (in nodes) between islands starting heights
+skyblock.height_difference = tonumber(minetest.setting_get('skyblock.height_difference')) or 8
+
 -- Node to use for the world bottom
 skyblock.world_bottom_node = minetest.setting_get('skyblock.world_bottom') or 'air' -- 'air' || 'default:water_source' || 'default:lava_source'
 
@@ -270,14 +273,13 @@ load_spawn() -- run it now
 local function load_start_positions()
     local input = io.open(filename..'.start_positions', 'r')
 
-	-- create start_positions file if needed
+    -- create start_positions file if needed
     if not input then
 		skyblock.log('generate start positions')
 		local output = io.open(filename..'.start_positions', 'w')
 		local pos
-		local maxdiffh = minetest.setting_get("maximum_height_difference") or 8
 		for i,v in ripairs(spiralt(skyblock.world_width)) do -- get positions using spiral
-			pos = {x=v.x*skyblock.start_gap, y=math.random(skyblock.start_height-maxdiffh, skyblock.start_height+maxdiffh), z=v.z*skyblock.start_gap}
+			pos = {x=v.x*skyblock.start_gap, y=math.random(skyblock.start_height-skyblock.height_difference, skyblock.start_height+skyblock.height_difference), z=v.z*skyblock.start_gap}
 			output:write(pos.x..' '..pos.y..' '..pos.z..'\n')
 		end
 		io.close(output)
