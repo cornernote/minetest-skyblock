@@ -202,10 +202,10 @@ local function on_place(v, is_craftitem)
 		end
 	end
 end
-for _,v in ipairs({'doors:door_wood','doors:door_glass','doors:door_steel','doors:door_obsidian_glass','default:sign_wall'}) do
+for _,v in ipairs({'doors:door_wood','doors:door_glass','doors:door_steel','doors:door_obsidian_glass'}) do
 	on_place(v,1);
 end
-for _,v in ipairs({'default:cactus', 'farming:seed_wheat', 'farming:seed_cotton'}) do
+for _,v in ipairs({'default:cactus', 'farming:seed_wheat', 'farming:seed_cotton', 'default:sign_wall'}) do
 	on_place(v,0);
 end
 
