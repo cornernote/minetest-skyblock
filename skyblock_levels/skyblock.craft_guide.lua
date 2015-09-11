@@ -90,7 +90,7 @@ skyblock.craft_guide.get_formspec = function(node_name, fields)
 		receipe_nr = 1
 	end
 	if res and receipe_nr > 1 then
-		formspec = formspec..'button[3.8,5.5;1,0.5;skyblock_craft_guide_prev_receipe;prev]'
+		formspec = formspec..'button[3.0,5.5;1,0.5;skyblock_craft_guide_prev_receipe;prev]'
 	end
 	if( res and receipe_nr < #res ) then
 		formspec = formspec..'button[4.0,5.5;1,0.5;skyblock_craft_guide_next_receipe;next]'
