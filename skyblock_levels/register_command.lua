@@ -10,27 +10,38 @@ License: GPLv3
 
 
 -- register register_privilege
-minetest.register_privilege('level', 'Can use /level')
+minetest.register_privilege('level', 'Can use /setlevel')
 
--- level
-minetest.register_chatcommand('level', {
-	description = 'Get or change a players current level.',
+-- getlevel
+minetest.register_chatcommand('getlevel', {
+	description = 'Get a player\'s current level.',
+	params = "<player_name>",
+	func = function(name, param)
+		local player_name = param
+		if player_name == "" then
+			player_name = name
+		end
+		minetest.chat_send_player(name, player_name..' is on level '..skyblock.feats.get_level(player_name))
+		return
+	end,
+})
+
+-- setlevel
+minetest.register_chatcommand('setlevel', {
+	description = 'Set a player\'s current level',
 	privs = {level = true},
 	params = "<player_name> <level>",
 	func = function(name, param)
 		local found, _, player_name, level = param:find("^([^%s]+)%s+(.+)$")
-		if not player_name then
-			player_name = name
-		end
-		level = tonumber(level)
-		if not level then
-			minetest.chat_send_player(name, player_name..' is on level '..skyblock.feats.get_level(player_name))
-			return
-		end
-		if skyblock.feats.set_level(player_name, level) then
-			minetest.chat_send_player(name, player_name..' has been set to level '..level)
+		if found and player_name and level then
+			level = tonumber(level)
+			if skyblock.feats.set_level(player_name, level) then
+				minetest.chat_send_player(name, player_name..' has been set to level '..level)
+			else
+				minetest.chat_send_player(name, 'cannot change '..player_name..' to level '..level)
+			end
 		else
-			minetest.chat_send_player(name, 'cannot change '..player_name..' to level '..level)
+			return false, "Invalid use."
 		end
 	end,
 })
