@@ -23,6 +23,13 @@ stormchaser3000.noip.me:30001
 minetest.org:30005
 ```
 
+## Skyblock CZ/SK/EU
+
+```
+37.221.251.225:30000
+```
+
+
 ## Add a Server
 
 Are you running a Skyblock server?  
