@@ -7,4 +7,5 @@ stairs
 wool
 xpanes
 protector
+farming
 unified_inventory?

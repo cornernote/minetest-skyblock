@@ -205,7 +205,7 @@ end
 for _,v in ipairs({'doors:door_wood','doors:door_glass','doors:door_steel','doors:door_obsidian_glass'}) do
 	on_place(v,1);
 end
-for _,v in ipairs({'default:cactus', 'farming:seed_wheat', 'farming:seed_cotton', 'default:sign_wall'}) do
+for _,v in ipairs({'default:cactus', 'farming:seed_wheat', 'farming:seed_cotton', 'default:sign_wall', 'default:apple'}) do
 	on_place(v,0);
 end
 
@@ -359,6 +359,18 @@ minetest.override_item('bucket:bucket_lava', {
 	on_place = bucket_lava_on_use,
 	on_use = bucket_lava_on_use,
 })
+
+-- add protection to hoes
+for _, material in pairs({"wood", "stone", "steel", "bronze", "mese", "diamond"}) do
+	local old_use = minetest.registered_items["farming:hoe_" .. material].on_use
+	minetest.override_item("farming:hoe_" .. material, {
+		on_use = function(itemstack, user, pointed_thing)
+			if not minetest.is_protected(pointed_thing.above, user:get_player_name()) then
+				old_use(itemstack, user, pointed_thing)
+			end
+		end
+	})
+end
 
 -- make directory
 local function mkdir(path)
