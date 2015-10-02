@@ -11,6 +11,7 @@ skyblock.craft_guide = {}
 local group_placeholder = {}
 group_placeholder['group:wood'] = 'default:wood'
 group_placeholder['group:tree'] = 'default:tree'
+group_placeholder['group:flora'] = 'flowers:tulip'
 group_placeholder['group:stick'] = 'default:stick'
 group_placeholder['group:stone'] = 'default:cobble' -- 'default:stone'  point people to the cheaper cobble
 group_placeholder['group:sand'] = 'default:sand'
@@ -19,15 +20,17 @@ group_placeholder['group:wood_slab'] = 'stairs:slab_wood'
 group_placeholder['group:wool'] = 'wool:white'
 
 -- handle the standard dye color groups
-if( dyelocal and dyelocal.dyes ) then
-	for i,d in ipairs( dyelocal.dyes ) do
-		for k,v in pairs(d[3]) do
-			if( k ~= 'dye' ) then
-				group_placeholder['group:dye,'..k ] = 'dye:'..d[1]
+minetest.after(0.5, function()
+	for index, entry in pairs(minetest.registered_items) do
+		if index:find("dye:") then
+			for k,v in pairs(entry.groups) do
+				if( k ~= 'dye' ) then
+					group_placeholder['group:dye,'..k ] = index
+				end
 			end
 		end
 	end
-end
+end)
 
 -- render an image button for a formspec
 skyblock.craft_guide.image_button_link = function(stack_string)
