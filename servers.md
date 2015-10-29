@@ -29,6 +29,12 @@ minetest.org:30005
 37.221.251.225:30000
 ```
 
+## hasanalsamra's Skyblock Server
+
+```
+hasanalsamra.tk:30000
+```
+
 
 ## Add a Server
 
