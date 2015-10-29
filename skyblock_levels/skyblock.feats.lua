@@ -65,6 +65,19 @@ function skyblock.feats.update(player_name)
 	if info.count==info.total then
 		--minetest.chat_send_player(player_name, 'You completed level '..level)
 		minetest.chat_send_all(player_name..' completed level '..level)
+		for _, ref in pairs(minetest.get_connected_players()) do
+			if not (ref:get_player_name() == player_name) then
+				minetest.sound_play("skyblock_finish_other", {
+					to_player = ref:get_player_name(),
+					gain = 1.0,
+				})
+			else
+				minetest.sound_play("skyblock_finish_level_player", {
+					to_player = player_name,
+					gain = 1.0,
+				})
+			end
+		end
 		minetest.log('action', player_name..' completed level '..level)
 		
 		skyblock.feats.add(0,info.player_name,'level')
@@ -109,6 +122,10 @@ function skyblock.feats.add(level,player_name,feat)
 		local rewarded = skyblock.levels[level].reward_feat(player_name,feat)
 		if rewarded then
 			minetest.chat_send_all(player_name..' completed the quest "'..feat..'" on level '..level)
+			minetest.sound_play("skyblock_finish_quest", {
+				to_player = player_name,
+				gain = 1.0,
+			})
 			minetest.log('action', player_name..' completed the quest "'..feat..'" on level '..level)
 		end
 	end
@@ -124,6 +141,10 @@ function skyblock.feats.set(level,player_name,feat,value)
 		local rewarded = skyblock.levels[level].reward_feat(player_name,feat)
 		if rewarded then
 			minetest.chat_send_all(player_name..' completed the quest "'..feat..'" on level '..level)
+			minetest.sound_play("skyblock_finish_quest", {
+				to_player = player_name,
+				gain = 1.0,
+			})
 			minetest.log('action', player_name..' completed the quest "'..feat..'" on level '..level)
 		end
 	end
