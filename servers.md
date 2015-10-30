@@ -5,12 +5,6 @@ heading: Servers
 permalink: /servers/
 ---
 
-## Skyblock AU SA
-
-```
-cornernote.noip.me:30000
-```
-
 ## Skyblock US NJ
 
 ```
@@ -33,6 +27,12 @@ minetest.org:30005
 
 ```
 hasanalsamra.tk:30000
+```
+
+## MinetestForFun Skyblock Server
+
+```
+qbuissondebon.info:30052
 ```
 
 
