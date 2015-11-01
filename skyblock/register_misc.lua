@@ -33,39 +33,24 @@ minetest.register_on_respawnplayer(function(player)
 	return true
 end)
 
--- register globalstep after the server starts
-minetest.after(0.1, function()
-	local spawn_timer = 0
-	local spawn_throttle = 1
-
-	-- handle globalstep
-	minetest.register_globalstep(function(dtime)
-		spawn_timer = spawn_timer + dtime
-
-		-- only check once per throttle time
-		if spawn_timer > spawn_throttle then
-			for _,player in ipairs(minetest.get_connected_players()) do
-				local pos = player:getpos()
-				-- hit the bottom
-				if pos.y < skyblock.world_bottom then
-					local spawn = skyblock.get_spawn(player:get_player_name())
-					if minetest.env:get_node(spawn).name == 'skyblock:quest' then
-						player:set_hp(0)
-					else
-						skyblock.spawn_player(player)
-					end
-				end
+local spawn_throttle = 1
+local function spawn_tick()
+	for _,player in ipairs(minetest.get_connected_players()) do
+		local pos = player:getpos()
+		-- hit the bottom
+		if pos.y < skyblock.world_bottom then
+			local spawn = skyblock.get_spawn(player:get_player_name())
+			if minetest.env:get_node(spawn).name == 'skyblock:quest' then
+				player:set_hp(0)
+			else
+				skyblock.spawn_player(player)
 			end
 		end
-		
-		-- reset the spawn_timer
-		if spawn_timer > spawn_throttle then	
-			spawn_timer = 0
-		end	
-	
-	end)
-
-end)
+	end
+	minetest.after(spawn_throttle, spawn_tick)
+end
+-- register globalstep after the server starts
+minetest.after(0.1, spawn_tick)
 
 -- register map generation
 minetest.register_on_generated(function(minp, maxp, seed)
