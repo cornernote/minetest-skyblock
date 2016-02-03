@@ -270,8 +270,17 @@ local function bucket_on_use(itemstack, user, pointed_thing)
 	if minetest.is_protected(pointed_thing.under, user:get_player_name()) then
 		return
 	end
-	-- Check if pointing to a liquid source
-	local n = minetest.get_node(pointed_thing.under)
+	-- Get the Node and Registered Item
+	local n = minetest.get_node_or_nil(pointed_thing.under)
+ 	local ndef
+ 	if n then
+ 		ndef = minetest.registered_items[n.name]
+ 	end
+ 	-- Call on_rightclick if the pointed node defines it
+ 	if ndef and ndef.on_rightclick and user and not user:get_player_control().sneak then
+ 		return ndef.on_rightclick(pointed_thing.under, n, user, itemstack) or itemstack
+ 	end
+ 	-- Check if pointing to a liquid source
 	local liquid = bucket.liquids[n.name]
 	if liquid ~= nil and liquid.source == n.name and liquid.itemname ~= nil then
 		
@@ -298,8 +307,17 @@ local function bucket_water_on_use(itemstack, user, pointed_thing)
 	if minetest.is_protected(pointed_thing.under, user:get_player_name()) then
 		return
 	end
-	-- Check if pointing to a liquid
-	local n = minetest.get_node(pointed_thing.under)
+	-- Get the Node and Registered Item
+	local n = minetest.get_node_or_nil(pointed_thing.under)
+	local ndef
+	if n then
+		ndef = minetest.registered_items[n.name]
+	end
+	-- Call on_rightclick if the pointed node defines it
+	if ndef and ndef.on_rightclick and user and not user:get_player_control().sneak then
+		return ndef.on_rightclick(pointed_thing.under, n, user, itemstack) or itemstack
+	end
+ 	-- Check if pointing to a liquid
 	if bucket.liquids[n.name] == nil then
 		-- Not a liquid
 
@@ -344,8 +362,17 @@ local function bucket_lava_on_use(itemstack, user, pointed_thing)
 	if minetest.is_protected(pointed_thing.under, user:get_player_name()) then
 		return
 	end
+	-- Get the Node and Registered Item
+	local n = minetest.get_node_or_nil(pointed_thing.under)
+	local ndef
+	if n then
+		ndef = minetest.registered_items[n.name]
+	end
+	-- Call on_rightclick if the pointed node defines it
+	if ndef and ndef.on_rightclick and user and not user:get_player_control().sneak then
+		return ndef.on_rightclick(pointed_thing.under, n, user, itemstack) or itemstack
+	end
 	-- Check if pointing to a liquid
-	local n = minetest.get_node(pointed_thing.under)
 	if bucket.liquids[n.name] == nil then
 		-- Not a liquid
 
