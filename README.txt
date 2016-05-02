@@ -62,7 +62,7 @@ If you want to create more water simply place your 2 water sources so they touch
 -- Crafting --
 
 To learn all of the crafts you can visit the SkyBlock GameWiki:
-http://cornernote.net/minetest/skyblock/wiki/crafts.php
+http://files.cornernote.net/minetest/skyblock/wiki/crafts.php
 
 
 
