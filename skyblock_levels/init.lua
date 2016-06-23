@@ -18,6 +18,7 @@ dofile(modpath..'/skyblock.levels.1.lua')
 dofile(modpath..'/skyblock.levels.2.lua')
 dofile(modpath..'/skyblock.levels.3.lua')
 dofile(modpath..'/skyblock.levels.4.lua')
+dofile(modpath..'/skyblock.levels.5.lua')
 
 dofile(modpath..'/register_abm.lua')
 dofile(modpath..'/register_craft.lua')

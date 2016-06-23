@@ -241,7 +241,7 @@ end
 
 -- track bucket feats
 function skyblock.levels.bucket_on_use(level,player_name,pointed_thing)
-	local node = minetest.env:get_node(pointed_thing.under)
+	local node = minetest.get_node(pointed_thing.under)
 	for _,v in ipairs(skyblock.levels[level].feats) do
 		if v.bucket then
 			for _,vv in ipairs(v.bucket) do
@@ -255,8 +255,8 @@ function skyblock.levels.bucket_on_use(level,player_name,pointed_thing)
 end
 
 -- track bucket water feats
-function skyblock.levels.bucket_water_on_use(level,player_name,pointed_thing) 
-	local node = minetest.env:get_node(pointed_thing.under)
+function skyblock.levels.bucket_water_on_use(level,player_name,pointed_thing)
+	local node = minetest.get_node(pointed_thing.under)
 	for _,v in ipairs(skyblock.levels[level].feats) do
 		if v.bucket_water then
 			for _,vv in ipairs(v.bucket_water) do
@@ -271,7 +271,7 @@ end
 
 -- track bucket lava feats
 function skyblock.levels.bucket_lava_on_use(level,player_name,pointed_thing)
-	local node = minetest.env:get_node(pointed_thing.under)
+	local node = minetest.get_node(pointed_thing.under)
 	for _,v in ipairs(skyblock.levels[level].feats) do
 		if v.bucket_lava then
 			for _,vv in ipairs(v.bucket_lava) do
@@ -282,4 +282,22 @@ function skyblock.levels.bucket_lava_on_use(level,player_name,pointed_thing)
 			end
 		end
 	end
+end
+
+-- track hoe usage
+function skyblock.levels.hoe_on_use(level, player_name, pointed_thing, itemname)
+   for _, v in pairs(skyblock.levels[level].feats) do
+      if v.hoeuse then
+	 for _, vv in pairs(v.hoeuse) do
+	    if itemname == "farming:hoe_" .. vv then
+	       skyblock.feats.add(level, player_name, v.feat)
+	       return
+	    end
+	 end
+	 if #v.hoeuse == 0 then
+	    skyblock.feats.add(level, player_name, v.feat)
+	    return
+	 end
+      end
+   end
 end

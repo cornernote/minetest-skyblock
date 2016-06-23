@@ -79,18 +79,18 @@ function skyblock.feats.update(player_name)
 			end
 		end
 		minetest.log('action', player_name..' completed level '..level)
-		
+
 		skyblock.feats.add(0,info.player_name,'level')
 		skyblock.levels[level+1].init(info.player_name)
 		info = skyblock.levels[level+1].get_info(info.player_name)
 	end
-	
+
 	-- update formspecs
 	local player = minetest.get_player_by_name(player_name)
 	if player then
 		player:set_inventory_formspec(info.formspec)
 	end
-	local meta = minetest.env:get_meta(pos)
+	local meta = minetest.get_meta(pos)
 	meta:set_string('formspec', info.formspec_quest)
 	meta:set_string('infotext', info.infotext)
 end
@@ -260,6 +260,15 @@ function skyblock.feats.bucket_lava_on_use(itemstack, user, pointed_thing)
 	end
 end
 
+-- track hoe feats
+function skyblock.feats.hoe_on_use(itemstack, user, pointed_thing)
+   local player_name = user:get_player_name()
+   local level = skyblock.feats.get_level(player_name)
+   if skyblock.levels[level].hoe_on_use then
+      skyblock.levels[level].hoe_on_use(player_name, pointed_thing, itemstack:get_name())
+   end
+end
+
 -- bucket_empty
 local function bucket_on_use(itemstack, user, pointed_thing)
 	-- Must be pointing to node
@@ -283,12 +292,12 @@ local function bucket_on_use(itemstack, user, pointed_thing)
  	-- Check if pointing to a liquid source
 	local liquid = bucket.liquids[n.name]
 	if liquid ~= nil and liquid.source == n.name and liquid.itemname ~= nil then
-		
+
 		-- begin track bucket feats
 		skyblock.feats.bucket_on_use(itemstack, user, pointed_thing)
 		-- end track bucket feats
-	
-		minetest.env:add_node(pointed_thing.under, {name='air'})
+
+		minetest.add_node(pointed_thing.under, {name='air'})
 		return {name=liquid.itemname}
 	end
 end
@@ -335,10 +344,10 @@ local function bucket_water_on_use(itemstack, user, pointed_thing)
 		end
 		-- end anti-grief change
 
-		minetest.env:add_node(pointed_thing.above, {name='default:water_source'})
+		minetest.add_node(pointed_thing.above, {name='default:water_source'})
 	elseif n.name ~= 'default:water_source' then
 		-- It's a liquid
-		minetest.env:add_node(pointed_thing.under, {name='default:water_source'})
+		minetest.add_node(pointed_thing.under, {name='default:water_source'})
 	end
 
 	-- begin track bucket feats
@@ -391,10 +400,10 @@ local function bucket_lava_on_use(itemstack, user, pointed_thing)
 		end
 		-- end anti-grief change
 
-		minetest.env:add_node(pointed_thing.above, {name='default:lava_source'})
+		minetest.add_node(pointed_thing.above, {name='default:lava_source'})
 	elseif n.name ~= 'default:lava_source' then
 		-- It's a liquid
-		minetest.env:add_node(pointed_thing.under, {name='default:lava_source'})
+		minetest.add_node(pointed_thing.under, {name='default:lava_source'})
 	end
 
 	-- begin track bucket feats
@@ -408,13 +417,16 @@ minetest.override_item('bucket:bucket_lava', {
 	on_use = bucket_lava_on_use,
 })
 
--- add protection to hoes
+-- add protection to hoes, and also a callback
 for _, material in pairs({"wood", "stone", "steel", "bronze", "mese", "diamond"}) do
 	local old_use = minetest.registered_items["farming:hoe_" .. material].on_use
 	minetest.override_item("farming:hoe_" .. material, {
 		on_use = function(itemstack, user, pointed_thing)
-			if not minetest.is_protected(pointed_thing.above, user:get_player_name()) then
-				old_use(itemstack, user, pointed_thing)
+			if pointed_thing.above and not minetest.is_protected(pointed_thing.above, user:get_player_name()) then
+			   if old_use(itemstack, user, pointed_thing) then
+			      -- Also update feats if the hoe did something
+			      skyblock.feats.hoe_on_use(itemstack, user, pointed_thing)
+			   end
 			end
 		end
 	})
@@ -435,7 +447,7 @@ function skyblock.feats.save(data,player_name)
 	if not file then
 		mkdir(filepath)
 		file = io.open(filepath..'/'..player_name, 'wb')
-		if not file then 
+		if not file then
 			skyblock.log('cannot open feat file for writing "'..filepath..'/'..player_name..'"')
 		end
 	end
