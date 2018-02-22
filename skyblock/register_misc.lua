@@ -52,6 +52,10 @@ end
 -- register globalstep after the server starts
 minetest.after(0.1, spawn_tick)
 
+-- get content ids
+local id_cloud = minetest.get_content_id('default:cloud')
+local id_bottom = minetest.get_content_id(skyblock.world_bottom_node)
+
 -- register map generation
 minetest.register_on_generated(function(minp, maxp, seed)
 	-- do not handle mapchunks which are too heigh or too low
@@ -77,7 +81,6 @@ minetest.register_on_generated(function(minp, maxp, seed)
 	-- add cloud floor
 	local cloud_y = skyblock.world_bottom-2
 	if minp.y<=cloud_y and maxp.y>=cloud_y then 
-		local id_cloud = minetest.get_content_id('default:cloud')
 		for x=minp.x,maxp.x do
 			for z=minp.z,maxp.z do
 				data[area:index(x,cloud_y,z)] = id_cloud
@@ -87,7 +90,6 @@ minetest.register_on_generated(function(minp, maxp, seed)
 
 	-- add world_bottom_node
 	if skyblock.world_bottom_node ~= 'air' then
-		local id_bottom = minetest.get_content_id(skyblock.world_bottom_node)
 		local y_start = math.max(cloud_y+1,minp.y)
 		local y_end   = math.min(skyblock.start_height,maxp.y)
 		for x=minp.x,maxp.x do
@@ -109,9 +111,10 @@ minetest.register_on_generated(function(minp, maxp, seed)
 
 	-- store the voxelmanip data
 	vm:set_data(data)
-	vm:calc_lighting(emin,emax)
+	-- vm:calc_lighting(emin,emax)
 	vm:write_to_map(data)
-	vm:update_liquids()
+	-- vm:update_liquids()
+	data = nil
 end) 
 
 
