@@ -226,7 +226,13 @@ end
 for _,v in ipairs({'doors:door_wood','doors:door_glass','doors:door_steel','doors:door_obsidian_glass'}) do
 	on_place(v,1);
 end
-for _,v in ipairs({'default:cactus', 'farming:seed_wheat', 'farming:seed_cotton', 'default:sign_wall', 'default:apple'}) do
+for _,v in ipairs({
+		'default:cactus', 
+		'farming:seed_wheat', 
+		'farming:seed_cotton', 
+		'default:sign_wall',
+		'default:sign_wall_wood', 
+		'default:apple'}) do
 	on_place(v,0);
 end
 

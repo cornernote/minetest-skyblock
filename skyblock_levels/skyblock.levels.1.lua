@@ -93,11 +93,11 @@ skyblock.levels[level].feats = {
 	},
 	{
 		name = 'craft and place a Sign',
-		hint = 'default:sign_wall',
+		hint = 'default:sign_wall_wood',
 		feat = 'place_sign',
 		count = 1,
 		reward = 'default:pick_steel',
-		placenode = {'default:sign_wall'},
+		placenode = {'default:sign_wall_wood'},
 	},
 	{
 		name = 'craft and place a Door',
