@@ -93,11 +93,11 @@ skyblock.levels[level].feats = {
 	},
 	{
 		name = 'place 8 Iron Bars',
-		hint = 'xpanes:bar',
+		hint = 'xpanes:bar_flat',
 		feat = 'place_bar', 
 		count = 8,
 		reward = 'default:mese_crystal',
-		placenode = {'xpanes:bar'},
+		placenode = {'xpanes:bar_flat'},
 	},
 	{
 		name = 'dig 4 Mese Crystals',
