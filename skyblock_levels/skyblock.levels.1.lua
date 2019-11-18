@@ -101,11 +101,11 @@ skyblock.levels[level].feats = {
 	},
 	{
 		name = 'craft and place a Door',
-		hint = 'doors:door_wood',
+		hint = 'doors:door_wood_a',
 		feat = 'place_door',
 		count = 1,
 		reward = 'default:sand 2',
-		placenode = {'doors:door_wood'},
+		placenode = {'doors:door_wood_a'},
 	},
 	{
 		name = 'craft and place 2 Glass',
