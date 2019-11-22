@@ -15,7 +15,6 @@ minetest.register_node('skyblock:quest', {
 	tiles = {'skyblock_quest.png'},
 	is_ground_content = true,
 	paramtype = 'light',
-	light_propagates = true,
 	sunlight_propagates = true,
 	light_source = 15,		
 	can_dig = function(pos, player)

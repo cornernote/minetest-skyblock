@@ -170,7 +170,7 @@ skyblock.levels[level].reward_feat = function(player_name, feat)
 					break
 				else
 					-- Err, place at player's pos...
-					pos = minetest.get_player_by_name(player_name):getpos()
+					pos = minetest.get_player_by_name(player_name):get_pos()
 					y_up = -1 -- Will get back to 0
 				end
 				y_up = y_up + 1

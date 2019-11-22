@@ -330,7 +330,7 @@ local function bucket_water_on_use(itemstack, user, pointed_thing)
 		-- begin anti-grief change
 		local player_name = user:get_player_name()
 		local spawn = skyblock.get_spawn(player_name)
-		local range = tonumber(minetest.setting_get("bucket_use_range")) or false -- how far from spawn you can use water
+		local range = tonumber(minetest.settings:get("bucket_use_range")) or false -- how far from spawn you can use water
 		local pos = pointed_thing.under
 		if range and (spawn==nil
 			or (pos.x-spawn.x > range or pos.x-spawn.x < range*-1) 
@@ -341,10 +341,10 @@ local function bucket_water_on_use(itemstack, user, pointed_thing)
 		end
 		-- end anti-grief change
 
-		minetest.env:add_node(pointed_thing.above, {name='default:water_source'})
+		minetest.add_node(pointed_thing.above, {name='default:water_source'})
 	elseif n.name ~= 'default:water_source' then
 		-- It's a liquid
-		minetest.env:add_node(pointed_thing.under, {name='default:water_source'})
+		minetest.add_node(pointed_thing.under, {name='default:water_source'})
 	end
 
 	-- begin track bucket feats
@@ -385,7 +385,7 @@ local function bucket_lava_on_use(itemstack, user, pointed_thing)
 		-- begin anti-grief change
 		local player_name = user:get_player_name()
 		local spawn = skyblock.get_spawn(player_name)
-		local range = tonumber(minetest.setting_get("bucket_use_range")) or false -- how far from spawn you can use lava
+		local range = tonumber(minetest.settings:get("bucket_use_range")) or false -- how far from spawn you can use lava
 		local pos = pointed_thing.under
 		if range and (spawn==nil
 			or (pos.x-spawn.x > range or pos.x-spawn.x < range*-1)
@@ -397,10 +397,10 @@ local function bucket_lava_on_use(itemstack, user, pointed_thing)
 		end
 		-- end anti-grief change
 
-		minetest.env:add_node(pointed_thing.above, {name='default:lava_source'})
+		minetest.add_node(pointed_thing.above, {name='default:lava_source'})
 	elseif n.name ~= 'default:lava_source' then
 		-- It's a liquid
-		minetest.env:add_node(pointed_thing.under, {name='default:lava_source'})
+		minetest.add_node(pointed_thing.under, {name='default:lava_source'})
 	end
 
 	-- begin track bucket feats

@@ -72,7 +72,7 @@ minetest.override_item('default:sapling', {
 		-- check if we have space to make a tree
 		for dy=1,4 do
 			pos.y = pos.y+dy
-			if minetest.env:get_node(pos).name ~= 'air' and minetest.env:get_node(pos).name ~= 'default:leaves' then
+			if minetest.get_node(pos).name ~= 'air' and minetest.get_node(pos).name ~= 'default:leaves' then
 				return
 			end
 			pos.y = pos.y-dy

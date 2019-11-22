@@ -36,11 +36,11 @@ end)
 local spawn_throttle = 1
 local function spawn_tick()
 	for _,player in ipairs(minetest.get_connected_players()) do
-		local pos = player:getpos()
+		local pos = player:get_pos()
 		-- hit the bottom
 		if pos.y < skyblock.world_bottom then
 			local spawn = skyblock.get_spawn(player:get_player_name())
-			if minetest.env:get_node(spawn).name == 'skyblock:quest' then
+			if minetest.get_node(spawn).name == 'skyblock:quest' then
 				player:set_hp(0)
 			else
 				skyblock.spawn_player(player)
@@ -121,7 +121,7 @@ end)
 -- no placing low nodes
 minetest.register_on_placenode(function(pos, newnode, placer, oldnode)
 	if pos.y <= skyblock.world_bottom then
-		minetest.env:remove_node(pos)
+		minetest.remove_node(pos)
 		return true -- give back item
 	end
 end)
