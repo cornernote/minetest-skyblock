@@ -23,11 +23,11 @@ minetest.register_abm({
 		end
 
 		-- check for nearby
-		if minetest.env:find_node_near(pos, 2, {'group:flora'}) ~= nil then
+		if minetest.find_node_near(pos, 2, {'group:flora'}) ~= nil then
 			return
 		end
 
-		if minetest.env:get_node(pos).name == 'air' then
+		if minetest.get_node(pos).name == 'air' then
 			local rand = math.random(1,8);
 			local node
 			if rand==1 then
@@ -47,7 +47,7 @@ minetest.register_abm({
 			elseif rand==8 then
 				node = 'flowers:viola'
 			end
-			minetest.env:set_node(pos, {name=node})
+			minetest.set_node(pos, {name=node})
 		end
 	end
 })
@@ -58,6 +58,6 @@ minetest.register_abm({
 	interval = 1,
 	chance = 1,
 	action = function(pos, node)
-		minetest.env:remove_node(pos)
+		minetest.remove_node(pos)
 	end,
 })

@@ -17,44 +17,44 @@ skyblock = {}
 --
 
 -- Debug mode
-skyblock.debug = minetest.setting_getbool('skyblock.debug')
+skyblock.debug = minetest.settings:get_bool('skyblock.debug')
 
 -- How far apart to set players start positions
-skyblock.start_gap = tonumber(minetest.setting_get('skyblock.start_gap')) or 32
+skyblock.start_gap = tonumber(minetest.settings:get('skyblock.start_gap')) or 32
 
 -- The Y position the spawn nodes will appear
-skyblock.start_height = tonumber(minetest.setting_get('skyblock.start_height')) or 4
+skyblock.start_height = tonumber(minetest.settings:get('skyblock.start_height')) or 4
 
 -- How many players will be in 1 row
 -- skyblock.world_width * skyblock.world_width = total players
-skyblock.world_width = tonumber(minetest.setting_get('skyblock.world_width')) or 1000
+skyblock.world_width = tonumber(minetest.settings:get('skyblock.world_width')) or 1000
 
 -- How far down (in nodes) before a player dies and is respawned
-skyblock.world_bottom = tonumber(minetest.setting_get('skyblock.world_bottom')) or -8
+skyblock.world_bottom = tonumber(minetest.settings:get('skyblock.world_bottom')) or -8
 
 -- Difference (in nodes) between islands starting heights
-skyblock.height_difference = tonumber(minetest.setting_get('skyblock.height_difference')) or 8
+skyblock.height_difference = tonumber(minetest.settings:get('skyblock.height_difference')) or 8
 
 -- Node to use for the world bottom
-skyblock.world_bottom_node = minetest.setting_get('skyblock.world_bottom') or 'air' -- 'air' || 'default:water_source' || 'default:lava_source'
+skyblock.world_bottom_node = minetest.settings:get('skyblock.world_bottom') or 'air' -- 'air' || 'default:water_source' || 'default:lava_source'
 
 -- Should digging the spawn result in a new spawn pos?
-skyblock.dig_new_spawn = minetest.setting_getbool('skyblock.dig_new_spawn')
+skyblock.dig_new_spawn = minetest.settings:get_bool('skyblock.dig_new_spawn')
 
 -- Should player lose bags on death?
-skyblock.lose_bags_on_death = minetest.setting_getbool('skyblock.lose_bags_on_death')
+skyblock.lose_bags_on_death = minetest.settings:get_bool('skyblock.lose_bags_on_death')
 
 -- Which schem file to use
-skyblock.schem = minetest.setting_get('skyblock.schem') or 'island.schem'
+skyblock.schem = minetest.settings:get('skyblock.schem') or 'island.schem'
 
 -- Schem offset X
-skyblock.schem_offset_x = tonumber(minetest.setting_get('skyblock.schem_offset_x')) or -3
+skyblock.schem_offset_x = tonumber(minetest.settings:get('skyblock.schem_offset_x')) or -3
 
 -- Schem offset Y
-skyblock.schem_offset_y = tonumber(minetest.setting_get('skyblock.schem_offset_y')) or -4
+skyblock.schem_offset_y = tonumber(minetest.settings:get('skyblock.schem_offset_y')) or -4
 
 -- Schem offset Z
-skyblock.schem_offset_z = tonumber(minetest.setting_get('skyblock.schem_offset_z')) or -3
+skyblock.schem_offset_z = tonumber(minetest.settings:get('skyblock.schem_offset_z')) or -3
 
 
 -- local variables
@@ -62,7 +62,6 @@ local filename = minetest.get_worldpath()..'/skyblock'
 local last_start_id = 0
 local start_positions = {}
 local spawnpos = {}
-
 
 --
 -- PUBLIC FUNCTIONS
@@ -144,13 +143,13 @@ function skyblock.spawn_player(player)
 	
 	-- add the start block and teleport the player
 	skyblock.make_spawn_blocks(spawn,player_name)
-	player:setpos({x=spawn.x,y=spawn.y+6,z=spawn.z})
+	player:set_pos({x=spawn.x,y=spawn.y+6,z=spawn.z})
 	player:set_hp(20)
 end
 
 -- load schem
 local schempath = minetest.get_modpath(minetest.get_current_modname())..'/schems'
-function skyblock.load_schem(origin,filename)
+function skyblock.load_schem(origin, filename)
 	local file, err = io.open(schempath..'/'..filename, 'rb')
 	local value = file:read('*a')
 	file:close()
@@ -164,7 +163,7 @@ function skyblock.load_schem(origin,filename)
 			y=entry.y + origin.y + skyblock.schem_offset_y,
 			z=entry.z + origin.z + skyblock.schem_offset_z,
 		}
-		if minetest.env:get_node(pos).name == 'air' then
+		if minetest.get_node(pos).name == 'air' then
 			minetest.add_node(pos, {name=entry.name})
 		end
 	end
@@ -173,7 +172,7 @@ end
 -- make spawn blocks
 function skyblock.make_spawn_blocks(pos, player_name)
 	skyblock.log('skyblock.make_spawn_blocks('..skyblock.dump_pos(pos)..', '..player_name..') ')
-	skyblock.load_schem(pos,skyblock.schem)
+	skyblock.load_schem(pos, skyblock.schem)
 	--minetest.env:add_node(pos, {name='skyblock:quest'})
 end
 
