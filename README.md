@@ -1,5 +1,6 @@
 # Skyblock for Minetest
 
+[![Build status](https://github.com/cornernote/minetest-skyblock/workflows/build/badge.svg)](https://github.com/cornernote/minetest-skyblock/actions)
 [![home](https://img.shields.io/badge/skyblock-home-blue.svg?style=flat-square)](https://cornernote.github.io/minetest-skyblock/)
 [![chat](https://img.shields.io/badge/gitter-join%20chat-blue.svg?style=flat-square)](https://gitter.im/cornernote/minetest-skyblock)
 [![download](https://img.shields.io/github/tag/cornernote/minetest-skyblock.svg?style=flat-square&label=release)](https://github.com/cornernote/minetest-skyblock/releases)
