@@ -29,7 +29,6 @@ minetest.register_abm({
 
 		if minetest.get_node(pos).name == 'air' then
 			local rand = math.random(1,8);
-			local node
 			if rand==1 then
 				node = 'default:junglegrass'
 			elseif rand==2 then

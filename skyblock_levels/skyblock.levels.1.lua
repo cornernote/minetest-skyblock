@@ -38,47 +38,47 @@ skyblock.levels[level].feats = {
 	{
 		name = 'dig 10 Dirt',
 		hint = nil,
-		feat = 'dig_dirt', 
-		count = 10, 
+		feat = 'dig_dirt',
+		count = 10,
 		reward = 'default:stick',
 		dignode = {'default:dirt', 'default:dirt_with_grass', 'default:dirt_with_grass_footsteps'},
 	},
 	{
 		name = 'place 10 Dirt',
 		hint = 'default:dirt',
-		feat = 'place_dirt', 
-		count = 10, 
+		feat = 'place_dirt',
+		count = 10,
 		reward = 'default:leaves 6',
 		placenode = {'default:dirt'},
 	},
 	{
 		name = 'craft a Sapling and grow a Tree',
 		hint = 'default:sapling',
-		feat = 'place_sapling', 
-		count = 1, 
+		feat = 'place_sapling',
+		count = 1,
 		reward = 'default:tree',
 		placenode = {'default:sapling'},
 	},
 	{
 		name = 'craft an Axe and dig 16 Tree',
 		hint = 'default:axe_wood',
-		feat = 'dig_tree', 
-		count = 16, 
+		feat = 'dig_tree',
+		count = 16,
 		reward = 'default:cobble 8',
 		dignode = {'default:tree'},
 	},
 	{
 		name = 'craft and place a Furnace',
 		hint = 'default:furnace',
-		feat = 'place_furnace', 
-		count = 1, 
+		feat = 'place_furnace',
+		count = 1,
 		reward = 'default:axe_steel',
 		placenode = {'default:furnace'},
 	},
 	{
 		name = 'craft and place 50 Cobblestone',
 		hint = 'default:cobble',
-		feat = 'place_cobble', 
+		feat = 'place_cobble',
 		count = 50,
 		reward = 'stairs:stair_cobble 4',
 		placenode = {'default:cobble'},
@@ -87,7 +87,7 @@ skyblock.levels[level].feats = {
 		name = 'craft and place a Chest',
 		hint = 'default:chest',
 		feat = 'place_chest',
-		count = 1, 
+		count = 1,
 		reward = 'default:papyrus 5',
 		placenode = {'default:chest'},
 	},
@@ -131,13 +131,13 @@ end
 
 -- get level information
 skyblock.levels[level].get_info = function(player_name)
-	local info = { 
-		level=level, 
-		total=10, 
-		count=0, 
-		player_name=player_name, 
-		infotext='', 
-		formspec = '', 
+	local info = {
+		level=level,
+		total=10,
+		count=0,
+		player_name=player_name,
+		infotext='',
+		formspec = '',
 		formspec_quest = '',
 	}
 
@@ -146,10 +146,10 @@ skyblock.levels[level].get_info = function(player_name)
 		..'label[0,1.0;We can no longer live on the surface.]'
 		..'label[0,1.5;Can you help us rebuild in the sky?]'
 		..'label[0,2.0;Complete the quests to receive great rewards!]'
-	
+
 	info.formspec = skyblock.levels.get_inventory_formspec(level,info.player_name,true)..text
 	info.formspec_quest = skyblock.levels.get_inventory_formspec(level,info.player_name)..text
-	
+
 	for k,v in ipairs(skyblock.levels[level].feats) do
 		info.formspec = info.formspec..skyblock.levels.get_feat_formspec(info,k,v.feat,v.count,v.name,v.hint,true)
 		info.formspec_quest = info.formspec_quest..skyblock.levels.get_feat_formspec(info,k,v.feat,v.count,v.name,v.hint)
@@ -159,7 +159,7 @@ skyblock.levels[level].get_info = function(player_name)
 	end
 
 	info.infotext = 'LEVEL '..info.level..' for '..info.player_name..': '..info.count..' of '..info.total
-	
+
 	return info
 end
 
@@ -194,7 +194,7 @@ skyblock.levels[level].bucket_on_use = function(player_name, pointed_thing)
 end
 
 -- track bucket water feats
-skyblock.levels[level].bucket_water_on_use = function(player_name, pointed_thing) 
+skyblock.levels[level].bucket_water_on_use = function(player_name, pointed_thing)
 	skyblock.levels.bucket_water_on_use(level, player_name, pointed_thing)
 end
 

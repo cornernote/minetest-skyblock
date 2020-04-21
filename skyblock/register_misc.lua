@@ -80,7 +80,7 @@ minetest.register_on_generated(function(minp, maxp, seed)
 
 	-- add cloud floor
 	local cloud_y = skyblock.world_bottom-2
-	if minp.y<=cloud_y and maxp.y>=cloud_y then 
+	if minp.y<=cloud_y and maxp.y>=cloud_y then
 		for x=minp.x,maxp.x do
 			for z=minp.z,maxp.z do
 				data[area:index(x,cloud_y,z)] = id_cloud
@@ -100,7 +100,7 @@ minetest.register_on_generated(function(minp, maxp, seed)
 			end
 		end
 	end
-	
+
 	-- add starting blocks
 	--[[
 	local start_pos_list = skyblock.get_start_positions_in_mapchunk(minp, maxp)
@@ -115,7 +115,7 @@ minetest.register_on_generated(function(minp, maxp, seed)
 	vm:write_to_map(data)
 	-- vm:update_liquids()
 	data = nil
-end) 
+end)
 
 
 -- no placing low nodes

@@ -38,7 +38,7 @@ skyblock.levels[level].feats = {
 	{
 		name = 'grow and collect 20 Papyrus',
 		hint = nil,
-		feat = 'dig_papyrus', 
+		feat = 'dig_papyrus',
 		count = 20,
 		reward = 'wool:white 50',
 		dignode = {'default:papyrus'},
@@ -46,7 +46,7 @@ skyblock.levels[level].feats = {
 	{
 		name = 'place 50 Brick',
 		hint = 'default:brick',
-		feat = 'place_brick', 
+		feat = 'place_brick',
 		count = 50,
 		reward = 'stairs:stair_brick 4',
 		placenode = {'default:brick'},
@@ -54,7 +54,7 @@ skyblock.levels[level].feats = {
 	{
 		name = 'place 50 Mossy Cobblestone',
 		hint = 'default:mossycobble',
-		feat = 'place_mossycobble', 
+		feat = 'place_mossycobble',
 		count = 50,
 		reward = 'wool:blue 50',
 		placenode = {'default:mossycobble'},
@@ -62,7 +62,7 @@ skyblock.levels[level].feats = {
 	{
 		name = 'place 4 Bookshelves',
 		hint = 'default:bookshelf',
-		feat = 'place_bookshelf', 
+		feat = 'place_bookshelf',
 		count = 4,
 		reward = 'wool:red 50',
 		placenode = {'default:bookshelf'},
@@ -70,7 +70,7 @@ skyblock.levels[level].feats = {
 	{
 		name = 'place 4 Steel Blocks',
 		hint = 'default:steelblock',
-		feat = 'place_steelblock', 
+		feat = 'place_steelblock',
 		count = 4,
 		reward = 'default:obsidian_shard',
 		placenode = {'default:steelblock'},
@@ -78,7 +78,7 @@ skyblock.levels[level].feats = {
 	{
 		name = 'place 50 Sand',
 		hint = 'default:sand',
-		feat = 'place_sand', 
+		feat = 'place_sand',
 		count = 50,
 		reward = 'wool:green 50',
 		placenode = {'default:sand'},
@@ -86,7 +86,7 @@ skyblock.levels[level].feats = {
 	{
 		name = 'dig 4 Copper lumps',
 		hint = 'default:stone_with_copper',
-		feat = 'dig_stone_with_copper', 
+		feat = 'dig_stone_with_copper',
 		count = 4,
 		reward = 'wool:orange 50',
 		dignode = {'default:stone_with_copper'},
@@ -94,7 +94,7 @@ skyblock.levels[level].feats = {
 	{
 		name = 'place 8 Iron Bars',
 		hint = 'xpanes:bar_flat',
-		feat = 'place_bar', 
+		feat = 'place_bar',
 		count = 8,
 		reward = 'default:mese_crystal',
 		placenode = {'xpanes:bar_flat'},
@@ -102,16 +102,16 @@ skyblock.levels[level].feats = {
 	{
 		name = 'dig 4 Mese Crystals',
 		hint = 'default:stone_with_mese',
-		feat = 'dig_stone_with_mese', 
-		count = 4, 
+		feat = 'dig_stone_with_mese',
+		count = 4,
 		reward = 'default:gold_lump',
 		dignode = {'default:stone_with_mese'},
 	},
 	{
 		name = 'place Infinite Water (diagonal)',
 		hint = 'bucket:bucket_empty',
-		feat = 'place_water_infinite', 
-		count = 1, 
+		feat = 'place_water_infinite',
+		count = 1,
 		reward = 'default:diamond',
 		--bucket_water = {},
 	},
@@ -123,13 +123,13 @@ end
 
 -- get level information
 skyblock.levels[level].get_info = function(player_name)
-	local info = { 
-		level=level, 
-		total=10, 
-		count=0, 
-		player_name=player_name, 
-		infotext='', 
-		formspec = '', 
+	local info = {
+		level=level,
+		total=10,
+		count=0,
+		player_name=player_name,
+		infotext='',
+		formspec = '',
 		formspec_quest = '',
 	}
 
@@ -151,14 +151,14 @@ skyblock.levels[level].get_info = function(player_name)
 	end
 
 	info.infotext = 'LEVEL '..info.level..' for '..info.player_name..': '..info.count..' of '..info.total
-	
+
 	return info
 end
 
 -- reward_feat
 skyblock.levels[level].reward_feat = function(player_name, feat)
 	local rewarded = skyblock.levels.reward_feat(level, player_name, feat)
-	
+
 	-- add water after dig_stone_with_mese
 	if rewarded and feat == 'dig_stone_with_mese' then
 		local pos = skyblock.get_spawn(player_name)
@@ -195,19 +195,19 @@ skyblock.levels[level].bucket_on_use = function(player_name, pointed_thing)
 end
 
 -- track bucket water feats
-skyblock.levels[level].bucket_water_on_use = function(player_name, pointed_thing) 
+skyblock.levels[level].bucket_water_on_use = function(player_name, pointed_thing)
 	skyblock.levels.bucket_water_on_use(level, player_name, pointed_thing)
-	
+
 	-- place_water_infinite
 	local pos = pointed_thing.under
-	if minetest.get_node({x=pos.x-1,y=pos.y,z=pos.z-1}).name=='default:water_source' 
+	if minetest.get_node({x=pos.x-1,y=pos.y,z=pos.z-1}).name=='default:water_source'
 	or minetest.get_node({x=pos.x-1,y=pos.y,z=pos.z+1}).name=='default:water_source'
 	or minetest.get_node({x=pos.x+1,y=pos.y,z=pos.z-1}).name=='default:water_source'
 	or minetest.get_node({x=pos.x+1,y=pos.y,z=pos.z+1}).name=='default:water_source' then
 		skyblock.feats.add(level,player_name,'place_water_infinite')
 		return
 	end
-	
+
 end
 
 -- track bucket lava feats
