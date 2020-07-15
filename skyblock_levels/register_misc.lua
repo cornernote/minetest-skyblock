@@ -38,9 +38,9 @@ minetest.register_on_dieplayer(function(player)
 	else
 		skyblock.feats.reset_level(player_name)
 	end
-	
+
 	-- back to start of this level
-	
+
 end)
 
 -- player receive fields
@@ -59,6 +59,6 @@ if minetest.get_modpath('unified_inventory') then
 		tooltip = 'Skyblock Quests',
 		action = function(player)
 			skyblock.feats.update(player:get_player_name())
-		end,	
+		end,
 	})
 end

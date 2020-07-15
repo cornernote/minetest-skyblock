@@ -79,12 +79,12 @@ function skyblock.feats.update(player_name)
 			end
 		end
 		minetest.log('action', player_name..' completed level '..level)
-		
+
 		skyblock.feats.add(0,info.player_name,'level')
 		skyblock.levels[level+1].init(info.player_name)
 		info = skyblock.levels[level+1].get_info(info.player_name)
 	end
-	
+
 	-- update formspecs
 	local player = minetest.get_player_by_name(player_name)
 	if player then
@@ -227,11 +227,11 @@ for _,v in ipairs({'doors:door_wood','doors:door_glass','doors:door_steel','door
 	on_place(v,1);
 end
 for _,v in ipairs({
-		'default:cactus', 
-		'farming:seed_wheat', 
-		'farming:seed_cotton', 
+		'default:cactus',
+		'farming:seed_wheat',
+		'farming:seed_cotton',
 		'default:sign_wall',
-		'default:sign_wall_wood', 
+		'default:sign_wall_wood',
 		'default:apple'}) do
 	on_place(v,0);
 end
@@ -272,28 +272,32 @@ local function bucket_on_use(itemstack, user, pointed_thing)
 	if pointed_thing.type ~= 'node' then
 		return
 	end
+
 	-- Check if protected
 	if minetest.is_protected(pointed_thing.under, user:get_player_name()) then
 		return
 	end
+
 	-- Get the Node and Registered Item
 	local n = minetest.get_node_or_nil(pointed_thing.under)
- 	local ndef
- 	if n then
- 		ndef = minetest.registered_items[n.name]
- 	end
- 	-- Call on_rightclick if the pointed node defines it
- 	if ndef and ndef.on_rightclick and user and not user:get_player_control().sneak then
- 		return ndef.on_rightclick(pointed_thing.under, n, user, itemstack) or itemstack
- 	end
- 	-- Check if pointing to a liquid source
+	local ndef
+	if n then
+		ndef = minetest.registered_items[n.name]
+	end
+
+	-- Call on_rightclick if the pointed node defines it
+	if ndef and ndef.on_rightclick and user and not user:get_player_control().sneak then
+		return ndef.on_rightclick(pointed_thing.under, n, user, itemstack) or itemstack
+	end
+
+	-- Check if pointing to a liquid source
 	local liquid = bucket.liquids[n.name]
 	if liquid ~= nil and liquid.source == n.name and liquid.itemname ~= nil then
-		
+
 		-- begin track bucket feats
 		skyblock.feats.bucket_on_use(itemstack, user, pointed_thing)
 		-- end track bucket feats
-	
+
 		minetest.env:add_node(pointed_thing.under, {name='air'})
 		return {name=liquid.itemname}
 	end
@@ -323,7 +327,7 @@ local function bucket_water_on_use(itemstack, user, pointed_thing)
 	if ndef and ndef.on_rightclick and user and not user:get_player_control().sneak then
 		return ndef.on_rightclick(pointed_thing.under, n, user, itemstack) or itemstack
 	end
- 	-- Check if pointing to a liquid
+	-- Check if pointing to a liquid
 	if bucket.liquids[n.name] == nil then
 		-- Not a liquid
 
@@ -333,8 +337,8 @@ local function bucket_water_on_use(itemstack, user, pointed_thing)
 		local range = tonumber(minetest.settings:get("bucket_use_range")) or false -- how far from spawn you can use water
 		local pos = pointed_thing.under
 		if range and (spawn==nil
-			or (pos.x-spawn.x > range or pos.x-spawn.x < range*-1) 
-			or (pos.y-spawn.y > range/2 or pos.y-spawn.y < range*-1/2) 
+			or (pos.x-spawn.x > range or pos.x-spawn.x < range*-1)
+			or (pos.y-spawn.y > range/2 or pos.y-spawn.y < range*-1/2)
 			or (pos.z-spawn.z > range or pos.z-spawn.z < range*-1)) then
 			minetest.chat_send_player(player_name, 'Cannot use bucket so far from your home.')
 			return
@@ -441,7 +445,7 @@ function skyblock.feats.save(data,player_name)
 	if not file then
 		mkdir(filepath)
 		file = io.open(filepath..'/'..player_name, 'wb')
-		if not file then 
+		if not file then
 			skyblock.log('cannot open feat file for writing "'..filepath..'/'..player_name..'"')
 		end
 	end

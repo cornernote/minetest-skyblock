@@ -38,7 +38,7 @@ skyblock.craft_guide.image_button_link = function(stack_string)
 	if group_placeholder[stack_string] then
 		stack_string = group_placeholder[stack_string]
 		group = 'G'
-	end		
+	end
 	local stack = ItemStack(stack_string)
 	local new_node_name = stack_string
 	if( stack and stack:get_name()) then
@@ -133,7 +133,7 @@ skyblock.craft_guide.get_formspec = function(node_name, fields)
 		if outstack and outstack:get_count() and outstack:get_count()>1 then
 			formspec = formspec..'label[4.5,3;'..tostring(outstack:get_count())..']'
 		end
-		
+
 		if receipe.type=='normal' then
 			receipe.type = 'craft'
 		elseif receipe.type=='cooking' then

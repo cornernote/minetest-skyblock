@@ -72,7 +72,7 @@ function skyblock.levels.get_inventory_formspec(level,player_name,inventory)
 			..'button[11,0;2,0.5;restart;Restart]'
 			..'button_exit[13,0;2,0.5;close;Close]'
 	end
-		
+
 	formspec = formspec
 		..'background[-0.1,-0.1;6.6,10.3;goals.png]'
 		..'label[0,0; --== LEVEL '..level..' for '..player_name..' ==--]'
@@ -86,7 +86,7 @@ function skyblock.levels.get_inventory_formspec(level,player_name,inventory)
 		..'background[9.9,1.4;5.2,3.8;craft.png]'
 		..'list[current_player;craft;10,2;3,3;]'
 		..'list[current_player;craftpreview;14,3;1,1;]'
-		
+
 		..'label[7,5.5; Inventory]'
 		..'background[6.9,5.4;8.2,4.8;inventory.png]'
 		..'list[current_player;main;7,6;8,4;]'
@@ -255,7 +255,7 @@ function skyblock.levels.bucket_on_use(level,player_name,pointed_thing)
 end
 
 -- track bucket water feats
-function skyblock.levels.bucket_water_on_use(level,player_name,pointed_thing) 
+function skyblock.levels.bucket_water_on_use(level,player_name,pointed_thing)
 	local node = minetest.env:get_node(pointed_thing.under)
 	for _,v in ipairs(skyblock.levels[level].feats) do
 		if v.bucket_water then

@@ -38,72 +38,72 @@ skyblock.levels[level].feats = {
 	{
 		name = 'place a Trapdoor',
 		hint = 'doors:trapdoor',
-		feat = 'place_trapdoor', 
-		count = 1, 
+		feat = 'place_trapdoor',
+		count = 1,
 		reward = 'default:desert_stonebrick 50',
 		placenode = {'doors:trapdoor'},
 	},
 	{
 		name = 'place 10 Ladders',
 		hint = 'default:ladder_wood',
-		feat = 'place_ladder', 
-		count = 10, 
+		feat = 'place_ladder',
+		count = 10,
 		reward = 'default:desert_cobble 50',
 		placenode = {'default:ladder_wood', 'default:ladder_steel'},
 	},
 	{
 		name = 'place 20 Wood Fences',
 		hint = 'default:fence_wood',
-		feat = 'place_fence', 
-		count = 20, 
+		feat = 'place_fence',
+		count = 20,
 		reward = 'default:cobble 25',
 		placenode = {'default:fence_wood'},
 	},
 	{
 		name = 'build a structure using 100 Gravel',
 		hint = 'default:gravel',
-		feat = 'place_gravel', 
-		count = 100, 
+		feat = 'place_gravel',
+		count = 100,
 		reward = 'stairs:stair_cobble 4',
 		placenode = {'default:gravel'},
 	},
 	{
 		name = 'extend your Island with 100 Dirt',
 		hint = 'default:dirt',
-		feat = 'place_dirt', 
-		count = 100, 
+		feat = 'place_dirt',
+		count = 100,
 		reward = 'default:jungleleaves 6',
 		placenode = {'default:dirt'},
 	},
 	{
 		name = 'craft and place 100 Cobblestone',
 		hint = 'default:cobble',
-		feat = 'place_cobble', 
-		count = 100, 
+		feat = 'place_cobble',
+		count = 100,
 		reward = 'default:coal_lump',
 		placenode = {'default:cobble'},
 	},
 	{
 		name = 'dig 2 Coal Lumps',
 		hint = 'default:stone_with_coal',
-		feat = 'dig_stone_with_coal', 
-		count = 2, 
+		feat = 'dig_stone_with_coal',
+		count = 2,
 		reward = 'default:sandstonebrick 50',
 		dignode = {'default:stone_with_coal'},
 	},
 	{
 		name = 'place 8 Torches',
 		hint = 'default:torch',
-		feat = 'place_torch', 
-		count = 8, 
+		feat = 'place_torch',
+		count = 8,
 		reward = 'default:iron_lump',
 		placenode = {'default:torch'},
 	},
 	{
 		name = 'dig 4 Iron Lumps',
 		hint = 'default:stone_with_iron',
-		feat = 'dig_stone_with_iron', 
-		count = 4, 
+		feat = 'dig_stone_with_iron',
+		count = 4,
 		reward = 'default:pine_needles 6',
 		dignode = {'default:stone_with_iron'},
 	},
@@ -111,7 +111,7 @@ skyblock.levels[level].feats = {
 		name = 'collect the Water Source',
 		hint = 'bucket:bucket_empty',
 		feat = 'collect_water',
-		count = 1, 
+		count = 1,
 		reward = 'default:copper_lump',
 		bucket = {'default:water_source'},
 	},
@@ -123,13 +123,13 @@ end
 
 -- get level information
 skyblock.levels[level].get_info = function(player_name)
-	local info = { 
-		level=level, 
-		total=10, 
-		count=0, 
-		player_name=player_name, 
-		infotext='', 
-		formspec = '', 
+	local info = {
+		level=level,
+		total=10,
+		count=0,
+		player_name=player_name,
+		infotext='',
+		formspec = '',
 		formspec_quest = '',
 	}
 
@@ -151,14 +151,14 @@ skyblock.levels[level].get_info = function(player_name)
 	end
 
 	info.infotext = 'LEVEL '..info.level..' for '..info.player_name..': '..info.count..' of '..info.total
-	
+
 	return info
 end
 
 -- reward_feat
 skyblock.levels[level].reward_feat = function(player_name, feat)
 	local rewarded = skyblock.levels.reward_feat(level, player_name, feat)
-	
+
 	-- add water after dig_stone_with_iron
 	if rewarded and feat == 'dig_stone_with_iron' then
 		local pos = skyblock.get_spawn(player_name)
@@ -211,7 +211,7 @@ skyblock.levels[level].bucket_on_use = function(player_name, pointed_thing)
 end
 
 -- track bucket water feats
-skyblock.levels[level].bucket_water_on_use = function(player_name, pointed_thing) 
+skyblock.levels[level].bucket_water_on_use = function(player_name, pointed_thing)
 	skyblock.levels.bucket_water_on_use(level, player_name, pointed_thing)
 end
 

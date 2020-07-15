@@ -133,14 +133,14 @@ end
 function skyblock.spawn_player(player)
 	local player_name = player:get_player_name()
 	skyblock.log('skyblock.spawn_player() '..player_name)
-	
+
 	-- find the player spawn point
 	local spawn = skyblock.get_spawn(player_name)
 	if spawn == nil then
 		spawn = skyblock.get_next_spawn()
 		skyblock.set_spawn(player_name,spawn)
 	end
-	
+
 	-- add the start block and teleport the player
 	skyblock.make_spawn_blocks(spawn,player_name)
 	player:set_pos({x=spawn.x,y=spawn.y+6,z=spawn.z})
@@ -150,10 +150,10 @@ end
 -- load schem
 local schempath = minetest.get_modpath(minetest.get_current_modname())..'/schems'
 function skyblock.load_schem(origin, filename)
-	local file, err = io.open(schempath..'/'..filename, 'rb')
+	local file,_ = io.open(schempath..'/'..filename, 'rb')
 	local value = file:read('*a')
 	file:close()
-		
+
 	local nodes = minetest.deserialize(value)
 	if not nodes then return nil end
 
@@ -221,7 +221,7 @@ local function sindex(y, x) -- returns the value at (x, y) in a spiral that star
 	return (2*l-1)^2+4*l+2*l*sn(x+y)+sn(y^2-x^2)*(l-(av(y)==l and sn(y)*x or sn(x)*y)) -- OH GOD WHAT
 end
 local function spiralt(side)
-	local ret, id, start, stop = {}, 0, math.floor((-side+1)/2), math.floor((side-1)/2)
+	local ret,_ , start, stop = {}, 0, math.floor((-side+1)/2), math.floor((side-1)/2)
 	for i = 1, side do
 		for j = 1, side do
 			local id = side^2 - sindex(stop - i + 1,start + j - 1)
@@ -284,7 +284,7 @@ local function load_start_positions()
 		io.close(output)
 		input = io.open(filename..'.start_positions', 'r')
 	end
-	
+
 	-- read start positions
 	skyblock.log('read start positions')
 	while true do
@@ -303,7 +303,7 @@ load_start_positions() -- run it now
 -- load the last start position from disk
 local function load_last_start_id()
 	local input = io.open(filename..'.last_start_id', 'r')
-	
+
 	-- create last_start_id file if needed
     if not input then
 		local output = io.open(filename..'.last_start_id', 'w')
@@ -311,13 +311,13 @@ local function load_last_start_id()
 		io.close(output)
 		input = io.open(filename..'.last_start_id', 'r')
 	end
-	
+
 	-- read last start id
 	last_start_id = input:read('*n')
 	if last_start_id == nil then
 		last_start_id = 0
 	end
 	io.close(input)
-	
+
 end
 load_last_start_id() -- run it now

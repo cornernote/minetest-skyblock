@@ -12,7 +12,7 @@ License: GPLv3
 --[[
 
 not a real level, just ideas and leftover code
-	
+
 feats:
 * place_cactus
 * place_papyrus
@@ -45,4 +45,4 @@ rewards:
 		craft = {'unified_inventory:bag_small'},
 	},
 
---]]	
+--]]
