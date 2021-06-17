@@ -5,6 +5,12 @@ heading: Servers
 permalink: /servers/
 ---
 
+## SkyBlock server, by Ceudox
+
+```
+134.255.227.239:2000
+```
+
 ## Skyblock US NJ
 
 ```
