@@ -124,16 +124,16 @@ end
 
 -- get level information
 skyblock.levels[level].get_info = function(player_name)
-	local info = { 
-		level=level, 
-		total=10, 
-		count=0, 
-		player_name=player_name, 
-		infotext='', 
-		formspec = '', 
+	local info = {
+		level=level,
+		total=10,
+		count=0,
+		player_name=player_name,
+		infotext='',
+		formspec = '',
 		formspec_quest = '',
 	}
-	
+
 	local text = 'label[0,2.7; --== Quests ==--]'
 		..'label[0,0.5; Time Goes On, '..player_name..'...]'
 		..'label[0,1.0; You may wonder, traveller, where some of your]'
@@ -152,7 +152,7 @@ skyblock.levels[level].get_info = function(player_name)
 	end
 
 	info.infotext = 'LEVEL '..info.level..' for '..info.player_name..': '..info.count..' of '..info.total
-	
+
 	return info
 end
 
