@@ -19,7 +19,7 @@ level 3 feats and rewards:
 * place_steelblock x4		default:obsidian_shard
 * place_sand x50			wool:green 50
 * dig_stone_with_copper x4	wool:orange 50
-* place_bar	x8				default:mese_crystal
+* place_bar_flat x8			default:mese_crystal
 * dig_stone_with_mese x4	default:gold_lump
 * place_water_infinite x8	default:diamond
 
@@ -94,7 +94,7 @@ skyblock.levels[level].feats = {
 	{
 		name = 'place 8 Iron Bars',
 		hint = 'xpanes:bar_flat',
-		feat = 'place_bar',
+		feat = 'place_bar_flat', 
 		count = 8,
 		reward = 'default:mese_crystal',
 		placenode = {'xpanes:bar_flat'},

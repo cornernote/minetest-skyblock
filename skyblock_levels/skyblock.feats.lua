@@ -136,6 +136,9 @@ end
 -- set feat
 function skyblock.feats.set(level,player_name,feat,value)
 	skyblock.log('skyblock.feats.set('..level..','..player_name..','..feat..')')
+	if not players_feat[player_name] then
+		players_feat[player_name] = skyblock.feats.load(player_name) or {[0] = {}}
+	end
 	players_feat[player_name][level][feat] = value
 	if level~=0 or feat~='level' then
 		local rewarded = skyblock.levels[level].reward_feat(player_name,feat)
