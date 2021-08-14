@@ -16,7 +16,7 @@ minetest.register_node('skyblock:quest', {
 	is_ground_content = true,
 	paramtype = 'light',
 	sunlight_propagates = true,
-	light_source = 15,
+	light_source = 14,
 	can_dig = function(pos, player)
 		return false
 	end,
