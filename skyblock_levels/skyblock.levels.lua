@@ -283,3 +283,15 @@ function skyblock.levels.bucket_lava_on_use(level,player_name,pointed_thing)
 		end
 	end
 end
+
+-- track hoe feats
+function skyblock.levels.hoe_on_use(level, player_name, pointed_thing, itemname)
+	for _,v in ipairs(skyblock.levels[level].feats) do
+		if v.hoeuse then
+			if itemname == v.use_item then
+				skyblock.feats.add(level, player_name, v.feat)
+				return
+			end
+		end
+	end
+end
