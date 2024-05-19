@@ -206,6 +206,15 @@ function skyblock.feats.on_placenode(pos, newnode, placer, oldnode)
 end
 minetest.register_on_placenode(skyblock.feats.on_placenode)
 
+--track hoe use
+function skyblock.feats.hoe_on_use(itemstack, user, pointed_thing)
+	local player_name = user:get_player_name()
+	local level = skyblock.feats.get_level(player_name)
+	if skyblock.levels[level].hoe_on_use then
+	   skyblock.levels[level].hoe_on_use(player_name, pointed_thing, itemstack:get_name())
+	end
+end
+
 -- track on_place of items with their own on_place
 local function on_place(v, is_craftitem)
 	local entity = minetest.registered_items[v]
@@ -428,8 +437,23 @@ for _, material in pairs({"wood", "stone", "steel", "bronze", "mese", "diamond"}
 		on_use = function(itemstack, user, pointed_thing)
 			if not minetest.is_protected(pointed_thing.above, user:get_player_name()) then
 				old_use(itemstack, user, pointed_thing)
+				skyblock.feats.hoe_on_use(itemstack, user, pointed_thing)
 			end
-		end
+		end,
+		groups = {not_in_creative_inventory = 0}
+	})
+end
+
+--make uncraftable hoes craftable
+local uncraftable_hoes = {bronze="bronze_ingot", mese="mese_crystal", diamond="diamond"}
+for hoe, material in pairs(uncraftable_hoes) do
+	minetest.register_craft({
+		output = "farming:hoe_" .. hoe,
+		recipe = {
+			{"default:" .. material, "default:" .. material,},
+			{"", "default:stick"},
+			{"", "default:stick"}
+		}
 	})
 end
 
